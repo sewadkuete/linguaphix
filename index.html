@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LINGUAPHIX — Site en construction</title>
+<title>LINGUAPHIX</title>
 <meta name="description" content="LINGUAPHIX — Votre parler amélioré; votre design peaufiné. Site en cours de construction. Bientôt disponible.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="icon" href="images/logo-round.png" type="image/png">
@@ -299,6 +299,40 @@
     .contact-links { gap: 10px 14px; }
   }
 
+  /* ── BACKGROUND VIDEO */
+  #bg-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 0.35;          /* dim so text stays readable — adjust freely */
+    pointer-events: none;
+  }
+
+  /* ── FOREGROUND VIDEO (replaces logo) */
+  .logo-video-wrap {
+    position: relative;
+    width: clamp(160px, 42vw, 280px);
+    aspect-ratio: 16/9;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 0 0 3px rgba(255,255,255,0.12), 0 12px 40px rgba(0,0,0,0.55);
+    margin-bottom: 8px;
+    flex-shrink: 0;
+  }
+
+  .logo-video-wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Keep original logo-img hidden once video is swapped in — or remove it */
+  .logo-img { display: none; }
+
   /* ── LANDSCAPE MOBILE */
   @media (max-height: 500px) and (orientation: landscape) {
     .page {
@@ -334,10 +368,32 @@
 <!-- Animated background canvas -->
 <canvas id="bg"></canvas>
 
+<!-- ═══ BACKGROUND VIDEO ═══════════════════════════════════════════
+     Place your background video file inside the /video/ folder.
+     Rename it  bg-video.mp4  (and optionally bg-video.webm for Firefox).
+     The video loops silently behind all content.
+════════════════════════════════════════════════════════════════════ -->
+<video id="bg-video" autoplay muted loop playsinline>
+  <source src="video/bg-video.webm" type="video/webm">
+  <source src="video/bg-video.mp4"  type="video/mp4">
+</video>
+
 <div class="page">
 
-  <!-- Logo -->
+  <!-- Foreground video (replaces logo) -->
+  <!-- ═══ FOREGROUND VIDEO ══════════════════════════════════════════
+       Place your foreground video inside the /video/ folder.
+       Rename it  fg-video.mp4  (and optionally fg-video.webm).
+       This loops on screen where the logo used to be.
+  ════════════════════════════════════════════════════════════════ -->
   <div class="logo-wrap">
+    <div class="logo-video-wrap">
+      <video autoplay muted loop playsinline>
+        <source src="video/fg-video.webm" type="video/webm">
+        <source src="video/fg-video.mp4"  type="video/mp4">
+      </video>
+    </div>
+    <!-- Original logo kept here as fallback (hidden by CSS above) -->
     <img src="images/logo-round.png" alt="LINGUAPHIX" class="logo-img">
   </div>
 
