@@ -104,10 +104,10 @@ function renderTestimonials(items) {
     const country = t.location ? escapeHtml(t.location) : '';
     const starsHtml = `<div class="testimonial-card__stars stars" aria-label="${rating}/5">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div>`;
     const rolePart = role
-      ? `<span class="testimonial-sep" aria-hidden="true">·</span><span class="testimonial-role">${role}</span>`
+      ? `<span class="testimonial-role-line"><span class="testimonial-sep" aria-hidden="true">·</span><span class="testimonial-role">${role}</span></span>`
       : '';
     const countryHtml = country
-      ? `<p class="testimonial-country">${country}</p>`
+      ? `<span class="testimonial-country">${country}</span>`
       : '';
     return `
         <article class="testimonial-card fade-up visible">
@@ -118,7 +118,7 @@ function renderTestimonials(items) {
           <div class="testimonial-card__quote">
             <blockquote class="testimonial-text">${message}</blockquote>
           </div>
-          <footer class="testimonial-card__foot">
+          <div class="testimonial-card__foot">
             <div class="testimonial-avatar" title="${name}">${escapeHtml(getInitials(t.name))}</div>
             <div class="testimonial-client">
               <div class="testimonial-identity">
@@ -127,7 +127,7 @@ function renderTestimonials(items) {
               </div>
               ${countryHtml}
             </div>
-          </footer>
+          </div>
         </article>`;
   }).join('');
   grid.querySelectorAll('.fade-up:not(.visible)').forEach(el => observer.observe(el));
