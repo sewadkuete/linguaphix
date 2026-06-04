@@ -16,6 +16,7 @@ const CONTACT_EMAIL = getContactEmail();
 
 const FORM_LIMITS = {
   name: 120,
+  role: 120,
   email: 254,
   message: 4000,
   location: 120,
@@ -95,24 +96,32 @@ function renderTestimonials(items) {
   grid.innerHTML = items.map(t => {
     const rating = Math.min(5, Math.max(0, parseInt(t.rating, 10) || 0));
     const name = escapeHtml(t.name);
+    const role = escapeHtml(String(t.role || '').trim());
     const message = escapeHtml(t.message);
     const service = escapeHtml(
       typeof getServiceLabel === 'function' ? getServiceLabel(t.service, currentLang, i18n) : t.service
     );
-    const location = t.location ? ` · ${escapeHtml(t.location)}` : '';
+    const location = t.location ? escapeHtml(t.location) : '';
+    const roleLine = role
+      ? `<p class="testimonial-role">${role}</p>`
+      : '';
+    const serviceLine = [service, location].filter(Boolean).join(' · ');
+    const serviceHtml = serviceLine
+      ? `<p class="testimonial-service">${serviceLine}</p>`
+      : '';
     return `
-        <div class="testimonial-card fade-up visible">
-          <div class="stars">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div>
-          <div class="testimonial-quote">"</div>
-          <p class="testimonial-text">${message}</p>
-          <div class="testimonial-author">
-            <div class="testimonial-avatar">${escapeHtml(getInitials(t.name))}</div>
-            <div>
-              <div class="testimonial-name">${name}</div>
-              <div class="testimonial-service">${service}${location}</div>
+        <article class="testimonial-card fade-up visible">
+          <div class="testimonial-card__stars stars" aria-label="${rating}/5">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div>
+          <blockquote class="testimonial-text">${message}</blockquote>
+          <footer class="testimonial-author">
+            <div class="testimonial-avatar" aria-hidden="true">${escapeHtml(getInitials(t.name))}</div>
+            <div class="testimonial-meta">
+              <p class="testimonial-name">${name}</p>
+              ${roleLine}
+              ${serviceHtml}
             </div>
-          </div>
-        </div>`;
+          </footer>
+        </article>`;
   }).join('');
   grid.querySelectorAll('.fade-up:not(.visible)').forEach(el => observer.observe(el));
 }
@@ -275,6 +284,8 @@ const i18n = {
     'addtesti.title': 'Partagez votre expérience',
     'addtesti.subtitle': 'Votre témoignage apparaîtra sur le site après validation.',
     'form.name': 'Nom complet *',
+    'form.role': 'Rôle / statut *',
+    'form.ph.role': 'Ex : Candidate TCF, Entrepreneur, Étudiant…',
     'form.email': 'Email *',
     'form.service': 'Service utilisé *',
     'form.select': '— Sélectionner —',
@@ -739,6 +750,8 @@ const i18n = {
     'addtesti.title': 'Share your experience',
     'addtesti.subtitle': 'Your testimonial will appear on the site after review.',
     'form.name': 'Full name *',
+    'form.role': 'Role / status *',
+    'form.ph.role': 'e.g. TCF candidate, entrepreneur, student…',
     'form.email': 'Email *',
     'form.service': 'Service used *',
     'form.select': '— Select —',
@@ -1306,13 +1319,14 @@ stars.forEach(star => {
 // ── TESTIMONIAL SUBMIT (Supabase) ──
 async function submitTestimonial() {
   const name = clampField(document.getElementById('t-name').value, FORM_LIMITS.name);
+  const role = clampField(document.getElementById('t-role').value, FORM_LIMITS.role);
   const service = clampField(document.getElementById('t-service').value, FORM_LIMITS.service);
   const rating = Math.min(5, Math.max(1, parseInt(document.getElementById('t-rating').value, 10) || 0));
   const message = clampField(document.getElementById('t-text').value, FORM_LIMITS.message);
   const location = clampField(document.getElementById('t-location').value, FORM_LIMITS.location);
   const msgEl = document.getElementById('testi-msg');
 
-  if (!name || !service || !rating || !message) {
+  if (!name || !role || !service || !rating || !message) {
     msgEl.style.display = 'block';
     msgEl.style.background = '#fef2f2';
     msgEl.style.color = '#b91c1c';
@@ -1341,7 +1355,7 @@ async function submitTestimonial() {
         'Authorization': `Bearer ${key}`,
         'Prefer': 'return=minimal'
       },
-      body: JSON.stringify({ name, service, rating, message, location, approved: false })
+      body: JSON.stringify({ name, role, service, rating, message, location, approved: false })
     });
     if (res.ok) {
       msgEl.style.display = 'block';
@@ -1350,7 +1364,7 @@ async function submitTestimonial() {
       msgEl.textContent = currentLang === 'fr'
         ? '✓ Merci ! Votre témoignage sera publié ici après validation.'
         : '✓ Thank you! Your review will appear here after approval.';
-      ['t-name', 't-text', 't-location'].forEach(id => { document.getElementById(id).value = ''; });
+      ['t-name', 't-role', 't-text', 't-location'].forEach(id => { document.getElementById(id).value = ''; });
       document.getElementById('t-service').value = '';
       document.getElementById('t-rating').value = '0';
       stars.forEach(s => { s.style.color = '#ddd'; });

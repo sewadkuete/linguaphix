@@ -27,7 +27,7 @@ All pages load `site-config.js` then `site-config.local.js`. If the local file i
 
 ### Table check
 
-Table `public.testimonials` columns: `name`, `service`, `rating`, `message`, `location`, `approved` (default `false`).
+Table `public.testimonials` columns: `name`, `role`, `service`, `rating`, `message`, `location`, `approved` (default `false`).
 
 New submissions stay hidden until you set `approved = true` in the Supabase dashboard.
 
