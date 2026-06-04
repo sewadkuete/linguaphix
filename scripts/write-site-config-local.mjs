@@ -60,7 +60,7 @@ function escJs(str) {
 
 function pick(env, ...names) {
   for (const name of names) {
-    const v = env[name]?.trim();
+    const v = (env[name] || '').trim().replace(/\s+/g, '');
     if (v) return v;
   }
   return '';
@@ -91,6 +91,7 @@ const body = `/** Auto-generated — do not commit. */
   Object.assign(window.LINGUAPHIX_CONFIG, {
 ${fields.join('\n')}
   });
+  window.LINGUAPHIX_CONFIG_READY = true;
 })();
 `;
 

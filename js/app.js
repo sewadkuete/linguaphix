@@ -1846,10 +1846,18 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 async function loadTestimonials() {
+  const empty = document.getElementById('testimonialsEmpty');
+
+  for (let attempt = 0; attempt < 8 && !isSupabaseConfigured(); attempt += 1) {
+    await new Promise((resolve) => setTimeout(resolve, 120));
+  }
+
   if (!isSupabaseConfigured()) {
     showTestimonialsEmpty();
     return;
   }
+
+  if (empty) empty.hidden = true;
 
   const { url, key } = getSupabaseConfig();
 
@@ -1870,7 +1878,7 @@ async function loadTestimonials() {
       return;
     }
     const data = await res.json();
-    if (!Array.isArray(data)) {
+    if (!Array.isArray(data) || data.length === 0) {
       showTestimonialsEmpty();
       return;
     }
@@ -1880,3 +1888,7 @@ async function loadTestimonials() {
     showTestimonialsEmpty();
   }
 }
+
+window.addEventListener('load', () => {
+  if (document.getElementById('testimonialsGrid')) loadTestimonials();
+});
