@@ -104,7 +104,7 @@ function renderTestimonials(items) {
     const country = t.location ? escapeHtml(t.location) : '';
     const starsHtml = `<div class="testimonial-card__stars stars" aria-label="${rating}/5">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div>`;
     const rolePart = role
-      ? `<span class="testimonial-role-line"><span class="testimonial-sep" aria-hidden="true">·</span><span class="testimonial-role">${role}</span></span>`
+      ? `<span class="testimonial-sep" aria-hidden="true"> · </span><span class="testimonial-role">${role}</span>`
       : '';
     const countryHtml = country
       ? `<span class="testimonial-country">${country}</span>`
