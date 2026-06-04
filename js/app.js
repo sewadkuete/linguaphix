@@ -119,12 +119,14 @@ function renderTestimonials(items) {
             <blockquote class="testimonial-text">${message}</blockquote>
           </div>
           <footer class="testimonial-card__foot">
-            <div class="testimonial-identity">
-              <div class="testimonial-avatar" title="${name}">${escapeHtml(getInitials(t.name))}</div>
-              <span class="testimonial-name">${name}</span>
-              ${rolePart}
+            <div class="testimonial-avatar" title="${name}">${escapeHtml(getInitials(t.name))}</div>
+            <div class="testimonial-client">
+              <div class="testimonial-identity">
+                <span class="testimonial-name">${name}</span>
+                ${rolePart}
+              </div>
+              ${countryHtml}
             </div>
-            ${countryHtml}
           </footer>
         </article>`;
   }).join('');
