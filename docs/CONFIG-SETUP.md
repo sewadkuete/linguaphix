@@ -31,6 +31,8 @@ Table `public.testimonials` columns: `name`, `service`, `rating`, `message`, `lo
 
 New submissions stay hidden until you set `approved = true` in the Supabase dashboard.
 
+**Important:** In **Table Editor → testimonials**, each row must have **`approved` = true** (checkbox on) to appear on the website. Rows with `approved` false (or null) stay hidden.
+
 ---
 
 ## 2. Local secrets (choose one method)

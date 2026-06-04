@@ -1,10 +1,18 @@
-// ── CONFIG: js/site-config.js + gitignored js/site-config.local.js (see docs/CONFIG-SETUP.md) ──
-const _siteCfg = typeof window !== 'undefined' ? window.LINGUAPHIX_CONFIG || {} : {};
-const SUPABASE_URL = String(_siteCfg.supabaseUrl || '').trim();
-const SUPABASE_ANON_KEY = String(_siteCfg.supabaseAnonKey || '').trim();
+// ── CONFIG: js/site-config.js + site-config.local.js (see docs/CONFIG-SETUP.md) ──
+function getSupabaseConfig() {
+  const cfg = typeof window !== 'undefined' ? window.LINGUAPHIX_CONFIG || {} : {};
+  return {
+    url: String(cfg.supabaseUrl || '').trim().replace(/\/$/, ''),
+    key: String(cfg.supabaseAnonKey || '').trim(),
+  };
+}
 
-// Contact questions → inbox (FormSubmit; confirm address on first delivery)
-const CONTACT_EMAIL = (_siteCfg.contactEmail || 'contact@linguaphix.com').trim();
+function getContactEmail() {
+  const cfg = typeof window !== 'undefined' ? window.LINGUAPHIX_CONFIG || {} : {};
+  return (cfg.contactEmail || 'contact@linguaphix.com').trim();
+}
+
+const CONTACT_EMAIL = getContactEmail();
 
 const FORM_LIMITS = {
   name: 120,
@@ -15,10 +23,10 @@ const FORM_LIMITS = {
 };
 
 function isSupabaseConfigured() {
-  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return false;
-  if (/YOUR-PROJECT|YOUR_ANON_KEY/i.test(SUPABASE_URL + SUPABASE_ANON_KEY)) return false;
-  return /^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/i.test(SUPABASE_URL)
-    && SUPABASE_ANON_KEY.length > 20;
+  const { url, key } = getSupabaseConfig();
+  if (!url || !key) return false;
+  if (/YOUR-PROJECT|YOUR_ANON_KEY/i.test(url + key)) return false;
+  return /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(url) && key.length > 20;
 }
 
 function resolveLang(lang) {
@@ -1323,12 +1331,14 @@ async function submitTestimonial() {
   }
 
   try {
-    const res = await fetch(`${SUPABASE_URL}/rest/v1/testimonials`, {
+    const { url, key } = getSupabaseConfig();
+    const res = await fetch(`${url}/rest/v1/testimonials`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'apikey': SUPABASE_ANON_KEY,
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Accept': 'application/json',
+        'apikey': key,
+        'Authorization': `Bearer ${key}`,
         'Prefer': 'return=minimal'
       },
       body: JSON.stringify({ name, service, rating, message, location, approved: false })
@@ -1841,12 +1851,21 @@ async function loadTestimonials() {
     return;
   }
 
+  const { url, key } = getSupabaseConfig();
+
   try {
     const res = await fetch(
-      `${SUPABASE_URL}/rest/v1/testimonials?approved=eq.true&order=created_at.desc&limit=12`,
-      { headers: { apikey: SUPABASE_ANON_KEY, Authorization: `Bearer ${SUPABASE_ANON_KEY}` } }
+      `${url}/rest/v1/testimonials?approved=eq.true&order=created_at.desc&limit=12`,
+      {
+        headers: {
+          apikey: key,
+          Authorization: `Bearer ${key}`,
+          Accept: 'application/json',
+        },
+      }
     );
     if (!res.ok) {
+      console.warn('[LINGUAPHIX] testimonials fetch failed:', res.status);
       showTestimonialsEmpty();
       return;
     }
@@ -1857,6 +1876,7 @@ async function loadTestimonials() {
     }
     renderTestimonials(data);
   } catch (e) {
+    console.warn('[LINGUAPHIX] testimonials fetch error:', e);
     showTestimonialsEmpty();
   }
 }

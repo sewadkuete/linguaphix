@@ -2,6 +2,15 @@
  * Site language: URL (?lang=), saved choice (localStorage), else browser.
  * Supported: fr, en — invalid codes fall back without breaking the page.
  */
+(function ensureGitHubPagesBase() {
+  if (document.querySelector('base[data-lx-pages-base]')) return;
+  if (!/\/linguaphix(\/|$)/.test(location.pathname || '')) return;
+  const base = document.createElement('base');
+  base.href = '/linguaphix/';
+  base.setAttribute('data-lx-pages-base', '1');
+  document.head.prepend(base);
+})();
+
 (function () {
   const LANG_STORAGE_KEY = 'linguaphix-lang';
   const LANG_PARAM = 'lang';
