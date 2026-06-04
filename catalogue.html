@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script src="js/lang-detect.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>LINGUAPHIX | Catalogue des services</title>
+<meta name="description" content="Catalogue complet des services LINGUAPHIX — langues et design pour particuliers et entreprises.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="LINGUAPHIX | Catalogue des services">
+<meta property="og:description" content="Toutes nos offres en images — langues, design, particuliers et entreprises.">
+<meta property="og:image" content="https://linguaphix.com/assets/branding/logo-full.png">
+<meta property="og:url" content="https://linguaphix.com/catalogue.html">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://linguaphix.com/catalogue.html">
+<link rel="icon" href="assets/branding/logo-mark-original.png" type="image/png">
+<script src="js/site-config.js"></script>
+<script src="js/site-config.local.js"></script>
+<script src="js/analytics.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-catalogue">
+
+<nav id="navbar" class="scrolled">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="LINGUAPHIX — Accueil">
+        <span class="nav-logo-icon brand-mark brand-mark--md">
+          <img src="assets/branding/logo-mark-original.png" alt="" class="brand-mark__img" width="38" height="38" decoding="async">
+        </span>
+        <span class="nav-logo-text" id="nav-brand">LINGUAPHIX</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about" data-i18n="nav.about">À propos</a></li>
+        <li><a href="index.html#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="index.html#testimonials" data-i18n="nav.testimonials">Témoignages</a></li>
+        <li><a href="design.html" data-i18n="nav.design">Design</a></li>
+        <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-toggle__btn is-active" data-lang="fr" aria-pressed="true" onclick="setLang('fr')">FR</button>
+          <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="false" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="javascript:void(0)" role="button" class="btn btn-primary" data-open-service-book data-i18n="nav.cta">Réserver un appel</a>
+        <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMobileMenu()">✕</button>
+  <div class="lang-toggle mobile-lang-toggle" role="group" aria-label="Language">
+    <button type="button" class="lang-toggle__btn is-active" data-lang="fr" aria-pressed="true" onclick="setLang('fr');">FR</button>
+    <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="false" onclick="setLang('en');">EN</button>
+  </div>
+  <a href="index.html#about" onclick="toggleMobileMenu()" data-i18n="nav.about">À propos</a>
+  <a href="index.html#services" onclick="toggleMobileMenu()" data-i18n="nav.services">Services</a>
+  <a href="index.html#testimonials" onclick="toggleMobileMenu()" data-i18n="nav.testimonials">Témoignages</a>
+  <a href="design.html" onclick="toggleMobileMenu()" data-i18n="nav.design">Design</a>
+  <a href="index.html#contact" onclick="toggleMobileMenu()" data-i18n="nav.contact">Contact</a>
+  <a href="javascript:void(0)" role="button" class="btn btn-white btn-lg" data-open-service-book data-i18n="nav.cta" style="margin-top:1rem;">Réserver un appel</a>
+</div>
+
+<main class="catalogue-page section">
+  <div class="container">
+    <p class="catalogue-back"><a href="index.html#services" data-i18n="catalogue.page.back">← Retour aux services</a></p>
+
+    <header class="catalogue-header fade-up">
+      <span class="badge" data-i18n="catalogue.badge">Catalogue</span>
+      <h1 data-i18n="catalogue.title">Catalogue complet des services</h1>
+    </header>
+
+    <div class="catalogue-filter-bar fade-up">
+      <button type="button" class="stab active" onclick="switchCatalogueAudience('all', this)" data-i18n="services.tab.all">Tous</button>
+      <button type="button" class="stab" onclick="switchCatalogueAudience('particuliers', this)" data-i18n="services.tab.ind">Particuliers</button>
+      <button type="button" class="stab" onclick="switchCatalogueAudience('entreprises', this)" data-i18n="services.tab.biz">Entreprises</button>
+    </div>
+
+    <div id="catalogueSections" class="catalogue-sections catalogue-filter-all">
+
+      <!-- Langues — grille 3×3 (9 services, Particuliers + Entreprises) -->
+      <div class="catalogue-group catalogue-group--langues">
+        <div class="catalogue-lang-matrix-head">
+          <span class="subsection-title-short" data-i18n="services.subsection.lang">🌐 Langues</span>
+          <span class="subsection-title-full catalogue-lang-matrix-head__ind" data-i18n="services.subsection.lang.ind">🌐 Langues — Particuliers</span>
+          <span class="subsection-title-full catalogue-lang-matrix-head__biz" data-i18n="services.subsection.lang.biz">🌐 Langues — Entreprises</span>
+          <div class="services-subsection-line"></div>
+        </div>
+        <div class="catalogue-lang-matrix catalogue-group__list">
+
+      <article class="catalogue-service" id="catalogue-tcf" data-audience="particuliers" data-category="langues">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__category" data-i18n="services.audience.ind">Particuliers</span>
+            <span class="catalogue-service__icon" aria-hidden="true">📝</span>
+            <h3 data-i18n="srv.tcf.title">Préparation au TCF</h3>
+            <p data-i18n="srv.tcf.desc">Préparation intensive au Test de Connaissance du Français par un examinateur officiel certifié. Toutes composantes : CO, CE, EE, EO.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/tcf/</code></p>
+            <a href="services/tcf.html" class="btn btn-primary btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="Préparation TCF">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/tcf/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/tcf/01.png" data-catalogue-base="assets/catalogue/tcf/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.tcf" alt="Préparation TCF — France Éducation international" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="catalogue-service" id="catalogue-ielts" data-audience="particuliers" data-category="langues">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__category" data-i18n="services.audience.ind">Particuliers</span>
+            <span class="catalogue-service__icon" aria-hidden="true">🎯</span>
+            <h3 data-i18n="srv.ielts.title">IELTS / TOEFL / Cambridge</h3>
+            <p data-i18n="srv.ielts.desc">Préparation complète aux tests internationaux d'anglais. Coaching personnalisé selon votre objectif de score. Academic & General.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/ielts/</code></p>
+            <a href="services/ielts.html" class="btn btn-primary btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="IELTS / TOEFL / Cambridge">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/ielts/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/ielts/01.png" data-catalogue-base="assets/catalogue/ielts/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.ielts" alt="IELTS, TOEFL iBT et Cambridge" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="catalogue-service" id="catalogue-toeic" data-audience="particuliers" data-category="langues">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__category" data-i18n="services.audience.ind">Particuliers</span>
+            <span class="catalogue-service__icon" aria-hidden="true">🎓</span>
+            <h3 data-i18n="srv.toeic.title">TOEIC</h3>
+            <p data-i18n="srv.toeic.desc">Préparation ciblée au TOEIC Listening & Reading et Speaking & Writing. Stratégies, exercices types et simulations complètes.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/toeic/</code></p>
+            <a href="services/toeic.html" class="btn btn-primary btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="TOEIC">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/toeic/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/toeic/01.png" data-catalogue-base="assets/catalogue/toeic/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.toeic" alt="TOEIC — ETS" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="catalogue-service" id="catalogue-cours" data-audience="particuliers" data-category="langues">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__category" data-i18n="services.audience.ind">Particuliers</span>
+            <span class="catalogue-service__icon" aria-hidden="true">💬</span>
+            <h3 data-i18n="srv.cours.title">Cours de Français / Anglais</h3>
+            <p data-i18n="srv.cours.desc">Cours personnalisés en ligne ou en présentiel. Niveaux A1 à C2. Individuels ou en groupe. Horaires flexibles adaptés à votre agenda.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/cours/</code></p>
+            <a href="services/cours.html" class="btn btn-primary btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="Cours de langues">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/cours/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/cours/01.png" data-catalogue-base="assets/catalogue/cours/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.cours" alt="Cours de langues" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="catalogue-service" id="catalogue-interview" data-audience="particuliers" data-category="langues">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__category" data-i18n="services.audience.ind">Particuliers</span>
+            <span class="catalogue-service__icon" aria-hidden="true">🎤</span>
+            <h3 data-i18n="srv.interview.title">Préparation aux interviews en anglais</h3>
+            <p data-i18n="srv.interview.desc">Coaching pour entretiens d'embauche, visa, admission universitaire ou professionnel. Vocabulaire ciblé, fluidité, confiance.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/interview/</code></p>
+            <a href="services/interview.html" class="btn btn-primary btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="Préparation interviews">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/interview/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/interview/01.png" data-catalogue-base="assets/catalogue/interview/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.interview" alt="Préparation interviews" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="catalogue-service" id="catalogue-soutien" data-audience="particuliers" data-category="langues">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__category" data-i18n="services.audience.ind">Particuliers</span>
+            <span class="catalogue-service__icon" aria-hidden="true">📖</span>
+            <h3 data-i18n="srv.soutien.title">Soutien scolaire</h3>
+            <p data-i18n="srv.soutien.desc">Accompagnement scolaire en français et en anglais pour collégiens et lycéens. Remise à niveau, préparation aux examens, aide aux devoirs.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/soutien/</code></p>
+            <a href="services/soutien.html" class="btn btn-primary btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="Soutien scolaire">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/soutien/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/soutien/01.png" data-catalogue-base="assets/catalogue/soutien/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.soutien" alt="Soutien scolaire" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="catalogue-service" id="catalogue-traduction" data-audience="particuliers" data-category="langues">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__category" data-i18n="services.audience.ind">Particuliers</span>
+            <span class="catalogue-service__icon" aria-hidden="true">📜</span>
+            <h3 data-i18n="srv.trad.title">Traduction professionnelle FR⇄EN</h3>
+            <p data-i18n="srv.trad.desc">Traduction pour particuliers et entreprises : documents officiels, visas, diplômes, contrats, actes juridiques, livres et articles. Qualité certifiée.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/traduction/</code></p>
+            <a href="services/traduction.html?audience=particuliers" class="btn btn-primary btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="Traduction">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/traduction/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/traduction/01.png" data-catalogue-base="assets/catalogue/traduction/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.traduction" alt="Traduction professionnelle" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="catalogue-service" id="catalogue-formation" data-audience="entreprises" data-category="langues">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__category catalogue-service__category--biz" data-i18n="services.audience.biz">Entreprises</span>
+            <span class="catalogue-service__icon" aria-hidden="true">🏢</span>
+            <h3 data-i18n="srv.corp.training.title">Formation linguistique en entreprise</h3>
+            <p data-i18n="srv.corp.training.desc">Programmes de formation sur mesure en anglais ou français pour équipes, managers ou directions. En présentiel ou en ligne.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/formation/</code></p>
+            <a href="services/formation.html" class="btn btn-primary btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="Formation entreprise">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/formation/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/formation/01.png" data-catalogue-base="assets/catalogue/formation/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.formation" alt="Formation linguistique en entreprise" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="catalogue-service" id="catalogue-traduction-biz" data-catalogue-service="traduction" data-audience="entreprises" data-category="langues">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__category catalogue-service__category--biz" data-i18n="services.audience.biz">Entreprises</span>
+            <span class="catalogue-service__icon" aria-hidden="true">📜</span>
+            <h3 data-i18n="srv.trad.title">Traduction professionnelle FR⇄EN</h3>
+            <p data-i18n="srv.trad.desc">Traduction pour particuliers et entreprises : documents officiels, visas, diplômes, contrats, actes juridiques, livres et articles. Qualité certifiée.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/traduction/</code></p>
+            <a href="services/traduction.html?audience=entreprises" class="btn btn-primary btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="Traduction">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/traduction/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/traduction/01.png" data-catalogue-base="assets/catalogue/traduction/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.traduction" alt="Traduction professionnelle" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+        </div>
+      </div>
+
+      <!-- Design — Individuals & Businesses -->
+      <div class="catalogue-audience" data-audience="particuliers entreprises">
+
+      <div class="catalogue-group">
+        <h2 class="catalogue-group-title catalogue-group-title--design" data-i18n="services.subsection.design">🎨 Design</h2>
+        <div class="catalogue-group__list">
+
+      <article class="catalogue-service catalogue-service--design" id="catalogue-logo" data-category="design">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__icon" aria-hidden="true">✨</span>
+            <h3 data-i18n="srv.logo.title">Création & Animation de Logo</h3>
+            <p data-i18n="srv.logo.desc">Conception de logos originaux, modernes et mémorables. Version statique + version animée (Motion Design). Fichiers HD fournis.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/logo/</code></p>
+            <a href="services/logo.html" class="btn btn-accent btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="Logo">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/logo/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/logo/01.png" data-catalogue-base="assets/catalogue/logo/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.logo" alt="Création de logo" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="catalogue-service catalogue-service--design" id="catalogue-montage" data-category="design">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__icon" aria-hidden="true">🎬</span>
+            <h3 data-i18n="srv.montage.title">Montage Vidéo</h3>
+            <p data-i18n="srv.montage.desc">Montage professionnel de vos vidéos : clips, interviews, publicités, vlogs, formations en ligne, événements. Rendu HD/4K.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/montage/</code></p>
+            <a href="services/montage.html" class="btn btn-accent btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="Montage vidéo">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/montage/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/montage/01.png" data-catalogue-base="assets/catalogue/montage/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.montage" alt="Montage vidéo" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="catalogue-service catalogue-service--design" id="catalogue-graphic" data-category="design">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__icon" aria-hidden="true">🖼️</span>
+            <h3 data-i18n="srv.design.title">Design Graphique</h3>
+            <p data-i18n="srv.design.desc">Création de visuels pour réseaux sociaux, affiches, flyers, cartes de visite, bannières web et identité visuelle complète.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/graphic/</code></p>
+            <a href="services/graphic.html" class="btn btn-accent btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="Design graphique">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/graphic/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/graphic/01.png" data-catalogue-base="assets/catalogue/graphic/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.graphic" alt="Design graphique" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="catalogue-service catalogue-service--design" id="catalogue-livestream" data-category="design">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__icon" aria-hidden="true">📡</span>
+            <h3 data-i18n="srv.live.title">Production Live Streaming</h3>
+            <p data-i18n="srv.live.desc">Configuration complète pour live streaming : équipement, éclairage, son, logiciels OBS/Streamlabs. Événements, webinaires, conférences.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/livestream/</code></p>
+            <a href="services/livestream.html" class="btn btn-accent btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="Live streaming">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/livestream/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/livestream/01.png" data-catalogue-base="assets/catalogue/livestream/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.livestream" alt="Production live streaming" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="catalogue-service catalogue-service--design" id="catalogue-materiel" data-category="design">
+        <div class="catalogue-service__row">
+          <div class="catalogue-service__info">
+            <span class="catalogue-service__icon" aria-hidden="true">🛒</span>
+            <h3 data-i18n="srv.mat.title">Conseil & Achat de matériel</h3>
+            <p data-i18n="srv.mat.desc">Conseil expert pour l'acquisition de matériel audiovisuel et streaming. Caméras, micros, éclairage, encodeurs, mixettes et plus.</p>
+            <p class="catalogue-hint"><span data-i18n="catalogue.hint.label">Photos :</span> <code>assets/catalogue/materiel/</code></p>
+            <a href="services/materiel.html" class="btn btn-accent btn-sm" data-i18n="catalogue.cta.details">Voir le détail →</a>
+          </div>
+          <div class="catalogue-gallery" aria-label="Matériel AV">
+            <p class="catalogue-gallery__empty" data-i18n="catalogue.gallery.empty">Images carrées — copiez un bloc catalogue-photo ci-dessous.</p>
+            <a href="assets/catalogue/materiel/01.png" class="catalogue-photo" target="_blank" rel="noopener">
+              <img src="assets/catalogue/materiel/01.png" data-catalogue-base="assets/catalogue/materiel/01" data-catalogue-ext="png" data-i18n-alt="catalogue.alt.materiel" alt="Conseil et achat de matériel audiovisuel" loading="lazy" width="600" height="600">
+            </a>
+          </div>
+        </div>
+      </article>
+
+        </div>
+      </div>
+
+      </div>
+
+    </div>
+
+    <div class="catalogue-footer-cta fade-up">
+      <p data-i18n="catalogue.cta.text">Une question ou un devis pour l'un de ces services ?</p>
+      <a href="index.html#contact" class="btn btn-primary btn-lg" data-i18n="catalogue.cta.contact">Nous contacter →</a>
+      <a href="https://wa.me/22892539953" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg" data-i18n="catalogue.cta.whatsapp">WhatsApp</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <p class="footer-copy">
+        <span data-i18n="footer.copy.prefix">© 2026 LINGUAPHIX · Developed by </span>
+        <a href="index.html#about" data-i18n="footer.copy.name">Akuété SEWA-DOVI</a>
+        <span data-i18n="footer.copy.suffix"> · All rights reserved</span>
+      </p>
+      <div class="footer-bottom__links">
+        <a href="index.html" data-i18n="portfolio.page.home">Accueil</a>
+        <a href="catalogue.html" aria-current="page" data-i18n="footer.catalogue">Catalogue</a>
+        <a href="policy.html" data-i18n="footer.policy">Politique de confidentialité</a>
+        <a href="mailto:contact@linguaphix.com">contact@linguaphix.com</a>
+        <a href="sitemap.html" data-i18n="footer.sitemap">Plan du site</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/22892539953" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span data-i18n="wa.float">WhatsApp</span>
+</a>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Haut de page">↑</button>
+
+<script src="js/locale-pricing.js"></script>
+<script src="js/app.js"></script>
+<script src="js/catalogue.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    syncNavbarScrolledState();
+    applyLang(detectLang());
+    initCataloguePage();
+  });
+</script>
+</body>
+</html>

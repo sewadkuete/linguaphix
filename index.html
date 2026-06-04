@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script src="js/lang-detect.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>LINGUAPHIX | Langues · Design · Traduction</title>
+<meta name="description" content="LINGUAPHIX - Expert en langues (TCF, IELTS, TOEFL, TOEIC, Cambridge), traduction FR-EN, cours personnalisés, design graphique, montage vidéo et live streaming. Fondé par Akuété SEWA-DOVI, examinateur TCF à l'IFT.">
+<meta name="keywords" content="TCF, IELTS, TOEFL, TOEIC, Cambridge, cours de français, cours d'anglais, traduction, design graphique, montage vidéo, Togo, Lomé, Akuété SEWA-DOVI">
+<meta property="og:title" content="LINGUAPHIX | Langues · Design · Traduction">
+<meta property="og:description" content="Expert en langues et design créatif. Examinateur TCF, enseignant certifié, traducteur FR-EN, graphiste et monteur vidéo.">
+<meta property="og:image" content="https://linguaphix.com/assets/branding/logo-full.png">
+<meta property="og:url" content="https://linguaphix.com/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LINGUAPHIX | Langues · Design · Traduction">
+<meta name="twitter:description" content="Expert en langues et design créatif — TCF, IELTS, traduction, design graphique et vidéo.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://linguaphix.com/">
+<link rel="icon" href="assets/branding/logo-mark-original.png" type="image/png">
+
+<script src="js/site-config.js"></script>
+<script src="js/site-config.local.js"></script>
+<script src="js/analytics.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "LINGUAPHIX",
+  "url": "https://linguaphix.com/",
+  "description": "Services linguistiques et créatifs : langues, traduction, design graphique, montage vidéo et live streaming.",
+  "email": "contact@linguaphix.com",
+  "areaServed": "TG",
+  "founder": { "@type": "Person", "name": "Akuété SEWA-DOVI" },
+  "sameAs": ["https://linkedin.com/in/akuetesd"]
+}
+</script>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+<script src="js/locale-pricing.js"></script>
+
+</head>
+<body class="has-fixed-header">
+
+<header id="site-header" class="site-header">
+<!-- ───── NAVBAR ───── -->
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="nav-logo-icon brand-mark brand-mark--md">
+          <img src="assets/branding/logo-mark-original.png" alt="" class="brand-mark__img" width="38" height="38" decoding="async">
+        </span>
+        <span class="nav-logo-text" id="nav-brand">LINGUAPHIX</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+        <li><a href="#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="#testimonials" data-i18n="nav.testimonials">Témoignages</a></li>
+        <li><a href="design.html" data-i18n="nav.design">Design</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-toggle__btn is-active" data-lang="fr" aria-pressed="true" onclick="setLang('fr')">FR</button>
+          <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="false" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="javascript:void(0)" role="button" class="btn btn-primary" onclick="openServiceBookModal(event)" data-i18n="nav.cta">Réserver un appel</a>
+        <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ───── SERVICES TICKER (fixed with nav) ───── -->
+<div id="services-ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <a href="#services-langues" class="ticker-badge ticker-badge--lang ticker-badge-link" data-i18n="ticker.badge.lang">Langues</a>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.tcf">Préparation TCF</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.english">Cours d'Anglais</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.french">Cours de Français</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.ielts">IELTS / TOEFL</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.toeic">TOEIC / Cambridge</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.trad">Traduction FR⇄EN</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.soutien">Soutien Scolaire</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.online">Cours en Ligne</span></span>
+    <span class="ticker-divider" aria-hidden="true"></span>
+    <a href="design.html" class="ticker-badge ticker-badge--design ticker-badge-link" data-i18n="ticker.badge.design">Design</a>
+    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.design">Design Graphique</span></span>
+    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.montage">Montage Vidéo</span></span>
+    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.logo">Création de Logo</span></span>
+    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.live">Live Streaming</span></span>
+    <a href="#services-langues" class="ticker-badge ticker-badge--lang ticker-badge-link" aria-hidden="true" tabindex="-1" data-i18n="ticker.badge.lang">Langues</a>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.tcf">Préparation TCF</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.english">Cours d'Anglais</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.french">Cours de Français</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.ielts">IELTS / TOEFL</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.toeic">TOEIC / Cambridge</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.trad">Traduction FR⇄EN</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.soutien">Soutien Scolaire</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.online">Cours en Ligne</span></span>
+    <span class="ticker-divider" aria-hidden="true"></span>
+    <a href="design.html" class="ticker-badge ticker-badge--design ticker-badge-link" aria-hidden="true" tabindex="-1" data-i18n="ticker.badge.design">Design</a>
+    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.design">Design Graphique</span></span>
+    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.montage">Montage Vidéo</span></span>
+    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.logo">Création de Logo</span></span>
+    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.live">Live Streaming</span></span>
+  </div>
+</div>
+</header>
+
+<!-- ───── MOBILE MENU ───── -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMobileMenu()">✕</button>
+  <div class="lang-toggle mobile-lang-toggle" role="group" aria-label="Language">
+    <button type="button" class="lang-toggle__btn is-active" data-lang="fr" aria-pressed="true" onclick="setLang('fr');">FR</button>
+    <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="false" onclick="setLang('en');">EN</button>
+  </div>
+  <a href="#about" onclick="toggleMobileMenu()" data-i18n="nav.about">À propos</a>
+  <a href="#services" onclick="toggleMobileMenu()" data-i18n="nav.services">Services</a>
+  <a href="#testimonials" onclick="toggleMobileMenu()" data-i18n="nav.testimonials">Témoignages</a>
+  <a href="design.html" onclick="toggleMobileMenu()" data-i18n="nav.design">Design</a>
+  <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav.contact">Contact</a>
+  <a href="javascript:void(0)" role="button" class="btn btn-white btn-lg" onclick="openServiceBookModal(event)" data-i18n="nav.cta" style="margin-top:1rem;">Réserver un appel</a>
+</div>
+
+<!-- ───── HERO ───── -->
+<section id="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-circle-1"></div>
+  <div class="hero-circle-2"></div>
+  <div class="container hero-content">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow" data-i18n="hero.eyebrow">Expert Langues & Créativité Visuelle</div>
+        <h1 class="hero-title" data-i18n="hero.title">Maîtrisez les <span>langues.</span><br>Rayonnez par le <span>design.</span></h1>
+        <p class="hero-subtitle" data-i18n="hero.subtitle">Expert certifié en enseignement, traduction et préparation aux examens internationaux — et créatif en design graphique, montage vidéo et live streaming. Un seul interlocuteur pour deux expertises complémentaires.</p>
+        <div class="hero-actions">
+          <a href="javascript:void(0)" role="button" class="btn btn-accent btn-lg" onclick="openServiceBookModal(event)" data-i18n="hero.cta1">
+            📅 Prendre rendez-vous
+          </a>
+          <a href="#services" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.6);color:white;" data-i18n="hero.cta2">
+            Voir les services →
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">10+</div>
+            <div class="hero-stat-label" data-i18n="hero.stat1">Ans d'enseignement</div>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">5+</div>
+            <div class="hero-stat-label" data-i18n="hero.stat2">Ans de traduction</div>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">8+</div>
+            <div class="hero-stat-label" data-i18n="hero.stat3">Ans en audiovisuel</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <div class="hero-logo-float">
+          <img
+            src="assets/branding/logo-mark-original.png"
+            alt=""
+            class="hero-logo-float__img"
+            width="420"
+            height="420"
+            decoding="async">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── ABOUT ───── -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-wrapper">
+        <div class="about-image-top">
+          <div class="about-image-frame">
+            <img src="assets/about/profile.png" alt="Akuété SEWA-DOVI — fondateur LINGUAPHIX" class="about-photo" width="800" height="800" loading="lazy" decoding="async">
+            <div class="about-name-overlay">
+              <h4>Akuété SEWA-DOVI</h4>
+              <p data-i18n="about.role">Freelance · Consultant · Examinateur TCF</p>
+            </div>
+          </div>
+          <div class="about-stat-card">
+            <div class="num">300+</div>
+            <div class="lbl" data-i18n="about.stat">Plus de 300 clients accompagnés</div>
+          </div>
+        </div>
+        <div class="about-cta-row">
+          <a href="https://linkedin.com/in/akuetesd" target="_blank" class="btn btn-outline" data-i18n="about.linkedin">Voir mon LinkedIn</a>
+          <a href="https://calendly.com/linguaphix/call" target="_blank" class="btn btn-primary" data-i18n="about.cta">Travailler ensemble</a>
+        </div>
+      </div>
+      <div class="about-content fade-up">
+        <span class="badge" data-i18n="about.badge">À propos</span>
+        <h2 data-i18n-html="about.title">Une double expertise,<br>une seule vision</h2>
+        <p data-i18n="about.p1">Fort de plus de 10 ans d'expérience dans l'enseignement de l'anglais langue étrangère (ESL) et examinateur oral certifié au TCF à l'Institut Français du Togo depuis 2022, Akuété SEWA-DOVI combine rigueur académique et créativité visuelle pour offrir des services d'excellence.</p>
+        <p data-i18n="about.p2">Traducteur FR-EN depuis 5 ans spécialisé dans les documents officiels et littéraires, et professionnel de l'audiovisuel depuis 8 ans, LINGUAPHIX est la plateforme qui unit ces deux mondes en parfaite cohérence.</p>
+        <div class="exp-grid">
+          <div class="exp-card fade-up">
+            <div class="exp-icon">🏛️</div>
+            <div class="exp-title" data-i18n="about.exp1.title">Institut Français du Togo</div>
+            <div class="exp-detail" data-i18n="about.exp1.detail">Examinateur TCF · depuis 2022</div>
+          </div>
+          <div class="exp-card fade-up">
+            <div class="exp-icon">📚</div>
+            <div class="exp-title" data-i18n="about.exp2.title">Enseignant ESL / FLE</div>
+            <div class="exp-detail" data-i18n="about.exp2.detail">10+ ans d'expérience</div>
+          </div>
+          <div class="exp-card fade-up">
+            <div class="exp-icon">🌐</div>
+            <div class="exp-title" data-i18n="about.exp3.title">Traducteur FR⇄EN</div>
+            <div class="exp-detail" data-i18n="about.exp3.detail">5+ ans · Docs officiels & livres</div>
+          </div>
+          <div class="exp-card fade-up">
+            <div class="exp-icon">🎬</div>
+            <div class="exp-title" data-i18n="about.exp4.title">Audiovisuel & Design</div>
+            <div class="exp-detail" data-i18n="about.exp4.detail">8+ ans · Production pro</div>
+          </div>
+        </div>
+        <div class="cert-strip" role="list">
+          <span class="cert-pill cert-pill--fr" role="listitem" data-i18n="about.cert.tcf">TCF Certifié</span>
+          <span class="cert-pill cert-pill--en" role="listitem" data-i18n="about.cert.ielts">IELTS Expert</span>
+          <span class="cert-pill cert-pill--en" role="listitem" data-i18n="about.cert.toefl">TOEFL Prep</span>
+          <span class="cert-pill cert-pill--en" role="listitem" data-i18n="about.cert.cambridge">Cambridge Prep</span>
+          <span class="cert-pill cert-pill--en" role="listitem" data-i18n="about.cert.toeic">TOEIC</span>
+          <span class="cert-pill cert-pill--design" role="listitem" data-i18n="about.cert.adobe">Adobe Suite</span>
+          <span class="cert-pill cert-pill--av" role="listitem" data-i18n="about.cert.video">Production Vidéo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── SERVICES ───── -->
+<section id="services" class="section" style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="badge" data-i18n="services.badge">Nos Services</span>
+      <h2 data-i18n="services.title">Services linguistiques</h2>
+      <p data-i18n="services.subtitle">Cours, examens, traduction et formation — sur mesure pour particuliers et entreprises, en ligne et en présentiel.</p>
+    </div>
+
+    <!-- Audience tabs: Individuals / Businesses -->
+    <div class="services-filter-bar" style="margin-bottom:2rem;">
+      <button class="stab active" onclick="switchAudience('all', this)" data-i18n="services.tab.all">Tous</button>
+      <button class="stab" onclick="switchAudience('particuliers', this)" data-i18n="services.tab.ind">Particuliers</button>
+      <button class="stab" onclick="switchAudience('entreprises', this)" data-i18n="services.tab.biz">Entreprises</button>
+    </div>
+
+    <div id="services-catalog" class="services-catalog">
+
+    <!-- Langues — 9 services en grille 3×3 (Particuliers + Entreprises) -->
+    <div class="services-subsection" id="services-langues" data-category="langues">
+      <div class="services-lang-matrix-head">
+        <span class="subsection-title-short" data-i18n="services.subsection.lang">🌐 Langues</span>
+        <span class="subsection-title-full services-lang-matrix-head__ind" data-i18n="services.subsection.lang.ind">🌐 Langues — Particuliers</span>
+        <span class="subsection-title-full services-lang-matrix-head__biz" data-i18n="services.subsection.lang.biz">🌐 Langues — Entreprises</span>
+        <div class="services-subsection-line"></div>
+      </div>
+      <div class="services-lang-matrix grid-3">
+
+        <div class="service-card fade-up" id="service-tcf" data-audience="particuliers">
+          <span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span>
+          <div class="service-card-icon">📝</div>
+          <h3 data-i18n="srv.tcf.title">Préparation au TCF</h3>
+          <p data-i18n="srv.tcf.desc">Préparation intensive au Test de Connaissance du Français par un examinateur officiel certifié. Toutes composantes : CO, CE, EE, EO.</p>
+          <div class="service-card-price price-range" id="price-tcf" data-service-price="tcf"></div>
+          <div class="service-card-cta">
+            <a href="services/tcf.html" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
+            <a href="javascript:void(0)" role="button" class="btn btn-primary" onclick="openPolicy('langues', event, 'tcf')" data-i18n="srv.book">Réserver →</a>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" id="service-ielts" data-audience="particuliers">
+          <span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span>
+          <div class="service-card-icon" aria-hidden="true">🎯</div>
+          <h3 data-i18n="srv.ielts.title">IELTS / TOEFL / Cambridge</h3>
+          <p data-i18n="srv.ielts.desc">Préparation complète aux tests internationaux d'anglais. Coaching personnalisé selon votre objectif de score. Academic & General.</p>
+          <div class="service-card-price price-range" id="price-ielts" data-service-price="ielts"></div>
+          <div class="service-card-cta">
+            <a href="services/ielts.html" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
+            <a href="javascript:void(0)" role="button" class="btn btn-primary" onclick="openPolicy('langues', event, 'ielts')" data-i18n="srv.book">Réserver →</a>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" id="service-toeic" data-audience="particuliers">
+          <span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span>
+          <div class="service-card-icon">🎓</div>
+          <h3 data-i18n="srv.toeic.title">TOEIC</h3>
+          <p data-i18n="srv.toeic.desc">Préparation ciblée au TOEIC Listening & Reading et Speaking & Writing. Stratégies, exercices types et simulations complètes.</p>
+          <div class="service-card-price price-range" id="price-toeic" data-service-price="toeic"></div>
+          <div class="service-card-cta">
+            <a href="services/toeic.html" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
+            <a href="javascript:void(0)" role="button" class="btn btn-primary" onclick="openPolicy('langues', event, 'toeic')" data-i18n="srv.book">Réserver →</a>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" id="service-cours" data-audience="particuliers">
+          <span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span>
+          <div class="service-card-icon">💬</div>
+          <h3 data-i18n="srv.cours.title">Cours de Français / Anglais</h3>
+          <p data-i18n="srv.cours.desc">Cours personnalisés en ligne ou en présentiel. Niveaux A1 à C2. Individuels ou en groupe. Horaires flexibles adaptés à votre agenda.</p>
+          <div class="service-card-price price-range" id="price-cours" data-service-price="cours"></div>
+          <div class="service-card-cta">
+            <a href="services/cours.html" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
+            <a href="javascript:void(0)" role="button" class="btn btn-primary" onclick="openPolicy('langues', event, 'cours')" data-i18n="srv.book">Réserver →</a>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" id="service-interview" data-audience="particuliers">
+          <span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span>
+          <div class="service-card-icon">🎤</div>
+          <h3 data-i18n="srv.interview.title">Préparation aux interviews en anglais</h3>
+          <p data-i18n="srv.interview.desc">Coaching pour entretiens d'embauche, visa, admission universitaire ou professionnel. Vocabulaire ciblé, fluidité, confiance.</p>
+          <div class="service-card-price price-range" id="price-interview" data-service-price="interview"></div>
+          <div class="service-card-cta">
+            <a href="services/interview.html" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
+            <a href="javascript:void(0)" role="button" class="btn btn-primary" onclick="openPolicy('langues', event, 'interview')" data-i18n="srv.book">Réserver →</a>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" id="service-soutien" data-audience="particuliers">
+          <span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span>
+          <div class="service-card-icon">📖</div>
+          <h3 data-i18n="srv.soutien.title">Soutien scolaire</h3>
+          <p data-i18n="srv.soutien.desc">Accompagnement scolaire en français et en anglais pour collégiens et lycéens. Remise à niveau, préparation aux examens, aide aux devoirs.</p>
+          <div class="service-card-price price-range" id="price-soutien" data-service-price="soutien"></div>
+          <div class="service-card-cta">
+            <a href="services/soutien.html" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
+            <a href="javascript:void(0)" role="button" class="btn btn-primary" onclick="openPolicy('langues', event, 'soutien')" data-i18n="srv.book">Réserver →</a>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" id="service-traduction" data-audience="particuliers">
+          <span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span>
+          <div class="service-card-icon">📜</div>
+          <h3 data-i18n="srv.trad.title">Traduction professionnelle FR⇄EN</h3>
+          <p data-i18n="srv.trad.desc">Traduction pour particuliers et entreprises : documents officiels, visas, diplômes, contrats, actes juridiques, livres et articles. Qualité certifiée.</p>
+          <div class="service-card-price price-range" id="price-trad" data-service-price="traduction"></div>
+          <div class="service-card-cta">
+            <a href="services/traduction.html?audience=particuliers" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
+            <a href="javascript:void(0)" role="button" class="btn btn-primary" onclick="openQuoteModal(event)" data-i18n="srv.quote">Demander un devis</a>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" id="service-formation" data-audience="entreprises">
+          <span class="service-card__category service-card__category--biz" data-i18n="services.audience.biz">Entreprises</span>
+          <div class="service-card-icon">🏢</div>
+          <h3 data-i18n="srv.corp.training.title">Formation linguistique en entreprise</h3>
+          <p data-i18n="srv.corp.training.desc">Programmes de formation sur mesure en anglais ou français pour équipes, managers ou directions. En présentiel ou en ligne.</p>
+          <div class="service-card-price price-range" data-service-price="formation"></div>
+          <div class="service-card-cta">
+            <a href="services/formation.html" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
+            <a href="javascript:void(0)" role="button" class="btn btn-primary" onclick="openQuoteModal(event)" data-i18n="srv.quote">Demander un devis</a>
+          </div>
+        </div>
+
+        <div class="service-card fade-up" id="service-traduction-biz" data-audience="entreprises">
+          <span class="service-card__category service-card__category--biz" data-i18n="services.audience.biz">Entreprises</span>
+          <div class="service-card-icon">📜</div>
+          <h3 data-i18n="srv.trad.title">Traduction professionnelle FR⇄EN</h3>
+          <p data-i18n="srv.trad.desc">Traduction pour particuliers et entreprises : documents officiels, visas, diplômes, contrats, actes juridiques, livres et articles. Qualité certifiée.</p>
+          <div class="service-card-price price-range" id="price-trad-biz" data-service-price="traduction" data-service-audience="entreprises"></div>
+          <div class="service-card-cta">
+            <a href="services/traduction.html?audience=entreprises" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
+            <a href="javascript:void(0)" role="button" class="btn btn-primary" onclick="openQuoteModal(event)" data-i18n="srv.quote">Demander un devis</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    </div><!-- /services-catalog -->
+
+    <div class="services-catalogue-cta fade-up">
+      <a href="catalogue.html" class="btn btn-primary btn-lg" data-i18n="services.catalogue.cta">📋 Voir le catalogue complet</a>
+    </div>
+
+    <div class="home-design-teaser fade-up">
+      <a href="design.html" class="btn btn-accent btn-lg" data-i18n="home.design.cta">Découvrir le design →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ───── PROCESS ───── -->
+<section id="process" class="section">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="badge" data-i18n="process.badge">Comment ça marche</span>
+      <h2 data-i18n="process.title">Un processus simple et transparent</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-up">
+        <div class="process-num">1</div>
+        <h3 data-i18n="process.step1.title">Prise de contact</h3>
+        <p data-i18n="process.step1.desc">Via WhatsApp, email ou le formulaire. Réponse sous 24h garantie.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">2</div>
+        <h3 data-i18n="process.step2.title">Appel de découverte</h3>
+        <p data-i18n="process.step2.desc">Consultation gratuite de 30 min pour cerner vos besoins et objectifs.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">3</div>
+        <h3 data-i18n="process.step3.title">Proposition personnalisée</h3>
+        <p data-i18n="process.step3.desc">Devis détaillé et plan de travail adapté à votre profil et budget.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">4</div>
+        <h3 data-i18n="process.step4.title">Acceptation & politique</h3>
+        <p data-i18n="process.step4.desc">Lecture et acceptation des politiques de service avant démarrage.</p>
+      </div>
+      <div class="process-step fade-up">
+        <div class="process-num">5</div>
+        <h3 data-i18n="process.step5.title">Démarrage & suivi</h3>
+        <p data-i18n="process.step5.desc">Début des sessions avec rapports de progression réguliers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── TESTIMONIALS ───── -->
+<section id="testimonials" class="section section-testimonials">
+  <div class="container">
+    <div class="testimonials-block">
+      <div class="section-header fade-up">
+        <span class="badge" data-i18n="testi.badge">Témoignages</span>
+        <h2 data-i18n="testi.title">Ce que disent nos clients</h2>
+        <p data-i18n="testi.subtitle">Des résultats concrets et des transformations réelles.</p>
+      </div>
+      <div class="testimonials-grid" id="testimonialsGrid" aria-live="polite"></div>
+      <p class="testimonials-empty" id="testimonialsEmpty" data-i18n="testi.empty">
+        Aucun témoignage publié pour le moment. Soyez le premier à partager votre expérience ci-dessous.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ───── ADD TESTIMONIAL ───── -->
+<section id="add-testimonial" class="section-sm">
+  <div class="container">
+    <div class="section-header">
+      <h2 data-i18n="addtesti.title">Partagez votre expérience</h2>
+    </div>
+    <div class="testimonial-form-card">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="t-name" data-i18n="form.name">Nom complet *</label>
+          <input type="text" id="t-name" class="form-control" data-i18n-placeholder="form.ph.name" placeholder="Ex: Jean Dupont">
+        </div>
+        <div class="form-group">
+          <label for="t-service" data-i18n="form.service">Service utilisé *</label>
+          <select id="t-service" class="form-control">
+            <option value="" data-i18n="form.select">— Sélectionner —</option>
+            <optgroup data-i18n-label="optgroup.langues" label="Langues">
+              <option value="tcf" data-i18n="opt.tcf">Préparation TCF</option>
+              <option value="ielts" data-i18n="opt.ielts">IELTS / TOEFL</option>
+              <option value="toeic" data-i18n="opt.toeic">TOEIC</option>
+              <option value="cambridge" data-i18n="opt.cambridge">Cambridge</option>
+              <option value="cours" data-i18n="opt.cours">Cours de Français/Anglais</option>
+              <option value="traduction" data-i18n="opt.traduction">Traduction</option>
+              <option value="soutien" data-i18n="opt.soutien">Soutien scolaire</option>
+              <option value="interview" data-i18n="opt.interview">Préparation Interview</option>
+              <option value="formation" data-i18n="opt.formation">Formation en entreprise</option>
+            </optgroup>
+            <optgroup data-i18n-label="optgroup.design" label="Design">
+              <option value="logo" data-i18n="opt.logo">Création de Logo</option>
+              <option value="montage" data-i18n="opt.montage">Montage Vidéo</option>
+              <option value="design" data-i18n="opt.design">Design Graphique</option>
+              <option value="livestream" data-i18n="opt.livestream">Live Streaming</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="t-rating" data-i18n="form.rating">Note *</label>
+        <div id="starRating" style="display:flex;gap:0.5rem;font-size:1.8rem;cursor:pointer;color:#ddd;">
+          <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
+        </div>
+        <input type="hidden" id="t-rating" value="0">
+      </div>
+      <div class="form-group">
+        <label for="t-text" data-i18n="form.message">Votre témoignage *</label>
+        <textarea id="t-text" class="form-control" rows="4" data-i18n-placeholder="form.ph.testimonial" placeholder="Décrivez votre expérience avec LINGUAPHIX..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="t-location" data-i18n="form.location">Ville / Pays</label>
+        <input
+          type="text"
+          id="t-location"
+          name="location"
+          class="form-control"
+          list="country-list"
+          autocomplete="off"
+          data-i18n-placeholder="form.ph.location"
+          placeholder="Ex: Lomé, Togo">
+        <datalist id="country-list"></datalist>
+        <p class="form-hint" data-i18n="form.location.hint">Sélectionnez un pays dans la liste ou saisissez librement (ville, pays).</p>
+      </div>
+      <div id="testi-msg" style="display:none;padding:1rem;border-radius:var(--radius-sm);margin-bottom:1rem;font-size:0.9rem;font-family:var(--font-display);"></div>
+      <button class="btn btn-primary" onclick="submitTestimonial()" data-i18n="form.submit">Soumettre mon témoignage →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ───── BOOKING ───── -->
+<section id="booking" class="section">
+  <div class="container">
+    <div class="booking-inner">
+      <div class="booking-aside fade-up">
+        <div class="booking-aside-top">
+          <div class="calendly-widget">
+            <div class="calendly-widget__head">
+              <span class="calendly-widget__icon" aria-hidden="true">📅</span>
+              <h3 data-i18n="booking.cal.title">Réserver un appel</h3>
+            </div>
+            <p class="calendly-widget__desc" data-i18n="booking.cal.desc">Choisissez le créneau qui vous convient directement dans mon agenda.</p>
+            <a href="https://calendly.com/linguaphix/call" target="_blank" class="calendly-btn" data-i18n="booking.cal.cta">Ouvrir le calendrier →</a>
+            <p class="calendly-alt">
+              <span data-i18n="booking.cal.alt.prefix">Ou </span>
+              <a href="https://wa.me/22892539953" target="_blank" rel="noopener noreferrer" data-i18n="booking.cal.alt.link">WhatsApp</a>
+            </p>
+          </div>
+        </div>
+        <div class="booking-actions">
+          <a href="https://wa.me/22892539953" target="_blank" class="btn btn-white" data-i18n="booking.wa">💬 WhatsApp direct</a>
+          <a href="mailto:contact@linguaphix.com" class="btn btn-booking-email" data-i18n="booking.email">✉️ Envoyer un email</a>
+        </div>
+      </div>
+      <div class="booking-content fade-up">
+        <span class="badge booking-badge" data-i18n="booking.badge">Réservation</span>
+        <h2 data-i18n="booking.title">Prêt à passer à l'action ?</h2>
+        <p data-i18n="booking.desc">Réservez un appel de découverte gratuit de 30 minutes. Ensemble, nous définirons le plan le plus adapté à vos objectifs.</p>
+        <ul class="booking-features">
+          <li data-i18n="booking.f1">Consultation 100% gratuite</li>
+          <li data-i18n="booking.f2">Aucun engagement requis</li>
+          <li data-i18n="booking.f3">Disponible en ligne (Zoom, Google Meet, WhatsApp)</li>
+          <li data-i18n="booking.f4">Réponse dans les 24h</li>
+          <li data-i18n="booking.f5">Devis personnalisé offert</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── CONTACT ───── -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="fade-up">
+        <span class="badge" data-i18n="contact.badge">Contact</span>
+        <h2 data-i18n="contact.title">Parlons de votre projet</h2>
+        <p data-i18n="contact.desc">Disponible par WhatsApp, email ou LinkedIn. Réponse garantie sous 24 heures ouvrées.</p>
+        <div class="contact-links" style="margin-top:1.5rem;">
+          <a href="https://wa.me/22892539953" target="_blank" class="contact-link">
+            <div class="contact-link-icon wa">💬</div>
+            <div>
+              <div class="contact-link-label">WhatsApp</div>
+              <div class="contact-link-sub">+228 92 53 99 53</div>
+            </div>
+          </a>
+          <a href="mailto:contact@linguaphix.com" class="contact-link">
+            <div class="contact-link-icon green">✉️</div>
+            <div>
+              <div class="contact-link-label">Email</div>
+              <div class="contact-link-sub">contact@linguaphix.com</div>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/akuetesd" target="_blank" class="contact-link">
+            <div class="contact-link-icon li">💼</div>
+            <div>
+              <div class="contact-link-label">LinkedIn</div>
+              <div class="contact-link-sub">linkedin.com/in/akuetesd</div>
+            </div>
+          </a>
+          <a href="https://calendly.com/linguaphix/call" target="_blank" class="contact-link">
+            <div class="contact-link-icon green">📅</div>
+            <div>
+              <div class="contact-link-label">Calendly</div>
+              <div class="contact-link-sub">Réserver un appel gratuit</div>
+            </div>
+          </a>
+          <a href="catalogue.html" class="contact-link">
+            <div class="contact-link-icon wa">📋</div>
+            <div>
+              <div class="contact-link-label" data-i18n="contact.catalogue">Catalogue des services</div>
+              <div class="contact-link-sub" data-i18n="contact.catalogue.sub">Voir toutes nos offres en images</div>
+            </div>
+          </a>
+        </div>
+
+        <details class="payment-methods fade-up" id="contact-payment-methods">
+          <summary class="payment-methods__summary">
+            <span data-i18n="payment.toggle">Voir les modes de paiement acceptés</span>
+            <span class="payment-methods__chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="payment-methods__panel">
+            <ul class="payment-methods__list">
+              <li class="payment-method payment-method--mixx">
+                <img src="assets/payments/mixx-by-yas.png" alt="Mixx by Yas" class="payment-method__logo payment-method__logo--mixx" width="200" height="56" decoding="async">
+                <div class="payment-method__details">
+                  <span class="payment-method__label" data-i18n="payment.mixx">Paiement mobile Mixx by Yas</span>
+                  <a href="tel:+22892539953" class="payment-method__number" data-site-phone-display>+228 92 53 99 53</a>
+                </div>
+              </li>
+              <li class="payment-method payment-method--orabank">
+                <img src="assets/payments/orabank.png" alt="Orabank" class="payment-method__logo payment-method__logo--orabank" width="160" height="40" decoding="async">
+                <p class="payment-method__note" data-i18n="payment.orabank.note">Virement Orabank : les coordonnées bancaires vous seront transmises avec le devis de la prestation concernée.</p>
+              </li>
+            </ul>
+          </div>
+        </details>
+      </div>
+      <div class="contact-form-card question-form-card fade-up">
+        <h3 data-i18n="contact.form.title">Posez votre question</h3>
+        <p class="question-form-intro" data-i18n="contact.form.subtitle">Une question sur nos services, tarifs ou disponibilités ? Envoyez par email ou WhatsApp.</p>
+        <form id="contact-question-form" onsubmit="event.preventDefault()">
+          <div class="form-honeypot" aria-hidden="true">
+            <label for="c-website">Website</label>
+            <input type="text" id="c-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="c-name" data-i18n="form.name">Nom complet *</label>
+              <input type="text" id="c-name" name="name" class="form-control" required data-i18n-placeholder="form.ph.contact.name" placeholder="Votre nom">
+            </div>
+            <div class="form-group">
+              <label for="c-email" data-i18n="form.email">Email *</label>
+              <input type="email" id="c-email" name="email" class="form-control" required data-i18n-placeholder="form.ph.email" placeholder="votre@email.com">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-service" data-i18n="contact.form.service">Service concerné *</label>
+            <select id="c-service" name="service" class="form-control" required>
+              <option value="" data-i18n="form.select">— Sélectionner —</option>
+              <optgroup data-i18n-label="optgroup.langues" label="Langues">
+                <option value="tcf" data-i18n="opt.tcf">Préparation TCF</option>
+                <option value="ielts" data-i18n="opt.ielts">IELTS / TOEFL / Cambridge</option>
+                <option value="toeic" data-i18n="opt.toeic">TOEIC</option>
+                <option value="cambridge" data-i18n="opt.cambridge">Cambridge</option>
+                <option value="cours" data-i18n="opt.cours">Cours de Français / Anglais</option>
+                <option value="traduction" data-i18n="opt.traduction">Traduction</option>
+                <option value="soutien" data-i18n="opt.soutien">Soutien scolaire</option>
+                <option value="interview" data-i18n="opt.interview">Préparation aux interviews</option>
+                <option value="formation" data-i18n="opt.formation">Formation en entreprise</option>
+              </optgroup>
+              <optgroup data-i18n-label="optgroup.design" label="Design">
+                <option value="logo" data-i18n="opt.logo">Création de logo</option>
+                <option value="montage" data-i18n="opt.montage">Montage vidéo</option>
+                <option value="design" data-i18n="opt.design">Design graphique</option>
+                <option value="livestream" data-i18n="opt.livestream">Live streaming</option>
+                <option value="mat" data-i18n="opt.mat">Conseil & Achat de matériel</option>
+              </optgroup>
+              <option value="autre" data-i18n="opt.autre">Autre</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="c-question" data-i18n="contact.form.question">Votre question *</label>
+            <textarea id="c-question" name="message" class="form-control" rows="5" required data-i18n-placeholder="form.ph.question" placeholder="Posez votre question en détail..."></textarea>
+          </div>
+          <div id="contact-msg" class="form-feedback" role="status" aria-live="polite" hidden></div>
+          <div class="question-form-actions">
+            <button type="button" class="btn btn-primary btn-lg" data-contact-action="email" onclick="submitContact(event)" data-i18n="contact.form.submit.email">Envoyer par email →</button>
+            <button type="button" class="btn btn-accent btn-lg" data-contact-action="whatsapp" onclick="sendContactViaWhatsApp(event)" data-i18n="contact.form.submit.whatsapp">Envoyer via WhatsApp →</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───── FOOTER ───── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-brand-row">
+          <span class="brand-mark brand-mark--sm">
+            <img src="assets/branding/logo-mark-original.png" alt="" class="brand-mark__img" width="32" height="32" decoding="async">
+          </span>
+          <h4>LINGUAPHIX</h4>
+        </div>
+        <p data-i18n="footer.tagline">Langues · Design · Excellence.<br>Votre expert en communication et créativité visuelle.</p>
+        <div class="footer-social" style="margin-top:1.25rem;">
+          <a href="https://linkedin.com/in/akuetesd" target="_blank" title="LinkedIn">in</a>
+          <a href="https://wa.me/22892539953" target="_blank" title="WhatsApp">💬</a>
+          <a href="mailto:contact@linguaphix.com" title="Email">✉</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.col1">Langues</h5>
+        <ul>
+          <li><a href="#service-tcf" data-i18n="footer.tcf">Préparation TCF</a></li>
+          <li><a href="#service-ielts" data-i18n="srv.ielts.title">IELTS / TOEFL / Cambridge</a></li>
+          <li><a href="#service-toeic" data-i18n="srv.toeic.title">TOEIC</a></li>
+          <li><a href="#service-cours" data-i18n="footer.cours">Cours de langues</a></li>
+          <li><a href="#service-traduction" data-i18n="footer.trad">Traduction</a></li>
+          <li><a href="#service-soutien" data-i18n="footer.soutien">Soutien scolaire</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.col2">Design</h5>
+        <ul>
+          <li><a href="design.html" data-i18n="footer.design.services">Services design</a></li>
+          <li><a href="design.html#service-logo" data-i18n="footer.logo">Création de logo</a></li>
+          <li><a href="design.html#service-montage" data-i18n="footer.montage">Montage vidéo</a></li>
+          <li><a href="design.html#service-graphic" data-i18n="footer.design">Design graphique</a></li>
+          <li><a href="design.html#service-livestream" data-i18n="footer.live">Live Streaming</a></li>
+          <li><a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-i18n="footer.col3">Liens rapides</h5>
+        <ul>
+          <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+          <li><a href="design.html" data-i18n="nav.design">Design</a></li>
+          <li><a href="#testimonials" data-i18n="nav.testimonials">Témoignages</a></li>
+          <li><a href="javascript:void(0)" role="button" data-open-service-book data-i18n="nav.cta">Réserver</a></li>
+          <li><a href="policy.html" data-i18n="footer.policy">Politique de confidentialité</a></li>
+          <li><a href="sitemap.html" data-i18n="footer.sitemap">Plan du site</a></li>
+          <li><a href="catalogue.html" data-i18n="footer.catalogue">Catalogue</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        <span data-i18n="footer.copy.prefix">© 2026 LINGUAPHIX · Developed by </span>
+        <a href="#about" data-i18n="footer.copy.name">Akuété SEWA-DOVI</a>
+        <span data-i18n="footer.copy.suffix"> · All rights reserved</span>
+      </p>
+      <div class="footer-bottom__links">
+        <a href="policy.html" data-i18n="footer.policy">Politique de confidentialité</a>
+        <a href="mailto:contact@linguaphix.com">contact@linguaphix.com</a>
+        <a href="sitemap.html" data-i18n="footer.sitemap">Plan du site</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ───── WHATSAPP FLOAT ───── -->
+<a href="https://wa.me/22892539953" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span data-i18n="wa.float">WhatsApp</span>
+</a>
+
+<!-- ───── BACK TO TOP ───── -->
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Haut de page">↑</button>
+
+<!-- ───── SERVICE PICKER (book appointment) ───── -->
+<div class="modal-overlay" id="serviceBookModal" role="dialog" aria-modal="true" aria-labelledby="serviceBookModalTitle">
+  <div class="modal-box modal-box--service-pick" style="position:relative;">
+    <button type="button" class="modal-close-btn" onclick="closeServiceBookModal()" aria-label="Fermer">✕</button>
+    <h3 id="serviceBookModalTitle" data-i18n="bookPick.title">Choisir un service</h3>
+    <p class="service-book-modal__lead" data-i18n="bookPick.lead">Sélectionnez la prestation à réserver. Vous serez dirigé vers la page de réservation du service.</p>
+    <div id="serviceBookModalList" class="service-book-modal__body"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-outline" onclick="closeServiceBookModal()" data-i18n="bookPick.close">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ───── QUOTE MODAL ───── -->
+<div class="modal-overlay" id="quoteModal">
+  <div class="modal-box" style="position:relative;">
+    <button type="button" class="modal-close-btn" onclick="closeQuoteModal()" aria-label="Fermer">✕</button>
+    <h3 data-i18n="quote.modal.title">Demander un devis</h3>
+    <p data-i18n="quote.modal.text">Décrivez votre projet via le formulaire « Posez votre question » dans la section Contact. Nous vous répondons par email sous 24h avec le devis et les modalités de paiement (Mixx by Yas, Orabank).</p>
+    <details class="payment-methods payment-methods--compact" id="quote-payment-methods">
+      <summary class="payment-methods__summary">
+        <span data-i18n="payment.toggle">Voir les modes de paiement acceptés</span>
+        <span class="payment-methods__chevron" aria-hidden="true"></span>
+      </summary>
+      <div class="payment-methods__panel">
+        <ul class="payment-methods__list">
+          <li class="payment-method payment-method--mixx">
+            <img src="assets/payments/mixx-by-yas.png" alt="Mixx by Yas" class="payment-method__logo payment-method__logo--mixx" width="180" height="50" decoding="async">
+            <div class="payment-method__details">
+              <span class="payment-method__label" data-i18n="payment.mixx">Paiement mobile Mixx by Yas</span>
+              <a href="tel:+22892539953" class="payment-method__number" data-site-phone-display>+228 92 53 99 53</a>
+            </div>
+          </li>
+          <li class="payment-method payment-method--orabank">
+            <img src="assets/payments/orabank.png" alt="Orabank" class="payment-method__logo payment-method__logo--orabank" width="140" height="36" decoding="async">
+            <p class="payment-method__note" data-i18n="payment.orabank.note">Virement Orabank : les coordonnées bancaires vous seront transmises avec le devis de la prestation concernée.</p>
+          </li>
+        </ul>
+      </div>
+    </details>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-primary" onclick="goToContactFromQuote()" data-i18n="quote.modal.go">Aller au formulaire →</button>
+      <button type="button" class="btn btn-outline" onclick="closeQuoteModal()" data-i18n="quote.modal.close">Fermer</button>
+    </div>
+  </div>
+</div>
+
+<!-- ───── SERVICE POLICY MODAL ───── -->
+<div class="modal-overlay" id="policyModal">
+  <div class="modal-box" style="position:relative;">
+    <button class="modal-close-btn" onclick="closePolicy()">✕</button>
+    <h3 id="modalTitle">Politique de service — Langues</h3>
+    <div id="modalContent"></div>
+    <div class="modal-actions">
+      <button class="btn btn-primary" onclick="acceptAndBook()" data-i18n="modal.accept">J'accepte & Je réserve →</button>
+      <button class="btn btn-outline" onclick="closePolicy()" data-i18n="modal.decline">Retour</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/countries.js"></script>
+<script src="js/policy-package-scopes.js"></script>
+<script src="js/policy-content.js"></script>
+<script src="js/service-pages-data.js"></script>
+<script src="js/service-home-prices.js"></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

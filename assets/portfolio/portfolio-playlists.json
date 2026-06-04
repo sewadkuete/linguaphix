@@ -1,0 +1,211 @@
+{
+  "version": 2,
+  "generatedAt": "2026-06-04T17:53:24.939Z",
+  "playlists": {
+    "video-1": {
+      "cover": {
+        "kind": "file",
+        "src": "assets/portfolio/playlists/video-1/01-yma1.mp4",
+        "mime": "video/mp4",
+        "label": "YMA — Logo animation"
+      },
+      "items": [
+        {
+          "kind": "file",
+          "src": "assets/portfolio/playlists/video-1/01-yma1.mp4",
+          "mime": "video/mp4",
+          "label": "YMA — Logo animation"
+        },
+        {
+          "kind": "file",
+          "src": "assets/portfolio/playlists/video-1/02-cogito-anime-blanc.mp4",
+          "mime": "video/mp4",
+          "label": "Le Cogitorium — Logo animation"
+        },
+        {
+          "kind": "file",
+          "src": "assets/portfolio/playlists/video-1/03-eigd-logo-flat-animated.mp4",
+          "mime": "video/mp4",
+          "label": "EIGD — Logo animation"
+        },
+        {
+          "kind": "file",
+          "src": "assets/portfolio/playlists/video-1/04-audinalys-consult.mp4",
+          "mime": "video/mp4",
+          "label": "Audinalys Consult — Logo animation"
+        }
+      ]
+    },
+    "video-2": {
+      "cover": {
+        "kind": "tiktok",
+        "url": "https://www.tiktok.com/@anguillessousdroit",
+        "handle": "@anguillessousdroit",
+        "label": "Anguillessousdroit"
+      },
+      "items": []
+    },
+    "graphic-1": {
+      "cover": {
+        "kind": "image",
+        "src": "assets/portfolio/playlists/graphic-1/01-light-your-home-feels-light.png",
+        "label": "LIGHT — Your home feels light"
+      },
+      "items": [
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-1/01-light-your-home-feels-light.png",
+          "label": "LIGHT — Your home feels light"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-1/02-light-your-home-feels-ellipsis.png",
+          "label": "LIGHT — Your home feels…"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-1/03-embrace.png",
+          "label": "EMBRACE"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-1/04-healthy-build.png",
+          "label": "Healthy Build"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-1/05-body-peace.png",
+          "label": "Body Peace"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-1/06-cool-lens.png",
+          "label": "Cool Lens"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-1/07-2ap-audit-advisory.png",
+          "label": "2AP Audit & Advisory Partners"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-1/08-new-look-house-bw.png",
+          "label": "New Look House (mono)"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-1/09-new-look-house-color.png",
+          "label": "New Look House (color)"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-1/10-exca-togo.png",
+          "label": "ExCA — Expertise Conseil Audit"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-1/11-vejec.png",
+          "label": "VEJEC — Églises"
+        }
+      ]
+    },
+    "graphic-2": {
+      "cover": {
+        "kind": "image",
+        "src": "assets/portfolio/playlists/graphic-2/01-cogitorium-agenda-tips.png",
+        "label": "Le Cogitorium — Agenda & organisation (1)"
+      },
+      "items": [
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-2/01-cogitorium-agenda-tips.png",
+          "label": "Le Cogitorium — Agenda & organisation (1)"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-2/02-cogitorium-family-planner.png",
+          "label": "Le Cogitorium — Agenda familial (2)"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-2/03-cogitorium-study-routine.png",
+          "label": "Le Cogitorium — Coin devoir & routine (3)"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-2/04-cogitorium-contact.png",
+          "label": "Le Cogitorium — Contact (4)"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-2/05-cogitorium-weekly-schedule.png",
+          "label": "Le Cogitorium — Planning hebdomadaire (5)"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-2/06-cogitorium-sleep-memory.png",
+          "label": "Le Cogitorium — Sommeil & mémorisation (6)"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-2/07-cogitorium-coaching.png",
+          "label": "Le Cogitorium — Soutien & coaching (7)"
+        }
+      ]
+    },
+    "graphic-3": {
+      "cover": {
+        "kind": "image",
+        "src": "assets/portfolio/playlists/graphic-3/01-exca-flyer-services.png",
+        "label": "ExCA — Flyer services"
+      },
+      "items": [
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-3/01-exca-flyer-services.png",
+          "label": "ExCA — Flyer services"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-3/02-exca-print-mockups.png",
+          "label": "ExCA — Print & stationery mockups"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-3/03-atklingo-services-poster.png",
+          "label": "atklingo — Services poster"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-3/04-new-look-house-tote.png",
+          "label": "New Look House — Tote bag"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-3/05-new-look-house-poster.png",
+          "label": "New Look House — Brand poster"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-3/06-new-look-house-tshirt.png",
+          "label": "New Look House — T-shirt mockup"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-3/07-cogitorium-teachers-day.png",
+          "label": "Le Cogitorium — Teachers' Day"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-3/08-cogitorium-homework.png",
+          "label": "Le Cogitorium — Homework support"
+        },
+        {
+          "kind": "image",
+          "src": "assets/portfolio/playlists/graphic-3/09-cogitorium-octobre-rose.png",
+          "label": "Le Cogitorium — Octobre Rose"
+        }
+      ]
+    }
+  }
+}

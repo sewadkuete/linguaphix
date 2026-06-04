@@ -1,0 +1,179 @@
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.join(__dirname, '..');
+const outDir = path.join(root, 'services');
+
+const slugs = [
+  'tcf', 'ielts', 'toeic', 'cours', 'interview', 'soutien', 'traduction', 'formation',
+  'logo', 'montage', 'graphic', 'livestream', 'materiel',
+];
+
+function shell(slug, titleFr, descFr) {
+  const canonical = `https://linguaphix.com/services/${slug}.html`;
+  return `<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script src="../js/lang-detect.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>LINGUAPHIX | ${titleFr}</title>
+<meta name="description" content="${descFr}">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="LINGUAPHIX | ${titleFr}">
+<meta property="og:description" content="${descFr}">
+<meta property="og:image" content="https://linguaphix.com/assets/branding/logo-full.png">
+<meta property="og:url" content="${canonical}">
+<meta property="og:type" content="website">
+<link rel="canonical" href="${canonical}">
+<link rel="icon" href="../assets/branding/logo-mark-original.png" type="image/png">
+<script src="../js/site-config.js"></script>
+<script src="../js/site-config.local.js"></script>
+<script src="../js/analytics.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="page-service" data-service-slug="${slug}">
+
+<nav id="navbar" class="scrolled">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo" aria-label="LINGUAPHIX — Accueil">
+        <span class="nav-logo-icon brand-mark brand-mark--md">
+          <img src="../assets/branding/logo-mark-original.png" alt="" class="brand-mark__img" width="38" height="38" decoding="async">
+        </span>
+        <span class="nav-logo-text" id="nav-brand">LINGUAPHIX</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="../index.html#about" data-i18n="nav.about">À propos</a></li>
+        <li><a href="../index.html#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="../design.html" data-i18n="nav.design">Design</a></li>
+        <li><a href="../index.html#testimonials" data-i18n="nav.testimonials">Témoignages</a></li>
+        <li><a href="../index.html#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-toggle__btn is-active" data-lang="fr" aria-pressed="true" onclick="setLang('fr')">FR</button>
+          <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="false" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="javascript:void(0)" role="button" class="btn btn-primary" data-open-service-book data-i18n="nav.cta">Réserver un appel</a>
+        <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMobileMenu()">✕</button>
+  <div class="lang-toggle mobile-lang-toggle" role="group" aria-label="Language">
+    <button type="button" class="lang-toggle__btn is-active" data-lang="fr" aria-pressed="true" onclick="setLang('fr');">FR</button>
+    <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="false" onclick="setLang('en');">EN</button>
+  </div>
+  <a href="../index.html#about" onclick="toggleMobileMenu()" data-i18n="nav.about">À propos</a>
+  <a href="../index.html#services" onclick="toggleMobileMenu()" data-i18n="nav.services">Services</a>
+  <a href="../design.html" onclick="toggleMobileMenu()" data-i18n="nav.design">Design</a>
+  <a href="../index.html#testimonials" onclick="toggleMobileMenu()" data-i18n="nav.testimonials">Témoignages</a>
+  <a href="../index.html#contact" onclick="toggleMobileMenu()" data-i18n="nav.contact">Contact</a>
+  <a href="javascript:void(0)" role="button" class="btn btn-white btn-lg" data-open-service-book data-i18n="nav.cta" style="margin-top:1rem;">Réserver un appel</a>
+</div>
+
+<main id="service-page-root" class="service-page"></main>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <p class="footer-copy">
+        <span data-i18n="footer.copy.prefix">© 2026 LINGUAPHIX · Developed by </span>
+        <a href="../index.html#about" data-i18n="footer.copy.name">Akuété SEWA-DOVI</a>
+        <span data-i18n="footer.copy.suffix"> · All rights reserved</span>
+      </p>
+      <div class="footer-bottom__links">
+        <a href="../index.html" data-i18n="portfolio.page.home">Accueil</a>
+        <a href="../catalogue.html" data-i18n="footer.catalogue">Catalogue</a>
+        <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<a href="https://wa.me/22892539953" target="_blank" class="wa-float" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span data-i18n="wa.float">WhatsApp</span>
+</a>
+
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Haut de page">↑</button>
+
+<div class="modal-overlay" id="quoteModal">
+  <div class="modal-box" style="position:relative;">
+    <button type="button" class="modal-close-btn" onclick="closeQuoteModal()" aria-label="Fermer">✕</button>
+    <h3 data-i18n="quote.modal.title">Demander un devis</h3>
+    <p data-i18n="quote.modal.text">Décrivez votre projet via le formulaire dans la section Contact.</p>
+    <button type="button" class="btn btn-primary" onclick="goToContactFromQuote()" data-i18n="quote.modal.go">Aller au formulaire →</button>
+    <button type="button" class="btn btn-outline" onclick="closeQuoteModal()" data-i18n="quote.modal.close">Fermer</button>
+  </div>
+</div>
+
+<div class="modal-overlay" id="policyModal">
+  <div class="modal-box modal-box--policy" style="position:relative;">
+    <button type="button" class="modal-close-btn" onclick="closePolicy()" aria-label="Fermer">✕</button>
+    <h3 id="modalTitle"></h3>
+    <div id="modalContent"></div>
+    <div class="modal-actions">
+      <button type="button" class="btn btn-primary" onclick="acceptAndBook()" data-i18n="modal.accept">J'accepte</button>
+      <button type="button" class="btn btn-outline" onclick="closePolicy()" data-i18n="modal.decline">Retour</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/locale-pricing.js"></script>
+<script src="../js/policy-package-scopes.js"></script>
+<script src="../js/policy-content.js"></script>
+<script src="../js/app.js"></script>
+<script src="../js/service-pages-data.js"></script>
+<script src="../js/service-audience.js"></script>
+<script src="../js/mode-price-tiles.js"></script>
+<script src="../js/service-booking-config.js"></script>
+<script src="../js/service-booking.js"></script>
+<script src="../js/service-page.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    syncNavbarScrolledState();
+    applyLang(typeof getPreferredLang === 'function' ? getPreferredLang() : 'fr');
+    initModals();
+    applySitePhones();
+  });
+</script>
+</body>
+</html>
+`;
+}
+
+// Read meta from data file via dynamic import is complex; use minimal map
+const meta = {
+  tcf: ['Préparation au TCF', 'Préparation TCF examinateur certifié — LINGUAPHIX'],
+  ielts: ['IELTS / TOEFL / Cambridge', 'Préparation IELTS TOEFL Cambridge — LINGUAPHIX'],
+  toeic: ['TOEIC', 'Préparation TOEIC — LINGUAPHIX'],
+  cours: ['Cours de Français / Anglais', 'Cours de langues personnalisés — LINGUAPHIX'],
+  interview: ['Préparation aux interviews', 'Coaching entretiens en anglais — LINGUAPHIX'],
+  soutien: ['Soutien scolaire', 'Soutien scolaire FR/EN — LINGUAPHIX'],
+  traduction: ['Traduction FR⇄EN', 'Traduction professionnelle — LINGUAPHIX'],
+  formation: ['Formation en entreprise', 'Formation linguistique entreprise — LINGUAPHIX'],
+  logo: ['Création de logo', 'Logo et animation — LINGUAPHIX'],
+  montage: ['Montage vidéo', 'Montage vidéo professionnel — LINGUAPHIX'],
+  graphic: ['Design graphique', 'Design graphique — LINGUAPHIX'],
+  livestream: ['Live streaming', 'Production live streaming — LINGUAPHIX'],
+  materiel: ['Conseil matériel AV', 'Conseil matériel audiovisuel — LINGUAPHIX'],
+};
+
+fs.mkdirSync(outDir, { recursive: true });
+for (const slug of slugs) {
+  const [title, desc] = meta[slug];
+  fs.writeFileSync(path.join(outDir, `${slug}.html`), shell(slug, title, desc), 'utf8');
+}
+console.log(`Generated ${slugs.length} pages in services/`);

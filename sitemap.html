@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<script src="js/lang-detect.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>LINGUAPHIX | Plan du site</title>
+<meta name="description" content="Plan du site LINGUAPHIX — accès rapide aux pages, sections et contacts importants.">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="LINGUAPHIX | Plan du site">
+<meta property="og:description" content="Tous les liens importants du site LINGUAPHIX.">
+<meta property="og:image" content="https://linguaphix.com/assets/branding/logo-full.png">
+<meta property="og:url" content="https://linguaphix.com/sitemap.html">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://linguaphix.com/sitemap.html">
+<link rel="icon" href="assets/branding/logo-mark-original.png" type="image/png">
+<script src="js/site-config.js"></script>
+<script src="js/site-config.local.js"></script>
+<script src="js/analytics.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page-sitemap">
+
+<nav id="navbar" class="scrolled">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo nav-logo--full" aria-label="LINGUAPHIX — Accueil">
+        <img src="assets/branding/logo-full.png" alt="LINGUAPHIX" class="nav-logo-full__img" width="240" height="52" decoding="async">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about" data-i18n="nav.about">À propos</a></li>
+        <li><a href="index.html#services" data-i18n="nav.services">Services</a></li>
+        <li><a href="index.html#testimonials" data-i18n="nav.testimonials">Témoignages</a></li>
+        <li><a href="design.html" data-i18n="nav.design">Design</a></li>
+        <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" class="lang-toggle__btn is-active" data-lang="fr" aria-pressed="true" onclick="setLang('fr')">FR</button>
+          <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="false" onclick="setLang('en')">EN</button>
+        </div>
+        <a href="javascript:void(0)" role="button" class="btn btn-primary" data-open-service-book data-i18n="nav.cta">Réserver un appel</a>
+        <button class="nav-hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMobileMenu()">✕</button>
+  <div class="lang-toggle mobile-lang-toggle" role="group" aria-label="Language">
+    <button type="button" class="lang-toggle__btn is-active" data-lang="fr" aria-pressed="true" onclick="setLang('fr');">FR</button>
+    <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="false" onclick="setLang('en');">EN</button>
+  </div>
+  <a href="index.html#about" onclick="toggleMobileMenu()" data-i18n="nav.about">À propos</a>
+  <a href="index.html#services" onclick="toggleMobileMenu()" data-i18n="nav.services">Services</a>
+  <a href="index.html#testimonials" onclick="toggleMobileMenu()" data-i18n="nav.testimonials">Témoignages</a>
+  <a href="design.html" onclick="toggleMobileMenu()" data-i18n="nav.design">Design</a>
+  <a href="index.html#contact" onclick="toggleMobileMenu()" data-i18n="nav.contact">Contact</a>
+  <a href="javascript:void(0)" role="button" class="btn btn-white btn-lg" data-open-service-book data-i18n="nav.cta" style="margin-top:1rem;">Réserver un appel</a>
+</div>
+
+<main class="sitemap-page section">
+  <div class="container">
+    <p class="policy-back"><a href="index.html" data-i18n="sitemap.page.back">← Retour au site</a></p>
+    <div class="sitemap-content">
+      <span class="badge" data-i18n="sitemap.badge">Navigation</span>
+      <h1 data-i18n="sitemap.title">Plan du site</h1>
+      <p class="sitemap-intro" data-i18n="sitemap.intro">Retrouvez ici toutes les pages et sections importantes de LINGUAPHIX.</p>
+
+      <div class="sitemap-grid">
+        <section class="sitemap-block">
+          <h2 data-i18n="sitemap.h.pages">Pages principales</h2>
+          <ul class="sitemap-links">
+            <li><a href="index.html" data-i18n="sitemap.link.home">Accueil</a></li>
+            <li><a href="design.html" data-i18n="sitemap.link.design">Design — Services créatifs</a></li>
+            <li><a href="portfolio.html" data-i18n="sitemap.link.portfolio">Portfolio — Vidéo & design</a></li>
+            <li><a href="catalogue.html" data-i18n="sitemap.link.catalogue">Catalogue des services</a></li>
+            <li><a href="policy.html" data-i18n="sitemap.link.policy">Politique & confidentialité</a></li>
+            <li><a href="sitemap.html" aria-current="page" data-i18n="sitemap.link.sitemap">Plan du site</a></li>
+          </ul>
+        </section>
+
+        <section class="sitemap-block">
+          <h2 data-i18n="sitemap.h.home">Page d'accueil — sections</h2>
+          <ul class="sitemap-links">
+            <li><a href="index.html#about" data-i18n="nav.about">À propos</a></li>
+            <li><a href="index.html#services" data-i18n="nav.services">Services</a></li>
+            <li><a href="index.html#services" data-i18n="sitemap.link.prices">Tarifs par service</a></li>
+            <li><a href="index.html#process" data-i18n="sitemap.link.process">Comment ça marche</a></li>
+            <li><a href="index.html#testimonials" data-i18n="nav.testimonials">Témoignages</a></li>
+            <li><a href="index.html#booking" data-i18n="sitemap.link.booking">Réservation</a></li>
+            <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </section>
+
+        <section class="sitemap-block">
+          <h2 data-i18n="sitemap.h.services">Services — Langues</h2>
+          <ul class="sitemap-links">
+            <li><a href="services/tcf.html" data-i18n="footer.tcf">Préparation TCF</a></li>
+            <li><a href="services/ielts.html" data-i18n="srv.ielts.title">IELTS / TOEFL / Cambridge</a></li>
+            <li><a href="services/toeic.html" data-i18n="srv.toeic.title">TOEIC</a></li>
+            <li><a href="services/cours.html" data-i18n="footer.cours">Cours de langues</a></li>
+            <li><a href="services/interview.html" data-i18n="srv.interview.title">Préparation aux interviews en anglais</a></li>
+            <li><a href="services/soutien.html" data-i18n="footer.soutien">Soutien scolaire</a></li>
+            <li><a href="services/traduction.html" data-i18n="footer.trad">Traduction</a></li>
+            <li><a href="services/formation.html" data-i18n="srv.corp.training.title">Formation linguistique en entreprise</a></li>
+          </ul>
+        </section>
+
+        <section class="sitemap-block">
+          <h2 data-i18n="sitemap.h.design">Services — Design</h2>
+          <ul class="sitemap-links">
+            <li><a href="services/logo.html" data-i18n="footer.logo">Création de logo</a></li>
+            <li><a href="services/montage.html" data-i18n="footer.montage">Montage vidéo</a></li>
+            <li><a href="services/graphic.html" data-i18n="footer.design">Design graphique</a></li>
+            <li><a href="services/livestream.html" data-i18n="footer.live">Live Streaming</a></li>
+            <li><a href="services/materiel.html" data-i18n="srv.mat.title">Conseil & Achat de matériel</a></li>
+            <li><a href="design.html" data-i18n="sitemap.link.design">Design — page d'aperçu</a></li>
+            <li><a href="portfolio.html" data-i18n="sitemap.link.portfolio">Portfolio — Vidéo & design</a></li>
+          </ul>
+        </section>
+
+        <section class="sitemap-block">
+          <h2 data-i18n="sitemap.h.policy">Politiques de service</h2>
+          <ul class="sitemap-links">
+            <li><a href="policy.html#policy-general" data-i18n="sitemap.link.policy.general">Général & confidentialité</a></li>
+            <li><a href="policy.html#policy-langues" data-i18n="sitemap.link.policy.lang">Services linguistiques</a></li>
+            <li><a href="policy.html#policy-design" data-i18n="sitemap.link.policy.design">Design & audiovisuel</a></li>
+          </ul>
+        </section>
+
+        <section class="sitemap-block">
+          <h2 data-i18n="sitemap.h.book">Réserver & devis</h2>
+          <ul class="sitemap-links">
+            <li><a href="https://calendly.com/linguaphix/call" target="_blank" rel="noopener noreferrer" data-i18n="nav.cta" data-keep-calendly>Réserver un appel (Calendly)</a></li>
+            <li><a href="index.html#contact" data-i18n="sitemap.link.quote">Demander un devis / poser une question</a></li>
+            <li><a href="catalogue.html" data-i18n="footer.catalogue">Catalogue des services</a></li>
+          </ul>
+        </section>
+
+        <section class="sitemap-block">
+          <h2 data-i18n="sitemap.h.contact">Contact & réseaux</h2>
+          <ul class="sitemap-links">
+            <li><a href="mailto:contact@linguaphix.com">contact@linguaphix.com</a></li>
+            <li><a href="https://wa.me/22892539953" target="_blank" rel="noopener noreferrer" data-i18n="sitemap.link.whatsapp">WhatsApp</a></li>
+            <li><a href="https://linkedin.com/in/akuetesd" target="_blank" rel="noopener noreferrer" data-i18n="about.linkedin">Voir mon LinkedIn</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-bottom" style="border-top:none;padding-top:0;">
+      <p class="footer-copy">
+        <span data-i18n="footer.copy.prefix">© 2026 LINGUAPHIX · Developed by </span>
+        <a href="index.html#about" data-i18n="footer.copy.name">Akuété SEWA-DOVI</a>
+        <span data-i18n="footer.copy.suffix"> · All rights reserved</span>
+      </p>
+      <div class="footer-bottom__links">
+        <a href="index.html" data-i18n="policy.page.home">Accueil</a>
+        <a href="policy.html" data-i18n="footer.policy">Politique de confidentialité</a>
+        <a href="mailto:contact@linguaphix.com">contact@linguaphix.com</a>
+        <a href="sitemap.html" aria-current="page" data-i18n="footer.sitemap">Plan du site</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/locale-pricing.js"></script>
+<script src="js/app.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    syncNavbarScrolledState();
+    applyLang(detectLang());
+  });
+</script>
+</body>
+</html>
