@@ -24,11 +24,16 @@ function shell(slug, titleFr, descFr) {
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="LINGUAPHIX | ${titleFr}">
 <meta property="og:description" content="${descFr}">
-<meta property="og:image" content="https://linguaphix.com/assets/branding/logo-full.png">
+<meta property="og:image" content="https://www.linguaphix.com/assets/branding/logo-mark-original.png">
+<meta property="og:image:alt" content="LINGUAPHIX">
+<meta property="og:image:type" content="image/png">
 <meta property="og:url" content="${canonical}">
 <meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.linguaphix.com/assets/branding/logo-mark-original.png">
 <link rel="canonical" href="${canonical}">
 <link rel="icon" href="../assets/branding/logo-mark-original.png" type="image/png">
+<link rel="apple-touch-icon" href="../assets/branding/logo-mark-original.png">
 <script src="../js/site-config.js"></script>
 <script src="../js/site-config.local.js"></script>
 <script src="../js/analytics.js"></script>

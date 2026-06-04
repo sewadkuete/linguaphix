@@ -3,7 +3,8 @@
 | File | Use |
 |------|-----|
 | `logo-mark-original.png` | Icon mark — home nav, hero, footer, favicon |
-| `logo-full.png` | Horizontal wordmark + icon — **portfolio** & **policy** nav, Open Graph preview |
+| `logo-full.png` | Horizontal wordmark + icon — **portfolio** & **policy** nav |
+| `logo-mark-original.png` | **Link previews** (WhatsApp, Facebook, LinkedIn, iMessage) + favicon |
 | `logo-mark.svg` | Optional vector fallback |
 
 ## Rules on the site
