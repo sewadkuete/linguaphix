@@ -101,25 +101,30 @@ function renderTestimonials(items) {
     const service = escapeHtml(
       typeof getServiceLabel === 'function' ? getServiceLabel(t.service, currentLang, i18n) : t.service
     );
-    const location = t.location ? escapeHtml(t.location) : '';
-    const roleLine = role
-      ? `<p class="testimonial-role">${role}</p>`
+    const country = t.location ? escapeHtml(t.location) : '';
+    const starsHtml = `<div class="testimonial-card__stars stars" aria-label="${rating}/5">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div>`;
+    const rolePart = role
+      ? `<span class="testimonial-sep" aria-hidden="true">·</span><span class="testimonial-role">${role}</span>`
       : '';
-    const serviceLine = [service, location].filter(Boolean).join(' · ');
-    const serviceHtml = serviceLine
-      ? `<p class="testimonial-service">${serviceLine}</p>`
+    const countryHtml = country
+      ? `<p class="testimonial-country">${country}</p>`
       : '';
     return `
         <article class="testimonial-card fade-up visible">
-          <div class="testimonial-card__stars stars" aria-label="${rating}/5">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</div>
-          <blockquote class="testimonial-text">${message}</blockquote>
-          <footer class="testimonial-author">
-            <div class="testimonial-avatar" aria-hidden="true">${escapeHtml(getInitials(t.name))}</div>
-            <div class="testimonial-meta">
-              <p class="testimonial-name">${name}</p>
-              ${roleLine}
-              ${serviceHtml}
+          <header class="testimonial-card__head">
+            <p class="testimonial-card__service">${service}</p>
+            ${starsHtml}
+          </header>
+          <div class="testimonial-card__quote">
+            <blockquote class="testimonial-text">${message}</blockquote>
+          </div>
+          <footer class="testimonial-card__foot">
+            <div class="testimonial-identity">
+              <div class="testimonial-avatar" title="${name}">${escapeHtml(getInitials(t.name))}</div>
+              <span class="testimonial-name">${name}</span>
+              ${rolePart}
             </div>
+            ${countryHtml}
           </footer>
         </article>`;
   }).join('');
