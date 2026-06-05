@@ -92,6 +92,7 @@ function renderTestimonials(items) {
   }
 
   if (empty) empty.hidden = true;
+  hideTestimonialsCacheHint();
   syncTestimonialsGridLayout(items.length);
   grid.innerHTML = items.map(t => {
     const rating = Math.min(5, Math.max(0, parseInt(t.rating, 10) || 0));
@@ -291,6 +292,13 @@ const i18n = {
     'testi.title': 'Ce que disent nos clients',
     'testi.subtitle': 'Des résultats concrets et des transformations réelles.',
     'testi.empty': 'Aucun témoignage publié pour le moment. Soyez le premier à partager votre expérience ci-dessous.',
+    'testi.refreshBtn': 'Actualiser les témoignages',
+    'testi.refreshAria': 'Recharger les témoignages depuis le serveur',
+    'testi.cacheError': 'Impossible de charger les témoignages. Essayez d\'actualiser ou de vider les données du site linguaphix.com dans votre navigateur.',
+    'testi.helpTitle': 'Les témoignages ne s\'affichent pas à jour ?',
+    'testi.cacheStep1': 'Cliquez sur « Actualiser les témoignages » ci-dessus.',
+    'testi.cacheStep2': 'Sur mobile : tirez la page vers le bas, ou touchez le logo LINGUAPHIX en haut de la page.',
+    'testi.cacheStep3': 'Si rien ne change : paramètres du navigateur → Confidentialité → Effacer les données du site → linguaphix.com (cookies et cache) → rechargez la page.',
     'addtesti.badge': 'Votre avis compte',
     'addtesti.title': 'Partagez votre expérience',
     'addtesti.subtitle': 'Votre témoignage apparaîtra sur le site après validation.',
@@ -770,6 +778,13 @@ const i18n = {
     'testi.title': 'What our clients say',
     'testi.subtitle': 'Real results and genuine transformations.',
     'testi.empty': 'No published reviews yet. Be the first to share your experience below.',
+    'testi.refreshBtn': 'Refresh reviews',
+    'testi.refreshAria': 'Reload reviews from the server',
+    'testi.cacheError': 'Could not load reviews. Try refreshing, or clear site data for linguaphix.com in your browser.',
+    'testi.helpTitle': 'Reviews not showing the latest?',
+    'testi.cacheStep1': 'Click « Refresh reviews » above.',
+    'testi.cacheStep2': 'On mobile: pull the page down, or tap the LINGUAPHIX logo at the top.',
+    'testi.cacheStep3': 'Still stuck? Browser settings → Privacy → Clear site data → linguaphix.com (cookies and cache) → reload the page.',
     'addtesti.badge': 'Your voice matters',
     'addtesti.title': 'Share your experience',
     'addtesti.subtitle': 'Your testimonial will appear on the site after review.',
@@ -2160,6 +2175,23 @@ async function waitForSupabaseConfig(maxAttempts = 40) {
   return isSupabaseConfigured();
 }
 
+function showTestimonialsCacheHint() {
+  const hint = document.getElementById('testimonialsCacheHint');
+  if (hint) hint.hidden = false;
+}
+
+function hideTestimonialsCacheHint() {
+  const hint = document.getElementById('testimonialsCacheHint');
+  if (hint) hint.hidden = true;
+}
+
+function setTestimonialsRefreshBusy(busy) {
+  const btn = document.getElementById('testimonialsRefreshBtn');
+  if (!btn) return;
+  btn.disabled = Boolean(busy);
+  btn.setAttribute('aria-busy', busy ? 'true' : 'false');
+}
+
 async function fetchApprovedTestimonials(url, key, attempts = 3) {
   let lastError = null;
   const query = 'select=*&approved=is.true&order=created_at.desc&limit=12';
@@ -2172,8 +2204,10 @@ async function fetchApprovedTestimonials(url, key, attempts = 3) {
             apikey: key,
             Authorization: `Bearer ${key}`,
             Accept: 'application/json',
-            'Cache-Control': 'no-cache, no-store',
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
             Pragma: 'no-cache',
+            Expires: '0',
+            'X-Client-Info': `linguaphix-testimonials/${Date.now()}`,
           },
           cache: 'no-store',
         }
@@ -2225,22 +2259,56 @@ window.addEventListener('DOMContentLoaded', () => {
   const servicesTab = document.querySelector('.services-filter-bar .stab.active');
   if (servicesTab) switchAudience('all', servicesTab);
   initHashScroll();
-  if (document.getElementById('testimonialsGrid')) loadTestimonials();
+  if (document.getElementById('testimonialsGrid')) {
+    bindTestimonialsRefresh();
+    bindTestimonialsSectionObserver();
+    loadTestimonials();
+  }
   initModals();
   applySitePhones();
 });
 
 let testimonialsLoadPromise = null;
+let testimonialsLastFetchedAt = 0;
+const TESTIMONIALS_STALE_MS = 60_000;
 
-async function loadTestimonials() {
+function refreshTestimonials() {
+  return loadTestimonials(true);
+}
+
+function bindTestimonialsRefresh() {
+  const btn = document.getElementById('testimonialsRefreshBtn');
+  if (!btn || btn.dataset.bound) return;
+  btn.dataset.bound = '1';
+  btn.addEventListener('click', () => { refreshTestimonials(); });
+}
+
+function bindTestimonialsSectionObserver() {
+  const section = document.getElementById('testimonials');
+  if (!section || section.dataset.observed || typeof IntersectionObserver === 'undefined') return;
+  section.dataset.observed = '1';
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.some((entry) => entry.isIntersecting);
+    if (!visible) return;
+    if (!testimonialsLastFetchedAt) return;
+    const stale = Date.now() - testimonialsLastFetchedAt > TESTIMONIALS_STALE_MS;
+    if (stale) loadTestimonials(true);
+  }, { rootMargin: '80px 0px', threshold: 0.1 });
+  observer.observe(section);
+}
+
+async function loadTestimonials(force = false) {
   const grid = document.getElementById('testimonialsGrid');
   if (!grid) return;
 
-  if (testimonialsLoadPromise) return testimonialsLoadPromise;
+  if (!force && testimonialsLoadPromise) return testimonialsLoadPromise;
+  if (force) testimonialsLoadPromise = null;
 
   testimonialsLoadPromise = (async () => {
     const empty = document.getElementById('testimonialsEmpty');
     grid.dataset.loading = 'true';
+    setTestimonialsRefreshBusy(true);
+    hideTestimonialsCacheHint();
     if (empty) empty.hidden = true;
 
     try {
@@ -2248,11 +2316,13 @@ async function loadTestimonials() {
       if (!ready) {
         console.warn('[LINGUAPHIX] Supabase config not ready for testimonials.');
         showTestimonialsEmpty();
+        showTestimonialsCacheHint();
         return;
       }
 
       const { url, key } = getSupabaseConfig();
       const data = await fetchApprovedTestimonials(url, key);
+      testimonialsLastFetchedAt = Date.now();
       if (!data.length) {
         showTestimonialsEmpty();
         return;
@@ -2261,10 +2331,12 @@ async function loadTestimonials() {
     } catch (e) {
       console.warn('[LINGUAPHIX] testimonials load error:', e);
       showTestimonialsEmpty();
+      showTestimonialsCacheHint();
     } finally {
       grid.removeAttribute('data-loading');
       if (!grid.children.length) showTestimonialsEmpty();
       else if (empty) empty.hidden = true;
+      setTestimonialsRefreshBusy(false);
       testimonialsLoadPromise = null;
     }
   })();
@@ -2273,19 +2345,20 @@ async function loadTestimonials() {
 }
 
 window.addEventListener('load', () => {
-  if (document.getElementById('testimonialsGrid')) loadTestimonials();
+  if (!document.getElementById('testimonialsGrid')) return;
+  bindTestimonialsRefresh();
+  bindTestimonialsSectionObserver();
+  loadTestimonials();
 });
 
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState !== 'visible') return;
-  const grid = document.getElementById('testimonialsGrid');
-  if (!grid || grid.children.length > 0) return;
-  loadTestimonials();
+  if (!document.getElementById('testimonialsGrid')) return;
+  const stale = !testimonialsLastFetchedAt || (Date.now() - testimonialsLastFetchedAt > TESTIMONIALS_STALE_MS);
+  if (stale) loadTestimonials(true);
 });
 
 window.addEventListener('hashchange', () => {
   if (window.location.hash !== '#testimonials') return;
-  const grid = document.getElementById('testimonialsGrid');
-  if (!grid || grid.children.length > 0) return;
-  loadTestimonials();
+  loadTestimonials(true);
 });
