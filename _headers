@@ -1,7 +1,7 @@
 /js/site-config.js
   Cache-Control: no-cache, must-revalidate
 
-/js/site-config.local.js
+/js/runtime-config.json
   Cache-Control: no-store, no-cache, must-revalidate
 
 /js/site-config.local.json

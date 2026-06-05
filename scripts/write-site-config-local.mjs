@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Writes js/site-config.local.js from environment variables or .env.local.
+ * Writes js/runtime-config.json (deployed) and optional local dev files.
  * Used locally and in GitHub Actions (secrets → env → this script).
  */
 import fs from 'fs';
@@ -9,9 +9,11 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
+const runtimeFile = path.join(root, 'js', 'runtime-config.json');
 const outFile = path.join(root, 'js', 'site-config.local.js');
 const jsonFile = path.join(root, 'js', 'site-config.local.json');
 const envFile = path.join(root, '.env.local');
+const isCi = process.env.CI === 'true' || process.env.GITHUB_ACTIONS === 'true';
 
 function parseEnvFile(content) {
   const out = {};
@@ -74,17 +76,33 @@ const supabaseAnonKey = pick(env, 'SUPABASE_ANON_KEY');
 const contactEmail = pick(env, 'CONTACT_EMAIL');
 const siteUrl = pick(env, 'SITE_URL');
 
+const payload = {};
+if (gaMeasurementId) payload.gaMeasurementId = gaMeasurementId;
+if (supabaseUrl) payload.supabaseUrl = supabaseUrl;
+if (supabaseAnonKey) payload.supabaseAnonKey = supabaseAnonKey;
+if (contactEmail) payload.contactEmail = contactEmail;
+if (siteUrl) payload.siteUrl = siteUrl;
+
+if (!Object.keys(payload).length) {
+  if (isCi) {
+    console.error('::error::No config values in CI environment. Set SUPABASE_URL and SUPABASE_ANON_KEY repository secrets.');
+    process.exit(1);
+  }
+  console.log('No config values in .env.local or environment — runtime-config.json not updated.');
+  process.exit(0);
+}
+
+if (isCi && (!supabaseUrl || !supabaseAnonKey)) {
+  console.error('::error::CI deploy requires SUPABASE_URL and SUPABASE_ANON_KEY secrets for testimonials.');
+  process.exit(1);
+}
+
 const fields = [];
 if (gaMeasurementId) fields.push(`    gaMeasurementId: '${escJs(gaMeasurementId)}',`);
 if (supabaseUrl) fields.push(`    supabaseUrl: '${escJs(supabaseUrl)}',`);
 if (supabaseAnonKey) fields.push(`    supabaseAnonKey: '${escJs(supabaseAnonKey)}',`);
 if (contactEmail) fields.push(`    contactEmail: '${escJs(contactEmail)}',`);
 if (siteUrl) fields.push(`    siteUrl: '${escJs(siteUrl)}',`);
-
-if (!fields.length) {
-  console.log('No config values in .env.local or environment — site-config.local.js not written.');
-  process.exit(0);
-}
 
 const body = `/** Auto-generated — do not commit. */
 (function applyLocalSiteConfig() {
@@ -96,14 +114,8 @@ ${fields.join('\n')}
 })();
 `;
 
-const payload = {};
-if (gaMeasurementId) payload.gaMeasurementId = gaMeasurementId;
-if (supabaseUrl) payload.supabaseUrl = supabaseUrl;
-if (supabaseAnonKey) payload.supabaseAnonKey = supabaseAnonKey;
-if (contactEmail) payload.contactEmail = contactEmail;
-if (siteUrl) payload.siteUrl = siteUrl;
-
-fs.mkdirSync(path.dirname(outFile), { recursive: true });
-fs.writeFileSync(outFile, body, 'utf8');
+fs.mkdirSync(path.dirname(runtimeFile), { recursive: true });
+fs.writeFileSync(runtimeFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 fs.writeFileSync(jsonFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
-console.log(`Wrote ${path.relative(root, outFile)} and ${path.relative(root, jsonFile)} (${fields.length} value(s)).`);
+fs.writeFileSync(outFile, body, 'utf8');
+console.log(`Wrote ${path.relative(root, runtimeFile)} (${Object.keys(payload).length} value(s)).`);

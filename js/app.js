@@ -169,6 +169,8 @@ const i18n = {
     'hero.stat3': 'Ans en audiovisuel',
     'hero.logoRefresh.hint': 'Actualisation forcée — cliquer pour recharger la page',
     'hero.logoRefresh.aria': 'Actualiser la page (vider le cache)',
+    'pullRefresh.pull': 'Tirez vers le bas pour actualiser',
+    'pullRefresh.release': 'Relâchez pour actualiser',
     'about.badge': 'À propos',
     'about.title': 'Une double expertise,<br>une seule vision',
     'about.role': 'Freelance · Consultant · Examinateur TCF',
@@ -639,6 +641,8 @@ const i18n = {
     'hero.stat3': 'Years in AV',
     'hero.logoRefresh.hint': 'Hard refresh — click to reload the page',
     'hero.logoRefresh.aria': 'Hard refresh page (clear cache)',
+    'pullRefresh.pull': 'Pull down to refresh',
+    'pullRefresh.release': 'Release to refresh',
     'about.badge': 'About',
     'about.title': 'Dual expertise,<br>one clear vision',
     'about.role': 'Freelance · Consultant · TCF Examiner',
@@ -1861,11 +1865,114 @@ function hardRefreshPage() {
   reload();
 }
 
+function isMobilePullRefreshDevice() {
+  return window.matchMedia('(max-width: 768px)').matches;
+}
+
+function pullRefreshLabel(key) {
+  const lang = typeof currentLang !== 'undefined' ? currentLang : 'fr';
+  const dict = typeof i18n !== 'undefined' ? i18n[lang] : {};
+  return dict[key] || key;
+}
+
+function bindPullToRefresh() {
+  if (!isMobilePullRefreshDevice()) return;
+
+  const THRESHOLD = 72;
+  const MAX_PULL = 120;
+  let startY = 0;
+  let pulling = false;
+  let pullDistance = 0;
+  let indicator = null;
+
+  const ensureIndicator = () => {
+    if (indicator) return indicator;
+    indicator = document.createElement('div');
+    indicator.id = 'pullRefreshIndicator';
+    indicator.className = 'pull-refresh-indicator';
+    indicator.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(indicator);
+    return indicator;
+  };
+
+  const resetIndicator = () => {
+    if (!indicator) return;
+    indicator.style.transform = '';
+    indicator.classList.remove('pull-refresh-indicator--ready');
+    indicator.textContent = '';
+  };
+
+  const updateIndicator = () => {
+    const el = ensureIndicator();
+    el.style.transform = `translateY(${pullDistance}px)`;
+    el.textContent = pullDistance >= THRESHOLD
+      ? pullRefreshLabel('pullRefresh.release')
+      : pullRefreshLabel('pullRefresh.pull');
+    el.classList.toggle('pull-refresh-indicator--ready', pullDistance >= THRESHOLD);
+  };
+
+  document.addEventListener('touchstart', (event) => {
+    if (window.scrollY > 2 || event.touches.length !== 1) return;
+    startY = event.touches[0].clientY;
+    pulling = true;
+    pullDistance = 0;
+  }, { passive: true });
+
+  document.addEventListener('touchmove', (event) => {
+    if (!pulling) return;
+    if (window.scrollY > 2) {
+      pulling = false;
+      resetIndicator();
+      return;
+    }
+    const delta = event.touches[0].clientY - startY;
+    if (delta <= 0) {
+      pullDistance = 0;
+      resetIndicator();
+      return;
+    }
+    pullDistance = Math.min(MAX_PULL, delta * 0.45);
+    updateIndicator();
+    event.preventDefault();
+  }, { passive: false });
+
+  const onTouchEnd = () => {
+    if (!pulling) return;
+    pulling = false;
+    if (pullDistance >= THRESHOLD) {
+      hardRefreshPage();
+      return;
+    }
+    resetIndicator();
+  };
+
+  document.addEventListener('touchend', onTouchEnd, { passive: true });
+  document.addEventListener('touchcancel', onTouchEnd, { passive: true });
+}
+
 function bindHeroLogoRefresh() {
   const btn = document.getElementById('heroLogoRefresh');
   if (!btn || btn.dataset.refreshBound === '1') return;
   btn.dataset.refreshBound = '1';
-  let touchRefresh = false;
+
+  const tip = document.getElementById('heroLogoRefreshTip');
+  const syncMobileDesktop = () => {
+    const mobile = isMobilePullRefreshDevice();
+    if (tip) tip.hidden = mobile;
+    if (mobile) {
+      btn.removeAttribute('tabindex');
+      btn.style.cursor = 'default';
+      return;
+    }
+    btn.setAttribute('tabindex', '0');
+    btn.style.cursor = '';
+    if (tip) tip.hidden = false;
+  };
+  syncMobileDesktop();
+  window.matchMedia('(max-width: 768px)').addEventListener('change', syncMobileDesktop);
+
+  if (isMobilePullRefreshDevice()) return;
+
   const runRefresh = (event) => {
     if (event) {
       event.preventDefault();
@@ -1873,17 +1980,7 @@ function bindHeroLogoRefresh() {
     }
     hardRefreshPage();
   };
-  btn.addEventListener('touchend', (event) => {
-    touchRefresh = true;
-    runRefresh(event);
-  }, { passive: false });
-  btn.addEventListener('click', (event) => {
-    if (touchRefresh) {
-      touchRefresh = false;
-      return;
-    }
-    runRefresh(event);
-  });
+  btn.addEventListener('click', runRefresh);
 }
 
 async function waitForSupabaseConfig(maxAttempts = 40) {
@@ -1947,6 +2044,7 @@ window.addEventListener('DOMContentLoaded', () => {
   ensureServiceBookModal();
   bindNavBookCtas();
   bindHeroLogoRefresh();
+  bindPullToRefresh();
   const detectedLang = detectLang();
   if (typeof setStoredLang === 'function') setStoredLang(detectedLang);
   if (typeof initUrlLangSync === 'function') initUrlLangSync();

@@ -1,6 +1,7 @@
 /**
  * Site-wide public config (safe to commit).
- * Secrets: generated at deploy into site-config.local.json / .js (gitignored).
+ * Production Supabase keys: injected at deploy into js/runtime-config.json (CI).
+ * Local dev: .env.local + node scripts/write-site-config-local.mjs
  * See docs/CONFIG-SETUP.md
  */
 (function initSiteConfig() {
@@ -37,7 +38,7 @@
     return new URL('js/', window.location.href).href;
   }
 
-  async function applyLocalConfigPatch(patch) {
+  function applyLocalConfigPatch(patch) {
     if (!patch || typeof patch !== 'object') return false;
     Object.assign(window.LINGUAPHIX_CONFIG, patch);
     ['supabaseUrl', 'supabaseAnonKey', 'gaMeasurementId'].forEach((key) => {
@@ -56,39 +57,26 @@
     return /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(url) && key.length > 20;
   }
 
-  window.LINGUAPHIX_CONFIG_READY_PROMISE = (async function loadLocalSiteConfig() {
+  window.LINGUAPHIX_CONFIG_READY_PROMISE = (async function loadRuntimeConfig() {
     const base = configBaseUrl();
     const bust = Date.now();
     const sources = [
-      { kind: 'json', url: `${base}site-config.local.json?cb=${bust}` },
-      { kind: 'js', url: `${base}site-config.local.js?cb=${bust}` },
+      `${base}runtime-config.json?cb=${bust}`,
+      `${base}site-config.local.json?cb=${bust}`,
     ];
 
-    for (const source of sources) {
+    for (const url of sources) {
       try {
-        const res = await fetch(source.url, {
+        const res = await fetch(url, {
           cache: 'no-store',
           credentials: 'same-origin',
-          headers: { Accept: source.kind === 'json' ? 'application/json' : 'text/javascript,*/*' },
+          headers: { Accept: 'application/json' },
         });
         if (!res.ok) continue;
-
-        if (source.kind === 'json') {
-          const patch = await res.json();
-          if (await applyLocalConfigPatch(patch)) return true;
-          continue;
-        }
-
-        const code = await res.text();
-        if (!code.trim()) continue;
-        // eslint-disable-next-line no-new-func
-        new Function(code)();
-        if (window.LINGUAPHIX_CONFIG_READY || isSupabaseConfiguredNow()) {
-          window.LINGUAPHIX_CONFIG_READY = true;
-          return true;
-        }
+        const patch = await res.json();
+        if (applyLocalConfigPatch(patch)) return true;
       } catch (err) {
-        console.warn('[LINGUAPHIX] local config fetch failed:', source.url, err);
+        console.warn('[LINGUAPHIX] runtime config fetch failed:', url, err);
       }
     }
     return false;

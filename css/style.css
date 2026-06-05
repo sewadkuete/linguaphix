@@ -609,6 +609,32 @@ body:not(.has-fixed-header) #navbar,
   -webkit-user-drag: none;
   user-select: none;
 }
+
+.pull-refresh-indicator {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 9999;
+  transform: translateX(-50%) translateY(0);
+  margin-top: calc(env(safe-area-inset-top, 0px) + 0.35rem);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(15, 61, 46, 0.92);
+  color: #f4f7f5;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+.pull-refresh-indicator:not(:empty) {
+  opacity: 1;
+}
+.pull-refresh-indicator--ready {
+  background: rgba(34, 120, 84, 0.95);
+}
 /* Uneven keyframe spacing = slow drift/zoom vs fast spiral bursts */
 @keyframes hero-logo-spiral-zoom {
   0% {

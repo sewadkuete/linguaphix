@@ -24,7 +24,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Inject site secrets into local config
+      - name: Inject site secrets into runtime config
         run: node scripts/write-site-config-local.mjs
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
@@ -32,6 +32,11 @@ jobs:
           GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
           CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
           SITE_URL: ${{ secrets.SITE_URL }}
+
+      - name: Verify runtime config for deploy
+        run: |
+          test -f js/runtime-config.json
+          node -e "const c=require('./js/runtime-config.json'); if(!c.supabaseUrl||!c.supabaseAnonKey){console.error('Missing Supabase keys in runtime-config.json'); process.exit(1)}"
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
