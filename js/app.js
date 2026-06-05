@@ -1841,6 +1841,7 @@ function syncNavbarScrolledState() {
   const solidNavPage = document.body.classList.contains('page-policy')
     || document.body.classList.contains('page-portfolio')
     || document.body.classList.contains('page-design')
+    || document.body.classList.contains('page-about')
     || document.body.classList.contains('page-catalogue')
     || document.body.classList.contains('page-service')
     || document.body.classList.contains('page-sitemap');
