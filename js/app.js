@@ -431,6 +431,11 @@ const i18n = {
     'book.policy.accept': 'J\'ai lu et j\'accepte la politique de réservation',
     'book.policy.selectPackage': 'Sélectionnez un forfait ci-dessus pour afficher les conditions de réservation et de paiement qui s\'appliquent à ce forfait.',
     'book.submit': 'Accepter & réserver',
+    'book.submitWhatsapp': 'Envoyer par WhatsApp',
+    'book.actionsHint':
+      'Vous pouvez utiliser l\'un ou l\'autre bouton, ou les deux : réservez un créneau sur Calendly et/ou envoyez votre demande par WhatsApp avec les mêmes informations.',
+    'book.whatsappOpened':
+      'WhatsApp s\'ouvre avec votre message — appuyez sur Envoyer dans l\'application. Vous pouvez aussi utiliser « Accepter & réserver » pour planifier un appel sur Calendly.',
     'book.sending': 'Envoi en cours…',
     'book.success': '✅ Votre demande de réservation a été envoyée ! Nous vous contacterons sous 24 h pour confirmer votre séance. Vérifiez WhatsApp et votre email.',
     'book.onQuote': 'Sur devis',
@@ -903,6 +908,11 @@ const i18n = {
     'book.policy.accept': 'I have read and accept the booking policy',
     'book.policy.selectPackage': 'Select a package above to view the booking and payment terms that apply to that package.',
     'book.submit': 'Accept & Book',
+    'book.submitWhatsapp': 'Send via WhatsApp',
+    'book.actionsHint':
+      'You can use either button, or both: book a time on Calendly and/or send your request via WhatsApp with the same details.',
+    'book.whatsappOpened':
+      'WhatsApp will open with your message — tap Send in the app. You can also use "Accept & Book" to schedule a call on Calendly.',
     'book.sending': 'Sending…',
     'book.success': '✅ Your booking request has been sent! We will contact you within 24 hours to confirm your session. Check your WhatsApp and email.',
     'book.onQuote': 'On quote',

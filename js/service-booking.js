@@ -336,9 +336,16 @@
             <span>${esc(t(lang, 'book.policy.accept') || '')}</span>
           </label>
 
+          <p class="booking-actions-hint">${esc(
+            t(lang, 'book.actionsHint') ||
+              'You can use either button, or both: book a time on Calendly and/or send your request via WhatsApp with the same details.'
+          )}</p>
           <div class="booking-form-actions">
             <button type="submit" class="btn btn-primary btn-lg" id="booking-submit-btn" disabled>
               ${esc(t(lang, 'book.submit') || 'Accept & Book')}
+            </button>
+            <button type="button" class="btn btn-lg booking-whatsapp-btn" id="booking-whatsapp-btn" disabled>
+              ${esc(t(lang, 'book.submitWhatsapp') || 'Send via WhatsApp')}
             </button>
           </div>
           <p class="booking-success-msg" id="booking-success-msg" hidden role="status"></p>
@@ -413,9 +420,13 @@
     const config = typeof getServiceBookingConfig === 'function'
       ? getServiceBookingConfig(slug, lang)
       : null;
-    const btn = document.getElementById('booking-submit-btn');
-    if (!btn || !config) return;
-    btn.disabled = !isBookingFormComplete(readBookingValues(), config);
+    const submitBtn = document.getElementById('booking-submit-btn');
+    const waBtn = document.getElementById('booking-whatsapp-btn');
+    if (!submitBtn || !config) return;
+    const v = readBookingValues();
+    const ready = isBookingFormComplete(v, config) && isValidBookingEmail(v.email);
+    submitBtn.disabled = !ready;
+    if (waBtn) waBtn.disabled = !ready;
   }
 
   function lookupServicePagePackage(packageId, lang) {
@@ -730,6 +741,9 @@
       updateBookingSubmitState();
     });
     form.addEventListener('submit', submitServiceBooking);
+
+    const waBtn = document.getElementById('booking-whatsapp-btn');
+    if (waBtn) waBtn.addEventListener('click', sendBookingViaWhatsApp);
   }
 
   window.refreshBookingPolicy = refreshBookingPolicy;
@@ -745,6 +759,99 @@
     if (code === 'french') return t(lang, 'book.lang.fr') || 'French';
     if (code === 'both') return t(lang, 'book.lang.both') || 'Both';
     return code;
+  }
+
+  function buildBookingWhatsAppUrl(v, serviceTitle, slug, lang) {
+    const modeLabel = labelForMode(lang, v.mode);
+    const langLabel = v.language ? labelForLanguage(lang, v.language) : '—';
+    const waLines =
+      lang === 'fr'
+        ? [
+            'Bonjour ! Je souhaite réserver ce service.',
+            `Service : ${serviceTitle || slug}`,
+            `Nom : ${v.name}`,
+            `Email : ${v.email}`,
+            `Forfait : ${v.packageName}`,
+            `Mode : ${modeLabel}`,
+            `Langue : ${langLabel}`,
+            `Date de début souhaitée : ${v.startDate}`,
+            `Mon WhatsApp : ${v.phone}`,
+          ]
+        : [
+            'Hello! I would like to book this service.',
+            `Service: ${serviceTitle || slug}`,
+            `Name: ${v.name}`,
+            `Email: ${v.email}`,
+            `Package: ${v.packageName}`,
+            `Mode: ${modeLabel}`,
+            `Language: ${langLabel}`,
+            `Preferred start date: ${v.startDate}`,
+            `My WhatsApp: ${v.phone}`,
+          ];
+    const waId = cfg().phone?.waMe || '22892539953';
+    return `https://wa.me/${waId}?text=${encodeURIComponent(waLines.join('\n'))}`;
+  }
+
+  function sendBookingViaWhatsApp(e) {
+    e.preventDefault();
+    const lang = typeof currentLang !== 'undefined' ? currentLang : 'fr';
+    const slug = document.body.dataset.serviceSlug;
+    const config = typeof getServiceBookingConfig === 'function'
+      ? getServiceBookingConfig(slug, lang)
+      : null;
+
+    syncBookingPackageField(lang);
+    const v = readBookingValues();
+    const successEl = document.getElementById('booking-success-msg');
+    const pkgDisplay = document.getElementById('booking-package-display');
+
+    if (isBookingHoneypotFilled()) return;
+
+    if (!isBookingFormComplete(v, config)) {
+      if (!v.packageId && pkgDisplay) {
+        pkgDisplay.classList.remove('is-filled');
+        pkgDisplay.setAttribute('aria-invalid', 'true');
+        pkgDisplay.focus();
+      }
+      updateBookingSubmitState();
+      return;
+    }
+
+    if (!isValidBookingEmail(v.email)) {
+      updateBookingSubmitState();
+      return;
+    }
+
+    const serviceTitle = v.serviceName || getServiceBookingTitle(slug, lang);
+    const waUrl = buildBookingWhatsAppUrl(v, serviceTitle, slug, lang);
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
+
+    if (successEl) {
+      successEl.textContent = t(lang, 'book.whatsappOpened') || '';
+      successEl.hidden = false;
+    }
+  }
+
+  function buildCalendlyBookingUrl(v, serviceTitle, slug, lang) {
+    const calBase = (cfg().calendlyUrl || 'https://calendly.com/linguaphix/call').split('?')[0];
+    const modeLabel = labelForMode(lang, v.mode);
+    const langLabel = v.language ? labelForLanguage(lang, v.language) : '';
+    const params = new URLSearchParams();
+    if (v.name) params.set('name', v.name);
+    if (v.email) params.set('email', v.email);
+    const summary = [
+      serviceTitle || slug,
+      v.packageName,
+      modeLabel,
+      langLabel,
+      v.startDate
+        ? `${lang === 'fr' ? 'Début souhaité' : 'Preferred start'}: ${v.startDate}`
+        : '',
+    ].filter(Boolean).join(' · ');
+    if (summary) params.set('a1', summary);
+    if (v.phone) params.set('a2', v.phone);
+    const query = params.toString();
+    return query ? `${calBase}?${query}` : calBase;
   }
 
   async function submitServiceBooking(e) {
@@ -807,7 +914,7 @@
       `Booked at: ${timestamp}`
     ].join('\n');
 
-    const emailPromise = fetch(
+    fetch(
       `https://formsubmit.co/ajax/${encodeURIComponent(cfg().contactEmail || CONTACT_EMAIL)}`,
       {
         method: 'POST',
@@ -831,55 +938,8 @@
       }
     ).catch(() => null);
 
-    const waLines =
-      lang === 'fr'
-        ? [
-            'Bonjour ! Je viens de soumettre une demande de réservation.',
-            `Nom : ${v.name}`,
-            `Forfait : ${v.packageName}`,
-            `Mode : ${modeLabel}`,
-            `Langue : ${langLabel}`,
-            `Date de début : ${v.startDate}`,
-            `Mon WhatsApp : ${v.phone}`
-          ]
-        : [
-            'Hello! I just submitted a booking request.',
-            `Name: ${v.name}`,
-            `Package: ${v.packageName}`,
-            `Mode: ${modeLabel}`,
-            `Language: ${langLabel}`,
-            `Start date: ${v.startDate}`,
-            `My WhatsApp: ${v.phone}`
-          ];
-
-    const waId = cfg().phone?.waMe || '22892539953';
-    const waUrl = `https://wa.me/${waId}?text=${encodeURIComponent(waLines.join('\n'))}`;
-    window.open(waUrl, '_blank', 'noopener,noreferrer');
-
-    const calBase = (cfg().calendlyUrl || 'https://calendly.com/linguaphix/call').split('?')[0];
-    const calParams = new URLSearchParams({
-      name: v.name,
-      email: v.email,
-      a1: summary
-    });
-    window.open(`${calBase}?${calParams.toString()}`, '_blank', 'noopener,noreferrer');
-
-    await emailPromise;
-
-    if (pkgDisplay) {
-      syncBookingPackageField(lang);
-      pkgDisplay.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    }
-
-    if (successEl) {
-      successEl.textContent = t(lang, 'book.success') || '';
-      successEl.hidden = false;
-    }
-
-    if (btn) {
-      btn.disabled = true;
-      if (btn.dataset.prevLabel) btn.textContent = btn.dataset.prevLabel;
-    }
+    const calUrl = buildCalendlyBookingUrl(v, serviceTitle, slug, lang);
+    window.location.assign(calUrl);
   }
 
   window.renderServiceBooking = function renderServiceBooking(lang) {

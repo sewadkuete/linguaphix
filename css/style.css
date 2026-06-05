@@ -4147,6 +4147,32 @@ body:has(.wa-float) > footer {
   height: 1.1rem;
   accent-color: var(--primary);
 }
+.booking-actions-hint {
+  margin: 0 0 1rem;
+  font-size: var(--text-sm);
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+.booking-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.booking-form-actions .btn {
+  flex: 1 1 auto;
+  min-width: min(100%, 12rem);
+}
+.booking-whatsapp-btn {
+  background: #25d366;
+  color: #fff;
+  border: 2px solid #25d366;
+}
+.booking-whatsapp-btn:hover:not(:disabled),
+.booking-whatsapp-btn:focus-visible:not(:disabled) {
+  background: #1ebe57;
+  border-color: #1ebe57;
+  color: #fff;
+}
 .booking-form-actions .btn:disabled {
   opacity: 0.45;
   cursor: not-allowed;
