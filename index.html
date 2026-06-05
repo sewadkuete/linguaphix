@@ -61,10 +61,10 @@
         <span class="nav-logo-text" id="nav-brand">LINGUAPHIX</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#about" data-i18n="nav.about">À propos</a></li>
         <li><a href="#services" data-i18n="nav.services">Services</a></li>
         <li><a href="#testimonials" data-i18n="nav.testimonials">Témoignages</a></li>
         <li><a href="design.html" data-i18n="nav.design">Design</a></li>
+        <li><a href="about.html" data-i18n="nav.about">À propos</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
       <div class="nav-cta">
@@ -125,10 +125,10 @@
     <button type="button" class="lang-toggle__btn is-active" data-lang="fr" aria-pressed="true" onclick="setLang('fr');">FR</button>
     <button type="button" class="lang-toggle__btn" data-lang="en" aria-pressed="false" onclick="setLang('en');">EN</button>
   </div>
-  <a href="#about" onclick="toggleMobileMenu()" data-i18n="nav.about">À propos</a>
   <a href="#services" onclick="toggleMobileMenu()" data-i18n="nav.services">Services</a>
   <a href="#testimonials" onclick="toggleMobileMenu()" data-i18n="nav.testimonials">Témoignages</a>
   <a href="design.html" onclick="toggleMobileMenu()" data-i18n="nav.design">Design</a>
+  <a href="about.html" onclick="toggleMobileMenu()" data-i18n="nav.about">À propos</a>
   <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav.contact">Contact</a>
   <a href="javascript:void(0)" role="button" class="btn btn-white btn-lg" onclick="openServiceBookModal(event)" data-i18n="nav.cta" style="margin-top:1rem;">Réserver un appel</a>
 </div>
@@ -169,79 +169,25 @@
           </div>
         </div>
       </div>
-      <div class="hero-visual" aria-hidden="true">
-        <div class="hero-logo-float">
-          <img
-            src="assets/branding/logo-mark-original.png"
-            alt=""
-            class="hero-logo-float__img"
-            width="420"
-            height="420"
-            decoding="async">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ───── ABOUT ───── -->
-<section id="about" class="section">
-  <div class="container">
-    <div class="about-grid">
-      <div class="about-image-wrapper">
-        <div class="about-image-top">
-          <div class="about-image-frame">
-            <img src="assets/about/profile.png" alt="Akuété SEWA-DOVI — fondateur LINGUAPHIX" class="about-photo" width="800" height="800" loading="lazy" decoding="async">
-            <div class="about-name-overlay">
-              <h4>Akuété SEWA-DOVI</h4>
-              <p data-i18n="about.role">Freelance · Consultant · Examinateur TCF</p>
-            </div>
-          </div>
-          <div class="about-stat-card">
-            <div class="num">300+</div>
-            <div class="lbl" data-i18n="about.stat">Plus de 300 clients accompagnés</div>
-          </div>
-        </div>
-        <div class="about-cta-row">
-          <a href="https://linkedin.com/in/akuetesd" target="_blank" class="btn btn-outline" data-i18n="about.linkedin">Voir mon LinkedIn</a>
-          <a href="https://calendly.com/linguaphix/call" target="_blank" class="btn btn-primary" data-i18n="about.cta">Travailler ensemble</a>
-        </div>
-      </div>
-      <div class="about-content fade-up">
-        <span class="badge" data-i18n="about.badge">À propos</span>
-        <h2 data-i18n-html="about.title">Une double expertise,<br>une seule vision</h2>
-        <p data-i18n="about.p1">Fort de plus de 10 ans d'expérience dans l'enseignement de l'anglais langue étrangère (ESL) et examinateur oral certifié au TCF à l'Institut Français du Togo depuis 2022, Akuété SEWA-DOVI combine rigueur académique et créativité visuelle pour offrir des services d'excellence.</p>
-        <p data-i18n="about.p2">Traducteur FR-EN depuis 5 ans spécialisé dans les documents officiels et littéraires, et professionnel de l'audiovisuel depuis 8 ans, LINGUAPHIX est la plateforme qui unit ces deux mondes en parfaite cohérence.</p>
-        <div class="exp-grid">
-          <div class="exp-card fade-up">
-            <div class="exp-icon">🏛️</div>
-            <div class="exp-title" data-i18n="about.exp1.title">Institut Français du Togo</div>
-            <div class="exp-detail" data-i18n="about.exp1.detail">Examinateur TCF · depuis 2022</div>
-          </div>
-          <div class="exp-card fade-up">
-            <div class="exp-icon">📚</div>
-            <div class="exp-title" data-i18n="about.exp2.title">Enseignant ESL / FLE</div>
-            <div class="exp-detail" data-i18n="about.exp2.detail">10+ ans d'expérience</div>
-          </div>
-          <div class="exp-card fade-up">
-            <div class="exp-icon">🌐</div>
-            <div class="exp-title" data-i18n="about.exp3.title">Traducteur FR⇄EN</div>
-            <div class="exp-detail" data-i18n="about.exp3.detail">5+ ans · Docs officiels & livres</div>
-          </div>
-          <div class="exp-card fade-up">
-            <div class="exp-icon">🎬</div>
-            <div class="exp-title" data-i18n="about.exp4.title">Audiovisuel & Design</div>
-            <div class="exp-detail" data-i18n="about.exp4.detail">8+ ans · Production pro</div>
-          </div>
-        </div>
-        <div class="cert-strip" role="list">
-          <span class="cert-pill cert-pill--fr" role="listitem" data-i18n="about.cert.tcf">TCF Certifié</span>
-          <span class="cert-pill cert-pill--en" role="listitem" data-i18n="about.cert.ielts">IELTS Expert</span>
-          <span class="cert-pill cert-pill--en" role="listitem" data-i18n="about.cert.toefl">TOEFL Prep</span>
-          <span class="cert-pill cert-pill--en" role="listitem" data-i18n="about.cert.cambridge">Cambridge Prep</span>
-          <span class="cert-pill cert-pill--en" role="listitem" data-i18n="about.cert.toeic">TOEIC</span>
-          <span class="cert-pill cert-pill--design" role="listitem" data-i18n="about.cert.adobe">Adobe Suite</span>
-          <span class="cert-pill cert-pill--av" role="listitem" data-i18n="about.cert.video">Production Vidéo</span>
+      <div class="hero-visual">
+        <div class="hero-logo-float-wrap">
+          <span class="hero-logo-float__tip" id="heroLogoRefreshTip" role="tooltip" data-i18n="hero.logoRefresh.hint">
+            Actualisation forcée — cliquer pour recharger la page
+          </span>
+          <button
+            type="button"
+            class="hero-logo-float"
+            id="heroLogoRefresh"
+            aria-describedby="heroLogoRefreshTip"
+            data-i18n-aria="hero.logoRefresh.aria">
+            <img
+              src="assets/branding/logo-mark-original.png"
+              alt=""
+              class="hero-logo-float__img"
+              width="420"
+              height="420"
+              decoding="async">
+          </button>
         </div>
       </div>
     </div>
@@ -735,7 +681,7 @@
       <div class="footer-col">
         <h5 data-i18n="footer.col3">Liens rapides</h5>
         <ul>
-          <li><a href="#about" data-i18n="nav.about">À propos</a></li>
+          <li><a href="about.html" data-i18n="nav.about">À propos</a></li>
           <li><a href="design.html" data-i18n="nav.design">Design</a></li>
           <li><a href="#testimonials" data-i18n="nav.testimonials">Témoignages</a></li>
           <li><a href="javascript:void(0)" role="button" data-open-service-book data-i18n="nav.cta">Réserver</a></li>
@@ -748,7 +694,7 @@
     <div class="footer-bottom">
       <p class="footer-copy">
         <span data-i18n="footer.copy.prefix">© 2026 LINGUAPHIX · Developed by </span>
-        <a href="#about" data-i18n="footer.copy.name">Akuété SEWA-DOVI</a>
+        <a href="about.html" data-i18n="footer.copy.name">Akuété SEWA-DOVI</a>
         <span data-i18n="footer.copy.suffix"> · All rights reserved</span>
       </p>
       <div class="footer-bottom__links">

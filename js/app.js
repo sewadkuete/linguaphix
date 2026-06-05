@@ -165,6 +165,8 @@ const i18n = {
     'hero.stat1': 'Ans d\'enseignement',
     'hero.stat2': 'Ans de traduction',
     'hero.stat3': 'Ans en audiovisuel',
+    'hero.logoRefresh.hint': 'Actualisation forcée — cliquer pour recharger la page',
+    'hero.logoRefresh.aria': 'Actualiser la page (vider le cache)',
     'about.badge': 'À propos',
     'about.title': 'Une double expertise,<br>une seule vision',
     'about.role': 'Freelance · Consultant · Examinateur TCF',
@@ -188,6 +190,7 @@ const i18n = {
     'about.cert.video': 'Production Vidéo',
     'about.linkedin': 'Voir mon LinkedIn',
     'about.cta': 'Travailler ensemble',
+    'about.page.back': '← Retour à l\'accueil',
     'services.badge': 'Nos Services',
     'services.title': 'Services linguistiques',
     'services.subtitle': 'Cours, examens, traduction et formation — sur mesure pour particuliers et entreprises, en ligne et en présentiel.',
@@ -576,6 +579,7 @@ const i18n = {
     'sitemap.h.book': 'Réserver & devis',
     'sitemap.h.contact': 'Contact & réseaux',
     'sitemap.link.home': 'Accueil',
+    'sitemap.link.about': 'À propos — Présentation',
     'sitemap.link.design': 'Design — Services créatifs',
     'sitemap.link.portfolio': 'Portfolio — Vidéo & design',
     'sitemap.link.catalogue': 'Catalogue des services',
@@ -631,6 +635,8 @@ const i18n = {
     'hero.stat1': 'Years teaching',
     'hero.stat2': 'Years translating',
     'hero.stat3': 'Years in AV',
+    'hero.logoRefresh.hint': 'Hard refresh — click to reload the page',
+    'hero.logoRefresh.aria': 'Hard refresh page (clear cache)',
     'about.badge': 'About',
     'about.title': 'Dual expertise,<br>one clear vision',
     'about.role': 'Freelance · Consultant · TCF Examiner',
@@ -654,6 +660,7 @@ const i18n = {
     'about.cert.video': 'Video Production',
     'about.linkedin': 'View LinkedIn',
     'about.cta': 'Work with me',
+    'about.page.back': '← Back to home',
     'services.badge': 'Services',
     'services.title': 'Language services',
     'services.subtitle': 'Courses, exams, translation, and training — tailored for individuals and businesses, online and in-person.',
@@ -1042,6 +1049,7 @@ const i18n = {
     'sitemap.h.book': 'Book & quotes',
     'sitemap.h.contact': 'Contact & social',
     'sitemap.link.home': 'Home',
+    'sitemap.link.about': 'About — Profile',
     'sitemap.link.design': 'Design — Creative services',
     'sitemap.link.portfolio': 'Portfolio — Video & design',
     'sitemap.link.catalogue': 'Service catalog',
@@ -1110,6 +1118,10 @@ function applyLang(lang) {
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     const key = el.getAttribute('data-i18n-html');
     if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const key = el.getAttribute('data-i18n-aria');
+    if (i18n[lang][key]) el.setAttribute('aria-label', i18n[lang][key]);
   });
   if (typeof applySelectI18n === 'function') applySelectI18n(lang, i18n);
   const heroTitle = document.querySelector('.hero-title');
@@ -1832,6 +1844,22 @@ function syncNavbarScrolledState() {
   else nav.classList.remove('scrolled');
 }
 
+function hardRefreshPage() {
+  const url = new URL(window.location.href);
+  url.searchParams.set('_', String(Date.now()));
+  window.location.replace(url.toString());
+}
+
+function bindHeroLogoRefresh() {
+  const btn = document.getElementById('heroLogoRefresh');
+  if (!btn || btn.dataset.refreshBound === '1') return;
+  btn.dataset.refreshBound = '1';
+  btn.addEventListener('click', (event) => {
+    event.preventDefault();
+    hardRefreshPage();
+  });
+}
+
 function hardenExternalLinks() {
   document.querySelectorAll('a[target="_blank"]').forEach((anchor) => {
     const parts = new Set((anchor.getAttribute('rel') || '').split(/\s+/).filter(Boolean));
@@ -1845,6 +1873,7 @@ window.addEventListener('DOMContentLoaded', () => {
   hardenExternalLinks();
   ensureServiceBookModal();
   bindNavBookCtas();
+  bindHeroLogoRefresh();
   const detectedLang = detectLang();
   if (typeof setStoredLang === 'function') setStoredLang(detectedLang);
   if (typeof initUrlLangSync === 'function') initUrlLangSync();

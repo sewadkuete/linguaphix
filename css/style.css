@@ -364,6 +364,7 @@ body:not(.has-fixed-header) #navbar,
 .page-policy #navbar .lang-toggle,
 .page-portfolio #navbar .lang-toggle,
 .page-design #navbar .lang-toggle,
+.page-about #navbar .lang-toggle,
 .page-catalogue #navbar .lang-toggle,
 .page-service #navbar .lang-toggle,
 .page-sitemap #navbar .lang-toggle {
@@ -386,6 +387,7 @@ body:not(.has-fixed-header) #navbar,
 .page-policy #navbar .lang-toggle__btn,
 .page-portfolio #navbar .lang-toggle__btn,
 .page-design #navbar .lang-toggle__btn,
+.page-about #navbar .lang-toggle__btn,
 .page-catalogue #navbar .lang-toggle__btn,
 .page-service #navbar .lang-toggle__btn,
 .page-sitemap #navbar .lang-toggle__btn {
@@ -399,6 +401,7 @@ body:not(.has-fixed-header) #navbar,
 .page-policy #navbar .lang-toggle__btn.is-active,
 .page-portfolio #navbar .lang-toggle__btn.is-active,
 .page-design #navbar .lang-toggle__btn.is-active,
+.page-about #navbar .lang-toggle__btn.is-active,
 .page-catalogue #navbar .lang-toggle__btn.is-active,
 .page-service #navbar .lang-toggle__btn.is-active,
 .page-sitemap #navbar .lang-toggle__btn.is-active {
@@ -412,6 +415,7 @@ body:not(.has-fixed-header) #navbar,
 .page-policy #navbar .lang-toggle__btn:hover:not(.is-active),
 .page-portfolio #navbar .lang-toggle__btn:hover:not(.is-active),
 .page-design #navbar .lang-toggle__btn:hover:not(.is-active),
+.page-about #navbar .lang-toggle__btn:hover:not(.is-active),
 .page-catalogue #navbar .lang-toggle__btn:hover:not(.is-active),
 .page-service #navbar .lang-toggle__btn:hover:not(.is-active),
 .page-sitemap #navbar .lang-toggle__btn:hover:not(.is-active) {
@@ -516,17 +520,70 @@ body:not(.has-fixed-header) #navbar,
   height: 100%;
   min-height: clamp(220px, 38vw, 440px);
 }
-.hero-logo-float {
+.hero-logo-float-wrap {
+  position: relative;
   width: 100%;
   max-width: clamp(200px, 34vw, 420px);
   aspect-ratio: 1;
+  flex-shrink: 0;
+}
+.hero-logo-float {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
   transform-origin: center center;
   will-change: transform;
   animation: hero-logo-spiral-zoom 28s linear infinite;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  -webkit-tap-highlight-color: transparent;
+}
+.hero-logo-float:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.85);
+  outline-offset: 4px;
+}
+.hero-logo-float__tip {
+  position: absolute;
+  z-index: 2;
+  bottom: calc(100% + 0.65rem);
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: min(16rem, 72vw);
+  padding: 0.45rem 0.7rem;
+  border-radius: var(--radius-sm);
+  background: rgba(7, 61, 30, 0.94);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  line-height: var(--leading-snug);
+  text-align: center;
+  white-space: normal;
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+.hero-logo-float__tip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 6px solid transparent;
+  border-top-color: rgba(7, 61, 30, 0.94);
+}
+.hero-logo-float-wrap:hover .hero-logo-float__tip,
+.hero-logo-float-wrap:focus-within .hero-logo-float__tip {
+  opacity: 1;
+  visibility: visible;
 }
 .hero-logo-float__img {
   display: block;
@@ -1805,6 +1862,7 @@ select.form-control { appearance: none; cursor: pointer; }
 .page-policy #navbar .lang-toggle,
 .page-portfolio #navbar .lang-toggle,
 .page-design #navbar .lang-toggle,
+.page-about #navbar .lang-toggle,
 .page-catalogue #navbar .lang-toggle,
 .page-service #navbar .lang-toggle {
   border-color: var(--gray-200);
@@ -1951,7 +2009,8 @@ select.form-control { appearance: none; cursor: pointer; }
 .form-feedback--info { background: var(--gray-50); color: var(--gray-600); }
 
 /* ── DESIGN PAGE ── */
-.design-page__intro { padding-top: clamp(6rem, 12vw, 8rem); }
+.design-page__intro,
+.about-page__intro { padding-top: clamp(6rem, 12vw, 8rem); }
 .design-back { margin-bottom: 1.5rem; }
 .design-back a {
   font-size: var(--text-sm); color: var(--green); font-weight: 600; text-decoration: none;
@@ -2979,7 +3038,7 @@ body:has(.wa-float) > footer {
     margin: 0 auto;
     order: -1;
   }
-  .hero-logo-float {
+  .hero-logo-float-wrap {
     max-width: min(280px, 70vw);
   }
   .hero-copy {
