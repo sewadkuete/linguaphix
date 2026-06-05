@@ -1,6 +1,8 @@
 /**
- * Append ?v=… to local js/css asset URLs in all HTML files.
- * Run before deploy (CI uses the git SHA) so browsers fetch fresh assets on refresh.
+ * Deploy cache busting:
+ * - ?v= on local js/css in all HTML
+ * - js/build-version.json (fetched with no-store to detect new deploys)
+ * - inline build-check (reloads when CDN serves stale HTML)
  */
 import fs from 'fs';
 import path from 'path';
@@ -20,8 +22,17 @@ const CACHE_META = [
   '<meta http-equiv="Expires" content="0">',
 ].join('\n');
 
+const BUILD_META_TAG = `<meta name="lx-build" content="${version}">`;
+
+const BUILD_CHECK_SCRIPT = `<script data-lx-build-check="1">
+(function(){var M="lx-build",R="lx-build-reload",m=document.querySelector('meta[name="'+M+'"]'),pageBuild=m&&m.getAttribute("content");if(!pageBuild)return;var p=(location.pathname||"").replace(/\\\\/g,"/"),jsBase=/\\/services\\//.test(p)?"../js/":"js/";fetch(jsBase+"build-version.json?_="+Date.now(),{cache:"no-store",credentials:"same-origin"}).then(function(r){return r.ok?r.json():null}).then(function(d){if(!d||!d.build||d.build===pageBuild)return;var now=Date.now();try{var last=parseInt(sessionStorage.getItem(R)||"0",10);if(last&&now-last<15000)return;sessionStorage.setItem(R,String(now))}catch(e){}var u=new URL(location.href);u.searchParams.delete("_");u.searchParams.set("_",String(now));location.replace(u.pathname+u.search+u.hash)}).catch(function(){})})();
+</script>`;
+
 const ASSET_REF =
   /(\s(?:href|src)=["'])((?:\.\.\/)?(?:js|css)\/[^"']+?)(?:\?v=[^"']*)?(["'])/g;
+
+const BUILD_META_REF = /<meta name="lx-build" content="[^"]*">/;
+const BUILD_CHECK_REF = /<script data-lx-build-check="1">[\s\S]*?<\/script>/;
 
 function walkHtmlFiles(dir, list = []) {
   for (const name of fs.readdirSync(dir)) {
@@ -37,9 +48,74 @@ function walkHtmlFiles(dir, list = []) {
   return list;
 }
 
+function hasCacheMeta(html) {
+  return html.includes('http-equiv="Cache-Control"');
+}
+
+function injectBuildBootstrap(html) {
+  let next = html;
+  let changed = false;
+
+  if (BUILD_META_REF.test(next)) {
+    const updated = next.replace(BUILD_META_REF, BUILD_META_TAG);
+    if (updated !== next) {
+      next = updated;
+      changed = true;
+    }
+  } else if (next.includes('<meta charset="UTF-8">')) {
+    const cacheBlock = hasCacheMeta(next) ? '' : `${CACHE_META}\n`;
+    const block = `<meta charset="UTF-8">\n${cacheBlock}${BUILD_META_TAG}`;
+    const updated = next.replace(/<meta charset="UTF-8">/i, block);
+    if (updated !== next) {
+      next = updated;
+      changed = true;
+    }
+  }
+
+  if (BUILD_CHECK_REF.test(next)) {
+    const updated = next.replace(BUILD_CHECK_REF, BUILD_CHECK_SCRIPT);
+    if (updated !== next) {
+      next = updated;
+      changed = true;
+    }
+  } else if (next.includes('name="lx-build"')) {
+    const updated = next.replace(BUILD_META_REF, `${BUILD_META_TAG}\n${BUILD_CHECK_SCRIPT}`);
+    if (updated !== next) {
+      next = updated;
+      changed = true;
+    }
+  }
+
+  return { html: next, changed };
+}
+
+function dedupeCacheMeta(html) {
+  let next = html;
+  let changed = false;
+  let first = next.indexOf(CACHE_META);
+  if (first < 0) return { html: next, changed: false };
+
+  let searchFrom = first + CACHE_META.length;
+  let second = next.indexOf(CACHE_META, searchFrom);
+  while (second >= 0) {
+    let removeEnd = second + CACHE_META.length;
+    if (next[removeEnd] === '\r' && next[removeEnd + 1] === '\n') removeEnd += 2;
+    else if (next[removeEnd] === '\n') removeEnd += 1;
+    next = next.slice(0, second) + next.slice(removeEnd);
+    changed = true;
+    searchFrom = first + CACHE_META.length;
+    second = next.indexOf(CACHE_META, searchFrom);
+  }
+  return { html: next, changed };
+}
+
 function stampFile(filePath) {
   let html = fs.readFileSync(filePath, 'utf8');
   let changed = false;
+
+  const deduped = dedupeCacheMeta(html);
+  html = deduped.html;
+  if (deduped.changed) changed = true;
 
   const stamped = html.replace(ASSET_REF, (match, prefix, assetPath, suffix) => {
     const next = `${prefix}${assetPath}?v=${version}${suffix}`;
@@ -48,13 +124,9 @@ function stampFile(filePath) {
   });
   html = stamped;
 
-  if (!html.includes('http-equiv="Cache-Control"')) {
-    const withMeta = html.replace(/<meta charset="UTF-8">/i, `<meta charset="UTF-8">\n${CACHE_META}`);
-    if (withMeta !== html) {
-      html = withMeta;
-      changed = true;
-    }
-  }
+  const boot = injectBuildBootstrap(html);
+  html = boot.html;
+  if (boot.changed) changed = true;
 
   if (changed) {
     fs.writeFileSync(filePath, html, 'utf8');
@@ -62,6 +134,10 @@ function stampFile(filePath) {
   }
   return false;
 }
+
+const buildVersionFile = path.join(root, 'js', 'build-version.json');
+fs.writeFileSync(buildVersionFile, `${JSON.stringify({ build: version }, null, 2)}\n`, 'utf8');
+console.log(`wrote ${path.relative(root, buildVersionFile)}`);
 
 const files = walkHtmlFiles(root);
 let count = 0;

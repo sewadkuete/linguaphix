@@ -45,8 +45,8 @@ function clampField(value, max) {
   return String(value || '').trim().slice(0, max);
 }
 
-function isHoneypotFilled() {
-  const hp = document.getElementById('c-website');
+function isHoneypotFilled(fieldId) {
+  const hp = document.getElementById(fieldId || 'c-website');
   return Boolean(hp?.value?.trim());
 }
 
@@ -1355,6 +1355,8 @@ stars.forEach(star => {
 
 // ── TESTIMONIAL SUBMIT (Supabase) ──
 async function submitTestimonial() {
+  if (isHoneypotFilled('t-website')) return;
+
   const name = clampField(document.getElementById('t-name').value, FORM_LIMITS.name);
   const role = clampField(document.getElementById('t-role').value, FORM_LIMITS.role);
   const service = clampField(document.getElementById('t-service').value, FORM_LIMITS.service);
@@ -1863,20 +1865,46 @@ function syncNavbarScrolledState() {
   else nav.classList.remove('scrolled');
 }
 
+function getBuildVersionJsonUrl() {
+  const path = (window.location.pathname || '').replace(/\\/g, '/');
+  const jsBase = /\/services\//.test(path) ? '../js/' : 'js/';
+  return `${jsBase}build-version.json?_=${Date.now()}`;
+}
+
 function hardRefreshPage() {
+  const bust = String(Date.now());
   const url = new URL(window.location.href);
   url.searchParams.delete('_');
-  url.searchParams.set('_', String(Date.now()));
+  url.searchParams.set('_', bust);
   const target = `${url.pathname}${url.search}${url.hash}`;
-  const reload = () => { window.location.assign(target); };
+
+  const reload = () => {
+    try {
+      sessionStorage.removeItem('lx-build-reload');
+    } catch (_) {
+      /* ignore */
+    }
+    window.location.replace(target);
+  };
+
+  const tasks = [];
   if ('caches' in window) {
-    caches.keys()
-      .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
-      .finally(reload)
-      .catch(reload);
-    return;
+    tasks.push(
+      caches.keys().then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
+    );
   }
-  reload();
+  tasks.push(
+    fetch(getBuildVersionJsonUrl(), { cache: 'no-store', credentials: 'same-origin' }).catch(() => null)
+  );
+  tasks.push(
+    fetch(`${url.pathname}${url.search}${url.hash}`, {
+      cache: 'reload',
+      credentials: 'same-origin',
+      headers: { Pragma: 'no-cache', 'Cache-Control': 'no-cache' },
+    }).catch(() => null)
+  );
+
+  Promise.all(tasks).finally(reload).catch(reload);
 }
 
 function isMobilePullRefreshDevice() {

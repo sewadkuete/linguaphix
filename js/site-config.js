@@ -1,6 +1,7 @@
 /**
  * Site-wide public config (safe to commit).
- * Production Supabase keys: injected at deploy into js/runtime-config.json (CI).
+ * Supabase + GA: injected at deploy into js/runtime-config.json (CI secrets).
+ * Never commit real keys here — copy js/runtime-config.example.json for local shape.
  * Local dev: .env.local + node scripts/write-site-config-local.mjs
  * See docs/CONFIG-SETUP.md
  */
@@ -14,8 +15,6 @@
       waMe: '22892539953',
     },
     contactEmail: 'contact@linguaphix.com',
-    supabaseUrl: 'https://wmydrcccnqphqliahznx.supabase.co',
-    supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndteWRyY2NjbnFwaHFsaWFoem54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA1OTE0ODksImV4cCI6MjA5NjE2NzQ4OX0.XFnwJalIK9oFnKKeFbeYFlDhSaBBwn5IWjvaLb2KGec',
     calendlyUrl: 'https://calendly.com/linguaphix/call',
     onlinePlatform: 'Zoom / Google Meet (à confirmer)',
     inPersonAddress: 'Lomé, Togo (adresse à confirmer)',

@@ -6,24 +6,28 @@ This guide wires **testimonials** (Supabase), optional **Google Analytics**, and
 
 | File | Committed? | Purpose |
 |------|------------|---------|
-| `js/site-config.js` | Yes | Public defaults (phone, Calendly, placeholder GA id) |
+| `js/site-config.js` | Yes | Public defaults (phone, Calendly) — **no Supabase keys** |
+| `js/runtime-config.example.json` | Yes | Shape of deploy/local runtime config |
+| `js/runtime-config.json` | **No** (gitignored) | Real Supabase URL, anon key, GA id (CI or local script) |
 | `js/site-config.local.example.js` | Yes | Template to copy |
-| `js/site-config.local.js` | **No** (gitignored) | Your Supabase URL, anon key, real GA id |
-| `.env.local` | **No** | Optional source for the write script |
+| `js/site-config.local.js` | **No** (gitignored) | Optional JS override for local dev |
+| `.env.local` | **No** | Source for `write-site-config-local.mjs` |
 | `docs/supabase-rls.sql` | Yes | Row-level security for `testimonials` |
 
-All pages load `site-config.js` then `site-config.local.js`. If the local file is missing, the site still runs; testimonials stay disabled until Supabase is configured.
+Pages load `site-config.js`, which fetches `runtime-config.json` (injected on deploy). Locally, run `node scripts/write-site-config-local.mjs` after editing `.env.local`.
 
 ---
 
 ## 1. Supabase project
 
 1. Create a project at [supabase.com](https://supabase.com).
-2. Open **SQL Editor** → paste and run **`docs/supabase-rls.sql`**.
-3. Open **Settings → API** and copy:
+2. Open **Settings → API** and copy:
    - **Project URL** → `SUPABASE_URL`
    - **anon public** key → `SUPABASE_ANON_KEY`  
    Never use the `service_role` key in the browser.
+3. Open **SQL Editor** → paste and run **`docs/supabase-rls.sql`** (safe to re-run).
+4. Verify in dashboard: **Authentication → Policies** on `public.testimonials` — 6 policies, RLS enabled.
+5. From your machine (with keys in `.env.local`): `node scripts/verify-supabase-rls.mjs` — all checks must pass.
 
 ### Table check
 
@@ -87,7 +91,10 @@ Override via `contactEmail` in `site-config.local.js` or `CONTACT_EMAIL` in `.en
 ## 5. Checklist before go-live
 
 - [ ] `docs/supabase-rls.sql` executed in Supabase
-- [ ] `js/site-config.local.js` works locally OR GitHub secrets set for deploy
+- [ ] `node scripts/verify-supabase-rls.mjs` passes
+- [ ] `docs/CLOUDFLARE-SECURITY-HEADERS.md` applied in Cloudflare dashboard
+- [ ] GitHub Actions secrets `SUPABASE_URL` + `SUPABASE_ANON_KEY` set (keys not in git)
+- [ ] Local dev: `.env.local` + `node scripts/write-site-config-local.mjs`
 - [ ] Test testimonial submits and appears only after `approved = true`
 - [ ] `gaMeasurementId` set (or left placeholder to disable tracking)
 - [ ] `robots.txt` / `sitemap.xml` at site root (see `docs/GOOGLE-ANALYTICS-SEO.md`)
