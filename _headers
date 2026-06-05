@@ -1,3 +1,18 @@
+/js/site-config.js
+  Cache-Control: no-cache, must-revalidate
+
+/js/site-config.local.js
+  Cache-Control: no-store, no-cache, must-revalidate
+
+/js/site-config.local.json
+  Cache-Control: no-store, no-cache, must-revalidate
+
+/js/app.js
+  Cache-Control: no-cache, must-revalidate
+
+/index.html
+  Cache-Control: no-cache, must-revalidate
+
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN

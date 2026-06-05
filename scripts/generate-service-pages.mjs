@@ -35,7 +35,6 @@ function shell(slug, titleFr, descFr) {
 <link rel="icon" href="../assets/branding/logo-mark-original.png" type="image/png">
 <link rel="apple-touch-icon" href="../assets/branding/logo-mark-original.png">
 <script src="../js/site-config.js"></script>
-<script src="../js/site-config.local.js"></script>
 <script src="../js/analytics.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

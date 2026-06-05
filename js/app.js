@@ -1886,9 +1886,19 @@ function bindHeroLogoRefresh() {
   });
 }
 
-async function waitForSupabaseConfig(maxAttempts = 30) {
+async function waitForSupabaseConfig(maxAttempts = 40) {
+  if (window.LINGUAPHIX_CONFIG_READY_PROMISE) {
+    try {
+      await window.LINGUAPHIX_CONFIG_READY_PROMISE;
+    } catch (err) {
+      console.warn('[LINGUAPHIX] config ready promise failed:', err);
+    }
+  }
   for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
     if (isSupabaseConfigured()) return true;
+    if (window.LINGUAPHIX_CONFIG_READY_PROMISE && attempt === 5) {
+      try { await window.LINGUAPHIX_CONFIG_READY_PROMISE; } catch (err) { /* retry */ }
+    }
     await new Promise((resolve) => setTimeout(resolve, 100));
   }
   return isSupabaseConfigured();
@@ -1899,12 +1909,14 @@ async function fetchApprovedTestimonials(url, key, attempts = 3) {
   for (let attempt = 0; attempt < attempts; attempt += 1) {
     try {
       const res = await fetch(
-        `${url}/rest/v1/testimonials?approved=eq.true&order=created_at.desc&limit=12`,
+        `${url}/rest/v1/testimonials?approved=eq.true&order=created_at.desc&limit=12&_=${Date.now()}`,
         {
           headers: {
             apikey: key,
             Authorization: `Bearer ${key}`,
             Accept: 'application/json',
+            'Cache-Control': 'no-cache',
+            Pragma: 'no-cache',
           },
           cache: 'no-store',
         }

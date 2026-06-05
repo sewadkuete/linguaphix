@@ -10,6 +10,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
 const outFile = path.join(root, 'js', 'site-config.local.js');
+const jsonFile = path.join(root, 'js', 'site-config.local.json');
 const envFile = path.join(root, '.env.local');
 
 function parseEnvFile(content) {
@@ -95,6 +96,14 @@ ${fields.join('\n')}
 })();
 `;
 
+const payload = {};
+if (gaMeasurementId) payload.gaMeasurementId = gaMeasurementId;
+if (supabaseUrl) payload.supabaseUrl = supabaseUrl;
+if (supabaseAnonKey) payload.supabaseAnonKey = supabaseAnonKey;
+if (contactEmail) payload.contactEmail = contactEmail;
+if (siteUrl) payload.siteUrl = siteUrl;
+
 fs.mkdirSync(path.dirname(outFile), { recursive: true });
 fs.writeFileSync(outFile, body, 'utf8');
-console.log(`Wrote ${path.relative(root, outFile)} (${fields.length} value(s)).`);
+fs.writeFileSync(jsonFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
+console.log(`Wrote ${path.relative(root, outFile)} and ${path.relative(root, jsonFile)} (${fields.length} value(s)).`);

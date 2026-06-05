@@ -4,3 +4,4 @@ Thumbs.db
 .env
 .env.local
 js/site-config.local.js
+js/site-config.local.json
