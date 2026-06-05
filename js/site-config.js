@@ -7,7 +7,7 @@
  */
 (function initSiteConfig() {
   const defaults = {
-    gaMeasurementId: 'G-XXXXXXXXXX',
+    gaMeasurementId: 'G-T9WKL4ZSS6',
     siteUrl: 'https://linguaphix.com',
     phone: {
       display: '+228 92 53 99 53',
