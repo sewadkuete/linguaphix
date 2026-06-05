@@ -119,9 +119,5 @@ fs.mkdirSync(path.dirname(runtimeFile), { recursive: true });
 fs.writeFileSync(runtimeFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 fs.writeFileSync(jsonFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 fs.writeFileSync(outFile, body, 'utf8');
-if (isCi) {
-  fs.writeFileSync(deployFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
-  console.log(`Wrote ${path.relative(root, deployFile)} for deploy (${Object.keys(payload).length} value(s)).`);
-} else {
-  console.log(`Wrote local config files (${Object.keys(payload).length} value(s)); deploy file unchanged.`);
-}
+fs.writeFileSync(deployFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
+console.log(`Wrote ${path.relative(root, deployFile)} (${Object.keys(payload).length} value(s)).`);
