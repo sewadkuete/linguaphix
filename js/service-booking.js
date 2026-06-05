@@ -341,11 +341,11 @@
               'You can use either button, or both: book a time on Calendly and/or send your request via WhatsApp with the same details.'
           )}</p>
           <div class="booking-form-actions">
-            <button type="submit" class="btn btn-primary btn-lg" id="booking-submit-btn" disabled>
-              ${esc(t(lang, 'book.submit') || 'Accept & Book')}
-            </button>
             <button type="button" class="btn btn-lg booking-whatsapp-btn" id="booking-whatsapp-btn" disabled>
               ${esc(t(lang, 'book.submitWhatsapp') || 'Send via WhatsApp')}
+            </button>
+            <button type="submit" class="btn btn-primary btn-lg" id="booking-submit-btn" disabled>
+              ${esc(t(lang, 'book.submit') || 'Accept & Book')}
             </button>
           </div>
           <p class="booking-success-msg" id="booking-success-msg" hidden role="status"></p>
@@ -939,7 +939,17 @@
     ).catch(() => null);
 
     const calUrl = buildCalendlyBookingUrl(v, serviceTitle, slug, lang);
-    window.location.assign(calUrl);
+    window.open(calUrl, '_blank', 'noopener,noreferrer');
+
+    if (btn) {
+      btn.disabled = false;
+      if (btn.dataset.prevLabel) btn.textContent = btn.dataset.prevLabel;
+    }
+
+    if (successEl) {
+      successEl.textContent = t(lang, 'book.calendlyOpened') || t(lang, 'book.success') || '';
+      successEl.hidden = false;
+    }
   }
 
   window.renderServiceBooking = function renderServiceBooking(lang) {

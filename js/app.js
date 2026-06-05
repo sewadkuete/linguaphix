@@ -435,7 +435,9 @@ const i18n = {
     'book.actionsHint':
       'Vous pouvez utiliser l\'un ou l\'autre bouton, ou les deux : réservez un créneau sur Calendly et/ou envoyez votre demande par WhatsApp avec les mêmes informations.',
     'book.whatsappOpened':
-      'WhatsApp s\'ouvre avec votre message — appuyez sur Envoyer dans l\'application. Vous pouvez aussi utiliser « Accepter & réserver » pour planifier un appel sur Calendly.',
+      'WhatsApp s\'ouvre dans un nouvel onglet — appuyez sur Envoyer dans l\'application. Vous pouvez aussi utiliser « Accepter & réserver » pour ouvrir Calendly.',
+    'book.calendlyOpened':
+      '✅ Calendly s\'ouvre dans un nouvel onglet pour planifier votre appel. Votre demande a aussi été envoyée par email.',
     'book.sending': 'Envoi en cours…',
     'book.success': '✅ Votre demande de réservation a été envoyée ! Nous vous contacterons sous 24 h pour confirmer votre séance. Vérifiez WhatsApp et votre email.',
     'book.onQuote': 'Sur devis',
@@ -912,7 +914,9 @@ const i18n = {
     'book.actionsHint':
       'You can use either button, or both: book a time on Calendly and/or send your request via WhatsApp with the same details.',
     'book.whatsappOpened':
-      'WhatsApp will open with your message — tap Send in the app. You can also use "Accept & Book" to schedule a call on Calendly.',
+      'WhatsApp is opening in a new tab — tap Send in the app. You can also use "Accept & Book" to open Calendly.',
+    'book.calendlyOpened':
+      '✅ Calendly is opening in a new tab to schedule your call. Your request was also sent by email.',
     'book.sending': 'Sending…',
     'book.success': '✅ Your booking request has been sent! We will contact you within 24 hours to confirm your session. Check your WhatsApp and email.',
     'book.onQuote': 'On quote',
