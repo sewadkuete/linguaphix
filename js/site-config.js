@@ -1,6 +1,6 @@
 /**
  * Site-wide public config (safe to commit).
- * Supabase + GA: injected at deploy into js/runtime-config.json (CI secrets).
+ * Supabase + GA: injected at deploy into js/supabase-config.json (CI secrets).
  * Never commit real keys here — copy js/runtime-config.example.json for local shape.
  * Local dev: .env.local + node scripts/write-site-config-local.mjs
  * See docs/CONFIG-SETUP.md
@@ -70,6 +70,7 @@
     const base = configBaseUrl();
     const bust = Date.now();
     const sources = [
+      `${base}supabase-config.json?cb=${bust}`,
       `${base}runtime-config.json?cb=${bust}`,
       `${base}site-config.local.json?cb=${bust}`,
     ];

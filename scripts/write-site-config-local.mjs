@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Writes js/runtime-config.json (deployed) and optional local dev files.
+ * Writes js/supabase-config.json on CI (tracked deploy artifact) and gitignored local dev files.
  * Used locally and in GitHub Actions (secrets → env → this script).
  */
 import fs from 'fs';
@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, '..');
+const deployFile = path.join(root, 'js', 'supabase-config.json');
 const runtimeFile = path.join(root, 'js', 'runtime-config.json');
 const outFile = path.join(root, 'js', 'site-config.local.js');
 const jsonFile = path.join(root, 'js', 'site-config.local.json');
@@ -118,4 +119,9 @@ fs.mkdirSync(path.dirname(runtimeFile), { recursive: true });
 fs.writeFileSync(runtimeFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 fs.writeFileSync(jsonFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 fs.writeFileSync(outFile, body, 'utf8');
-console.log(`Wrote ${path.relative(root, runtimeFile)} (${Object.keys(payload).length} value(s)).`);
+if (isCi) {
+  fs.writeFileSync(deployFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
+  console.log(`Wrote ${path.relative(root, deployFile)} for deploy (${Object.keys(payload).length} value(s)).`);
+} else {
+  console.log(`Wrote local config files (${Object.keys(payload).length} value(s)); deploy file unchanged.`);
+}

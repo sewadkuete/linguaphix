@@ -8,13 +8,14 @@ This guide wires **testimonials** (Supabase), optional **Google Analytics**, and
 |------|------------|---------|
 | `js/site-config.js` | Yes | Public defaults (phone, Calendly) — **no Supabase keys** |
 | `js/runtime-config.example.json` | Yes | Shape of deploy/local runtime config |
-| `js/runtime-config.json` | **No** (gitignored) | Real Supabase URL, anon key, GA id (CI or local script) |
+| `js/supabase-config.json` | Yes (placeholder) | CI injects real Supabase URL, anon key, GA id at deploy |
+| `js/runtime-config.json` | **No** (gitignored) | Local-only copy from `write-site-config-local.mjs` |
 | `js/site-config.local.example.js` | Yes | Template to copy |
 | `js/site-config.local.js` | **No** (gitignored) | Optional JS override for local dev |
 | `.env.local` | **No** | Source for `write-site-config-local.mjs` |
 | `docs/supabase-rls.sql` | Yes | Row-level security for `testimonials` |
 
-Pages load `site-config.js`, which fetches `runtime-config.json` (injected on deploy). Locally, run `node scripts/write-site-config-local.mjs` after editing `.env.local`.
+Pages load `site-config.js`, which fetches `supabase-config.json` (injected on deploy). Locally, run `node scripts/write-site-config-local.mjs` after editing `.env.local`.
 
 ---
 

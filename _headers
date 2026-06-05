@@ -16,7 +16,7 @@
 /js/site-config.js
   Cache-Control: no-cache, must-revalidate
 
-/js/runtime-config.json
+/js/supabase-config.json
   Cache-Control: no-store, no-cache, must-revalidate
 
 /js/site-config.local.json
