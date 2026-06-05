@@ -505,6 +505,15 @@
       .replace(/"/g, '&quot;');
   }
 
+  function getPolicyPageUrl(anchor, lang) {
+    const path = (window.location.pathname || '').replace(/\\/g, '/');
+    const prefix = /\/services\//.test(path) ? '../' : '';
+    let base = `${prefix}policy.html`;
+    if (anchor) base += `#${anchor}`;
+    const l = lang || (typeof currentLang !== 'undefined' ? currentLang : 'fr');
+    return typeof withLangInHref === 'function' ? withLangInHref(base, l) : base;
+  }
+
   function getConfig() {
     return window.LINGUAPHIX_CONFIG || {};
   }
@@ -685,7 +694,7 @@
       sectionTitle +
       introHtml +
       `<ul class="policy-modal-list">${listHtml}</ul>` +
-      `<p class="policy-modal-more"><a href="policy.html#${anchor}">${linkLabel}</a></p>`
+      `<p class="policy-modal-more"><a href="${getPolicyPageUrl(anchor, locale)}">${linkLabel}</a></p>`
     );
   };
 
