@@ -1861,6 +1861,7 @@ function syncNavbarScrolledState() {
 
 function hardRefreshPage() {
   const url = new URL(window.location.href);
+  url.searchParams.delete('_');
   url.searchParams.set('_', String(Date.now()));
   const target = `${url.pathname}${url.search}${url.hash}`;
   const reload = () => { window.location.assign(target); };

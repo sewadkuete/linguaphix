@@ -1,3 +1,18 @@
+/index.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/services/*
+  Cache-Control: no-cache, no-store, must-revalidate
+
+/css/*
+  Cache-Control: no-cache, must-revalidate
+
+/js/*
+  Cache-Control: no-cache, must-revalidate
+
 /js/site-config.js
   Cache-Control: no-cache, must-revalidate
 
@@ -8,9 +23,6 @@
   Cache-Control: no-store, no-cache, must-revalidate
 
 /js/app.js
-  Cache-Control: no-cache, must-revalidate
-
-/index.html
   Cache-Control: no-cache, must-revalidate
 
 /*

@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { spawnSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -181,3 +182,9 @@ for (const slug of slugs) {
   fs.writeFileSync(path.join(outDir, `${slug}.html`), shell(slug, title, desc), 'utf8');
 }
 console.log(`Generated ${slugs.length} pages in services/`);
+
+const stamp = spawnSync(process.execPath, ['scripts/stamp-assets.mjs'], {
+  cwd: root,
+  stdio: 'inherit',
+});
+if (stamp.status !== 0) process.exit(stamp.status ?? 1);
