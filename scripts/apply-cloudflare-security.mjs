@@ -157,6 +157,17 @@ function cacheBypassSupabaseConfigRule() {
   };
 }
 
+function cacheBypassAssetsRule() {
+  return {
+    ref: 'linguaphix-cache-bypass-assets',
+    description: 'LINGUAPHIX bypass cache for JS and CSS',
+    expression: `${HOST_EXPR} and (http.request.uri.path.extension in {"js" "css"})`,
+    action: 'set_cache_settings',
+    enabled: true,
+    action_parameters: { cache: false },
+  };
+}
+
 function mergeRules(existingRules, ours) {
   const keep = (existingRules || []).filter(
     (r) => !ours.some((o) => o.ref && o.ref === r.ref)
@@ -242,7 +253,12 @@ Or follow the manual steps in docs/CLOUDFLARE-SECURITY-HEADERS.md
     token,
     zoneId,
     'http_request_cache_settings',
-    [cacheBypassHtmlRule(), cacheBypassBuildRule(), cacheBypassSupabaseConfigRule()],
+    [
+      cacheBypassHtmlRule(),
+      cacheBypassBuildRule(),
+      cacheBypassSupabaseConfigRule(),
+      cacheBypassAssetsRule(),
+    ],
     'cache rules'
   );
 

@@ -1343,29 +1343,6 @@ a.ticker-badge-link:active {
 .testimonials-empty[hidden] {
   display: none !important;
 }
-.testimonials-toolbar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 1.5rem auto 0;
-  text-align: center;
-}
-.testimonials-cache-hint {
-  max-width: 42rem;
-  margin: 1rem auto 0;
-  padding: 0.85rem 1rem;
-  text-align: center;
-  font-size: var(--text-sm);
-  line-height: var(--leading-relaxed);
-  color: #92400e;
-  background: #fff8e1;
-  border: 1px solid #fde68a;
-  border-radius: var(--radius-md);
-}
-.testimonials-cache-hint[hidden] {
-  display: none !important;
-}
 .testimonial-card.is-rendered {
   opacity: 1;
   transform: none;

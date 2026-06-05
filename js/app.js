@@ -92,7 +92,6 @@ function renderTestimonials(items) {
   }
 
   if (empty) empty.hidden = true;
-  hideTestimonialsCacheHint();
   syncTestimonialsGridLayout(items.length);
   grid.innerHTML = items.map(t => {
     const rating = Math.min(5, Math.max(0, parseInt(t.rating, 10) || 0));
@@ -292,9 +291,6 @@ const i18n = {
     'testi.title': 'Ce que disent nos clients',
     'testi.subtitle': 'Des résultats concrets et des transformations réelles.',
     'testi.empty': 'Aucun témoignage publié pour le moment. Soyez le premier à partager votre expérience ci-dessous.',
-    'testi.refreshBtn': 'Actualiser les témoignages',
-    'testi.refreshAria': 'Recharger les témoignages depuis le serveur',
-    'testi.cacheError': 'Impossible de charger les témoignages. Essayez d\'actualiser ou de vider les données du site linguaphix.com dans votre navigateur.',
     'addtesti.badge': 'Votre avis compte',
     'addtesti.title': 'Partagez votre expérience',
     'addtesti.subtitle': 'Votre témoignage apparaîtra sur le site après validation.',
@@ -774,9 +770,6 @@ const i18n = {
     'testi.title': 'What our clients say',
     'testi.subtitle': 'Real results and genuine transformations.',
     'testi.empty': 'No published reviews yet. Be the first to share your experience below.',
-    'testi.refreshBtn': 'Refresh reviews',
-    'testi.refreshAria': 'Reload reviews from the server',
-    'testi.cacheError': 'Could not load reviews. Try refreshing, or clear site data for linguaphix.com in your browser.',
     'addtesti.badge': 'Your voice matters',
     'addtesti.title': 'Share your experience',
     'addtesti.subtitle': 'Your testimonial will appear on the site after review.',
@@ -2167,23 +2160,6 @@ async function waitForSupabaseConfig(maxAttempts = 40) {
   return isSupabaseConfigured();
 }
 
-function showTestimonialsCacheHint() {
-  const hint = document.getElementById('testimonialsCacheHint');
-  if (hint) hint.hidden = false;
-}
-
-function hideTestimonialsCacheHint() {
-  const hint = document.getElementById('testimonialsCacheHint');
-  if (hint) hint.hidden = true;
-}
-
-function setTestimonialsRefreshBusy(busy) {
-  const btn = document.getElementById('testimonialsRefreshBtn');
-  if (!btn) return;
-  btn.disabled = Boolean(busy);
-  btn.setAttribute('aria-busy', busy ? 'true' : 'false');
-}
-
 async function fetchApprovedTestimonials(url, key, attempts = 3) {
   let lastError = null;
   const query = 'select=*&approved=is.true&order=created_at.desc&limit=12';
@@ -2251,43 +2227,14 @@ window.addEventListener('DOMContentLoaded', () => {
   const servicesTab = document.querySelector('.services-filter-bar .stab.active');
   if (servicesTab) switchAudience('all', servicesTab);
   initHashScroll();
-  if (document.getElementById('testimonialsGrid')) {
-    bindTestimonialsRefresh();
-    bindTestimonialsSectionObserver();
-    loadTestimonials();
-  }
+  if (document.getElementById('testimonialsGrid')) loadTestimonials();
   initModals();
   applySitePhones();
 });
 
 let testimonialsLoadPromise = null;
 let testimonialsLastFetchedAt = 0;
-const TESTIMONIALS_STALE_MS = 60_000;
-
-function refreshTestimonials() {
-  return loadTestimonials(true);
-}
-
-function bindTestimonialsRefresh() {
-  const btn = document.getElementById('testimonialsRefreshBtn');
-  if (!btn || btn.dataset.bound) return;
-  btn.dataset.bound = '1';
-  btn.addEventListener('click', () => { refreshTestimonials(); });
-}
-
-function bindTestimonialsSectionObserver() {
-  const section = document.getElementById('testimonials');
-  if (!section || section.dataset.observed || typeof IntersectionObserver === 'undefined') return;
-  section.dataset.observed = '1';
-  const observer = new IntersectionObserver((entries) => {
-    const visible = entries.some((entry) => entry.isIntersecting);
-    if (!visible) return;
-    if (!testimonialsLastFetchedAt) return;
-    const stale = Date.now() - testimonialsLastFetchedAt > TESTIMONIALS_STALE_MS;
-    if (stale) loadTestimonials(true);
-  }, { rootMargin: '80px 0px', threshold: 0.1 });
-  observer.observe(section);
-}
+const TESTIMONIALS_STALE_MS = 120_000;
 
 async function loadTestimonials(force = false) {
   const grid = document.getElementById('testimonialsGrid');
@@ -2299,8 +2246,6 @@ async function loadTestimonials(force = false) {
   testimonialsLoadPromise = (async () => {
     const empty = document.getElementById('testimonialsEmpty');
     grid.dataset.loading = 'true';
-    setTestimonialsRefreshBusy(true);
-    hideTestimonialsCacheHint();
     if (empty) empty.hidden = true;
 
     try {
@@ -2308,7 +2253,6 @@ async function loadTestimonials(force = false) {
       if (!ready) {
         console.warn('[LINGUAPHIX] Supabase config not ready for testimonials.');
         showTestimonialsEmpty();
-        showTestimonialsCacheHint();
         return;
       }
 
@@ -2323,12 +2267,10 @@ async function loadTestimonials(force = false) {
     } catch (e) {
       console.warn('[LINGUAPHIX] testimonials load error:', e);
       showTestimonialsEmpty();
-      showTestimonialsCacheHint();
     } finally {
       grid.removeAttribute('data-loading');
       if (!grid.children.length) showTestimonialsEmpty();
       else if (empty) empty.hidden = true;
-      setTestimonialsRefreshBusy(false);
       testimonialsLoadPromise = null;
     }
   })();
@@ -2337,10 +2279,7 @@ async function loadTestimonials(force = false) {
 }
 
 window.addEventListener('load', () => {
-  if (!document.getElementById('testimonialsGrid')) return;
-  bindTestimonialsRefresh();
-  bindTestimonialsSectionObserver();
-  loadTestimonials();
+  if (document.getElementById('testimonialsGrid')) loadTestimonials();
 });
 
 document.addEventListener('visibilitychange', () => {
