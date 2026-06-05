@@ -167,8 +167,8 @@ const i18n = {
     'hero.stat1': 'Ans d\'enseignement',
     'hero.stat2': 'Ans de traduction',
     'hero.stat3': 'Ans en audiovisuel',
-    'hero.logoRefresh.hint': 'Actualisation forcée — cliquer pour recharger la page',
-    'hero.logoRefresh.aria': 'Actualiser la page (vider le cache)',
+    'hero.logoRefresh.hint': 'Cliquer pour actualiser la page',
+    'hero.logoRefresh.aria': 'Cliquer pour actualiser la page',
     'pullRefresh.pull': 'Tirez vers le bas pour actualiser',
     'pullRefresh.release': 'Relâchez pour actualiser',
     'about.badge': 'À propos',
@@ -639,8 +639,8 @@ const i18n = {
     'hero.stat1': 'Years teaching',
     'hero.stat2': 'Years translating',
     'hero.stat3': 'Years in AV',
-    'hero.logoRefresh.hint': 'Hard refresh — click to reload the page',
-    'hero.logoRefresh.aria': 'Hard refresh page (clear cache)',
+    'hero.logoRefresh.hint': 'Click to refresh the page',
+    'hero.logoRefresh.aria': 'Click to refresh the page',
     'pullRefresh.pull': 'Pull down to refresh',
     'pullRefresh.release': 'Release to refresh',
     'about.badge': 'About',
@@ -1950,24 +1950,27 @@ function bindPullToRefresh() {
   document.addEventListener('touchcancel', onTouchEnd, { passive: true });
 }
 
+function startHeroLogoTipBlink(tip) {
+  if (!tip || tip.dataset.blinkBound === '1') return;
+  tip.dataset.blinkBound = '1';
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    tip.classList.add('hero-logo-float__tip--static');
+    return;
+  }
+  tip.classList.add('hero-logo-float__tip--blink');
+}
+
 function bindHeroLogoRefresh() {
   const btn = document.getElementById('heroLogoRefresh');
   if (!btn || btn.dataset.refreshBound === '1') return;
   btn.dataset.refreshBound = '1';
 
   const tip = document.getElementById('heroLogoRefreshTip');
-  const syncMobileDesktop = () => {
+  startHeroLogoTipBlink(tip);
+
+  const syncLogoRefreshUi = () => {
     const mobile = isMobilePullRefreshDevice();
-    if (mobile) {
-      btn.classList.add('hero-logo-float--mobile');
-      btn.removeAttribute('role');
-      btn.removeAttribute('tabindex');
-      btn.removeAttribute('aria-describedby');
-      btn.removeAttribute('aria-label');
-      if (tip) tip.hidden = true;
-      return;
-    }
-    btn.classList.remove('hero-logo-float--mobile');
+    btn.classList.toggle('hero-logo-float--mobile', mobile);
     btn.setAttribute('role', 'button');
     btn.setAttribute('tabindex', '0');
     btn.setAttribute('aria-describedby', 'heroLogoRefreshTip');
@@ -1977,11 +1980,10 @@ function bindHeroLogoRefresh() {
     }
     if (tip) tip.hidden = false;
   };
-  syncMobileDesktop();
-  window.matchMedia('(max-width: 768px)').addEventListener('change', syncMobileDesktop);
+  syncLogoRefreshUi();
+  window.matchMedia('(max-width: 768px)').addEventListener('change', syncLogoRefreshUi);
 
-  if (isMobilePullRefreshDevice()) return;
-
+  let touchRefresh = false;
   const runRefresh = (event) => {
     if (event) {
       event.preventDefault();
@@ -1989,7 +1991,20 @@ function bindHeroLogoRefresh() {
     }
     hardRefreshPage();
   };
-  btn.addEventListener('click', runRefresh);
+
+  btn.addEventListener('touchend', (event) => {
+    touchRefresh = true;
+    runRefresh(event);
+  }, { passive: false });
+
+  btn.addEventListener('click', (event) => {
+    if (touchRefresh) {
+      touchRefresh = false;
+      return;
+    }
+    runRefresh(event);
+  });
+
   btn.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' || event.key === ' ') runRefresh(event);
   });
