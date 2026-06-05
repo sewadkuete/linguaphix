@@ -1154,6 +1154,7 @@ function applyLang(lang) {
   renderServiceBookModal(lang);
   if (typeof syncBrowserUrlLang === 'function') syncBrowserUrlLang(lang, { replace: true });
   if (typeof applyLocalizedLinks === 'function') applyLocalizedLinks(lang);
+  syncHeroLogoRefreshCopy(lang);
 }
 
 function refreshPolicyModalIfOpen(lang) {
@@ -1875,6 +1876,14 @@ function pullRefreshLabel(key) {
   return dict[key] || key;
 }
 
+function isHeroLogoTouchTarget(target) {
+  if (!target || typeof target.closest !== 'function') return false;
+  return Boolean(
+    target.closest('#heroLogoRefresh')
+    || target.closest('.hero-logo-float-wrap')
+  );
+}
+
 function bindPullToRefresh() {
   if (!isMobilePullRefreshDevice()) return;
 
@@ -1913,6 +1922,7 @@ function bindPullToRefresh() {
 
   document.addEventListener('touchstart', (event) => {
     if (window.scrollY > 2 || event.touches.length !== 1) return;
+    if (isHeroLogoTouchTarget(event.target)) return;
     startY = event.touches[0].clientY;
     pulling = true;
     pullDistance = 0;
@@ -1920,6 +1930,11 @@ function bindPullToRefresh() {
 
   document.addEventListener('touchmove', (event) => {
     if (!pulling) return;
+    if (isHeroLogoTouchTarget(event.target)) {
+      pulling = false;
+      resetIndicator();
+      return;
+    }
     if (window.scrollY > 2) {
       pulling = false;
       resetIndicator();
@@ -1950,14 +1965,47 @@ function bindPullToRefresh() {
   document.addEventListener('touchcancel', onTouchEnd, { passive: true });
 }
 
+const HERO_LOGO_TIP_VISIBLE_MS = 1400;
+const HERO_LOGO_TIP_PAUSE_MS = 5000;
+let heroLogoTipBlinkTimer = null;
+
 function startHeroLogoTipBlink(tip) {
   if (!tip || tip.dataset.blinkBound === '1') return;
   tip.dataset.blinkBound = '1';
+  tip.hidden = false;
+  tip.classList.remove('hero-logo-float__tip--show', 'hero-logo-float__tip--static');
+
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     tip.classList.add('hero-logo-float__tip--static');
     return;
   }
-  tip.classList.add('hero-logo-float__tip--blink');
+
+  const runCycle = () => {
+    tip.classList.add('hero-logo-float__tip--show');
+    heroLogoTipBlinkTimer = window.setTimeout(() => {
+      tip.classList.remove('hero-logo-float__tip--show');
+      heroLogoTipBlinkTimer = window.setTimeout(runCycle, HERO_LOGO_TIP_PAUSE_MS);
+    }, HERO_LOGO_TIP_VISIBLE_MS);
+  };
+
+  runCycle();
+}
+
+function syncHeroLogoRefreshCopy(lang) {
+  const resolved = resolveLang(lang);
+  const dict = i18n[resolved] || i18n.fr;
+  const tip = document.getElementById('heroLogoRefreshTip');
+  const btn = document.getElementById('heroLogoRefresh');
+  if (tip && dict['hero.logoRefresh.hint']) {
+    tip.textContent = dict['hero.logoRefresh.hint'];
+    tip.setAttribute('lang', resolved);
+  }
+  if (btn) {
+    btn.setAttribute('aria-describedby', 'heroLogoRefreshTip');
+    if (dict['hero.logoRefresh.aria']) {
+      btn.setAttribute('aria-label', dict['hero.logoRefresh.aria']);
+    }
+  }
 }
 
 function bindHeroLogoRefresh() {
@@ -1967,23 +2015,8 @@ function bindHeroLogoRefresh() {
 
   const tip = document.getElementById('heroLogoRefreshTip');
   startHeroLogoTipBlink(tip);
+  syncHeroLogoRefreshCopy(typeof currentLang !== 'undefined' ? currentLang : 'fr');
 
-  const syncLogoRefreshUi = () => {
-    const mobile = isMobilePullRefreshDevice();
-    btn.classList.toggle('hero-logo-float--mobile', mobile);
-    btn.setAttribute('role', 'button');
-    btn.setAttribute('tabindex', '0');
-    btn.setAttribute('aria-describedby', 'heroLogoRefreshTip');
-    const ariaKey = btn.getAttribute('data-i18n-aria');
-    if (ariaKey && i18n[currentLang]?.[ariaKey]) {
-      btn.setAttribute('aria-label', i18n[currentLang][ariaKey]);
-    }
-    if (tip) tip.hidden = false;
-  };
-  syncLogoRefreshUi();
-  window.matchMedia('(max-width: 768px)').addEventListener('change', syncLogoRefreshUi);
-
-  let touchRefresh = false;
   const runRefresh = (event) => {
     if (event) {
       event.preventDefault();
@@ -1992,18 +2025,11 @@ function bindHeroLogoRefresh() {
     hardRefreshPage();
   };
 
-  btn.addEventListener('touchend', (event) => {
-    touchRefresh = true;
-    runRefresh(event);
-  }, { passive: false });
+  btn.addEventListener('touchstart', (event) => {
+    event.stopPropagation();
+  }, { passive: true, capture: true });
 
-  btn.addEventListener('click', (event) => {
-    if (touchRefresh) {
-      touchRefresh = false;
-      return;
-    }
-    runRefresh(event);
-  });
+  btn.addEventListener('click', runRefresh);
 
   btn.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' || event.key === ' ') runRefresh(event);
