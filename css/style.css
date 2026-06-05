@@ -3106,9 +3106,55 @@ body:has(.wa-float) > footer {
 /* Tablet landscape / narrow laptop — mobile nav */
 @media (max-width: 1024px) {
   .nav-links { display: none; }
-  .nav-cta .btn-primary { display: none; }
   .nav-hamburger { display: flex; }
-  .nav-cta { gap: 0.5rem; }
+  .nav-cta {
+    gap: 0.4rem;
+    flex-shrink: 0;
+  }
+  .nav-cta .btn-primary {
+    display: inline-flex;
+    flex-shrink: 0;
+    padding: 0.5rem 0.72rem;
+    font-size: 0.72rem;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    background: var(--white);
+    color: var(--green-deep);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.22);
+  }
+  .nav-cta .btn-primary:hover {
+    background: var(--green-light);
+    color: var(--green-deep);
+    transform: none;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.24);
+  }
+  #navbar.scrolled .nav-cta .btn-primary,
+  .page-about #navbar .nav-cta .btn-primary,
+  .page-design #navbar .nav-cta .btn-primary,
+  .page-catalogue #navbar .nav-cta .btn-primary,
+  .page-portfolio #navbar .nav-cta .btn-primary,
+  .page-policy #navbar .nav-cta .btn-primary,
+  .page-service #navbar .nav-cta .btn-primary,
+  .page-sitemap #navbar .nav-cta .btn-primary {
+    background: var(--green);
+    color: var(--white);
+    border-color: transparent;
+    box-shadow: 0 4px 14px rgba(26, 122, 60, 0.28);
+  }
+  #navbar.scrolled .nav-cta .btn-primary:hover,
+  .page-about #navbar .nav-cta .btn-primary:hover,
+  .page-design #navbar .nav-cta .btn-primary:hover,
+  .page-catalogue #navbar .nav-cta .btn-primary:hover,
+  .page-portfolio #navbar .nav-cta .btn-primary:hover,
+  .page-policy #navbar .nav-cta .btn-primary:hover,
+  .page-service #navbar .nav-cta .btn-primary:hover,
+  .page-sitemap #navbar .nav-cta .btn-primary:hover {
+    background: var(--green-dark);
+    color: var(--white);
+  }
 
   .hero-grid {
     grid-template-columns: 1fr;
@@ -3228,7 +3274,11 @@ body:has(.wa-float) > footer {
 
 /* Small phone */
 @media (max-width: 600px) {
-  .nav-logo-text { max-width: 9rem; overflow: hidden; text-overflow: ellipsis; }
+  .nav-logo-text { max-width: 7rem; overflow: hidden; text-overflow: ellipsis; }
+  .nav-cta .btn-primary {
+    padding: 0.45rem 0.6rem;
+    font-size: 0.68rem;
+  }
   .hero-stat-label { font-size: clamp(0.6rem, 2.5vw, 0.75rem); }
   .hero-stats {
     display: grid;
