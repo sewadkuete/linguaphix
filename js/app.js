@@ -1969,9 +1969,29 @@ const HERO_LOGO_TIP_VISIBLE_MS = 1400;
 const HERO_LOGO_TIP_PAUSE_MS = 5000;
 let heroLogoTipBlinkTimer = null;
 
+function clearHeroLogoTipBlink() {
+  if (heroLogoTipBlinkTimer) {
+    window.clearTimeout(heroLogoTipBlinkTimer);
+    heroLogoTipBlinkTimer = null;
+  }
+}
+
+function hideHeroLogoTipOnMobile(tip) {
+  if (!tip) return;
+  clearHeroLogoTipBlink();
+  tip.hidden = true;
+  tip.classList.remove('hero-logo-float__tip--show', 'hero-logo-float__tip--static');
+}
+
 function startHeroLogoTipBlink(tip) {
   if (!tip || tip.dataset.blinkBound === '1') return;
   tip.dataset.blinkBound = '1';
+
+  if (isMobilePullRefreshDevice()) {
+    hideHeroLogoTipOnMobile(tip);
+    return;
+  }
+
   tip.hidden = false;
   tip.classList.remove('hero-logo-float__tip--show', 'hero-logo-float__tip--static');
 
@@ -1981,6 +2001,10 @@ function startHeroLogoTipBlink(tip) {
   }
 
   const runCycle = () => {
+    if (isMobilePullRefreshDevice()) {
+      hideHeroLogoTipOnMobile(tip);
+      return;
+    }
     tip.classList.add('hero-logo-float__tip--show');
     heroLogoTipBlinkTimer = window.setTimeout(() => {
       tip.classList.remove('hero-logo-float__tip--show');
@@ -1996,12 +2020,30 @@ function syncHeroLogoRefreshCopy(lang) {
   const dict = i18n[resolved] || i18n.fr;
   const tip = document.getElementById('heroLogoRefreshTip');
   const btn = document.getElementById('heroLogoRefresh');
-  if (tip && dict['hero.logoRefresh.hint']) {
-    tip.textContent = dict['hero.logoRefresh.hint'];
-    tip.setAttribute('lang', resolved);
+  const mobile = isMobilePullRefreshDevice();
+
+  if (tip) {
+    if (mobile) {
+      hideHeroLogoTipOnMobile(tip);
+    } else {
+      tip.hidden = false;
+      if (dict['hero.logoRefresh.hint']) {
+        tip.textContent = dict['hero.logoRefresh.hint'];
+        tip.setAttribute('lang', resolved);
+      }
+    }
   }
+
   if (btn) {
-    btn.setAttribute('aria-describedby', 'heroLogoRefreshTip');
+    if (mobile) {
+      btn.removeAttribute('aria-describedby');
+      btn.removeAttribute('role');
+      btn.removeAttribute('tabindex');
+    } else {
+      btn.setAttribute('role', 'button');
+      btn.setAttribute('tabindex', '0');
+      btn.setAttribute('aria-describedby', 'heroLogoRefreshTip');
+    }
     if (dict['hero.logoRefresh.aria']) {
       btn.setAttribute('aria-label', dict['hero.logoRefresh.aria']);
     }
@@ -2017,6 +2059,16 @@ function bindHeroLogoRefresh() {
   startHeroLogoTipBlink(tip);
   syncHeroLogoRefreshCopy(typeof currentLang !== 'undefined' ? currentLang : 'fr');
 
+  window.matchMedia('(max-width: 768px)').addEventListener('change', () => {
+    if (isMobilePullRefreshDevice()) {
+      hideHeroLogoTipOnMobile(tip);
+    } else if (tip && tip.dataset.blinkBound === '1') {
+      tip.dataset.blinkBound = '0';
+      startHeroLogoTipBlink(tip);
+    }
+    syncHeroLogoRefreshCopy(typeof currentLang !== 'undefined' ? currentLang : 'fr');
+  });
+
   const runRefresh = (event) => {
     if (event) {
       event.preventDefault();
@@ -2029,7 +2081,16 @@ function bindHeroLogoRefresh() {
     event.stopPropagation();
   }, { passive: true, capture: true });
 
-  btn.addEventListener('click', runRefresh);
+  btn.addEventListener('touchend', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    runRefresh(event);
+  }, { passive: false });
+
+  btn.addEventListener('click', (event) => {
+    if (isMobilePullRefreshDevice()) return;
+    runRefresh(event);
+  });
 
   btn.addEventListener('keydown', (event) => {
     if (event.key === 'Enter' || event.key === ' ') runRefresh(event);

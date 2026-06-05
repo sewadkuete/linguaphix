@@ -569,9 +569,29 @@ body:not(.has-fixed-header) #navbar,
   animation: hero-logo-spiral-zoom 28s linear infinite;
   pointer-events: none;
 }
-.hero-logo-float:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.85);
-  outline-offset: 4px;
+@media (min-width: 769px) {
+  .hero-logo-float:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.85);
+    outline-offset: 4px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-logo-float__tip,
+  .hero-logo-float__tip--show,
+  .hero-logo-float__tip--static {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  .hero-logo-float,
+  .hero-logo-float:focus,
+  .hero-logo-float:active,
+  .hero-logo-float:focus-visible {
+    background: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 .hero-logo-float__tip {
   position: absolute;
