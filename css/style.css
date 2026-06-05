@@ -1346,7 +1346,10 @@ a.ticker-badge-link:active {
 .testimonials-toolbar {
   display: flex;
   justify-content: center;
-  margin: 0 auto 1.25rem;
+  align-items: center;
+  width: 100%;
+  margin: 1.5rem auto 0;
+  text-align: center;
 }
 .testimonials-cache-hint {
   max-width: 42rem;
@@ -1362,29 +1365,6 @@ a.ticker-badge-link:active {
 }
 .testimonials-cache-hint[hidden] {
   display: none !important;
-}
-.testimonials-help {
-  max-width: 42rem;
-  margin: 1.25rem auto 0;
-  font-size: var(--text-sm);
-  line-height: var(--leading-relaxed);
-  color: var(--gray-600);
-}
-.testimonials-help > summary {
-  cursor: pointer;
-  font-weight: 600;
-  color: var(--green-dark, var(--green));
-  list-style-position: outside;
-}
-.testimonials-help > summary:hover {
-  text-decoration: underline;
-}
-.testimonials-help-steps {
-  margin: 0.75rem 0 0;
-  padding-left: 1.25rem;
-}
-.testimonials-help-steps li + li {
-  margin-top: 0.5rem;
 }
 .testimonial-card.is-rendered {
   opacity: 1;
