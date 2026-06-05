@@ -1343,6 +1343,10 @@ a.ticker-badge-link:active {
 .testimonials-empty[hidden] {
   display: none !important;
 }
+.testimonial-card.is-rendered {
+  opacity: 1;
+  transform: none;
+}
 .testimonial-card {
   display: flex;
   flex-direction: column;

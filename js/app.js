@@ -110,7 +110,7 @@ function renderTestimonials(items) {
       ? `<span class="testimonial-country">${country}</span>`
       : '';
     return `
-        <article class="testimonial-card fade-up visible">
+        <article class="testimonial-card is-rendered">
           <header class="testimonial-card__head">
             <p class="testimonial-card__service">${service}</p>
             ${starsHtml}
@@ -130,9 +130,6 @@ function renderTestimonials(items) {
           </div>
         </article>`;
   }).join('');
-  if (typeof observer !== 'undefined' && observer) {
-    grid.querySelectorAll('.fade-up:not(.visible)').forEach(el => observer.observe(el));
-  }
 }
 
 // ── LANGUAGE DATA ──
@@ -2121,10 +2118,11 @@ async function waitForSupabaseConfig(maxAttempts = 40) {
 
 async function fetchApprovedTestimonials(url, key, attempts = 3) {
   let lastError = null;
+  const query = 'select=*&approved=is.true&order=created_at.desc&limit=12';
   for (let attempt = 0; attempt < attempts; attempt += 1) {
     try {
       const res = await fetch(
-        `${url}/rest/v1/testimonials?approved=eq.true&order=created_at.desc&limit=12&_=${Date.now()}`,
+        `${url}/rest/v1/testimonials?${query}&_=${Date.now()}`,
         {
           headers: {
             apikey: key,
@@ -2136,8 +2134,12 @@ async function fetchApprovedTestimonials(url, key, attempts = 3) {
           cache: 'no-store',
         }
       );
-      if (res.ok) return res.json();
-      lastError = new Error(`testimonials fetch failed: ${res.status}`);
+      if (res.ok) {
+        const data = await res.json();
+        return Array.isArray(data) ? data : [];
+      }
+      const detail = await res.text().catch(() => '');
+      lastError = new Error(`testimonials fetch failed: ${res.status}${detail ? ` ${detail}` : ''}`);
     } catch (err) {
       lastError = err;
     }
@@ -2184,44 +2186,46 @@ window.addEventListener('DOMContentLoaded', () => {
   applySitePhones();
 });
 
-let testimonialsLoadToken = 0;
+let testimonialsLoadPromise = null;
 
 async function loadTestimonials() {
   const grid = document.getElementById('testimonialsGrid');
-  const empty = document.getElementById('testimonialsEmpty');
   if (!grid) return;
 
-  const token = ++testimonialsLoadToken;
-  grid.dataset.loading = 'true';
-  if (empty) empty.hidden = true;
+  if (testimonialsLoadPromise) return testimonialsLoadPromise;
 
-  const ready = await waitForSupabaseConfig();
-  if (token !== testimonialsLoadToken) return;
+  testimonialsLoadPromise = (async () => {
+    const empty = document.getElementById('testimonialsEmpty');
+    grid.dataset.loading = 'true';
+    if (empty) empty.hidden = true;
 
-  if (!ready) {
-    console.warn('[LINGUAPHIX] Supabase config not ready for testimonials.');
-    grid.removeAttribute('data-loading');
-    showTestimonialsEmpty();
-    return;
-  }
+    try {
+      const ready = isSupabaseConfigured() || await waitForSupabaseConfig();
+      if (!ready) {
+        console.warn('[LINGUAPHIX] Supabase config not ready for testimonials.');
+        showTestimonialsEmpty();
+        return;
+      }
 
-  const { url, key } = getSupabaseConfig();
-
-  try {
-    const data = await fetchApprovedTestimonials(url, key);
-    if (token !== testimonialsLoadToken) return;
-    grid.removeAttribute('data-loading');
-    if (!Array.isArray(data) || data.length === 0) {
+      const { url, key } = getSupabaseConfig();
+      const data = await fetchApprovedTestimonials(url, key);
+      if (!data.length) {
+        showTestimonialsEmpty();
+        return;
+      }
+      renderTestimonials(data);
+    } catch (e) {
+      console.warn('[LINGUAPHIX] testimonials load error:', e);
       showTestimonialsEmpty();
-      return;
+    } finally {
+      grid.removeAttribute('data-loading');
+      if (!grid.children.length) showTestimonialsEmpty();
+      else if (empty) empty.hidden = true;
+      testimonialsLoadPromise = null;
     }
-    renderTestimonials(data);
-  } catch (e) {
-    if (token !== testimonialsLoadToken) return;
-    grid.removeAttribute('data-loading');
-    console.warn('[LINGUAPHIX] testimonials fetch error:', e);
-    showTestimonialsEmpty();
-  }
+  })();
+
+  return testimonialsLoadPromise;
 }
 
 window.addEventListener('load', () => {
@@ -2230,6 +2234,13 @@ window.addEventListener('load', () => {
 
 document.addEventListener('visibilitychange', () => {
   if (document.visibilityState !== 'visible') return;
+  const grid = document.getElementById('testimonialsGrid');
+  if (!grid || grid.children.length > 0) return;
+  loadTestimonials();
+});
+
+window.addEventListener('hashchange', () => {
+  if (window.location.hash !== '#testimonials') return;
   const grid = document.getElementById('testimonialsGrid');
   if (!grid || grid.children.length > 0) return;
   loadTestimonials();

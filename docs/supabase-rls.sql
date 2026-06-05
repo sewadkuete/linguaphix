@@ -26,6 +26,7 @@ alter table public.testimonials enable row level security;
 drop policy if exists "Public read approved testimonials" on public.testimonials;
 create policy "Public read approved testimonials"
   on public.testimonials for select
+  to anon, authenticated
   using (approved = true);
 
 drop policy if exists "Anon insert pending testimonials" on public.testimonials;
