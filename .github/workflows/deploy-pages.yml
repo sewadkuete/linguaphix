@@ -41,13 +41,25 @@ jobs:
       - name: Stamp asset cache busters
         run: node scripts/stamp-assets.mjs ${{ github.sha }}
 
+      - name: Prepare Pages artifact
+        run: |
+          rm -rf _site
+          rsync -a \
+            --exclude '.git' \
+            --exclude '.github' \
+            --exclude 'node_modules' \
+            --exclude '_site' \
+            --exclude '.env.local' \
+            . _site/
+          test -f _site/js/runtime-config.json
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
