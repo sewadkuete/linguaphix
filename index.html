@@ -171,13 +171,24 @@
       </div>
       <div class="hero-visual">
         <div class="hero-logo-float-wrap">
-          <span class="hero-logo-float__tip" id="heroLogoRefreshTip" role="tooltip" data-i18n="hero.logoRefresh.hint">
+          <span
+            class="hero-logo-float__tip"
+            id="heroLogoRefreshTip"
+            role="tooltip"
+            hidden
+            data-i18n="hero.logoRefresh.hint">
             Cliquer pour actualiser la page
           </span>
+          <script>
+            (function () {
+              if (window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 769px)').matches) return;
+              var tip = document.getElementById('heroLogoRefreshTip');
+              if (tip) tip.remove();
+            })();
+          </script>
           <div
             class="hero-logo-float"
             id="heroLogoRefresh"
-            aria-describedby="heroLogoRefreshTip"
             data-i18n-aria="hero.logoRefresh.aria">
             <span class="hero-logo-float__motion" aria-hidden="true">
               <img
