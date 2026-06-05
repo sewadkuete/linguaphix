@@ -2122,13 +2122,13 @@ async function fetchApprovedTestimonials(url, key, attempts = 3) {
   for (let attempt = 0; attempt < attempts; attempt += 1) {
     try {
       const res = await fetch(
-        `${url}/rest/v1/testimonials?${query}&_=${Date.now()}`,
+        `${url}/rest/v1/testimonials?${query}`,
         {
           headers: {
             apikey: key,
             Authorization: `Bearer ${key}`,
             Accept: 'application/json',
-            'Cache-Control': 'no-cache',
+            'Cache-Control': 'no-cache, no-store',
             Pragma: 'no-cache',
           },
           cache: 'no-store',
