@@ -11,7 +11,7 @@
 
   Object.assign(window.LINGUAPHIX_CONFIG, {
     // Google Analytics — https://analytics.google.com → Admin → Data streams
-    gaMeasurementId: 'G-T9WKL4ZSS6',
+    gaMeasurementId: 'G-XXXXXXXXXX',
 
     // Supabase — Project Settings → API (anon / public key only)
     supabaseUrl: 'https://YOUR-PROJECT-REF.supabase.co',
