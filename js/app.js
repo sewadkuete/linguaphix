@@ -130,7 +130,9 @@ function renderTestimonials(items) {
           </div>
         </article>`;
   }).join('');
-  grid.querySelectorAll('.fade-up:not(.visible)').forEach(el => observer.observe(el));
+  if (typeof observer !== 'undefined' && observer) {
+    grid.querySelectorAll('.fade-up:not(.visible)').forEach(el => observer.observe(el));
+  }
 }
 
 // ── LANGUAGE DATA ──
@@ -1847,17 +1849,76 @@ function syncNavbarScrolledState() {
 function hardRefreshPage() {
   const url = new URL(window.location.href);
   url.searchParams.set('_', String(Date.now()));
-  window.location.replace(url.toString());
+  const target = `${url.pathname}${url.search}${url.hash}`;
+  const reload = () => { window.location.assign(target); };
+  if ('caches' in window) {
+    caches.keys()
+      .then((keys) => Promise.all(keys.map((key) => caches.delete(key))))
+      .finally(reload)
+      .catch(reload);
+    return;
+  }
+  reload();
 }
 
 function bindHeroLogoRefresh() {
   const btn = document.getElementById('heroLogoRefresh');
   if (!btn || btn.dataset.refreshBound === '1') return;
   btn.dataset.refreshBound = '1';
-  btn.addEventListener('click', (event) => {
-    event.preventDefault();
+  let touchRefresh = false;
+  const runRefresh = (event) => {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
     hardRefreshPage();
+  };
+  btn.addEventListener('touchend', (event) => {
+    touchRefresh = true;
+    runRefresh(event);
+  }, { passive: false });
+  btn.addEventListener('click', (event) => {
+    if (touchRefresh) {
+      touchRefresh = false;
+      return;
+    }
+    runRefresh(event);
   });
+}
+
+async function waitForSupabaseConfig(maxAttempts = 30) {
+  for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
+    if (isSupabaseConfigured()) return true;
+    await new Promise((resolve) => setTimeout(resolve, 100));
+  }
+  return isSupabaseConfigured();
+}
+
+async function fetchApprovedTestimonials(url, key, attempts = 3) {
+  let lastError = null;
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    try {
+      const res = await fetch(
+        `${url}/rest/v1/testimonials?approved=eq.true&order=created_at.desc&limit=12`,
+        {
+          headers: {
+            apikey: key,
+            Authorization: `Bearer ${key}`,
+            Accept: 'application/json',
+          },
+          cache: 'no-store',
+        }
+      );
+      if (res.ok) return res.json();
+      lastError = new Error(`testimonials fetch failed: ${res.status}`);
+    } catch (err) {
+      lastError = err;
+    }
+    if (attempt < attempts - 1) {
+      await new Promise((resolve) => setTimeout(resolve, 250 * (attempt + 1)));
+    }
+  }
+  throw lastError || new Error('testimonials fetch failed');
 }
 
 function hardenExternalLinks() {
@@ -1895,45 +1956,34 @@ window.addEventListener('DOMContentLoaded', () => {
   applySitePhones();
 });
 
+let testimonialsLoadToken = 0;
+
 async function loadTestimonials() {
-  const empty = document.getElementById('testimonialsEmpty');
+  const grid = document.getElementById('testimonialsGrid');
+  if (!grid) return;
 
-  for (let attempt = 0; attempt < 8 && !isSupabaseConfigured(); attempt += 1) {
-    await new Promise((resolve) => setTimeout(resolve, 120));
-  }
+  const token = ++testimonialsLoadToken;
+  const ready = await waitForSupabaseConfig();
+  if (token !== testimonialsLoadToken) return;
 
-  if (!isSupabaseConfigured()) {
+  if (!ready) {
+    console.warn('[LINGUAPHIX] Supabase config not ready for testimonials.');
     showTestimonialsEmpty();
     return;
   }
 
-  if (empty) empty.hidden = true;
-
   const { url, key } = getSupabaseConfig();
 
   try {
-    const res = await fetch(
-      `${url}/rest/v1/testimonials?approved=eq.true&order=created_at.desc&limit=12`,
-      {
-        headers: {
-          apikey: key,
-          Authorization: `Bearer ${key}`,
-          Accept: 'application/json',
-        },
-      }
-    );
-    if (!res.ok) {
-      console.warn('[LINGUAPHIX] testimonials fetch failed:', res.status);
-      showTestimonialsEmpty();
-      return;
-    }
-    const data = await res.json();
+    const data = await fetchApprovedTestimonials(url, key);
+    if (token !== testimonialsLoadToken) return;
     if (!Array.isArray(data) || data.length === 0) {
       showTestimonialsEmpty();
       return;
     }
     renderTestimonials(data);
   } catch (e) {
+    if (token !== testimonialsLoadToken) return;
     console.warn('[LINGUAPHIX] testimonials fetch error:', e);
     showTestimonialsEmpty();
   }
@@ -1941,4 +1991,11 @@ async function loadTestimonials() {
 
 window.addEventListener('load', () => {
   if (document.getElementById('testimonialsGrid')) loadTestimonials();
+});
+
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState !== 'visible') return;
+  const grid = document.getElementById('testimonialsGrid');
+  if (!grid || grid.children.length > 0) return;
+  loadTestimonials();
 });

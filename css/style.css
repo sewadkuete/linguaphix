@@ -533,16 +533,27 @@ body:not(.has-fixed-header) #navbar,
   display: flex;
   align-items: center;
   justify-content: center;
-  transform-origin: center center;
-  will-change: transform;
-  animation: hero-logo-spiral-zoom 28s linear infinite;
   border: none;
   padding: 0;
   margin: 0;
   background: transparent;
   cursor: pointer;
   border-radius: 50%;
+  touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.hero-logo-float__motion {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center center;
+  will-change: transform;
+  animation: hero-logo-spiral-zoom 28s linear infinite;
+  pointer-events: none;
 }
 .hero-logo-float:focus-visible {
   outline: 2px solid rgba(255, 255, 255, 0.85);
@@ -594,6 +605,9 @@ body:not(.has-fixed-header) #navbar,
   object-fit: contain;
   object-position: center;
   filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.22));
+  pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 /* Uneven keyframe spacing = slow drift/zoom vs fast spiral bursts */
 @keyframes hero-logo-spiral-zoom {
@@ -641,7 +655,7 @@ body:not(.has-fixed-header) #navbar,
   .nav-logo .brand-mark {
     animation: none;
   }
-  .hero-logo-float {
+  .hero-logo-float__motion {
     animation: none;
     will-change: auto;
     transform: none;
