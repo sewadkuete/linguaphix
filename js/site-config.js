@@ -14,8 +14,8 @@
       waMe: '22892539953',
     },
     contactEmail: 'contact@linguaphix.com',
-    supabaseUrl: '',
-    supabaseAnonKey: '',
+    supabaseUrl: 'https://wmydrcccnqphqliahznx.supabase.co',
+    supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndteWRyY2NjbnFwaHFsaWFoem54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA1OTE0ODksImV4cCI6MjA5NjE2NzQ4OX0.XFnwJalIK9oFnKKeFbeYFlDhSaBBwn5IWjvaLb2KGec',
     calendlyUrl: 'https://calendly.com/linguaphix/call',
     onlinePlatform: 'Zoom / Google Meet (à confirmer)',
     inPersonAddress: 'Lomé, Togo (adresse à confirmer)',
@@ -39,13 +39,14 @@
   }
 
   function applyLocalConfigPatch(patch) {
-    if (!patch || typeof patch !== 'object') return false;
-    Object.assign(window.LINGUAPHIX_CONFIG, patch);
-    ['supabaseUrl', 'supabaseAnonKey', 'gaMeasurementId'].forEach((key) => {
-      const v = window.LINGUAPHIX_CONFIG[key];
-      if (typeof v === 'string' && !v.trim()) delete window.LINGUAPHIX_CONFIG[key];
-    });
-    window.LINGUAPHIX_CONFIG_READY = true;
+    if (patch && typeof patch === 'object') {
+      Object.assign(window.LINGUAPHIX_CONFIG, patch);
+      ['supabaseUrl', 'supabaseAnonKey', 'gaMeasurementId'].forEach((key) => {
+        const v = window.LINGUAPHIX_CONFIG[key];
+        if (typeof v === 'string' && !v.trim()) delete window.LINGUAPHIX_CONFIG[key];
+      });
+    }
+    if (isSupabaseConfiguredNow()) window.LINGUAPHIX_CONFIG_READY = true;
     return isSupabaseConfiguredNow();
   }
 
@@ -57,7 +58,16 @@
     return /^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(url) && key.length > 20;
   }
 
+  if (isSupabaseConfiguredNow()) {
+    window.LINGUAPHIX_CONFIG_READY = true;
+  }
+
   window.LINGUAPHIX_CONFIG_READY_PROMISE = (async function loadRuntimeConfig() {
+    if (isSupabaseConfiguredNow()) {
+      window.LINGUAPHIX_CONFIG_READY = true;
+      return true;
+    }
+
     const base = configBaseUrl();
     const bust = Date.now();
     const sources = [
@@ -74,11 +84,12 @@
         });
         if (!res.ok) continue;
         const patch = await res.json();
-        if (applyLocalConfigPatch(patch)) return true;
+        applyLocalConfigPatch(patch);
+        if (isSupabaseConfiguredNow()) return true;
       } catch (err) {
         console.warn('[LINGUAPHIX] runtime config fetch failed:', url, err);
       }
     }
-    return false;
+    return isSupabaseConfiguredNow();
   })();
 })();

@@ -538,11 +538,30 @@ body:not(.has-fixed-header) #navbar,
   margin: 0;
   background: transparent;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 0;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  -webkit-appearance: none;
+  appearance: none;
+  box-shadow: none;
+  outline: none;
   -webkit-user-select: none;
   user-select: none;
+}
+.hero-logo-float:focus,
+.hero-logo-float:active {
+  background: transparent;
+  outline: none;
+  box-shadow: none;
+}
+.hero-logo-float--mobile,
+.hero-logo-float--mobile:focus,
+.hero-logo-float--mobile:active,
+.hero-logo-float--mobile:focus-visible {
+  cursor: default;
+  background: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 .hero-logo-float__motion {
   width: 100%;
@@ -595,6 +614,15 @@ body:not(.has-fixed-header) #navbar,
 .hero-logo-float-wrap:focus-within .hero-logo-float__tip {
   opacity: 1;
   visibility: visible;
+}
+@media (max-width: 768px) {
+  .hero-logo-float__tip,
+  .hero-logo-float-wrap:hover .hero-logo-float__tip,
+  .hero-logo-float-wrap:focus-within .hero-logo-float__tip {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
 }
 .hero-logo-float__img {
   display: block;

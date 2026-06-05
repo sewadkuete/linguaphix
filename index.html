@@ -174,8 +174,7 @@
           <span class="hero-logo-float__tip" id="heroLogoRefreshTip" role="tooltip" data-i18n="hero.logoRefresh.hint">
             Actualisation forcée — cliquer pour recharger la page
           </span>
-          <button
-            type="button"
+          <div
             class="hero-logo-float"
             id="heroLogoRefresh"
             aria-describedby="heroLogoRefreshTip"
@@ -189,7 +188,7 @@
                 height="420"
                 decoding="async">
             </span>
-          </button>
+          </div>
         </div>
       </div>
     </div>
@@ -394,7 +393,7 @@
         <p data-i18n="testi.subtitle">Des résultats concrets et des transformations réelles.</p>
       </div>
       <div class="testimonials-grid" id="testimonialsGrid" aria-live="polite"></div>
-      <p class="testimonials-empty" id="testimonialsEmpty" data-i18n="testi.empty">
+      <p class="testimonials-empty" id="testimonialsEmpty" hidden data-i18n="testi.empty">
         Aucun témoignage publié pour le moment. Soyez le premier à partager votre expérience ci-dessous.
       </p>
     </div>

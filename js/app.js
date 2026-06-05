@@ -1958,14 +1958,23 @@ function bindHeroLogoRefresh() {
   const tip = document.getElementById('heroLogoRefreshTip');
   const syncMobileDesktop = () => {
     const mobile = isMobilePullRefreshDevice();
-    if (tip) tip.hidden = mobile;
     if (mobile) {
+      btn.classList.add('hero-logo-float--mobile');
+      btn.removeAttribute('role');
       btn.removeAttribute('tabindex');
-      btn.style.cursor = 'default';
+      btn.removeAttribute('aria-describedby');
+      btn.removeAttribute('aria-label');
+      if (tip) tip.hidden = true;
       return;
     }
+    btn.classList.remove('hero-logo-float--mobile');
+    btn.setAttribute('role', 'button');
     btn.setAttribute('tabindex', '0');
-    btn.style.cursor = '';
+    btn.setAttribute('aria-describedby', 'heroLogoRefreshTip');
+    const ariaKey = btn.getAttribute('data-i18n-aria');
+    if (ariaKey && i18n[currentLang]?.[ariaKey]) {
+      btn.setAttribute('aria-label', i18n[currentLang][ariaKey]);
+    }
     if (tip) tip.hidden = false;
   };
   syncMobileDesktop();
@@ -1981,6 +1990,9 @@ function bindHeroLogoRefresh() {
     hardRefreshPage();
   };
   btn.addEventListener('click', runRefresh);
+  btn.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter' || event.key === ' ') runRefresh(event);
+  });
 }
 
 async function waitForSupabaseConfig(maxAttempts = 40) {
@@ -2070,14 +2082,19 @@ let testimonialsLoadToken = 0;
 
 async function loadTestimonials() {
   const grid = document.getElementById('testimonialsGrid');
+  const empty = document.getElementById('testimonialsEmpty');
   if (!grid) return;
 
   const token = ++testimonialsLoadToken;
+  grid.dataset.loading = 'true';
+  if (empty) empty.hidden = true;
+
   const ready = await waitForSupabaseConfig();
   if (token !== testimonialsLoadToken) return;
 
   if (!ready) {
     console.warn('[LINGUAPHIX] Supabase config not ready for testimonials.');
+    grid.removeAttribute('data-loading');
     showTestimonialsEmpty();
     return;
   }
@@ -2087,6 +2104,7 @@ async function loadTestimonials() {
   try {
     const data = await fetchApprovedTestimonials(url, key);
     if (token !== testimonialsLoadToken) return;
+    grid.removeAttribute('data-loading');
     if (!Array.isArray(data) || data.length === 0) {
       showTestimonialsEmpty();
       return;
@@ -2094,6 +2112,7 @@ async function loadTestimonials() {
     renderTestimonials(data);
   } catch (e) {
     if (token !== testimonialsLoadToken) return;
+    grid.removeAttribute('data-loading');
     console.warn('[LINGUAPHIX] testimonials fetch error:', e);
     showTestimonialsEmpty();
   }
