@@ -140,6 +140,7 @@ function shell(slug, titleFr, descFr) {
 <script src="../js/policy-package-scopes.js"></script>
 <script src="../js/policy-content.js"></script>
 <script src="../js/app.js"></script>
+<script src="../js/captcha.js"></script>
 <script src="../js/service-pages-data.js"></script>
 <script src="../js/service-audience.js"></script>
 <script src="../js/mode-price-tiles.js"></script>

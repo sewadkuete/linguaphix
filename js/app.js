@@ -347,6 +347,9 @@ const i18n = {
     'form.location.hint': 'Sélectionnez un pays dans la liste ou saisissez librement (ville, pays).',
     'form.ph.location': 'Ex : Lomé, Togo ou choisir un pays',
     'form.submit': 'Soumettre mon témoignage →',
+    'captcha.required': 'Veuillez compléter la vérification de sécurité.',
+    'captcha.unavailable': 'Vérification de sécurité indisponible. Réessayez ou contactez-nous par WhatsApp.',
+    'captcha.label': 'Vérification de sécurité',
     'booking.badge': 'Réservation',
     'booking.title': 'Prêt à passer à l\'action ?',
     'booking.desc': 'Réservez un appel de découverte gratuit de 30 minutes.',
@@ -830,6 +833,9 @@ const i18n = {
     'form.location.hint': 'Pick a country from the list or type freely (city, country).',
     'form.ph.location': 'e.g. Lomé, Togo or choose a country',
     'form.submit': 'Submit my testimonial →',
+    'captcha.required': 'Please complete the security check.',
+    'captcha.unavailable': 'Security check unavailable. Try again or contact us on WhatsApp.',
+    'captcha.label': 'Security check',
     'booking.badge': 'Booking',
     'booking.title': 'Ready to take action?',
     'booking.desc': 'Book a free 30-minute discovery call. We\'ll define the plan best suited to your goals.',
@@ -1371,9 +1377,25 @@ stars.forEach(star => {
   });
 });
 
+async function guardFormCaptcha(mountId) {
+  const mount = document.getElementById(mountId);
+  if (typeof requireFormCaptcha !== 'function') return { ok: true };
+  return requireFormCaptcha(mount, currentLang);
+}
+
 // ── TESTIMONIAL SUBMIT (Supabase) ──
 async function submitTestimonial() {
   if (isHoneypotFilled('t-website')) return;
+
+  const msgEl = document.getElementById('testi-msg');
+  const captcha = await guardFormCaptcha('testimonial-captcha');
+  if (!captcha.ok) {
+    msgEl.style.display = 'block';
+    msgEl.style.background = '#fef2f2';
+    msgEl.style.color = '#b91c1c';
+    msgEl.textContent = captcha.message;
+    return;
+  }
 
   const name = clampField(document.getElementById('t-name').value, FORM_LIMITS.name);
   const role = clampField(document.getElementById('t-role').value, FORM_LIMITS.role);
@@ -1381,8 +1403,6 @@ async function submitTestimonial() {
   const rating = Math.min(5, Math.max(1, parseInt(document.getElementById('t-rating').value, 10) || 0));
   const message = clampField(document.getElementById('t-text').value, FORM_LIMITS.message);
   const location = clampField(document.getElementById('t-location').value, FORM_LIMITS.location);
-  const msgEl = document.getElementById('testi-msg');
-
   if (!name || !role || !service || !rating || !message) {
     msgEl.style.display = 'block';
     msgEl.style.background = '#fef2f2';
@@ -1425,6 +1445,9 @@ async function submitTestimonial() {
       document.getElementById('t-service').value = '';
       document.getElementById('t-rating').value = '0';
       stars.forEach(s => { s.style.color = '#ddd'; });
+      if (typeof resetFormCaptcha === 'function') {
+        resetFormCaptcha(document.getElementById('testimonial-captcha'));
+      }
       return;
     }
     throw new Error('submit failed');
@@ -1483,11 +1506,17 @@ function validateContactForm(values, msgEl) {
   return true;
 }
 
-function sendContactViaWhatsApp(e) {
+async function sendContactViaWhatsApp(e) {
   if (e) e.preventDefault();
   const msgEl = document.getElementById('contact-msg');
   const values = readContactFormValues();
   if (!validateContactForm(values, msgEl)) return;
+
+  const captcha = await guardFormCaptcha('contact-captcha');
+  if (!captcha.ok) {
+    showContactFeedback(msgEl, 'error', captcha.message);
+    return;
+  }
 
   const lines = currentLang === 'fr'
     ? [
@@ -1534,6 +1563,12 @@ async function submitContact(e) {
 
   if (!validateContactForm(values, msgEl)) return;
 
+  const captcha = await guardFormCaptcha('contact-captcha');
+  if (!captcha.ok) {
+    showContactFeedback(msgEl, 'error', captcha.message);
+    return;
+  }
+
   const { name, email, serviceLabel, question } = values;
 
   if (submitBtn) {
@@ -1566,6 +1601,9 @@ async function submitContact(e) {
 
     showContactFeedback(msgEl, 'success', t['contact.form.ok']);
     form.reset();
+    if (typeof resetFormCaptcha === 'function') {
+      resetFormCaptcha(document.getElementById('contact-captcha'));
+    }
     if (typeof applySelectI18n === 'function') applySelectI18n(currentLang, i18n);
   } catch {
     showContactFeedback(msgEl, 'error', t['contact.form.err']);
@@ -2248,6 +2286,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('testimonialsGrid')) loadTestimonials();
   initModals();
   applySitePhones();
+  if (typeof initAllFormCaptchas === 'function') initAllFormCaptchas(detectedLang);
 });
 
 let testimonialsLoadPromise = null;

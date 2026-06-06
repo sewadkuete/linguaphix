@@ -33,6 +33,7 @@ jobs:
           GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
           CONTACT_EMAIL: ${{ secrets.CONTACT_EMAIL }}
           SITE_URL: ${{ secrets.SITE_URL }}
+          TURNSTILE_SITE_KEY: ${{ secrets.TURNSTILE_SITE_KEY }}
 
       - name: Verify runtime config for deploy
         run: |

@@ -338,6 +338,7 @@
             t(lang, 'book.actionsHint') ||
               'You can use either button, or both: book a time on Calendly and/or send your request via WhatsApp with the same details.'
           )}</p>
+          <div class="form-captcha" id="booking-captcha" data-captcha></div>
           <div class="booking-form-actions">
             <button type="button" class="btn btn-lg booking-whatsapp-btn" id="booking-whatsapp-btn" disabled>
               ${esc(t(lang, 'book.submitWhatsapp') || 'Send via WhatsApp')}
@@ -361,6 +362,20 @@
 
   function isBookingHoneypotFilled() {
     return Boolean(document.getElementById('booking-website')?.value?.trim());
+  }
+
+  async function guardBookingCaptcha(lang) {
+    const mount = document.getElementById('booking-captcha');
+    if (typeof requireFormCaptcha !== 'function') return { ok: true };
+    return requireFormCaptcha(mount, lang);
+  }
+
+  function showBookingCaptchaError(lang, message) {
+    const el = document.getElementById('booking-success-msg');
+    if (!el) return;
+    el.textContent = message;
+    el.hidden = false;
+    el.classList.add('booking-captcha-error');
   }
 
   function isValidBookingEmail(email) {
@@ -799,7 +814,7 @@
     return `https://wa.me/${waId}?text=${encodeURIComponent(waLines.join('\n'))}`;
   }
 
-  function sendBookingViaWhatsApp(e) {
+  async function sendBookingViaWhatsApp(e) {
     e.preventDefault();
     const lang = typeof currentLang !== 'undefined' ? currentLang : 'fr';
     const slug = document.body.dataset.serviceSlug;
@@ -829,13 +844,23 @@
       return;
     }
 
+    const captcha = await guardBookingCaptcha(lang);
+    if (!captcha.ok) {
+      showBookingCaptchaError(lang, captcha.message);
+      return;
+    }
+
     const serviceTitle = v.serviceName || getServiceBookingTitle(slug, lang);
     const waUrl = buildBookingWhatsAppUrl(v, serviceTitle, slug, lang);
     window.open(waUrl, '_blank', 'noopener,noreferrer');
 
     if (successEl) {
+      successEl.classList.remove('booking-captcha-error');
       successEl.textContent = t(lang, 'book.whatsappOpened') || '';
       successEl.hidden = false;
+    }
+    if (typeof resetFormCaptcha === 'function') {
+      resetFormCaptcha(document.getElementById('booking-captcha'));
     }
   }
 
@@ -889,6 +914,12 @@
 
     if (!isValidBookingEmail(v.email)) {
       updateBookingSubmitState();
+      return;
+    }
+
+    const captcha = await guardBookingCaptcha(lang);
+    if (!captcha.ok) {
+      showBookingCaptchaError(lang, captcha.message);
       return;
     }
 
@@ -954,8 +985,12 @@
     }
 
     if (successEl) {
+      successEl.classList.remove('booking-captcha-error');
       successEl.textContent = t(lang, 'book.calendlyOpened') || t(lang, 'book.success') || '';
       successEl.hidden = false;
+    }
+    if (typeof resetFormCaptcha === 'function') {
+      resetFormCaptcha(document.getElementById('booking-captcha'));
     }
   }
 
@@ -1003,6 +1038,10 @@
     bindBookingInteractions();
     syncBookingServiceField(lang, slug);
     updateBookingSubmitState();
+
+    if (typeof initFormCaptcha === 'function') {
+      initFormCaptcha(document.getElementById('booking-captcha'), { lang });
+    }
 
     if (typeof applyGeoPrices === 'function') {
       applyGeoPrices(lang, typeof i18n !== 'undefined' ? i18n : {});

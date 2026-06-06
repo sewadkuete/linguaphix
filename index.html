@@ -5,11 +5,11 @@
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
-<meta name="lx-build" content="b53047792506">
+<meta name="lx-build" content="fac7b8b5d556">
 <script data-lx-build-check="1">
 (function(){var M="lx-build",R="lx-build-reload",m=document.querySelector('meta[name="'+M+'"]'),pageBuild=m&&m.getAttribute("content");if(!pageBuild)return;var p=(location.pathname||"").replace(/\\/g,"/"),jsBase=/\/services\//.test(p)?"../js/":"js/";function go(b){var now=Date.now();try{var last=parseInt(sessionStorage.getItem(R)||"0",10);if(last&&now-last<8000)return;sessionStorage.setItem(R,String(now))}catch(e){}var u=new URL(location.href);u.searchParams.set("build",b);u.searchParams.delete("_");location.replace(u.pathname+u.search+u.hash)}fetch(jsBase+"build-version.json?_="+Date.now(),{cache:"no-store",credentials:"same-origin"}).then(function(r){return r.ok?r.json():null}).then(function(d){if(!d||!d.build||d.build===pageBuild)return;var done=function(){go(d.build)};if("caches"in window){caches.keys().then(function(k){return Promise.all(k.map(function(x){return caches.delete(x)}))}).finally(done)}else{done()}}).catch(function(){})})();
 </script>
-<script src="js/lang-detect.js?v=b53047792506"></script>
+<script src="js/lang-detect.js?v=fac7b8b5d556"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>LINGUAPHIX | Langues · Design · Traduction</title>
 <meta name="description" content="LINGUAPHIX - Expert en langues (TCF, IELTS, TOEFL, TOEIC, Cambridge), traduction FR-EN, cours personnalisés, design graphique, montage vidéo et live streaming. Fondé par Akuété SEWA-DOVI, examinateur TCF à l'IFT.">
@@ -50,8 +50,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css?v=b53047792506">
-<script src="js/locale-pricing.js?v=b53047792506"></script>
+<link rel="stylesheet" href="css/style.css?v=fac7b8b5d556">
+<script src="js/locale-pricing.js?v=fac7b8b5d556"></script>
 
 </head>
 <body class="has-fixed-header">
@@ -486,6 +486,7 @@
         <textarea id="t-text" class="form-control" rows="4" data-i18n-placeholder="form.ph.testimonial" placeholder="Décrivez votre expérience avec LINGUAPHIX..."></textarea>
       </div>
       <div id="testi-msg" style="display:none;padding:1rem;border-radius:var(--radius-sm);margin-bottom:1rem;font-size:0.9rem;font-family:var(--font-display);"></div>
+      <div class="form-captcha" id="testimonial-captcha" data-captcha></div>
       <button class="btn btn-primary" onclick="submitTestimonial()" data-i18n="form.submit">Soumettre mon témoignage →</button>
     </div>
   </div>
@@ -585,6 +586,7 @@
             <textarea id="c-question" name="message" class="form-control" rows="5" required data-i18n-placeholder="form.ph.question" placeholder="Posez votre question en détail..."></textarea>
           </div>
           <div id="contact-msg" class="form-feedback" role="status" aria-live="polite" hidden></div>
+          <div class="form-captcha" id="contact-captcha" data-captcha></div>
           <div class="question-form-actions">
             <button type="button" class="btn btn-primary btn-lg" data-contact-action="email" onclick="submitContact(event)" data-i18n="contact.form.submit.email">Envoyer par email →</button>
             <button type="button" class="btn btn-accent btn-lg" data-contact-action="whatsapp" onclick="sendContactViaWhatsApp(event)" data-i18n="contact.form.submit.whatsapp">Envoyer via WhatsApp →</button>
@@ -732,14 +734,15 @@
   </div>
 </div>
 
-<script src="js/countries.js?v=b53047792506"></script>
-<script src="js/policy-package-scopes.js?v=b53047792506"></script>
-<script src="js/policy-content.js?v=b53047792506"></script>
-<script src="js/service-pages-data.js?v=b53047792506"></script>
-<script src="js/service-home-prices.js?v=b53047792506"></script>
-<script src="js/site-config.js?v=b53047792506"></script>
-<script src="js/app.js?v=b53047792506"></script>
-<script src="js/analytics.js?v=b53047792506"></script>
+<script src="js/countries.js?v=fac7b8b5d556"></script>
+<script src="js/policy-package-scopes.js?v=fac7b8b5d556"></script>
+<script src="js/policy-content.js?v=fac7b8b5d556"></script>
+<script src="js/service-pages-data.js?v=fac7b8b5d556"></script>
+<script src="js/service-home-prices.js?v=fac7b8b5d556"></script>
+<script src="js/site-config.js?v=fac7b8b5d556"></script>
+<script src="js/captcha.js?v=fac7b8b5d556"></script>
+<script src="js/app.js?v=fac7b8b5d556"></script>
+<script src="js/analytics.js?v=fac7b8b5d556"></script>
 
 </body>
 </html>

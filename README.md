@@ -50,6 +50,7 @@ Quick start:
 1. Run `docs/supabase-rls.sql` in your Supabase SQL editor.
 2. Copy `js/site-config.local.example.js` → `js/site-config.local.js` and add your **Project URL** + **anon** key (or use `.env.local` + `node scripts/write-site-config-local.mjs`).
 3. Push to GitHub `main` with Actions secrets `SUPABASE_URL` and `SUPABASE_ANON_KEY` for production deploy (see `.github/workflows/deploy-pages.yml`).
+4. Add **Cloudflare Turnstile** for form captcha: **[docs/TURNSTILE.md](docs/TURNSTILE.md)** (`TURNSTILE_SITE_KEY` GitHub secret).
 
 Testimonials show only **approved** Supabase rows; no sample reviews in HTML.
 

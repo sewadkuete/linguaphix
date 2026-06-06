@@ -46,6 +46,7 @@ function loadEnv() {
     'SUPABASE_ANON_KEY',
     'CONTACT_EMAIL',
     'SITE_URL',
+    'TURNSTILE_SITE_KEY',
   ];
   const merged = { ...fromFile };
   for (const key of keys) {
@@ -76,6 +77,7 @@ const supabaseUrl = pick(env, 'SUPABASE_URL');
 const supabaseAnonKey = pick(env, 'SUPABASE_ANON_KEY');
 const contactEmail = pick(env, 'CONTACT_EMAIL');
 const siteUrl = pick(env, 'SITE_URL');
+const turnstileSiteKey = pick(env, 'TURNSTILE_SITE_KEY');
 
 const payload = {};
 if (gaMeasurementId) payload.gaMeasurementId = gaMeasurementId;
@@ -83,6 +85,7 @@ if (supabaseUrl) payload.supabaseUrl = supabaseUrl;
 if (supabaseAnonKey) payload.supabaseAnonKey = supabaseAnonKey;
 if (contactEmail) payload.contactEmail = contactEmail;
 if (siteUrl) payload.siteUrl = siteUrl;
+if (turnstileSiteKey) payload.turnstileSiteKey = turnstileSiteKey;
 
 if (!Object.keys(payload).length) {
   if (isCi) {
@@ -104,6 +107,7 @@ if (supabaseUrl) fields.push(`    supabaseUrl: '${escJs(supabaseUrl)}',`);
 if (supabaseAnonKey) fields.push(`    supabaseAnonKey: '${escJs(supabaseAnonKey)}',`);
 if (contactEmail) fields.push(`    contactEmail: '${escJs(contactEmail)}',`);
 if (siteUrl) fields.push(`    siteUrl: '${escJs(siteUrl)}',`);
+if (turnstileSiteKey) fields.push(`    turnstileSiteKey: '${escJs(turnstileSiteKey)}',`);
 
 const body = `/** Auto-generated — do not commit. */
 (function applyLocalSiteConfig() {

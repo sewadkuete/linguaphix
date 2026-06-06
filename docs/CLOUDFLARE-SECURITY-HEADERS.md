@@ -96,7 +96,7 @@ curl.exe -sI "https://www.linguaphix.com/" | findstr /i "content-security x-fram
 **Content-Security-Policy** (copy as one line):
 
 ```
-default-src 'self'; base-uri 'self'; form-action 'self' https://formsubmit.co; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://formsubmit.co https://*.supabase.co https://www.google-analytics.com https://region1.google-analytics.com; frame-src https://calendly.com; object-src 'none'; upgrade-insecure-requests
+default-src 'self'; base-uri 'self'; form-action 'self' https://formsubmit.co; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https: blob:; media-src 'self' blob:; connect-src 'self' https://formsubmit.co https://*.supabase.co https://www.google-analytics.com https://region1.google-analytics.com https://challenges.cloudflare.com; frame-src https://calendly.com https://challenges.cloudflare.com; object-src 'none'; upgrade-insecure-requests
 ```
 
 6. Click **Deploy**

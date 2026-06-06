@@ -18,11 +18,13 @@
     calendlyUrl: 'https://calendly.com/linguaphix/call',
     onlinePlatform: 'Zoom / Google Meet (à confirmer)',
     inPersonAddress: 'Lomé, Togo (adresse à confirmer)',
+    /** Public Turnstile site key — override via supabase-config.json / TURNSTILE_SITE_KEY (see docs/TURNSTILE.md). */
+    turnstileSiteKey: '1x00000000000000000000AA',
   };
 
   window.LINGUAPHIX_CONFIG = Object.assign({}, defaults, window.LINGUAPHIX_CONFIG || {});
 
-  ['supabaseUrl', 'supabaseAnonKey', 'gaMeasurementId'].forEach((key) => {
+  ['supabaseUrl', 'supabaseAnonKey', 'gaMeasurementId', 'turnstileSiteKey'].forEach((key) => {
     const v = window.LINGUAPHIX_CONFIG[key];
     if (typeof v === 'string' && !v.trim()) delete window.LINGUAPHIX_CONFIG[key];
   });
@@ -40,7 +42,7 @@
   function applyLocalConfigPatch(patch) {
     if (patch && typeof patch === 'object') {
       Object.assign(window.LINGUAPHIX_CONFIG, patch);
-      ['supabaseUrl', 'supabaseAnonKey', 'gaMeasurementId'].forEach((key) => {
+      ['supabaseUrl', 'supabaseAnonKey', 'gaMeasurementId', 'turnstileSiteKey'].forEach((key) => {
         const v = window.LINGUAPHIX_CONFIG[key];
         if (typeof v === 'string' && !v.trim()) delete window.LINGUAPHIX_CONFIG[key];
       });
