@@ -106,10 +106,10 @@ Submit the same sitemap at [Bing Webmaster Tools](https://www.bing.com/webmaster
 
 ## 3. Checklist before launch
 
-- [ ] `gaMeasurementId` set in `js/site-config.js`
-- [ ] Search Console verified and `sitemap.xml` submitted
-- [ ] `og-image.jpg` (or updated `og:image` URLs) live
-- [ ] All pages open over HTTPS
+- [x] `gaMeasurementId` set in `js/site-config.js` (`G-T9WKL4ZSS6`)
+- [ ] Search Console verified and `sitemap.xml` submitted (`https://www.linguaphix.com/sitemap.xml`)
+- [x] `og:image` URLs live (logo mark on all pages)
+- [x] All pages open over HTTPS (`www.linguaphix.com` canonical)
 - [ ] Test contact form email (FormSubmit activation)
 - [ ] Replace portfolio placeholders with real work
 - [ ] Hard-refresh after logo or CSS changes (Ctrl+F5)
