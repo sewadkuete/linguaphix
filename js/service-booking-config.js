@@ -117,7 +117,7 @@
 
           schedule: ['90-120 min par séance', '5-6 séances structurées', '~10 h au total'],
 
-          period: 'pack',
+          period: 'month',
 
           ...modePrices(50000, 55000, true)
 
@@ -169,7 +169,7 @@
 
           schedule: ['90-120 min per session', '5-6 structured sessions', '~10 h total'],
 
-          period: 'pack',
+          period: 'month',
 
           ...modePrices(50000, 55000, true)
 
@@ -225,7 +225,7 @@
 
           schedule: ['90-120 min par séance', '5-6 séances structurées', '~10 h au total'],
 
-          period: 'pack',
+          period: 'month',
 
           ...modePrices(50000, 55000, true)
 
@@ -277,7 +277,7 @@
 
           schedule: ['90-120 min per session', '5-6 structured sessions', '~10 h total'],
 
-          period: 'pack',
+          period: 'month',
 
           ...modePrices(50000, 55000, true)
 
@@ -333,7 +333,7 @@
 
           schedule: ['90-120 min par séance', '5-6 séances structurées', '~10 h au total'],
 
-          period: 'pack',
+          period: 'month',
 
           ...modePrices(65000, 72000, true)
 
@@ -385,7 +385,7 @@
 
           schedule: ['90-120 min per session', '5-6 structured sessions', '~10 h total'],
 
-          period: 'pack',
+          period: 'month',
 
           ...modePrices(65000, 72000, true)
 

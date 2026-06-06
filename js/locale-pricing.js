@@ -52,6 +52,8 @@
 
     visual: 'price.unit.visual',
 
+    visualProject: 'price.unit.visualProject',
+
     month: 'price.unit.month',
 
     pack: 'price.unit.pack',

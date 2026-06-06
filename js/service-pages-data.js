@@ -35,7 +35,7 @@ window.SERVICE_PAGES = {
           name: 'Pack intensif',
           desc: '5-6 séances structurées pour un total de 10 h afin d\'atteindre votre score cible avant le jour de l\'examen.',
           priceXof: 50000,
-          unit: 'pack',
+          unit: 'month',
           featured: true,
           features: ['90-120 min par séance', 'Programme CO / CE / EE / EO', 'Simulations chronométrées', 'Suivi WhatsApp entre séances', 'Conseils jour J']
         }
@@ -86,7 +86,7 @@ window.SERVICE_PAGES = {
           name: 'Intensive pack',
           desc: '5-6 structured sessions for a total of 10 hours to reach your target score before exam day.',
           priceXof: 50000,
-          unit: 'pack',
+          unit: 'month',
           featured: true,
           features: ['90-120 min per session', 'CO / CE / EE / EO program', 'Timed mock exams', 'WhatsApp support between sessions', 'Exam-day tips']
         }
@@ -143,7 +143,7 @@ window.SERVICE_PAGES = {
           name: 'Coaching band score',
           desc: '5-6 séances structurées pour un total de 10 h afin d\'atteindre votre score cible avant le jour de l\'examen.',
           priceXof: 50000,
-          unit: 'pack',
+          unit: 'month',
           featured: true,
           features: ['90-120 min par séance', 'Objectif band score défini', 'Correction Writing détaillée', 'Simulations Speaking', 'Suivi hebdomadaire']
         }
@@ -195,7 +195,7 @@ window.SERVICE_PAGES = {
           name: 'Band-score coaching',
           desc: '5-6 structured sessions for a total of 10 hours to reach your target score before exam day.',
           priceXof: 50000,
-          unit: 'pack',
+          unit: 'month',
           featured: true,
           features: ['90-120 min per session', 'Defined target band', 'Detailed Writing feedback', 'Speaking mock tests', 'Weekly check-ins']
         }
@@ -253,7 +253,7 @@ window.SERVICE_PAGES = {
           name: 'Pack L&R intensif',
           desc: '5-6 séances structurées pour un total de 10 h afin d\'atteindre votre score cible avant le jour de l\'examen.',
           priceXof: 65000,
-          unit: 'pack',
+          unit: 'month',
           featured: true,
           features: ['90-120 min par séance', 'Drills photos / réponses', 'Gestion du temps part 7', '2 simulations complètes', 'Rapport de progression']
         }
@@ -304,7 +304,7 @@ window.SERVICE_PAGES = {
           name: 'Intensive L&R pack',
           desc: '5-6 structured sessions for a total of 10 hours to reach your target score before exam day.',
           priceXof: 65000,
-          unit: 'pack',
+          unit: 'month',
           featured: true,
           features: ['90-120 min per session', 'Photo / response drills', 'Part 7 time management', '2 full mock tests', 'Progress report']
         }
@@ -1230,14 +1230,14 @@ window.SERVICE_PAGES = {
           name: 'Print & identité',
           desc: 'Affiche, flyer, carte de visite — prêt à imprimer.',
           priceXof: 50000,
-          unit: 'visual',
+          unit: 'visualProject',
           features: ['Fonds perdus et traits de coupe', 'PDF CMJN + PNG web', 'Relecture mise en page', 'Conseils imprimeur local']
         },
         {
           name: 'Pack communication',
           desc: '5 visuels cohérents pour campagne ou lancement.',
           priceXof: 60000,
-          unit: 'visual',
+          unit: 'visualProject',
           featured: true,
           features: ['Charte respectée ou création palette', '5 déclinaisons', '2 révisions globales', 'Templates Canva ou PSD', 'Livraison sous 7 jours']
         }
@@ -1285,14 +1285,14 @@ window.SERVICE_PAGES = {
           name: 'Print & identity',
           desc: 'Poster, flyer, business card — print-ready.',
           priceXof: 50000,
-          unit: 'visual',
+          unit: 'visualProject',
           features: ['Bleed and crop marks', 'CMYK PDF + web PNG', 'Layout proofreading', 'Local printer guidance']
         },
         {
           name: 'Comms pack',
           desc: '5 cohesive visuals for a campaign or launch.',
           priceXof: 60000,
-          unit: 'visual',
+          unit: 'visualProject',
           featured: true,
           features: ['Brand or new palette', '5 variations', '2 global revision rounds', 'Canva or PSD templates', 'Delivery within 7 days']
         }

@@ -620,7 +620,9 @@
       hour: 'price.unit.hour',
       month: 'price.unit.month',
       page: 'price.unit.page',
-      pack: 'price.unit.pack',
+      pack: 'price.unit.month',
+      visual: 'price.unit.visual',
+      visualProject: 'price.unit.visualProject',
       word: 'price.unit.word'
     };
     const unitKey = info.period && unitMap[info.period];
