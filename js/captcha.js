@@ -87,6 +87,18 @@
     return input?.value?.trim() || '';
   }
 
+  function dispatchCaptchaChange(mountEl) {
+    if (!mountEl) return;
+    mountEl.dispatchEvent(new CustomEvent('lx-captcha-change', { bubbles: true }));
+  }
+
+  function isFormCaptchaSolved(mountEl) {
+    if (!mountEl) return false;
+    if (mountEl.classList.contains('form-captcha--disabled')) return false;
+    if (getCaptchaToken(mountEl)) return true;
+    return mountEl.dataset.captchaSolved === '1';
+  }
+
   async function initFormCaptcha(mountEl, opts) {
     if (!mountEl) return false;
 
@@ -127,14 +139,17 @@
         callback: () => {
           mountEl.dataset.captchaSolved = '1';
           mountEl.classList.add('form-captcha--ready');
+          dispatchCaptchaChange(mountEl);
         },
         'expired-callback': () => {
           delete mountEl.dataset.captchaSolved;
           mountEl.classList.remove('form-captcha--ready');
+          dispatchCaptchaChange(mountEl);
         },
         'error-callback': () => {
           delete mountEl.dataset.captchaSolved;
           mountEl.classList.remove('form-captcha--ready');
+          dispatchCaptchaChange(mountEl);
         },
       });
 
@@ -160,6 +175,7 @@
     }
     delete mountEl.dataset.captchaSolved;
     mountEl.classList.remove('form-captcha--ready');
+    dispatchCaptchaChange(mountEl);
   }
 
   async function requireFormCaptcha(mountEl, lang) {
@@ -192,4 +208,5 @@
   window.resetFormCaptcha = resetFormCaptcha;
   window.requireFormCaptcha = requireFormCaptcha;
   window.initAllFormCaptchas = initAllFormCaptchas;
+  window.isFormCaptchaSolved = isFormCaptchaSolved;
 })();

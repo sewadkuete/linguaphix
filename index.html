@@ -487,7 +487,7 @@
       </div>
       <div id="testi-msg" style="display:none;padding:1rem;border-radius:var(--radius-sm);margin-bottom:1rem;font-size:0.9rem;font-family:var(--font-display);"></div>
       <div class="form-captcha" id="testimonial-captcha" data-captcha></div>
-      <button class="btn btn-primary" onclick="submitTestimonial()" data-i18n="form.submit">Soumettre mon témoignage →</button>
+      <button type="button" class="btn btn-primary" id="testimonial-submit-btn" onclick="submitTestimonial()" disabled data-i18n="form.submit">Soumettre mon témoignage →</button>
     </div>
   </div>
 </section>
@@ -588,8 +588,8 @@
           <div id="contact-msg" class="form-feedback" role="status" aria-live="polite" hidden></div>
           <div class="form-captcha" id="contact-captcha" data-captcha></div>
           <div class="question-form-actions">
-            <button type="button" class="btn btn-primary btn-lg" data-contact-action="email" onclick="submitContact(event)" data-i18n="contact.form.submit.email">Envoyer par email →</button>
-            <button type="button" class="btn btn-accent btn-lg" data-contact-action="whatsapp" onclick="sendContactViaWhatsApp(event)" data-i18n="contact.form.submit.whatsapp">Envoyer via WhatsApp →</button>
+            <button type="button" class="btn btn-primary btn-lg" data-contact-action="email" onclick="submitContact(event)" disabled data-i18n="contact.form.submit.email">Envoyer par email →</button>
+            <button type="button" class="btn btn-accent btn-lg" data-contact-action="whatsapp" onclick="sendContactViaWhatsApp(event)" disabled data-i18n="contact.form.submit.whatsapp">Envoyer via WhatsApp →</button>
           </div>
         </form>
       </div>

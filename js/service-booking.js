@@ -433,6 +433,13 @@
     return true;
   }
 
+  function isBookingCaptchaReady() {
+    const mount = document.getElementById('booking-captcha');
+    if (!mount) return false;
+    if (typeof isFormCaptchaSolved === 'function') return isFormCaptchaSolved(mount);
+    return mount.dataset.captchaSolved === '1';
+  }
+
   function updateBookingSubmitState() {
     const slug = document.body.dataset.serviceSlug;
     const lang = typeof currentLang !== 'undefined' ? currentLang : 'fr';
@@ -444,7 +451,9 @@
     const waBtn = document.getElementById('booking-whatsapp-btn');
     if (!submitBtn || !config) return;
     const v = readBookingValues();
-    const ready = isBookingFormComplete(v, config) && isValidBookingEmail(v.email);
+    const ready = isBookingFormComplete(v, config)
+      && isValidBookingEmail(v.email)
+      && isBookingCaptchaReady();
     submitBtn.disabled = !ready;
     if (waBtn) waBtn.disabled = !ready;
   }
@@ -766,6 +775,13 @@
 
     const waBtn = document.getElementById('booking-whatsapp-btn');
     if (waBtn) waBtn.addEventListener('click', sendBookingViaWhatsApp);
+
+    const captchaMount = document.getElementById('booking-captcha');
+    if (captchaMount && captchaMount.dataset.captchaBound !== '1') {
+      captchaMount.dataset.captchaBound = '1';
+      captchaMount.addEventListener('lx-captcha-change', updateBookingSubmitState);
+    }
+    updateBookingSubmitState();
   }
 
   window.refreshBookingPolicy = refreshBookingPolicy;
@@ -862,6 +878,7 @@
     if (typeof resetFormCaptcha === 'function') {
       resetFormCaptcha(document.getElementById('booking-captcha'));
     }
+    updateBookingSubmitState();
   }
 
   function buildCalendlyBookingUrl(v, serviceTitle, slug, lang) {
@@ -979,10 +996,7 @@
     const calUrl = buildCalendlyBookingUrl(v, serviceTitle, slug, lang);
     window.open(calUrl, '_blank', 'noopener,noreferrer');
 
-    if (btn) {
-      btn.disabled = false;
-      if (btn.dataset.prevLabel) btn.textContent = btn.dataset.prevLabel;
-    }
+    if (btn && btn.dataset.prevLabel) btn.textContent = btn.dataset.prevLabel;
 
     if (successEl) {
       successEl.classList.remove('booking-captcha-error');
@@ -992,6 +1006,7 @@
     if (typeof resetFormCaptcha === 'function') {
       resetFormCaptcha(document.getElementById('booking-captcha'));
     }
+    updateBookingSubmitState();
   }
 
   window.renderServiceBooking = function renderServiceBooking(lang) {

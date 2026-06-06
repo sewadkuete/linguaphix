@@ -1374,6 +1374,7 @@ stars.forEach(star => {
     const v = parseInt(star.dataset.v);
     document.getElementById('t-rating').value = v;
     stars.forEach((s, i) => s.style.color = i < v ? '#f0b429' : '#ddd');
+    updateTestimonialSubmitState();
   });
 });
 
@@ -1381,6 +1382,70 @@ async function guardFormCaptcha(mountId) {
   const mount = document.getElementById(mountId);
   if (typeof requireFormCaptcha !== 'function') return { ok: true };
   return requireFormCaptcha(mount, currentLang);
+}
+
+function isCaptchaReady(mountId) {
+  const mount = document.getElementById(mountId);
+  if (!mount) return false;
+  if (typeof isFormCaptchaSolved === 'function') return isFormCaptchaSolved(mount);
+  return mount.dataset.captchaSolved === '1';
+}
+
+function isTestimonialFormReady() {
+  const name = document.getElementById('t-name')?.value?.trim();
+  const role = document.getElementById('t-role')?.value?.trim();
+  const service = document.getElementById('t-service')?.value?.trim();
+  const rating = parseInt(document.getElementById('t-rating')?.value, 10) || 0;
+  const message = document.getElementById('t-text')?.value?.trim();
+  return !!(name && role && service && rating >= 1 && message && isCaptchaReady('testimonial-captcha'));
+}
+
+function updateTestimonialSubmitState() {
+  const btn = document.getElementById('testimonial-submit-btn');
+  if (btn) btn.disabled = !isTestimonialFormReady();
+}
+
+function isContactFormReady() {
+  const values = readContactFormValues();
+  return !!(
+    values.name
+    && values.email
+    && values.service
+    && values.question
+    && isValidEmail(values.email)
+    && isCaptchaReady('contact-captcha')
+  );
+}
+
+function updateContactSubmitState() {
+  const form = document.getElementById('contact-question-form');
+  if (!form) return;
+  const ready = isContactFormReady();
+  form.querySelectorAll('[data-contact-action]').forEach((btn) => {
+    btn.disabled = !ready;
+  });
+}
+
+function bindHomeFormSubmitGates() {
+  const testimonialCard = document.querySelector('.testimonial-form-card');
+  if (testimonialCard && testimonialCard.dataset.submitGateBound !== '1') {
+    testimonialCard.dataset.submitGateBound = '1';
+    testimonialCard.addEventListener('input', updateTestimonialSubmitState);
+    testimonialCard.addEventListener('change', updateTestimonialSubmitState);
+    document.getElementById('testimonial-captcha')
+      ?.addEventListener('lx-captcha-change', updateTestimonialSubmitState);
+    updateTestimonialSubmitState();
+  }
+
+  const contactForm = document.getElementById('contact-question-form');
+  if (contactForm && contactForm.dataset.submitGateBound !== '1') {
+    contactForm.dataset.submitGateBound = '1';
+    contactForm.addEventListener('input', updateContactSubmitState);
+    contactForm.addEventListener('change', updateContactSubmitState);
+    document.getElementById('contact-captcha')
+      ?.addEventListener('lx-captcha-change', updateContactSubmitState);
+    updateContactSubmitState();
+  }
 }
 
 // ── TESTIMONIAL SUBMIT (Supabase) ──
@@ -1448,6 +1513,7 @@ async function submitTestimonial() {
       if (typeof resetFormCaptcha === 'function') {
         resetFormCaptcha(document.getElementById('testimonial-captcha'));
       }
+      updateTestimonialSubmitState();
       return;
     }
     throw new Error('submit failed');
@@ -1609,9 +1675,9 @@ async function submitContact(e) {
     showContactFeedback(msgEl, 'error', t['contact.form.err']);
   } finally {
     if (submitBtn) {
-      submitBtn.disabled = false;
       if (submitBtn.dataset.prevLabel) submitBtn.textContent = submitBtn.dataset.prevLabel;
     }
+    updateContactSubmitState();
   }
 }
 
@@ -2287,6 +2353,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initModals();
   applySitePhones();
   if (typeof initAllFormCaptchas === 'function') initAllFormCaptchas(detectedLang);
+  bindHomeFormSubmitGates();
 });
 
 let testimonialsLoadPromise = null;
