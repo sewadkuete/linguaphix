@@ -13,7 +13,7 @@ const slugs = [
 ];
 
 function shell(slug, titleFr, descFr) {
-  const canonical = `https://linguaphix.com/services/${slug}.html`;
+  const canonical = `https://www.linguaphix.com/services/${slug}.html`;
   return `<!DOCTYPE html>
 <html lang="fr">
 <head>

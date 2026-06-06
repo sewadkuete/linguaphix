@@ -1,6 +1,6 @@
 # Google Analytics & Google Search — integration guide
 
-This site is static HTML. Follow these steps once your domain (e.g. `https://linguaphix.com`) is live.
+This site is static HTML. Follow these steps once your domain (e.g. `https://www.linguaphix.com`) is live.
 
 ---
 
@@ -52,22 +52,22 @@ This site is static HTML. Follow these steps once your domain (e.g. `https://lin
 ### Search Console
 
 1. Go to [Google Search Console](https://search.google.com/search-console).
-2. **Add property** → **URL prefix** → `https://linguaphix.com`.
+2. **Add property** → **URL prefix** → `https://www.linguaphix.com/`.
 3. Verify ownership (common options):
    - **HTML file upload** — upload the file Google gives you to the site root, or  
    - **DNS TXT record** at your domain registrar (recommended).
 4. After verification, open **Sitemaps** → submit:
 
    ```
-   https://linguaphix.com/sitemap.xml
+   https://www.linguaphix.com/sitemap.xml
    ```
 
    The file `sitemap.xml` is already in the project root.
 
 5. Request indexing for important URLs:
-   - `https://linguaphix.com/`
-   - `https://linguaphix.com/portfolio.html`
-   - `https://linguaphix.com/policy.html`
+   - `https://www.linguaphix.com/`
+   - `https://www.linguaphix.com/portfolio.html`
+   - `https://www.linguaphix.com/policy.html`
 
 ### What is already optimized in the code
 
@@ -88,7 +88,7 @@ This site is static HTML. Follow these steps once your domain (e.g. `https://lin
    - Add a 1200×630 image at the site root, e.g. `og-image.jpg`, or use `assets/branding/logo-full.png` and update `og:image` URLs in each page if you prefer that asset.  
    - Test with [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) or LinkedIn Post Inspector.
 
-2. **Update `siteUrl` in `js/site-config.js`** if your domain differs from `https://linguaphix.com`.
+2. **Update `siteUrl` in `js/site-config.js`** if your domain differs from `https://www.linguaphix.com`.
 
 3. **Google Business Profile** (optional) — if you serve clients in Lomé/Togo, create a profile and link to the site.
 

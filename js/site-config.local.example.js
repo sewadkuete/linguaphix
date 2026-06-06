@@ -22,7 +22,7 @@
 
     // Optional overrides
     // contactEmail: 'contact@linguaphix.com',
-    // siteUrl: 'https://linguaphix.com',
+    // siteUrl: 'https://www.linguaphix.com',
   });
 })();
 
