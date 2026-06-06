@@ -18,8 +18,6 @@
     calendlyUrl: 'https://calendly.com/linguaphix/call',
     onlinePlatform: 'Zoom / Google Meet (à confirmer)',
     inPersonAddress: 'Lomé, Togo (adresse à confirmer)',
-    /** Public Turnstile site key — override via supabase-config.json / TURNSTILE_SITE_KEY (see docs/TURNSTILE.md). */
-    turnstileSiteKey: '1x00000000000000000000AA',
   };
 
   window.LINGUAPHIX_CONFIG = Object.assign({}, defaults, window.LINGUAPHIX_CONFIG || {});

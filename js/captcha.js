@@ -32,10 +32,24 @@
     return MSG[code]?.[key] || MSG.fr[key] || '';
   }
 
+  function isTestSiteKey(key) {
+    return /^1x0{16}/i.test(String(key || '').trim());
+  }
+
   function getSiteKey() {
     const cfg = String(window.LINGUAPHIX_CONFIG?.turnstileSiteKey || '').trim();
-    if (cfg && !/YOUR_TURNSTILE/i.test(cfg)) return cfg;
-    return TURNSTILE_TEST_SITE_KEY;
+    if (cfg && !/YOUR_TURNSTILE/i.test(cfg) && !isTestSiteKey(cfg)) return cfg;
+    const host = window.location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1' || host === '') {
+      return TURNSTILE_TEST_SITE_KEY;
+    }
+    return cfg && !isTestSiteKey(cfg) ? cfg : '';
+  }
+
+  async function waitForSiteConfig() {
+    if (window.LINGUAPHIX_CONFIG_READY_PROMISE) {
+      await window.LINGUAPHIX_CONFIG_READY_PROMISE.catch(() => {});
+    }
   }
 
   function loadTurnstileScript() {
@@ -74,8 +88,9 @@
   }
 
   async function initFormCaptcha(mountEl, opts) {
-    if (!mountEl || mountEl.dataset.captchaReady === '1') return true;
+    if (!mountEl) return false;
 
+    await waitForSiteConfig();
     const siteKey = getSiteKey();
     if (!siteKey) {
       mountEl.classList.add('form-captcha--disabled');
@@ -83,14 +98,15 @@
     }
 
     const key = mountKey(mountEl);
+    if (mountEl.dataset.captchaReady === '1' && mountEl.dataset.captchaSiteKey === siteKey) {
+      return true;
+    }
+
     mountEl.classList.add('form-captcha', 'form-captcha--loading');
     mountEl.setAttribute('role', 'group');
     mountEl.setAttribute('aria-label', captchaMessage(opts?.lang, 'label') || 'Security check');
 
     try {
-      if (window.LINGUAPHIX_CONFIG_READY_PROMISE) {
-        await window.LINGUAPHIX_CONFIG_READY_PROMISE.catch(() => {});
-      }
       await loadTurnstileScript();
       if (!window.turnstile) throw new Error('turnstile unavailable');
 
@@ -102,6 +118,7 @@
         widgets.delete(key);
       }
 
+      delete mountEl.dataset.captchaReady;
       mountEl.innerHTML = '';
       const widgetId = window.turnstile.render(mountEl, {
         sitekey: siteKey,
@@ -123,6 +140,7 @@
 
       widgets.set(key, { widgetId, mountEl });
       mountEl.dataset.captchaReady = '1';
+      mountEl.dataset.captchaSiteKey = siteKey;
       mountEl.classList.remove('form-captcha--loading');
       return true;
     } catch (err) {
@@ -163,12 +181,11 @@
     return { ok: false, message: captchaMessage(code, 'required') };
   }
 
-  function initAllFormCaptchas(lang) {
+  async function initAllFormCaptchas(lang) {
+    await waitForSiteConfig();
     const code = langCode(lang || (typeof currentLang !== 'undefined' ? currentLang : 'fr'));
-    document.querySelectorAll('[data-captcha]').forEach((el) => {
-      if (el.dataset.captchaReady === '1') return;
-      initFormCaptcha(el, { lang: code });
-    });
+    const mounts = [...document.querySelectorAll('[data-captcha]')];
+    await Promise.all(mounts.map((el) => initFormCaptcha(el, { lang: code })));
   }
 
   window.initFormCaptcha = initFormCaptcha;
