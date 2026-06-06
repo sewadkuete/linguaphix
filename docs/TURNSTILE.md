@@ -32,9 +32,11 @@ node scripts/write-site-config-local.mjs
 
 ### Production (GitHub Actions)
 
-1. Repo → **Settings** → **Secrets and variables** → **Actions**
-2. **New repository secret:** `TURNSTILE_SITE_KEY` = your site key
-3. Push to `main` — the deploy workflow injects it into `js/supabase-config.json`
+1. Repo → **Settings** → **Secrets and variables** → **Actions** (repository secret, not environment-only)
+2. **New repository secret:** name must be exactly `TURNSTILE_SITE_KEY` — value = your **Site key** (not the Secret key)
+3. Push to `main` — deploy injects it into `js/supabase-config.json` and commits that file
+4. After deploy, open `https://www.linguaphix.com/js/supabase-config.json` — you should see `"turnstileSiteKey": "0x4..."`
+5. If missing, check the latest **Deploy GitHub Pages** workflow log for `TURNSTILE_SITE_KEY is empty`
 
 Until a real key is set, the site uses Cloudflare’s **test site key** (`1x00000000000000000000AA`), which always passes and is only suitable for development.
 

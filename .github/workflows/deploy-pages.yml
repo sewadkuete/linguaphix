@@ -38,7 +38,7 @@ jobs:
       - name: Verify runtime config for deploy
         run: |
           test -f js/supabase-config.json
-          node -e "const c=require('./js/supabase-config.json'); if(!c.supabaseUrl||!c.supabaseAnonKey){console.error('Missing Supabase keys in supabase-config.json'); process.exit(1)}"
+          node -e "const c=require('./js/supabase-config.json'); if(!c.supabaseUrl||!c.supabaseAnonKey){console.error('Missing Supabase keys in supabase-config.json'); process.exit(1)} if(!c.turnstileSiteKey){console.log('::warning::turnstileSiteKey missing — add repository secret TURNSTILE_SITE_KEY (Settings → Secrets → Actions)')}"
 
       - name: Stamp asset cache busters
         run: node scripts/stamp-assets.mjs ${{ github.sha }}
@@ -47,7 +47,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add $(git ls-files '*.html') js/build-version.json
+          git add $(git ls-files '*.html') js/build-version.json js/supabase-config.json
           git diff --staged --quiet && exit 0
           git commit -m "chore: stamp assets for ${GITHUB_SHA::7} [skip ci]"
           git push

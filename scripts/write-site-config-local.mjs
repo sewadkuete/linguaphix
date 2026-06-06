@@ -124,4 +124,7 @@ fs.writeFileSync(runtimeFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 fs.writeFileSync(jsonFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 fs.writeFileSync(outFile, body, 'utf8');
 fs.writeFileSync(deployFile, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
-console.log(`Wrote ${path.relative(root, deployFile)} (${Object.keys(payload).length} value(s)).`);
+console.log(`Wrote ${path.relative(root, deployFile)} (${Object.keys(payload).join(', ')}).`);
+if (isCi && !turnstileSiteKey) {
+  console.log('::warning::TURNSTILE_SITE_KEY is empty — Turnstile will use the built-in test key until you add the secret.');
+}

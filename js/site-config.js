@@ -64,11 +64,6 @@
   }
 
   window.LINGUAPHIX_CONFIG_READY_PROMISE = (async function loadRuntimeConfig() {
-    if (isSupabaseConfiguredNow()) {
-      window.LINGUAPHIX_CONFIG_READY = true;
-      return true;
-    }
-
     const base = configBaseUrl();
     const bust = Date.now();
     const sources = [
@@ -87,11 +82,11 @@
         if (!res.ok) continue;
         const patch = await res.json();
         applyLocalConfigPatch(patch);
-        if (isSupabaseConfiguredNow()) return true;
       } catch (err) {
         console.warn('[LINGUAPHIX] runtime config fetch failed:', url, err);
       }
     }
+    if (isSupabaseConfiguredNow()) window.LINGUAPHIX_CONFIG_READY = true;
     return isSupabaseConfiguredNow();
   })();
 })();
