@@ -153,7 +153,7 @@ const i18n = {
     'ticker.design': 'Design graphique',
     'ticker.montage': 'Montage vidéo',
     'ticker.logo': 'Création de logo',
-    'ticker.live': 'Live streaming',
+    'ticker.live': 'Diffusion en direct',
     'ticker.soutien': 'Soutien scolaire',
     'ticker.online': 'Cours en ligne',
     'hero.eyebrow': 'Expert Langues & Créativité Visuelle',
@@ -235,7 +235,7 @@ const i18n = {
     'catalogue.alt.tcf': 'Préparation TCF — France Éducation international',
     'catalogue.alt.ielts': 'Préparation IELTS, TOEFL iBT et Cambridge',
     'catalogue.alt.toeic': 'Préparation TOEIC — ETS',
-    'catalogue.alt.livestream': 'Production live streaming — régie vidéo et multi-écrans',
+    'catalogue.alt.livestream': 'Production de diffusion en direct — régie vidéo et multi-écrans',
     'catalogue.alt.cours': 'Cours d\'anglais (ESL) et de français (FLE)',
     'catalogue.alt.interview': 'Préparation aux entretiens en anglais',
     'catalogue.alt.soutien': 'Soutien scolaire',
@@ -272,9 +272,9 @@ const i18n = {
     'srv.logo.desc': 'Conception de logos originaux, modernes et mémorables. Version animée incluse.',
     'srv.montage.title': 'Montage vidéo professionnel',
     'srv.montage.desc': 'Montage professionnel de vos vidéos. Rendu HD/4K.',
-    'srv.design.title': 'Design Graphique',
+    'srv.design.title': 'Design graphique',
     'srv.design.desc': 'Création de visuels pour réseaux sociaux, affiches, cartes de visite.',
-    'srv.live.title': 'Production Live Streaming',
+    'srv.live.title': 'Production de diffusion en direct',
     'srv.live.desc': 'Configuration complète pour live streaming : équipement, logiciels OBS.',
     'srv.mat.title': 'Conseil & Achat de matériel',
     'srv.mat.desc': 'Conseil expert pour l\'acquisition de matériel audiovisuel et streaming.',
@@ -299,7 +299,7 @@ const i18n = {
     'addtesti.subtitle': 'Votre témoignage apparaîtra sur le site après validation.',
     'form.name': 'Nom complet *',
     'form.role': 'Rôle / statut *',
-    'form.ph.role': 'Ex : Candidate TCF, Entrepreneur, Étudiant…',
+    'form.ph.role': 'Ex : Candidat·e au TCF, Entrepreneur, Étudiant…',
     'form.email': 'Email *',
     'form.service': 'Service utilisé *',
     'form.select': '— Sélectionner —',
@@ -324,7 +324,7 @@ const i18n = {
     'opt.logo': 'Création de logo',
     'opt.montage': 'Montage vidéo',
     'opt.design': 'Design graphique',
-    'opt.livestream': 'Live streaming',
+    'opt.livestream': 'Diffusion en direct',
     'opt.mat': 'Conseil & Achat de matériel',
     'opt.autre': 'Autre',
     'price.from': 'À partir de',
@@ -434,8 +434,8 @@ const i18n = {
     'book.policy.2': 'Les séances sont planifiées d\'un commun accord dans les 48 h suivant la confirmation.',
     'book.policy.3': 'Toute annulation doit être signalée au moins 24 h à l\'avance. Les annulations tardives ne sont pas remboursées.',
     'book.policy.4': 'Les forfaits mensuels ne sont ni transférables ni remboursables une fois les séances commencées.',
-    'book.policy.5': 'Les séances en ligne ont lieu via {platform}.',
-    'book.policy.6': 'Les séances en présentiel ont lieu à {address}.',
+    'book.policy.5': 'Plateforme : {platform}.',
+    'book.policy.6': 'Lieu : {address}.',
     'book.policy.7': 'En cliquant sur « Accepter & réserver », vous confirmez avoir lu et accepté ces conditions.',
     'book.policy.accept': 'J\'ai lu et j\'accepte la politique de réservation',
     'book.policy.selectPackage': 'Sélectionnez un forfait ci-dessus pour afficher les conditions de réservation et de paiement qui s\'appliquent à ce forfait.',
@@ -493,13 +493,13 @@ const i18n = {
     'portfolio.tiktok.openAria': 'Ouvrir le profil TikTok',
     'portfolio.tag.montage': 'Montage vidéo',
     'portfolio.tag.prod': 'Production AV',
-    'portfolio.tag.live': 'Live streaming',
+    'portfolio.tag.live': 'Diffusion en direct',
     'portfolio.tag.logo': 'Logo & identité',
     'portfolio.tag.social': 'Réseaux sociaux',
-    'portfolio.tag.print': 'Print & affiche',
+    'portfolio.tag.print': 'Impression & affiche',
     'portfolio.v1.title': 'Animation',
     'portfolio.v1.desc': 'Motion design, habillage animé et séquences pour réseaux ou présentation.',
-    'portfolio.v2.title': 'Social handles',
+    'portfolio.v2.title': 'Comptes réseaux sociaux',
     'portfolio.v2.desc': 'Intros, reels et formats courts pour profils et campagnes sur les réseaux.',
     'portfolio.g1.title': 'Identité visuelle — marque',
     'portfolio.g1.desc': 'Logos marque par thème : habitat, bien-être, mode, audit et institutions.',
@@ -581,7 +581,7 @@ const i18n = {
     'footer.logo': 'Création de logo',
     'footer.montage': 'Montage vidéo',
     'footer.design': 'Design graphique',
-    'footer.live': 'Live Streaming',
+    'footer.live': 'Diffusion en direct',
     'footer.policy': 'Politique de confidentialité',
     'footer.sitemap': 'Plan du site',
     'sitemap.page.back': '← Retour au site',
@@ -615,6 +615,37 @@ const i18n = {
     'footer.copy.name': 'Akuété SEWA-DOVI',
     'footer.copy.suffix': ' · Tous droits réservés',
     'wa.float': 'WhatsApp',
+    'aria.lang': 'Langue',
+    'aria.menu': 'Menu',
+    'aria.logoHome': 'LINGUAPHIX — Accueil',
+    'aria.backToTop': 'Haut de page',
+    'aria.close': 'Fermer',
+    'about.profile.alt': 'Akuété SEWA-DOVI — fondateur LINGUAPHIX',
+    'policy.toc.aria': 'Sommaire des politiques',
+    'page.title.home': 'LINGUAPHIX | Langues · Design · Traduction',
+    'page.title.about': 'LINGUAPHIX | À propos — Akuété SEWA-DOVI',
+    'page.title.design': 'LINGUAPHIX | Design — Créatif & Audiovisuel',
+    'page.title.catalogue': 'LINGUAPHIX | Catalogue des services',
+    'page.title.portfolio': 'LINGUAPHIX | Portfolio — Vidéo & Design',
+    'page.title.policy': 'LINGUAPHIX | Politique de confidentialité',
+    'page.title.sitemap': 'LINGUAPHIX | Plan du site',
+    'page.desc.home': 'LINGUAPHIX - Expert en langues (TCF, IELTS, TOEFL, TOEIC, Cambridge), traduction FR-EN, cours personnalisés, design graphique, montage vidéo et live streaming. Fondé par Akuété SEWA-DOVI, examinateur TCF à l\'IFT.',
+    'page.desc.about': 'Découvrez Akuété SEWA-DOVI — examinateur TCF, enseignant ESL/FLE, traducteur FR⇄EN et créatif audiovisuel. Plus de 10 ans d\'expérience au service de LINGUAPHIX.',
+    'page.desc.design': 'Services design LINGUAPHIX — logo, montage vidéo, design graphique, live streaming et conseil matériel pour particuliers et entreprises.',
+    'page.desc.catalogue': 'Catalogue complet des services LINGUAPHIX — langues et design pour particuliers et entreprises.',
+    'page.desc.portfolio': 'Portfolio LINGUAPHIX — montages vidéo, live streaming et créations graphiques pour particuliers et entreprises.',
+    'page.desc.policy': 'Politique générale et de confidentialité — LINGUAPHIX. Services linguistiques et créatifs au Togo.',
+    'page.desc.sitemap': 'Plan du site LINGUAPHIX — accès rapide aux pages, sections et contacts importants.',
+    'form.err.required.all': 'Veuillez remplir tous les champs obligatoires.',
+    'form.err.required': 'Veuillez remplir les champs obligatoires.',
+    'form.err.email': 'Adresse email invalide.',
+    'testi.err.supabase': 'L\'envoi en ligne sera activé prochainement. En attendant, contactez-nous sur WhatsApp pour partager votre avis.',
+    'testi.ok': '✓ Merci ! Votre témoignage sera publié ici après validation.',
+    'testi.err.network': 'Erreur de connexion. Réessayez ou contactez-nous par WhatsApp.',
+    'contact.wa.sent': 'WhatsApp s\'ouvre avec votre message — appuyez sur Envoyer dans l\'application.',
+    'sitemap.h.services.lang': 'Services — Langues',
+    'sitemap.h.services.design': 'Services — Design',
+    'sitemap.link.design.overview': 'Design — page d\'aperçu',
     'modal.accept': 'J\'accepte & Je réserve →',
     'modal.decline': 'Retour',
     'quote.modal.title': 'Demander un devis',
@@ -825,7 +856,7 @@ const i18n = {
     'price.unit.visual': 'visual',
     'price.unit.visualProject': 'visual project',
     'price.unit.month': 'month',
-    'price.unit.pack': 'month',
+    'price.unit.pack': 'pack',
     'price.unit.project': 'project',
     'price.unit.day': 'day',
     'price.unit.assistance': 'assistance',
@@ -922,8 +953,8 @@ const i18n = {
     'book.policy.2': 'Sessions are scheduled by mutual agreement within 48 hours of booking confirmation.',
     'book.policy.3': 'Cancellation must be notified at least 24 hours in advance. Late cancellations are not refunded.',
     'book.policy.4': 'Monthly packages are non-transferable and non-refundable once sessions have started.',
-    'book.policy.5': 'Online sessions are conducted via {platform}.',
-    'book.policy.6': 'In-person sessions take place at {address}.',
+    'book.policy.5': 'Platform: {platform}.',
+    'book.policy.6': 'Location: {address}.',
     'book.policy.7': 'By clicking "Accept & Book", you confirm you have read and accepted these terms.',
     'book.policy.accept': 'I have read and accept the booking policy',
     'book.policy.selectPackage': 'Select a package above to view the booking and payment terms that apply to that package.',
@@ -1103,6 +1134,37 @@ const i18n = {
     'footer.copy.name': 'Akuété SEWA-DOVI',
     'footer.copy.suffix': ' · All rights reserved',
     'wa.float': 'WhatsApp',
+    'aria.lang': 'Language',
+    'aria.menu': 'Menu',
+    'aria.logoHome': 'LINGUAPHIX — Home',
+    'aria.backToTop': 'Back to top',
+    'aria.close': 'Close',
+    'about.profile.alt': 'Akuété SEWA-DOVI — founder of LINGUAPHIX',
+    'policy.toc.aria': 'Policy table of contents',
+    'page.title.home': 'LINGUAPHIX | Languages · Design · Translation',
+    'page.title.about': 'LINGUAPHIX | About — Akuété SEWA-DOVI',
+    'page.title.design': 'LINGUAPHIX | Design — Creative & Audiovisual',
+    'page.title.catalogue': 'LINGUAPHIX | Service catalog',
+    'page.title.portfolio': 'LINGUAPHIX | Portfolio — Video & Design',
+    'page.title.policy': 'LINGUAPHIX | Privacy policy',
+    'page.title.sitemap': 'LINGUAPHIX | Sitemap',
+    'page.desc.home': 'LINGUAPHIX — Language expert (TCF, IELTS, TOEFL, TOEIC, Cambridge), FR-EN translation, personalized courses, graphic design, video editing, and live streaming. Founded by Akuété SEWA-DOVI, certified TCF examiner at IFT.',
+    'page.desc.about': 'Meet Akuété SEWA-DOVI — TCF examiner, ESL/FLE teacher, FR⇄EN translator, and audiovisual creative. Over 10 years of experience behind LINGUAPHIX.',
+    'page.desc.design': 'LINGUAPHIX design services — logo, video editing, graphic design, live streaming, and AV equipment consulting for individuals and businesses.',
+    'page.desc.catalogue': 'Full LINGUAPHIX service catalog — languages and design for individuals and businesses.',
+    'page.desc.portfolio': 'LINGUAPHIX portfolio — video edits, live streaming, and graphic design for individuals and businesses.',
+    'page.desc.policy': 'General and privacy policy — LINGUAPHIX. Language and creative services in Togo.',
+    'page.desc.sitemap': 'LINGUAPHIX sitemap — quick access to pages, sections, and contact details.',
+    'form.err.required.all': 'Please fill in all required fields.',
+    'form.err.required': 'Please fill in all required fields.',
+    'form.err.email': 'Invalid email address.',
+    'testi.err.supabase': 'Online submission will be enabled soon. Meanwhile, contact us on WhatsApp to share your feedback.',
+    'testi.ok': '✓ Thank you! Your review will appear here after approval.',
+    'testi.err.network': 'Connection error. Please try again or contact us via WhatsApp.',
+    'contact.wa.sent': 'WhatsApp will open with your message — tap Send in the app.',
+    'sitemap.h.services.lang': 'Services — Languages',
+    'sitemap.h.services.design': 'Services — Design',
+    'sitemap.link.design.overview': 'Design — overview page',
     'modal.accept': 'I accept & Book →',
     'modal.decline': 'Back',
     'quote.modal.title': 'Request a quote',
@@ -1129,6 +1191,46 @@ function applySitePhones() {
   });
 }
 
+function syncAccessibilityCopy(lang) {
+  const dict = i18n[lang] || i18n.fr;
+  const setAria = (selector, key) => {
+    const text = dict[key];
+    if (!text) return;
+    document.querySelectorAll(selector).forEach((el) => el.setAttribute('aria-label', text));
+  };
+  setAria('.lang-toggle, .mobile-lang-toggle', 'aria.lang');
+  setAria('.nav-hamburger', 'aria.menu');
+  setAria('#back-to-top', 'aria.backToTop');
+  setAria('.modal-close-btn, .portfolio-modal__close', 'aria.close');
+  setAria('.wa-float', 'wa.float');
+  setAria('.policy-toc', 'policy.toc.aria');
+  setAria('.portfolio-modal__nav--prev', 'portfolio.gallery.prev');
+  setAria('.portfolio-modal__nav--next', 'portfolio.gallery.next');
+  const logoLink = document.querySelector('.nav-logo, .nav-brand a, .logo a');
+  if (logoLink && dict['aria.logoHome']) logoLink.setAttribute('aria-label', dict['aria.logoHome']);
+}
+
+function applyPageTitle(lang) {
+  const titleKey = document.body?.dataset?.i18nTitle;
+  if (titleKey && i18n[lang]?.[titleKey]) document.title = i18n[lang][titleKey];
+  document.querySelectorAll('meta[data-i18n-content]').forEach((meta) => {
+    const key = meta.getAttribute('data-i18n-content');
+    if (key && i18n[lang]?.[key]) meta.setAttribute('content', i18n[lang][key]);
+  });
+}
+
+function resolveI18nText(text, lang) {
+  if (!text) return text;
+  let out = text;
+  if (out.includes('{currency}') && typeof getDetectedCurrency === 'function') {
+    out = out.replace('{currency}', getDetectedCurrency());
+  }
+  if ((out.includes('{platform}') || out.includes('{address}')) && typeof applyI18nPlaceholders === 'function') {
+    out = applyI18nPlaceholders(out, lang);
+  }
+  return out;
+}
+
 function applyLang(lang) {
   const resolved = resolveLang(lang);
   currentLang = resolved;
@@ -1138,26 +1240,27 @@ function applyLang(lang) {
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (i18n[lang][key]) {
-      const text = i18n[lang][key];
-      if (text.includes('{currency}') && typeof getDetectedCurrency === 'function') {
-        el.textContent = text.replace('{currency}', getDetectedCurrency());
-      } else {
-        el.textContent = text;
-      }
+      el.textContent = resolveI18nText(i18n[lang][key], lang);
     }
   });
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
-    if (i18n[lang][key]) el.placeholder = i18n[lang][key];
+    if (i18n[lang][key]) el.placeholder = resolveI18nText(i18n[lang][key], lang);
   });
   document.querySelectorAll('[data-i18n-html]').forEach(el => {
     const key = el.getAttribute('data-i18n-html');
-    if (i18n[lang][key]) el.innerHTML = i18n[lang][key];
+    if (i18n[lang][key]) el.innerHTML = resolveI18nText(i18n[lang][key], lang);
   });
   document.querySelectorAll('[data-i18n-aria]').forEach(el => {
     const key = el.getAttribute('data-i18n-aria');
     if (i18n[lang][key]) el.setAttribute('aria-label', i18n[lang][key]);
   });
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const key = el.getAttribute('data-i18n-alt');
+    if (i18n[lang][key]) el.alt = i18n[lang][key];
+  });
+  syncAccessibilityCopy(lang);
+  applyPageTitle(lang);
   if (typeof applySelectI18n === 'function') applySelectI18n(lang, i18n);
   const heroTitle = document.querySelector('.hero-title');
   if (heroTitle) {
@@ -1550,7 +1653,7 @@ async function submitTestimonial() {
     msgEl.style.display = 'block';
     msgEl.style.background = '#fef2f2';
     msgEl.style.color = '#b91c1c';
-    msgEl.textContent = currentLang === 'fr' ? 'Veuillez remplir tous les champs obligatoires.' : 'Please fill in all required fields.';
+    msgEl.textContent = i18n[currentLang]['form.err.required.all'] || '';
     return;
   }
 
@@ -1558,9 +1661,7 @@ async function submitTestimonial() {
     msgEl.style.display = 'block';
     msgEl.style.background = '#fff8e1';
     msgEl.style.color = '#92400e';
-    msgEl.textContent = currentLang === 'fr'
-      ? 'L\'envoi en ligne sera activé prochainement. En attendant, contactez-nous sur WhatsApp pour partager votre avis.'
-      : 'Online submission will be enabled soon. Meanwhile, contact us on WhatsApp to share your feedback.';
+    msgEl.textContent = i18n[currentLang]['testi.err.supabase'] || '';
     return;
   }
 
@@ -1581,9 +1682,7 @@ async function submitTestimonial() {
       msgEl.style.display = 'block';
       msgEl.style.background = '#f0fdf4';
       msgEl.style.color = '#166534';
-      msgEl.textContent = currentLang === 'fr'
-        ? '✓ Merci ! Votre témoignage sera publié ici après validation.'
-        : '✓ Thank you! Your review will appear here after approval.';
+      msgEl.textContent = i18n[currentLang]['testi.ok'] || '';
       ['t-name', 't-role', 't-text', 't-location'].forEach(id => { document.getElementById(id).value = ''; });
       document.getElementById('t-service').value = '';
       document.getElementById('t-rating').value = '0';
@@ -1599,9 +1698,7 @@ async function submitTestimonial() {
     msgEl.style.display = 'block';
     msgEl.style.background = '#fef2f2';
     msgEl.style.color = '#b91c1c';
-    msgEl.textContent = currentLang === 'fr'
-      ? 'Erreur de connexion. Réessayez ou contactez-nous par WhatsApp.'
-      : 'Connection error. Please try again or contact us via WhatsApp.';
+    msgEl.textContent = i18n[currentLang]['testi.err.network'] || '';
   }
 }
 
@@ -1633,7 +1730,7 @@ function validateContactForm(values, msgEl) {
     showContactFeedback(
       msgEl,
       'error',
-      currentLang === 'fr' ? 'Veuillez remplir les champs obligatoires.' : 'Please fill in all required fields.'
+      i18n[currentLang]['form.err.required'] || ''
     );
     return false;
   }
@@ -1642,7 +1739,7 @@ function validateContactForm(values, msgEl) {
     showContactFeedback(
       msgEl,
       'error',
-      currentLang === 'fr' ? 'Adresse email invalide.' : 'Invalid email address.'
+      i18n[currentLang]['form.err.email'] || ''
     );
     return false;
   }
@@ -1690,9 +1787,7 @@ async function sendContactViaWhatsApp(e) {
   showContactFeedback(
     msgEl,
     'info',
-    currentLang === 'fr'
-      ? 'WhatsApp s\'ouvre avec votre message — appuyez sur Envoyer dans l\'application.'
-      : 'WhatsApp will open with your message — tap Send in the app.'
+    i18n[currentLang]['contact.wa.sent'] || ''
   );
 }
 
@@ -1912,7 +2007,7 @@ function ensureServiceBookModal() {
   wrap.innerHTML = `
 <div class="modal-overlay" id="serviceBookModal" role="dialog" aria-modal="true" aria-labelledby="serviceBookModalTitle">
   <div class="modal-box modal-box--service-pick" style="position:relative;">
-    <button type="button" class="modal-close-btn" onclick="closeServiceBookModal()" aria-label="Fermer">✕</button>
+    <button type="button" class="modal-close-btn" onclick="closeServiceBookModal()" data-i18n-aria="aria.close" aria-label="Fermer">✕</button>
     <h3 id="serviceBookModalTitle" data-i18n="bookPick.title">Choisir un service</h3>
     <p class="service-book-modal__lead" data-i18n="bookPick.lead">Sélectionnez la prestation à réserver. Vous serez dirigé vers la page de réservation du service.</p>
     <div id="serviceBookModalList" class="service-book-modal__body"></div>
@@ -1922,7 +2017,10 @@ function ensureServiceBookModal() {
   </div>
 </div>`;
   const modal = wrap.firstElementChild;
-  if (modal) document.body.appendChild(modal);
+  if (modal) {
+    document.body.appendChild(modal);
+    syncAccessibilityCopy(typeof currentLang !== 'undefined' ? currentLang : 'fr');
+  }
 }
 
 function bindNavBookCtas() {

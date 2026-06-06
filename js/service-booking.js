@@ -12,6 +12,12 @@
     return (typeof i18n !== 'undefined' && i18n[lang]?.[key]) || '';
   }
 
+  function fb(lang, key, frText, enText) {
+    const v = t(lang, key);
+    if (v) return v;
+    return lang === 'en' ? enText : frText;
+  }
+
   function esc(s) {
     return String(s)
       .replace(/&/g, '&amp;')
@@ -43,31 +49,39 @@
         ? getPolicyServiceLabel(policyKey, lang)
         : null;
 
-    if (!packageId) {
-      const title =
-        typeof getBookingPolicyTitle === 'function'
-          ? getBookingPolicyTitle(policyType, lang, policyKey, serviceLabel)
-          : t(lang, 'book.policy.title') || '';
-      const listHtml =
-        typeof getBookingPolicyPlaceholderHtml === 'function'
-          ? getBookingPolicyPlaceholderHtml(lang)
-          : '';
-      return { title, listHtml, introHtml: '' };
-    }
-
     const title =
       typeof getBookingPolicyTitle === 'function'
-        ? getBookingPolicyTitle(policyType, lang, policyKey, serviceLabel, packageName)
+        ? getBookingPolicyTitle(
+            policyType,
+            lang,
+            policyKey,
+            serviceLabel,
+            packageId ? packageName : ''
+          )
         : t(lang, 'book.policy.title') || '';
+
     const listHtml =
       typeof getBookingPolicyListHtml === 'function'
-        ? getBookingPolicyListHtml(policyType, lang, policyKey, packageId, mode)
+        ? getBookingPolicyListHtml(policyType, lang, policyKey, packageId || '', mode)
         : '';
-    const introHtml =
-      typeof getBookingPolicyPackageIntroHtml === 'function'
-        ? getBookingPolicyPackageIntroHtml(lang, packageName)
-        : '';
-    return { title, listHtml, introHtml };
+
+    let introHtml = '';
+    if (packageId) {
+      introHtml =
+        typeof getBookingPolicyPackageIntroHtml === 'function'
+          ? getBookingPolicyPackageIntroHtml(lang, packageName, serviceLabel)
+          : '';
+    } else if (serviceLabel && typeof getBookingPolicyServiceIntroHtml === 'function') {
+      introHtml = getBookingPolicyServiceIntroHtml(lang, serviceLabel);
+    }
+
+    const resolvedList =
+      listHtml ||
+      (typeof getBookingPolicyPlaceholderHtml === 'function'
+        ? getBookingPolicyPlaceholderHtml(lang)
+        : '');
+
+    return { title, listHtml: resolvedList, introHtml };
   }
 
   function refreshBookingPolicy(lang) {
@@ -136,7 +150,7 @@
 
     return `
       <fieldset class="booking-fieldset booking-fieldset--track">
-        <legend>${esc(t(lang, 'book.field.track') || 'Track')}</legend>
+        <legend>${esc(fb(lang, 'book.field.track', 'Parcours', 'Track'))}</legend>
         <p class="booking-fieldset__hint">${esc(t(lang, 'book.track.lead') || '')}</p>
         <div class="cours-track-grid">${sections}</div>
       </fieldset>`;
@@ -210,7 +224,7 @@
 
   function buildBookingPackagePriceHtml(pkg, lang) {
     if (pkg.quote) {
-      return `<span class="booking-package-card__quote">${esc(t(lang, 'book.onQuote') || 'Sur devis')}</span>`;
+      return `<span class="booking-package-card__quote">${esc(fb(lang, 'book.onQuote', 'Sur devis', 'On quote'))}</span>`;
     }
     if (pkg.dualPageWord && pkg.priceXof) {
       return `<span class="booking-package-card__amount price-range" data-dual-page-word="1" data-xof="${pkg.priceXof}" data-unit="page" data-xof-from="${pkg.priceFromXof}" data-xof-to="${pkg.priceToXof}"></span>`;
@@ -222,7 +236,7 @@
       const unitAttr = pkg.unit ? ` data-unit="${esc(pkg.unit)}"` : '';
       return `<span class="booking-package-card__amount price-range" data-xof="${pkg.priceXof}"${unitAttr}></span>`;
     }
-    return `<span class="booking-package-card__quote">${esc(t(lang, 'book.onQuote') || 'Sur devis')}</span>`;
+    return `<span class="booking-package-card__quote">${esc(fb(lang, 'book.onQuote', 'Sur devis', 'On quote'))}</span>`;
   }
 
   function bookingPackageCardDataAttrs(pkg) {
@@ -267,15 +281,15 @@
 
     const modeBlock = `
       <fieldset class="booking-fieldset booking-fieldset--mode">
-        <legend>${esc(t(lang, 'book.field.mode') || 'Mode')}</legend>
+        <legend>${esc(fb(lang, 'book.field.mode', 'Mode', 'Mode'))}</legend>
         <div class="booking-radio-row">
           <label class="booking-radio-pill">
             <input type="radio" name="booking-mode" value="online" required>
-            <span>${esc(t(lang, 'book.mode.online') || 'Online')}</span>
+            <span>${esc(fb(lang, 'book.mode.online', 'En ligne', 'Online'))}</span>
           </label>
           <label class="booking-radio-pill">
             <input type="radio" name="booking-mode" value="inperson" required>
-            <span>${esc(t(lang, 'book.mode.inperson') || 'In person')}</span>
+            <span>${esc(fb(lang, 'book.mode.inperson', 'En présentiel', 'In-Person'))}</span>
           </label>
         </div>
       </fieldset>`;
@@ -285,11 +299,11 @@
         <legend>${esc(t(lang, 'book.field.summary') || '')}</legend>
         <div class="booking-summary-grid">
           <label class="booking-field">
-            <span>${esc(t(lang, 'book.field.service') || 'Service')}</span>
+            <span>${esc(fb(lang, 'book.field.service', 'Service', 'Service'))}</span>
             <input type="text" id="booking-service-display" name="booking-service-display" readonly value="${serviceTitle}">
           </label>
           <label class="booking-field">
-            <span>${esc(t(lang, 'book.field.package') || 'Package')}</span>
+            <span>${esc(fb(lang, 'book.field.package', 'Forfait', 'Package'))}</span>
             <input type="text" id="booking-package-display" name="booking-package-display" readonly
               placeholder="${pkgPlaceholder}" value="">
           </label>
@@ -299,19 +313,19 @@
     const languageBlock = config.showLanguage
       ? `
       <fieldset class="booking-fieldset booking-fieldset--language">
-        <legend>${esc(t(lang, 'book.field.language') || 'Language')}</legend>
+        <legend>${esc(fb(lang, 'book.field.language', 'Langue', 'Language'))}</legend>
         <div class="booking-radio-row">
           <label class="booking-radio-pill">
             <input type="radio" name="booking-language" value="english" required>
-            <span>${esc(t(lang, 'book.lang.en') || 'English')}</span>
+            <span>${esc(fb(lang, 'book.lang.en', 'Anglais', 'English'))}</span>
           </label>
           <label class="booking-radio-pill">
             <input type="radio" name="booking-language" value="french" required>
-            <span>${esc(t(lang, 'book.lang.fr') || 'French')}</span>
+            <span>${esc(fb(lang, 'book.lang.fr', 'Français', 'French'))}</span>
           </label>
           <label class="booking-radio-pill">
             <input type="radio" name="booking-language" value="both" required>
-            <span>${esc(t(lang, 'book.lang.both') || 'Both')}</span>
+            <span>${esc(fb(lang, 'book.lang.both', 'Les deux', 'Both'))}</span>
           </label>
         </div>
       </fieldset>`
@@ -343,19 +357,19 @@
 
           <div class="booking-form-grid">
             <label class="booking-field">
-              <span>${esc(t(lang, 'book.field.name') || 'Full name')}</span>
+              <span>${esc(fb(lang, 'book.field.name', 'Nom complet', 'Full name'))}</span>
               <input type="text" name="booking-name" id="booking-name" required autocomplete="name">
             </label>
             <label class="booking-field">
-              <span>${esc(t(lang, 'book.field.email') || 'Email')}</span>
+              <span>${esc(fb(lang, 'book.field.email', 'Email', 'Email'))}</span>
               <input type="email" name="booking-email" id="booking-email" required autocomplete="email">
             </label>
             <label class="booking-field">
-              <span>${esc(t(lang, 'book.field.phone') || 'Phone / WhatsApp')}</span>
+              <span>${esc(fb(lang, 'book.field.phone', 'Téléphone / WhatsApp', 'Phone / WhatsApp number'))}</span>
               <input type="tel" name="booking-phone" id="booking-phone" required autocomplete="tel">
             </label>
             <label class="booking-field">
-              <span>${esc(t(lang, 'book.field.startDate') || 'Preferred start date')}</span>
+              <span>${esc(fb(lang, 'book.field.startDate', 'Date de début souhaitée', 'Preferred start date'))}</span>
               <input type="date" name="booking-start" id="booking-start" required>
             </label>
           </div>
@@ -372,16 +386,20 @@
           </label>
 
           <p class="booking-actions-hint">${esc(
-            t(lang, 'book.actionsHint') ||
+            fb(
+              lang,
+              'book.actionsHint',
+              'Vous pouvez utiliser l\'un ou l\'autre bouton, ou les deux : réservez un créneau sur Calendly et/ou envoyez votre demande par WhatsApp avec les mêmes informations.',
               'You can use either button, or both: book a time on Calendly and/or send your request via WhatsApp with the same details.'
+            )
           )}</p>
           <div class="form-captcha" id="booking-captcha" data-captcha></div>
           <div class="booking-form-actions">
             <button type="button" class="btn btn-lg booking-whatsapp-btn" id="booking-whatsapp-btn" disabled>
-              ${esc(t(lang, 'book.submitWhatsapp') || 'Send via WhatsApp')}
+              ${esc(fb(lang, 'book.submitWhatsapp', 'Envoyer par WhatsApp', 'Send via WhatsApp'))}
             </button>
             <button type="submit" class="btn btn-primary btn-lg" id="booking-submit-btn" disabled>
-              ${esc(t(lang, 'book.submit') || 'Accept & Book')}
+              ${esc(fb(lang, 'book.submit', 'Accepter & réserver', 'Accept & Book'))}
             </button>
           </div>
           <p class="booking-success-msg" id="booking-success-msg" hidden role="status"></p>
@@ -849,15 +867,15 @@
   window.refreshBookingPolicy = refreshBookingPolicy;
 
   function labelForMode(lang, mode) {
-    if (mode === 'online') return t(lang, 'book.mode.online') || 'Online';
-    if (mode === 'inperson') return t(lang, 'book.mode.inperson') || 'In person';
+    if (mode === 'online') return fb(lang, 'book.mode.online', 'En ligne', 'Online');
+    if (mode === 'inperson') return fb(lang, 'book.mode.inperson', 'En présentiel', 'In-Person');
     return mode;
   }
 
   function labelForLanguage(lang, code) {
-    if (code === 'english') return t(lang, 'book.lang.en') || 'English';
-    if (code === 'french') return t(lang, 'book.lang.fr') || 'French';
-    if (code === 'both') return t(lang, 'book.lang.both') || 'Both';
+    if (code === 'english') return fb(lang, 'book.lang.en', 'Anglais', 'English');
+    if (code === 'french') return fb(lang, 'book.lang.fr', 'Français', 'French');
+    if (code === 'both') return fb(lang, 'book.lang.both', 'Les deux', 'Both');
     return code;
   }
 
@@ -1074,19 +1092,34 @@
         ? `Nouvelle réservation – ${v.packageName} – ${v.name}`
         : `New Booking – ${v.packageName} – ${v.name}`;
 
-    const emailBody = [
-      `Service: ${serviceTitle || slug}`,
-      `Name: ${v.name}`,
-      `Email: ${v.email}`,
-      `WhatsApp / Phone: ${v.phone}`,
-      `Package: ${v.packageName}`,
-      ...(trackLabel ? [`Track: ${trackLabel}`] : []),
-      `Mode: ${modeLabel}`,
-      ...(langLabel ? [`Language: ${langLabel}`] : []),
-      ...(priceLabel ? [`Price: ${priceLabel}`] : []),
-      `Start date: ${v.startDate}`,
-      `Booked at: ${timestamp}`
-    ].join('\n');
+    const emailBody =
+      lang === 'fr'
+        ? [
+            `Service : ${serviceTitle || slug}`,
+            `Nom : ${v.name}`,
+            `Email : ${v.email}`,
+            `WhatsApp / Téléphone : ${v.phone}`,
+            `Forfait : ${v.packageName}`,
+            ...(trackLabel ? [`Parcours : ${trackLabel}`] : []),
+            `Mode : ${modeLabel}`,
+            ...(langLabel ? [`Langue : ${langLabel}`] : []),
+            ...(priceLabel ? [`Tarif : ${priceLabel}`] : []),
+            `Date de début souhaitée : ${v.startDate}`,
+            `Réservé le : ${timestamp}`,
+          ].join('\n')
+        : [
+            `Service: ${serviceTitle || slug}`,
+            `Name: ${v.name}`,
+            `Email: ${v.email}`,
+            `WhatsApp / Phone: ${v.phone}`,
+            `Package: ${v.packageName}`,
+            ...(trackLabel ? [`Track: ${trackLabel}`] : []),
+            `Mode: ${modeLabel}`,
+            ...(langLabel ? [`Language: ${langLabel}`] : []),
+            ...(priceLabel ? [`Price: ${priceLabel}`] : []),
+            `Preferred start date: ${v.startDate}`,
+            `Booked at: ${timestamp}`,
+          ].join('\n');
 
     fetch(
       `https://formsubmit.co/ajax/${encodeURIComponent(cfg().contactEmail || CONTACT_EMAIL)}`,
@@ -1173,6 +1206,7 @@
 
     bindBookingInteractions();
     syncBookingServiceField(lang, slug);
+    refreshBookingPolicy(lang);
     updateBookingSubmitState();
 
     if (typeof initFormCaptcha === 'function') {

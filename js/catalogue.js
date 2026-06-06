@@ -113,6 +113,15 @@ function applyCatalogueImages(lang) {
     const key = img.getAttribute('data-i18n-alt');
     if (typeof i18n !== 'undefined' && i18n[lang]?.[key]) img.alt = i18n[lang][key];
   });
+
+  document.querySelectorAll('.catalogue-gallery').forEach((gallery) => {
+    const img = gallery.querySelector('img[data-i18n-alt]');
+    if (!img) return;
+    const key = img.getAttribute('data-i18n-alt');
+    if (typeof i18n !== 'undefined' && i18n[lang]?.[key]) {
+      gallery.setAttribute('aria-label', i18n[lang][key]);
+    }
+  });
 }
 
 function switchCatalogueAudience(type, btn) {

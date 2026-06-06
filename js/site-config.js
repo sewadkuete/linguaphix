@@ -16,8 +16,10 @@
     },
     contactEmail: 'contact@linguaphix.com',
     calendlyUrl: 'https://calendly.com/linguaphix/call',
-    onlinePlatform: 'Zoom / Google Meet (à confirmer)',
-    inPersonAddress: 'Lomé, Togo (adresse à confirmer)',
+    onlinePlatformFr: 'Zoom / Google Meet (à confirmer)',
+    onlinePlatformEn: 'Zoom / Google Meet (TBD)',
+    inPersonAddressFr: 'Lomé, Togo (adresse à confirmer)',
+    inPersonAddressEn: 'Lomé, Togo (address to be confirmed)',
   };
 
   window.LINGUAPHIX_CONFIG = Object.assign({}, defaults, window.LINGUAPHIX_CONFIG || {});

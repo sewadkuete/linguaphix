@@ -389,7 +389,7 @@ window.SERVICE_PAGES = {
       faq: [
         { q: 'Puis-je mélanger français et anglais ?', a: 'Chaque inscription concerne une langue de travail ; des parcours bilingues sont possibles sur devis pour profils professionnels.' },
         { q: 'Quelle durée minimale par séance ?', a: '1 heure recommandée ; des créneaux de 90 minutes sont possibles pour l\'immersion.' },
-        { q: 'Fournissez-vous un certificat de niveau ?', a: 'Nous délivrons une attestation de suivi et recommandons les examens officiels (TCF, IELTS) pour certification reconnue.' },
+        { q: 'Fournissez-vous un certificat de niveau ?', a: 'Non, mais nous recommandons les examens officiels (TCF, IELTS) pour une certification reconnue.' },
         { q: 'Les cours en ligne sont-ils efficaces ?', a: 'Oui, avec une bonne connexion et un casque ; de nombreux apprenants atteignent leurs objectifs entièrement en visio.' }
       ]
     },
@@ -445,7 +445,7 @@ window.SERVICE_PAGES = {
       faq: [
         { q: 'Can I study both French and English?', a: 'Each enrollment focuses on one working language; bilingual tracks are available on quote for professional profiles.' },
         { q: 'What is the minimum session length?', a: '1 hour recommended; 90-minute slots are available for immersion.' },
-        { q: 'Do you issue a level certificate?', a: 'We provide a progress attestation and recommend official exams (TCF, IELTS) for recognized certification.' },
+        { q: 'Do you issue a level certificate?', a: 'No, but we recommend official exams (TCF, IELTS) for recognized certification.' },
         { q: 'Are online lessons effective?', a: 'Yes, with a stable connection and headset; many learners meet their goals fully online.' }
       ]
     }
@@ -1227,7 +1227,7 @@ window.SERVICE_PAGES = {
           features: ['1 concept + 1 révision', 'Formats carré / vertical', 'Export PNG haute résolution', 'Texte fourni par le client']
         },
         {
-          name: 'Print & identité',
+          name: 'Impression & identité',
           desc: 'Affiche, flyer, carte de visite — prêt à imprimer.',
           priceXof: 50000,
           unit: 'visualProject',
@@ -1331,9 +1331,9 @@ window.SERVICE_PAGES = {
     policyKey: 'livestream',
     fr: {
       badge: 'Production live',
-      title: 'Production live streaming',
+      title: 'Production de diffusion en direct',
       intro: 'Configuration complète pour vos directs : régie, OBS/Streamlabs, son, éclairage et multi-écrans. Webinaires, cultes, conférences et lancements produit.',
-      metaDescription: 'Production live streaming Lomé : régie, OBS, son et image. Devis événement LINGUAPHIX.',
+      metaDescription: 'Production de diffusion en direct à Lomé : régie, OBS, son et image. Devis événement LINGUAPHIX.',
       packages: [
         {
           name: 'Audit technique',

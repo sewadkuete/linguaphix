@@ -139,13 +139,13 @@
           },
           {
             id: 'online_platform',
-            label: 'Séances en ligne',
-            text: 'Les séances en ligne ont lieu via {platform}.'
+            label: 'Plateforme',
+            text: 'Plateforme : {platform}.'
           },
           {
             id: 'inperson_location',
-            label: 'Séances en présentiel',
-            text: 'Les séances en présentiel ont lieu à {address}.'
+            label: 'Lieu',
+            text: 'Lieu : {address}.'
           },
           {
             id: 'booking',
@@ -241,13 +241,13 @@
           },
           {
             id: 'online_platform',
-            label: 'Online sessions',
-            text: 'Online sessions are conducted via {platform}.'
+            label: 'Platform',
+            text: 'Platform: {platform}.'
           },
           {
             id: 'inperson_location',
-            label: 'In-person sessions',
-            text: 'In-person sessions take place at {address}.'
+            label: 'Location',
+            text: 'Location: {address}.'
           },
           {
             id: 'booking',
@@ -518,14 +518,55 @@
     return window.LINGUAPHIX_CONFIG || {};
   }
 
-  function applyPlaceholders(text) {
+  const PLACEHOLDER_DEFAULTS = {
+    onlinePlatform: {
+      fr: 'Zoom / Google Meet (à confirmer)',
+      en: 'Zoom / Google Meet (TBD)',
+    },
+    inPersonAddress: {
+      fr: 'Lomé, Togo (adresse à confirmer)',
+      en: 'Lomé, Togo (address to be confirmed)',
+    },
+  };
+
+  function looksFrenchPlaceholder(value) {
+    return /à confirmer|à préciser|adresse/i.test(String(value || ''));
+  }
+
+  function resolveLocalizedConfig(cfg, key, locale) {
+    const suffix = locale === 'en' ? 'En' : 'Fr';
+    const localizedKey = `${key}${suffix}`;
+    if (cfg[localizedKey]) return cfg[localizedKey];
+
+    const raw = cfg[key];
+    if (raw && typeof raw === 'object' && !Array.isArray(raw)) {
+      return raw[locale] || raw.fr || raw.en || PLACEHOLDER_DEFAULTS[key][locale];
+    }
+
+    if (typeof raw === 'string' && raw.trim()) {
+      if (locale === 'en' && looksFrenchPlaceholder(raw)) {
+        return PLACEHOLDER_DEFAULTS[key].en;
+      }
+      if (locale === 'fr' && /\bTBD\b|to be confirmed/i.test(raw)) {
+        return PLACEHOLDER_DEFAULTS[key].fr;
+      }
+      return raw;
+    }
+
+    return PLACEHOLDER_DEFAULTS[key][locale];
+  }
+
+  function applyPlaceholders(text, lang) {
     const cfg = getConfig();
-    const platform = cfg.onlinePlatform || 'Zoom / Google Meet (TBD)';
-    const address = cfg.inPersonAddress || 'Lomé, Togo (address TBD)';
+    const locale = lang === 'en' ? 'en' : 'fr';
+    const platform = resolveLocalizedConfig(cfg, 'onlinePlatform', locale);
+    const address = resolveLocalizedConfig(cfg, 'inPersonAddress', locale);
     return String(text)
       .replace(/\{platform\}/g, platform)
       .replace(/\{address\}/g, address);
   }
+
+  window.applyI18nPlaceholders = applyPlaceholders;
 
   const PACKAGE_SCOPED_INTRO = {
     fr: (name) =>
@@ -560,17 +601,17 @@
 
   function resolveScope(type, serviceKey, packageId, mode) {
     const serviceScope = serviceKey && POLICY_SCOPES[serviceKey];
-    let policyType = serviceScope?.type || type;
-    let items = null;
+    const policyType = serviceScope?.type || type;
+    let items = [];
 
     const pkgMap = serviceKey && getPackagePolicyScopes()[serviceKey];
-    if (packageId && pkgMap && pkgMap[packageId]) {
+    if (packageId && pkgMap?.[packageId]) {
       items = [...pkgMap[packageId]];
-    } else if (serviceScope) {
-      items = serviceScope.items ? [...serviceScope.items] : null;
+    } else if (serviceScope?.items?.length) {
+      items = [...serviceScope.items];
     }
 
-    if (items && mode) {
+    if (items.length && mode) {
       items = applyModePolicyAddons(items, serviceKey, packageId, mode);
     }
 
@@ -589,24 +630,25 @@
 
     const items = filterItems(data.items, scope.items).map((item) => ({
       ...item,
-      text: applyPlaceholders(item.text)
+      text: applyPlaceholders(item.text, lang)
     }));
 
     return { scope, policyType, locale, data, items };
   }
 
   function filterItems(items, itemIds) {
-    if (!itemIds || !itemIds.length) return items;
+    if (!itemIds?.length) return [];
     const allowed = new Set(itemIds);
     return items.filter((item) => allowed.has(item.id));
   }
 
-  function renderListItems(items, withLabels) {
+  function renderListItems(items, withLabels, locale) {
+    const labelSep = locale === 'en' ? ':' : ' :';
     return items
       .map((item) => {
         const text = escapeHtml(item.text);
         if (withLabels) {
-          return `<li><strong>${escapeHtml(item.label)} :</strong> ${text}</li>`;
+          return `<li><strong>${escapeHtml(item.label)}${labelSep}</strong> ${text}</li>`;
         }
         return `<li>${text}</li>`;
       })
@@ -622,18 +664,33 @@
   ) {
     const locale = lang === 'en' ? 'en' : 'fr';
     const base = BOOKING_TITLE[locale];
+    if (packageName && serviceLabel) return `${base} — ${serviceLabel} — ${packageName}`;
     if (packageName) return `${base} — ${packageName}`;
     if (serviceLabel) return `${base} — ${serviceLabel}`;
     return base;
   };
 
+  window.getBookingPolicyServiceIntroHtml = function getBookingPolicyServiceIntroHtml(
+    lang,
+    serviceLabel
+  ) {
+    if (!serviceLabel) return '';
+    const locale = lang === 'en' ? 'en' : 'fr';
+    return `<p class="booking-policy-package-intro">${SCOPED_INTRO[locale](escapeHtml(serviceLabel))}</p>`;
+  };
+
   window.getBookingPolicyPackageIntroHtml = function getBookingPolicyPackageIntroHtml(
     lang,
-    packageName
+    packageName,
+    serviceLabel
   ) {
     if (!packageName) return '';
     const locale = lang === 'en' ? 'en' : 'fr';
-    return `<p class="booking-policy-package-intro">${PACKAGE_SCOPED_INTRO[locale](escapeHtml(packageName))}</p>`;
+    const scopeLabel =
+      serviceLabel && !packageName.includes(serviceLabel)
+        ? `${serviceLabel} — ${packageName}`
+        : packageName;
+    return `<p class="booking-policy-package-intro">${PACKAGE_SCOPED_INTRO[locale](escapeHtml(scopeLabel))}</p>`;
   };
 
   window.getBookingPolicyListHtml = function getBookingPolicyListHtml(
@@ -647,7 +704,7 @@
     if (!built || !built.items.length) return '';
 
     const locale = built.locale;
-    const itemsHtml = renderListItems(built.items, true);
+    const itemsHtml = renderListItems(built.items, true, locale);
     const footnote = `<li class="booking-policy-list__accept">${escapeHtml(ACCEPT_SUBMIT[locale])}</li>`;
     return itemsHtml + footnote;
   };
@@ -675,7 +732,7 @@
     if (!built) return '';
 
     const { policyType, locale, data, items } = built;
-    const listHtml = renderListItems(items, true);
+    const listHtml = renderListItems(items, true, locale);
 
     const anchor = policyType === 'design' ? 'policy-design' : 'policy-langues';
     const linkLabel =

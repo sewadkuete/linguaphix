@@ -23,6 +23,10 @@
     // Optional overrides
     // contactEmail: 'contact@linguaphix.com',
     // siteUrl: 'https://www.linguaphix.com',
+    // onlinePlatformFr: 'Zoom / Google Meet (à confirmer)',
+    // onlinePlatformEn: 'Zoom / Google Meet (TBD)',
+    // inPersonAddressFr: 'Lomé, Togo (adresse à confirmer)',
+    // inPersonAddressEn: 'Lomé, Togo (address to be confirmed)',
   });
 })();
 
