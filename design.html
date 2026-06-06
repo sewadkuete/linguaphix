@@ -99,55 +99,61 @@
           <span class="subsection-title-full" data-i18n="services.subsection.design">🎨 Design</span>
           <div class="services-subsection-line"></div>
         </div>
-        <div class="grid-3">
-          <div class="service-card fade-up" id="service-logo">
-            <div class="service-card-icon" style="background:#fff8e1;">✨</div>
-            <h3 data-i18n="srv.logo.title">Création & Animation de Logo</h3>
-            <p data-i18n="srv.logo.desc">Conception de logos originaux, modernes et mémorables. Version statique + version animée (Motion Design). Fichiers HD fournis.</p>
-            <div class="service-card-price price-range" style="background:#fff8e1;color:var(--accent-dark);" id="price-logo" data-service-price="logo"></div>
-            <div class="service-card-cta">
-              <a href="services/logo.html" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
-              <a href="javascript:void(0)" role="button" class="btn btn-accent" onclick="openPolicy('design', event, 'logo')" data-i18n="srv.book">Commander →</a>
-            </div>
-          </div>
-          <div class="service-card fade-up" id="service-montage">
-            <div class="service-card-icon" style="background:#fff8e1;">🎬</div>
-            <h3 data-i18n="srv.montage.title">Montage Vidéo</h3>
-            <p data-i18n="srv.montage.desc">Montage professionnel de vos vidéos : clips, interviews, publicités, vlogs, formations en ligne, événements. Rendu HD/4K.</p>
-            <div class="service-card-price price-range" style="background:#fff8e1;color:var(--accent-dark);" id="price-montage" data-service-price="montage"></div>
-            <div class="service-card-cta">
-              <a href="services/montage.html" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
-              <a href="javascript:void(0)" role="button" class="btn btn-accent" onclick="openPolicy('design', event, 'montage')" data-i18n="srv.book">Commander →</a>
-            </div>
-          </div>
-          <div class="service-card fade-up" id="service-graphic">
-            <div class="service-card-icon" style="background:#fff8e1;">🖼️</div>
-            <h3 data-i18n="srv.design.title">Design Graphique</h3>
-            <p data-i18n="srv.design.desc">Création de visuels pour réseaux sociaux, affiches, flyers, cartes de visite, bannières web et identité visuelle complète.</p>
-            <div class="service-card-price price-range" style="background:#fff8e1;color:var(--accent-dark);" id="price-design" data-service-price="graphic"></div>
-            <div class="service-card-cta">
-              <a href="services/graphic.html" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
-              <a href="javascript:void(0)" role="button" class="btn btn-accent" onclick="openPolicy('design', event, 'graphic')" data-i18n="srv.book">Commander →</a>
-            </div>
-          </div>
-          <div class="service-card fade-up" id="service-livestream">
-            <div class="service-card-icon" style="background:#fff8e1;">📡</div>
-            <h3 data-i18n="srv.live.title">Production Live Streaming</h3>
-            <p data-i18n="srv.live.desc">Configuration complète pour live streaming : équipement, éclairage, son, logiciels OBS/Streamlabs. Événements, webinaires, conférences.</p>
-            <div class="service-card-price price-range" style="background:#fff8e1;color:var(--accent-dark);" data-service-price="livestream"></div>
-            <div class="service-card-cta">
-              <a href="services/livestream.html" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
-              <a href="javascript:void(0)" role="button" class="btn btn-accent" onclick="openQuoteModal(event)" data-i18n="srv.quote">Demander un devis</a>
-            </div>
-          </div>
-          <div class="service-card fade-up" id="service-materiel">
-            <div class="service-card-icon" style="background:#fff8e1;">🛒</div>
-            <h3 data-i18n="srv.mat.title">Conseil & Achat de matériel</h3>
-            <p data-i18n="srv.mat.desc">Conseil expert pour l'acquisition de matériel audiovisuel et streaming. Caméras, micros, éclairage, encodeurs, mixettes et plus.</p>
-            <div class="service-card-price price-range" style="background:#fff8e1;color:var(--accent-dark);" data-service-price="materiel"></div>
-            <div class="service-card-cta">
-              <a href="services/materiel.html" class="btn btn-outline btn-sm service-card-detail" data-i18n="svcpage.cta.details">Voir le détail</a>
-              <a href="javascript:void(0)" role="button" class="btn btn-accent" onclick="openQuoteModal(event)" data-i18n="srv.quote">Demander un devis</a>
+        <div class="services-lang-matrix">
+          <div class="services-table-wrap">
+            <div class="services-table" role="table">
+              <div class="services-table__body" role="rowgroup">
+                <div class="services-table__row" id="service-logo" role="row">
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">✨</span><span class="services-table__name" data-i18n="srv.logo.title">Création & Animation de Logo</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-logo" data-service-price="logo"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/logo.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openPolicy('design', event, 'logo')" data-i18n="services.table.book">Réserver</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-table__row" id="service-montage" role="row">
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🎬</span><span class="services-table__name" data-i18n="srv.montage.title">Montage Vidéo</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-montage" data-service-price="montage"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/montage.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openPolicy('design', event, 'montage')" data-i18n="services.table.book">Réserver</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-table__row" id="service-graphic" role="row">
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🖼️</span><span class="services-table__name" data-i18n="srv.design.title">Design Graphique</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-design" data-service-price="graphic"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/graphic.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openPolicy('design', event, 'graphic')" data-i18n="services.table.book">Réserver</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-table__row" id="service-livestream" role="row">
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">📡</span><span class="services-table__name" data-i18n="srv.live.title">Production Live Streaming</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" data-service-price="livestream"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/livestream.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openQuoteModal(event)" data-i18n="services.table.quote">Devis</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-table__row" id="service-materiel" role="row">
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🛒</span><span class="services-table__name" data-i18n="srv.mat.title">Conseil & Achat de matériel</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" data-service-price="materiel"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/materiel.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openQuoteModal(event)" data-i18n="services.table.quote">Devis</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

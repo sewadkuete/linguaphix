@@ -49,111 +49,6 @@ function renderServicePage(lang) {
     return `<a href="#book-now" role="button" class="${btnClass}"${attrs} onclick="${click}">${esc(t('svcpage.cta.book') || 'Réserver')}</a>`;
   };
 
-  const SERVICE_MODE_PACKAGE_SLUGS = new Set([
-    'cours',
-    'tcf',
-    'ielts',
-    'toeic',
-    'interview',
-    'soutien'
-  ]);
-
-  function buildServiceModePackagesHtml(modePackagesObj, lang, slug) {
-    const packages = Object.values(modePackagesObj || {});
-    const popular = t('services.popular') || (lang === 'en' ? 'Popular' : 'Populaire');
-    const langsLabel = slug === 'cours' ? t('book.languagesAvailable') || '' : '';
-    const renderPanel =
-      typeof renderModePricePanel === 'function' ? renderModePricePanel : null;
-
-    return {
-      html: packages
-        .map((pkg) => {
-          const isFeatured = Boolean(pkg.online?.popular);
-          const schedule = (pkg.schedule || []).map((s) => `<li>${esc(s)}</li>`).join('');
-          const defaultMode = 'online';
-          const modePanel = renderPanel
-            ? renderPanel(pkg, lang, { interactive: false, packageId: pkg.id, popularLabel: popular })
-            : '';
-
-          return `
-      <article class="service-package-card service-package-card--mode${isFeatured ? ' service-package-card--featured' : ''}" data-page-booking-package="${esc(pkg.id)}">
-        ${isFeatured ? `<span class="service-package-badge">${esc(popular)}</span>` : ''}
-        <h3>${esc(pkg.name)}</h3>
-        <p class="service-package-desc">${esc(pkg.subtitle)}</p>
-        <ul class="service-package-features">${schedule}</ul>
-        ${langsLabel ? `<p class="service-package-card__langs">${esc(langsLabel)}</p>` : ''}
-        ${modePanel}
-        ${bookBtn(
-          `btn ${isFeatured ? 'btn-primary' : 'btn-outline'} btn-sm service-package-card__cta`,
-          pkg.id,
-          pkg.name,
-          defaultMode
-        )}
-      </article>`;
-        })
-        .join(''),
-      gridClass: `service-packages-grid service-packages-grid--${packages.length}`
-    };
-  }
-
-  const orderPackages =
-    typeof orderPackagesForDisplay === 'function'
-      ? orderPackagesForDisplay
-      : (pkgs) => [...(pkgs || [])];
-
-  function buildPackagesHtml(packages, resolveIndex) {
-    const displayPackages = orderPackages(packages);
-    let featuredMarked = false;
-    return {
-      html: displayPackages.map((pkg, displayIndex) => {
-        const originalIndex = packages.indexOf(pkg);
-        const pkgIndex = originalIndex >= 0 ? originalIndex : displayIndex;
-        const isThreeCol = displayPackages.length === 3;
-        const isFeatured = isThreeCol
-          ? displayIndex === displayPackages.length - 1 && Boolean(pkg.featured)
-          : Boolean(pkg.featured) && !featuredMarked;
-        if (isFeatured && !isThreeCol) featuredMarked = true;
-
-        const featured = isFeatured ? ' service-package-card--featured' : '';
-        const popularLabel = t('services.popular') || (lang === 'en' ? 'Popular' : 'Populaire');
-        let priceAttrs = 'class="service-package-price price-range"';
-        if (pkg.dualPageWord && pkg.priceXof) {
-          priceAttrs += ` data-dual-page-word="1" data-xof="${pkg.priceXof}" data-unit="page" data-xof-from="${pkg.priceFromXof}" data-xof-to="${pkg.priceToXof}"`;
-        } else if (pkg.priceFromXof != null && pkg.priceToXof != null && pkg.unit === 'word') {
-          priceAttrs += ` data-xof-from="${pkg.priceFromXof}" data-xof-to="${pkg.priceToXof}" data-unit="word"`;
-        } else if (pkg.quote) {
-          priceAttrs += ' data-quote="1"';
-        } else {
-          priceAttrs += ` data-xof="${pkg.priceXof || 0}"${pkg.unit ? ` data-unit="${pkg.unit}"` : ''}`;
-        }
-        const features = (pkg.features || []).map((f) => `<li>${esc(f)}</li>`).join('');
-        const bookingId = resolveIndex
-          ? resolveIndex(pkgIndex)
-          : (typeof resolveBookingPackageId === 'function'
-            ? resolveBookingPackageId(slug, pkgIndex)
-            : `pkg-${pkgIndex}`);
-
-        const bookingAttr = bookingId
-          ? ` data-page-booking-package="${esc(bookingId)}"`
-          : '';
-        return `
-      <article class="service-package-card${featured}"${bookingAttr}>
-        ${isFeatured ? `<span class="service-package-badge">${esc(popularLabel)}</span>` : ''}
-        <h3>${esc(pkg.name)}</h3>
-        <div ${priceAttrs}></div>
-        <p class="service-package-desc">${esc(pkg.desc || '')}</p>
-        <ul class="service-package-features">${features}</ul>
-        ${bookBtn(
-          `btn ${isFeatured ? 'btn-primary' : 'btn-outline'} btn-sm`,
-          bookingId,
-          pkg.name
-        )}
-      </article>`;
-      }).join(''),
-      gridClass: `service-packages-grid service-packages-grid--${displayPackages.length}`
-    };
-  }
-
   const traductionAudience =
     slug === 'traduction' && typeof getTraductionAudienceOrDefault === 'function'
       ? getTraductionAudienceOrDefault()
@@ -171,64 +66,6 @@ function renderServicePage(lang) {
       meta.audienceOverrides?.[traductionAudience]?.fr);
   const pageTitle = audienceOverride?.title || data.title;
   const pageIntro = audienceOverride?.intro || data.intro;
-
-  let packagesHtml;
-  let pkgGridClass;
-  let packagesSectionTitle;
-  let businessPackagesSection = '';
-
-  if (slug === 'traduction' && traductionAudience === 'entreprises' && data.businessPackages?.length) {
-    const biz = buildPackagesHtml(data.businessPackages, (pkgIndex) => `biz-${pkgIndex}`);
-    packagesHtml = biz.html;
-    pkgGridClass = biz.gridClass;
-    packagesSectionTitle =
-      t('svcpage.packages.business') ||
-      (lang === 'en' ? 'Professional translation (businesses)' : 'Traduction professionnelle (entreprises)');
-  } else if (slug === 'traduction' && traductionAudience === 'particuliers') {
-    const mainPkgs = buildPackagesHtml(data.packages);
-    packagesHtml = mainPkgs.html;
-    pkgGridClass = mainPkgs.gridClass;
-    packagesSectionTitle =
-      t('svcpage.packages.individuals') ||
-      (lang === 'en' ? 'Professional translation (individuals)' : 'Traduction professionnelle (particuliers)');
-  } else {
-    const bookingCfg =
-      typeof getServiceBookingConfig === 'function' ? getServiceBookingConfig(slug, lang) : null;
-    const modePackagesOnPage =
-      SERVICE_MODE_PACKAGE_SLUGS.has(slug) && bookingCfg?.coursPackages
-        ? bookingCfg.coursPackages
-        : null;
-
-    if (modePackagesOnPage) {
-      const modePkgs = buildServiceModePackagesHtml(modePackagesOnPage, lang, slug);
-      packagesHtml = modePkgs.html;
-      pkgGridClass = modePkgs.gridClass;
-      packagesSectionTitle = t('svcpage.packages') || 'Forfaits & tarifs';
-    } else {
-      const mainPkgs = buildPackagesHtml(data.packages);
-      packagesHtml = mainPkgs.html;
-      pkgGridClass = mainPkgs.gridClass;
-      packagesSectionTitle =
-        data.businessPackages?.length && !traductionAudience
-          ? t('svcpage.packages.individuals') || (lang === 'en' ? 'Individuals' : 'Particuliers')
-          : t('svcpage.packages') || 'Forfaits & tarifs';
-    }
-
-    if (data.businessPackages?.length && slug !== 'traduction') {
-      const businessPkgs = buildPackagesHtml(data.businessPackages, (pkgIndex) => `biz-${pkgIndex}`);
-      businessPackagesSection = `
-    <section id="svc-packages-business" class="service-page-block section-sm">
-      <div class="container">
-        <header class="service-page-block__head">
-          <h2 class="service-section-title">${esc(t('svcpage.packages.business') || (lang === 'en' ? 'Business translation' : 'Traduction professionnelle (entreprises)'))}</h2>
-        </header>
-        <div class="${businessPkgs.gridClass}">${businessPkgs.html}</div>
-      </div>
-    </section>`;
-    }
-  }
-
-
 
   const modalitiesHtml = data.modalities.map((m) => `<li>${esc(m)}</li>`).join('');
 
@@ -295,19 +132,10 @@ function renderServicePage(lang) {
 
 
   const tocItems = [
-
-    { id: 'svc-packages', label: t('svcpage.nav.packages') || 'Packages' },
-
+    { id: 'book-now', label: t('svcpage.nav.book') || 'Book now' },
     { id: 'svc-how', label: t('svcpage.nav.how') || 'How it works' },
-
-    ...(showDelivery ? [{ id: 'svc-delivery', label: t('svcpage.nav.delivery') || 'Timelines' }] : []),
-
     { id: 'svc-payment', label: t('svcpage.nav.payment') || 'Payment' },
-
     { id: 'svc-faq', label: t('svcpage.nav.faq') || 'FAQ' },
-
-    { id: 'book-now', label: t('svcpage.nav.book') || 'Book' }
-
   ];
 
   const tocHtml = tocItems.map((item) =>
@@ -317,8 +145,6 @@ function renderServicePage(lang) {
   ).join('');
 
 
-
-  const packagesLead = t('svcpage.packages.lead');
 
   const paymentLead = t('svcpage.payment.lead');
 
@@ -358,25 +184,15 @@ function renderServicePage(lang) {
 
 
 
-    <section id="svc-packages" class="service-page-block service-page-block--alt section-sm">
+    <section id="book-now" class="service-page-block service-page-block--alt section-sm">
 
       <div class="container">
 
-        <header class="service-page-block__head">
-
-          <h2 class="service-section-title">${esc(packagesSectionTitle)}</h2>
-
-          ${packagesLead ? `<p class="service-section-lead">${esc(packagesLead)}</p>` : ''}
-
-        </header>
-
-        <div class="${pkgGridClass}">${packagesHtml}</div>
+        <div id="service-booking-mount"></div>
 
       </div>
 
     </section>
-
-    ${businessPackagesSection}
 
 
 

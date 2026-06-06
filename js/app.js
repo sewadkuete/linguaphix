@@ -376,7 +376,7 @@ const i18n = {
     'svcpage.packages.lead': 'Les tarifs s\'affichent dans votre devise locale.',
     'svcpage.nav.label': 'Sur cette page',
     'svcpage.nav.packages': 'Forfaits',
-    'svcpage.nav.how': 'Modalités & processus',
+    'svcpage.nav.how': 'Comment ça marche',
     'svcpage.nav.delivery': 'Délais',
     'svcpage.nav.payment': 'Paiement',
     'svcpage.nav.faq': 'FAQ',
@@ -396,7 +396,7 @@ const i18n = {
     'book.badge': 'Réserver',
     'book.title': 'Réserver vos cours',
     'book.lead': 'Choisissez votre forfait, remplissez le formulaire et confirmez en un clic. Nous vous recontactons sous 24 h.',
-    'book.title.service': 'Réserver ce service',
+    'book.title.service': 'Réserver un forfait pour ce service',
     'book.lead.service': 'Sélectionnez un forfait, complétez le formulaire et acceptez la politique. Envoi simultané par email, WhatsApp et Calendly.',
     'book.mostPopular': 'Le plus populaire',
     'book.perMonth': 'mois',
@@ -878,7 +878,7 @@ const i18n = {
     'book.badge': 'Book now',
     'book.title': 'Book your classes',
     'book.lead': 'Choose your package, complete the form, and confirm in one click. We will get back to you within 24 hours.',
-    'book.title.service': 'Book this service',
+    'book.title.service': 'Book a package for this service',
     'book.lead.service': 'Select a package, complete the form, and accept the policy. We notify you by email, WhatsApp, and Calendly at once.',
     'book.mostPopular': 'Most Popular',
     'book.perMonth': 'month',
@@ -1290,6 +1290,16 @@ function revealElementForHash(el) {
   switchAudience(type, tabs[tabIndex]);
 }
 
+function resolveHomeTranslationHashTarget(id) {
+  if (id !== 'service-traduction') return null;
+  const services = document.getElementById('services');
+  if (!services) return null;
+  if (services.classList.contains('services-filter-entreprises')) {
+    return document.getElementById('service-traduction-biz');
+  }
+  return document.getElementById('service-traduction');
+}
+
 function scrollToHashTarget() {
   const id = location.hash.replace(/^#/, '');
   if (!id) return;
@@ -1302,7 +1312,7 @@ function scrollToHashTarget() {
       return;
     }
   }
-  const el = document.getElementById(id);
+  const el = resolveHomeTranslationHashTarget(id) || document.getElementById(id);
   if (!el) return;
   revealElementForHash(el);
   requestAnimationFrame(() => {

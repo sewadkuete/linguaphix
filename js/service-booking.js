@@ -208,7 +208,7 @@
     return ' data-booking-quote="1"';
   }
 
-  function renderBookingSection(lang, slug) {
+  function renderBookingSection(lang, slug, embedded) {
     const config = typeof getServiceBookingConfig === 'function'
       ? getServiceBookingConfig(slug, lang)
       : null;
@@ -286,9 +286,7 @@
       </fieldset>`
       : '';
 
-    return `
-    <section class="section section-sm service-booking-section" id="book-now" aria-labelledby="service-booking-title">
-      <div class="container">
+    const bookingInner = `
         <header class="service-booking-header fade-up">
           <span class="badge">${esc(t(lang, 'book.badge') || '')}</span>
           <h2 class="service-section-title" id="service-booking-title">${esc(t(lang, titleKey) || t(lang, 'book.title') || '')}</h2>
@@ -349,8 +347,15 @@
             </button>
           </div>
           <p class="booking-success-msg" id="booking-success-msg" hidden role="status"></p>
-        </form>
-      </div>
+        </form>`;
+
+    if (embedded) {
+      return `<div class="service-booking-embed service-booking-section">${bookingInner}</div>`;
+    }
+
+    return `
+    <section class="section section-sm service-booking-section" id="book-now" aria-labelledby="service-booking-title">
+      <div class="container">${bookingInner}</div>
     </section>`;
   }
 
@@ -956,27 +961,37 @@
     const slug = document.body.dataset.serviceSlug;
     if (!slug || !document.body.classList.contains('page-service')) return;
 
-    let section = document.getElementById('book-now');
-    const html = renderBookingSection(lang, slug);
+    const mount = document.getElementById('service-booking-mount');
+    const embedded = Boolean(mount);
+    const html = renderBookingSection(lang, slug, embedded);
+
     if (!html) {
-      section?.remove();
+      if (mount) mount.innerHTML = '';
+      else document.querySelector('section.service-booking-section#book-now')?.remove();
       return;
     }
 
-    if (!section) {
-      const ctaBand = document.querySelector('.service-page-cta-band');
-      const wrapper = document.createElement('div');
-      wrapper.innerHTML = html;
-      section = wrapper.firstElementChild;
-      if (ctaBand?.parentNode) {
-        ctaBand.parentNode.insertBefore(section, ctaBand);
-      } else {
-        document.getElementById('service-page-root')?.appendChild(section);
-      }
+    if (embedded) {
+      mount.innerHTML = html;
+      document.querySelectorAll('section.service-booking-section#book-now').forEach((el) => el.remove());
     } else {
-      section.outerHTML = html;
-      section = document.getElementById('book-now');
+      let section = document.getElementById('book-now');
+      if (!section) {
+        const ctaBand = document.querySelector('.service-page-cta-band');
+        const wrapper = document.createElement('div');
+        wrapper.innerHTML = html;
+        section = wrapper.firstElementChild;
+        if (ctaBand?.parentNode) {
+          ctaBand.parentNode.insertBefore(section, ctaBand);
+        } else {
+          document.getElementById('service-page-root')?.appendChild(section);
+        }
+      } else if (section.classList.contains('service-booking-section')) {
+        section.outerHTML = html;
+      }
     }
+
+    const section = document.getElementById('book-now');
 
     const minDate = new Date();
     minDate.setDate(minDate.getDate() + 1);

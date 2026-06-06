@@ -1100,10 +1100,10 @@ a.ticker-badge-link:active {
   column-gap: 0.85rem;
   padding: 0.8rem 1rem;
   border-bottom: 1px solid var(--gray-200);
-  grid-template-columns: minmax(0, 1fr) 12.5rem 16.5rem;
+  grid-template-columns: minmax(0, 1fr) 16rem 16.5rem;
 }
 #services.services-filter-all .services-table__row {
-  grid-template-columns: 6.25rem minmax(0, 1fr) 12.5rem 16.5rem;
+  grid-template-columns: 6.25rem minmax(0, 1fr) 16rem 16.5rem;
 }
 .services-table__row:last-child {
   border-bottom: none;
@@ -1151,23 +1151,35 @@ a.ticker-badge-link:active {
 }
 .services-table__price .price-range {
   margin: 0;
-  padding: 0.35rem 0.55rem;
-  font-size: 0.68rem;
-  display: inline-flex;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.65rem;
+  display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
   white-space: nowrap;
   width: 100%;
-  max-width: 12.5rem;
+  min-height: 2.15rem;
   box-sizing: border-box;
-  gap: 0.25rem 0.3rem;
-  line-height: 1.2;
+  gap: 0.2rem;
+  line-height: 1.15;
   text-align: center;
 }
-.services-table__price .price-range__primary,
-.services-table__price .price-range__aside {
+.services-table__price .price-range__primary {
   white-space: nowrap;
+  flex: 1 1 auto;
+  text-align: center;
+}
+.services-table__price .price-range__aside {
+  display: none;
+}
+.page-design .services-table__price .price-range {
+  background: #fff8e1;
+  color: var(--accent-dark);
+  border-color: rgba(184, 136, 10, 0.2);
+}
+.page-design .services-table__price .price-range__primary {
+  color: var(--accent-dark);
 }
 .services-table__actions {
   min-width: 0;
@@ -3465,8 +3477,14 @@ body:has(.wa-float) > footer {
   margin-bottom: 0;
   max-width: 40rem;
 }
+.service-page-hero.section-sm {
+  padding-bottom: clamp(0.75rem, 2vw, 1.25rem);
+}
+#book-now.service-page-block.section-sm {
+  padding-top: clamp(0.75rem, 2vw, 1.25rem);
+}
 .service-page-toc {
-  margin-top: 1.75rem;
+  margin-top: 1.25rem;
   padding: 1rem 1.25rem;
   background: var(--white);
   border: 1px solid var(--border);
@@ -3523,6 +3541,15 @@ body:has(.wa-float) > footer {
 }
 .service-page-block__head .service-section-lead {
   margin-bottom: 0;
+}
+.service-page-block__head--sub {
+  margin-top: 2rem;
+}
+.service-booking-embed {
+  margin-top: 0;
+}
+.service-booking-embed.service-booking-section {
+  background: transparent;
 }
 .service-page-panels {
   display: grid;
