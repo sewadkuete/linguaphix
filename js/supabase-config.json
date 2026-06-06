@@ -1,4 +1,5 @@
 {
+  "gaMeasurementId": "G-T9WKL4ZSS6",
   "supabaseUrl": "https://wmydrcccnqphqliahznx.supabase.co",
   "supabaseAnonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndteWRyY2NjbnFwaHFsaWFoem54Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA1OTE0ODksImV4cCI6MjA5NjE2NzQ4OX0.XFnwJalIK9oFnKKeFbeYFlDhSaBBwn5IWjvaLb2KGec",
   "turnstileSiteKey": "0x4AAAAAADf1yGTte1eljrFa"
