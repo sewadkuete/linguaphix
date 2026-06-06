@@ -21,7 +21,7 @@ tcf: {
 
 Alt text for each language is in `js/app.js` under `catalogue.alt.<service>` (FR and EN).
 
-Switching **FR | EN** on the catalogue page updates images and alt text automatically.
+Switching **FR | EN** on the catalog page updates images and alt text automatically.
 
 ## Folders
 

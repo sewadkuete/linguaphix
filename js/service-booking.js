@@ -109,9 +109,41 @@
     return '';
   }
 
+  function renderCoursTrackBlock(lang) {
+    const groups = getCoursTrackGroups(lang);
+    const sections = groups
+      .map(
+        (group) => `
+      <section class="cours-track-group cours-track-group--${esc(group.tier)}" aria-labelledby="cours-track-${esc(group.tier)}">
+        <h3 class="cours-track-group__title" id="cours-track-${esc(group.tier)}">${esc(group.title)}</h3>
+        <div class="cours-track-group__grid" role="radiogroup" aria-label="${esc(group.title)}">
+          ${group.items
+            .map(
+              (item) => `
+          <label class="cours-track-card">
+            <input type="radio" name="booking-track" value="${esc(item.id)}" required>
+            <span class="cours-track-card__lang cours-track-card__lang--full">${esc(item.language)}</span>
+            <span class="cours-track-card__lang cours-track-card__lang--short">${esc(item.languageShort || item.language)}</span>
+            <span class="cours-track-card__name cours-track-card__name--full">${esc(item.label)}</span>
+            ${item.labelShort ? `<span class="cours-track-card__name cours-track-card__name--short">${esc(item.labelShort)}</span>` : ''}
+          </label>`
+            )
+            .join('')}
+        </div>
+      </section>`
+      )
+      .join('');
+
+    return `
+      <fieldset class="booking-fieldset booking-fieldset--track">
+        <legend>${esc(t(lang, 'book.field.track') || 'Track')}</legend>
+        <p class="booking-fieldset__hint">${esc(t(lang, 'book.track.lead') || '')}</p>
+        <div class="cours-track-grid">${sections}</div>
+      </fieldset>`;
+  }
+
   function renderModePackageCards(packages, lang, slug) {
     const popular = t(lang, 'book.mostPopular') || (lang === 'en' ? 'Most Popular' : 'Le plus populaire');
-    const langsLabel = slug === 'cours' ? (t(lang, 'book.languagesAvailable') || '') : '';
     const renderPanel =
       typeof renderModePricePanel === 'function' ? renderModePricePanel : null;
 
@@ -130,7 +162,6 @@
           <h3 class="booking-package-card__title">${esc(pkg.name)}</h3>
           <p class="booking-package-card__subtitle">${esc(pkg.subtitle)}</p>
           <ul class="booking-package-card__schedule">${schedule}</ul>
-          ${langsLabel ? `<p class="booking-package-card__langs">${esc(langsLabel)}</p>` : ''}
           ${modePanel}
         </article>`;
       })
@@ -286,6 +317,11 @@
       </fieldset>`
       : '';
 
+    const trackBlock =
+      config.showTrack && typeof getCoursTrackGroups === 'function'
+        ? renderCoursTrackBlock(lang)
+        : '';
+
     const bookingInner = `
         <header class="service-booking-header fade-up">
           <span class="badge">${esc(t(lang, 'book.badge') || '')}</span>
@@ -298,6 +334,7 @@
             <label for="booking-website">Website</label>
             <input type="text" id="booking-website" name="website" tabindex="-1" autocomplete="off">
           </div>
+          ${trackBlock}
           <div class="${packagesGridClass}" id="booking-packages-grid">${packagesHtml}</div>
           <input type="hidden" name="booking-package" id="booking-package-hidden" value="">
           ${modeBlock}
@@ -390,11 +427,13 @@
     const pkgHidden = document.getElementById('booking-package-hidden');
     const modeRadio = form.querySelector('input[name="booking-mode"]:checked');
     const langInput = form.querySelector('input[name="booking-language"]:checked');
+    const trackInput = form.querySelector('input[name="booking-track"]:checked');
 
     const packageId = pkgHidden?.value?.trim() || '';
     const mode = (modeRadio?.value || '').trim();
     const serviceName = form.querySelector('#booking-service-display')?.value?.trim() || '';
     const language = langInput?.value?.trim() || '';
+    const track = trackInput?.value?.trim() || '';
     const name = form.querySelector('#booking-name')?.value?.trim() || '';
     const email = form.querySelector('#booking-email')?.value?.trim() || '';
     const phone = form.querySelector('#booking-phone')?.value?.trim() || '';
@@ -417,6 +456,7 @@
       serviceName,
       mode,
       language,
+      track,
       name,
       email,
       phone,
@@ -430,6 +470,7 @@
     if (!v.packageId || !v.name || !v.email || !v.phone || !v.startDate || !v.policyOk) return false;
     if (!v.mode) return false;
     if (config.showLanguage && !v.language) return false;
+    if (config.showTrack && !v.track) return false;
     return true;
   }
 
@@ -534,6 +575,12 @@
 
   function getSelectedPackagePriceInfo(packageId, mode) {
     if (!packageId) return null;
+    const slug = document.body.dataset.serviceSlug;
+    const trackId = document.querySelector('input[name="booking-track"]:checked')?.value?.trim() || '';
+    if (slug === 'cours' && trackId && typeof getCoursTrackPrice === 'function') {
+      const xof = getCoursTrackPrice(packageId, trackId, mode);
+      if (xof) return { xof, period: 'month', quote: false };
+    }
     const lang = typeof currentLang !== 'undefined' ? currentLang : 'fr';
     const fromData = priceInfoFromPagePackage(lookupServicePagePackage(packageId, lang), mode);
     if (fromData) return fromData;
@@ -609,11 +656,12 @@
     return null;
   }
 
-  function formatBookingPackageDisplayPrice(lang, info) {
+  function formatBookingPackageDisplayPrice(lang, info, opts) {
     if (!info) return '';
     if (info.quote) {
       return t(lang, 'book.onQuote') || (lang === 'en' ? 'On quote' : 'Sur devis');
     }
+    const exact = Boolean(opts?.exact);
     const i18nObj = typeof i18n !== 'undefined' ? i18n : {};
     if (info.dualPageWord) {
       const fromLabel = i18nObj[lang]?.['price.from'] || (lang === 'en' ? 'From' : 'Dès');
@@ -633,7 +681,7 @@
     }
     if (!info.xof || info.xof <= 0) return '';
 
-    const fromLabel = i18nObj[lang]?.['price.from'] || (lang === 'en' ? 'From' : 'Dès');
+    const fromLabel = exact ? '' : (i18nObj[lang]?.['price.from'] || (lang === 'en' ? 'From' : 'Dès'));
     const xofStr =
       typeof formatPriceFromXof === 'function'
         ? formatPriceFromXof(info.xof, lang)
@@ -652,7 +700,8 @@
     const unitKey = info.period && unitMap[info.period];
     const unitSuffix =
       unitKey && i18nObj[lang]?.[unitKey] ? ` / ${i18nObj[lang][unitKey]}` : '';
-    return `${fromLabel} ${xofStr}${unitSuffix}${usd ? ` ${usd}` : ''}`.trim();
+    const priceCore = `${xofStr}${unitSuffix}${usd ? ` ${usd}` : ''}`.trim();
+    return exact ? priceCore : `${fromLabel} ${priceCore}`.trim();
   }
 
   /** Fills “Select a package above” with package, mode, and price for the current selection. */
@@ -672,13 +721,18 @@
     const name = getPackageNameForId(packageId);
     const mode =
       document.querySelector('input[name="booking-mode"]:checked')?.value?.trim() || '';
+    const slug = document.body.dataset.serviceSlug;
+    const trackId = document.querySelector('input[name="booking-track"]:checked')?.value?.trim() || '';
     const modeLabel = mode ? labelForMode(lang, mode) : '';
+    const trackLabel = trackId ? labelForTrack(lang, trackId) : '';
     const priceLabel = formatBookingPackageDisplayPrice(
       lang,
-      getSelectedPackagePriceInfo(packageId, mode)
+      getSelectedPackagePriceInfo(packageId, mode),
+      { exact: slug === 'cours' && Boolean(trackId) }
     );
 
     const parts = [name];
+    if (trackLabel) parts.push(trackLabel);
     if (modeLabel) parts.push(modeLabel);
     if (priceLabel) parts.push(priceLabel);
     pkgDisplay.value = parts.join(' — ');
@@ -732,6 +786,7 @@
         const card = modeBtn.closest('.booking-package-card');
         const pkgName = card?.querySelector('.booking-package-card__title')?.textContent?.trim();
         setSelectedPackage(modeBtn.dataset.package, modeBtn.dataset.mode, pkgName);
+        syncBookingPackageField(typeof currentLang !== 'undefined' ? currentLang : 'fr');
         return;
       }
       const card = e.target.closest('.booking-package-card');
@@ -763,11 +818,18 @@
 
     form.addEventListener('input', updateBookingSubmitState);
     form.addEventListener('change', (e) => {
-      if (e.target?.name === 'booking-mode') {
-        const lang = typeof currentLang !== 'undefined' ? currentLang : 'fr';
+      const lang = typeof currentLang !== 'undefined' ? currentLang : 'fr';
+      if (e.target?.name === 'booking-track') {
+        refreshCoursPackagePrices(lang);
         const policyCheck = document.getElementById('booking-policy-accept');
         if (policyCheck) policyCheck.checked = false;
         refreshBookingPolicy(lang);
+      }
+      if (e.target?.name === 'booking-mode') {
+        const policyCheck = document.getElementById('booking-policy-accept');
+        if (policyCheck) policyCheck.checked = false;
+        refreshBookingPolicy(lang);
+        syncBookingPackageField(lang);
       }
       updateBookingSubmitState();
     });
@@ -799,9 +861,46 @@
     return code;
   }
 
+  function labelForTrack(lang, trackId) {
+    if (typeof getCoursTracks === 'function') {
+      const match = getCoursTracks(lang).find((row) => row.id === trackId);
+      if (match?.label) return match.label;
+    }
+    return trackId;
+  }
+
+  function refreshCoursPackagePrices(lang) {
+    const trackId = document.querySelector('input[name="booking-track"]:checked')?.value?.trim() || '';
+    if (!trackId || typeof getCoursTrackPrice !== 'function') return;
+
+    document.querySelectorAll('.booking-package-card--modes').forEach((card) => {
+      const pkgId = card.dataset.bookingPackage;
+      card.querySelectorAll('.mode-price-tile--selectable').forEach((tile) => {
+        const mode = tile.dataset.mode;
+        const xof = getCoursTrackPrice(pkgId, trackId, mode);
+        if (!Number.isFinite(xof)) return;
+        tile.dataset.priceXof = String(xof);
+        const priceEl = tile.querySelector('.price-range[data-xof]');
+        if (priceEl) priceEl.setAttribute('data-xof', String(xof));
+      });
+    });
+
+    if (typeof applyGeoPrices === 'function') {
+      applyGeoPrices(lang, typeof i18n !== 'undefined' ? i18n : {});
+    }
+    syncBookingPackageField(lang);
+    updateBookingSubmitState();
+  }
+
   function buildBookingWhatsAppUrl(v, serviceTitle, slug, lang) {
     const modeLabel = labelForMode(lang, v.mode);
-    const langLabel = v.language ? labelForLanguage(lang, v.language) : '—';
+    const trackLabel = v.track ? labelForTrack(lang, v.track) : '';
+    const langLabel = v.language ? labelForLanguage(lang, v.language) : '';
+    const priceLabel = formatBookingPackageDisplayPrice(
+      lang,
+      getSelectedPackagePriceInfo(v.packageId, v.mode),
+      { exact: slug === 'cours' && Boolean(v.track) }
+    );
     const waLines =
       lang === 'fr'
         ? [
@@ -810,8 +909,10 @@
             `Nom : ${v.name}`,
             `Email : ${v.email}`,
             `Forfait : ${v.packageName}`,
+            ...(trackLabel ? [`Parcours : ${trackLabel}`] : []),
             `Mode : ${modeLabel}`,
-            `Langue : ${langLabel}`,
+            ...(langLabel ? [`Langue : ${langLabel}`] : []),
+            ...(priceLabel ? [`Tarif : ${priceLabel}`] : []),
             `Date de début souhaitée : ${v.startDate}`,
             `Mon WhatsApp : ${v.phone}`,
           ]
@@ -821,8 +922,10 @@
             `Name: ${v.name}`,
             `Email: ${v.email}`,
             `Package: ${v.packageName}`,
+            ...(trackLabel ? [`Track: ${trackLabel}`] : []),
             `Mode: ${modeLabel}`,
-            `Language: ${langLabel}`,
+            ...(langLabel ? [`Language: ${langLabel}`] : []),
+            ...(priceLabel ? [`Price: ${priceLabel}`] : []),
             `Preferred start date: ${v.startDate}`,
             `My WhatsApp: ${v.phone}`,
           ];
@@ -884,15 +987,23 @@
   function buildCalendlyBookingUrl(v, serviceTitle, slug, lang) {
     const calBase = (cfg().calendlyUrl || 'https://calendly.com/linguaphix/call').split('?')[0];
     const modeLabel = labelForMode(lang, v.mode);
+    const trackLabel = v.track ? labelForTrack(lang, v.track) : '';
     const langLabel = v.language ? labelForLanguage(lang, v.language) : '';
+    const priceLabel = formatBookingPackageDisplayPrice(
+      lang,
+      getSelectedPackagePriceInfo(v.packageId, v.mode),
+      { exact: slug === 'cours' && Boolean(v.track) }
+    );
     const params = new URLSearchParams();
     if (v.name) params.set('name', v.name);
     if (v.email) params.set('email', v.email);
     const summary = [
       serviceTitle || slug,
       v.packageName,
+      trackLabel,
       modeLabel,
       langLabel,
+      priceLabel,
       v.startDate
         ? `${lang === 'fr' ? 'Début souhaité' : 'Preferred start'}: ${v.startDate}`
         : '',
@@ -942,9 +1053,15 @@
 
     const serviceTitle = v.serviceName || getServiceBookingTitle(slug, lang);
     const modeLabel = labelForMode(lang, v.mode);
-    const langLabel = v.language ? labelForLanguage(lang, v.language) : '—';
+    const trackLabel = v.track ? labelForTrack(lang, v.track) : '';
+    const langLabel = v.language ? labelForLanguage(lang, v.language) : '';
+    const priceLabel = formatBookingPackageDisplayPrice(
+      lang,
+      getSelectedPackagePriceInfo(v.packageId, v.mode),
+      { exact: slug === 'cours' && Boolean(v.track) }
+    );
     const timestamp = new Date().toISOString();
-    const summary = [v.packageName, modeLabel, langLabel].filter(Boolean).join(' · ');
+    const summary = [v.packageName, trackLabel, modeLabel, langLabel, priceLabel].filter(Boolean).join(' · ');
 
     if (btn) {
       btn.disabled = true;
@@ -963,8 +1080,10 @@
       `Email: ${v.email}`,
       `WhatsApp / Phone: ${v.phone}`,
       `Package: ${v.packageName}`,
+      ...(trackLabel ? [`Track: ${trackLabel}`] : []),
       `Mode: ${modeLabel}`,
-      `Language: ${langLabel}`,
+      ...(langLabel ? [`Language: ${langLabel}`] : []),
+      ...(priceLabel ? [`Price: ${priceLabel}`] : []),
       `Start date: ${v.startDate}`,
       `Booked at: ${timestamp}`
     ].join('\n');
@@ -980,8 +1099,10 @@
           _replyto: v.email,
           phone: v.phone,
           package: v.packageName,
+          track: trackLabel || undefined,
           mode: modeLabel,
-          language: langLabel,
+          language: langLabel || undefined,
+          price: priceLabel || undefined,
           start_date: v.startDate,
           service: serviceTitle || slug,
           message: emailBody,

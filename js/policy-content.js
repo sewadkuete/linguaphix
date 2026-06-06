@@ -257,7 +257,7 @@
           {
             id: 'cancellation',
             label: 'Cancellation',
-            text: 'Any session cancelled less than 24 hours in advance is billed at 50% of the agreed rate.'
+            text: 'Any session canceled less than 24 hours in advance is billed at 50% of the agreed rate.'
           },
           {
             id: 'noshow',
@@ -448,7 +448,7 @@
           {
             id: 'cancellation',
             label: 'Cancellation',
-            text: 'If cancelled after work has started, the deposit is non-refundable; work completed may be invoiced pro rata.'
+            text: 'If canceled after work has started, the deposit is non-refundable; work completed may be invoiced pro rata.'
           },
           {
             id: 'rush',

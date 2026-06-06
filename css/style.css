@@ -4127,12 +4127,130 @@ body:has(.wa-float) > footer {
 }
 .booking-fieldset--mode,
 .booking-fieldset--summary,
-.booking-fieldset--language {
+.booking-fieldset--language,
+.booking-fieldset--track {
   padding: 1.15rem 1.25rem;
   background: var(--white);
   border: 2px solid var(--gray-200);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
+}
+.booking-fieldset__hint {
+  margin: 0 0 0.85rem;
+  font-size: var(--text-sm);
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.cours-track-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.cours-track-group {
+  padding: 0.65rem 0.75rem;
+  background: var(--gray-100);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.cours-track-group--general {
+  border-left: 3px solid var(--green);
+}
+.cours-track-group--specialized {
+  border-left: 3px solid var(--accent);
+}
+.cours-track-group__title {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary-dark);
+}
+.cours-track-group__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+.cours-track-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 0.4rem;
+  row-gap: 0;
+  padding: 0.45rem 0.55rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm, 6px);
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  min-height: 0;
+}
+.cours-track-card:hover {
+  border-color: var(--green-mid);
+}
+.cours-track-card:has(input:checked) {
+  border-color: var(--green);
+  background: var(--green-light);
+}
+.cours-track-card input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.cours-track-card__lang {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1;
+}
+.cours-track-card__lang--short,
+.cours-track-card__name--short {
+  display: none;
+}
+.cours-track-card__name {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.25;
+}
+.booking-fieldset--track .booking-fieldset__hint {
+  margin-bottom: 0.6rem;
+}
+@media (max-width: 600px) {
+  .booking-fieldset--track {
+    padding: 0.75rem 0.8rem;
+  }
+  .booking-fieldset--track .booking-fieldset__hint {
+    margin-bottom: 0.5rem;
+    font-size: 0.78rem;
+    line-height: 1.4;
+  }
+  .cours-track-grid { gap: 0.5rem; }
+  .cours-track-group {
+    padding: 0.5rem 0.55rem;
+  }
+  .cours-track-group__title {
+    margin-bottom: 0.35rem;
+    font-size: 0.62rem;
+  }
+  .cours-track-group__grid {
+    gap: 0.35rem;
+  }
+  .cours-track-card {
+    padding: 0.38rem 0.42rem;
+    column-gap: 0.3rem;
+  }
+  .cours-track-card__lang--full { display: none; }
+  .cours-track-card__lang--short { display: block; }
+  .cours-track-card__name--full:has(+ .cours-track-card__name--short) { display: none; }
+  .cours-track-card__name--short { display: block; }
+  .cours-track-card__name {
+    font-size: 0.65rem;
+    line-height: 1.2;
+  }
 }
 .booking-summary-grid {
   display: grid;

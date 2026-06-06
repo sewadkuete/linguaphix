@@ -148,8 +148,6 @@ function renderServicePage(lang) {
 
   const paymentLead = t('svcpage.payment.lead');
 
-
-
   root.innerHTML = `
 
     <section class="service-page-hero section-sm">

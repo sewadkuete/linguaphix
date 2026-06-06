@@ -378,6 +378,8 @@ const i18n = {
     'svcpage.back.design': '← Retour au design',
     'svcpage.packages': 'Forfaits & tarifs',
     'svcpage.packages.lead': 'Les tarifs s\'affichent dans votre devise locale.',
+    'book.field.track': 'Parcours',
+    'book.track.lead': 'Général ou spécialisé, en français ou en anglais — les tarifs des forfaits se mettent à jour selon votre choix.',
     'svcpage.nav.label': 'Sur cette page',
     'svcpage.nav.packages': 'Forfaits',
     'svcpage.nav.how': 'Comment ça marche',
@@ -644,7 +646,7 @@ const i18n = {
     'ticker.online': 'Online courses',
     'hero.eyebrow': 'Language & Visual Creativity Expert',
     'hero.title': 'Master Languages. Shine Through Design.',
-    'hero.subtitle': 'Certified expert in language teaching, translation, and international exam preparation — plus graphic design, video editing, and live streaming. One professional, two complementary expertises.',
+    'hero.subtitle': 'Certified expert in language teaching, translation, and international exam preparation — plus graphic design, video editing, and live streaming. One professional, two complementary areas of expertise.',
     'hero.cta1': '📅 Book an appointment',
     'hero.cta2': 'Explore services →',
     'hero.stat1': 'Years teaching',
@@ -711,13 +713,13 @@ const i18n = {
     'services.subsection.design.ind': '🎨 Design — Individuals',
     'services.subsection.design.biz': '🎨 Design — Businesses',
     'services.popular': 'Popular',
-    'services.catalogue.txt': 'Browse our full range with photos on the catalogue page',
+    'services.catalogue.txt': 'Browse our full range with photos on the catalog page',
     'services.catalogue.cta': '📋 View full catalog',
     'catalogue.page.back': '← Back to services',
     'catalogue.badge': 'Catalog',
     'catalogue.title': 'Full service catalog',
     'catalogue.hint.label': 'Photo folder:',
-    'catalogue.gallery.empty': 'Square images (1:1) — uncomment or copy a catalogue-photo block.',
+    'catalogue.gallery.empty': 'Square images (1:1) — uncomment or copy a catalog photo block.',
     'catalogue.alt.tcf': 'TCF preparation — France Éducation international',
     'catalogue.alt.ielts': 'IELTS, TOEFL iBT and Cambridge exam preparation',
     'catalogue.alt.toeic': 'TOEIC preparation — ETS',
@@ -864,6 +866,8 @@ const i18n = {
     'svcpage.back.design': '← Back to design',
     'svcpage.packages': 'Packages & pricing',
     'svcpage.packages.lead': 'Prices are shown in your local currency.',
+    'book.field.track': 'Track',
+    'book.track.lead': 'General or specialized, French or English — package prices update based on your selection.',
     'svcpage.nav.label': 'On this page',
     'svcpage.nav.packages': 'Packages',
     'svcpage.nav.how': 'How it works',
@@ -1030,7 +1034,7 @@ const i18n = {
     'policy.lang.title': 'Policy — Language services',
     'policy.lang.intro': 'Applies to courses, exam preparation (TCF, IELTS, TOEFL, TOEIC, Cambridge), translation, proofreading, and language coaching.',
     'policy.lang.l1': 'Booking: every session is confirmed in writing (date, duration, rate). Without confirmation, the slot is not guaranteed.',
-    'policy.lang.l2': 'Cancellation: sessions cancelled less than 24 hours in advance are billed at 50% of the agreed rate.',
+    'policy.lang.l2': 'Cancellation: sessions canceled less than 24 hours in advance are billed at 50% of the agreed rate.',
     'policy.lang.l3': 'No-show & lateness: unannounced absences are charged in full; lateness over 15 minutes may shorten the session without refund.',
     'policy.lang.l4': 'Payment: due before or at the first session unless a prior written arrangement is made. Mixx by Yas at +228 92 53 99 53 (same number as WhatsApp); Orabank (details sent with your quote).',
     'policy.lang.l5': 'Refunds: none after a course or package has started, except in exceptional cases accepted in writing.',
@@ -1290,6 +1294,10 @@ function revealElementForHash(el) {
   }
 
   if (!el.dataset.audience) return;
+
+  const services = document.getElementById('services');
+  if (services?.classList.contains('services-filter-all')) return;
+
   const audiences = el.dataset.audience.trim().split(/\s+/);
   const type = audiences.length === 1 ? audiences[0] : 'all';
   const tabs = document.querySelectorAll('.services-filter-bar .stab');
@@ -1299,13 +1307,85 @@ function revealElementForHash(el) {
 }
 
 function resolveHomeTranslationHashTarget(id) {
+  const ind = document.getElementById('service-traduction');
+  const biz = document.getElementById('service-traduction-biz');
+  if (!ind || !biz) return null;
+
+  if (id === 'service-traduction-biz') return biz;
   if (id !== 'service-traduction') return null;
+
   const services = document.getElementById('services');
-  if (!services) return null;
-  if (services.classList.contains('services-filter-entreprises')) {
-    return document.getElementById('service-traduction-biz');
+  if (services?.classList.contains('services-filter-entreprises')) return biz;
+  if (ind.hidden && !biz.hidden) return biz;
+  return ind;
+}
+
+function syncFooterTranslationLink() {
+  if (!document.getElementById('services')) return;
+  const link =
+    document.getElementById('footer-traduction-link') ||
+    document.querySelector('footer a[href="#service-traduction"], footer a[href="#service-traduction-biz"]');
+  if (!link) return;
+  const services = document.getElementById('services');
+  const useBiz = services?.classList.contains('services-filter-entreprises');
+  link.setAttribute('href', useBiz ? '#service-traduction-biz' : '#service-traduction');
+}
+
+function scrollHomeServiceIntoView(el) {
+  if (!el) return;
+  revealElementForHash(el);
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
+
+function navigateToHomeServiceHash(rawId) {
+  const id = String(rawId || '').replace(/^#/, '');
+  if (!id) return;
+  const el = resolveHomeTranslationHashTarget(id) || document.getElementById(id);
+  if (!el) return;
+
+  const targetId = el.id;
+  const currentHash = location.hash.replace(/^#/, '');
+  if (currentHash === targetId) {
+    scrollHomeServiceIntoView(el);
+    return;
   }
-  return document.getElementById('service-traduction');
+  location.hash = targetId;
+}
+
+function syncTranslationHashForAudience(type) {
+  const hash = location.hash.replace(/^#/, '');
+  if (hash !== 'service-traduction' && hash !== 'service-traduction-biz') return;
+
+  if (type === 'all') {
+    const el = resolveHomeTranslationHashTarget(hash) || document.getElementById(hash);
+    if (el && !el.hidden) scrollHomeServiceIntoView(el);
+    return;
+  }
+  if (type !== 'entreprises' && type !== 'particuliers') return;
+
+  const wantId = type === 'entreprises' ? 'service-traduction-biz' : 'service-traduction';
+  if (hash === wantId) return;
+
+  const el = document.getElementById(wantId);
+  if (!el) return;
+  history.replaceState(null, '', `${location.pathname}${location.search}#${wantId}`);
+  scrollHomeServiceIntoView(el);
+}
+
+function bindHomeFooterServiceLinks() {
+  if (!document.getElementById('services')) return;
+  document.querySelectorAll('footer a[href^="#service-"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const href = anchor.getAttribute('href');
+      if (!href?.startsWith('#')) return;
+      e.preventDefault();
+      navigateToHomeServiceHash(href.slice(1));
+    });
+  });
 }
 
 function scrollToHashTarget() {
@@ -1322,12 +1402,7 @@ function scrollToHashTarget() {
   }
   const el = resolveHomeTranslationHashTarget(id) || document.getElementById(id);
   if (!el) return;
-  revealElementForHash(el);
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
-  });
+  scrollHomeServiceIntoView(el);
 }
 
 function initHashScroll() {
@@ -1357,6 +1432,9 @@ function switchAudience(type, btn) {
     const show = type === 'all' || audiences.includes(type);
     el.hidden = !show;
   });
+
+  syncFooterTranslationLink();
+  syncTranslationHashForAudience(type);
 }
 
 // ── STAR RATING ──
@@ -2348,6 +2426,8 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   const servicesTab = document.querySelector('.services-filter-bar .stab.active');
   if (servicesTab) switchAudience('all', servicesTab);
+  syncFooterTranslationLink();
+  bindHomeFooterServiceLinks();
   initHashScroll();
   if (document.getElementById('testimonialsGrid')) loadTestimonials();
   initModals();

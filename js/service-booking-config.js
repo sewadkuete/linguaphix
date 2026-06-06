@@ -24,6 +24,73 @@
 
 
 
+  /** Monthly rates by package × track × mode (XOF). */
+  const COURS_TRACK_PRICES = {
+    starter: {
+      fle_general: { online: 35000, inperson: 45000 },
+      fos: { online: 45000, inperson: 55000 },
+      esl_general: { online: 35000, inperson: 45000 },
+      esl_business: { online: 45000, inperson: 55000 }
+    },
+    intensive: {
+      fle_general: { online: 68000, inperson: 85000 },
+      fos: { online: 85000, inperson: 105000 },
+      esl_general: { online: 68000, inperson: 85000 },
+      esl_business: { online: 85000, inperson: 105000 }
+    }
+  };
+
+  const COURS_TRACK_GROUPS = {
+    fr: [
+      {
+        tier: 'general',
+        title: 'Général',
+        items: [
+          { id: 'fle_general', language: 'Français', languageShort: 'FR', label: 'FLE (général)' },
+          { id: 'esl_general', language: 'Anglais', languageShort: 'EN', label: 'ESL (général)' }
+        ]
+      },
+      {
+        tier: 'specialized',
+        title: 'Spécialisé',
+        items: [
+          { id: 'fos', language: 'Français', languageShort: 'FR', label: 'FOS (spécialisé)' },
+          {
+            id: 'esl_business',
+            language: 'Anglais',
+            languageShort: 'EN',
+            label: 'ESL (business) / ESP / EAP',
+            labelShort: 'ESL pro. / ESP / EAP'
+          }
+        ]
+      }
+    ],
+    en: [
+      {
+        tier: 'general',
+        title: 'General',
+        items: [
+          { id: 'fle_general', language: 'French', languageShort: 'FR', label: 'FLE (general)' },
+          { id: 'esl_general', language: 'English', languageShort: 'EN', label: 'ESL (general)' }
+        ]
+      },
+      {
+        tier: 'specialized',
+        title: 'Specialized',
+        items: [
+          { id: 'fos', language: 'French', languageShort: 'FR', label: 'FOS (Specialized)' },
+          {
+            id: 'esl_business',
+            language: 'English',
+            languageShort: 'EN',
+            label: 'ESL (business) / ESP / EAP',
+            labelShort: 'ESL bus. / ESP / EAP'
+          }
+        ]
+      }
+    ]
+  };
+
   const COURS_PACKAGES = {
     fr: {
       starter: {
@@ -32,7 +99,6 @@
         subtitle: '4 séances / mois',
         schedule: ['1 h par séance', '1 séance / semaine', '4 séances / mois'],
         period: 'month',
-        languages: ['english', 'french', 'both'],
         ...modePrices(35000, 45000, true)
       },
       intensive: {
@@ -41,7 +107,6 @@
         subtitle: '8 séances / mois',
         schedule: ['1 h par séance', '2 séances / semaine', '8 séances / mois'],
         period: 'month',
-        languages: ['english', 'french', 'both'],
         ...modePrices(68000, 85000)
       }
     },
@@ -52,7 +117,6 @@
         subtitle: '4 sessions / month',
         schedule: ['1 hour per session', '1 session per week', '4 sessions / month'],
         period: 'month',
-        languages: ['english', 'french', 'both'],
         ...modePrices(35000, 45000, true)
       },
       intensive: {
@@ -61,7 +125,6 @@
         subtitle: '8 sessions / month',
         schedule: ['1 hour per session', '2 sessions per week', '8 sessions / month'],
         period: 'month',
-        languages: ['english', 'french', 'both'],
         ...modePrices(68000, 85000)
       }
     }
@@ -592,7 +655,9 @@
 
 
 
-  const LANGUES_WITH_LANGUAGE = new Set(['cours']);
+  const LANGUES_WITH_LANGUAGE = new Set([]);
+
+  const LANGUES_WITH_TRACK = new Set(['cours']);
 
 
 
@@ -627,6 +692,23 @@
     return COURS_PACKAGES[lang] || COURS_PACKAGES.fr;
 
   }
+
+  window.getCoursTrackGroups = function getCoursTrackGroups(lang) {
+    return COURS_TRACK_GROUPS[lang] || COURS_TRACK_GROUPS.fr;
+  };
+
+  window.getCoursTracks = function getCoursTracks(lang) {
+    return getCoursTrackGroups(lang).flatMap((group) =>
+      group.items.map((item) => ({ id: item.id, label: item.label }))
+    );
+  };
+
+  window.getCoursTrackPrice = function getCoursTrackPrice(packageId, trackId, mode) {
+    const row = COURS_TRACK_PRICES[packageId]?.[trackId];
+    if (!row || !mode) return null;
+    const xof = row[mode];
+    return Number.isFinite(xof) ? xof : null;
+  };
 
 
 
@@ -772,6 +854,8 @@
       type: usesModeCards ? (slug === 'cours' ? 'language-monthly' : 'language-session-modes') : 'standard',
 
       showLanguage: LANGUES_WITH_LANGUAGE.has(slug),
+
+      showTrack: LANGUES_WITH_TRACK.has(slug),
 
       showMode: true,
 
