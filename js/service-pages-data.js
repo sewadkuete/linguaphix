@@ -990,14 +990,14 @@ window.SERVICE_PAGES = {
         {
           name: 'Logo essentiel',
           desc: 'Concept unique, 2 propositions initiales, fichiers PNG et SVG.',
-          priceXof: 70000,
+          priceXof: 40000,
           unit: 'project',
           features: ['2 pistes créatives', '2 allers-retours inclus', 'PNG fond clair / foncé', 'SVG vectoriel', 'Mini guide couleurs']
         },
         {
           name: 'Pack marque',
           desc: 'Logo, déclinaisons, papeterie simple et mockups.',
-          priceXof: 85000,
+          priceXof: 90000,
           unit: 'project',
           featured: true,
           features: ['Charte couleurs & typos', 'Carte de visite et entête', 'Mockups réseaux', 'Guide PDF 4 pages', 'Support 30 jours post-livraison']
@@ -1045,14 +1045,14 @@ window.SERVICE_PAGES = {
         {
           name: 'Essential logo',
           desc: 'Single concept direction, 2 initial proposals, PNG and SVG files.',
-          priceXof: 70000,
+          priceXof: 40000,
           unit: 'project',
           features: ['2 creative routes', '2 revision rounds', 'PNG light / dark backgrounds', 'SVG vector', 'Mini color guide']
         },
         {
           name: 'Brand starter',
           desc: 'Logo, variations, simple stationery, and mockups.',
-          priceXof: 85000,
+          priceXof: 90000,
           unit: 'project',
           featured: true,
           features: ['Color and type chart', 'Business card and letterhead', 'Social mockups', '4-page PDF guide', '30-day post-delivery support']
