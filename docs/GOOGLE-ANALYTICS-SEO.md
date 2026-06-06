@@ -69,6 +69,21 @@ This site is static HTML. Follow these steps once your domain (e.g. `https://www
    - `https://www.linguaphix.com/portfolio.html`
    - `https://www.linguaphix.com/policy.html`
 
+### When will the site be fully searchable?
+
+There is **no fixed date** — verification and sitemap submission only tell Google your site exists; indexing happens on Google's schedule.
+
+| Phase | Typical timing | How to check |
+|-------|----------------|--------------|
+| **Homepage indexed** | A few days after sitemap submit | Search `site:www.linguaphix.com` on Google |
+| **Main pages indexed** | 1–2 weeks | GSC → **Pages** → *Indexed* count rises |
+| **All 20 sitemap URLs** | 2–4 weeks (sometimes longer for new sites) | GSC → **Sitemaps** → status *Success*; **Pages** report |
+| **Ranking for keywords** | Weeks to months (separate from indexing) | GSC → **Performance** |
+
+**Speed it up (optional):** In GSC, use **URL inspection** → **Request indexing** on the homepage and your top service pages (limited requests per day).
+
+**Already in place:** `robots.txt` allows crawlers, `sitemap.xml` lists every public page, canonical URLs use `www`, HTTPS works.
+
 ### What is already optimized in the code
 
 | Item | Location |
@@ -107,7 +122,7 @@ Submit the same sitemap at [Bing Webmaster Tools](https://www.bing.com/webmaster
 ## 3. Checklist before launch
 
 - [x] `gaMeasurementId` set in `js/site-config.js` (`G-T9WKL4ZSS6`)
-- [ ] Search Console verified and `sitemap.xml` submitted (`https://www.linguaphix.com/sitemap.xml`)
+- [x] Search Console verified and `sitemap.xml` submitted (`https://www.linguaphix.com/sitemap.xml`)
 - [x] `og:image` URLs live (logo mark on all pages)
 - [x] All pages open over HTTPS (`www.linguaphix.com` canonical)
 - [ ] Test contact form email (FormSubmit activation)

@@ -62,7 +62,7 @@ Quick start:
 
 1. GA4 is configured (`G-T9WKL4ZSS6` in `js/site-config.js`); override locally in `js/site-config.local.js` if needed.
 2. `robots.txt` and `sitemap.xml` are at the site root (live on `https://www.linguaphix.com/`).
-3. Verify in [Google Search Console](https://search.google.com/search-console) and submit `https://www.linguaphix.com/sitemap.xml`.
+3. Search Console is verified; sitemap: `https://www.linguaphix.com/sitemap.xml`.
 
 ## Before going live
 
