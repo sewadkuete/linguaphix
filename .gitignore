@@ -1,3 +1,6 @@
+# Root README is for local dev notes only — never publish to GitHub
+/README.md
+
 .DS_Store
 Thumbs.db
 *.log
