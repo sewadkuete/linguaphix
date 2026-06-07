@@ -47,6 +47,35 @@ function isSafeVimeoId(id) {
   return typeof id === 'string' && /^\d{1,12}$/.test(id);
 }
 
+function isMobileViewport() {
+  return window.matchMedia('(max-width: 768px)').matches;
+}
+
+function renderVideoFacade(provider, id, label, thumbUrl) {
+  const safeLabel = portfolioEsc(label || 'Play video');
+  const safeThumb = portfolioEsc(thumbUrl || '');
+  return `<div class="video-facade portfolio-video-facade" data-video-provider="${portfolioEsc(provider)}" data-video-id="${portfolioEsc(id)}" role="button" tabindex="0" aria-label="${safeLabel}">
+    <img src="${safeThumb}" alt="" width="480" height="270" loading="lazy" decoding="async">
+    <span class="video-facade__play" aria-hidden="true">▶</span>
+  </div>`;
+}
+
+function activateVideoFacade(facade) {
+  if (!facade || facade.dataset.activated === '1') return;
+  const provider = facade.dataset.videoProvider;
+  const id = facade.dataset.videoId || '';
+  let src = '';
+  if (provider === 'youtube' && isSafeYoutubeId(id)) {
+    src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1`;
+  } else if (provider === 'vimeo' && isSafeVimeoId(id)) {
+    src = `https://player.vimeo.com/video/${id}?autoplay=1`;
+  }
+  if (!src) return;
+  const title = facade.getAttribute('aria-label') || '';
+  facade.dataset.activated = '1';
+  facade.innerHTML = `<iframe src="${portfolioEsc(src)}" title="${portfolioEsc(title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+}
+
 function sanitizePlaylistItem(item) {
   if (!item || typeof item !== 'object') return null;
   if (item.kind === 'image' || item.kind === 'file') {
@@ -118,9 +147,25 @@ function renderMediaItem(item, cardType, { contain = false, link = false, previe
   const fitClass = contain ? ' portfolio-player-img--contain' : '';
 
   if (item.kind === 'youtube' && isSafeYoutubeId(item.id)) {
+    if (isMobileViewport()) {
+      return renderVideoFacade(
+        'youtube',
+        item.id,
+        label,
+        `https://img.youtube.com/vi/${item.id}/hqdefault.jpg`
+      );
+    }
     return `<iframe src="https://www.youtube-nocookie.com/embed/${portfolioEsc(item.id)}" title="${label}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
   }
   if (item.kind === 'vimeo' && isSafeVimeoId(item.id)) {
+    if (isMobileViewport()) {
+      return renderVideoFacade(
+        'vimeo',
+        item.id,
+        label,
+        `https://vumbnail.com/${item.id}.jpg`
+      );
+    }
     return `<iframe src="https://player.vimeo.com/video/${portfolioEsc(item.id)}" title="${label}" loading="lazy" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
   }
   if (item.kind === 'file' && cardType === 'video' && isSafePortfolioAssetSrc(item.src)) {
@@ -412,6 +457,22 @@ function bindPortfolioCard(card, playlist) {
 function initPortfolioModal() {
   const modal = getPortfolioModal();
   if (!modal) return;
+
+  if (!document.documentElement.dataset.portfolioFacadeBound) {
+    document.documentElement.dataset.portfolioFacadeBound = '1';
+    document.addEventListener('click', (e) => {
+      const facade = e.target.closest('.video-facade');
+      if (!facade) return;
+      activateVideoFacade(facade);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const facade = e.target.closest('.video-facade');
+      if (!facade) return;
+      e.preventDefault();
+      activateVideoFacade(facade);
+    });
+  }
 
   modal.querySelector('[data-portfolio-modal-close]')?.addEventListener('click', closePortfolioModal);
   modal.addEventListener('click', (e) => {

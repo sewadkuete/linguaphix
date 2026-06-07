@@ -2528,7 +2528,11 @@ window.addEventListener('DOMContentLoaded', () => {
   if (document.getElementById('testimonialsGrid')) loadTestimonials();
   initModals();
   applySitePhones();
-  if (typeof initAllFormCaptchas === 'function') initAllFormCaptchas(detectedLang);
+  if (typeof initFormCaptchasWhenVisible === 'function') {
+    initFormCaptchasWhenVisible(detectedLang);
+  } else if (typeof initAllFormCaptchas === 'function') {
+    initAllFormCaptchas(detectedLang);
+  }
   bindHomeFormSubmitGates();
 });
 

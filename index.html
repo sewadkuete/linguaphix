@@ -45,13 +45,21 @@
 }
 </script>
 
-<!-- Google Fonts -->
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://www.googletagmanager.com">
+<link rel="dns-prefetch" href="https://challenges.cloudflare.com">
+<link rel="dns-prefetch" href="https://calendly.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="preload" as="image" type="image/webp" href="assets/branding/logo-mark-original-400.webp" imagesrcset="assets/branding/logo-mark-original-280.webp 280w, assets/branding/logo-mark-original-400.webp 400w, assets/branding/logo-mark-original-800.webp 800w" imagesizes="(max-width: 768px) 70vw, 34vw">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
 
-<link rel="stylesheet" href="css/style.css?v=dfc50f22e6b6">
-<script src="js/locale-pricing.js?v=dfc50f22e6b6"></script>
+<link rel="stylesheet" href="css/critical-home.css?v=dfc50f22e6b6">
+<link rel="preload" href="css/style.css?v=dfc50f22e6b6" as="style">
+<link rel="stylesheet" href="css/style.css?v=dfc50f22e6b6" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="css/style.css?v=dfc50f22e6b6"></noscript>
 
 </head>
 <body class="has-fixed-header" data-i18n-title="page.title.home">
@@ -63,7 +71,10 @@
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
         <span class="nav-logo-icon brand-mark brand-mark--md">
-          <img src="assets/branding/logo-mark-original.png" alt="" class="brand-mark__img" width="38" height="38" decoding="async">
+          <picture>
+            <source type="image/webp" srcset="assets/branding/logo-mark-original-38.webp 1x, assets/branding/logo-mark-original-76.webp 2x">
+            <img src="assets/branding/logo-mark-original.png" alt="" class="brand-mark__img" width="38" height="38" decoding="async" fetchpriority="low">
+          </picture>
         </span>
         <span class="nav-logo-text" id="nav-brand">LINGUAPHIX</span>
       </a>
@@ -198,13 +209,21 @@
             id="heroLogoRefresh"
             data-i18n-aria="hero.logoRefresh.aria">
             <span class="hero-logo-float__motion" aria-hidden="true">
-              <img
-                src="assets/branding/logo-mark-original.png"
-                alt=""
-                class="hero-logo-float__img"
-                width="420"
-                height="420"
-                decoding="async">
+              <picture>
+                <source
+                  type="image/webp"
+                  srcset="assets/branding/logo-mark-original-280.webp 280w, assets/branding/logo-mark-original-400.webp 400w, assets/branding/logo-mark-original-800.webp 800w"
+                  sizes="(max-width: 768px) 70vw, (max-width: 1024px) 34vw, 420px">
+                <img
+                  src="assets/branding/logo-mark-original.png"
+                  alt=""
+                  class="hero-logo-float__img"
+                  width="420"
+                  height="420"
+                  fetchpriority="high"
+                  loading="eager"
+                  decoding="sync">
+              </picture>
             </span>
           </div>
         </div>
@@ -604,7 +623,10 @@
       <div class="footer-brand">
         <div class="footer-brand-row">
           <span class="brand-mark brand-mark--sm">
-            <img src="assets/branding/logo-mark-original.png" alt="" class="brand-mark__img" width="32" height="32" decoding="async">
+            <picture>
+              <source type="image/webp" srcset="assets/branding/logo-mark-original-38.webp 1x, assets/branding/logo-mark-original-76.webp 2x">
+              <img src="assets/branding/logo-mark-original.png" alt="" class="brand-mark__img" width="32" height="32" loading="lazy" decoding="async">
+            </picture>
           </span>
           <h4>LINGUAPHIX</h4>
         </div>
@@ -701,14 +723,20 @@
       <div class="payment-methods__panel">
         <ul class="payment-methods__list">
           <li class="payment-method payment-method--mixx">
-            <img src="assets/payments/mixx-by-yas.png" alt="Mixx by Yas" class="payment-method__logo payment-method__logo--mixx" width="180" height="50" decoding="async">
+            <picture>
+              <source type="image/webp" srcset="assets/payments/mixx-by-yas.webp">
+              <img src="assets/payments/mixx-by-yas.png" alt="Mixx by Yas" class="payment-method__logo payment-method__logo--mixx" width="180" height="50" loading="lazy" decoding="async">
+            </picture>
             <div class="payment-method__details">
               <span class="payment-method__label" data-i18n="payment.mixx">Paiement mobile Mixx by Yas</span>
               <a href="tel:+22892539953" class="payment-method__number" data-site-phone-display>+228 92 53 99 53</a>
             </div>
           </li>
           <li class="payment-method payment-method--orabank">
-            <img src="assets/payments/orabank.png" alt="Orabank" class="payment-method__logo payment-method__logo--orabank" width="140" height="36" decoding="async">
+            <picture>
+              <source type="image/webp" srcset="assets/payments/orabank.webp">
+              <img src="assets/payments/orabank.png" alt="Orabank" class="payment-method__logo payment-method__logo--orabank" width="140" height="36" loading="lazy" decoding="async">
+            </picture>
             <p class="payment-method__note" data-i18n="payment.orabank.note">Virement Orabank : les coordonnées bancaires vous seront transmises avec le devis de la prestation concernée.</p>
           </li>
         </ul>
@@ -734,6 +762,7 @@
   </div>
 </div>
 
+<script src="js/perf.js?v=dfc50f22e6b6"></script>
 <script src="js/countries.js?v=dfc50f22e6b6"></script>
 <script src="js/policy-package-scopes.js?v=dfc50f22e6b6"></script>
 <script src="js/policy-content.js?v=dfc50f22e6b6"></script>
@@ -741,6 +770,7 @@
 <script src="js/service-home-prices.js?v=dfc50f22e6b6"></script>
 <script src="js/site-config.js?v=dfc50f22e6b6"></script>
 <script src="js/captcha.js?v=dfc50f22e6b6"></script>
+<script src="js/locale-pricing.js?v=dfc50f22e6b6"></script>
 <script src="js/app.js?v=dfc50f22e6b6"></script>
 <script src="js/analytics.js?v=dfc50f22e6b6"></script>
 

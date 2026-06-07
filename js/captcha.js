@@ -204,9 +204,40 @@
     await Promise.all(mounts.map((el) => initFormCaptcha(el, { lang: code })));
   }
 
+  function initFormCaptchasWhenVisible(lang) {
+    const code = langCode(lang || (typeof currentLang !== 'undefined' ? currentLang : 'fr'));
+    const mounts = [...document.querySelectorAll('[data-captcha]:not([data-captcha-lazy-bound])')];
+    if (!mounts.length) return;
+
+    const boot = (el) => {
+      if (el.dataset.captchaLazyBound === '1') return;
+      el.dataset.captchaLazyBound = '1';
+      initFormCaptcha(el, { lang: code });
+    };
+
+    if (!('IntersectionObserver' in window)) {
+      initAllFormCaptchas(code);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          observer.unobserve(entry.target);
+          boot(entry.target);
+        });
+      },
+      { rootMargin: '200px 0px', threshold: 0.01 }
+    );
+
+    mounts.forEach((el) => observer.observe(el));
+  }
+
   window.initFormCaptcha = initFormCaptcha;
   window.resetFormCaptcha = resetFormCaptcha;
   window.requireFormCaptcha = requireFormCaptcha;
   window.initAllFormCaptchas = initAllFormCaptchas;
+  window.initFormCaptchasWhenVisible = initFormCaptchasWhenVisible;
   window.isFormCaptchaSolved = isFormCaptchaSolved;
 })();
