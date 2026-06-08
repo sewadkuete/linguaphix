@@ -3390,10 +3390,27 @@ body:has(.wa-float) > footer {
 /* Services table — stack before columns get cramped */
 @media (max-width: 960px) {
   .services-table__row,
-  #services.services-filter-all .services-table__row {
+  #services.services-filter-all .services-table__row,
+  #services.services-table--no-prices .services-table__row,
+  #services.services-filter-all.services-table--no-prices .services-table__row,
+  .page-pricing #services .services-table__row,
+  .page-pricing #services.services-filter-all .services-table__row,
+  .page-pricing #services.services-filter-all .services-subsection[data-category="design"] .services-table__row,
+  .page-pricing #services:not(.services-filter-all) .services-subsection[data-category="design"] .services-table__row,
+  .page-design #services .services-table__row {
     grid-template-columns: 1fr;
     row-gap: 0.45rem;
     padding: 0.85rem 1rem;
+  }
+  #services.services-filter-all .services-table__cat {
+    display: block;
+  }
+  .services-table__service {
+    flex-wrap: wrap;
+  }
+  .services-table__actions-inner {
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
   }
   .services-table__price {
     justify-content: flex-start;
@@ -3401,7 +3418,7 @@ body:has(.wa-float) > footer {
   .services-table__price .price-range {
     max-width: 100%;
     justify-content: flex-start;
-    width: auto;
+    width: 100%;
   }
 }
 
@@ -3474,6 +3491,16 @@ body:has(.wa-float) > footer {
 
 /* Small phone */
 @media (max-width: 600px) {
+  .services-table__actions-inner {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .services-table__actions .btn {
+    height: auto;
+    min-height: 2.25rem;
+    padding: 0.5rem 0.65rem;
+    white-space: normal;
+  }
   .nav-logo-text { max-width: 7rem; overflow: hidden; text-overflow: ellipsis; }
   .nav-cta .btn-primary {
     padding: 0.45rem 0.6rem;

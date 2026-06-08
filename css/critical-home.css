@@ -1,5 +1,6 @@
-/* Above-the-fold critical CSS for homepage mobile LCP/FCP — full styles in style.css */
+/* Critical above-the-fold CSS — homepage hero + fixed header (CLS-safe). Full styles in style.css */
 :root {
+  --site-header-height: 7.5rem;
   --green: #1a7a3c;
   --green-dark: #0f5229;
   --green-deep: #073d1e;
@@ -13,35 +14,58 @@
   --text-hero: clamp(1.85rem, 1.1rem + 4.2vw, 4rem);
   --leading-tight: 1.1;
   --leading-relaxed: 1.75;
+  --radius-sm: 8px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{font-family:var(--font-body);color:var(--gray-800);background:var(--white);overflow-x:hidden;line-height:1.55}
 img,svg,video{max-width:100%;height:auto}
 .container{width:min(100% - 2rem,1200px);margin-inline:auto}
-.site-header{position:fixed;top:0;left:0;right:0;z-index:1000}
-#navbar{background:transparent;transition:background .3s ease,box-shadow .3s ease}
-#navbar.scrolled{background:var(--white);box-shadow:0 2px 16px rgba(0,0,0,.08)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.85rem 0;min-height:3.5rem}
-.nav-logo{display:inline-flex;align-items:center;gap:.55rem;text-decoration:none}
-.nav-logo-text{font-family:var(--font-display);font-weight:800;color:var(--white);letter-spacing:.04em}
+.site-header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;flex-direction:column;width:100%;min-height:var(--site-header-height);pointer-events:none}
+.site-header #navbar,.site-header #services-ticker{pointer-events:auto}
+body.has-fixed-header .site-header #navbar{position:relative;top:auto;left:auto;right:auto;width:100%;flex-shrink:0}
+#navbar{padding:max(1rem,env(safe-area-inset-top)) 0 1rem;background:transparent;transition:background .3s ease,box-shadow .3s ease}
+body.has-fixed-header #navbar:not(.scrolled){background:var(--green-deep);box-shadow:none}
+#navbar.scrolled{background:rgba(255,255,255,.97);box-shadow:0 2px 20px rgba(0,0,0,.08);padding:.65rem 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:clamp(.5rem,2vw,2rem);min-width:0;padding:0}
+.nav-logo{display:inline-flex;align-items:center;gap:.6rem;text-decoration:none;min-width:0}
+.nav-logo-icon,.brand-mark--md{width:clamp(34px,8vw,38px);height:clamp(34px,8vw,38px);flex-shrink:0}
+.brand-mark__img{display:block;width:100%;height:100%;object-fit:contain}
+.nav-logo-text{font-family:var(--font-display);font-weight:800;font-size:clamp(1rem,2.5vw,1.3rem);color:var(--white);letter-spacing:.02em;white-space:nowrap}
 #navbar.scrolled .nav-logo-text{color:var(--green-dark)}
-#services-ticker{background:rgba(0,0,0,.15);overflow:hidden;border-top:1px solid rgba(255,255,255,.08)}
-body.has-fixed-header{scroll-padding-top:7.5rem}
-body.has-fixed-header #hero{padding-top:7.5rem;min-height:100vh;box-sizing:border-box}
+.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none}
+.nav-links a{font-family:var(--font-body);font-weight:600;font-size:.875rem;color:rgba(255,255,255,.9);text-decoration:none;padding:.5rem .85rem;border-radius:var(--radius-sm)}
+#navbar.scrolled .nav-links a{color:var(--gray-600)}
+.nav-cta{display:flex;align-items:center;gap:.75rem}
+.lang-toggle{display:inline-flex;border-radius:var(--radius-sm);overflow:hidden;border:1px solid rgba(255,255,255,.4)}
+.lang-toggle__btn{font-family:var(--font-body);font-weight:700;font-size:.75rem;padding:.42rem .7rem;border:none;background:transparent;color:rgba(255,255,255,.9);cursor:pointer}
+.lang-toggle__btn.is-active{background:var(--white);color:var(--green)}
+#navbar.scrolled .lang-toggle{border-color:#e0e4e2}
+#navbar.scrolled .lang-toggle__btn{color:var(--gray-600)}
+#navbar.scrolled .lang-toggle__btn.is-active{background:var(--green);color:var(--white)}
+.nav-hamburger{display:none}
+#services-ticker{background:var(--green-deep);padding:1rem 0;overflow:hidden;border-top:1px solid rgba(255,255,255,.08)}
+body.has-fixed-header{scroll-padding-top:var(--site-header-height,7.5rem)}
+body.has-fixed-header #hero{padding-top:var(--site-header-height,7.5rem);min-height:100vh;box-sizing:border-box}
 #hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(135deg,var(--green-deep) 0%,var(--green-dark) 50%,var(--green) 100%)}
 .hero-content{position:relative;z-index:1;padding:clamp(2rem,5vw,3rem) 0 clamp(3rem,6vw,5rem);width:100%}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;width:100%}
-.hero-visual{order:-1;justify-content:center;max-width:min(320px,72vw);margin:0 auto}
-.hero-logo-float-wrap{position:relative;width:100%;max-width:min(280px,70vw);aspect-ratio:1}
-.hero-logo-float__img{width:100%;height:100%;object-fit:contain}
+.hero-visual{order:-1;display:flex;align-items:center;justify-content:center;max-width:min(320px,72vw);margin:0 auto;min-height:min(280px,70vw)}
+.hero-logo-float-wrap{position:relative;width:100%;max-width:min(280px,70vw);aspect-ratio:1;overflow:hidden;contain:layout style paint}
+.hero-logo-float__motion{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.hero-logo-float__img{width:100%;height:100%;object-fit:contain;display:block}
 .hero-copy{display:flex;flex-direction:column;gap:clamp(1.1rem,2.8vw,2rem);padding-inline:clamp(1rem,6vw,2.5rem)}
 .hero-eyebrow{font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85)}
 .hero-title{font-family:var(--font-display);font-size:var(--text-hero);font-weight:800;line-height:var(--leading-tight);color:var(--white)}
 .hero-title span{color:var(--accent)}
 .hero-subtitle{color:rgba(255,255,255,.88);font-size:clamp(.95rem,.88rem + .35vw,1.1rem);line-height:var(--leading-relaxed);max-width:48ch}
+.hero-stats{display:flex;align-items:center;gap:1.5rem;min-height:4.5rem}
 @media(min-width:1025px){
   .hero-grid{grid-template-columns:minmax(0,1fr) minmax(180px,38%)}
-  .hero-visual{order:0;max-width:none;margin:0;justify-content:flex-end}
+  .hero-visual{order:0;max-width:none;margin:0;justify-content:flex-end;min-height:clamp(220px,38vw,440px)}
   .hero-logo-float-wrap{max-width:clamp(200px,34vw,420px)}
+}
+@media(max-width:768px){
+  :root{--site-header-height:8.5rem}
 }
