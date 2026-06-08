@@ -1,4 +1,5 @@
 :root {
+  --site-header-height: 7.5rem;
   --green: #1a7a3c;
   --green-dark: #0f5229;
   --green-deep: #073d1e;
@@ -238,6 +239,7 @@ p {
   display: flex;
   flex-direction: column;
   width: 100%;
+  min-height: var(--site-header-height);
   pointer-events: none;
 }
 .site-header #navbar,
@@ -261,7 +263,7 @@ body:not(.has-fixed-header) #navbar {
 }
 #navbar {
   padding: max(1rem, env(safe-area-inset-top)) 0 1rem;
-  transition: var(--transition);
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   background: transparent;
 }
 body.has-fixed-header #navbar:not(.scrolled) {
@@ -298,6 +300,7 @@ body:not(.has-fixed-header) #navbar,
 .nav-logo .brand-mark {
   transform-origin: center center;
   animation: nav-logo-spin 18s linear infinite;
+  will-change: transform;
 }
 @keyframes nav-logo-spin {
   from {
@@ -527,6 +530,8 @@ body:not(.has-fixed-header) #navbar,
   max-width: clamp(200px, 34vw, 420px);
   aspect-ratio: 1;
   flex-shrink: 0;
+  overflow: hidden;
+  contain: layout style paint;
 }
 .hero-logo-float {
   position: relative;
@@ -774,6 +779,8 @@ body:not(.has-fixed-header) #navbar,
 .hero-stat-num {
   font-family: var(--font-display); font-size: var(--text-3xl); font-weight: 800;
   color: var(--white); line-height: 1;
+  min-width: 2.75ch;
+  font-variant-numeric: tabular-nums;
 }
 .hero-stat-label {
   font-size: var(--text-xs); color: rgba(255,255,255,0.6);
@@ -805,6 +812,7 @@ body.has-fixed-header #hero .hero-content {
   gap: 2.25rem;
   animation: ticker 32s linear infinite;
   width: max-content;
+  will-change: transform;
 }
 .ticker-badge {
   flex-shrink: 0;
@@ -1451,8 +1459,21 @@ a.ticker-badge-link:active {
 .testimonials-grid:empty {
   display: none;
 }
+.testimonials-grid {
+  min-height: 12rem;
+}
 .testimonials-grid[data-loading="true"] {
-  min-height: 10rem;
+  min-height: 14rem;
+}
+.price-range[data-xof]:empty,
+.price-range[data-xof-from]:empty,
+.price-range[data-dual-page-word]:empty {
+  min-height: 2.15rem;
+  min-width: 5.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
 }
 .testimonials-empty {
   text-align: center;
@@ -3225,8 +3246,8 @@ body:has(.wa-float) > footer {
 }
 
 /* ── ANIMATIONS ── */
-.fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
-.fade-up.visible { opacity: 1; transform: translateY(0); }
+.fade-up { opacity: 0; transition: opacity 0.6s ease; }
+.fade-up.visible { opacity: 1; }
 .fade-up:nth-child(1) { transition-delay: 0.1s; }
 .fade-up:nth-child(2) { transition-delay: 0.2s; }
 .fade-up:nth-child(3) { transition-delay: 0.3s; }
@@ -3361,10 +3382,26 @@ body:has(.wa-float) > footer {
 
 /* Large phone */
 @media (max-width: 768px) {
+  :root {
+    --site-header-height: 8.5rem;
+  }
   .fade-up {
     opacity: 1;
-    transform: none;
     transition: none;
+  }
+  .hero-visual {
+    min-height: min(280px, 70vw);
+  }
+  .hero-stats {
+    min-height: 4.5rem;
+  }
+  .services-table__price {
+    min-height: 2.5rem;
+  }
+  .services-table__price .price-range:empty,
+  .services-table__price .price-range[data-xof]:empty,
+  .services-table__price .price-range[data-xof-from]:empty {
+    min-width: 8.5rem;
   }
   .hero-copy {
     padding-inline: clamp(1.5rem, 8vw, 2.25rem);
@@ -4535,5 +4572,5 @@ body:has(.wa-float) > footer {
     transition-duration: 0.01ms !important;
   }
   .ticker-track { animation: none; }
-  .fade-up { opacity: 1; transform: none; }
+  .fade-up { opacity: 1; }
 }

@@ -1333,11 +1333,37 @@ function toggleLang() {
 }
 
 // ── FIXED HEADER (nav + ticker on home) ──
+let siteHeaderHeightRaf = 0;
+let siteHeaderHeightReady = false;
+
 function updateSiteHeaderHeight() {
   const header = document.getElementById('site-header');
   if (!header) return;
-  const h = header.offsetHeight;
-  document.documentElement.style.setProperty('--site-header-height', `${h}px`);
+  if (!siteHeaderHeightReady && document.readyState !== 'complete') return;
+
+  if (siteHeaderHeightRaf) cancelAnimationFrame(siteHeaderHeightRaf);
+  siteHeaderHeightRaf = requestAnimationFrame(() => {
+    siteHeaderHeightRaf = 0;
+    const h = Math.round(header.getBoundingClientRect().height);
+    const root = document.documentElement;
+    const raw = root.style.getPropertyValue('--site-header-height') || getComputedStyle(root).getPropertyValue('--site-header-height');
+    const current = parseFloat(raw);
+    if (!Number.isFinite(current) || Math.abs(h - current) > 1) {
+      root.style.setProperty('--site-header-height', `${h}px`);
+    }
+  });
+}
+
+function initSiteHeaderHeightTracking() {
+  siteHeaderHeightReady = true;
+  updateSiteHeaderHeight();
+  const nav = document.getElementById('navbar');
+  const header = document.getElementById('site-header');
+  if (nav && header) {
+    const obs = new ResizeObserver(() => updateSiteHeaderHeight());
+    obs.observe(nav);
+    obs.observe(header);
+  }
 }
 
 // ── NAVBAR SCROLL ──
@@ -2512,13 +2538,9 @@ window.addEventListener('DOMContentLoaded', () => {
   if (typeof initUrlLangSync === 'function') initUrlLangSync();
   applyLang(detectedLang);
   syncNavbarScrolledState();
-  updateSiteHeaderHeight();
-  requestAnimationFrame(updateSiteHeaderHeight);
-  const nav = document.getElementById('navbar');
-  if (nav && document.getElementById('site-header')) {
-    const obs = new ResizeObserver(updateSiteHeaderHeight);
-    obs.observe(nav);
-    obs.observe(document.getElementById('site-header'));
+  if (document.getElementById('site-header')) {
+    if (document.readyState === 'complete') initSiteHeaderHeightTracking();
+    else window.addEventListener('load', initSiteHeaderHeightTracking, { once: true });
   }
   const servicesTab = document.querySelector('.services-filter-bar .stab.active');
   if (servicesTab) switchAudience('all', servicesTab);
