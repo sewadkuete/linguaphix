@@ -52,19 +52,24 @@ body.has-fixed-header #hero{padding-top:var(--site-header-height,7.5rem);min-hei
 .hero-content{position:relative;z-index:1;padding:clamp(2rem,5vw,3rem) 0 clamp(3rem,6vw,5rem);width:100%}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;width:100%}
 .hero-visual{order:-1;display:flex;align-items:center;justify-content:center;max-width:min(320px,72vw);margin:0 auto;min-height:min(280px,70vw)}
-.hero-logo-float-wrap{position:relative;width:100%;max-width:min(280px,70vw);aspect-ratio:1;overflow:hidden;contain:layout style paint}
-.hero-logo-float__motion{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-.hero-logo-float__img{width:100%;height:100%;object-fit:contain;display:block}
+.hero-logo-float-wrap{position:relative;width:fit-content;max-width:min(280px,70vw);overflow:visible;background:none}
+.hero-logo-float__tip[hidden]{display:none!important}
+.hero-logo-float{display:inline-block;width:auto;height:auto;line-height:0;overflow:visible;background:transparent!important;border:none;padding:0;margin:0;-webkit-tap-highlight-color:transparent}
+.hero-logo-float__motion{display:inline-block;line-height:0}
+.hero-logo-float__img{display:block;width:min(280px,70vw);max-width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+@media(max-width:1024px){.hero-logo-float__motion{animation:none!important;will-change:auto;transform:none}}
 .hero-copy{display:flex;flex-direction:column;gap:clamp(1.1rem,2.8vw,2rem);padding-inline:clamp(1rem,6vw,2.5rem)}
 .hero-eyebrow{font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85)}
 .hero-title{font-family:var(--font-display);font-size:var(--text-hero);font-weight:800;line-height:var(--leading-tight);color:var(--white)}
-.hero-title span{color:var(--accent)}
+.hero-title>span{color:inherit}
+.hero-title span span{color:var(--accent)}
 .hero-subtitle{color:rgba(255,255,255,.88);font-size:clamp(.95rem,.88rem + .35vw,1.1rem);line-height:var(--leading-relaxed);max-width:48ch}
 .hero-stats{display:flex;align-items:center;gap:1.5rem;min-height:4.5rem}
 @media(min-width:1025px){
   .hero-grid{grid-template-columns:minmax(0,1fr) minmax(180px,38%)}
   .hero-visual{order:0;max-width:none;margin:0;justify-content:flex-end;min-height:clamp(220px,38vw,440px)}
   .hero-logo-float-wrap{max-width:clamp(200px,34vw,420px)}
+  .hero-logo-float__img{width:clamp(200px,34vw,420px)}
 }
 @media(max-width:768px){
   :root{--site-header-height:8.5rem}

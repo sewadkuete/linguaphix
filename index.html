@@ -61,12 +61,11 @@ body{font-family:var(--font-body);color:var(--gray-800);background:var(--white);
 img,svg,video{max-width:100%;height:auto}
 .container{width:min(100% - 2rem,1200px);margin-inline:auto}
 .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;flex-direction:column;width:100%;min-height:var(--site-header-height);pointer-events:none}
-.site-header #navbar,#services-ticker{pointer-events:auto}
-body.has-fixed-header #services-ticker{position:fixed;top:var(--nav-height,4.25rem);left:0;right:0;z-index:999;width:100%}
+.site-header #navbar,.site-header #services-ticker{pointer-events:auto}
+body.has-fixed-header .site-header #services-ticker{position:relative;flex-shrink:0;width:100%}
 html[lang="en"] .i18n-bilingual .i18n-fr{display:none}
 html[lang="en"] .i18n-bilingual .i18n-en,html[lang="en"] .i18n-bilingual .i18n-en[hidden]{display:block!important}
 html:not([lang="en"]) .i18n-bilingual .i18n-en{display:none}
-@media(max-width:1024px){.hero-logo-float__motion{animation:none!important;will-change:auto}}
 body.has-fixed-header .site-header #navbar{position:relative;top:auto;left:auto;right:auto;width:100%;flex-shrink:0}
 #navbar{padding:max(1rem,env(safe-area-inset-top)) 0 1rem;background:transparent;transition:background .3s ease,box-shadow .3s ease}
 body.has-fixed-header #navbar:not(.scrolled){background:var(--green-deep);box-shadow:none}
@@ -95,16 +94,22 @@ body.has-fixed-header #hero{padding-top:var(--site-header-height,7.5rem);min-hei
 .hero-content{position:relative;z-index:1;padding:clamp(2rem,5vw,3rem) 0 clamp(3rem,6vw,5rem);width:100%}
 .hero-grid{display:grid;grid-template-columns:1fr;gap:2rem;align-items:center;width:100%}
 .hero-visual{order:-1;display:flex;align-items:center;justify-content:center;max-width:min(320px,72vw);margin:0 auto;min-height:min(280px,70vw)}
-.hero-logo-float-wrap{position:relative;width:100%;max-width:min(280px,70vw);aspect-ratio:1;overflow:hidden;contain:layout style paint}
-.hero-logo-float__motion{width:100%;height:100%;display:flex;align-items:center;justify-content:center}
-.hero-logo-float__img{width:100%;height:100%;object-fit:contain;display:block}
+.hero-logo-float-wrap{position:relative;width:fit-content;max-width:min(280px,70vw);overflow:visible;background:none}
+.hero-logo-float{display:inline-block;width:auto;height:auto;line-height:0;overflow:visible;background:transparent!important;border:none;padding:0;margin:0;-webkit-tap-highlight-color:transparent}
+.hero-logo-float__motion{display:inline-block;line-height:0}
+.hero-logo-float__img{display:block;width:min(280px,70vw);max-width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+@media(max-width:1024px){.hero-logo-float__motion{animation:none!important;will-change:auto;transform:none}}
+.hero-logo-float__tip[hidden]{display:none!important}
+.hero-logo-float__tip{position:absolute;z-index:3;bottom:calc(100% + .65rem);left:50%;transform:translateX(-50%);max-width:min(16rem,72vw);padding:.5rem .85rem;border-radius:var(--radius-sm);background:rgba(255,255,255,.97);color:var(--green-deep);font-family:var(--font-body);font-size:.75rem;font-weight:700;text-align:center;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .35s ease,visibility .35s ease}
+.hero-logo-float__tip--show,.hero-logo-float__tip--static{opacity:1;visibility:visible}
 .hero-copy{display:flex;flex-direction:column;gap:clamp(1.1rem,2.8vw,2rem);padding-inline:clamp(1rem,6vw,2.5rem)}
 .hero-eyebrow{font-family:var(--font-display);font-size:.75rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.85)}
 .hero-title{font-family:var(--font-display);font-size:var(--text-hero);font-weight:800;line-height:var(--leading-tight);color:var(--white)}
-.hero-title span{color:var(--accent)}
+.hero-title>span{color:inherit}
+.hero-title span span{color:var(--accent)}
 .hero-subtitle{color:rgba(255,255,255,.88);font-size:clamp(.95rem,.88rem + .35vw,1.1rem);line-height:var(--leading-relaxed);max-width:48ch}
 .hero-stats{display:flex;align-items:center;gap:1.5rem;min-height:4.5rem}
-@media(min-width:1025px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(180px,38%)}.hero-copy{order:1}.hero-visual{order:2;max-width:none;margin:0;justify-content:flex-end;min-height:clamp(220px,38vw,440px)}.hero-logo-float-wrap{max-width:clamp(200px,34vw,420px)}}
+@media(min-width:1025px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(180px,38%)}.hero-copy{order:1}.hero-visual{order:2;max-width:none;margin:0;justify-content:flex-end;min-height:clamp(220px,38vw,440px)}.hero-logo-float-wrap{max-width:clamp(200px,34vw,420px)}.hero-logo-float__img{width:clamp(200px,34vw,420px)}}
 @media(max-width:768px){:root{--site-header-height:8.5rem}}
 </style>
 <link rel="preload" href="css/style.css?v=6a8f4cfebba0" as="style">
@@ -151,6 +156,42 @@ body.has-fixed-header #hero{padding-top:var(--site-header-height,7.5rem);min-hei
     </div>
   </div>
 </nav>
+
+<!-- ───── SERVICES TICKER (fixed with nav) ───── -->
+<div id="services-ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <a href="#services-langues" class="ticker-badge ticker-badge--lang ticker-badge-link" data-i18n="ticker.badge.lang">Langues</a>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.tcf">Préparation TCF</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.english">Cours d'Anglais</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.french">Cours de Français</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.ielts">IELTS / TOEFL</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.toeic">TOEIC / Cambridge</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.trad">Traduction FR⇄EN</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.soutien">Soutien Scolaire</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.online">Cours en Ligne</span></span>
+    <span class="ticker-divider" aria-hidden="true"></span>
+    <a href="design.html" class="ticker-badge ticker-badge--design ticker-badge-link" data-i18n="ticker.badge.design">Design</a>
+    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.design">Design Graphique</span></span>
+    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.montage">Montage Vidéo</span></span>
+    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.logo">Création de Logo</span></span>
+    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.live">Live Streaming</span></span>
+    <a href="#services-langues" class="ticker-badge ticker-badge--lang ticker-badge-link" aria-hidden="true" tabindex="-1" data-i18n="ticker.badge.lang">Langues</a>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.tcf">Préparation TCF</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.english">Cours d'Anglais</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.french">Cours de Français</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.ielts">IELTS / TOEFL</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.toeic">TOEIC / Cambridge</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.trad">Traduction FR⇄EN</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.soutien">Soutien Scolaire</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.online">Cours en Ligne</span></span>
+    <span class="ticker-divider" aria-hidden="true"></span>
+    <a href="design.html" class="ticker-badge ticker-badge--design ticker-badge-link" aria-hidden="true" tabindex="-1" data-i18n="ticker.badge.design">Design</a>
+    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.design">Design Graphique</span></span>
+    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.montage">Montage Vidéo</span></span>
+    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.logo">Création de Logo</span></span>
+    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.live">Live Streaming</span></span>
+  </div>
+</div>
 </header>
 
 <!-- ───── MOBILE MENU ───── -->
@@ -182,21 +223,14 @@ body.has-fixed-header #hero{padding-top:var(--site-header-height,7.5rem);min-hei
             class="hero-logo-float__tip"
             id="heroLogoRefreshTip"
             role="tooltip"
-            hidden
-            data-i18n="hero.logoRefresh.hint">
+            hidden>
             Cliquer pour actualiser la page
           </span>
-          <script>
-            (function () {
-              if (window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 769px)').matches) return;
-              var tip = document.getElementById('heroLogoRefreshTip');
-              if (tip) tip.remove();
-            })();
-          </script>
           <div
             class="hero-logo-float"
             id="heroLogoRefresh"
-            data-i18n-aria="hero.logoRefresh.aria">
+            data-i18n-aria="hero.logoRefresh.aria"
+            data-i18n-aria-touch="hero.logoRefresh.ariaTap">
             <span class="hero-logo-float__motion" aria-hidden="true">
               <picture>
                 <source
@@ -258,42 +292,6 @@ body.has-fixed-header #hero{padding-top:var(--site-header-height,7.5rem);min-hei
     </div>
   </div>
 </section>
-
-<!-- ───── SERVICES TICKER (after hero for faster mobile LCP discovery) ───── -->
-<div id="services-ticker">
-  <div class="ticker-track" id="tickerTrack">
-    <a href="#services-langues" class="ticker-badge ticker-badge--lang ticker-badge-link" data-i18n="ticker.badge.lang">Langues</a>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.tcf">Préparation TCF</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.english">Cours d'Anglais</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.french">Cours de Français</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.ielts">IELTS / TOEFL</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.toeic">TOEIC / Cambridge</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.trad">Traduction FR⇄EN</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.soutien">Soutien Scolaire</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.online">Cours en Ligne</span></span>
-    <span class="ticker-divider" aria-hidden="true"></span>
-    <a href="design.html" class="ticker-badge ticker-badge--design ticker-badge-link" data-i18n="ticker.badge.design">Design</a>
-    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.design">Design Graphique</span></span>
-    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.montage">Montage Vidéo</span></span>
-    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.logo">Création de Logo</span></span>
-    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.live">Live Streaming</span></span>
-    <a href="#services-langues" class="ticker-badge ticker-badge--lang ticker-badge-link" aria-hidden="true" tabindex="-1" data-i18n="ticker.badge.lang">Langues</a>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.tcf">Préparation TCF</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.english">Cours d'Anglais</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.french">Cours de Français</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.ielts">IELTS / TOEFL</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.toeic">TOEIC / Cambridge</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.trad">Traduction FR⇄EN</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.soutien">Soutien Scolaire</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.online">Cours en Ligne</span></span>
-    <span class="ticker-divider" aria-hidden="true"></span>
-    <a href="design.html" class="ticker-badge ticker-badge--design ticker-badge-link" aria-hidden="true" tabindex="-1" data-i18n="ticker.badge.design">Design</a>
-    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.design">Design Graphique</span></span>
-    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.montage">Montage Vidéo</span></span>
-    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.logo">Création de Logo</span></span>
-    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.live">Live Streaming</span></span>
-  </div>
-</div>
 
 <!-- ───── SERVICES ───── -->
 <section id="services" class="section services-filter-all services-table--no-prices" style="background:var(--off-white);">

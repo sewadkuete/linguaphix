@@ -166,7 +166,9 @@ const i18n = {
     'hero.stat2': 'Ans de traduction',
     'hero.stat3': 'Ans en audiovisuel',
     'hero.logoRefresh.hint': 'Cliquer pour actualiser la page',
+    'hero.logoRefresh.hintTap': 'Toucher pour actualiser',
     'hero.logoRefresh.aria': 'Cliquer pour actualiser la page',
+    'hero.logoRefresh.ariaTap': 'Toucher pour actualiser la page',
     'pullRefresh.pull': 'Tirez vers le bas pour actualiser',
     'pullRefresh.release': 'Relâchez pour actualiser',
     'about.badge': 'À propos',
@@ -693,7 +695,9 @@ const i18n = {
     'hero.stat2': 'Years translating',
     'hero.stat3': 'Years in AV',
     'hero.logoRefresh.hint': 'Click to refresh the page',
+    'hero.logoRefresh.hintTap': 'Tap to refresh',
     'hero.logoRefresh.aria': 'Click to refresh the page',
+    'hero.logoRefresh.ariaTap': 'Tap to refresh the page',
     'pullRefresh.pull': 'Pull down to refresh',
     'pullRefresh.release': 'Release to refresh',
     'about.badge': 'About',
@@ -1369,14 +1373,15 @@ function updateSiteHeaderHeight() {
   siteHeaderHeightRaf = requestAnimationFrame(() => {
     siteHeaderHeightRaf = 0;
     const navH = nav ? Math.round(nav.getBoundingClientRect().height) : 0;
-    const tickerH = ticker ? Math.round(ticker.getBoundingClientRect().height) : 0;
-    const combined = ticker ? navH + tickerH : (header ? Math.round(header.getBoundingClientRect().height) : navH);
+    const combined = header
+      ? Math.round(header.getBoundingClientRect().height)
+      : navH + (ticker ? Math.round(ticker.getBoundingClientRect().height) : 0);
     const root = document.documentElement;
     const rawNav = root.style.getPropertyValue('--nav-height') || getComputedStyle(root).getPropertyValue('--nav-height');
     const rawCombined = root.style.getPropertyValue('--site-header-height') || getComputedStyle(root).getPropertyValue('--site-header-height');
     const currentNav = parseFloat(rawNav);
     const currentCombined = parseFloat(rawCombined);
-    if (!Number.isFinite(currentNav) || Math.abs(navH - currentNav) > 1) {
+    if (navH && (!Number.isFinite(currentNav) || Math.abs(navH - currentNav) > 1)) {
       root.style.setProperty('--nav-height', `${navH}px`);
     }
     if (!Number.isFinite(currentCombined) || Math.abs(combined - currentCombined) > 1) {
@@ -2315,7 +2320,19 @@ function isMobilePullRefreshDevice() {
 }
 
 function shouldShowHeroLogoTip() {
-  return window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 769px)').matches;
+  return Boolean(document.getElementById('heroLogoRefresh'));
+}
+
+function isHeroLogoTouchHint() {
+  return !window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 769px)').matches;
+}
+
+function heroLogoRefreshHintKey() {
+  return isHeroLogoTouchHint() ? 'hero.logoRefresh.hintTap' : 'hero.logoRefresh.hint';
+}
+
+function heroLogoRefreshAriaKey() {
+  return isHeroLogoTouchHint() ? 'hero.logoRefresh.ariaTap' : 'hero.logoRefresh.aria';
 }
 
 function pullRefreshLabel(key) {
@@ -2437,10 +2454,11 @@ function startHeroLogoTipBlink(tip) {
   if (!shouldShowHeroLogoTip()) return;
 
   tip.dataset.blinkBound = '1';
-  tip.hidden = false;
+  tip.hidden = true;
   tip.classList.remove('hero-logo-float__tip--show', 'hero-logo-float__tip--static');
 
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    tip.hidden = false;
     tip.classList.add('hero-logo-float__tip--static');
     return;
   }
@@ -2450,9 +2468,11 @@ function startHeroLogoTipBlink(tip) {
       clearHeroLogoTipBlink();
       return;
     }
+    tip.hidden = false;
     tip.classList.add('hero-logo-float__tip--show');
     heroLogoTipBlinkTimer = window.setTimeout(() => {
       tip.classList.remove('hero-logo-float__tip--show');
+      tip.hidden = true;
       heroLogoTipBlinkTimer = window.setTimeout(runCycle, HERO_LOGO_TIP_PAUSE_MS);
     }, HERO_LOGO_TIP_VISIBLE_MS);
   };
@@ -2470,9 +2490,9 @@ function syncHeroLogoRefreshCopy(lang) {
   if (!showTip) {
     tip = removeHeroLogoTipFromDom();
   } else if (tip) {
-    tip.hidden = false;
-    if (dict['hero.logoRefresh.hint']) {
-      tip.textContent = dict['hero.logoRefresh.hint'];
+    const hintKey = heroLogoRefreshHintKey();
+    if (dict[hintKey]) {
+      tip.textContent = dict[hintKey];
       tip.setAttribute('lang', resolved);
     }
   }
@@ -2483,12 +2503,13 @@ function syncHeroLogoRefreshCopy(lang) {
       btn.setAttribute('tabindex', '0');
       btn.setAttribute('aria-describedby', 'heroLogoRefreshTip');
     } else {
+      btn.setAttribute('role', 'button');
+      btn.setAttribute('tabindex', '0');
       btn.removeAttribute('aria-describedby');
-      btn.removeAttribute('role');
-      btn.removeAttribute('tabindex');
     }
-    if (dict['hero.logoRefresh.aria']) {
-      btn.setAttribute('aria-label', dict['hero.logoRefresh.aria']);
+    const ariaKey = heroLogoRefreshAriaKey();
+    if (dict[ariaKey]) {
+      btn.setAttribute('aria-label', dict[ariaKey]);
     }
   }
 }
@@ -2508,12 +2529,6 @@ function bindHeroLogoRefresh() {
 
   const tipMedia = window.matchMedia('(hover: hover) and (pointer: fine) and (min-width: 769px)');
   tipMedia.addEventListener('change', () => {
-    if (!shouldShowHeroLogoTip()) {
-      removeHeroLogoTipFromDom();
-    } else {
-      const tip = document.getElementById('heroLogoRefreshTip');
-      if (tip && tip.dataset.blinkBound !== '1') startHeroLogoTipBlink(tip);
-    }
     syncHeroLogoRefreshCopy(typeof currentLang !== 'undefined' ? currentLang : 'fr');
   });
 
