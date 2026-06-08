@@ -11,10 +11,10 @@
   Cache-Control: public, max-age=31536000, immutable
 
 /css/*
-  Cache-Control: no-cache, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /js/*
-  Cache-Control: no-cache, must-revalidate
+  Cache-Control: public, max-age=31536000, immutable
 
 /js/site-config.js
   Cache-Control: no-cache, must-revalidate
@@ -25,8 +25,8 @@
 /js/site-config.local.json
   Cache-Control: no-store, no-cache, must-revalidate
 
-/js/app.js
-  Cache-Control: no-cache, must-revalidate
+/js/build-version.json
+  Cache-Control: no-store, no-cache, must-revalidate
 
 /*
   X-Content-Type-Options: nosniff

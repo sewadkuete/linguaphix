@@ -1280,8 +1280,12 @@ function applyLang(lang) {
   if (typeof applySelectI18n === 'function') applySelectI18n(lang, i18n);
   const heroTitle = document.querySelector('.hero-title');
   if (heroTitle) {
-    if (lang === 'fr') heroTitle.innerHTML = 'Maîtrisez les <span>langues.</span><br>Rayonnez par le <span>design.</span>';
-    else heroTitle.innerHTML = 'Master <span>Languages.</span><br>Shine Through <span>Design.</span>';
+    const frHtml = 'Maîtrisez les <span>langues.</span><br>Rayonnez par le <span>design.</span>';
+    const enHtml = 'Master <span>Languages.</span><br>Shine Through <span>Design.</span>';
+    const wantEn = lang === 'en';
+    const isEn = /^Master\b/.test(heroTitle.textContent.trim());
+    if (wantEn && !isEn) heroTitle.innerHTML = enHtml;
+    else if (!wantEn && isEn) heroTitle.innerHTML = frHtml;
   }
   if (typeof applyHomeServicePrices === 'function') applyHomeServicePrices(lang);
   if (typeof applyGeoPrices === 'function') applyGeoPrices(lang, i18n);
@@ -2624,13 +2628,13 @@ window.addEventListener('DOMContentLoaded', () => {
   if (typeof initUrlLangSync === 'function') initUrlLangSync();
   applyLang(detectedLang);
   syncNavbarScrolledState();
+  hardenExternalLinks();
   if (document.getElementById('site-header')) {
     if (document.readyState === 'complete') initSiteHeaderHeightTracking();
     else window.addEventListener('load', initSiteHeaderHeightTracking, { once: true });
   }
 
   runWhenIdle(() => {
-    hardenExternalLinks();
     bindPullToRefresh();
     const servicesTab = document.querySelector('.services-filter-bar .stab.active');
     if (servicesTab) switchAudience('all', servicesTab);
