@@ -368,6 +368,7 @@ body:not(.has-fixed-header) #navbar,
 .page-portfolio #navbar .lang-toggle,
 .page-design #navbar .lang-toggle,
 .page-about #navbar .lang-toggle,
+.page-pricing #navbar .lang-toggle,
 .page-catalogue #navbar .lang-toggle,
 .page-service #navbar .lang-toggle,
 .page-sitemap #navbar .lang-toggle {
@@ -391,6 +392,7 @@ body:not(.has-fixed-header) #navbar,
 .page-portfolio #navbar .lang-toggle__btn,
 .page-design #navbar .lang-toggle__btn,
 .page-about #navbar .lang-toggle__btn,
+.page-pricing #navbar .lang-toggle__btn,
 .page-catalogue #navbar .lang-toggle__btn,
 .page-service #navbar .lang-toggle__btn,
 .page-sitemap #navbar .lang-toggle__btn {
@@ -405,6 +407,7 @@ body:not(.has-fixed-header) #navbar,
 .page-portfolio #navbar .lang-toggle__btn.is-active,
 .page-design #navbar .lang-toggle__btn.is-active,
 .page-about #navbar .lang-toggle__btn.is-active,
+.page-pricing #navbar .lang-toggle__btn.is-active,
 .page-catalogue #navbar .lang-toggle__btn.is-active,
 .page-service #navbar .lang-toggle__btn.is-active,
 .page-sitemap #navbar .lang-toggle__btn.is-active {
@@ -419,6 +422,7 @@ body:not(.has-fixed-header) #navbar,
 .page-portfolio #navbar .lang-toggle__btn:hover:not(.is-active),
 .page-design #navbar .lang-toggle__btn:hover:not(.is-active),
 .page-about #navbar .lang-toggle__btn:hover:not(.is-active),
+.page-pricing #navbar .lang-toggle__btn:hover:not(.is-active),
 .page-catalogue #navbar .lang-toggle__btn:hover:not(.is-active),
 .page-service #navbar .lang-toggle__btn:hover:not(.is-active),
 .page-sitemap #navbar .lang-toggle__btn:hover:not(.is-active) {
@@ -937,6 +941,7 @@ a.ticker-badge-link:active {
   margin-right: 0 !important;
   width: 100%;
   padding-inline: 0.75rem;
+  justify-content: center;
 }
 .about-image-frame {
   flex: 1 1 auto;
@@ -1113,6 +1118,18 @@ a.ticker-badge-link:active {
 #services.services-filter-all .services-table__row {
   grid-template-columns: 6.25rem minmax(0, 1fr) 16rem 16.5rem;
 }
+#services.services-table--no-prices .services-table__row {
+  grid-template-columns: minmax(0, 1fr) 16.5rem;
+}
+#services.services-filter-all.services-table--no-prices .services-table__row {
+  grid-template-columns: 6.25rem minmax(0, 1fr) 16.5rem;
+}
+.page-pricing #services.services-filter-all .services-subsection[data-category="design"] .services-table__row {
+  grid-template-columns: 6.25rem minmax(0, 1fr) 16rem 16.5rem;
+}
+.page-pricing #services:not(.services-filter-all) .services-subsection[data-category="design"] .services-table__row {
+  grid-template-columns: minmax(0, 1fr) 16rem 16.5rem;
+}
 .services-table__row:last-child {
   border-bottom: none;
 }
@@ -1181,12 +1198,14 @@ a.ticker-badge-link:active {
 .services-table__price .price-range__aside {
   display: none;
 }
-.page-design .services-table__price .price-range {
+.page-design .services-table__price .price-range,
+.page-pricing .services-subsection[data-category="design"] .services-table__price .price-range {
   background: #fff8e1;
   color: var(--accent-dark);
   border-color: rgba(184, 136, 10, 0.2);
 }
-.page-design .services-table__price .price-range__primary {
+.page-design .services-table__price .price-range__primary,
+.page-pricing .services-subsection[data-category="design"] .services-table__price .price-range__primary {
   color: var(--accent-dark);
 }
 .services-table__actions {
@@ -2106,6 +2125,7 @@ select.form-control { appearance: none; cursor: pointer; }
 .page-portfolio #navbar .lang-toggle,
 .page-design #navbar .lang-toggle,
 .page-about #navbar .lang-toggle,
+.page-pricing #navbar .lang-toggle,
 .page-catalogue #navbar .lang-toggle,
 .page-service #navbar .lang-toggle {
   border-color: var(--gray-200);
@@ -2284,6 +2304,11 @@ select.form-control { appearance: none; cursor: pointer; }
 .services-catalogue-cta {
   text-align: center;
   margin-top: 3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
 }
 .home-design-teaser {
   margin-top: 2rem;

@@ -52,10 +52,11 @@
 <link rel="dns-prefetch" href="https://calendly.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" type="image/webp" href="assets/branding/logo-mark-original-280.webp" media="(max-width: 768px)">
-<link rel="preload" as="image" type="image/webp" href="assets/branding/logo-mark-original-400.webp" media="(min-width: 769px)">
+<link rel="preload" as="image" type="image/webp" href="assets/branding/logo-mark-original-280.webp" imagesrcset="assets/branding/logo-mark-original-280.webp 280w, assets/branding/logo-mark-original-400.webp 400w, assets/branding/logo-mark-original-800.webp 800w" imagesizes="(max-width: 768px) 70vw, (max-width: 1024px) 34vw, 420px" media="(max-width: 768px)">
+<link rel="preload" as="image" type="image/webp" href="assets/branding/logo-mark-original-400.webp" imagesrcset="assets/branding/logo-mark-original-400.webp 400w, assets/branding/logo-mark-original-800.webp 800w" imagesizes="(min-width: 769px) 34vw, 420px" media="(min-width: 769px)">
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 
+<link rel="preload" href="css/style.css?v=6d3efff4886d" as="style">
 <link rel="stylesheet" href="css/style.css?v=6d3efff4886d">
 
 </head>
@@ -78,6 +79,7 @@
       <ul class="nav-links">
         <li><a href="#services" data-i18n="nav.services">Services</a></li>
         <li><a href="#testimonials" data-i18n="nav.testimonials">Témoignages</a></li>
+        <li><a href="pricing.html" data-i18n="nav.pricing">Tarifs</a></li>
         <li><a href="design.html" data-i18n="nav.design">Design</a></li>
         <li><a href="about.html" data-i18n="nav.about">À propos</a></li>
         <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
@@ -142,6 +144,7 @@
   </div>
   <a href="#services" onclick="toggleMobileMenu()" data-i18n="nav.services">Services</a>
   <a href="#testimonials" onclick="toggleMobileMenu()" data-i18n="nav.testimonials">Témoignages</a>
+  <a href="pricing.html" onclick="toggleMobileMenu()" data-i18n="nav.pricing">Tarifs</a>
   <a href="design.html" onclick="toggleMobileMenu()" data-i18n="nav.design">Design</a>
   <a href="about.html" onclick="toggleMobileMenu()" data-i18n="nav.about">À propos</a>
   <a href="#contact" onclick="toggleMobileMenu()" data-i18n="nav.contact">Contact</a>
@@ -219,7 +222,7 @@
                   height="420"
                   fetchpriority="high"
                   loading="eager"
-                  decoding="sync">
+                  decoding="async">
               </picture>
             </span>
           </div>
@@ -230,7 +233,7 @@
 </section>
 
 <!-- ───── SERVICES ───── -->
-<section id="services" class="section services-filter-all" style="background:var(--off-white);">
+<section id="services" class="section services-filter-all services-table--no-prices" style="background:var(--off-white);">
   <div class="container">
     <div class="section-header fade-up">
       <span class="badge" data-i18n="services.badge">Nos Services</span>
@@ -262,7 +265,6 @@
               <div class="services-table__row" id="service-tcf" data-audience="particuliers" role="row">
                 <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
                 <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">📝</span><span class="services-table__name" data-i18n="srv.tcf.title">Préparation au TCF</span></div>
-                <div class="services-table__price" role="cell"><span class="price-range" id="price-tcf" data-service-price="tcf"></span></div>
                 <div class="services-table__actions" role="cell">
                   <div class="services-table__actions-inner">
                     <a href="services/tcf.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -273,7 +275,6 @@
               <div class="services-table__row" id="service-ielts" data-audience="particuliers" role="row">
                 <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
                 <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🎯</span><span class="services-table__name" data-i18n="srv.ielts.title">IELTS / TOEFL / Cambridge</span></div>
-                <div class="services-table__price" role="cell"><span class="price-range" id="price-ielts" data-service-price="ielts"></span></div>
                 <div class="services-table__actions" role="cell">
                   <div class="services-table__actions-inner">
                     <a href="services/ielts.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -284,7 +285,6 @@
               <div class="services-table__row" id="service-toeic" data-audience="particuliers" role="row">
                 <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
                 <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🎓</span><span class="services-table__name" data-i18n="srv.toeic.title">TOEIC</span></div>
-                <div class="services-table__price" role="cell"><span class="price-range" id="price-toeic" data-service-price="toeic"></span></div>
                 <div class="services-table__actions" role="cell">
                   <div class="services-table__actions-inner">
                     <a href="services/toeic.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -295,7 +295,6 @@
               <div class="services-table__row" id="service-cours" data-audience="particuliers" role="row">
                 <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
                 <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">💬</span><span class="services-table__name" data-i18n="srv.cours.title">Cours de Français / Anglais</span></div>
-                <div class="services-table__price" role="cell"><span class="price-range" id="price-cours" data-service-price="cours"></span></div>
                 <div class="services-table__actions" role="cell">
                   <div class="services-table__actions-inner">
                     <a href="services/cours.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -306,7 +305,6 @@
               <div class="services-table__row" id="service-interview" data-audience="particuliers" role="row">
                 <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
                 <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🎤</span><span class="services-table__name" data-i18n="srv.interview.title">Préparation aux interviews en anglais</span></div>
-                <div class="services-table__price" role="cell"><span class="price-range" id="price-interview" data-service-price="interview"></span></div>
                 <div class="services-table__actions" role="cell">
                   <div class="services-table__actions-inner">
                     <a href="services/interview.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -317,7 +315,6 @@
               <div class="services-table__row" id="service-soutien" data-audience="particuliers" role="row">
                 <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
                 <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">📖</span><span class="services-table__name" data-i18n="srv.soutien.title">Soutien scolaire</span></div>
-                <div class="services-table__price" role="cell"><span class="price-range" id="price-soutien" data-service-price="soutien"></span></div>
                 <div class="services-table__actions" role="cell">
                   <div class="services-table__actions-inner">
                     <a href="services/soutien.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -328,7 +325,6 @@
               <div class="services-table__row" id="service-traduction" data-audience="particuliers" role="row">
                 <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
                 <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">📜</span><span class="services-table__name" data-i18n="srv.trad.title">Traduction professionnelle FR⇄EN</span></div>
-                <div class="services-table__price" role="cell"><span class="price-range" id="price-trad" data-service-price="traduction"></span></div>
                 <div class="services-table__actions" role="cell">
                   <div class="services-table__actions-inner">
                     <a href="services/traduction.html?audience=particuliers" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -339,7 +335,6 @@
               <div class="services-table__row" id="service-formation" data-audience="entreprises" role="row">
                 <div class="services-table__cat" role="cell"><span class="service-card__category service-card__category--biz" data-i18n="services.audience.biz">Entreprises</span></div>
                 <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🏢</span><span class="services-table__name" data-i18n="srv.corp.training.title">Formation linguistique en entreprise</span></div>
-                <div class="services-table__price" role="cell"><span class="price-range" data-service-price="formation"></span></div>
                 <div class="services-table__actions" role="cell">
                   <div class="services-table__actions-inner">
                     <a href="services/formation.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -350,7 +345,6 @@
               <div class="services-table__row" id="service-traduction-biz" data-audience="entreprises" role="row">
                 <div class="services-table__cat" role="cell"><span class="service-card__category service-card__category--biz" data-i18n="services.audience.biz">Entreprises</span></div>
                 <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">📜</span><span class="services-table__name" data-i18n="srv.trad.title">Traduction professionnelle FR⇄EN</span></div>
-                <div class="services-table__price" role="cell"><span class="price-range" id="price-trad-biz" data-service-price="traduction" data-service-audience="entreprises"></span></div>
                 <div class="services-table__actions" role="cell">
                   <div class="services-table__actions-inner">
                     <a href="services/traduction.html?audience=entreprises" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -368,6 +362,7 @@
 
     <div class="services-catalogue-cta fade-up">
       <a href="catalogue.html" class="btn btn-primary btn-lg" data-i18n="services.catalogue.cta">📋 Voir le catalogue complet</a>
+      <a href="pricing.html" class="btn btn-outline btn-lg" data-i18n="home.services.pricing">Voir les tarifs →</a>
     </div>
 
     <div class="home-design-teaser fade-up">
@@ -759,17 +754,11 @@
   </div>
 </div>
 
-<script src="js/perf.js?v=6d3efff4886d"></script>
-<script src="js/countries.js?v=6d3efff4886d"></script>
-<script src="js/policy-package-scopes.js?v=6d3efff4886d"></script>
-<script src="js/policy-content.js?v=6d3efff4886d"></script>
-<script src="js/service-pages-data.js?v=6d3efff4886d"></script>
-<script src="js/service-home-prices.js?v=6d3efff4886d"></script>
-<script src="js/site-config.js?v=6d3efff4886d"></script>
-<script src="js/captcha.js?v=6d3efff4886d"></script>
-<script src="js/locale-pricing.js?v=6d3efff4886d"></script>
-<script src="js/app.js?v=6d3efff4886d"></script>
-<script src="js/analytics.js?v=6d3efff4886d"></script>
+<script defer src="js/countries.js?v=6d3efff4886d"></script>
+<script defer src="js/site-config.js?v=6d3efff4886d"></script>
+<script defer src="js/captcha.js?v=6d3efff4886d"></script>
+<script defer src="js/app.js?v=6d3efff4886d"></script>
+<script defer src="js/analytics.js?v=6d3efff4886d"></script>
 
 </body>
 </html>

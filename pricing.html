@@ -11,19 +11,19 @@
 </script>
 <script src="js/lang-detect.js?v=6d3efff4886d"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>LINGUAPHIX | Design — Créatif & Audiovisuel</title>
-<meta name="description" data-i18n-content="page.desc.design" content="Services design LINGUAPHIX — logo, montage vidéo, design graphique, live streaming et conseil matériel pour particuliers et entreprises.">
+<title>LINGUAPHIX | Tarifs — Langues & Design</title>
+<meta name="description" data-i18n-content="page.desc.pricing" content="Tarifs LINGUAPHIX — cours, examens, traduction, formation en entreprise et services design (logo, vidéo, live streaming) pour particuliers et entreprises.">
 <meta name="robots" content="index, follow">
-<meta property="og:title" content="LINGUAPHIX | Design">
-<meta property="og:description" content="Création visuelle, vidéo et live streaming — particuliers et entreprises.">
+<meta property="og:title" content="LINGUAPHIX | Tarifs">
+<meta property="og:description" content="Tarifs par service — langues et design pour particuliers et entreprises.">
 <meta property="og:image" content="https://www.linguaphix.com/assets/branding/logo-mark-original.png">
 <meta property="og:image:alt" content="LINGUAPHIX">
 <meta property="og:image:type" content="image/png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.linguaphix.com/assets/branding/logo-mark-original.png">
-<meta property="og:url" content="https://www.linguaphix.com/design.html">
+<meta property="og:url" content="https://www.linguaphix.com/pricing.html">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://www.linguaphix.com/design.html">
+<link rel="canonical" href="https://www.linguaphix.com/pricing.html">
 <link rel="icon" href="assets/branding/logo-mark-original.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/branding/logo-mark-original.png">
 <script src="js/site-config.js?v=6d3efff4886d"></script>
@@ -33,7 +33,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=6d3efff4886d">
 </head>
-<body class="page-design" data-i18n-title="page.title.design">
+<body class="page-pricing" data-i18n-title="page.title.pricing">
 
 <nav id="navbar" class="scrolled">
   <div class="container">
@@ -47,8 +47,8 @@
       <ul class="nav-links">
         <li><a href="index.html#services" data-i18n="nav.services">Services</a></li>
         <li><a href="index.html#testimonials" data-i18n="nav.testimonials">Témoignages</a></li>
-        <li><a href="pricing.html" data-i18n="nav.pricing">Tarifs</a></li>
-        <li><a href="design.html" class="nav-link-active" aria-current="page" data-i18n="nav.design">Design</a></li>
+        <li><a href="pricing.html" class="nav-link-active" aria-current="page" data-i18n="nav.pricing">Tarifs</a></li>
+        <li><a href="design.html" data-i18n="nav.design">Design</a></li>
         <li><a href="about.html" data-i18n="nav.about">À propos</a></li>
         <li><a href="index.html#contact" data-i18n="nav.contact">Contact</a></li>
       </ul>
@@ -74,27 +74,151 @@
   </div>
   <a href="index.html#services" onclick="toggleMobileMenu()" data-i18n="nav.services">Services</a>
   <a href="index.html#testimonials" onclick="toggleMobileMenu()" data-i18n="nav.testimonials">Témoignages</a>
-  <a href="pricing.html" onclick="toggleMobileMenu()" data-i18n="nav.pricing">Tarifs</a>
-  <a href="design.html" onclick="toggleMobileMenu()" class="nav-link-active" data-i18n="nav.design">Design</a>
+  <a href="pricing.html" onclick="toggleMobileMenu()" class="nav-link-active" data-i18n="nav.pricing">Tarifs</a>
+  <a href="design.html" onclick="toggleMobileMenu()" data-i18n="nav.design">Design</a>
   <a href="about.html" onclick="toggleMobileMenu()" data-i18n="nav.about">À propos</a>
   <a href="index.html#contact" onclick="toggleMobileMenu()" data-i18n="nav.contact">Contact</a>
   <a href="javascript:void(0)" role="button" class="btn btn-white btn-lg" data-open-service-book data-i18n="nav.cta" style="margin-top:1rem;">Réserver un appel</a>
 </div>
 
-<main class="design-page">
-  <section class="section design-page__intro">
+<main class="pricing-page">
+  <section class="section pricing-page__intro">
     <div class="container">
-      <p class="design-back"><a href="index.html" data-i18n="design.page.back">← Retour à l'accueil</a></p>
+      <p class="design-back"><a href="index.html" data-i18n="pricing.page.back">← Retour à l'accueil</a></p>
       <header class="section-header fade-up" style="margin-bottom:2.5rem;">
-        <span class="badge" style="background:#fff8e1;color:var(--accent-dark);" data-i18n="design.page.badge">Design</span>
-        <h1 data-i18n="design.page.title">Créatif & audiovisuel</h1>
-        <p data-i18n="design.page.subtitle">Logo, montage vidéo, design graphique, live streaming et conseil matériel — pour particuliers et entreprises.</p>
+        <span class="badge" data-i18n="pricing.page.badge">Tarifs</span>
+        <h1 data-i18n="pricing.page.title">Tarifs par service</h1>
+        <p data-i18n="pricing.page.subtitle">Cours, examens, traduction, formation et design — tarifs indicatifs pour particuliers et entreprises, en ligne et en présentiel.</p>
       </header>
     </div>
   </section>
 
-  <section id="services" class="section section-sm services-table--no-prices" style="background:var(--off-white);padding-top:0;">
+  <section id="services" class="section services-filter-all" style="background:var(--off-white);padding-top:0;">
     <div class="container">
+      <div class="services-filter-bar" style="margin-bottom:2rem;">
+        <button class="stab active" onclick="switchAudience('all', this)" data-i18n="services.tab.all">Tous</button>
+        <button class="stab" onclick="switchAudience('particuliers', this)" data-i18n="services.tab.ind">Particuliers</button>
+        <button class="stab" onclick="switchAudience('entreprises', this)" data-i18n="services.tab.biz">Entreprises</button>
+      </div>
+
+      <div id="services-catalog" class="services-catalog">
+
+      <div class="services-subsection" id="services-langues" data-category="langues">
+        <div class="services-lang-matrix-head">
+          <span class="subsection-title-short" data-i18n="services.subsection.lang">🌐 Langues</span>
+          <span class="subsection-title-full services-lang-matrix-head__ind" data-i18n="services.subsection.lang.ind">🌐 Langues — Particuliers</span>
+          <span class="subsection-title-full services-lang-matrix-head__biz" data-i18n="services.subsection.lang.biz">🌐 Langues — Entreprises</span>
+          <div class="services-subsection-line"></div>
+        </div>
+        <div class="services-lang-matrix">
+          <div class="services-table-wrap">
+            <div class="services-table" role="table">
+              <div class="services-table__body" role="rowgroup">
+                <div class="services-table__row" id="service-tcf" data-audience="particuliers" role="row">
+                  <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">📝</span><span class="services-table__name" data-i18n="srv.tcf.title">Préparation au TCF</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-tcf" data-service-price="tcf"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/tcf.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openPolicy('langues', event, 'tcf')" data-i18n="services.table.book">Réserver</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-table__row" id="service-ielts" data-audience="particuliers" role="row">
+                  <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🎯</span><span class="services-table__name" data-i18n="srv.ielts.title">IELTS / TOEFL / Cambridge</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-ielts" data-service-price="ielts"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/ielts.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openPolicy('langues', event, 'ielts')" data-i18n="services.table.book">Réserver</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-table__row" id="service-toeic" data-audience="particuliers" role="row">
+                  <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🎓</span><span class="services-table__name" data-i18n="srv.toeic.title">TOEIC</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-toeic" data-service-price="toeic"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/toeic.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openPolicy('langues', event, 'toeic')" data-i18n="services.table.book">Réserver</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-table__row" id="service-cours" data-audience="particuliers" role="row">
+                  <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">💬</span><span class="services-table__name" data-i18n="srv.cours.title">Cours de Français / Anglais</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-cours" data-service-price="cours"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/cours.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openPolicy('langues', event, 'cours')" data-i18n="services.table.book">Réserver</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-table__row" id="service-interview" data-audience="particuliers" role="row">
+                  <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🎤</span><span class="services-table__name" data-i18n="srv.interview.title">Préparation aux interviews en anglais</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-interview" data-service-price="interview"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/interview.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openPolicy('langues', event, 'interview')" data-i18n="services.table.book">Réserver</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-table__row" id="service-soutien" data-audience="particuliers" role="row">
+                  <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">📖</span><span class="services-table__name" data-i18n="srv.soutien.title">Soutien scolaire</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-soutien" data-service-price="soutien"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/soutien.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openPolicy('langues', event, 'soutien')" data-i18n="services.table.book">Réserver</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-table__row" id="service-traduction" data-audience="particuliers" role="row">
+                  <div class="services-table__cat" role="cell"><span class="service-card__category" data-i18n="services.audience.ind">Particuliers</span></div>
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">📜</span><span class="services-table__name" data-i18n="srv.trad.title">Traduction professionnelle FR⇄EN</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-trad" data-service-price="traduction"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/traduction.html?audience=particuliers" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openQuoteModal(event)" data-i18n="services.table.quote">Devis</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-table__row" id="service-formation" data-audience="entreprises" role="row">
+                  <div class="services-table__cat" role="cell"><span class="service-card__category service-card__category--biz" data-i18n="services.audience.biz">Entreprises</span></div>
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🏢</span><span class="services-table__name" data-i18n="srv.corp.training.title">Formation linguistique en entreprise</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" data-service-price="formation"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/formation.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openQuoteModal(event)" data-i18n="services.table.quote">Devis</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="services-table__row" id="service-traduction-biz" data-audience="entreprises" role="row">
+                  <div class="services-table__cat" role="cell"><span class="service-card__category service-card__category--biz" data-i18n="services.audience.biz">Entreprises</span></div>
+                  <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">📜</span><span class="services-table__name" data-i18n="srv.trad.title">Traduction professionnelle FR⇄EN</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-trad-biz" data-service-price="traduction" data-service-audience="entreprises"></span></div>
+                  <div class="services-table__actions" role="cell">
+                    <div class="services-table__actions-inner">
+                      <a href="services/traduction.html?audience=entreprises" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
+                      <a href="javascript:void(0)" role="button" class="btn btn-primary btn-sm services-table__btn-cta" onclick="openQuoteModal(event)" data-i18n="services.table.quote">Devis</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <div class="services-subsection" data-category="design">
         <div class="services-subsection-title is-design">
           <span class="subsection-title-short" data-i18n="services.subsection.design">🎨 Design</span>
@@ -106,7 +230,9 @@
             <div class="services-table" role="table">
               <div class="services-table__body" role="rowgroup">
                 <div class="services-table__row" id="service-logo" role="row">
+                  <div class="services-table__cat" role="cell" aria-hidden="true"></div>
                   <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">✨</span><span class="services-table__name" data-i18n="srv.logo.title">Création & Animation de Logo</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-logo" data-service-price="logo"></span></div>
                   <div class="services-table__actions" role="cell">
                     <div class="services-table__actions-inner">
                       <a href="services/logo.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -115,7 +241,9 @@
                   </div>
                 </div>
                 <div class="services-table__row" id="service-montage" role="row">
+                  <div class="services-table__cat" role="cell" aria-hidden="true"></div>
                   <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🎬</span><span class="services-table__name" data-i18n="srv.montage.title">Montage Vidéo</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-montage" data-service-price="montage"></span></div>
                   <div class="services-table__actions" role="cell">
                     <div class="services-table__actions-inner">
                       <a href="services/montage.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -124,7 +252,9 @@
                   </div>
                 </div>
                 <div class="services-table__row" id="service-graphic" role="row">
+                  <div class="services-table__cat" role="cell" aria-hidden="true"></div>
                   <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🖼️</span><span class="services-table__name" data-i18n="srv.design.title">Design Graphique</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" id="price-design" data-service-price="graphic"></span></div>
                   <div class="services-table__actions" role="cell">
                     <div class="services-table__actions-inner">
                       <a href="services/graphic.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -133,7 +263,9 @@
                   </div>
                 </div>
                 <div class="services-table__row" id="service-livestream" role="row">
+                  <div class="services-table__cat" role="cell" aria-hidden="true"></div>
                   <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">📡</span><span class="services-table__name" data-i18n="srv.live.title">Production Live Streaming</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" data-service-price="livestream"></span></div>
                   <div class="services-table__actions" role="cell">
                     <div class="services-table__actions-inner">
                       <a href="services/livestream.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -142,7 +274,9 @@
                   </div>
                 </div>
                 <div class="services-table__row" id="service-materiel" role="row">
+                  <div class="services-table__cat" role="cell" aria-hidden="true"></div>
                   <div class="services-table__service" role="cell"><span class="services-table__icon" aria-hidden="true">🛒</span><span class="services-table__name" data-i18n="srv.mat.title">Conseil & Achat de matériel</span></div>
+                  <div class="services-table__price" role="cell"><span class="price-range" data-service-price="materiel"></span></div>
                   <div class="services-table__actions" role="cell">
                     <div class="services-table__actions-inner">
                       <a href="services/materiel.html" class="btn btn-outline btn-sm services-table__btn-details" data-i18n="services.table.details">Détail</a>
@@ -155,30 +289,12 @@
           </div>
         </div>
       </div>
+
+      </div><!-- /services-catalog -->
+
       <div class="services-catalogue-cta">
-        <a href="catalogue.html" class="btn btn-accent btn-lg" data-i18n="services.catalogue.cta">📋 Voir le catalogue complet</a>
-        <a href="pricing.html" class="btn btn-outline btn-lg" data-i18n="home.services.pricing">Voir les tarifs →</a>
+        <a href="catalogue.html" class="btn btn-primary btn-lg" data-i18n="services.catalogue.cta">📋 Voir le catalogue complet</a>
       </div>
-    </div>
-  </section>
-
-  <section class="section design-portfolio-band">
-    <div class="container">
-      <div class="design-portfolio-band__inner fade-up">
-        <div>
-          <span class="badge" style="background:rgba(255,255,255,0.2);color:#fff;" data-i18n="design.portfolio.badge">Réalisations</span>
-          <h2 data-i18n="design.portfolio.title">Voir le portfolio</h2>
-          <p data-i18n="design.portfolio.text">Montages, live streaming et créations graphiques — exemples de projets livrés pour particuliers, marques et entreprises.</p>
-        </div>
-        <a href="portfolio.html" class="btn btn-white btn-lg" data-i18n="design.portfolio.cta">Ouvrir le portfolio →</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" style="background:var(--white);">
-    <div class="container" style="text-align:center;">
-      <p style="margin-bottom:1rem;color:var(--gray-600);" data-i18n="design.contact.hint">Une question ou un projet design ?</p>
-      <a href="index.html#contact" class="btn btn-primary btn-lg" data-i18n="design.contact.cta">Nous contacter →</a>
     </div>
   </section>
 </main>
@@ -193,6 +309,7 @@
       </p>
       <div class="footer-bottom__links">
         <a href="index.html" data-i18n="portfolio.page.home">Accueil</a>
+        <a href="pricing.html" data-i18n="nav.pricing">Tarifs</a>
         <a href="design.html" data-i18n="nav.design">Design</a>
         <a href="portfolio.html" data-i18n="nav.portfolio">Portfolio</a>
         <a href="policy.html" data-i18n="footer.policy">Politique de confidentialité</a>

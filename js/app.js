@@ -138,6 +138,7 @@ const i18n = {
     'nav.about': 'À propos',
     'nav.services': 'Services',
     'nav.testimonials': 'Témoignages',
+    'nav.pricing': 'Tarifs',
     'nav.portfolio': 'Portfolio',
     'nav.design': 'Design',
     'nav.contact': 'Contact',
@@ -199,6 +200,11 @@ const i18n = {
     'design.page.back': '← Retour à l\'accueil',
     'design.page.badge': 'Design',
     'design.page.title': 'Créatif & audiovisuel',
+    'pricing.page.back': '← Retour à l\'accueil',
+    'pricing.page.badge': 'Tarifs',
+    'pricing.page.title': 'Tarifs par service',
+    'pricing.page.subtitle': 'Cours, examens, traduction, formation et design — tarifs indicatifs pour particuliers et entreprises, en ligne et en présentiel.',
+    'home.services.pricing': 'Voir les tarifs →',
     'design.page.subtitle': 'Logo, montage vidéo, design graphique, live streaming et conseil matériel — pour particuliers et entreprises.',
     'design.portfolio.badge': 'Réalisations',
     'design.portfolio.title': 'Voir le portfolio',
@@ -602,6 +608,7 @@ const i18n = {
     'sitemap.link.policy': 'Politique & confidentialité',
     'sitemap.link.sitemap': 'Plan du site',
     'sitemap.link.prices': 'Tarifs par service',
+    'sitemap.link.pricing': 'Page tarifs',
     'sitemap.link.process': 'Comment ça marche',
     'sitemap.link.booking': 'Réservation',
     'sitemap.link.policy.general': 'Général & confidentialité',
@@ -624,6 +631,7 @@ const i18n = {
     'page.title.home': 'LINGUAPHIX | Langues · Design · Traduction',
     'page.title.about': 'LINGUAPHIX | À propos — Akuété SEWA-DOVI',
     'page.title.design': 'LINGUAPHIX | Design — Créatif & Audiovisuel',
+    'page.title.pricing': 'LINGUAPHIX | Tarifs — Langues & Design',
     'page.title.catalogue': 'LINGUAPHIX | Catalogue des services',
     'page.title.portfolio': 'LINGUAPHIX | Portfolio — Vidéo & Design',
     'page.title.policy': 'LINGUAPHIX | Politique de confidentialité',
@@ -631,6 +639,7 @@ const i18n = {
     'page.desc.home': 'LINGUAPHIX - Expert en langues (TCF, IELTS, TOEFL, TOEIC, Cambridge), traduction FR-EN, cours personnalisés, design graphique, montage vidéo et live streaming. Fondé par Akuété SEWA-DOVI, examinateur TCF à l\'IFT.',
     'page.desc.about': 'Découvrez Akuété SEWA-DOVI — examinateur TCF, enseignant ESL/FLE, traducteur FR⇄EN et créatif audiovisuel. Plus de 10 ans d\'expérience au service de LINGUAPHIX.',
     'page.desc.design': 'Services design LINGUAPHIX — logo, montage vidéo, design graphique, live streaming et conseil matériel pour particuliers et entreprises.',
+    'page.desc.pricing': 'Tarifs LINGUAPHIX — cours, examens, traduction, formation en entreprise et services design pour particuliers et entreprises.',
     'page.desc.catalogue': 'Catalogue complet des services LINGUAPHIX — langues et design pour particuliers et entreprises.',
     'page.desc.portfolio': 'Portfolio LINGUAPHIX — montages vidéo, live streaming et créations graphiques pour particuliers et entreprises.',
     'page.desc.policy': 'Politique générale et de confidentialité — LINGUAPHIX. Services linguistiques et créatifs au Togo.',
@@ -656,6 +665,7 @@ const i18n = {
     'nav.about': 'About',
     'nav.services': 'Services',
     'nav.testimonials': 'Reviews',
+    'nav.pricing': 'Pricing',
     'nav.portfolio': 'Portfolio',
     'nav.design': 'Design',
     'nav.contact': 'Contact',
@@ -717,6 +727,11 @@ const i18n = {
     'design.page.back': '← Back to home',
     'design.page.badge': 'Design',
     'design.page.title': 'Creative & audiovisual',
+    'pricing.page.back': '← Back to home',
+    'pricing.page.badge': 'Pricing',
+    'pricing.page.title': 'Rates per service',
+    'pricing.page.subtitle': 'Courses, exams, translation, corporate training, and design — indicative rates for individuals and businesses, online and in person.',
+    'home.services.pricing': 'View pricing →',
     'design.page.subtitle': 'Logo, video editing, graphic design, live streaming, and equipment consulting — for individuals and businesses.',
     'design.portfolio.badge': 'Work',
     'design.portfolio.title': 'View the portfolio',
@@ -1120,6 +1135,7 @@ const i18n = {
     'sitemap.link.policy': 'Privacy & policies',
     'sitemap.link.sitemap': 'Sitemap',
     'sitemap.link.prices': 'Rates per service',
+    'sitemap.link.pricing': 'Pricing page',
     'sitemap.link.process': 'How it works',
     'sitemap.link.booking': 'Booking',
     'sitemap.link.policy.general': 'General & privacy',
@@ -1142,6 +1158,7 @@ const i18n = {
     'page.title.home': 'LINGUAPHIX | Languages · Design · Translation',
     'page.title.about': 'LINGUAPHIX | About — Akuété SEWA-DOVI',
     'page.title.design': 'LINGUAPHIX | Design — Creative & Audiovisual',
+    'page.title.pricing': 'LINGUAPHIX | Pricing — Languages & Design',
     'page.title.catalogue': 'LINGUAPHIX | Service catalog',
     'page.title.portfolio': 'LINGUAPHIX | Portfolio — Video & Design',
     'page.title.policy': 'LINGUAPHIX | Privacy policy',
@@ -1149,6 +1166,7 @@ const i18n = {
     'page.desc.home': 'LINGUAPHIX — Language expert (TCF, IELTS, TOEFL, TOEIC, Cambridge), FR-EN translation, personalized courses, graphic design, video editing, and live streaming. Founded by Akuété SEWA-DOVI, certified TCF examiner at IFT.',
     'page.desc.about': 'Meet Akuété SEWA-DOVI — TCF examiner, ESL/FLE teacher, FR⇄EN translator, and audiovisual creative. Over 10 years of experience behind LINGUAPHIX.',
     'page.desc.design': 'LINGUAPHIX design services — logo, video editing, graphic design, live streaming, and AV equipment consulting for individuals and businesses.',
+    'page.desc.pricing': 'LINGUAPHIX pricing — courses, exams, translation, corporate training, and design services for individuals and businesses.',
     'page.desc.catalogue': 'Full LINGUAPHIX service catalog — languages and design for individuals and businesses.',
     'page.desc.portfolio': 'LINGUAPHIX portfolio — video edits, live streaming, and graphic design for individuals and businesses.',
     'page.desc.policy': 'General and privacy policy — LINGUAPHIX. Language and creative services in Togo.',
@@ -1270,7 +1288,13 @@ function applyLang(lang) {
   if (document.getElementById('services-ticker')) {
     requestAnimationFrame(updateSiteHeaderHeight);
   }
-  if (typeof populateCountryDatalist === 'function') populateCountryDatalist(lang);
+  if (typeof populateCountryDatalist === 'function' && document.getElementById('country-list')) {
+    if (typeof runWhenIdle === 'function') {
+      runWhenIdle(() => populateCountryDatalist(lang));
+    } else {
+      populateCountryDatalist(lang);
+    }
+  }
   if (typeof applyCatalogueImages === 'function') applyCatalogueImages(lang);
   if (typeof renderServicePage === 'function' && document.body.classList.contains('page-service')) {
     renderServicePage(lang);
@@ -1281,7 +1305,9 @@ function applyLang(lang) {
     refreshBookingPolicy(lang);
   }
   refreshPolicyModalIfOpen(lang);
-  renderServiceBookModal(lang);
+  if (document.getElementById('serviceBookModalList')) {
+    renderServiceBookModal(lang);
+  }
   if (typeof syncBrowserUrlLang === 'function') syncBrowserUrlLang(lang, { replace: true });
   if (typeof applyLocalizedLinks === 'function') applyLocalizedLinks(lang);
   syncHeroLogoRefreshCopy(lang);
@@ -1952,14 +1978,63 @@ function isAnyModalOpen() {
   return document.querySelector('.modal-overlay.open') !== null;
 }
 
+let policyScriptsPromise = null;
+
+function getJsAssetPrefix() {
+  const path = (window.location.pathname || '').replace(/\\/g, '/');
+  return /\/services\//.test(path) ? '../js/' : 'js/';
+}
+
+function getScriptVersionQuery() {
+  const build = document.querySelector('meta[name="lx-build"]')?.getAttribute('content');
+  return build ? `?v=${encodeURIComponent(build)}` : '';
+}
+
+function loadScriptOnce(src) {
+  const base = src.split('?')[0];
+  const full = src.includes('?') ? src : `${base}${getScriptVersionQuery()}`;
+  const existing = document.querySelector(`script[src^="${base}"]`);
+  if (existing) {
+    if (existing.dataset.lxLoaded === '1') return Promise.resolve();
+    return new Promise((resolve, reject) => {
+      existing.addEventListener('load', () => resolve(), { once: true });
+      existing.addEventListener('error', () => reject(new Error(`failed: ${base}`)), { once: true });
+    });
+  }
+  return new Promise((resolve, reject) => {
+    const script = document.createElement('script');
+    script.src = full;
+    script.defer = true;
+    script.onload = () => {
+      script.dataset.lxLoaded = '1';
+      resolve();
+    };
+    script.onerror = () => reject(new Error(`failed: ${base}`));
+    document.head.appendChild(script);
+  });
+}
+
+function ensurePolicyScripts() {
+  if (typeof getServicePolicyHtml === 'function') return Promise.resolve();
+  if (!policyScriptsPromise) {
+    const prefix = getJsAssetPrefix();
+    policyScriptsPromise = loadScriptOnce(`${prefix}policy-package-scopes.js`)
+      .then(() => loadScriptOnce(`${prefix}policy-content.js`));
+  }
+  return policyScriptsPromise;
+}
+
 function openPolicy(type, e, serviceKey) {
   if (e) e.preventDefault();
-  currentPolicyType = type;
-  currentPolicyServiceKey = serviceKey || null;
-  const modal = document.getElementById('policyModal');
-  renderPolicyModal(type, currentLang, currentPolicyServiceKey);
-  lockBodyScroll();
-  modal.classList.add('open');
+  const show = () => {
+    currentPolicyType = type;
+    currentPolicyServiceKey = serviceKey || null;
+    const modal = document.getElementById('policyModal');
+    renderPolicyModal(type, currentLang, currentPolicyServiceKey);
+    lockBodyScroll();
+    modal?.classList.add('open');
+  };
+  ensurePolicyScripts().then(show).catch(show);
 }
 
 function closePolicy() {
@@ -2180,6 +2255,7 @@ function syncNavbarScrolledState() {
     || document.body.classList.contains('page-portfolio')
     || document.body.classList.contains('page-design')
     || document.body.classList.contains('page-about')
+    || document.body.classList.contains('page-pricing')
     || document.body.classList.contains('page-catalogue')
     || document.body.classList.contains('page-service')
     || document.body.classList.contains('page-sitemap');
@@ -2527,13 +2603,23 @@ function hardenExternalLinks() {
   });
 }
 
+function runWhenIdle(fn, timeoutMs = 2000) {
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => {
+      try { fn(); } catch (err) { console.error(err); }
+    }, { timeout: timeoutMs });
+  } else {
+    setTimeout(() => {
+      try { fn(); } catch (err) { console.error(err); }
+    }, 1);
+  }
+}
+
 window.addEventListener('DOMContentLoaded', () => {
-  hardenExternalLinks();
-  ensureServiceBookModal();
+  const detectedLang = detectLang();
+
   bindNavBookCtas();
   bindHeroLogoRefresh();
-  bindPullToRefresh();
-  const detectedLang = detectLang();
   if (typeof setStoredLang === 'function') setStoredLang(detectedLang);
   if (typeof initUrlLangSync === 'function') initUrlLangSync();
   applyLang(detectedLang);
@@ -2542,20 +2628,25 @@ window.addEventListener('DOMContentLoaded', () => {
     if (document.readyState === 'complete') initSiteHeaderHeightTracking();
     else window.addEventListener('load', initSiteHeaderHeightTracking, { once: true });
   }
-  const servicesTab = document.querySelector('.services-filter-bar .stab.active');
-  if (servicesTab) switchAudience('all', servicesTab);
-  syncFooterTranslationLink();
-  bindHomeFooterServiceLinks();
-  initHashScroll();
-  if (document.getElementById('testimonialsGrid')) loadTestimonials();
-  initModals();
-  applySitePhones();
-  if (typeof initFormCaptchasWhenVisible === 'function') {
-    initFormCaptchasWhenVisible(detectedLang);
-  } else if (typeof initAllFormCaptchas === 'function') {
-    initAllFormCaptchas(detectedLang);
-  }
-  bindHomeFormSubmitGates();
+
+  runWhenIdle(() => {
+    hardenExternalLinks();
+    bindPullToRefresh();
+    const servicesTab = document.querySelector('.services-filter-bar .stab.active');
+    if (servicesTab) switchAudience('all', servicesTab);
+    syncFooterTranslationLink();
+    bindHomeFooterServiceLinks();
+    initHashScroll();
+    if (document.getElementById('testimonialsGrid')) loadTestimonials();
+    initModals();
+    applySitePhones();
+    if (typeof initFormCaptchasWhenVisible === 'function') {
+      initFormCaptchasWhenVisible(detectedLang);
+    } else if (typeof initAllFormCaptchas === 'function') {
+      initAllFormCaptchas(detectedLang);
+    }
+    bindHomeFormSubmitGates();
+  });
 });
 
 let testimonialsLoadPromise = null;
