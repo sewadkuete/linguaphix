@@ -1254,6 +1254,7 @@ function applyLang(lang) {
   lang = resolved;
   updateLangToggleUI(lang);
   document.querySelectorAll('[data-i18n]').forEach(el => {
+    if (el.closest('.i18n-bilingual')) return;
     const key = el.getAttribute('data-i18n');
     if (i18n[lang][key]) {
       el.textContent = resolveI18nText(i18n[lang][key], lang);
@@ -1278,15 +1279,6 @@ function applyLang(lang) {
   syncAccessibilityCopy(lang);
   applyPageTitle(lang);
   if (typeof applySelectI18n === 'function') applySelectI18n(lang, i18n);
-  const heroTitle = document.querySelector('.hero-title');
-  if (heroTitle) {
-    const frHtml = 'Maîtrisez les <span>langues.</span><br>Rayonnez par le <span>design.</span>';
-    const enHtml = 'Master <span>Languages.</span><br>Shine Through <span>Design.</span>';
-    const wantEn = lang === 'en';
-    const isEn = /^Master\b/.test(heroTitle.textContent.trim());
-    if (wantEn && !isEn) heroTitle.innerHTML = enHtml;
-    else if (!wantEn && isEn) heroTitle.innerHTML = frHtml;
-  }
   if (typeof applyHomeServicePrices === 'function') applyHomeServicePrices(lang);
   if (typeof applyGeoPrices === 'function') applyGeoPrices(lang, i18n);
   if (document.getElementById('services-ticker')) {
@@ -1368,18 +1360,27 @@ let siteHeaderHeightReady = false;
 
 function updateSiteHeaderHeight() {
   const header = document.getElementById('site-header');
-  if (!header) return;
+  const nav = document.getElementById('navbar');
+  const ticker = document.getElementById('services-ticker');
+  if (!header && !nav && !ticker) return;
   if (!siteHeaderHeightReady && document.readyState !== 'complete') return;
 
   if (siteHeaderHeightRaf) cancelAnimationFrame(siteHeaderHeightRaf);
   siteHeaderHeightRaf = requestAnimationFrame(() => {
     siteHeaderHeightRaf = 0;
-    const h = Math.round(header.getBoundingClientRect().height);
+    const navH = nav ? Math.round(nav.getBoundingClientRect().height) : 0;
+    const tickerH = ticker ? Math.round(ticker.getBoundingClientRect().height) : 0;
+    const combined = ticker ? navH + tickerH : (header ? Math.round(header.getBoundingClientRect().height) : navH);
     const root = document.documentElement;
-    const raw = root.style.getPropertyValue('--site-header-height') || getComputedStyle(root).getPropertyValue('--site-header-height');
-    const current = parseFloat(raw);
-    if (!Number.isFinite(current) || Math.abs(h - current) > 1) {
-      root.style.setProperty('--site-header-height', `${h}px`);
+    const rawNav = root.style.getPropertyValue('--nav-height') || getComputedStyle(root).getPropertyValue('--nav-height');
+    const rawCombined = root.style.getPropertyValue('--site-header-height') || getComputedStyle(root).getPropertyValue('--site-header-height');
+    const currentNav = parseFloat(rawNav);
+    const currentCombined = parseFloat(rawCombined);
+    if (!Number.isFinite(currentNav) || Math.abs(navH - currentNav) > 1) {
+      root.style.setProperty('--nav-height', `${navH}px`);
+    }
+    if (!Number.isFinite(currentCombined) || Math.abs(combined - currentCombined) > 1) {
+      root.style.setProperty('--site-header-height', `${combined}px`);
     }
   });
 }
@@ -1389,11 +1390,11 @@ function initSiteHeaderHeightTracking() {
   updateSiteHeaderHeight();
   const nav = document.getElementById('navbar');
   const header = document.getElementById('site-header');
-  if (nav && header) {
-    const obs = new ResizeObserver(() => updateSiteHeaderHeight());
-    obs.observe(nav);
-    obs.observe(header);
-  }
+  const ticker = document.getElementById('services-ticker');
+  const obs = new ResizeObserver(() => updateSiteHeaderHeight());
+  if (nav) obs.observe(nav);
+  if (header) obs.observe(header);
+  if (ticker) obs.observe(ticker);
 }
 
 // ── NAVBAR SCROLL ──

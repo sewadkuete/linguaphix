@@ -6,9 +6,6 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
 <meta name="lx-build" content="44334b3d1098">
-<script data-lx-build-check="1">
-(function(){var M="lx-build",R="lx-build-reload",m=document.querySelector('meta[name="'+M+'"]'),pageBuild=m&&m.getAttribute("content");if(!pageBuild)return;var p=(location.pathname||"").replace(/\\/g,"/"),jsBase=/\/services\//.test(p)?"../js/":"js/";function go(b){var now=Date.now();try{var last=parseInt(sessionStorage.getItem(R)||"0",10);if(last&&now-last<8000)return;sessionStorage.setItem(R,String(now))}catch(e){}var u=new URL(location.href);u.searchParams.set("build",b);u.searchParams.delete("_");location.replace(u.pathname+u.search+u.hash)}fetch(jsBase+"build-version.json?_="+Date.now(),{cache:"no-store",credentials:"same-origin"}).then(function(r){return r.ok?r.json():null}).then(function(d){if(!d||!d.build||d.build===pageBuild)return;var done=function(){go(d.build)};if("caches"in window){caches.keys().then(function(k){return Promise.all(k.map(function(x){return caches.delete(x)}))}).finally(done)}else{done()}}).catch(function(){})})();
-</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>LINGUAPHIX | Langues · Design · Traduction</title>
 <meta name="description" data-i18n-content="page.desc.home" content="LINGUAPHIX - Expert en langues (TCF, IELTS, TOEFL, TOEIC, Cambridge), traduction FR-EN, cours personnalisés, design graphique, montage vidéo et live streaming. Fondé par Akuété SEWA-DOVI, examinateur TCF à l'IFT.">
@@ -51,17 +48,22 @@
 <link rel="dns-prefetch" href="https://calendly.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="image" type="image/webp" href="assets/branding/logo-mark-original-280.webp" imagesrcset="assets/branding/logo-mark-original-280.webp 280w, assets/branding/logo-mark-original-400.webp 400w, assets/branding/logo-mark-original-800.webp 800w" imagesizes="(max-width: 768px) 70vw, (max-width: 1024px) 34vw, 420px" media="(max-width: 768px)">
-<link rel="preload" as="image" type="image/webp" href="assets/branding/logo-mark-original-400.webp" imagesrcset="assets/branding/logo-mark-original-400.webp 400w, assets/branding/logo-mark-original-800.webp 800w" imagesizes="(min-width: 769px) 34vw, 420px" media="(min-width: 769px)">
+<link rel="preload" as="image" type="image/webp" href="assets/branding/logo-mark-original-280.webp" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" href="assets/branding/logo-mark-original-400.webp" media="(min-width: 769px)">
 <style>
-:root{--site-header-height:7.5rem;--green:#1a7a3c;--green-dark:#0f5229;--green-deep:#073d1e;--green-light:#e8f5ed;--white:#fff;--gray-600:#4d5c54;--gray-800:#1e2822;--accent:#f0b429;--font-display:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--font-body:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--text-hero:clamp(1.85rem,1.1rem + 4.2vw,4rem);--leading-tight:1.1;--leading-relaxed:1.75;--radius-sm:8px}
+:root{--nav-height:4.25rem;--site-header-height:7.5rem;--green:#1a7a3c;--green-dark:#0f5229;--green-deep:#073d1e;--green-light:#e8f5ed;--white:#fff;--gray-600:#4d5c54;--gray-800:#1e2822;--accent:#f0b429;--font-display:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;--font-body:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;--text-hero:clamp(1.85rem,1.1rem + 4.2vw,4rem);--leading-tight:1.1;--leading-relaxed:1.75;--radius-sm:8px}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{font-family:var(--font-body);color:var(--gray-800);background:var(--white);overflow-x:hidden;line-height:1.55}
 img,svg,video{max-width:100%;height:auto}
 .container{width:min(100% - 2rem,1200px);margin-inline:auto}
 .site-header{position:fixed;top:0;left:0;right:0;z-index:1000;display:flex;flex-direction:column;width:100%;min-height:var(--site-header-height);pointer-events:none}
-.site-header #navbar,.site-header #services-ticker{pointer-events:auto}
+.site-header #navbar,#services-ticker{pointer-events:auto}
+body.has-fixed-header #services-ticker{position:fixed;top:var(--nav-height,4.25rem);left:0;right:0;z-index:999;width:100%}
+html[lang="en"] .i18n-bilingual .i18n-fr{display:none}
+html[lang="en"] .i18n-bilingual .i18n-en,html[lang="en"] .i18n-bilingual .i18n-en[hidden]{display:block!important}
+html:not([lang="en"]) .i18n-bilingual .i18n-en{display:none}
+@media(max-width:1024px){.hero-logo-float__motion{animation:none!important;will-change:auto}}
 body.has-fixed-header .site-header #navbar{position:relative;top:auto;left:auto;right:auto;width:100%;flex-shrink:0}
 #navbar{padding:max(1rem,env(safe-area-inset-top)) 0 1rem;background:transparent;transition:background .3s ease,box-shadow .3s ease}
 body.has-fixed-header #navbar:not(.scrolled){background:var(--green-deep);box-shadow:none}
@@ -99,13 +101,14 @@ body.has-fixed-header #hero{padding-top:var(--site-header-height,7.5rem);min-hei
 .hero-title span{color:var(--accent)}
 .hero-subtitle{color:rgba(255,255,255,.88);font-size:clamp(.95rem,.88rem + .35vw,1.1rem);line-height:var(--leading-relaxed);max-width:48ch}
 .hero-stats{display:flex;align-items:center;gap:1.5rem;min-height:4.5rem}
-@media(min-width:1025px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(180px,38%)}.hero-visual{order:0;max-width:none;margin:0;justify-content:flex-end;min-height:clamp(220px,38vw,440px)}.hero-logo-float-wrap{max-width:clamp(200px,34vw,420px)}}
+@media(min-width:1025px){.hero-grid{grid-template-columns:minmax(0,1fr) minmax(180px,38%)}.hero-copy{order:1}.hero-visual{order:2;max-width:none;margin:0;justify-content:flex-end;min-height:clamp(220px,38vw,440px)}.hero-logo-float-wrap{max-width:clamp(200px,34vw,420px)}}
 @media(max-width:768px){:root{--site-header-height:8.5rem}}
 </style>
 <link rel="preload" href="css/style.css?v=44334b3d1098" as="style">
 <link rel="stylesheet" href="css/style.css?v=44334b3d1098">
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Source+Sans+3:wght@400;600&display=optional" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Source+Sans+3:wght@400;600&display=optional"></noscript>
+<script src="js/lang-detect.js?v=44334b3d1098"></script>
 
 </head>
 <body class="has-fixed-header" data-i18n-title="page.title.home">
@@ -145,42 +148,6 @@ body.has-fixed-header #hero{padding-top:var(--site-header-height,7.5rem);min-hei
     </div>
   </div>
 </nav>
-
-<!-- ───── SERVICES TICKER (fixed with nav) ───── -->
-<div id="services-ticker">
-  <div class="ticker-track" id="tickerTrack">
-    <a href="#services-langues" class="ticker-badge ticker-badge--lang ticker-badge-link" data-i18n="ticker.badge.lang">Langues</a>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.tcf">Préparation TCF</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.english">Cours d'Anglais</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.french">Cours de Français</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.ielts">IELTS / TOEFL</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.toeic">TOEIC / Cambridge</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.trad">Traduction FR⇄EN</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.soutien">Soutien Scolaire</span></span>
-    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.online">Cours en Ligne</span></span>
-    <span class="ticker-divider" aria-hidden="true"></span>
-    <a href="design.html" class="ticker-badge ticker-badge--design ticker-badge-link" data-i18n="ticker.badge.design">Design</a>
-    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.design">Design Graphique</span></span>
-    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.montage">Montage Vidéo</span></span>
-    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.logo">Création de Logo</span></span>
-    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.live">Live Streaming</span></span>
-    <a href="#services-langues" class="ticker-badge ticker-badge--lang ticker-badge-link" aria-hidden="true" tabindex="-1" data-i18n="ticker.badge.lang">Langues</a>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.tcf">Préparation TCF</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.english">Cours d'Anglais</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.french">Cours de Français</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.ielts">IELTS / TOEFL</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.toeic">TOEIC / Cambridge</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.trad">Traduction FR⇄EN</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.soutien">Soutien Scolaire</span></span>
-    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.online">Cours en Ligne</span></span>
-    <span class="ticker-divider" aria-hidden="true"></span>
-    <a href="design.html" class="ticker-badge ticker-badge--design ticker-badge-link" aria-hidden="true" tabindex="-1" data-i18n="ticker.badge.design">Design</a>
-    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.design">Design Graphique</span></span>
-    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.montage">Montage Vidéo</span></span>
-    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.logo">Création de Logo</span></span>
-    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.live">Live Streaming</span></span>
-  </div>
-</div>
 </header>
 
 <!-- ───── MOBILE MENU ───── -->
@@ -206,35 +173,6 @@ body.has-fixed-header #hero{padding-top:var(--site-header-height,7.5rem);min-hei
   <div class="hero-circle-2"></div>
   <div class="container hero-content">
     <div class="hero-grid">
-      <div class="hero-copy">
-        <div class="hero-eyebrow" data-i18n="hero.eyebrow">Expert Langues & Créativité Visuelle</div>
-        <h1 class="hero-title" data-i18n="hero.title">Maîtrisez les <span>langues.</span><br>Rayonnez par le <span>design.</span></h1>
-        <p class="hero-subtitle" data-i18n="hero.subtitle">Expert certifié en enseignement, traduction et préparation aux examens internationaux — et créatif en design graphique, montage vidéo et live streaming. Un seul interlocuteur pour deux expertises complémentaires.</p>
-        <div class="hero-actions">
-          <a href="javascript:void(0)" role="button" class="btn btn-accent btn-lg" onclick="openServiceBookModal(event)" data-i18n="hero.cta1">
-            📅 Prendre rendez-vous
-          </a>
-          <a href="#services" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.6);color:white;" data-i18n="hero.cta2">
-            Voir les services →
-          </a>
-        </div>
-        <div class="hero-stats">
-          <div class="hero-stat-item">
-            <div class="hero-stat-num">10+</div>
-            <div class="hero-stat-label" data-i18n="hero.stat1">Ans d'enseignement</div>
-          </div>
-          <div class="hero-stat-divider" aria-hidden="true"></div>
-          <div class="hero-stat-item">
-            <div class="hero-stat-num">5+</div>
-            <div class="hero-stat-label" data-i18n="hero.stat2">Ans de traduction</div>
-          </div>
-          <div class="hero-stat-divider" aria-hidden="true"></div>
-          <div class="hero-stat-item">
-            <div class="hero-stat-num">8+</div>
-            <div class="hero-stat-label" data-i18n="hero.stat3">Ans en audiovisuel</div>
-          </div>
-        </div>
-      </div>
       <div class="hero-visual">
         <div class="hero-logo-float-wrap">
           <span
@@ -276,11 +214,83 @@ body.has-fixed-header #hero{padding-top:var(--site-header-height,7.5rem);min-hei
           </div>
         </div>
       </div>
+      <div class="hero-copy">
+        <div class="hero-eyebrow i18n-bilingual">
+          <span class="i18n-fr">Expert Langues & Créativité Visuelle</span>
+          <span class="i18n-en" hidden>Language &amp; Visual Creativity Expert</span>
+        </div>
+        <h1 class="hero-title i18n-bilingual">
+          <span class="i18n-fr">Maîtrisez les <span>langues.</span><br>Rayonnez par le <span>design.</span></span>
+          <span class="i18n-en" hidden>Master <span>Languages.</span><br>Shine Through <span>Design.</span></span>
+        </h1>
+        <p class="hero-subtitle i18n-bilingual">
+          <span class="i18n-fr">Expert certifié en enseignement, traduction et préparation aux examens internationaux — et créatif en design graphique, montage vidéo et live streaming. Un seul interlocuteur pour deux expertises complémentaires.</span>
+          <span class="i18n-en" hidden>Certified expert in language teaching, translation, and international exam preparation — plus graphic design, video editing, and live streaming. One professional, two complementary areas of expertise.</span>
+        </p>
+        <div class="hero-actions">
+          <a href="javascript:void(0)" role="button" class="btn btn-accent btn-lg" onclick="openServiceBookModal(event)" data-i18n="hero.cta1">
+            📅 Prendre rendez-vous
+          </a>
+          <a href="#services" class="btn btn-outline btn-lg" style="border-color:rgba(255,255,255,0.6);color:white;" data-i18n="hero.cta2">
+            Voir les services →
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">10+</div>
+            <div class="hero-stat-label" data-i18n="hero.stat1">Ans d'enseignement</div>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">5+</div>
+            <div class="hero-stat-label" data-i18n="hero.stat2">Ans de traduction</div>
+          </div>
+          <div class="hero-stat-divider" aria-hidden="true"></div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">8+</div>
+            <div class="hero-stat-label" data-i18n="hero.stat3">Ans en audiovisuel</div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<script defer src="js/lang-detect.js?v=44334b3d1098"></script>
+<!-- ───── SERVICES TICKER (after hero for faster mobile LCP discovery) ───── -->
+<div id="services-ticker">
+  <div class="ticker-track" id="tickerTrack">
+    <a href="#services-langues" class="ticker-badge ticker-badge--lang ticker-badge-link" data-i18n="ticker.badge.lang">Langues</a>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.tcf">Préparation TCF</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.english">Cours d'Anglais</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.french">Cours de Français</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.ielts">IELTS / TOEFL</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.toeic">TOEIC / Cambridge</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.trad">Traduction FR⇄EN</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.soutien">Soutien Scolaire</span></span>
+    <span class="ticker-item ticker-item--lang"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.online">Cours en Ligne</span></span>
+    <span class="ticker-divider" aria-hidden="true"></span>
+    <a href="design.html" class="ticker-badge ticker-badge--design ticker-badge-link" data-i18n="ticker.badge.design">Design</a>
+    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.design">Design Graphique</span></span>
+    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.montage">Montage Vidéo</span></span>
+    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.logo">Création de Logo</span></span>
+    <span class="ticker-item ticker-item--design"><span class="ticker-dot" aria-hidden="true"></span><span data-i18n="ticker.live">Live Streaming</span></span>
+    <a href="#services-langues" class="ticker-badge ticker-badge--lang ticker-badge-link" aria-hidden="true" tabindex="-1" data-i18n="ticker.badge.lang">Langues</a>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.tcf">Préparation TCF</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.english">Cours d'Anglais</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.french">Cours de Français</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.ielts">IELTS / TOEFL</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.toeic">TOEIC / Cambridge</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.trad">Traduction FR⇄EN</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.soutien">Soutien Scolaire</span></span>
+    <span class="ticker-item ticker-item--lang" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.online">Cours en Ligne</span></span>
+    <span class="ticker-divider" aria-hidden="true"></span>
+    <a href="design.html" class="ticker-badge ticker-badge--design ticker-badge-link" aria-hidden="true" tabindex="-1" data-i18n="ticker.badge.design">Design</a>
+    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.design">Design Graphique</span></span>
+    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.montage">Montage Vidéo</span></span>
+    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.logo">Création de Logo</span></span>
+    <span class="ticker-item ticker-item--design" aria-hidden="true"><span class="ticker-dot"></span><span data-i18n="ticker.live">Live Streaming</span></span>
+  </div>
+</div>
 
 <!-- ───── SERVICES ───── -->
 <section id="services" class="section services-filter-all services-table--no-prices" style="background:var(--off-white);">
