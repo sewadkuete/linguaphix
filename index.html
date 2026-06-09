@@ -2,6 +2,9 @@
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<script>
+(function(){function go(){if(location.hash!=='#add-testimonial')return;var p=(location.pathname||'').replace(/\\/g,'/');if(/\/share-experience\.html$/i.test(p))return;location.replace('share-experience.html'+location.search+location.hash)}go();window.addEventListener('hashchange',go)})();
+</script>
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -483,7 +486,7 @@ body.has-fixed-header #hero{padding-top:var(--site-header-height,7.5rem);min-hei
         Aucun témoignage publié pour le moment. Soyez le premier à partager votre expérience.
       </p>
       <div class="testimonials-cta">
-        <a href="share-experience.html" class="btn btn-primary btn-sm" data-i18n="testi.cta.share">Partagez votre expérience</a>
+        <a href="#add-testimonial" class="btn btn-primary btn-sm" data-i18n="testi.cta.share">Partagez votre expérience</a>
         <a href="https://g.page/r/CZCjrIKywnjHEAI/review" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="testi.cta.google">Laisser un avis Google</a>
       </div>
     </div>

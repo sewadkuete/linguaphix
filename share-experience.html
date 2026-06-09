@@ -9,6 +9,9 @@
 <script data-lx-build-check="1">
 (function(){var M="lx-build",R="lx-build-reload",m=document.querySelector('meta[name="'+M+'"]'),pageBuild=m&&m.getAttribute("content");if(!pageBuild)return;var p=(location.pathname||"").replace(/\\/g,"/"),jsBase=/\/services\//.test(p)?"../js/":"js/";function go(b){var now=Date.now();try{var last=parseInt(sessionStorage.getItem(R)||"0",10);if(last&&now-last<8000)return;sessionStorage.setItem(R,String(now))}catch(e){}var u=new URL(location.href);u.searchParams.set("build",b);u.searchParams.delete("_");location.replace(u.pathname+u.search+u.hash)}fetch(jsBase+"build-version.json?_="+Date.now(),{cache:"no-store",credentials:"same-origin"}).then(function(r){return r.ok?r.json():null}).then(function(d){if(!d||!d.build||d.build===pageBuild)return;var done=function(){go(d.build)};if("caches"in window){caches.keys().then(function(k){return Promise.all(k.map(function(x){return caches.delete(x)}))}).finally(done)}else{done()}}).catch(function(){})})();
 </script>
+<script>
+(function(){var url=new URL(location.href);if(!/\/share-experience\.html$/i.test(url.pathname))return;var root=url.pathname.replace(/\/share-experience\.html$/i,'/');if(!root.endsWith('/'))root+='/';history.replaceState(null,document.title,root+url.search+'#add-testimonial')})();
+</script>
 <script src="js/lang-detect.js?v=d3dcfd74d755"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>LINGUAPHIX | Partagez votre expérience</title>
@@ -21,9 +24,9 @@
 <meta property="og:image:type" content="image/png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://www.linguaphix.com/assets/branding/logo-mark-original.png">
-<meta property="og:url" content="https://www.linguaphix.com/share-experience.html">
+<meta property="og:url" content="https://www.linguaphix.com/#add-testimonial">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://www.linguaphix.com/share-experience.html">
+<link rel="canonical" href="https://www.linguaphix.com/#add-testimonial">
 <link rel="icon" href="assets/branding/logo-mark-original.png" type="image/png">
 <link rel="apple-touch-icon" href="assets/branding/logo-mark-original.png">
 <script src="js/site-config.js?v=d3dcfd74d755"></script>
