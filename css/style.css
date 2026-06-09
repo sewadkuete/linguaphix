@@ -3735,8 +3735,27 @@ body:has(.wa-float) > footer {
 .service-page-hero.section-sm {
   padding-bottom: clamp(0.75rem, 2vw, 1.25rem);
 }
-#book-now.service-page-block.section-sm {
-  padding-top: clamp(0.75rem, 2vw, 1.25rem);
+.service-page-block.section-sm:has(.service-page-collapse) {
+  padding: 0.3rem 0;
+  background: transparent;
+}
+.service-page-block--alt:has(.service-page-collapse) {
+  background: transparent;
+}
+#book-now.service-page-block.section-sm:has(.service-page-collapse) {
+  padding-top: clamp(0.5rem, 1.5vw, 0.75rem);
+}
+#svc-faq.service-page-block.section-sm:has(.service-page-collapse) {
+  padding-bottom: clamp(0.5rem, 1.5vw, 0.75rem);
+}
+.service-page-block:has(.service-page-collapse) .service-page-collapse {
+  margin-bottom: 0.4rem;
+}
+#svc-faq .service-page-collapse {
+  margin-bottom: 0;
+}
+.service-page-block:has(.service-page-collapse[open]) {
+  padding-bottom: 0.55rem;
 }
 .service-page-toc {
   margin-top: 1.25rem;
@@ -3786,6 +3805,111 @@ body:has(.wa-float) > footer {
 .service-page-block--alt {
   background: var(--off-white);
 }
+.service-page-collapse {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.service-page-collapse__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+.service-page-collapse:not([open]) .service-page-collapse__summary {
+  padding: 0.7rem 1.1rem;
+}
+.service-page-collapse:not([open]) .service-section-title {
+  font-size: var(--text-xl);
+}
+.service-page-collapse__summary::-webkit-details-marker { display: none; }
+.service-page-collapse__summary::marker { content: ''; }
+.service-page-collapse__summary:hover { background: var(--off-white); }
+.service-page-collapse__summary .service-section-title {
+  margin: 0;
+  font-size: var(--text-2xl);
+}
+.service-page-collapse__chev {
+  flex-shrink: 0;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--off-white);
+  position: relative;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.service-page-collapse__chev::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-right: 2px solid var(--primary-dark);
+  border-bottom: 2px solid var(--primary-dark);
+  transform: translate(-60%, -70%) rotate(45deg);
+  transition: transform 0.2s ease;
+}
+.service-page-collapse[open] .service-page-collapse__chev::before {
+  transform: translate(-60%, -30%) rotate(-135deg);
+}
+.service-page-collapse__body {
+  padding: 0 1.25rem 1.25rem;
+}
+.service-page-collapse__lead {
+  margin: 0 0 1rem;
+}
+.service-page-collapse .service-booking-header .service-section-title {
+  display: none;
+}
+.service-page-collapse .service-booking-header {
+  margin-bottom: 1rem;
+}
+.service-page-nav-arrows {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 35;
+}
+.service-page-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--primary-dark);
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(6px);
+  opacity: 0.55;
+  transition: opacity 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.service-page-nav-arrow:hover {
+  opacity: 1;
+  background: var(--white);
+  border-color: var(--primary);
+  transform: translateY(-50%) scale(1.05);
+}
+.service-page-nav-arrow--prev { left: clamp(0.25rem, 1.2vw, 0.75rem); }
+.service-page-nav-arrow--next { right: clamp(0.25rem, 1.2vw, 0.75rem); }
 .service-page-block__head {
   margin-bottom: 1.5rem;
   padding-bottom: 1rem;
@@ -4204,6 +4328,21 @@ body:has(.wa-float) > footer {
   .service-packages-grid--3,
   .service-packages-grid--2 {
     grid-template-columns: 1fr;
+  }
+  .service-page-collapse__summary {
+    padding: 0.85rem 1rem;
+  }
+  .service-page-collapse__body {
+    padding: 0 1rem 1rem;
+  }
+  .service-page-nav-arrow {
+    width: 2rem;
+    height: 2rem;
+    opacity: 0.45;
+  }
+  .service-page-nav-arrow svg {
+    width: 18px;
+    height: 18px;
   }
 }
 

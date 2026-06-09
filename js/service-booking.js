@@ -32,6 +32,10 @@
     return meta?.category === 'design' ? 'design' : 'langues';
   }
 
+  function bookingUsesModeField(slug) {
+    return slug !== 'traduction';
+  }
+
   function getBookingPolicyKey(slug, lang) {
     return (
       (typeof getServiceBookingConfig === 'function' &&
@@ -279,7 +283,8 @@
       ? renderModePackageCards(config.coursPackages, lang, slug)
       : renderStandardPackageCards(config.packages || [], lang);
 
-    const modeBlock = `
+    const modeBlock = bookingUsesModeField(slug)
+      ? `
       <fieldset class="booking-fieldset booking-fieldset--mode">
         <legend>${esc(fb(lang, 'book.field.mode', 'Mode', 'Mode'))}</legend>
         <div class="booking-radio-row">
@@ -292,7 +297,8 @@
             <span>${esc(fb(lang, 'book.mode.inperson', 'En présentiel', 'In-Person'))}</span>
           </label>
         </div>
-      </fieldset>`;
+      </fieldset>`
+      : '';
 
     const summaryBlock = `
       <fieldset class="booking-fieldset booking-fieldset--summary">
@@ -486,7 +492,8 @@
   function isBookingFormComplete(v, config) {
     if (!v) return false;
     if (!v.packageId || !v.name || !v.email || !v.phone || !v.startDate || !v.policyOk) return false;
-    if (!v.mode) return false;
+    const slug = document.body.dataset?.serviceSlug;
+    if (bookingUsesModeField(slug) && !v.mode) return false;
     if (config.showLanguage && !v.language) return false;
     if (config.showTrack && !v.track) return false;
     return true;
@@ -928,7 +935,7 @@
             `Email : ${v.email}`,
             `Forfait : ${v.packageName}`,
             ...(trackLabel ? [`Parcours : ${trackLabel}`] : []),
-            `Mode : ${modeLabel}`,
+            ...(v.mode && modeLabel ? [`Mode : ${modeLabel}`] : []),
             ...(langLabel ? [`Langue : ${langLabel}`] : []),
             ...(priceLabel ? [`Tarif : ${priceLabel}`] : []),
             `Date de début souhaitée : ${v.startDate}`,
@@ -941,7 +948,7 @@
             `Email: ${v.email}`,
             `Package: ${v.packageName}`,
             ...(trackLabel ? [`Track: ${trackLabel}`] : []),
-            `Mode: ${modeLabel}`,
+            ...(v.mode && modeLabel ? [`Mode: ${modeLabel}`] : []),
             ...(langLabel ? [`Language: ${langLabel}`] : []),
             ...(priceLabel ? [`Price: ${priceLabel}`] : []),
             `Preferred start date: ${v.startDate}`,
@@ -1019,7 +1026,7 @@
       serviceTitle || slug,
       v.packageName,
       trackLabel,
-      modeLabel,
+      v.mode ? modeLabel : '',
       langLabel,
       priceLabel,
       v.startDate
@@ -1079,7 +1086,9 @@
       { exact: slug === 'cours' && Boolean(v.track) }
     );
     const timestamp = new Date().toISOString();
-    const summary = [v.packageName, trackLabel, modeLabel, langLabel, priceLabel].filter(Boolean).join(' · ');
+    const summary = [v.packageName, trackLabel, v.mode ? modeLabel : '', langLabel, priceLabel]
+      .filter(Boolean)
+      .join(' · ');
 
     if (btn) {
       btn.disabled = true;
@@ -1101,7 +1110,7 @@
             `WhatsApp / Téléphone : ${v.phone}`,
             `Forfait : ${v.packageName}`,
             ...(trackLabel ? [`Parcours : ${trackLabel}`] : []),
-            `Mode : ${modeLabel}`,
+            ...(v.mode && modeLabel ? [`Mode : ${modeLabel}`] : []),
             ...(langLabel ? [`Langue : ${langLabel}`] : []),
             ...(priceLabel ? [`Tarif : ${priceLabel}`] : []),
             `Date de début souhaitée : ${v.startDate}`,
@@ -1114,7 +1123,7 @@
             `WhatsApp / Phone: ${v.phone}`,
             `Package: ${v.packageName}`,
             ...(trackLabel ? [`Track: ${trackLabel}`] : []),
-            `Mode: ${modeLabel}`,
+            ...(v.mode && modeLabel ? [`Mode: ${modeLabel}`] : []),
             ...(langLabel ? [`Language: ${langLabel}`] : []),
             ...(priceLabel ? [`Price: ${priceLabel}`] : []),
             `Preferred start date: ${v.startDate}`,
@@ -1224,6 +1233,7 @@
 
   window.scrollToServiceBooking = function scrollToServiceBooking(e, trigger) {
     if (e) e.preventDefault();
+    if (typeof expandServicePageSection === 'function') expandServicePageSection('book-now');
     const el = document.getElementById('book-now');
     if (!el) return;
     const headerOffset =
