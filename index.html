@@ -480,86 +480,12 @@ body.has-fixed-header #hero{padding-top:var(--site-header-height,7.5rem);min-hei
       </div>
       <div class="testimonials-grid" id="testimonialsGrid" aria-live="polite"></div>
       <p class="testimonials-empty" id="testimonialsEmpty" hidden data-i18n="testi.empty">
-        Aucun témoignage publié pour le moment. Soyez le premier à partager votre expérience ci-dessous.
+        Aucun témoignage publié pour le moment. Soyez le premier à partager votre expérience.
       </p>
-    </div>
-  </div>
-</section>
-
-<!-- ───── ADD TESTIMONIAL ───── -->
-<section id="add-testimonial" class="section-sm">
-  <div class="container">
-    <div class="section-header">
-      <h2 data-i18n="addtesti.title">Partagez votre expérience</h2>
-    </div>
-    <div class="testimonial-form-card">
-      <div class="form-honeypot" aria-hidden="true">
-        <label for="t-website">Website</label>
-        <input type="text" id="t-website" name="website" tabindex="-1" autocomplete="off">
+      <div class="testimonials-cta">
+        <a href="share-experience.html" class="btn btn-primary btn-sm" data-i18n="testi.cta.share">Partagez votre expérience</a>
+        <a href="https://g.page/r/CZCjrIKywnjHEAI/review" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" data-i18n="testi.cta.google">Laisser un avis Google</a>
       </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="t-name" data-i18n="form.name">Nom complet *</label>
-          <input type="text" id="t-name" class="form-control" data-i18n-placeholder="form.ph.name" placeholder="Ex: Jean Dupont">
-        </div>
-        <div class="form-group">
-          <label for="t-role" data-i18n="form.role">Rôle / statut *</label>
-          <input type="text" id="t-role" class="form-control" data-i18n-placeholder="form.ph.role" placeholder="Ex : Candidate TCF, Entrepreneur…">
-        </div>
-      </div>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="t-service" data-i18n="form.service">Service utilisé *</label>
-          <select id="t-service" class="form-control">
-            <option value="" data-i18n="form.select">— Sélectionner —</option>
-            <optgroup data-i18n-label="optgroup.langues" label="Langues">
-              <option value="tcf" data-i18n="opt.tcf">Préparation TCF</option>
-              <option value="ielts" data-i18n="opt.ielts">IELTS / TOEFL</option>
-              <option value="toeic" data-i18n="opt.toeic">TOEIC</option>
-              <option value="cambridge" data-i18n="opt.cambridge">Cambridge</option>
-              <option value="cours" data-i18n="opt.cours">Cours de Français/Anglais</option>
-              <option value="traduction" data-i18n="opt.traduction">Traduction</option>
-              <option value="soutien" data-i18n="opt.soutien">Soutien scolaire</option>
-              <option value="interview" data-i18n="opt.interview">Préparation Interview</option>
-              <option value="formation" data-i18n="opt.formation">Formation en entreprise</option>
-            </optgroup>
-            <optgroup data-i18n-label="optgroup.design" label="Design">
-              <option value="logo" data-i18n="opt.logo">Création de Logo</option>
-              <option value="montage" data-i18n="opt.montage">Montage Vidéo</option>
-              <option value="design" data-i18n="opt.design">Design Graphique</option>
-              <option value="livestream" data-i18n="opt.livestream">Live Streaming</option>
-            </optgroup>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="t-location" data-i18n="form.location">Ville / Pays</label>
-          <input
-            type="text"
-            id="t-location"
-            name="location"
-            class="form-control"
-            list="country-list"
-            autocomplete="off"
-            data-i18n-placeholder="form.ph.location"
-            placeholder="Ex: Lomé, Togo">
-        </div>
-      </div>
-      <datalist id="country-list"></datalist>
-      <p class="form-hint form-hint--location" data-i18n="form.location.hint">Sélectionnez un pays dans la liste ou saisissez librement (ville, pays).</p>
-      <div class="form-group">
-        <label for="t-rating" data-i18n="form.rating">Note *</label>
-        <div id="starRating" style="display:flex;gap:0.5rem;font-size:1.8rem;cursor:pointer;color:#ddd;">
-          <span data-v="1">★</span><span data-v="2">★</span><span data-v="3">★</span><span data-v="4">★</span><span data-v="5">★</span>
-        </div>
-        <input type="hidden" id="t-rating" value="0">
-      </div>
-      <div class="form-group">
-        <label for="t-text" data-i18n="form.message">Votre témoignage *</label>
-        <textarea id="t-text" class="form-control" rows="4" data-i18n-placeholder="form.ph.testimonial" placeholder="Décrivez votre expérience avec LINGUAPHIX..."></textarea>
-      </div>
-      <div id="testi-msg" style="display:none;padding:1rem;border-radius:var(--radius-sm);margin-bottom:1rem;font-size:0.9rem;font-family:var(--font-display);"></div>
-      <div class="form-captcha" id="testimonial-captcha" data-captcha></div>
-      <button type="button" class="btn btn-primary" id="testimonial-submit-btn" onclick="submitTestimonial()" disabled data-i18n="form.submit">Soumettre mon témoignage →</button>
     </div>
   </div>
 </section>
