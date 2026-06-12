@@ -40,6 +40,9 @@ jobs:
           test -f js/supabase-config.json
           node -e "const c=require('./js/supabase-config.json'); if(!c.supabaseUrl||!c.supabaseAnonKey){console.error('Missing Supabase keys in supabase-config.json'); process.exit(1)} if(!c.turnstileSiteKey){console.log('::warning::turnstileSiteKey missing — add repository secret TURNSTILE_SITE_KEY (Settings → Secrets → Actions)')}"
 
+      - name: Normalize SEO tags and sitemap
+        run: node scripts/ensure-seo-tags.mjs && node scripts/generate-sitemap.mjs
+
       - name: Stamp asset cache busters
         run: node scripts/stamp-assets.mjs ${{ github.sha }}
 

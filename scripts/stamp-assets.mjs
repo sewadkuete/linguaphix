@@ -39,7 +39,7 @@ function walkHtmlFiles(dir, list = []) {
     const full = path.join(dir, name);
     const stat = fs.statSync(full);
     if (stat.isDirectory()) {
-      if (name === '.git' || name === 'node_modules') continue;
+      if (name === '.git' || name === 'node_modules' || name === 'redesign') continue;
       walkHtmlFiles(full, list);
     } else if (name.endsWith('.html')) {
       list.push(full);

@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
 
+# Utility / duplicate pages (also carry noindex in HTML)
+Disallow: /site-index.html
+Disallow: /share-experience.html
+
+# Non-page assets
+Disallow: /js/
+Disallow: /css/
+Disallow: /scripts/
+Disallow: /redesign/
+
 Sitemap: https://www.linguaphix.com/sitemap.xml

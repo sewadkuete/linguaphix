@@ -18,11 +18,12 @@ function shell(slug, titleFr, descFr) {
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
 <script src="../js/lang-detect.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>LINGUAPHIX | ${titleFr}</title>
 <meta name="description" content="${descFr}">
-<meta name="robots" content="index, follow">
 <meta property="og:title" content="LINGUAPHIX | ${titleFr}">
 <meta property="og:description" content="${descFr}">
 <meta property="og:image" content="https://www.linguaphix.com/assets/branding/logo-mark-original.png">
