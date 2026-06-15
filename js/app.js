@@ -639,7 +639,7 @@ const i18n = {
     'aria.close': 'Fermer',
     'about.profile.alt': 'Akuété SEWA-DOVI — fondateur LINGUAPHIX',
     'policy.toc.aria': 'Sommaire des politiques',
-    'page.title.home': 'LINGUAPHIX | Langues · Design · Traduction',
+    'page.title.home': 'Cours en ligne, TCF, IELTS, traduction | Lomé — LINGUAPHIX',
     'page.title.about': 'LINGUAPHIX | À propos — Akuété SEWA-DOVI',
     'page.title.design': 'LINGUAPHIX | Design — Créatif & Audiovisuel',
     'page.title.pricing': 'LINGUAPHIX | Tarifs — Langues & Design',
@@ -648,7 +648,7 @@ const i18n = {
     'page.title.policy': 'LINGUAPHIX | Politique de confidentialité',
     'page.title.sitemap': 'LINGUAPHIX | Plan du site',
     'page.title.shareExperience': 'LINGUAPHIX | Partagez votre expérience',
-    'page.desc.home': 'LINGUAPHIX - Expert en langues (TCF, IELTS, TOEFL, TOEIC, Cambridge), traduction FR-EN, cours personnalisés, design graphique, montage vidéo et live streaming. Fondé par Akuété SEWA-DOVI, examinateur TCF à l\'IFT.',
+    'page.desc.home': 'Cours de français et d\'anglais en ligne, préparation au TCF, IELTS, TOEFL et traduction FR-EN à Lomé. Examinateur TCF certifié — LINGUAPHIX.',
     'page.desc.about': 'Découvrez Akuété SEWA-DOVI — examinateur TCF, enseignant ESL/FLE, traducteur FR⇄EN et créatif audiovisuel. Plus de 10 ans d\'expérience au service de LINGUAPHIX.',
     'page.desc.design': 'Services design LINGUAPHIX — logo, montage vidéo, design graphique, live streaming et conseil matériel pour particuliers et entreprises.',
     'page.desc.pricing': 'Tarifs LINGUAPHIX — cours, examens, traduction, formation en entreprise et services design pour particuliers et entreprises.',
@@ -1179,7 +1179,7 @@ const i18n = {
     'aria.close': 'Close',
     'about.profile.alt': 'Akuété SEWA-DOVI — founder of LINGUAPHIX',
     'policy.toc.aria': 'Policy table of contents',
-    'page.title.home': 'LINGUAPHIX | Languages · Design · Translation',
+    'page.title.home': 'Online courses, TCF, IELTS, translation | Lomé — LINGUAPHIX',
     'page.title.about': 'LINGUAPHIX | About — Akuété SEWA-DOVI',
     'page.title.design': 'LINGUAPHIX | Design — Creative & Audiovisual',
     'page.title.pricing': 'LINGUAPHIX | Pricing — Languages & Design',
@@ -1188,7 +1188,7 @@ const i18n = {
     'page.title.policy': 'LINGUAPHIX | Privacy policy',
     'page.title.sitemap': 'LINGUAPHIX | Sitemap',
     'page.title.shareExperience': 'LINGUAPHIX | Share your experience',
-    'page.desc.home': 'LINGUAPHIX — Language expert (TCF, IELTS, TOEFL, TOEIC, Cambridge), FR-EN translation, personalized courses, graphic design, video editing, and live streaming. Founded by Akuété SEWA-DOVI, certified TCF examiner at IFT.',
+    'page.desc.home': 'Online French and English courses, TCF, IELTS, TOEFL preparation, and FR-EN translation in Lomé. Certified TCF examiner — LINGUAPHIX.',
     'page.desc.about': 'Meet Akuété SEWA-DOVI — TCF examiner, ESL/FLE teacher, FR⇄EN translator, and audiovisual creative. Over 10 years of experience behind LINGUAPHIX.',
     'page.desc.design': 'LINGUAPHIX design services — logo, video editing, graphic design, live streaming, and AV equipment consulting for individuals and businesses.',
     'page.desc.pricing': 'LINGUAPHIX pricing — courses, exams, translation, corporate training, and design services for individuals and businesses.',
@@ -1304,6 +1304,10 @@ function applyLang(lang) {
   });
   syncAccessibilityCopy(lang);
   applyPageTitle(lang);
+  if (typeof applySiteSeo === 'function') applySiteSeo(lang);
+  if (typeof enhanceHomeJsonLd === 'function' && document.body.dataset.i18nTitle === 'page.title.home') {
+    enhanceHomeJsonLd(lang);
+  }
   if (typeof applySelectI18n === 'function') applySelectI18n(lang, i18n);
   if (typeof applyHomeServicePrices === 'function') applyHomeServicePrices(lang);
   if (typeof applyGeoPrices === 'function') applyGeoPrices(lang, i18n);

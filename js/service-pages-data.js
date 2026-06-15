@@ -14,8 +14,9 @@ window.SERVICE_PAGES = {
     fr: {
       badge: 'Examen officiel',
       title: 'Préparation au TCF',
+      seoTitle: 'Préparation au TCF en ligne | Lomé — LINGUAPHIX',
       intro: 'Préparation intensive au Test de Connaissance du Français avec un examinateur certifié. Compréhension orale et écrite, expression écrite et orale — en ligne ou en présentiel.',
-      metaDescription: 'Préparation TCF à Lomé : examinateur certifié, simulations, stratégies CO CE EE EO. Cours en ligne et présentiel LINGUAPHIX.',
+      metaDescription: 'Préparation au TCF en ligne et à Lomé avec examinateur certifié. Cours TCF, simulations CO CE EE EO. Réservez LINGUAPHIX.',
       packages: [
         {
           name: 'Session diagnostic',
@@ -65,8 +66,9 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'Official exam',
       title: 'TCF Preparation',
+      seoTitle: 'TCF preparation online | Lomé — LINGUAPHIX',
       intro: 'Intensive Test de Connaissance du Français preparation with a certified examiner. Listening, reading, written and oral expression — online or in person.',
-      metaDescription: 'TCF preparation in Lomé: certified examiner, mock exams, CO CE EE EO strategies. Online and in-person LINGUAPHIX coaching.',
+      metaDescription: 'TCF preparation online and in Lomé with a certified examiner. TCF coaching, CO CE EE EO mock exams. Book LINGUAPHIX.',
       packages: [
         {
           name: 'Diagnostic session',
@@ -122,8 +124,9 @@ window.SERVICE_PAGES = {
     fr: {
       badge: 'Tests internationaux',
       title: 'IELTS / TOEFL / Cambridge',
+      seoTitle: 'Préparation IELTS & TOEFL en ligne | Lomé — LINGUAPHIX',
       intro: 'Préparation complète aux tests d\'anglais internationaux. Academic et General Training, stratégies par bande score et coaching oral personnalisé.',
-      metaDescription: 'Préparation IELTS, TOEFL et Cambridge : coaching score cible, simulations, en ligne et présentiel. LINGUAPHIX Lomé.',
+      metaDescription: 'Préparation IELTS, TOEFL et Cambridge en ligne et à Lomé. Coaching score cible, simulations, Speaking & Writing. LINGUAPHIX.',
       packages: [
         {
           name: 'Session stratégie',
@@ -174,8 +177,9 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'International tests',
       title: 'IELTS / TOEFL / Cambridge',
+      seoTitle: 'IELTS & TOEFL preparation online | Lomé — LINGUAPHIX',
       intro: 'Complete preparation for international English exams. Academic and General Training, band-score strategies, and personalized speaking coaching.',
-      metaDescription: 'IELTS, TOEFL and Cambridge prep: target-score coaching, mock tests, online and in person. LINGUAPHIX Lomé.',
+      metaDescription: 'IELTS, TOEFL and Cambridge preparation online and in Lomé. Target-score coaching, mock tests, Speaking & Writing. LINGUAPHIX.',
       packages: [
         {
           name: 'Strategy session',
@@ -232,8 +236,9 @@ window.SERVICE_PAGES = {
     fr: {
       badge: 'Anglais professionnel',
       title: 'Préparation TOEIC',
+      seoTitle: 'Préparation TOEIC en ligne | Lomé — LINGUAPHIX',
       intro: 'Préparation ciblée TOEIC Listening & Reading et Speaking & Writing. Stratégies, grilles de score et simulations pour maximiser votre résultat professionnel.',
-      metaDescription: 'Cours TOEIC Lomé : L&R et S&W, simulations, stratégies entreprise. En ligne et présentiel LINGUAPHIX.',
+      metaDescription: 'Préparation TOEIC en ligne et à Lomé : L&R et S&W, simulations, stratégies entreprise. LINGUAPHIX.',
       packages: [
         {
           name: 'Diagnostic TOEIC',
@@ -283,8 +288,9 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'Professional English',
       title: 'TOEIC Preparation',
+      seoTitle: 'TOEIC preparation online | Lomé — LINGUAPHIX',
       intro: 'Focused TOEIC Listening & Reading and Speaking & Writing preparation. Strategies, score grids, and mock tests to maximize your professional result.',
-      metaDescription: 'TOEIC classes in Lomé: L&R and S&W, mock exams, corporate strategies. Online and in person at LINGUAPHIX.',
+      metaDescription: 'TOEIC preparation online and in Lomé: L&R and S&W, mock exams, corporate strategies. LINGUAPHIX.',
       packages: [
         {
           name: 'TOEIC diagnostic',
@@ -340,8 +346,9 @@ window.SERVICE_PAGES = {
     fr: {
       badge: 'Cours sur mesure',
       title: 'Cours de Français / Anglais',
+      seoTitle: 'Cours de français et d\'anglais en ligne | Lomé — LINGUAPHIX',
       intro: 'Cours personnalisés du niveau A1 au C2, en ligne ou en présentiel. Objectifs professionnels, académiques ou quotidiens avec progression suivie.',
-      metaDescription: 'Cours de français et anglais à Lomé : A1–C2, en ligne ou présentiel, horaires flexibles. LINGUAPHIX.',
+      metaDescription: 'Cours de français et cours d\'anglais en ligne et à Lomé : A1–C2, horaires flexibles, en ligne ou présentiel. LINGUAPHIX.',
       packages: [
         {
           name: 'Starter',
@@ -396,8 +403,9 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'Tailored lessons',
       title: 'French / English Courses',
+      seoTitle: 'French & English courses online | Lomé — LINGUAPHIX',
       intro: 'Personalized lessons from A1 to C2, online or in person. Professional, academic, or everyday goals with tracked progress.',
-      metaDescription: 'French and English lessons in Lomé: A1–C2, online or in person, flexible hours. LINGUAPHIX.',
+      metaDescription: 'French and English courses online and in Lomé: A1–C2, flexible hours, online or in person. LINGUAPHIX.',
       packages: [
         {
           name: 'Starter',
@@ -458,8 +466,9 @@ window.SERVICE_PAGES = {
     fr: {
       badge: 'Carrière & mobilité',
       title: 'Préparation aux interviews en anglais',
+      seoTitle: 'Préparation entretien en anglais | Lomé — LINGUAPHIX',
       intro: 'Coaching pour entretiens d\'embauche, visa, admission universitaire ou promotion. Fluidité, vocabulaire métier et confiance à l\'oral.',
-      metaDescription: 'Coaching entretien en anglais : embauche, visa, université. Simulations et corrections LINGUAPHIX.',
+      metaDescription: 'Préparation entretien en anglais : embauche, visa, université. Simulations et coaching oral LINGUAPHIX Lomé.',
       packages: [
         {
           name: 'Session découverte',
@@ -510,8 +519,9 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'Career & mobility',
       title: 'English Interview Preparation',
+      seoTitle: 'English interview preparation | Lomé — LINGUAPHIX',
       intro: 'Coaching for job interviews, visas, university admission, or promotion. Fluency, industry vocabulary, and speaking confidence.',
-      metaDescription: 'English interview coaching: hiring, visa, university. Mock interviews and feedback at LINGUAPHIX.',
+      metaDescription: 'English interview preparation: hiring, visa, university. Mock interviews and coaching at LINGUAPHIX Lomé.',
       packages: [
         {
           name: 'Discovery session',
@@ -568,8 +578,9 @@ window.SERVICE_PAGES = {
     fr: {
       badge: 'Scolaire',
       title: 'Soutien scolaire FR / EN',
+      seoTitle: 'Soutien scolaire français anglais | Lomé — LINGUAPHIX',
       intro: 'Accompagnement collège et lycée en français et en anglais : remise à niveau, méthodologie, préparation aux contrôles et examens nationaux.',
-      metaDescription: 'Soutien scolaire français et anglais Lomé : collège, lycée, devoirs, examens. Cours en ligne et présentiel.',
+      metaDescription: 'Soutien scolaire français et anglais à Lomé : collège, lycée, devoirs, examens. Cours en ligne et présentiel LINGUAPHIX.',
       packages: [
         {
           name: 'Heure ciblée',
@@ -620,8 +631,9 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'School support',
       title: 'French / English Tutoring',
+      seoTitle: 'French & English tutoring | Lomé — LINGUAPHIX',
       intro: 'Middle and high school support in French and English: catch-up, study skills, and prep for tests and national exams.',
-      metaDescription: 'French and English tutoring in Lomé: middle school, high school, homework, exams. Online and in person.',
+      metaDescription: 'French and English tutoring in Lomé: middle school, high school, homework, exams. Online and in person LINGUAPHIX.',
       packages: [
         {
           name: 'Focused hour',
@@ -679,29 +691,38 @@ window.SERVICE_PAGES = {
       particuliers: {
         fr: {
           title: 'Traduction professionnelle (particuliers)',
-          intro: 'Traduction fidèle pour vos documents personnels : actes, visas, diplômes, casiers et courriers officiels. Tarifs à la page ou au mot selon le volume.'
+          seoTitle: 'Traduction particuliers FR-EN | Lomé — LINGUAPHIX',
+          intro: 'Traduction fidèle pour vos documents personnels : actes, visas, diplômes, casiers et courriers officiels. Tarifs à la page ou au mot selon le volume.',
+          metaDescription: 'Traduction professionnelle pour particuliers : actes, visas, diplômes FR-EN à Lomé. LINGUAPHIX.'
         },
         en: {
           title: 'Professional translation (individuals)',
-          intro: 'Accurate translation for personal documents: certificates, visas, diplomas, records, and official letters. Per-page or per-word rates depending on volume.'
+          seoTitle: 'Individual FR-EN translation | Lomé — LINGUAPHIX',
+          intro: 'Accurate translation for personal documents: certificates, visas, diplomas, records, and official letters. Per-page or per-word rates depending on volume.',
+          metaDescription: 'Professional translation for individuals: certificates, visas, diplomas FR-EN in Lomé. LINGUAPHIX.'
         }
       },
       entreprises: {
         fr: {
           title: 'Traduction professionnelle (entreprises)',
-          intro: 'Traduction pour équipes et organisations : documents professionnels, contrats, rapports et dossiers réglementés. Facturation entreprise et devis sur mesure.'
+          seoTitle: 'Traduction entreprise FR-EN | Lomé — LINGUAPHIX',
+          intro: 'Traduction pour équipes et organisations : documents professionnels, contrats, rapports et dossiers réglementés. Facturation entreprise et devis sur mesure.',
+          metaDescription: 'Traduction professionnelle entreprise : contrats, rapports, documents officiels FR-EN à Lomé. LINGUAPHIX.'
         },
         en: {
           title: 'Professional translation (businesses)',
-          intro: 'Translation for teams and organizations: professional documents, contracts, reports, and regulated dossiers. Corporate billing and tailored quotes.'
+          seoTitle: 'Business FR-EN translation | Lomé — LINGUAPHIX',
+          intro: 'Translation for teams and organizations: professional documents, contracts, reports, and regulated dossiers. Corporate billing and tailored quotes.',
+          metaDescription: 'Professional business translation: contracts, reports, official documents FR-EN in Lomé. LINGUAPHIX.'
         }
       }
     },
     fr: {
       badge: 'Certifié FR⇄EN',
       title: 'Traduction professionnelle',
+      seoTitle: 'Traduction français anglais | Lomé — LINGUAPHIX',
       intro: 'Traduction fidèle et soignée pour particuliers et entreprises : documents officiels, juridiques, académiques, marketing et contenus web.',
-      metaDescription: 'Traduction professionnelle français anglais : visas, contrats, diplômes. Délais standard et express LINGUAPHIX.',
+      metaDescription: 'Traduction professionnelle français anglais à Lomé : visas, contrats, diplômes, documents officiels. LINGUAPHIX.',
       packages: [
         {
           name: 'Document simple',
@@ -783,8 +804,9 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'Certified FR⇄EN',
       title: 'Professional Translation',
+      seoTitle: 'French English translation | Lomé — LINGUAPHIX',
       intro: 'Accurate, polished translation for individuals and businesses: official, legal, academic, marketing, and web content.',
-      metaDescription: 'Professional French–English translation: visas, contracts, diplomas. Standard and express turnaround at LINGUAPHIX.',
+      metaDescription: 'Professional French–English translation in Lomé: visas, contracts, diplomas, official documents. LINGUAPHIX.',
       packages: [
         {
           name: 'Simple document',
@@ -872,6 +894,7 @@ window.SERVICE_PAGES = {
     fr: {
       badge: 'Entreprises',
       title: 'Formation linguistique en entreprise',
+      seoTitle: 'Formation linguistique entreprise | Lomé — LINGUAPHIX',
       intro: 'Programmes sur mesure en français ou en anglais pour équipes, managers et directions. Présentiel, hybride ou 100 % en ligne avec indicateurs de progression.',
       metaDescription: 'Formation anglais et français en entreprise au Togo : programmes sur mesure, présentiel et en ligne. Devis LINGUAPHIX.',
       packages: [
@@ -925,6 +948,7 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'Corporate',
       title: 'Corporate Language Training',
+      seoTitle: 'Corporate language training | Lomé — LINGUAPHIX',
       intro: 'Custom French and English programs for teams, managers, and leadership. In person, hybrid, or fully online with progress metrics.',
       metaDescription: 'Corporate English and French training in Togo: tailored programs, in person and online. Quote from LINGUAPHIX.',
       packages: [
@@ -984,6 +1008,7 @@ window.SERVICE_PAGES = {
     fr: {
       badge: 'Identité visuelle',
       title: 'Création & animation de logo',
+      seoTitle: 'Création de logo | Lomé — LINGUAPHIX',
       intro: 'Logos originaux, mémorables et adaptés à tous les supports. Versions statique et animée, fichiers vectoriels et charte de base.',
       metaDescription: 'Création de logo et animation motion à Lomé : fichiers HD, révisions incluses. LINGUAPHIX design.',
       packages: [
@@ -1039,6 +1064,7 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'Visual identity',
       title: 'Logo Design & Animation',
+      seoTitle: 'Logo design | Lomé — LINGUAPHIX',
       intro: 'Original, memorable logos for every channel. Static and animated versions, vector files, and a basic brand guide.',
       metaDescription: 'Logo design and motion animation in Lomé: HD files, revisions included. LINGUAPHIX creative studio.',
       packages: [
@@ -1100,6 +1126,7 @@ window.SERVICE_PAGES = {
     fr: {
       badge: 'Post-production',
       title: 'Montage vidéo professionnel',
+      seoTitle: 'Montage vidéo professionnel | Lomé — LINGUAPHIX',
       intro: 'Montage dynamique pour clips, interviews, publicités, vlogs, formations et événements. Tarification à l\'heure — narration claire, habillage et export HD/4K.',
       metaDescription: 'Montage vidéo professionnel Lomé : tarif à l\'heure, clips, pubs, événements, HD/4K. LINGUAPHIX.',
       packages: [
@@ -1155,6 +1182,7 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'Post-production',
       title: 'Professional Video Editing',
+      seoTitle: 'Professional video editing | Lomé — LINGUAPHIX',
       intro: 'Dynamic editing for clips, interviews, ads, vlogs, training, and events. Hourly rates — clear storytelling, graphics, and HD/4K export.',
       metaDescription: 'Professional video editing in Lomé: hourly rates, clips, ads, events, HD/4K. LINGUAPHIX.',
       packages: [
@@ -1216,6 +1244,7 @@ window.SERVICE_PAGES = {
     fr: {
       badge: 'Communication visuelle',
       title: 'Design graphique',
+      seoTitle: 'Design graphique | Lomé — LINGUAPHIX',
       intro: 'Visuels percutants pour réseaux sociaux, affiches, flyers, cartes de visite et bannières web. Cohérence avec votre identité de marque.',
       metaDescription: 'Design graphique Lomé : réseaux sociaux, affiches, print et web. Par visuel, révisions LINGUAPHIX.',
       packages: [
@@ -1271,6 +1300,7 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'Visual communication',
       title: 'Graphic Design',
+      seoTitle: 'Graphic design | Lomé — LINGUAPHIX',
       intro: 'Impactful visuals for social media, posters, flyers, business cards, and web banners. Aligned with your brand identity.',
       metaDescription: 'Graphic design in Lomé: social, print, web banners. Per-visual pricing with revisions at LINGUAPHIX.',
       packages: [
@@ -1332,6 +1362,7 @@ window.SERVICE_PAGES = {
     fr: {
       badge: 'Production live',
       title: 'Production de diffusion en direct',
+      seoTitle: 'Production live streaming | Lomé — LINGUAPHIX',
       intro: 'Configuration complète pour vos directs : régie, OBS/Streamlabs, son, éclairage et multi-écrans. Webinaires, cultes, conférences et lancements produit.',
       metaDescription: 'Production de diffusion en direct à Lomé : régie, OBS, son et image. Devis événement LINGUAPHIX.',
       packages: [
@@ -1393,6 +1424,7 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'Live production',
       title: 'Live Streaming Production',
+      seoTitle: 'Live streaming production | Lomé — LINGUAPHIX',
       intro: 'Full setup for your live shows: switcher, OBS/Streamlabs, audio, lighting, and multi-screen. Webinars, worship, conferences, and product launches.',
       metaDescription: 'Live streaming production in Lomé: switcher, OBS, audio and video. Event quote from LINGUAPHIX.',
       packages: [
@@ -1460,6 +1492,7 @@ window.SERVICE_PAGES = {
     fr: {
       badge: 'Conseil AV',
       title: 'Conseil & achat de matériel',
+      seoTitle: 'Conseil matériel audiovisuel | Lomé — LINGUAPHIX',
       intro: 'Expertise pour équiper vos studios, salles de conférence et setups streaming : caméras, micros, lumière, encodeurs et accessoires au meilleur rapport qualité-prix.',
       metaDescription: 'Conseil matériel audiovisuel et streaming Lomé : achat caméras, micros, lumière. Devis LINGUAPHIX.',
       packages: [
@@ -1513,6 +1546,7 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'AV consulting',
       title: 'Equipment Consulting & Purchase',
+      seoTitle: 'AV equipment consulting | Lomé — LINGUAPHIX',
       intro: 'Expert guidance to equip studios, meeting rooms, and streaming setups: cameras, mics, lighting, encoders, and accessories at the best value.',
       metaDescription: 'AV and streaming gear consulting in Lomé: cameras, mics, lighting purchase advice. Quote from LINGUAPHIX.',
       packages: [

@@ -331,9 +331,18 @@ function renderServicePage(lang) {
       </div>
     </section>`;
 
-  document.title = `LINGUAPHIX | ${pageTitle}`;
-  const metaDesc = document.querySelector('meta[name="description"]');
-  if (metaDesc) metaDesc.setAttribute('content', data.metaDescription || data.intro);
+  const seoPayload = {
+    ...data,
+    seoTitle: audienceOverride?.seoTitle || data.seoTitle,
+    metaDescription: audienceOverride?.metaDescription || data.metaDescription,
+  };
+  if (typeof applyServicePageSeo === 'function') {
+    applyServicePageSeo(lang, slug, seoPayload, pageTitle, meta.category);
+  } else {
+    document.title = seoPayload.seoTitle || `LINGUAPHIX | ${pageTitle}`;
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', seoPayload.metaDescription || pageIntro);
+  }
 
   if (typeof applyGeoPrices === 'function') applyGeoPrices(lang, typeof i18n !== 'undefined' ? i18n : {});
   if (typeof applySitePhones === 'function') applySitePhones();

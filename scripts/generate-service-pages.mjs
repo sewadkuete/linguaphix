@@ -22,9 +22,9 @@ function shell(slug, titleFr, descFr) {
 <meta name="googlebot" content="index, follow">
 <script src="../js/lang-detect.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>LINGUAPHIX | ${titleFr}</title>
+<title>${titleFr}</title>
 <meta name="description" content="${descFr}">
-<meta property="og:title" content="LINGUAPHIX | ${titleFr}">
+<meta property="og:title" content="${titleFr}">
 <meta property="og:description" content="${descFr}">
 <meta property="og:image" content="https://www.linguaphix.com/assets/branding/logo-mark-original.png">
 <meta property="og:image:alt" content="LINGUAPHIX">
@@ -142,6 +142,7 @@ function shell(slug, titleFr, descFr) {
 <script src="../js/locale-pricing.js"></script>
 <script src="../js/policy-package-scopes.js"></script>
 <script src="../js/policy-content.js"></script>
+<script src="../js/seo.js"></script>
 <script src="../js/app.js"></script>
 <script src="../js/captcha.js"></script>
 <script src="../js/service-pages-data.js"></script>
@@ -165,19 +166,19 @@ function shell(slug, titleFr, descFr) {
 
 // Read meta from data file via dynamic import is complex; use minimal map
 const meta = {
-  tcf: ['Préparation au TCF', 'Préparation TCF examinateur certifié — LINGUAPHIX'],
-  ielts: ['IELTS / TOEFL / Cambridge', 'Préparation IELTS TOEFL Cambridge — LINGUAPHIX'],
-  toeic: ['TOEIC', 'Préparation TOEIC — LINGUAPHIX'],
-  cours: ['Cours de Français / Anglais', 'Cours de langues personnalisés — LINGUAPHIX'],
-  interview: ['Préparation aux interviews', 'Coaching entretiens en anglais — LINGUAPHIX'],
-  soutien: ['Soutien scolaire', 'Soutien scolaire FR/EN — LINGUAPHIX'],
-  traduction: ['Traduction FR⇄EN', 'Traduction professionnelle — LINGUAPHIX'],
-  formation: ['Formation en entreprise', 'Formation linguistique entreprise — LINGUAPHIX'],
-  logo: ['Création de logo', 'Logo et animation — LINGUAPHIX'],
-  montage: ['Montage vidéo', 'Montage vidéo professionnel — LINGUAPHIX'],
-  graphic: ['Design graphique', 'Design graphique — LINGUAPHIX'],
-  livestream: ['Live streaming', 'Production live streaming — LINGUAPHIX'],
-  materiel: ['Conseil matériel AV', 'Conseil matériel audiovisuel — LINGUAPHIX'],
+  tcf: ['Préparation au TCF en ligne | Lomé — LINGUAPHIX', 'Préparation au TCF en ligne et à Lomé avec examinateur certifié. Cours TCF, simulations CO CE EE EO. Réservez LINGUAPHIX.'],
+  ielts: ['Préparation IELTS & TOEFL en ligne | Lomé — LINGUAPHIX', 'Préparation IELTS, TOEFL et Cambridge en ligne et à Lomé. Coaching score cible, simulations. LINGUAPHIX.'],
+  toeic: ['Préparation TOEIC en ligne | Lomé — LINGUAPHIX', 'Préparation TOEIC en ligne et à Lomé : L&R et S&W, simulations, stratégies entreprise. LINGUAPHIX.'],
+  cours: ['Cours de français et d\'anglais en ligne | Lomé — LINGUAPHIX', 'Cours de français et cours d\'anglais en ligne et à Lomé : A1–C2, horaires flexibles. LINGUAPHIX.'],
+  interview: ['Préparation entretien en anglais | Lomé — LINGUAPHIX', 'Préparation entretien en anglais : embauche, visa, université. Simulations LINGUAPHIX Lomé.'],
+  soutien: ['Soutien scolaire français anglais | Lomé — LINGUAPHIX', 'Soutien scolaire français et anglais à Lomé : collège, lycée, devoirs, examens. LINGUAPHIX.'],
+  traduction: ['Traduction français anglais | Lomé — LINGUAPHIX', 'Traduction professionnelle français anglais à Lomé : visas, contrats, diplômes. LINGUAPHIX.'],
+  formation: ['Formation linguistique entreprise | Lomé — LINGUAPHIX', 'Formation anglais et français en entreprise au Togo : programmes sur mesure. Devis LINGUAPHIX.'],
+  logo: ['Création de logo | Lomé — LINGUAPHIX', 'Création de logo et animation motion à Lomé : fichiers HD, révisions incluses. LINGUAPHIX design.'],
+  montage: ['Montage vidéo professionnel | Lomé — LINGUAPHIX', 'Montage vidéo professionnel Lomé : tarif à l\'heure, clips, pubs, événements, HD/4K. LINGUAPHIX.'],
+  graphic: ['Design graphique | Lomé — LINGUAPHIX', 'Design graphique Lomé : réseaux sociaux, affiches, print et web. LINGUAPHIX.'],
+  livestream: ['Production live streaming | Lomé — LINGUAPHIX', 'Production de diffusion en direct à Lomé : régie, OBS, son et image. LINGUAPHIX.'],
+  materiel: ['Conseil matériel audiovisuel | Lomé — LINGUAPHIX', 'Conseil matériel audiovisuel et streaming Lomé : achat caméras, micros, lumière. LINGUAPHIX.'],
 };
 
 fs.mkdirSync(outDir, { recursive: true });
