@@ -18,9 +18,9 @@
         ],
         mcq: [
           { question: "« Des ___ (petit) chats. »", options: ["petits", "petites", "petit", "petite"], correct: 0, explanation: "Chats masc. plur. → petits." },
-          { question: "Comparatif de « bon » ?", options: ["plus bon", "meilleur", "plus bonne", "bonner"], correct: 1, explanation: "Bon → meilleur (irrrégulier)." },
+          { question: "Comparatif de « bon » ?", options: ["plus bon", "meilleur", "plus bonne", "bonner"], correct: 1, explanation: "Bon → meilleur (irrégulier)." },
           { question: "« Une robe ___ (orange). »", options: ["orange", "oranges", "orangée", "orangés"], correct: 0, explanation: "Couleur simple → invariable." },
-          { question: "Superlatif de « mauvais » ?", options: ["le plus mauvais", "le pire", "le plus mauvaise", "pirement"], correct: 1, explanation: "Mauvais → le pire (irrrégulier)." },
+          { question: "Superlatif de « mauvais » ?", options: ["le plus mauvais", "le pire", "le plus mauvaise", "pirement"], correct: 1, explanation: "Mauvais → le pire (irrégulier)." },
           { question: "Accord : « Elles sont ___ (content). »", options: ["content", "contents", "contente", "contentes"], correct: 3, explanation: "Elles → contentes (fém. plur.)." },
           { question: "Position de l'adjectif BAGS ?", options: ["Après le nom", "Avant le nom", "Jamais utilisé", "Après le verbe"], correct: 1, explanation: "Beauty, Age, Goodness, Size → souvent avant le nom." },
           { question: "« C'est moins ___ que hier. » (chaud)", options: ["chaud", "chaude", "chauds", "chaudes"], correct: 0, explanation: "Il fait moins chaud — adjectif invariable avec il fait." },
