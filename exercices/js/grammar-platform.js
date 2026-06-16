@@ -467,17 +467,58 @@
     const root = document.getElementById(opts.mountId || "grammar-app");
     if (!root) return;
 
-    let level = "A1";
-    let catId = "nom";
-    let view = "precis";
-    let exFilter = "all";
+    const uiStateApi = global.GrammarUIState;
+    const initial = uiStateApi ? uiStateApi.read() : null;
+    const persistence = uiStateApi ? uiStateApi.initPersistence({
+      onPopState: function (state) {
+        level = state.level;
+        catId = state.category;
+        view = state.view;
+        exFilter = state.exerciseType || "all";
+        if (state.openPanel != null && state.openPanel !== "") {
+          pendingPointScroll = parseInt(state.openPanel, 10);
+        }
+        exercises = null;
+        render();
+      }
+    }) : null;
+
+    let level = initial ? initial.level : "A1";
+    let catId = initial ? initial.category : "nom";
+    let view = initial ? initial.view : "precis";
+    let exFilter = initial ? (initial.exerciseType || "all") : "all";
     let exercises = null;
     let exState = { answers: {}, revealed: {}, submitted: false, matching: {}, flash: null };
     let precisSearch = "";
-    let pendingPointScroll = null;
+    let pendingPointScroll = initial && initial.openPanel != null && initial.openPanel !== ""
+      ? parseInt(initial.openPanel, 10) : null;
+    if (pendingPointScroll != null && isNaN(pendingPointScroll)) pendingPointScroll = null;
     const precisIndex = global.PrecisSearch
       ? global.PrecisSearch.buildIndex(data, lang, CATEGORIES)
       : null;
+
+    function persistUI(extra) {
+      if (!uiStateApi) return;
+      uiStateApi.write(Object.assign({
+        level: level,
+        category: catId,
+        view: view,
+        exerciseType: exFilter,
+        openPanel: pendingPointScroll != null ? String(pendingPointScroll) : null
+      }, extra || {}));
+    }
+
+    function navigateForward(updates) {
+      if (persistence) persistence.markForwardNavigation();
+      if (updates.level) level = updates.level;
+      if (updates.category) catId = updates.category;
+      if (updates.view) view = updates.view;
+      if (updates.exerciseType) exFilter = updates.exerciseType;
+      exercises = null;
+      persistUI(updates);
+      render();
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
 
     function catLabel(c) { return lang === "fr" ? c.labelFr : c.labelEn; }
     function typeLabel(t) { return t === "all" ? ui.allTypes : ui[t] || t; }
@@ -553,7 +594,7 @@
       }
     }
 
-  function render() {
+  function render(afterRender) {
       const catData = (data[level] || {})[catId] || {};
       const cat = CATEGORIES.find(function (c) { return c.id === catId; });
 
@@ -628,21 +669,34 @@
       root.innerHTML = html;
 
       root.querySelectorAll("[data-level]").forEach(function (btn) {
-        btn.addEventListener("click", function () { level = btn.dataset.level; exercises = null; render(); });
+        btn.addEventListener("click", function () {
+          navigateForward({ level: btn.dataset.level });
+        });
       });
       root.querySelectorAll("[data-cat]").forEach(function (btn) {
-        btn.addEventListener("click", function () { catId = btn.dataset.cat; exercises = null; render(); });
+        btn.addEventListener("click", function () {
+          navigateForward({ category: btn.dataset.cat });
+        });
       });
       root.querySelectorAll("[data-view]").forEach(function (btn) {
-        btn.addEventListener("click", function () { view = btn.dataset.view; render(); });
+        btn.addEventListener("click", function () {
+          navigateForward({ view: btn.dataset.view });
+        });
       });
       root.querySelectorAll("[data-filter]").forEach(function (btn) {
-        btn.addEventListener("click", function () { exFilter = btn.dataset.filter; render(); });
+        btn.addEventListener("click", function () {
+          exFilter = btn.dataset.filter;
+          persistUI({ exerciseType: exFilter });
+          render();
+        });
       });
 
       root.querySelectorAll(".lp-point-chip").forEach(function (btn) {
         btn.addEventListener("click", function () {
-          scrollToPoint(btn.dataset.pointIdx);
+          var idx = btn.dataset.pointIdx;
+          pendingPointScroll = parseInt(idx, 10);
+          persistUI({ openPanel: idx });
+          scrollToPoint(idx);
         });
       });
 
@@ -677,16 +731,18 @@
       root.querySelectorAll(".lp-precis-search-hit").forEach(function (btn) {
         btn.addEventListener("click", function () {
           pendingPointScroll = parseInt(btn.dataset.point, 10);
+          if (persistence) persistence.markForwardNavigation();
           level = btn.dataset.level;
           catId = btn.dataset.cat;
           exercises = null;
+          persistUI({ level: level, category: catId, openPanel: String(pendingPointScroll) });
           render();
+          window.scrollTo({ top: 0, behavior: "auto" });
         });
       });
 
       if (pendingPointScroll != null && view === "precis") {
         var scrollIdx = pendingPointScroll;
-        pendingPointScroll = null;
         requestAnimationFrame(function () {
           scrollToPoint(scrollIdx);
         });
@@ -696,8 +752,14 @@
         const showCorr = root.querySelector(".lp-ex-content").dataset.showCorrections === "1";
         renderExercises(root, exercises, ui, exState, exFilter, showCorr);
       }
+
+      if (persistence && persistence.shouldRestoreScroll) {
+        persistence.restoreScroll(root);
+      }
+      if (typeof afterRender === "function") afterRender();
     }
 
+    persistUI();
     render();
   }
 
