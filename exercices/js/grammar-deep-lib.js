@@ -46,7 +46,9 @@
       "à + le → au\nà + les → aux\nde + le → du\nde + les → des\n\nPas de contraction : à la, de la, à l', de l'",
       ["Au/aux remplace à le/à les.", "Du/des dans le partitif.", "Pas de contraction avec la : à la gare.", "Devant pronoms : j'y vais, j'en veux."],
       ["Je vais au marché.", "Elle parle aux enfants.", "Il mange du riz.", "Nous pensons aux vacances."],
-      ["Erreur : à le marché au lieu de au marché."]
+      ["Erreur : à le marché au lieu de au marché."],
+      "À l'écrit, contractions obligatoires ; à l'oral, de la/à la inchangés.",
+      "Articles de base → A1|nom|Article défini ; locutions sans article → A2|nom"
     ),
     nom_zero: G(
       "L'article zéro apparaît avec professions, matières et expressions générales.",
@@ -69,7 +71,9 @@
       "verbe + nom : les passe-temps, les grands-pères\n\nadverbe + nom : les arrière-grands-parents\n\nnom + nom : les chefs-d'œuvre\n\nadjectif + nom : les bleu marine (invariables)\n\nverbe + adj./nom : les laissez-passer",
       ["Verbe + nom : pluriel sur le nom (des cache-col).", "Adverbe + nom : pluriel sur le nom (des arrière-boutiques).", "Nom + nom : pluriel sur le 2e nom (des chefs-d'œuvre).", "Adjectif + nom invariable : bleu marine, rose bonbon ; sinon accord (grands-pères, sourds-muets)."],
       ["Les grands-parents sont arrivés.", "Les chefs-d'œuvre du musée.", "Des passeports et des laissez-passer.", "Des arrière-petits-enfants."],
-      ["Des chef-d'œuvres → des chefs-d'œuvre (pluriel sur le 2e élément)."]
+      ["Des chef-d'œuvres → des chefs-d'œuvre (pluriel sur le 2e élément)."],
+      "Apprendre en blocs lexicaux ; règles de pluriel surtout à l'écrit.",
+      "Pluriel régulier → A1|nom|Pluriel régulier"
     ),
     nom_negation_de: G(
       "Après négation, indéfinis et partitifs deviennent de (ou d').",
@@ -136,14 +140,18 @@
       "POUVOIR : je peux, tu peux, il/elle peut, nous pouvons, vous pouvez, ils/elles peuvent\n\nVOULOIR : je veux, tu veux, il/elle veut, nous voulons, vous voulez, ils/elles veulent",
       ["Pouvoir + infinitif sans de.", "Vouloir + inf. ou nom.", "Conditionnel : je voudrais (politesse).", "Impératif : veuillez (formule)."],
       ["Je peux vous aider.", "Veux-tu du thé ?", "Nous voulons réussir.", "Ils peuvent partir."],
-      ["Pouvoir ≠ savoir pour compétence."]
+      ["Pouvoir ≠ savoir pour compétence."],
+      "Je voudrais / Pourriez-vous : registre courant poli (conditionnel, pas paradigme complet).",
+      "Devoir (obligation) → A2|verb ; conditionnel complet → B1|verb"
     ),
     verb_savoir_connaitre: G(
       "Savoir = connaissance factuelle ; connaître = familiarité avec personne/lieu.",
       "SAVOIR : je sais, tu sais, il sait, nous savons, vous savez, ils savent\n\nCONNAÎTRE : je connais, tu connais, il connaît, nous connaissons, vous connaissez, ils connaissent",
       ["Savoir + inf. ou subordonnée.", "Connaître + nom/personne.", "PC savoir : j'ai su ; connaître : j'ai connu.", "Je ne sais pas vs Je ne connais pas."],
       ["Je sais nager.", "Tu connais Marie ?", "Nous savons la vérité.", "Ils connaissent bien Paris."],
-      ["Savoir par cœur ≠ connaître par cœur (les deux existent)."]
+      ["Savoir par cœur ≠ connaître par cœur (les deux existent)."],
+      "Distinction fondamentale dès A2 ; savoir + infinitif très productif.",
+      "Pouvoir (capacité) → A2|verb"
     ),
     verb_prendre_metre: G(
       "Prendre et mettre sont irréguliers avec alternances vocaliques.",
@@ -157,21 +165,27 @@
       "avoir (présent) + participe passé\n\nJ'ai mangé, tu as parlé, il a fini, nous avons vu, vous avez écrit, ils ont dormi",
       ["Majorité des verbes avec avoir.", "Action ponctuelle ou résultat présent.", "Marqueurs : hier, déjà, jamais (passé).", "PP régulier -er : -é ; -ir 2e grp : -i ; -re : -u."],
       ["J'ai terminé mon travail.", "Tu as téléphoné hier.", "Nous avons visité Rome.", "Ils ont beaucoup ri."],
-      ["Ne pas confondre avec imparfait pour description."]
+      ["Ne pas confondre avec imparfait pour description."],
+      "Oral : PC très fréquent ; imparfait pour narration descriptive.",
+      "PC avec être → A2|verb|Passé composé (être) ; opposition PC/imparfait → A2|verb"
     ),
     pc_etre: G(
       "Seize verbes de mouvement/changement d'état se conjuguent avec être au PC.",
       "être (présent) + participe passé\n\nVerbes : aller, venir, arriver, partir, entrer, sortir, monter, descendre, retourner, passer, rester, tomber, naître, mourir, devenir, revenir\n\nJe suis allé(e), elle est partie",
       ["Auxiliaire être obligatoire pour ces verbes.", "Accord du PP avec le sujet.", "Retourner/rester/passer + être si changement de lieu.", "Passer un examen / passer du temps → avoir."],
       ["Je suis arrivé(e) à huit heures.", "Elle est sortie du bureau.", "Nous sommes restés une semaine.", "Ils sont nés en Italie."],
-      ["Passer avec avoir = transitif (J'ai passé l'examen)."]
+      ["Passer avec avoir = transitif (J'ai passé l'examen)."],
+      "Liste des verbes être à mémoriser dès A2.",
+      "Accord du p.p. → A2|verb|Accord du participe passé"
     ),
     pc_accord_pp: G(
       "Avec être, le participe passé s'accorde en genre et nombre avec le sujet.",
       "Sujet F sing. : allée, venue, née\nSujet F pl. : allées, parties, nées\nSujet M pl. : allés, venus\n\nElle est allée. Ils sont partis. Marie et Paul sont arrivés.",
       ["Accord avec sujet si auxiliaire être.", "Avec avoir : accord si COD avant verbe.", "Elle s'est lavée (reflexif, accord sujet).", "Elle s'est lavé les mains (COD après, pas accord)."],
       ["Marie est venue.", "Les filles sont parties.", "Ils se sont regardés.", "Elle s'est acheté un livre."],
-      ["COD placement détermine l'accord avec avoir."]
+      ["COD placement détermine l'accord avec avoir."],
+      "À l'oral, accord féminin parfois moins marqué ; à l'écrit, obligatoire.",
+      "Verbes pronominaux → A2|verb|Verbes pronominaux"
     ),
     pc_pp_irreguliers: G(
       "De nombreux participes passés sont irréguliers et doivent être mémorisés.",
@@ -185,21 +199,27 @@
       "PARLER (nous parlons) → je parlais, tu parlais, il parlait, nous parlions, vous parliez, ils parlaient\n\nÊTRE : j'étais, tu étais, il était, nous étions, vous étiez, ils étaient\n\nTerminaisons : -ais, -ais, -ait, -ions, -iez, -aient",
       ["Radical = nous au présent sans -ons.", "Seul être est totalement irrégulier.", "1re personne sing. et pl. : -ais/-ions (pas de confusion).", "Toutes les personnes partagent le même radical."],
       ["Je parlais français enfant.", "Tu étais toujours en retard.", "Il pleuvait hier.", "Nous habitions à Lyon."],
-      ["Radical finiss- → finiss-ions, pas fin-ions."]
+      ["Radical finiss- → finiss-ions, pas fin-ions."],
+      "Formation régulière ; être à mémoriser à part.",
+      "Valeurs de l'imparfait → A2|verb|Imparfait (emplois)"
     ),
     imparfait_usage: G(
       "L'imparfait décrit habitudes, descriptions et actions en cours dans le passé.",
       "Imparfait seul ou avec PC\n\nQuand j'étais petit, je jouais au parc.\nIl faisait beau ; nous marchions.",
       ["Description, habitude, background.", "Action interrompue par PC.", "États, météo, émotions passées.", "Marqueurs : toujours, souvent, chaque jour."],
       ["Il faisait froid ce matin-là.", "Je lisais quand tu as téléphoné.", "Nous allions à la plage chaque été.", "Elle était fatiguée."],
-      ["Ne pas utiliser pour action unique terminée seule."]
+      ["Ne pas utiliser pour action unique terminée seule."],
+      "Narration : imparfait = toile de fond ; PC = incident.",
+      "Opposition PC / imparfait → A2|verb"
     ),
     imparfait_vs_pc: G(
       "PC = action ponctuelle ; imparfait = description, habitude ou durée.",
       "PC : J'ai mangé à midi (fait achevé)\nImparfait : Je mangeais quand il est arrivé (action en cours)\n\nQuand + imparfait, PC pour l'incident",
       ["PC first, imparfait background.", "Deux actions passées : PC si antériorité brève.", "Imparfait pour simultanéité descriptive.", "Autrefois + imparfait pour habitudes."],
       ["Je regardais la télé quand il a sonné.", "Hier, j'ai vu Pierre.", "Autrefois, on voyageait en train.", "Elle a dit qu'elle était malade."],
-      ["Erreur : *Quand j'ai eu 10 ans → Quand j'avais 10 ans."]
+      ["Erreur : *Quand j'ai eu 10 ans → Quand j'avais 10 ans."],
+      "Critère DELF A2 : maîtriser l'opposition dans le récit.",
+      "Passé composé (avoir/être) → A2|verb"
     ),
     futur_proche: G(
       "Le futur proche exprime une action imminente ou une intention proche.",
@@ -241,7 +261,9 @@
       "Je voudrais, pourriez-vous, auriez-vous, j'aimerais, serait-il possible\n\nConditionnel des verbes vouloir, pouvoir, devoir",
       ["Voudrais > veux pour politesse.", "Pourriez-vous... ? formule standard.", "On pourrait + inf. pour suggestion.", "Je dirais que... pour opinion atténuée."],
       ["Je voudrais réserver une table.", "Pourriez-vous m'aider ?", "On pourrait partir plus tôt.", "J'aimerais en savoir plus."],
-      ["Conditionnel ≠ futur dans les questions directes."]
+      ["Conditionnel ≠ futur dans les questions directes."],
+      "A2 : formules fixes seulement ; paradigme complet en B1.",
+      "Conditionnel présent (hypothèses) → B1|verb"
     ),
     subjonctif_present: G(
       "Le subjonctif présent exprime doute, subjectivité, nécessité ou sentiment.",
@@ -283,28 +305,36 @@
       "le (M sing.) | la (F sing.) | l' (devant voyelle) | les (pl.)\n\nJe vois le chat → Je le vois.\nTu aimes Marie → Tu l'aimes.",
       ["Placés avant le verbe conjugué.", "Accord PP avec COD précédent (avoir).", "Elle les a vus (COD les avant).", "Impératif affirmatif : après le verbe."],
       ["Je le connais.", "Tu la regardes.", "Nous les invitons.", "Il m'a vue hier."],
-      ["Lui est COI, pas COD."]
+      ["Lui est COI, pas COD."],
+      "Place devant le verbe ; impératif affirmatif : après (Prends-le !).",
+      "Pronoms COI → A2|pron ; doubles pronoms → B1|pron"
     ),
     pron_coi: G(
       "Les pronoms COI (me, te, lui, nous, vous, leur) remplacent surtout à + personne (lui/leur à la 3e pers.). Me/te/nous/vous peuvent aussi être COD.",
       "me, te, lui, nous, vous, leur\n\nJe parle à Pierre → Je lui parle.\nTu téléphones à tes parents → Tu leur téléphones.",
       ["Répondent surtout à à qui ? (personne).", "Lui/leur uniquement à la 3e personne.", "Pas d'accord PP avec COI.", "Devant verbe : Je leur donne un cadeau."],
       ["Je lui écris une lettre.", "Tu me parles ?", "Nous vous remercions.", "Elle leur a offert des fleurs."],
-      ["Ne pas confondre lui (COI) et il (sujet)."]
+      ["Ne pas confondre lui (COI) et il (sujet)."],
+      "Personnes : lui/leur ; jamais y pour une personne.",
+      "Pronom y → A2|pron"
     ),
     pron_y: G(
       "Y remplace un complément de lieu (à + lieu) ou à + chose (y compris à + infinitif).",
       "J'y vais. (= je vais au cinéma)\nTu y penses. (= tu penses à cela)\n\nY = there / to it",
       ["Lieu : aller, rester, être → y.", "À + chose : penser, réussir, tenir → y.", "Un seul y par phrase.", "Impératif : Vas-y !"],
       ["Tu vas au marché ? Oui, j'y vais.", "Penses-tu à ton examen ? J'y pense.", "Restez-y !", "Nous y sommes allés."],
-      ["Y ne remplace pas une personne (lui/leur)."]
+      ["Y ne remplace pas une personne (lui/leur)."],
+      "Lieu et à + chose abstrait ; pas de personne.",
+      "Pronom en → A2|pron"
     ),
     pron_en: G(
       "En remplace de + nom ou quantité, ou complément introduit par de.",
       "Tu as des pommes ? J'en ai. (= j'ai des pommes)\nCombien de livres ? J'en ai trois.\n\nParler de → J'en parle.",
       ["Quantité partitive : en.", "De + nom : en (sauf personne → dont).", "En + verbe pronominal : s'en aller.", "Un seul en par phrase."],
       ["Tu veux du café ? J'en veux.", "Combien en voulez-vous ?", "Il en a parlé hier.", "Nous nous en sommes allés."],
-      ["En ne remplace pas une personne."]
+      ["En ne remplace pas une personne."],
+      "Accord du p.p. si COD en précède le verbe (J'en ai cueillies).",
+      "Dont (relatif) → B1|pron"
     ),
     pron_order: G(
       "L'ordre des pronoms devant le verbe est fixe en français.",
@@ -416,21 +446,27 @@
       "Plus + adj. + que | Moins + adj. + que | Aussi + adj. + que\n\nPlus grand que | Moins cher que | Aussi intelligent que",
       ["Plus/moins/aussi + adjectif + que.", "Irréguliers : bon → meilleur ; mauvais → pire/plus mauvais.", "Bien → mieux ; mal → pis/plus mal.", "Aussi pour égalité."],
       ["Il est plus grand que moi.", "Cette solution est meilleure.", "Elle court aussi vite que lui.", "C'est moins difficile que prévu."],
-      ["Meilleur (adj.) vs mieux (adv.)."]
+      ["Meilleur (adj.) vs mieux (adv.)."],
+      "Comparaison de deux éléments ; que + complément.",
+      "Superlatif → A2|adj ; irréguliers → A2|adj"
     ),
     adj_superlatif: G(
       "Le superlatif exprime le degré maximal : le plus... / le moins...",
       "Le/la/les plus + adj. | Le/la/les moins + adj.\n\nLe plus grand | La plus belle | Les moins chers",
       ["Article défini + plus/moins + adj.", "Meilleur/pire sans plus.", "Superlatif absolu : très, extrêmement, fou.", "Le plus... de : le plus grand de la classe."],
       ["C'est le film le plus intéressant.", "Elle est la plus talentueuse.", "Ce sont les moins chers.", "Un livre excellent (absolu)."],
-      ["Le plus bon → le meilleur."]
+      ["Le plus bon → le meilleur."],
+      "Adjectif après le nom : le film le plus intéressant.",
+      "Comparatif → A2|adj"
     ),
     adj_irreguliers: G(
       "Certains adjectifs ont des formes irrégulières au comparatif et superlatif.",
       "bon → meilleur → le meilleur\nmauvais → pire/plus mauvais → le pire\nbien → mieux | mal → pis/plus mal\n\nbeau → plus beau / plus belle → le plus beau / la plus belle",
       ["Meilleur remplace plus bon.", "Pire est plus courant que plus mauvais.", "Mieux est adverbe comparatif.", "Avant le nom : ancien (ex-), petit (jeune) ; après : ancien (vieux), petit (taille)."],
       ["C'est un meilleur choix.", "La situation est pire.", "Il chante mieux que moi.", "C'est la pire erreur."],
-      ["Plus bon est rare ; préférer meilleur."]
+      ["Plus bon est rare ; préférer meilleur."],
+      "Meilleur/mieux : distinction adj./adv. essentielle à A2.",
+      "Comparatif régulier → A2|adj"
     ),
     neg_ne_pas: G(
       "La négation standard encadre le verbe avec ne...pas.",
@@ -444,7 +480,9 @@
       "ne...plus (no longer) | ne...jamais (never) | ne...rien (nothing) | ne...personne (nobody)\n\nJe ne fume plus. | Il ne dit jamais la vérité.",
       ["Plus = cessation.", "Jamais = fréquence nulle.", "Rien/personne comme COD.", "Ne...que = restriction (only)."],
       ["Je ne travaille plus ici.", "Elle ne ment jamais.", "Je ne vois rien.", "Il n'a parlé à personne."],
-      ["Ne...que : Je ne mange que des légumes (only)."]
+      ["Ne...que : Je ne mange que des légumes (only)."],
+      "Extension de ne…pas (A1) ; rien/personne en sujet : inversion (Rien ne…).",
+      "Ne…pas de base → A1|adv"
     ),
     neg_que: G(
       "Ne...que exprime la restriction : seulement.",
@@ -479,14 +517,18 @@
       "Antécédent + qui + verbe\n\nL'homme qui travaille ici est mon oncle.",
       ["Qui = sujet relatif.", "Virgules si non essentielle.", "Essentielle : pas de virgules.", "Qui pour personne et chose."],
       ["Le professeur qui enseigne le français.", "La machine qui ne fonctionne pas.", "Les amis qui voyagent.", "C'est moi qui ai gagné."],
-      ["C'est moi qui ai, pas *qui a (accord)."]
+      ["C'est moi qui ai, pas *qui a (accord)."],
+      "Introduction A2 ; dont/où/lequel → B1.",
+      "Proposition relative que (COD) → A2|disc"
     ),
     rel_que: G(
       "Que introduit une relative où le pronom est COD.",
       "Antécédent + que/qu' + sujet + verbe\n\nLe livre que tu as prêté est intéressant.",
       ["Que = COD.", "Qu' devant voyelle.", "Relative essentielle sans virgules.", "Lequel/laquelle si COI avec prép."],
       ["La lettre qu'il a écrite.", "Les photos que j'ai prises.", "Tout ce que je possède.", "La personne que j'ai rencontrée."],
-      ["Accord PP si COD que avant verbe avoir."]
+      ["Accord PP si COD que avant verbe avoir."],
+      "Relative essentielle (sans virgules) à A2.",
+      "Qui (sujet relatif) → A2|disc ; dont → B1|pron"
     ),
     rel_dont: G(
       "Dont relie l'antécédent à un complément introduit par de.",
@@ -703,7 +745,9 @@
       "s'appeler, se lever, se souvenir, se plaindre\n\nPC : Je me suis levé(e). | Impératif : Lève-toi !",
       ["Sens réfléchi, réciproque ou pseudo-pronominal.", "Auxiliaire être au PC sauf cas rares.", "Accord PP avec sujet réfléchi.", "Négation : ne pas se lever."],
       ["Je me lève tôt.", "Ils s'appellent Pierre et Marie.", "Elle se souvient de tout.", "Nous nous sommes rencontrés en 2020."],
-      ["Se laver les mains : pas d'accord sur lavé."]
+      ["Se laver les mains : pas d'accord sur lavé."],
+      "PC avec être + accord : Elle s'est levée.",
+      "Accord du p.p. → A2|verb"
     ),
     emploi_on: G(
       "On remplace souvent nous à l'oral et peut être indéfini ou général.",
@@ -825,8 +869,8 @@
       ["A/an only with singular countables.", "Many + countables; much + uncountables (questions/negatives).", "Some in affirmative; any in questions/negatives.", "Piece of / bit of + uncountable for a unit."],
       ["I bought a new laptop.", "There is some milk in the fridge.", "How many books do you have?", "She gave me an interesting piece of news."],
       ["*informations → information (uncountable).", "*a water → some water / a glass of water."],
-      "",
-      "Some / any → A1|num|Some / any"
+      "A2 extends A1 distinction systematically; meaning shifts (a coffee vs coffee).",
+      "Some / any / no → A2|nom ; zero article → A1|nom"
     ),
     verb_present_simple: G(
       "The present simple expresses habits, facts, routines, and permanent states.",
@@ -875,21 +919,27 @@
       "walk → walked | play → played | stop → stopped\n\nSpelling: live → lived | try → tried | study → studied\n\nDouble consonant: stop → stopped",
       ["Regular: base + -ed.", "Consonant + y → -ied.", "Silent e: add -d only.", "Double final consonant after short vowel: plan → planned."],
       ["I walked to work yesterday.", "She studied all night.", "They stopped the car.", "We played tennis last week."],
-      ["Stoped is wrong; stopped is correct."]
+      ["Stoped is wrong; stopped is correct."],
+      "Primary past tense at A2; finished time markers (yesterday, last week, ago).",
+      "Irregular past simple → A2|verb ; present perfect intro → A2|verb"
     ),
     verb_past_simple_irregular: G(
       "Irregular past simple verbs have unique forms that must be memorized.",
       "go → went | see → saw | take → took | give → gave | make → made\nbuy → bought | think → thought | come → came | get → got\n\nSame form as base: put → put, cut → cut",
       ["No -ed pattern for irregulars.", "Groups: sing/sang/sung, ring/rang/rung.", "Same past and past participle: put, cut, hit.", "Different all three: go/went/gone."],
       ["I went to Paris last year.", "She saw a movie.", "They bought a new car.", "He thought about it."],
-      ["I goed is wrong; I went is correct."]
+      ["I goed is wrong; I went is correct."],
+      "Memorize high-frequency list for A2 narrative.",
+      "Used to (past habits) → A2|verb"
     ),
     verb_present_perfect: G(
       "The present perfect (have/has + past participle) links past to now; past simple marks finished time.",
       "Present perfect: have/has + past participle\nI have seen it. She has gone. They have lived here for years.\n\nPast simple: base + -ed / irregular\nI saw it yesterday. She went last week.\n\nTime markers: ever, never, just, already, yet, for, since (→ present perfect)\nyesterday, last week, in 2010, ago (→ past simple)",
       ["Present perfect: result now, experience, unfinished time.", "Past simple: completed action at a definite past time.", "British English prefers present perfect with just/already/yet.", "Do not use past simple with for/since duration."],
       ["I have finished my homework. (result now)", "I finished it at 5 pm. (exact time)", "Have you ever been to London?", "I visited London in 2019."],
-      ["I have seen him yesterday is wrong (use past simple with yesterday)."]
+      ["I have seen him yesterday is wrong (use past simple with yesterday)."],
+      "Intro at A2; full contrast deepened at B1.",
+      "For/since → A2|verb ; past simple → A2|verb"
     ),
     verb_present_perfect_forsince: G(
       "For measures duration; since marks the starting point with present perfect.",
@@ -945,7 +995,9 @@
       "can + base verb | cannot/can't\n\nI can swim. Can I leave early? It can get cold here.\n\nPast: could",
       ["Ability: I can drive.", "Permission: Can I go?", "Possibility: It can happen.", "Could for past ability or polite request."],
       ["She can speak three languages.", "Can you help me?", "You can't park here.", "Could you open the window?"],
-      ["Can vs may for formal permission."]
+      ["Can vs may for formal permission."],
+      "Could/would for polite requests at A2.",
+      "Must / have to → A2|verb"
     ),
     modal_must: G(
       "Must expresses strong obligation, necessity, or logical certainty.",
@@ -1029,21 +1081,27 @@
       "Short: tall → taller | fast → faster | big → bigger\nLong: more interesting | more beautiful\n\nThan after comparative: bigger than",
       ["One syllable: add -er.", "Two syllables -y: happy → happier.", "Two+ syllables: more + adj.", "Less + adj. for opposite."],
       ["She is taller than her brother.", "This book is more interesting.", "Today is colder than yesterday.", "He runs faster than me."],
-      ["More better is wrong; better alone is comparative."]
+      ["More better is wrong; better alone is comparative."],
+      "As…as / not as…as for equality at A2.",
+      "Irregular comparatives → A2|adj ; superlative → A2|adj"
     ),
     comp_irregular: G(
       "Irregular comparatives and superlatives must be memorized.",
       "good → better → best | bad → worse → worst\nfar → farther/further → farthest/furthest\nlittle → less → least | much/many → more → most",
       ["Good/well → better/best.", "Bad/badly → worse/worst.", "Far → farther or further.", "No -er with irregulars."],
       ["This is better than that.", "She is the best student.", "Things got worse.", "I have less time than you."],
-      ["More good is wrong; better is correct."]
+      ["More good is wrong; better is correct."],
+      "Good/better/best and bad/worse/worst are A2 essentials.",
+      "Regular -er / more → A2|adj"
     ),
     superlative: G(
       "Superlatives use the + -est or the most + adjective.",
       "the + tallest | the most interesting\n\nIn + place: the tallest in the class\nOf + group: the best of all",
       ["The + superlative.", "Short adj. + -est.", "Long adj.: the most + adj.", "In/of for group reference."],
       ["He is the tallest boy in class.", "It was the most exciting game.", "She is the best of all candidates.", "This is the least expensive option."],
-      ["The most tallest is wrong; the tallest is correct."]
+      ["The most tallest is wrong; the tallest is correct."],
+      "Within-a-group comparison; the + superlative.",
+      "Comparative → A2|adj"
     ),
     pron_subject: G(
       "Subject pronouns (I, you, he, she, it, we, they) perform the action of the verb.",
@@ -1057,7 +1115,9 @@
       "me, you, him, her, it, us, them\n\nShe called me. I saw them. Give it to him.",
       ["After verb: tell me.", "After preposition: with her.", "Him/her/it for third person.", "Between phrasal verbs: pick it up."],
       ["Can you help me?", "I know him well.", "She gave us a gift.", "They invited her."],
-      ["Between you and I → between you and me."]
+      ["Between you and I → between you and me."],
+      "Indirect objects: Give me the book / Give the book to me.",
+      "Indefinite compounds → A2|pron ; subject pronouns → A1|pron"
     ),
     pron_possessive: G(
       "Possessive adjectives and pronouns show ownership.",
@@ -1085,7 +1145,9 @@
       "someone, anybody, nothing, everything, everyone, something, none, each, either, neither\n\nSomeone called. I don't know anything.",
       ["Some- in affirmative.", "Any- in questions/negatives.", "No- = negative: nothing, nobody.", "Everyone + singular verb."],
       ["Is anyone home?", "Nothing happened.", "Everyone is welcome.", "Somebody left their bag."],
-      ["Everyone... they (singular they accepted)."]
+      ["Everyone... they (singular they accepted)."],
+      "Something/anything pattern mirrors some/any at A2.",
+      "Some / any → A1|num"
     ),
     pron_singular_they: G(
       "Singular they uses they/them/their to refer to one person of unspecified or non-binary gender.",
@@ -1148,14 +1210,18 @@
       "The man who called is my boss.\nEssential information — no commas",
       ["Restrictive/essential.", "No commas.", "who / which / that (that = defining only).", "Omit pronoun only if object.", "where / when / why in defining clauses."],
       ["Students who study pass.", "The car that I want is sold.", "The food which he cooked was good.", "Something I said upset her."],
-      ["Commas change meaning: defining vs non-defining."]
+      ["Commas change meaning: defining vs non-defining."],
+      "Primary introduction at A2; whose/where/when extended at B1.",
+      "Non-defining relatives → A2|disc"
     ),
     rel_non_defining: G(
       "Non-defining relative clauses add extra, non-essential information; commas required.",
       "My brother, who lives in Paris, is visiting.\nExtra info — commas essential",
       ["Non-restrictive / extra information.", "Commas both sides (or one comma before clause at end).", "who for people; which for things.", "That never used.", "Pronoun cannot be omitted."],
       ["London, which is the capital, is busy.", "Sarah, who I know well, called.", "The sun, which is a star, provides light.", "My car, which I bought last year, broke down."],
-      ["Not: My car, that I bought… → which + commas."]
+      ["Not: My car, that I bought… → which + commas."],
+      "Intro at A2 with commas; never that in non-defining.",
+      "Defining relatives → A2|disc ; whose/where → B1|pron"
     ),
     quant_many_much: G(
       "Many with countables; much with uncountables; a lot of for both in affirmative.",
@@ -1169,7 +1235,9 @@
       "few (almost none) vs a few (some)\nlittle (almost none) vs a little (some)\n\nFew people came. A few people came.",
       ["Few/little = not enough (negative).", "A few/a little = some (positive).", "Few + plural; little + uncount.", "Very few, very little for emphasis."],
       ["I have little time (not enough).", "I have a little time (some).", "Few students failed.", "A few friends visited."],
-      ["Few vs a few completely changes meaning."]
+      ["Few vs a few completely changes meaning."],
+      "A2 quantifier nuance; both/either/neither in précis.",
+      "Many / much → A2|num"
     ),
     quant_some_any: G(
       "Some in affirmative; any in questions, negatives, and conditionals.",
@@ -1246,7 +1314,9 @@
       "You're coming, aren't you?\nShe isn't ready, is she?\n\nMatch auxiliary and subject pronoun",
       ["Same auxiliary as main clause.", "Positive clause → negative tag.", "Negative clause → positive tag.", "Intonation: rising (real question) vs falling (expect agreement)."],
       ["It's cold, isn't it?", "You haven't seen him, have you?", "She can swim, can't she?", "They live here, don't they?"],
-      ["I am late, amn't I? → aren't I? (British)."]
+      ["I am late, amn't I? → aren't I? (British)."],
+      "Basic tags at A2; match auxiliary (do/does/did, can, have).",
+      "Sequencing connectors → A2|disc"
     ),
     phrasal_verbs: G(
       "Phrasal verbs combine verb + particle (up, off, out) with idiomatic meaning.",
@@ -1260,7 +1330,9 @@
       "used to + base: I used to smoke. (past habit)\nbe/get used to + -ing/noun: I'm used to the noise.\n\nDid you use to...? (question)",
       ["Used to = past habit/state.", "Be used to = accustomed to.", "Get used to = become accustomed.", "Used to only past; no present *use to habit."],
       ["I used to live in Rome.", "She is used to working late.", "Did you use to play tennis?", "They got used to the cold."],
-      ["Used to vs would for past repeated actions (would not stative)."]
+      ["Used to vs would for past repeated actions (would not stative)."],
+      "Past habits no longer true; distinct from be used to + -ing.",
+      "Past simple → A2|verb"
     ),
     wish_if_only: G(
       "Wish and if only express regrets or desires about present/past.",

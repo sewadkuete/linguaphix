@@ -165,176 +165,142 @@ window.GRAMMAR_DATA = {
   A2:{
     nom:{
       title:"Nouns & articles",
-      précis:`At A2, learners refine article use with countable/uncountable nouns and learn common noun patterns.
-
-• Countable vs. uncountable (systematic):
+      précis:`• Countable vs. uncountable (systematic distinction):
   Countable: a job, two jobs, many jobs.
-  Uncountable: advice, information, furniture, luggage (no plural form).
-  ⚠️ Some nouns change meaning: a coffee (cup) vs. coffee (drink).
+  Uncountable: advice, information, furniture, luggage.
+  ⚠️ Meaning shift: a coffee (cup) vs. coffee (drink).
 
-• Some / any / no:
-  I need some help. Do you have any questions? There is no milk.
+• Some / any / no (extension of A1 some/any):
+  I need some help. Do you have any questions? There is no milk left.
 
-• The with unique or shared knowledge:
-  the moon, the internet, the best student in class.
+• The — unique or shared knowledge:
+  the moon, the internet, the best student in the class.
 
-• Zero article with meals, languages, sports (general):
+• Zero article — meals, languages, sports (general):
   have breakfast, speak English, play tennis.
 
 • Compound nouns (learn as blocks):
-  bus stop, credit card, swimming pool, homework.
-  ⚠️ Plural usually on the main noun: bus stops, credit cards.
+  bus stop, credit card, swimming pool.
+  Plural on the main noun: bus stops, credit cards.
 
-• Nouns + of + noun: a cup of tea, a piece of advice, a bottle of water.`,
-      points:["Countable vs. uncountable (systematic)","Some / any / no","The (unique & shared knowledge)","Zero article (meals, languages, sports)","Compound nouns & of-phrases"]
+• Quantity with of: a cup of tea, a piece of advice, a bottle of water.
+
+⚠️ a/an/the basics → A1|nom.`,
+      points:["Countable vs. uncountable (systematic)","Some / any / no","The (unique & shared)","Zero article (meals/languages/sports)","Compound nouns & of-phrases"]
     },
     verb:{
       title:"Verbs & tenses",
-      précis:`A2 introduces past tenses, modals, and common irregular verbs.
+      précis:`• Past simple — primary past tense at A2:
+  Regular: verb + -ed (worked, stopped, studied).
+  Irregular: go→went, see→saw, have→had, make→made (memorize common list).
 
-• Past simple — regular: verb + -ed (worked, played).
-  Irregular: go → went, have → had, see → saw, make → made.
-  ⚠️ Spelling: stop → stopped, study → studied, live → lived.
-
-• Past simple vs. present perfect (intro):
-  Past simple: finished time → I saw him yesterday.
-  Present perfect: connection to now → I have seen that film (before, unspecified when).
+• Present perfect (intro) — link to now:
+  have/has + past participle: I have finished. She has lived here for two years.
+  ⚠️ for + duration, since + starting point.
+  vs. past simple: I saw him yesterday (finished time).
 
 • Used to — past habits/states no longer true:
   I used to live in London. She didn't use to like coffee.
 
-• Modals (can, could, must, should, have to, would):
-  Ability: I can swim. / I could swim when I was five.
-  Obligation: You must / have to wear a seatbelt.
-  Advice: You should study more.
-  Polite requests: Could you help me? Would you like some tea?
+• Modals — ability, obligation, advice, polite requests:
+  can/could (ability) | must/have to (obligation) | should (advice)
+  Could you help me? Would you like some tea?
 
-• Present perfect (have/has + past participle):
-  I have finished. She has lived here for two years.
-  ⚠️ for + duration, since + starting point: for three days, since Monday.`,
-      points:["Past simple (regular & irregular)","Present perfect (intro)","Used to (past habits)","Modals (can/must/should/have to)","For / since with present perfect"]
+⚠️ Present simple / continuous / going to → A1|verb.`,
+      points:["Past simple (regular & irregular)","Present perfect (intro & for/since)","Used to (past habits)","Modals (can/must/should/have to)","Polite requests (could/would)"]
     },
     adj:{
       title:"Adjectives & agreement",
-      précis:`• Comparative (comparing two things):
-  Short adjectives: add -er + than → taller than, faster than.
-  Long adjectives: more + adj. + than → more interesting than.
-  Irregular: good → better, bad → worse, far → farther/further.
+      précis:`• Comparative (two items):
+  Short: -er + than (taller, faster) | Long: more + adj. + than
+  Irregular: good→better, bad→worse, far→farther/further
 
-• Superlative (comparing within a group):
-  the + -est / the most + adjective.
-  the tallest, the most beautiful.
-  Irregular: the best, the worst, the farthest.
+• Superlative (within a group):
+  the + -est / the most + adjective: the tallest, the most beautiful
+  Irregular: the best, the worst
 
-• As…as (equality): She is as tall as her brother.
-  Not as…as (inequality): This isn't as expensive as that one.
+• Equality / inequality: as…as | not as…as
 
-• Enough + adjective: big enough, old enough to vote.
-  Too + adjective: too hot, too expensive (excess).
+• Enough / too + adjective: big enough, too expensive
 
-• Order of adjectives (extended):
-  opinion → size → age → shape → colour → origin → material → purpose.
-  Ex.: a lovely old Italian wooden table.
-  ⚠️ Don't stack too many adjectives in speech — one or two is natural.`,
+• Extended adjective order (written > spoken):
+  opinion → size → age → colour → origin → material
+  Ex.: a lovely old Italian table — one or two adjectives in speech.
+
+⚠️ Basic position & possessives → A1|adj.`,
       points:["Comparative (-er / more…than)","Superlative (the -est / the most)","As…as / not as…as","Enough / too + adjective","Adjective order (extended)"]
     },
     pron:{
       title:"Pronouns",
-      précis:`• Object pronouns after verbs and prepositions:
-  I know her. Give it to me. Talk to them.
+      précis:`• Object pronouns & word order (extension A1):
+  I know her. Give it to me. Tell him the truth. / Tell the truth to him.
 
-• Indirect objects (without preposition):
-  Give me the book. / Give the book to me.
-  Tell him the truth. / Tell the truth to him.
+• One / ones — noun substitution:
+  I need a pen. Do you have one? These shoes are nicer than those.
 
-• One / ones (replace a noun):
-  I need a pen. Do you have one? (one = a pen)
-  These shoes are nicer than those.
+• Indefinite compounds (some-/any-/no- + body/thing):
+  something (affirmative) | anything (questions/negatives) | nothing, everything
+  someone, anyone, no one, everyone — same pattern.
 
-• Something, anything, nothing, everything:
-  Affirmative: something. Question/negative: anything.
-  I want something to eat. Do you need anything? There's nothing here.
+• Reflexive emphasis & by + reflexive:
+  I myself don't believe it. She did it herself. I live by myself (= alone).
 
-• Someone, anyone, no one, everyone — same pattern as some/any.
-
-• Reflexive for emphasis: I myself don't believe it. She did it herself.
-  ⚠️ By + reflexive = alone: I live by myself.`,
-      points:["Object pronouns & word order","Indirect objects (give me / give to me)","One / ones","Something / anything / nothing","Reflexive for emphasis & by myself"]
+⚠️ Subject/object/possessive basics → A1|pron.`,
+      points:["Object pronouns & indirect objects","One / ones","Something / anything / nothing","Someone / anyone / no one","Reflexive emphasis & by myself"]
     },
     adv:{
       title:"Adverbs & negation",
-      précis:`• Extended negation:
-  no longer (= not anymore): I no longer smoke.
-  not…any more / not…any longer: She doesn't work here any more.
-  neither…nor: Neither Tom nor Anna came.
-  ⚠️ After neither/nor, invert auxiliary: Neither do I.
+      précis:`• Extended negation (beyond don't/isn't, A1):
+  no longer / not…any more / not…any longer
+  neither…nor + inversion: Neither do I.
 
-• Already, yet, still:
-  already (before expected time): I've already eaten.
-  yet (until now, questions/negatives): Have you finished yet? Not yet.
-  still (continuing): He still lives here.
+• Already, yet, still (with present perfect):
+  I've already eaten. Have you finished yet? He still lives here.
 
-• Adverbs of manner (-ly): quickly, carefully, badly, well.
-  Formation: quick → quickly; irregular: good → well, fast → fast.
+• Adverbs of manner (-ly): quickly, carefully; irregular: well, fast, hard
 
-• Degree adverbs: very, quite, really, too, enough.
-  Ex.: very interesting, quite good, really tired.
+• Degree adverbs: very, quite, really, too, enough
 
-• Adverbs of time (extended):
-  last week, next month, ago (two days ago), recently, lately.`,
-      points:["Extended negation (no longer / neither…nor)","Already / yet / still","Adverbs of manner (-ly)","Degree adverbs (very/quite/really)","Time adverbs (ago / recently)"]
+• Time adverbs for past narrative:
+  last week, two days ago, recently, lately
+
+⚠️ Basic not/don't and frequency adverbs → A1|adv.`,
+      points:["Extended negation (no longer / neither…nor)","Already / yet / still","Adverbs of manner (-ly)","Degree adverbs","Time adverbs (ago / recently)"]
     },
     disc:{
       title:"Discourse & syntax",
-      précis:`• Connectors for narrative (sequencing):
-  first, then, next, after that, finally, in the end.
+      précis:`• Narrative sequencing: first, then, next, after that, finally, in the end.
   Before + -ing (same subject): Before leaving, I locked the door.
 
-• Connectors for logic:
-  because / since (cause), so (result), but / however (contrast).
-  Ex.: I stayed home because I was ill. It was late, so we left.
+• Logical connectors: because/since (cause), so (result), but/however (contrast).
 
-• Wh- questions (full set):
-  who (person), what (thing), where (place), when (time),
-  why (reason), how (manner), how much/many (quantity).
+• Relative clauses — primary introduction at A2:
+  Defining (no commas, essential): who (people), which/that (things).
+  Omit object pronoun: The book (that) I bought.
+  Non-defining (commas, extra info): My brother, who lives in Paris, is a lawyer.
+  ⚠️ Never that in non-defining clauses.
 
-• Relative clauses (who / which / that):
-  Defining clauses (no commas) — essential to identify who/what:
-  who → people: The woman who lives next door is a doctor.
-  which / that → things: The book that I bought is great.
-  ⚠️ that only in defining clauses (never between commas).
-  ⚠️ Omit who/which/that when it is the object: The book (that) I bought.
-  ⚠️ Never omit when it is the subject: The man who called (not *The man called).
+• Question tags: You're tired, aren't you? Positive → negative tag.
 
-  Non-defining clauses (commas) — extra, non-essential information:
-  My brother, who lives in Paris, is a lawyer.
-  The Eiffel Tower, which was built in 1889, is famous.
-  ⚠️ Use who/which only — never that in non-defining clauses.
-
-• Question tags (basic): You're tired, aren't you? It's cold, isn't it?
-  Positive statement → negative tag; negative → positive tag.`,
-      points:["Sequencing connectors (first/then/finally)","Logical connectors (because/so/but)","Wh- questions (full set)","Relative clauses (defining / non-defining)","Question tags (basic)"]
+⚠️ SVO & basic questions → A1|disc. whose/where/when → B1|pron.`,
+      points:["Sequencing connectors","Logical connectors (because/so/but)","Defining relative clauses (who/which/that)","Non-defining relatives (intro)","Question tags (basic)"]
     },
     num:{
       title:"Number & quantifiers",
       précis:`• Ordinal numbers:
-  1st → first, 2nd → second, 3rd → third, 4th → fourth…
-  Formation: most numbers + -th (fifth, sixth, twenty-first).
-  Usage: rankings, dates (the 1st of May), floors (on the 3rd floor).
+  1st→first, 2nd→second, 3rd→third; most + -th; twenty-first (hyphen).
 
-• Quantifiers with countables:
-  a few (= some, positive), few (= almost none, negative tone).
-  many, several, a couple of, a number of.
+• Few / a few & little / a little (connotation):
+  a few friends (some) vs. few friends (almost none, negative tone).
 
-• Quantifiers with uncountables:
-  a little (= some), little (= almost none).
-  much (formal), a bit of, an amount of.
+• Many / much / several / a number of (+ countables/uncountables rules).
 
 • Both / either / neither:
-  both + plural: Both options are good.
-  either / neither + singular: Either answer is fine. Neither child came.
+  both + plural | either/neither + singular verb
 
-• Fractions: one third, a quarter, half, three quarters.`,
+• Fractions: one third, a quarter, half, three quarters.
+
+⚠️ Cardinals & some/any → A1|num.`,
       points:["Ordinal numbers (1st–31st)","Few / a few & little / a little","Many / much / several","Both / either / neither","Common fractions"]
     }
   },

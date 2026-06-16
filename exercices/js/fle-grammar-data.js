@@ -152,145 +152,138 @@ window.GRAMMAR_DATA = {
   A2:{
     nom:{
       title:"Articles contractés & noms composés",
-      précis:`• Contractions obligatoires :
-  à + le = au : Je vais au marché.
-  à + les = aux : Elle parle aux enfants.
-  de + le = du : Le livre du professeur.
-  de + les = des : Les jouets des enfants.
-  ⚠️ Pas de contraction avec le féminin : à la, de la.
+      précis:`• Contractions obligatoires (à/de + le/les) :
+  à + le = au | à + les = aux | de + le = du | de + les = des
+  Ex. : Je vais au marché. Le livre du professeur.
+  ⚠️ Pas de contraction : à la, de la, à l', de l'.
 
-• Absence d'article (locutions figées) :
-  avec plaisir, sans argent, en voiture, à pied, par avion.
-  Règle générale : pas d'article après préposition + nom abstrait ou mode de transport.
+• Absence d'article — locutions figées (extension A1) :
+  en voiture, à pied, par avion, sans argent, avec plaisir.
+  ⚠️ Modes de transport et abstractions après préposition : souvent sans article.
 
-• Noms composés courants :
+• Noms composés lexicaux (apprendre en blocs) :
   une salle de bain, un arrêt de bus, un chef-d'œuvre.
-  → Mémoriser comme blocs lexicaux.`,
-      points:["Article défini contracté au/du","Absence d'article (locutions)","Noms composés courants"]
+  ⚠️ Pluriel selon le type : des chefs-d'œuvre (sur le 2e élément).
+
+⚠️ Articles de base (le/un/du) → voir A1|nom.`,
+      points:["Contractions au/aux/du/des","Locutions sans article","Noms composés courants"]
     },
     verb:{
-      title:"Imparfait, modaux, pronominaux",
-      précis:`• Imparfait : description, état, habitude dans le passé.
-  Formation : radical nous (présent) + -ais/-ais/-ait/-ions/-iez/-aient.
-  Être : j'étais (irrégulier).
-  Ex. : Il faisait beau. Nous habitions à Lyon. Elle lisait tous les soirs.
+      title:"Imparfait, passé composé, modaux",
+      précis:`• Passé composé (introduction A2) :
+  avoir/être (présent) + participe passé.
+  Action achevée, résultat ou événement ponctuel : Hier, j'ai téléphoné.
+  Auxiliaire être : verbes de mouvement (aller, venir, arriver…) + accord du p.p.
+  Ex. : Elle est partie. Ils sont arrivés. J'ai mangé.
 
-• Opposition Passé composé / Imparfait :
-  PC = action ponctuelle, événement → Le téléphone a sonné.
-  Imparfait = arrière-plan, description → Il pleuvait.
+• Imparfait — description, habitude, arrière-plan :
+  Radical nous (présent) + -ais/-ais/-ait/-ions/-iez/-aient. Être : j'étais.
+  Ex. : Il faisait beau. Nous habitions à Lyon.
 
-• Modaux (vouloir / pouvoir / devoir) :
-  Expriment désir, capacité, obligation + infinitif.
-  Conditionnel de politesse (formule figée) : je voudrais, vous pourriez.
+• Opposition PC / imparfait :
+  PC = action ponctuelle → Le téléphone a sonné.
+  Imparfait = toile de fond → Il pleuvait. / Je lisais quand tu as appelé.
+
+• Modaux vouloir / pouvoir / devoir + infinitif :
+  Désir, capacité, obligation : Je veux partir. Tu peux m'aider. Il doit travailler.
+
+• Formules de politesse (conditionnel, pas le paradigme complet) :
+  Je voudrais…, Pourriez-vous… ? (→ conditionnel complet en B1)
 
 • Verbes pronominaux (se + verbe) :
-  Se lever, se coucher, se laver, s'habiller.
-  Au passé composé → auxiliaire être + accord du p.p. avec le sujet.
-  Ex. : Elle s'est levée. Ils se sont habillés.
+  Se lever, s'habiller. PC : être + p.p. accordé : Elle s'est levée.
 
-• Savoir vs. connaître :
-  Savoir + infinitif / fait : Je sais nager. Je sais qu'il vient.
-  Connaître + nom de personne/lieu : Je connais Paris. Je connais Marie.`,
-      points:["Imparfait (formation/valeurs)","Opposition PC / imparfait","Vouloir / pouvoir / devoir","Conditionnel présent (politesse)","Verbes pronominaux","Savoir vs connaître"]
+• Savoir + inf./subordonnée vs. connaître + nom/personne :
+  Je sais nager. / Je connais Marie.`,
+      points:["Passé composé (avoir/être + accord)","Imparfait (formation/valeurs)","Opposition PC / imparfait","Vouloir / pouvoir / devoir","Formules de politesse (voudrais)","Verbes pronominaux","Savoir vs connaître"]
     },
     adj:{
       title:"Comparatif et superlatif",
-      précis:`• Comparatif :
-  Supériorité : plus + adj. + que → Ce film est plus intéressant que l'autre.
-  Infériorité : moins + adj. + que → Elle est moins grande que lui.
-  Égalité : aussi + adj. + que → Il est aussi rapide que son frère.
+      précis:`• Comparatif (comparer deux éléments) :
+  Supériorité : plus + adj. + que | Infériorité : moins + adj. + que | Égalité : aussi + adj. + que
+  Ex. : Ce film est plus intéressant que l'autre.
 
-• Formes irrégulières :
-  bon → meilleur(e)(s) (pas *plus bon).
-  bien (adverbe) → mieux (pas *plus bien).
+• Irréguliers essentiels :
+  bon → meilleur(e)(s) | bien (adv.) → mieux | mauvais → pire / plus mauvais
 
-• Superlatif :
-  le/la/les plus + adj. → C'est le film le plus intéressant.
-  le/la/les moins + adj. → C'est la moins chère.
-  ⚠️ La place de l'adjectif est conservée : le film le plus intéressant (adj. après nom).
-  Superlatif de bon : le meilleur / la meilleure.
+• Superlatif (dans un groupe) :
+  le/la/les plus + adj. | le/la/les moins + adj.
+  Ex. : C'est le film le plus intéressant. / la meilleure solution.
+  ⚠️ Adjectif après le nom : le film le plus intéressant.
 
-• Adjectifs indéfinis :
-  quelques (= some, pl.) / plusieurs (= several) / chaque (= each, toujours sing.) / tout/toute/tous/toutes.`,
-      points:["Comparatif (plus/moins/aussi que)","Superlatif (le plus / le moins)","Irréguliers bon→meilleur / bien→mieux","Adjectifs indéfinis"]
+• Adjectifs indéfinis de quantité :
+  quelques, plusieurs, chaque (+ sing.), tout/toute/tous/toutes.
+
+⚠️ Accord de base des adjectifs → voir A1|adj.`,
+      points:["Comparatif (plus/moins/aussi que)","Superlatif (le plus / le moins)","Irréguliers bon→meilleur / bien→mieux","Adjectifs indéfinis de quantité"]
     },
     pron:{
       title:"Pronoms COD, COI, y, en",
-      précis:`• Pronoms COD (remplacent un complément d'objet direct) :
-  le, la, l', les → place AVANT le verbe conjugué.
-  Ex. : Tu aimes ce film ? → Oui, je l'aime beaucoup.
-  À l'impératif affirmatif → après : Prends-le ! Mange-la !
+      précis:`• Pronoms COD (le, la, l', les) — introduction A2 :
+  Devant le verbe conjugué : Je le vois. Tu l'aimes.
+  Impératif affirmatif : après le verbe — Prends-le !
 
-• Pronoms COI (remplacent à + personne) :
-  lui (sing.), leur (pl.) → place avant le verbe.
-  Ex. : Je téléphone à Marie → Je lui téléphone.
-  ⚠️ Verbes avec de + personne : penser à lui (pas *lui penser).
+• Pronoms COI (lui, leur ; aussi me/te/nous/vous) :
+  Remplacent à + personne : Je téléphone à Marie → Je lui téléphone.
+  ⚠️ Personnes : lui/leur, pas y.
 
-• Pronom y (à + lieu ou chose) :
-  Tu vas à Paris ? → Oui, j'y vais.
-  Ne s'emploie pas pour les personnes : je pense à lui (pas *j'y pense).
+• Pronom y (à + lieu ou à + chose) :
+  Tu vas à Paris ? → Oui, j'y vais. | Tu penses à ton examen ? → J'y pense.
 
-• Pronom en (de + chose/quantité) :
-  Tu veux du café ? → Oui, j'en veux.
-  Tu as des enfants ? → Oui, j'en ai deux.
-  ⚠️ Accord du p.p. avec en si en reprend un COD (sans nombre après) : Des roses ? J'en ai cueillies. / Avec quantité après : J'en ai vu trois (invariable).`,
-      points:["Pronoms COD (le, la, les)","Pronoms COI (lui, leur)","Pronom y","Pronom en","Place des pronoms"]
+• Pronom en (de + chose / quantité) :
+  Tu veux du café ? → J'en veux. | Tu as des enfants ? → J'en ai deux.
+  ⚠️ Accord du p.p. : Des roses ? J'en ai cueillies. / J'en ai cueilli trois (quantité après).
+
+⚠️ Pronoms sujets → A1|pron. Ordre des doubles pronoms → B1|pron.`,
+      points:["Pronoms COD (le, la, les)","Pronoms COI (lui, leur)","Pronom y (lieu/chose)","Pronom en (partitif/quantité)","Place devant le verbe"]
     },
     adv:{
       title:"Négations composées et adverbes",
-      précis:`• Négations composées :
-  ne…plus : action qui a cessé → Je ne fume plus.
-  ne…rien : aucune chose → Il ne mange rien.
-  ne…jamais : aucune fois → Elle ne sort jamais.
-  ne…personne : aucune personne → Je ne vois personne.
-  ⚠️ Rien et personne peuvent être SUJETS : Rien ne change. Personne n'est venu.
+      précis:`• Négations composées (extension de ne…pas, A1) :
+  ne…plus (cessation) | ne…jamais | ne…rien | ne…personne
+  Ex. : Je ne fume plus. Il ne mange rien.
+  ⚠️ Rien/Personne en sujet : Rien ne change. Personne n'est venu.
 
-• Quantité et intensité :
-  très (degré élevé) : Il est très grand.
-  bien (qualitativement satisfaisant) : C'est bien fait.
-  assez (suffisamment) : Elle est assez grande.
-  trop (excès) : Il est trop tard.
+• Adverbes d'intensité et de degré :
+  très, bien, assez, trop (+ adj. ou adv.)
 
-• Adverbes de temps courants :
-  hier, aujourd'hui, demain, la semaine dernière/prochaine,
-  il y a + durée (pour le passé) : Il est parti il y a deux jours.`,
-      points:["Négations composées (plus/rien/jamais/personne)","Adverbes d'intensité (très/bien/assez/trop)","Adverbes de temps"]
+• Adverbes de temps pour le passé :
+  hier, la semaine dernière, il y a + durée : Il est parti il y a deux jours.
+
+⚠️ ne…pas de base → A1|adv.`,
+      points:["Négations ne…plus/rien/jamais/personne","Adverbes d'intensité (très/bien/assez/trop)","Adverbes de temps passé (hier/il y a)"]
     },
     disc:{
       title:"Connecteurs et relatives",
-      précis:`• Connecteurs temporels (pour structurer un récit) :
+      précis:`• Connecteurs de récit :
   d'abord, puis, ensuite, après, enfin, finalement.
-  avant de + infinitif (même sujet) : Avant de partir, j'ai mangé.
-  ⚠️ Sujets différents → avant que + subjonctif (B1).
+  Avant de + infinitif (même sujet) : Avant de partir, j'ai mangé.
 
-• Connecteurs logiques de base :
-  parce que (cause nouvelle) → Pourquoi ? / car (écrit, cause connue).
-  donc, alors (conséquence) / mais, pourtant (opposition).
+• Connecteurs logiques :
+  parce que / car (cause) | donc, alors (conséquence) | mais, pourtant (opposition)
 
-• Interrogation avec pronoms interrogatifs :
-  qui (personne sujet/objet) / que, quoi (chose) / où / quand / comment / pourquoi / combien.
-  3 constructions : intonation / est-ce que + pronom / inversion (soutenu).
+• Interrogation — pronoms interrogatifs :
+  qui, que/quoi, où, quand, comment, pourquoi, combien
+  Est-ce que + pronom (neutre) ; inversion (soutenu, B1+).
 
-• Subordonnée relative (qui / que) :
-  qui = sujet → L'homme qui parle.
-  que = COD → L'homme que je vois.
-  ⚠️ L'accord du p.p. avec que antéposé : La lettre que j'ai écrite.`,
-      points:["Connecteurs temporels","Connecteurs logiques (cause/conséquence/opposition)","Pronoms interrogatifs","Relative (qui/que) et accord p.p."]
+• Subordonnées relatives qui / que (introduction) :
+  qui = sujet : L'homme qui parle. | que = COD : L'homme que je vois.
+  ⚠️ Accord p.p. : La lettre que j'ai écrite.
+
+⚠️ Phrase SVO et ne…pas → A1|disc.`,
+      points:["Connecteurs temporels de récit","Connecteurs logiques (cause/conséquence)","Pronoms interrogatifs","Relatives qui/que et accord p.p."]
     },
     num:{
       title:"Ordinaux et quantité",
       précis:`• Nombres ordinaux :
-  Formation : nombre + -ième. Exception : premier/première.
-  2e → deuxième / 3e → troisième / 4e → quatrième…
-  Usage : classements, dates (le 1er mai), étages (au 3e étage).
+  premier/première (1er/1re), deuxième, troisième… (+ -ième)
+  Usage : le 1er mai, au 3e étage, la première fois.
 
-• Expressions de quantité :
-  assez de, trop de, beaucoup de, peu de, un peu de + nom sans article.
-  Ex. : Il y a trop de bruit. Elle a peu d'amis.
-  ⚠️ De invariable après ces expressions (pas du/de la).
+• Fractions courantes :
+  un tiers, un quart, la moitié (de + nom).
 
-• Fractions courantes : un tiers, un quart, la moitié.`,
-      points:["Nombres ordinaux","Expressions de quantité (assez/trop/peu de)","Fractions courantes"]
+⚠️ Cardinaux 0–100 et beaucoup de/peu de → A1|num.`,
+      points:["Nombres ordinaux (premier, deuxième…)","Fractions (tiers, quart, moitié)"]
     }
   },
   B1:{

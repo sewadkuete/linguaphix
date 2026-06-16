@@ -2,7 +2,7 @@
 
 **Date:** 2026-06-01  
 **Scope:** `exercices/` — FLE + ESL, CEFR A1–C2  
-**Status:** Phase 1 complete · Phase 3–4 in progress (A1 rewritten; A2–C2 pending)
+**Status:** Phase 1 complete · Phase 3–4 in progress (A1 + A2 rewritten; B1–C2 pending)
 
 ---
 
@@ -107,7 +107,7 @@
 | Level | Lang | Category | Missing content |
 |-------|------|----------|-----------------|
 | A1 | FLE | disc | Est-ce que vs inversion — register note present, OK |
-| A2 | FLE | verb | PC vs imparfait contrast needs dedicated deep-lib key |
+| A2 | FLE | verb | PC vs imparfait contrast needs dedicated deep-lib key | ✅ `imparfait_vs_pc` + précis block |
 | B1 | FLE | verb | Voix passive complète — check présis depth |
 | A1 | ESL | pron | Possessive pronouns at A1 — early but acceptable; split to A2? Flagged |
 | All | Both | exercises | Level-specific exercise banks (currently one bank per cat) | ⚠️ Flagged |
@@ -169,12 +169,58 @@
 
 ---
 
+## Batch 2 — A2 FLE + ESL (ready to commit)
+
+### A2 FLE — précis (extension-only rewrite)
+
+| Category | Change summary |
+|----------|----------------|
+| nom | Contractions, locutions sans article, noms composés; cross-ref A1 |
+| verb | PC primary intro, imparfait, PC/imparfait opposition, modaux, politesse (formules), pronominaux, savoir/connaître |
+| adj | Comparatif/superlatif, irréguliers, indéfinis de quantité; cross-ref A1 accord |
+| pron | COD/COI/y/en introduction; cross-ref A1 sujets, B1 ordre doubles |
+| adv | Négations composées (plus/jamais/rien/personne); intensité |
+| disc | Séquence, connecteurs logiques, relatives qui/que (intro), question tags |
+| num | Ordinaux et fractions only; cross-ref A1 cardinaux/partitif |
+
+### A2 ESL — précis (extension-only rewrite)
+
+| Category | Change summary |
+|----------|----------------|
+| nom | Countable/uncountable systematic, some/any/no, the unique, zero article, compounds |
+| verb | Past simple primary, present perfect intro, used to, modals, polite could/would |
+| adj | Comparative/superlative, as…as, enough/too, extended adjective order |
+| pron | Object pronouns, one/ones, indefinite compounds, reflexive emphasis |
+| adv | Extended negation, already/yet/still, manner -ly, degree, time adverbs |
+| disc | Sequencing, logical connectors, defining/non-defining relatives (intro), question tags |
+| num | Ordinals, few/a few, many/much, both/either/neither, fractions |
+
+### A2 — deep-lib 6-field migration (partial)
+
+| Lang | Keys updated |
+|------|--------------|
+| FR | `nom_contractes`, `nom_composes`, `pc_avoir`, `pc_etre`, `pc_accord_pp`, `imparfait_*`, `imparfait_vs_pc`, `verb_pouvoir_vouloir`, `verb_savoir_connaitre`, `conditionnel_politesse`, `verbe_pronominal`, `adj_comparatif/superlatif/irreguliers`, `neg_plus_jamais`, `rel_qui/que`, `pron_cod/coi/y/en` |
+| EN | `nom_countable`, `verb_past_simple_*`, `verb_present_perfect`, `used_to`, `modal_can`, `comp_*`, `superlative`, `pron_object`, `pron_indefinite`, `rel_defining/non_defining`, `quant_few_little`, `question_tags` |
+
+### A2 — enrichment supplements
+
+- FR: `A2|nom`, `A2|verb`, `A2|adj`, `A2|disc` added
+- EN: `A2|nom`, `A2|verb`, `A2|adj`; `A2|pron` updated (indefinite compounds)
+
+### Batch 2 flags (unchanged)
+
+- Exercise banks still shared across levels
+- ~160 deep-lib keys still without register/seeAlso (B1–C2 pass)
+- ESL A2 disc retains full defining/non-defining intro; B1 adds whose/where/when
+
+---
+
 ## Duplication log
 
 | Removed / consolidated | Kept at | Higher level becomes |
 |------------------------|---------|----------------------|
 | A1 num partitif full rule | A1 nom | A1 num → « voir Nom\|Article partitif » |
-| (pending) A2+ ne…pas restatement | A1 adv | A2 → plus/jamais/rien only |
+| A2 ne…pas restatement removed | A1 adv | A2 → plus/jamais/rien/personne only ✅ |
 | (pending) ESL present simple in B1 précis | A1 verb | B1 → perfect vs past focus |
 
 ---
@@ -198,7 +244,7 @@
 6. **Singular they** at A1 ESL — register note needed at C1 not A1.
 7. **Orthographe 1990** — vingt-et-un seul vs vingt et un + nom: applied; confirm against latest Rectifications.
 8. **BANGS adjectives** — A1 mentions avant nom list; add explicit BANGS label at B1?
-9. **PC vs imparfait** — A2 needs clearer primary introduction block.
+9. **PC vs imparfait** — ✅ A2 primary block + `imparfait_vs_pc` deep-lib (Batch 2).
 10. **Deep-lib keys without register/seeAlso** — ~190 keys pending 6-field migration.
 11. **French passé simple** — C1 marked receptive; confirm no productive exercises.
 12. **Commit strategy** — user requested small batches; A2–C2 rewrite spans multiple commits.
@@ -212,19 +258,18 @@
 - A1 FLE adv précis — frequency placement nuanced
 - A1 FLE disc précis — 3 interrogation registers OK
 - A1 ESL verb/adj/adv/disc précis — CEFR-aligned overview
-- A2–C2 all categories — audit pending systematic rewrite
+- A2–C2 all categories — B1–C2 audit pending systematic rewrite
 
 ---
 
 ## Next batches (execution plan)
 
-1. **Batch 2:** A2 FLE — all 7 categories (PC/imparfait, COD/COI primary)
-2. **Batch 3:** A2 ESL — past simple/continuous, object pronouns primary
-3. **Batch 4:** B1 FLE + ESL — subjonctif, relatives extension, passive
-4. **Batch 5:** B2 FLE + ESL — conditionals, register
-5. **Batch 6:** C1 + C2 — literary, metalanguage
-6. **Batch 7:** Exercise bank level tagging (if approved)
-7. **Final:** Deduplication pass + untouched verification
+1. ~~**Batch 2:** A2 FLE + ESL — all 7 categories~~ ✅
+2. **Batch 3:** B1 FLE + ESL — subjonctif, relatives extension, passive
+3. **Batch 4:** B2 FLE + ESL — conditionals, register
+4. **Batch 5:** C1 + C2 — literary, metalanguage
+5. **Batch 6:** Exercise bank level tagging (if approved)
+6. **Final:** Deduplication pass + untouched verification
 
 ---
 
