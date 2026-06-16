@@ -488,7 +488,7 @@
   };
 
   const FALLBACK = {
-    fr: { nom: "nom_definite", verb: "verb_present_er", adj: "adj_feminine", pron: "pron_sujet", adv: "adv_place", disc: "pron_sujet", num: "numeraux" },
+    fr: { nom: "nom_definite", verb: "verb_present_er", adj: "adj_feminine", pron: "pron_sujet", adv: "adv_place", disc: "subordonnees_causal", num: "numeraux" },
     en: { nom: "nom_countable", verb: "verb_present_simple", adj: "adj_order", pron: "pron_subject", adv: "adverb_position", disc: "linking_words", num: "quant_some_any" }
   };
 
