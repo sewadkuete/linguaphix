@@ -289,42 +289,51 @@ window.GRAMMAR_DATA = {
   B1:{
     nom:{
       title:"Nominalisation et articles avancés",
-      précis:`• Nominalisation (transformer un verbe/adjectif en nom) :
-  Suffixes courants : -tion (décider → décision), -ment (développer → développement),
-  -age (nettoyer → nettoyage), -eur (vendre → vendeur), -ité (capable → capacité).
-  Utile pour l'écrit formel et l'enrichissement lexical.
+      précis:`• Nominalisation (verbe/adjectif → nom) — production B1 :
+  Suffixes productifs : -tion (organiser → organisation), -ment (améliorer → amélioration),
+  -age (stock → stockage), -eur/-euse (enseigner → enseignant/e), -ité (possible → possibilité).
+  Ex. : La décision du comité a été annoncée hier.
 
-• Article zéro (sans article) :
-  - Attribut du sujet avec être : Il est médecin. Elle est professeure.
-  - Après préposition dans des locutions : avec plaisir, par avion, sans raison.
-  - Apposition : Paris, capitale de la France, est une belle ville.
+• Article zéro — cas avancés (extension A2) :
+  Attribut sans article : Elle est avocate. / Il devient directeur.
+  Apposition : Lyon, deuxième ville de France, attire des visiteurs.
+  ⚠️ Avec adjectif qualifiant : C'est un excellent médecin (article requis).
 
-• Distinction avec article indéfini :
-  « C'est un médecin » (identifier) vs. « Il est médecin » (caractériser).`,
-      points:["Nominalisation (suffixes courants)","Article zéro (attribut, locutions)","C'est un… vs. Il est…"]
+• C'est un… vs. Il est… :
+  C'est un médecin célèbre (= identifier, présenter).
+  Il est médecin (= profession, caractériser).
+
+⚠️ Contractions et noms composés → A2|nom.`,
+      points:["Nominalisation (suffixes courants)","Article zéro (attribut, apposition)","C'est un… vs. Il est…"]
     },
     verb:{
       title:"Subjonctif, futur simple, gérondif, passif",
-      précis:`• Subjonctif présent :
-  Formation : radical 3e pers. pl. présent + -e/-es/-e/-ions/-iez/-ent.
-  Irréguliers : être (soit), avoir (ait), aller (aille), faire (fasse), pouvoir (puisse), vouloir (veuille).
-  Emplois : après vouloir que, regretter que, falloir que, douter que, bien que…
-  ⚠️ Après que prend l'INDICATIF (pas le subjonctif).
+      précis:`• Subjonctif présent (formation + emplois principaux) :
+  Radical 3e pers. pl. + -e/-es/-e/-ions/-iez/-ent.
+  Irréguliers : être (sois/soit…), avoir (aie/ait…), aller (aille), faire (fasse), pouvoir (puisse), vouloir (veuille).
+  Après : il faut que, vouloir que, regretter que, douter que, bien que, pour que, avant que.
+  ⚠️ Après que + INDICATIF (fait avéré ou répété).
 
 • Futur simple :
-  Formation : infinitif + terminaisons -ai/-as/-a/-ons/-ez/-ont.
-  Irréguliers : être→ser-, avoir→aur-, aller→ir-, faire→fer-, venir→viendr-.
-  Dans les subordonnées temporelles (quand, dès que, lorsque) → futur (pas présent comme en anglais).
+  Infinitif + -ai/-as/-a/-ons/-ez/-ont | irrég. : je serai, j'aurai, j'irai, je ferai, je viendrai.
+  Subordonnée temporelle : Quand/Dès que tu seras prêt, nous partirons (futur, pas présent).
 
 • Gérondif (en + participe présent) :
-  Simultanéité, cause, manière : En travaillant, il progresse.
-  ⚠️ Même sujet obligatoire avec la principale.
+  Simultanéité, cause, manière : En préparant le repas, elle écoutait la radio.
+  ⚠️ Même sujet obligatoire dans les deux propositions.
 
-• Voix passive (être + p.p.) :
-  Le p.p. s'accorde avec le sujet grammatical.
-  Agent introduit par par (parfois de).
-  Ex. : Le rapport est rédigé par le directeur.`,
-      points:["Subjonctif présent (formation/emplois)","Futur simple (formation/emplois)","Gérondif","Voix passive","Discours rapporté","Plus-que-parfait"]
+• Voix passive (être + p.p., accord avec sujet) :
+  Le rapport a été rédigé par l'équipe. / La loi sera votée demain.
+
+• Discours indirect (concordance des temps) :
+  Direct : « Je suis fatigué. » → Indirect : Il a dit qu'il était fatigué.
+  Présent → imparfait | PC → plus-que-parfait | futur → conditionnel.
+
+• Plus-que-parfait (antériorité dans le passé) :
+  avoir/être (imparfait) + p.p. : Quand je suis arrivé, il avait déjà fini.
+
+⚠️ PC / imparfait → A2|verb. Politesse (voudrais) → A2|verb.`,
+      points:["Subjonctif présent (formation/emplois)","Futur simple (formation/emplois)","Gérondif","Voix passive","Discours indirect (intro)","Plus-que-parfait"]
     },
     adj:{
       title:"Accord avancé du participe passé",
@@ -349,40 +358,43 @@ window.GRAMMAR_DATA = {
     },
     pron:{
       title:"Ordre des pronoms et relatives",
-      précis:`• Ordre des doubles pronoms (avant le verbe conjugué) :
+      précis:`• Ordre des doubles pronoms (système complet) :
   me/te/se/nous/vous → le/la/les → lui/leur → y → en
-  Ex. : Je le lui donne. / Il m'en a parlé.
-  ⚠️ À l'impératif AFFIRMATIF : verbe + COD + COI + y + en (y avant en).
-  Donne-le-lui. / Donnez-y-en ! (pas *donne-moi-le).
+  Ex. : Je te le donne. / Il nous en a parlé.
+  Impératif affirmatif : verbe + le/la/les + moi/toi/lui/nous/vous/leur + y + en
+  Donne-le-lui ! / Donnez-y-en !
 
-• Pronoms relatifs dont et où :
-  dont = de + antécédent.
-  Le sujet dont je parle. / Un problème dont je me souviens.
-  où = lieu ET temps.
-  La ville où je vis. / Le jour où il est parti.
+• Pronoms relatifs dont et où (extension A2 qui/que) :
+  dont = de + antécédent : Le livre dont je parle. / Voici le sujet dont il s'agit.
+  où = lieu ou temps : La ville où je travaille. / L'année où nous nous sommes rencontrés.
 
-• Pronoms relatifs avec prépositions (lequel, laquelle, lesquels, lesquelles) :
-  Après préposition autre que de : La chaise sur laquelle il est assis.
-  Contractions : auquel, auxquels, duquel, desquels.
+• Lequel / laquelle / lesquels / lesquelles (+ prépositions) :
+  La chaise sur laquelle il est assis. / Les projets auxquels je participe.
+  Contractions : auquel, duquel, desquels.
 
-• Pronoms démonstratifs (celui, celle, ceux, celles) :
-  + relatif : celui qui arrive / + -ci/-là : celui-ci.`,
-      points:["Ordre des doubles pronoms","Dont et où","Lequel / laquelle / lesquels","Pronoms démonstratifs"]
+• Pronoms démonstratifs (celui, celle, ceux, celles + -ci/-là) :
+  Celui que je préfère. / Celle-ci est plus récente.
+
+⚠️ COD/COI/y/en → A2|pron.`,
+      points:["Ordre des doubles pronoms","Dont et où","Lequel / laquelle / lesquels","Pronoms démonstratifs (celui/celle)"]
     },
     adv:{
       title:"Restriction, formation et connecteurs",
       précis:`• Ne…que (restriction = seulement) :
-  Il ne mange que des légumes. (pas une négation : verbe reste positif)
-  ⚠️ Après ne…que, garder l'article partiel si besoin : Il ne mange que des légumes (pas *que légumes sans article).
+  Il ne boit que de l'eau. / Elle n'a que deux heures.
+  ⚠️ Ne…que remplace pas : l'article reste (que des légumes, pas *que légumes).
 
-• Formation des adverbes en -ment :
-  Règle : fém. sing. + -ment (lent → lentement) ; -ant → -amment, -ent → -emment (récent → récemment, constant → constamment).
-  Exceptions : gentiment (gentil), brièvement (bref).
+• Adverbes en -ment (formation systématique) :
+  Fém. sing. + -ment : lent → lentement, vraie → vraiment.
+  -ant → -amment ; -ent → -emment : récent → récemment, prudent → prudemment.
+  Irréguliers : gentiment, brièvement.
 
-• Connecteurs soutenu/écrit :
-  cependant, pourtant, néanmoins, en revanche (opposition).
-  en effet (cause/explication) / par conséquent, ainsi (conséquence).
-  ⚠️ « En fait » ≠ « en effet » : en fait = actually / en effet = indeed.`,
+• Connecteurs d'écrit soutenu :
+  Opposition : cependant, pourtant, néanmoins, en revanche.
+  Cause/conséquence : en effet, par conséquent, ainsi, donc.
+  ⚠️ En fait (= actually) ≠ en effet (= indeed, confirmation).
+
+⚠️ Négations composées (plus/jamais/rien) → A2|adv.`,
       points:["Ne…que (restriction)","Formation adverbes en -ment","Connecteurs soutenu (cependant/néanmoins/en revanche)"]
     },
     disc:{
@@ -437,77 +449,80 @@ window.GRAMMAR_DATA = {
   le beau, le vrai, le possible / le pouvoir, le savoir, le devoir.
   Très fréquent en philosophie et dans la presse.
 
-• Euphonie et liaisons :
+• Euphonie et liaisons (extension) :
   Liaisons obligatoires : après déterminants (les_enfants), sujets clitiques (ils_ont).
-  Liaisons interdites : après et, devant h aspiré (le héros [pas de liaison]).`,
+  Liaisons interdites : après et, devant h aspiré (le héros [pas de liaison]).
+
+⚠️ Nominalisation par suffixes → B1|nom.`,
       points:["Groupes nominaux complexes","Substantivation","Liaisons (obligatoires / interdites / facultatives)"]
     },
     verb:{
       title:"Conditionnel passé, subj. passé, futur antérieur",
       précis:`• Subjonctif passé :
   Auxiliaire au subjonctif présent + p.p.
-  Valeur d'antériorité : Bien qu'il soit parti avant moi.
-  ⚠️ Confusion à éviter avec conditionnel passé.
+  Antériorité dans une subordonnée subjonctive : Je regrette qu'il soit parti si tôt.
+  Bien qu'il ait terminé, il reste inquiet.
+  ⚠️ Ne pas confondre avec le conditionnel passé (hypothèse / regret).
 
 • Conditionnel passé (irréel du passé) :
   Conditionnel présent de avoir/être + p.p.
-  Système 3e degré : si + PQP → conditionnel passé.
+  3e degré : si + plus-que-parfait → conditionnel passé.
   Si j'avais su, je n'aurais pas accepté.
-  Valeur de reproche (sans si) : Tu aurais dû appeler.
+  Reproche sans si : Tu aurais dû appeler.
   ⚠️ JAMAIS conditionnel dans la proposition avec si.
 
 • Futur antérieur :
   Auxiliaire au futur simple + p.p.
   Antériorité future : Quand tu auras fini, appelle-moi.
-  Probabilité dans le passé : Il aura encore oublié !
+  Hypothèse passée (probabilité) : Il aura encore oublié !
 
 • Infinitif passé :
-  Après avoir / être + p.p.
-  Après être parti, il a regretté sa décision.
+  Avoir/être + p.p. à l'infinitif.
+  Après avoir terminé, nous sommes sortis. / Sans avoir réfléchi, il a accepté.
 
 • Passif nuancé :
   Se faire + inf. (subi) : Il s'est fait renvoyer.
-  Se voir + inf. (soutenu) : Elle s'est vu refuser le poste.`,
+  Se voir + inf. (soutenu) : Elle s'est vu refuser le poste.
+
+⚠️ Subjonctif présent, futur simple, passif de base → B1|verb.
+⚠️ Plus-que-parfait (antériorité / si-clause) → B1|verb.`,
       points:["Subjonctif passé","Conditionnel passé (irréel du passé)","Futur antérieur","Infinitif passé","Passif nuancé (se faire / se voir)"]
     },
     adj:{
-      title:"Accords complexes",
-      précis:`• Accord avec avoir (COD antéposé) — révision approfondie :
-  Pronoms COD (les, la, le, que) déclenchent l'accord.
-  Les livres qu'il a lus. / La lettre qu'elle a écrite.
-  Pas d'accord avec y ; avec en, accord possible si en reprend un COD antéposé (sans quantité après).
+      title:"Accords complexes (extension)",
+      précis:`• Accord avec en (COD antéposé, sans quantité) :
+  Des fleurs : j'en ai cueillies. (en = COD féminin pluriel antéposé)
+  Pas d'accord avec y (complément de lieu ou à + chose).
 
-• Accord des pronominaux complexes :
-  Vrai réfléchi direct → accord : Elles se sont levées.
-  COD explicite après verbe → pas d'accord : Elle s'est lavé les mains.
-  Verbes essentiellement pronominaux → accord toujours : Elles se sont souvenues de tout.
-
-• Accord avec collectif/fraction :
+• Accord avec collectif / fraction (style argumenté) :
   La moitié des étudiants ont/a réussi. (accord logique ou grammatical).
-  La plupart → toujours pluriel.
+  La plupart → toujours pluriel ; un tiers de → flottement fréquent.
 
-• Adjectifs verbaux vs. participes (révision + nouveaux) :
-  communiquant (adj.) / communiquant (part.) [identiques ! contexte décide].
-  négligent / négligeant / divergent / divergeant.`,
-      points:["Accord COD antéposé (révision)","Pronominaux complexes","Accord avec collectif","Adjectifs verbaux / participes avancés"]
+• Adjectifs verbaux vs. participes présents (paires avancées) :
+  communiquant (adj. variable) / communiquant (part. invariable) — le contexte tranche.
+  négligent / négligeant ; divergent / divergeant ; suffisant / suffisant.
+
+⚠️ Accord p.p. avec avoir (COD antéposé) et pronominaux → B1|adj.`,
+      points:["Accord avec en (COD antéposé)","Accord collectif / fraction","Adjectifs verbaux / participes avancés"]
     },
     pron:{
-      title:"Pronoms composés et indéfinis",
-      précis:`• Pronoms relatifs composés (systématisation) :
-  auquel, à laquelle, auxquels / duquel, de laquelle, desquels.
-  Après prépositions complexes : à côté duquel, grâce auxquels.
-  Animés après préposition → qui (préféré) : la personne à qui je pense.
+      title:"Relatifs composés et indéfinis soutenus",
+      précis:`• Relatifs composés — prépositions complexes :
+  auquel, duquel, desquels / à laquelle, de laquelle…
+  Après préposition + nom : à côté duquel, grâce auxquels, en dépit desquels.
+  Animé après préposition → qui (préféré) : la personne à qui je pense (≠ à laquelle).
 
-• Pronoms indéfinis soutenu :
+• Pronoms indéfinis soutenus :
   quiconque (= toute personne qui) : Quiconque viole la loi sera puni.
   nul (= personne, soutenu) : Nul n'est censé ignorer la loi.
-  aucun : Je n'en ai aucun. / Aucun de nous ne savait.
-  certains, d'aucuns (très soutenu) : D'aucuns prétendent que…
+  d'aucuns (très soutenu) : D'aucuns prétendent que…
 
 • Pronom neutre le (attribut) :
   Elle est présidente et je le suis aussi.
-  Le reprend un attribut → INVARIABLE.`,
-      points:["Relatifs composés (auquel/duquel)","Pronoms indéfinis soutenu","Pronom neutre le (attribut)"]
+  Le reprend un attribut → INVARIABLE.
+
+⚠️ Dont, où, lequel / auquel de base → B1|pron.`,
+      points:["Relatifs composés (prépositions complexes)","Pronoms indéfinis soutenu (quiconque/nul)","Pronom neutre le (attribut)"]
     },
     adv:{
       title:"Négations littéraires et modalité",
@@ -515,329 +530,282 @@ window.GRAMMAR_DATA = {
   ne…guère (= pas beaucoup) : Il ne dort guère.
   ne…point (= ne…pas, archaïsant) : Je ne sais point pourquoi.
   ne…nullement (= pas du tout) : Cela ne m'étonne nullement.
-  ⚠️ À reconnaître en lecture, ne pas employer à l'oral courant.
+  ⚠️ À reconnaître en lecture ; registre écrit soutenu.
 
-• Adverbes de modalité épistémique :
-  certes (concession), effectivement (confirmation), or (développement logique).
-  En revanche, toutefois, néanmoins (opposition nuancée).
+• Modalité épistémique et connecteurs nuancés :
+  certes (concession), effectivement (confirmation).
+  or (développement logique) : ne pas confondre avec « maintenant » (sens temporel archaïque).
 
-• Or (connecteur logique) :
-  Valeur de « mais voilà que » ou de développement : ne pas confondre avec « maintenant » (sens temporel archaïque).`,
-      points:["Négations littéraires (guère/point/nullement)","Adverbes de modalité (certes/effectivement)","Or comme connecteur logique"]
+⚠️ Connecteurs d'opposition (cependant, néanmoins…) → B1|adv.
+⚠️ Ne…pas / ne…plus / ne…que → A2|adv.`,
+      points:["Négations littéraires (guère/point/nullement)","Modalité épistémique (certes/or)","Registre soutenu vs courant"]
     },
     disc:{
-      title:"Mise en relief, discours, syntaxe avancée",
+      title:"Mise en relief, syntaxe et hypothèse 3e degré",
       précis:`• Mise en relief (clivage) :
   C'est + X + qui/que + reste.
-  C'est lui qui a gagné. / C'est lui que j'ai vu.
+  C'est lui qui a gagné. / Ce sont eux que j'ai vus.
   Accord du verbe dans la relative avec X.
 
 • Inversion stylistique (soutenu/écrit) :
-  Après peut-être, ainsi, aussi, sans doute, à peine → inversion.
+  Après peut-être, ainsi, sans doute, à peine → inversion + -t- euphonique.
   Peut-être viendra-t-il demain.
-  ⚠️ Aussi à l'inversion = donc (pas = also) : Il est tard ; aussi partons-nous.
+  ⚠️ Aussi à l'inversion = donc (≠ also) : Il est tard ; aussi partons-nous.
 
 • Propositions participiales :
-  Participe présent ou passé en début de phrase.
-  Ayant terminé son travail, il est parti.
-  Le sujet implicite doit être le même que celui de la principale.
+  Participe présent ou passé en tête de phrase.
+  Ayant terminé son travail, il est parti. / Fini le travail, nous sommes sortis.
+  Le sujet implicite = sujet de la principale.
 
-• Système hypothétique complet :
-  1er : si + présent / futur → possible.
-  2e : si + imparfait / conditionnel présent → improbable/irréel présent.
-  3e : si + PQP / conditionnel passé → irréel passé.
-  Mixte : si + PQP / conditionnel présent → irréel passé avec effet présent.
+• Hypothèse 3e degré et mixte :
+  3e : si + plus-que-parfait → conditionnel passé.
+  Si j'avais su, je serais venu.
+  Mixte : si + PQP → conditionnel présent (passé → présent).
+  Si j'avais accepté, je serais directeur aujourd'hui.
 
 • Connecteurs B2 :
-  or, en effet, en outre, quant à, partant, dès lors, il s'ensuit que.`,
-      points:["Mise en relief (clivage)","Inversion stylistique","Propositions participiales","Système hypothétique 3 degrés","Connecteurs B2"]
+  or, en effet, en outre, quant à, partant, dès lors, il s'ensuit que.
+
+⚠️ Hypothèse 1er/2e degré → B1|disc.
+⚠️ Subordonnées cause/but/temps → B1|disc.`,
+      points:["Mise en relief (clivage)","Inversion stylistique","Propositions participiales","Hypothèse 3e degré et mixte","Connecteurs B2"]
     },
     num:{
       title:"Quantification avancée",
-      précis:`• Accord avec la plupart, la moitié, le tiers :
-  La plupart → pluriel toujours.
-  La moitié, le tiers, le quart → accord logique ou grammatical.
+      précis:`• Accord avec la moitié, le tiers, le quart :
+  Accord logique (avec le nom de) ou grammatical (avec le quantificateur).
+  La moitié des votants ont/a voté.
 
 • Approximation soutenue :
   aux alentours de, à hauteur de, de l'ordre de.
   Ex. : un budget de l'ordre de deux millions d'euros.
 
 • Proportion et statistique :
-  un sur deux, deux fois sur trois, dans 60% des cas.`,
-      points:["Accord avec la plupart/moitié/tiers","Approximation soutenue","Expressions proportionnelles"]
+  un sur deux, deux fois sur trois, dans 60 % des cas.
+
+⚠️ La plupart de, environ, presque → B1|num.`,
+      points:["Accord moitié/tiers/quart","Approximation soutenue","Expressions proportionnelles"]
     }
   },
   C1:{
     nom:{
       title:"Syntaxe nominale de haut niveau",
-      précis:`• Groupes nominaux à expansion multiple (style académique/journalistique) :
-  Condensation : phrase complexe → GN dense.
-  Ex. : « Le séisme qui a frappé la Turquie en février 2023 et qui a fait plus de 50 000 morts » → « Le séisme dévastateur de février 2023 en Turquie (50 000 morts) ».
+      précis:`• Condensation journalistique/académique (extension B2) :
+  Phrase complexe → GN dense à expansion multiple.
+  Ex. : « Le séisme qui a frappé la Turquie en février 2023 et qui a fait plus de 50 000 morts »
+  → « Le séisme dévastateur de février 2023 en Turquie (50 000 morts) ».
 
-• Genre — cas problématiques :
-  Noms à double genre avec sens différent :
-  le manche (d'un outil) / la manche (vêtement, La Manche).
-  le mémoire (rapport universitaire) / la mémoire (faculté cognitive).
-  le tour (rotation, promenade) / la tour (bâtiment).
+• Nominalisation avancée en presse :
+  Verbe d'événement → nom d'événement : a démissionné → la démission / ont manifesté → les manifestations.
 
-• Féminisation des titres (variation diatopique) :
-  France : la ministre, la professeure, la docteure.
-  Québec : usage plus systématique et codifié.
-  ⚠️ Dans un contexte professionnel, connaître la norme en vigueur.`,
-      points:["GN à expansion multiple","Genre — noms à double sens","Féminisation des titres (variation France/Québec)"]
+⚠️ GN complexes et substantivation → B2|nom, B1|nom.`,
+      points:["Condensation journalistique (GN denses)","Nominalisation presse (événement → nom)"]
     },
     verb:{
       title:"Subjonctif imparfait, passé simple, conditionnel journalistique",
-      précis:`• Subjonctif imparfait (littéraire — reconnaissance prioritaire) :
-  Formation : radical du passé simple + -sse/-sses/-ˆt/-ssions/-ssiez/-ssent.
-  Irréguliers : être → fût / avoir → eût / faire → fît / aller → allât.
-  ⚠️ Tréma obligatoire à la 3e pers. sing. : qu'il fût, qu'elle eût.
-  Emploi : concordance des temps en style soutenu/littéraire.
+      précis:`• Subjonctif imparfait — réceptif (extension concordance B2) :
+  Formation : radical PS + -sse/-sses/-ˆt/-ssions/-ssiez/-ssent.
+  Irréguliers : qu'il fût, qu'elle eût, qu'il eût, qu'il fît, qu'il allât.
+  ⚠️ Tréma 3e sing. : qu'il fût. Reconnaissance en lecture littéraire/soutenue ; production rare.
 
-• Passé simple :
-  Textes narratifs écrits seulement. JAMAIS à l'oral.
-  Groupe 1 : -ai/-as/-a/-âmes/-âtes/-èrent.
-  Groupe 2 : -is/-is/-it/-îmes/-îtes/-irent.
-  Irréguliers : être (fut), avoir (eut), faire (fit), venir (vint), voir (vit).
+• Passé simple — narratif écrit (extension) :
+  Écrit narratif/journalistique uniquement ; jamais à l'oral courant.
+  Alternance PS (événement ponctuel) / imparfait (toile de fond) en récit.
+  Groupe 1 : -ai/-as/-a/-âmes/-âtes/-èrent | Groupe 2 : -is/-it/-irent | Irrég. : fut, eut, fit, vint, vit.
 
-• Conditionnel journalistique :
-  Valeur épistémique : info non confirmée par le locuteur.
-  « Le président serait impliqué dans l'affaire. » = selon des sources.
-  ≠ certitude : « Le président est impliqué. »
+• Conditionnel journalistique (extension conditionnel B1/B2) :
+  Valeur épistémique : information non confirmée par le locuteur.
+  « Le président serait impliqué. » = selon des sources, ≠ « Le président est impliqué. »
 
-• Modalité verbale fine (devoir/pouvoir) :
-  Devoir épistémique : Il doit être parti (= probablement parti).
+• Modalité fine — devoir/pouvoir (extension B2) :
+  Devoir épistémique : Il doit être parti (= probablement).
   Devoir déontique : Il doit partir (= obligation).
-  Devoir conditionnel passé : Tu aurais dû appeler (= reproche).`,
-      points:["Subjonctif imparfait (formes/emplois)","Passé simple (formes/emplois)","Conditionnel journalistique","Modalité fine (devoir/pouvoir)"]
+  Tu aurais dû appeler (= reproche, conditionnel passé).
+
+⚠️ Subjonctif présent/passé, conditionnel passé, concordance → B1|verb, B2|verb.`,
+      points:["Subjonctif imparfait (réceptif)","Passé simple (narratif écrit)","Conditionnel journalistique","Modalité fine (devoir/pouvoir)"]
     },
     adj:{
-      title:"Accord — cas extrêmes C1",
-      précis:`• Adjectifs invariables :
-  Couleurs dérivées de noms : orange, marron, crème, bordeaux, marine.
-  Exception : châtain(s) accepté.
-  Adjectifs composés (bleu foncé, gris perle) → les deux éléments invariables.
+      title:"Accord — registre et cas extrêmes",
+      précis:`• Couleurs dérivées de noms — invariables (extension B1) :
+  orange, marron, crème, bordeaux, marine ; composés : bleu foncé, gris perle.
 
-• Accord dans les expressions figées :
-  avoir l'air + adj. → accord avec sujet ou avec air (les deux acceptés).
-  Elle a l'air fatiguée / fatigué.
-  Demi-, mi-, semi- → INVARIABLES avant le nom : une demi-heure, à mi-chemin.
-  Nu-pieds MAIS pieds nus (ordre change → accord change).
+• Expressions figées et registre :
+  Demi-, mi-, semi- invariables devant nom : une demi-heure, à mi-chemin.
+  Nu-pieds (locution) vs pieds nus (après nom, accord).
 
-• Accord de tout (adjectif) :
-  Tout le monde (sing.) / Tous les jours (masc. pl.) / Toute la classe (fém.) / Toutes les filles.
-  Tout comme adverbe → invariable (sauf devant fém. commençant par consonne) :
-  Elle est tout étonnée MAIS elle est toute petite.`,
-      points:["Adjectifs de couleur invariables","Accord dans expressions figées (demi/nu)","Tout (accord)"]
+⚠️ Accord p.p., adjectifs verbaux → B1|adj. Comparatif/superlatif → A2|adj.`,
+      points:["Couleurs invariables (extension)","Expressions figées demi/mi/nu","Registre écrit vs oral"]
     },
     pron:{
-      title:"Coréférence et emplois stylistiques",
-      précis:`• Coréférence et cohésion textuelle :
-  Chaînes de référence : il → lui → ce dernier → l'intéressé → le dit auteur.
-  Alterner pronominalisation/répétition/synecdoque pour la cohérence stylistique.
+      title:"Coréférence et cohésion textuelle",
+      précis:`• Coréférence — chaînes de référence (extension B2) :
+  il → lui → ce dernier → l'intéressé → le dit auteur.
+  Alterner pronominalisation, répétition nominale et synonymes pour la cohésion stylistique.
 
-• Emploi stylistique de on :
-  On générique (vérité générale) : On ne peut pas plaire à tout le monde.
-  On impersonnel (style littéraire) : On entendait au loin les cloches.
-  On = quelqu'un (indéfini) : On a sonné à la porte.
-  Ambiguïté référentielle exploitée délibérément en littérature.
+• Reprise anaphorique et isotopie :
+  Champ lexical unifié ; déterminants démonstratifs (ce/cette/cet) pour reprendre un thème.
 
-• Constructions pronominales à valeur passive :
-  Ce livre se vend bien. (= est vendu)
-  Ça ne se dit pas. (= n'est pas dit)
-  Distinction avec réfléchi et réciproque.`,
-      points:["Coréférence et cohésion textuelle","Emplois stylistiques de on","Pronominaux à valeur passive"]
+• On — valeurs stylistiques avancées (extension B1) :
+  On générique, impersonnel littéraire, indéfini ; ambiguïté référentielle en fiction.
+
+⚠️ Pronoms relatifs composés, en/y → B2|pron. Ordre des doubles pronoms → B1|pron.`,
+      points:["Coréférence (chaînes de référence)","Reprise anaphorique et isotopie","On — valeurs stylistiques avancées"]
     },
     adv:{
-      title:"Modalité épistémique et figures",
-      précis:`• Adverbes de modalité épistémique :
-  apparemment (= selon les apparences, non garanti).
-  vraisemblablement (= il est probable que).
-  soi-disant (toujours dubitatif, jamais neutre).
-  prétendument, à ce qu'il paraît.
+      title:"Modalité épistémique, litote et euphémisme",
+      précis:`• Adverbes épistémiques — gamme complète (extension B2) :
+  apparemment, vraisemblablement, soi-disant (dubitatif), prétendument, à ce qu'il paraît.
+  Distinction : certes (concession) / effectivement (confirmation) / en revanche (opposition).
 
-• Litote et euphémisme (figures impliquant la négation) :
-  Litote : Ce n'est pas sans intérêt. (= c'est intéressant).
-  Ce n'est pas pour me déplaire. (= ça me plaît bien).
-  Euphémisme : Il nous a quittés. (= il est mort).
+• Litote (sous-énonciation via négation) :
+  Ce n'est pas sans intérêt. (= c'est intéressant.)
+  Ce n'est pas pour me déplaire. (= ça me plaît.)
 
-• Ironie et sous-entendu :
-  L'ironie inverse le sens littéral. Marqueurs pragmatiques : ton, contexte, exagération.
-  Produire et décoder l'ironie verbale en contexte.`,
-      points:["Adverbes épistémiques (apparemment/vraisemblablement/soi-disant)","Litote et euphémisme","Ironie verbale"]
+• Euphémisme (atténuation) :
+  Il nous a quittés. (= il est mort.) / Il a été licencié. (= renvoyé.)
+
+⚠️ Négations littéraires (guère/point) et or (connecteur) → B2|adv.`,
+      points:["Adverbes épistémiques (gamme complète)","Litote","Euphémisme"]
     },
     disc:{
-      title:"Syntaxe complexe et registres",
-      précis:`• Phrases clivées et pseudo-clivées :
+      title:"Clivées, constructions détachées et registres",
+      précis:`• Clivées et pseudo-clivées — système (extension B2) :
   Clivée : C'est X qui/que + reste. → C'est lui qui a gagné.
   Pseudo-clivée : Ce qui/que + prop. + c'est X. → Ce qui m'étonne, c'est son calme.
-  Marquage du focus topical.
 
-• Constructions détachées (appositions, épithètes détachées) :
-  Fatiguée, elle s'endormit. → valeur de cause.
-  Son travail terminé, il rentra chez lui. → valeur temporelle.
+• Constructions détachées :
+  Épithète détachée : Fatiguée, elle s'endormit. (= cause)
+  Apposition/ablatif absolu : Son travail terminé, il rentra. (= temps/condition)
 
-• Ellipse et pro-formes :
-  Je le savais (le = cela / prop. entière).
-  Il écrit bien et elle aussi. (ellipse du GV).
+• Registres — cartographie diaphasique :
+  Soutenu : ne, inversion, PS, subj. imparfait (lecture).
+  Courant : standard écrit/oral. Familier : chute du ne, on = nous.
+  Argot/verlan : compréhension passive.
 
-• Registres de langue (cartographie) :
-  Soutenu (écrit littéraire/académique) : ne de négation, inversion, subjonctif imparfait.
-  Courant (écrit/oral standard) : pas de marqueurs extrêmes.
-  Familier (oral) : chute du ne, on pour nous, réduction phonologique.
-  Argotique/verlan : usage passif pour la compréhension.
-
-• Syntaxe de l'écrit académique :
-  Nominalisation, passivation, impersonnel : Il convient de / Il apparaît que / On peut considérer que.`,
-      points:["Clivées et pseudo-clivées","Constructions détachées","Ellipse et pro-formes","Registres de langue (cartographie)","Syntaxe académique"]
+⚠️ Inversion stylistique, propositions participiales, hypothèse 3 degrés → B2|disc.`,
+      points:["Clivées et pseudo-clivées (système)","Constructions détachées","Registres (cartographie diaphasique)"]
     },
     num:{
       title:"Quantification stylistique C1",
-      précis:`• Expressions formelles de quantité :
-  à hauteur de (= up to, pour les budgets).
-  de l'ordre de (= approximately, registre technique).
-  dans une proportion de, à raison de.
+      précis:`• Expressions formelles (extension B2) :
+  à hauteur de, de l'ordre de, dans une proportion de, à raison de.
 
-• Indéfinis complexes :
-  maints (= beaucoup de, soutenu) : Maints auteurs l'ont dit.
-  force + nom (= beaucoup de, littéraire) : Force gens le croient.
-  moult (= beaucoup, médiéval/humoristique) : Moult difficultés.`,
-      points:["Expressions formelles (à hauteur de / de l'ordre de)","Indéfinis soutenu (maints/force)"]
+• Indéfinis soutenus/littéraires :
+  maints : Maints auteurs l'ont dit.
+  force + nom : Force gens le croient.
+  moult (registre littéraire/humoristique).
+
+⚠️ la plupart de, la moitié, le tiers → B1|num, B2|num.`,
+      points:["Expressions formelles (à hauteur de / de l'ordre de)","Indéfinis soutenus (maints/force/moult)"]
     }
   },
   C2:{
     nom:{
-      title:"Maîtrise absolue du système nominal",
-      précis:`• Euphonie et liaisons — maîtrise complète :
-  Liaisons obligatoires : après les déterminants (les_enfants), pronoms sujets (nous_avons), adverbes monosyllabiques (très_utile).
-  Liaisons interdites : après et (mari ET [liaison interdite] femme), devant h aspiré (le/la héros sans liaison), devant onze, oui, un (cardinal).
-  Liaisons facultatives : marqueurs de registre soutenu. Plus elles sont présentes, plus le registre est élevé.
+      title:"Liaisons — maîtrise complète",
+      précis:`• Liaisons obligatoires (extension B2) :
+  Après déterminants (les_enfants), pronoms sujets (nous_avons), adverbes monosyllabiques (très_utile).
 
-• Noms épicènes et variation de genre :
-  Noms épicènes (même forme M/F) : une sentinelle (toujours fém.), un mannequin (toujours masc.).
-  Doublets : un auteur / une autrice (néologie normée en France depuis 2019).
+• Liaisons interdites :
+  Après et (mari et femme), devant h aspiré (le héros), devant onze, oui, un (cardinal).
 
-• Rectifications orthographiques 1990 :
-  Trait d'union si le numéral est seul (vingt-et-un) ; devant un nom : vingt et un hommes, cent deux pages.
-  Soudure de certains composés : weekend → week-end → weekend.
-  Accent sur certains mots : événement (accepté), règlement, sèchement.
-  ⚠️ Les deux graphies sont acceptées ; connaître la norme du contexte professionnel.`,
-      points:["Liaisons (obligatoires/interdites/facultatives)","Noms épicènes et doublets","Rectifications orthographiques 1990"]
+• Liaisons facultatives — marqueurs de registre :
+  Plus elles sont présentes, plus le registre est soutenu.
+  Enchaînement vs liaison : distinction phonologique fine.
+
+⚠️ Intro liaisons obligatoires/interdites → B2|nom. Rectifications 1990 → orthographe_1990 (deep-lib).`,
+      points:["Liaisons obligatoires (maîtrise)","Liaisons interdites","Liaisons facultatives (registre)"]
     },
     verb:{
-      title:"Maîtrise complète du système verbal",
-      précis:`• Inventaire complet des modes et temps :
-  Indicatif : présent, imparfait, passé composé, plus-que-parfait, passé simple, futur simple, futur antérieur, passé antérieur (littéraire).
-  Subjonctif : présent, passé, imparfait (litt.), plus-que-parfait (litt.).
-  Conditionnel : présent, passé.
-  Impératif : présent, passé (rare).
-  Formes nominales : infinitif présent/passé, participes présent/passé, gérondif.
+      title:"Passé antérieur réceptif et système verbal",
+      précis:`• Passé antérieur — réceptif (extension passé simple C1) :
+  Auxiliaire au passé simple + p.p. → antériorité immédiate dans le passé.
+  Quand il eut fini, il sortit. / Dès qu'elle fut arrivée, nous partîmes.
+  ⚠️ Reconnaissance en lecture littéraire ; production réservée à l'écrit très soutenu.
 
-• Aspect verbal (Aktionsart × temps grammatical) :
-  États (savoir, être) : pas d'imparfait progressif naturel.
-  Activités (courir, travailler) : imparfait duratif naturel.
-  Accomplissements (écrire un livre) : imparfait = en cours, PC = accompli.
-  Achèvements (trouver, arriver) : imparfait = tentative échouée.
+• Concordance en récit historique (extension C1) :
+  Alternance PS / imparfait / plus-que-parfait / passé antérieur.
+  Présent de narration (rupture stylistique) : En 1789, le peuple prend la Bastille.
 
-• Concordance des temps en récit historique :
-  Présent de narration (rupture stylistique).
-  Alternance passé simple/imparfait + plus-que-parfait.
+• Subjonctif plus-que-parfait — réceptif :
+  qu'il eût fini, qu'elle fût partie (concordance littéraire).
 
-• Passé antérieur (littéraire) :
-  Auxiliaire au passé simple + p.p. → antériorité immédiate.
-  Quand il eut fini, il sortit.`,
-      points:["Inventaire complet modes/temps","Aktionsart × temps grammatical","Concordance des temps (récit historique)","Passé antérieur"]
+⚠️ Inventaire modes/temps, Aktionsart → C1|verb. Passé simple formes → C1|verb, passe_simple_* (deep-lib).`,
+      points:["Passé antérieur (réceptif)","Concordance récit historique","Subjonctif plus-que-parfait (réceptif)"]
     },
     adj:{
       title:"Accords — cas marginaux C2",
-      précis:`• Adjectifs invariables — liste complète :
-  Couleurs : orange, marron, crème, bordeaux, marine, kaki, corail.
-  Exception : rose, mauve, fauve, écarlate, pourpre → s'accordent (normalisés en adjectifs).
-  Adjectifs composés : bleu marine (les deux invariables) / bleu foncé (idem).
+      précis:`• Couleurs — nuance d'accord (extension C1) :
+  Invariables : orange, marron, crème, bordeaux, marine, kaki.
+  Accordées (normalisées) : rose, mauve, fauve, écarlate, pourpre.
 
-• Accord de demi, mi, semi, non, quasi :
-  Avant le nom (avec trait d'union) → INVARIABLES : une demi-heure, à mi-temps, un non-lieu.
-  Après le nom → accord : deux heures et demie / une journée entière.
+• Demi, mi, semi, non, quasi — position (extension C1) :
+  Devant nom + trait d'union → invariable : une demi-heure, un non-lieu.
+  Après nom → accord : deux heures et demie.
 
-• Nu-pieds vs. pieds nus :
-  Avant le nom (sens figuré, locution) → invariable avec trait d'union : nu-pieds, nu-tête.
-  Après le nom → accord : marcher pieds nus.`,
-      points:["Adjectifs de couleur (accord/invariables)","Demi/mi/semi/non/quasi","Nu avant/après le nom"]
+⚠️ Couleurs invariables, demi/mi → C1|adj. Accord p.p. → B1|adj.`,
+      points:["Couleurs (accord/invariables — nuance)","Demi/mi/semi/non/quasi (position)"]
     },
     pron:{
-      title:"Pronoms — cas marginaux C2",
-      précis:`• Pronom neutre le (attribut et proposition) :
-  Elle est directrice et je le suis aussi. (le = attribut, invariable).
-  Je le savais (le = la proposition entière).
-  ⚠️ Distinguer du COD féminin : Je la vois (accord possible).
+      title:"Pronoms — distinctions fines C2",
+      précis:`• Pronom neutre le — attribut et proposition (extension B2) :
+  Elle est directrice et je le suis aussi. (le = attribut)
+  Je le savais. (le = proposition entière)
 
-• Constructions pronominales — distinctions fines :
-  Réfléchi : Il se lave. (il se lave lui-même)
-  Réciproque : Ils se regardent. (l'un l'autre)
-  Passif pronominal : Ce livre se vend bien. (est vendu)
-  Essentiellement pronominal : Elle s'est souvenue. (pas de sens non pronominal)
+• Pronominaux — quatre valeurs (extension B1) :
+  Réfléchi / réciproque / passif pronominal / essentiellement pronominal (s'est souvenue).
 
-• Emploi littéraire de soi :
-  Soi renvoie à un sujet indéfini ou impersonnel : Chacun pour soi. On pense d'abord à soi.
-  ≠ lui/elle qui renvoient à un référent défini.`,
-      points:["Pronom neutre le","Distinctions fines des pronominaux","Emploi littéraire de soi"]
+• Soi — sujet indéfini/impersonnel (littéraire) :
+  Chacun pour soi. / On pense d'abord à soi.
+
+⚠️ Coréférence textuelle → C1|pron. Pronom le (attribut) → B2|pron.`,
+      points:["Pronom neutre le (attribut/proposition)","Distinctions pronominaux (4 valeurs)","Emploi littéraire de soi"]
     },
     adv:{
-      title:"Figures syntaxiques et pragmatique",
-      précis:`• Figures de construction :
-  Hyperbate : rejet d'un élément hors de sa position normale (effet stylistique).
-  Il l'aimait, cette ville, passionnément.
-  Anacoluthe : rupture de construction (oral, emphase ou style).
-  Moi, partir maintenant, c'est impossible.
-  Zeugme : coordination d'éléments de niveaux différents.
-  Il prit son manteau et la porte. (sens figuré + propre).
+      title:"Figures syntaxiques et implicature",
+      précis:`• Figures de construction (extension stylistique) :
+  Hyperbate : Il l'aimait, cette ville, passionnément. (rejet stylistique)
+  Anacoluthe : Moi, partir maintenant, c'est impossible. (rupture de construction)
+  Zeugme : Il prit son manteau et la porte. (sens propre + figuré)
 
-• Implicite pragmatique :
-  Présupposé : info assumée comme vraie sans être assertée.
-  « Il a arrêté de fumer. » → présuppose qu'il fumait avant.
-  Implicature conversationnelle (Grice) :
+• Implicature conversationnelle (Grice) :
   Maximes : quantité, qualité, relation, manière.
-  Ce qui est dit vs. ce qui est impliqué.`,
-      points:["Hyperbate, anacoluthe, zeugme","Présupposé","Implicature conversationnelle (Grice)"]
+  Ce qui est dit vs. ce qui est impliqué.
+  Présupposé : « Il a arrêté de fumer. » → présuppose qu'il fumait.
+
+⚠️ Litote, euphémisme, adverbes épistémiques → C1|adv.`,
+      points:["Hyperbate, anacoluthe, zeugme","Implicature conversationnelle (Grice)","Présupposé"]
     },
     disc:{
       title:"Métalangue et variation sociolinguistique",
       précis:`• Métalangue grammaticale complète :
-  Syntagme (nominal, verbal, prépositionnel), morphème (libre/lié), déictique, prédicat, valence verbale, anaphore (reprend ce qui précède), cataphore (annonce ce qui suit), coréférence, présupposition, implicature.
+  Syntagme nominal/verbal, morphème, prédicat, valence, anaphore, cataphore, coréférence, présupposition, implicature, déictique.
 
 • Variation sociolinguistique :
-  Diatopique : variation géographique.
-    France hexagonale / Québec (avoir 20 ans = « être » dans certains sens) / Belgique (septante/nonante) / Suisse / Afrique subsaharienne / Antilles.
-  Diastratique : variation sociale (sociolectes, niveaux d'éducation).
-  Diaphasique : variation selon la situation (registres).
+  Diatopique : France / Québec / Belgique (septante/nonante) / Suisse / Afrique / Antilles.
+  Diastratique : sociolectes, niveaux d'éducation.
+  Diaphasique : registres selon la situation (extension C1|disc).
 
-• Ambiguïté syntaxique et désambiguïsation :
-  Portée de la négation : Ce n'est pas beau et intéressant. (les deux ? ou seulement le 1er ?)
-  Attachement de relatives : L'ami de la femme qui est venue.
-  Réviser et réécrire sans altérer le sens.
+• Ambiguïté syntaxique — désambiguïsation :
+  Portée de la négation, attachement de relatives : L'ami de la femme qui est venue.
 
-• Rhétorique de l'écrit formel :
-  Plan dialectique : thèse / antithèse / synthèse.
-  Plan analytique : aspects successifs d'un même phénomène.
-  Connecteurs C2 : partant, aussi (+ inversion), dès lors, il s'ensuit que, force est de constater que.`,
-      points:["Métalangue grammaticale complète","Variation diatopique/diastratique/diaphasique","Ambiguïté syntaxique","Rhétorique de l'écrit formel"]
+⚠️ Registres (cartographie) → C1|disc. Connecteurs C2 → B2|disc.`,
+      points:["Métalangue grammaticale complète","Variation diatopique/diastratique/diaphasique","Ambiguïté syntaxique et désambiguïsation"]
     },
     num:{
-      title:"Quantification — niveau C2",
-      précis:`• Indéfinis archaïques/littéraires :
-  aucuns (pluriel, sens positif dans certains contextes anciens) → aujourd'hui surtout d'aucuns.
-  nul / nulle comme adjectif indéfini soutenu : Nul besoin d'insister.
-  maints / maintes : Maintes fois il le lui a dit.
+      title:"Quantification — registres C2",
+      précis:`• Indéfinis archaïques/littéraires (extension C1) :
+  maints/maintes, nul besoin (soutenu), d'aucuns (registre ancien).
 
-• Rectifications 1990 — impact sur les numéraux :
-  Trait d'union systématique dans tous les numéraux composés (nouvelle norme) :
-  Vingt-et-un / trente-et-un / cent-deux / mille-deux-cents.
+• Rectifications 1990 — numéraux composés :
+  Trait d'union : vingt-et-un (seul), vingt et un hommes (devant nom).
 
-• Registres de la quantification :
+• Registres de quantification :
   Soutenu : à maintes reprises, en nombre infime.
-  Courant : beaucoup, peu, assez.
-  Familier : plein de, un tas de, vachement.`,
-      points:["Indéfinis littéraires (aucuns/maints/nul)","Trait d'union dans les numéraux (réforme 1990)","Registres de la quantification"]
+  Courant : beaucoup, peu. Familier : plein de, un tas de.
+
+⚠️ maints/force → C1|num. Fractions et proportions → B2|num.`,
+      points:["Indéfinis littéraires (maints/nul/d'aucuns)","Numéraux composés (réforme 1990)","Registres de quantification"]
     }
   }
 };;

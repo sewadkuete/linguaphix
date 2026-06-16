@@ -307,54 +307,57 @@ window.GRAMMAR_DATA = {
   B1:{
     nom:{
       title:"Nouns & articles",
-      précis:`• Nominalization (turning verbs/adjectives into nouns):
-  decide → decision, develop → development, arrive → arrival, act → action.
-  Useful for formal writing and academic style.
+      précis:`• Nominalization (verb/adjective → noun) — productive B1:
+  -tion: decide → decision | -ment: develop → development | -ance/-ence: perform → performance
+  Ex.: The committee's decision was announced yesterday.
 
-• Article patterns with abstract nouns:
-  Life is short. (general) / The life of a soldier is hard. (specific)
-  ⚠️ No article with abstract concepts in general statements.
+• Articles with abstract nouns (extension):
+  Life is unpredictable. (general) / The life of a refugee is hard. (specific biography/situation).
 
-• The with adjectives as nouns (groups):
-  the rich, the poor, the elderly, the unemployed.
-  Ex.: The government should help the poor.
+• The + adjective as noun (groups):
+  the elderly, the unemployed, the rich — always plural sense.
+  Ex.: The government must support the vulnerable.
 
-• Genitive ('s / of):
-  's for people/animals/time: John's car, today's news.
-  of for things/abstract: the door of the house, the end of the story.
-  ⚠️ The girl's book (one girl) vs. the girls' books (several girls).
+• Genitive patterns:
+  's : people, time, animals — today's headline, Maria's colleague.
+  of : things, abstractions — the end of the contract.
+  Double genitive: a friend of mine, an idea of hers.
 
-• Double genitive: a friend of mine, a colleague of John's.
-  Ex.: That was an idea of his.`,
-      points:["Nominalization (verb → noun suffixes)","Articles with abstract nouns","The + adjective (the rich / the poor)","Genitive ('s vs. of)","Double genitive (a friend of mine)"]
+⚠️ Countable/uncountable basics → A2|nom.`,
+      points:["Nominalization (suffixes)","Articles with abstract nouns","The + adjective (the elderly)","Genitive ('s vs. of)","Double genitive (a friend of mine)"]
     },
     verb:{
       title:"Verbs & tenses",
-      précis:`• Present perfect vs. past simple (systematic):
-  Present perfect: unfinished time, experience, result now.
-  I have lost my keys. (I don't have them now.)
-  Past simple: finished time, specific moment.
-  I lost my keys yesterday.
+      précis:`• Present perfect — extended uses (systematic contrast):
+  Experience: Have you ever visited Kyoto? | Result now: I've lost my keys.
+  Unfinished time: I've worked here since 2019. | with already/just/yet.
+  vs. past simple: I visited Kyoto in 2019. (finished time marker)
 
-• Past continuous: was/were + -ing.
-  Background action: It was raining when I left.
-  Interrupted action: I was cooking when the phone rang.
+• Past continuous : was/were + -ing
+  Background: It was raining when we left. | Interrupted: I was cooking when you called.
 
-• Past perfect: had + past participle.
-  Earlier past: When I arrived, the film had already started.
+• Past perfect : had + past participle
+  Earlier past: When I arrived, the meeting had already started.
 
-• Passive voice (be + past participle):
-  Active: They built the bridge. → Passive: The bridge was built in 1990.
-  Agent with by: The report was written by the manager.
-  ⚠️ Only transitive verbs passivize.
+• Passive voice (be + past participle, all relevant tenses):
+  The bridge was built in 1990. / The report is being prepared.
+  Agent with by when important. Only transitive verbs passivize.
 
-• Reported speech (intro):
+• Reported speech (backshift rules):
   Direct: "I am tired." → Reported: She said (that) she was tired.
-  Tense backshift: am → was, will → would, can → could.
+  am→was, will→would, can→could, have→had.
 
-• Future forms: will (predictions/decisions), going to (plans), present continuous (arrangements).
-  I'll call you. I'm going to study medicine. I'm meeting John at 6.`,
-      points:["Present perfect vs. past simple","Past continuous & past perfect","Passive voice (be + p.p.)","Reported speech (intro)","Future forms (will / going to / present continuous)"]
+• Will / would (future & polite conditional):
+  Will: predictions, promises — I'll call you tonight.
+  Would: polite requests — Would you open the window?
+
+• Gerund vs. infinitive (core patterns):
+  enjoy/finish/mind + -ing : I enjoy swimming.
+  want/hope/decide + to-inf. : She decided to leave.
+  stop + -ing (cease) vs. stop + to-inf. (purpose): He stopped smoking. / He stopped to smoke. (= in order to)
+
+⚠️ Past simple / present perfect intro → A2|verb.`,
+      points:["Present perfect (extended uses)","Past continuous & past perfect","Passive voice","Reported speech (backshift)","Will / would","Gerund vs. infinitive (core)"]
     },
     adj:{
       title:"Adjectives & agreement",
@@ -382,37 +385,26 @@ window.GRAMMAR_DATA = {
     },
     pron:{
       title:"Pronouns",
-      précis:`• Relative clauses — defining vs non-defining (British Council / Cambridge):
-  Defining (essential, no commas): identifies which person/thing we mean.
-  Non-defining (extra, commas both sides): non-essential information.
-  ⚠️ that → defining only. Never *My brother, that lives…*
-  ⚠️ Omit the pronoun only in defining clauses when it is the object.
+      précis:`• Relative clauses — extension (whose/where/when/whom/why):
+  whose — possession: The student whose laptop was stolen reported it.
+  where — places: The café where we met has closed.
+  when — times: I'll never forget the day when we graduated.
+  whom — object, formal: The consultant whom I contacted agreed.
+  why — reasons: That's the reason why she resigned.
+  ⚠️ Omit only in defining clauses when pronoun is object: The book (that) I read.
 
-• Relative pronouns and adverbs:
-  who — people (subject or object): The man who called / The man (who) I met.
-  which — things & animals (defining & non-defining): The book which I read.
-  that — people or things, defining only (informal): The house that Jack built.
-  whom — people as object (formal): The person whom I met / the person to whom I spoke.
-  whose — possession (people & animals; things in formal style): The woman whose car was stolen.
-  where — places (defining): The town where I grew up. (= in/at which)
-  when — times (defining): The day when we met. (= on/in which)
-  why — reasons (defining): The reason why she left. (= for which)
-  ⚠️ who/which/that as subject → never omit.
-  ⚠️ which can refer to a whole clause: He passed, which surprised everyone.
+• Reflexive & reciprocal pronouns:
+  myself, yourself… for emphasis or true reflexive: She taught herself Spanish.
+  each other / one another: They supported each other.
 
-• Indefinite pronouns: each, every, either, neither, none, all, both.
-  Each student has a desk. Neither option works. None of them came.
+• Indefinite pronouns (systematic):
+  each/every + singular verb | either/neither + singular | none of + plural (BrE) or singular (AmE).
 
-• Reciprocal pronouns: each other and one another are interchangeable in modern English (register may vary).
-  They love each other. The teams respect one another.
+• Impersonal one (formal register):
+  One should respect the rules. — informal alternative: You should…
 
-• Emphatic pronouns (same form as reflexive):
-  I myself saw it. The president himself answered.
-
-• One as impersonal pronoun (formal):
-  One should always tell the truth. One must do one's best.
-  ⚠️ More formal/British; in informal speech, use you.`,
-      points:["Relative clauses (defining / non-defining)","Relative pronouns (who/which/that/whose/where/when/why)","Indefinite pronouns (each / neither / none)","Reciprocal pronouns (each other / one another)","Emphatic pronouns","Impersonal one (formal)"]
+⚠️ Defining/non-defining intro (who/which/that) → A2|disc.`,
+      points:["Relatives (whose/where/when/whom/why)","Reflexive & reciprocal pronouns","Indefinite (each/neither/none)","Impersonal one (formal)"]
     },
     adv:{
       title:"Adverbs & negation",
@@ -441,27 +433,27 @@ window.GRAMMAR_DATA = {
     },
     disc:{
       title:"Discourse & syntax",
-      précis:`• Subordinate clauses of cause:
-  because (new information), since/as (known reason, often at start).
-  Ex.: Since you asked, I'll explain. As it was late, we left.
+      précis:`• Cause, purpose, time subordinates:
+  because/since/as | to-inf. (same subject) / so that + clause (different subject)
+  when/while/until/before/after — no will in time clause: When you arrive, call me.
 
-• Subordinate clauses of purpose:
-  Same subject → to + infinitive: He works hard to succeed.
-  Different subject → so that + clause: I'll speak slowly so that you understand.
+• First conditional (real future):
+  If + present simple → will + base: If it rains, we'll postpone the match.
+  ⚠️ Never will in the if-clause.
 
-• Subordinate clauses of time:
-  when, while, as soon as, until, before, after.
-  ⚠️ No will in time clauses: When you arrive, call me (not *will arrive).
-
-• First conditional (real possibility):
-  If + present simple → will + base verb.
-  If it rains, we'll stay home.
-  ⚠️ Never use will in the if-clause.
+• Second conditional (unreal present/future) — introduction:
+  If + past simple → would + base: If I had more time, I would learn Arabic.
+  Formal: If I were you, I'd accept.
 
 • Concession:
-  although / even though + clause: Although it was cold, we went out.
-  despite / in spite of + noun/-ing: Despite the rain, we played.`,
-      points:["Cause clauses (because / since / as)","Purpose (to / so that)","Time clauses (when / until / as soon as)","First conditional (if + present, will)","Concession (although / despite)"]
+  although / even though + clause | despite / in spite of + noun/-ing
+
+• Question tags (confirmation):
+  You're ready, aren't you? | She can't swim, can she?
+  Match auxiliary; positive statement → negative tag.
+
+⚠️ Sequencing connectors → A2|disc.`,
+      points:["Cause / purpose / time clauses","First conditional","Second conditional (intro)","Concession (although / despite)","Question tags"]
     },
     num:{
       title:"Number & quantifiers",
@@ -488,7 +480,7 @@ window.GRAMMAR_DATA = {
   },
   B2:{
     nom:{
-      title:"Nouns & articles",
+      title:"Nouns — advanced syntax",
       précis:`• Complex noun phrases (written/academic style):
   Multiple modifiers, embedded relative clauses.
   Ex.: "The controversial government decision on pension reform, which triggered widespread protests, remains debated."
@@ -497,28 +489,12 @@ window.GRAMMAR_DATA = {
   the rich, the unknown, the impossible / the doing, the saying.
   Common in philosophy, journalism, and formal discourse.
 
-• Article use in fixed expressions:
-  in prison (as punishment) vs. in the prison (the building).
-  at school (studying) vs. at the school (the building).
-  go to bed / go to hospital (BrE, as patient).
-
-• Light verb constructions:
-  make a decision, take a break, give a speech, have a look.
-  The noun carries meaning; the verb is generic.
-
-• Apposition (renaming):
-  My brother, a doctor, lives in Berlin.
-  Paris, the capital of France, attracts millions of visitors.`,
-      points:["Complex noun phrases","Substantivization (the + adjective)","Articles in fixed expressions","Light verb constructions","Apposition"]
+⚠️ Articles in fixed expressions (in prison / at school) → A2|nom.`,
+      points:["Complex noun phrases","Substantivization (the + adjective)","Written/academic register"]
     },
     verb:{
-      title:"Verbs & tenses",
-      précis:`• Second conditional (unreal present/future):
-  If + past simple → would + base verb.
-  If I had more time, I would travel.
-  ⚠️ were for all persons in formal use: If I were you…
-
-• Third conditional (unreal past):
+      title:"Third & mixed conditionals, passive, modals",
+      précis:`• Third conditional (unreal past):
   If + past perfect → would have + past participle.
   If I had known, I would have told you.
   ⚠️ Never use would in the if-clause.
@@ -527,96 +503,94 @@ window.GRAMMAR_DATA = {
   If + past perfect → would + base (past cause, present result):
   If I had studied medicine, I would be a doctor now.
 
-• Future perfect & future continuous:
-  Future perfect: will have + p.p. → By next year, I will have finished.
-  Future continuous: will be + -ing → This time tomorrow, I'll be flying.
+• Wish / if only (regrets):
+  Present regret: I wish I spoke French. (= I don't)
+  Past regret: I wish I had listened. / If only I had more time!
+  Annoying habit: I wish it would stop raining.
 
-• Causative have/get:
-  have/get + object + past participle.
-  I had my hair cut. She got the car repaired.
+• Passive — all tenses (extension):
+  Present: is built | Past: was built | Future: will be built
+  Present perfect: has been built | Continuous: is being built
+  Modal passive: must be finished | Get-passive (informal): He got fired.
 
-• Subjunctive (formal, limited):
-  I suggest (that) he be informed. It is essential (that) she arrive on time.
-  ⚠️ Mainly formal AmE; BrE often uses should + base.`,
-      points:["Second conditional (unreal present)","Third conditional (unreal past)","Mixed conditionals","Future perfect & future continuous","Causative have/get & subjunctive"]
+• Advanced modals (past deduction / possibility):
+  may/might/could + have + PP : He might have missed the bus.
+  must + have + PP (deduction): She must have left early.
+  can't/couldn't + have + PP (impossible): He can't have finished already.
+
+• Reporting verbs (extension):
+  claim, deny, suggest, admit, insist, warn + (that) clause or gerund.
+  She denied having seen him. He suggested (that) we leave early.
+  ⚠️ Verb pattern varies: suggest + -ing ; insist + (that) + base (AmE subjunctive).
+
+⚠️ Second conditional → B1|disc.
+⚠️ Passive intro & reported speech backshift → B1|verb.`,
+      points:["Third conditional (unreal past)","Mixed conditionals","Wish / if only","Passive (all tenses)","Modals + have + PP","Reporting verbs (patterns)"]
     },
     adj:{
-      title:"Adjectives & agreement",
-      précis:`• Advanced comparatives:
+      title:"Adjectives — advanced patterns",
+      précis:`• Correlative comparatives:
   The + comparative, the + comparative: The sooner, the better.
   increasingly / progressively + adjective: increasingly difficult.
-  far / much / a lot + comparative: much better, far more expensive.
 
-• Absolute superlatives (non-graduated):
+• Absolute superlatives (non-gradable nuance):
   absolutely perfect, completely unique, totally exhausted.
   ⚠️ Avoid *very unique — unique is already absolute.
 
-• Adjective strings and reduced relatives:
+• Reduced relative clauses (written style):
   The students present (= who are present) voted.
   The issues involved (= that are involved) are complex.
 
-• Participle clauses (intro):
-  Having finished the report, she left. (= After she had finished…)
-  ⚠️ Subject of participle must match main clause subject.
-
-• Collocations with adjectives:
+• Adjective-noun collocations (chunks):
   heavy rain (not *strong rain), strong coffee, high temperature, deep sleep.
-  ⚠️ Learn adjective-noun pairs as chunks.`,
-      points:["The…the… comparatives","Absolute superlatives","Reduced relative clauses","Participle clauses (intro)","Adjective-noun collocations"]
+
+⚠️ -ed/-ing participial adjectives → B1|adj.
+⚠️ Comparatives / superlatives → A2|adj.`,
+      points:["The…the… comparatives","Absolute superlatives","Reduced relative clauses","Adjective-noun collocations"]
     },
     pron:{
-      title:"Pronouns",
-      précis:`• Defining vs non-defining relative clauses (revision):
-  Defining: no commas; that possible; object pronoun can be omitted.
-  Non-defining: commas; who/which only (never that); pronoun cannot be omitted.
-  Commas change meaning: My brother who lives in Paris… (I have several) vs. My brother, who lives in Paris,… (I have one).
-
-• Advanced relative clauses:
-  Preposition + whom/which (formal): The person to whom I spoke…
+      title:"Advanced relatives & preparatory it",
+      précis:`• Preposition + whom/which (formal):
+  The person to whom I spoke… / The method by which we measure…
   Informal: The person (who/that) I spoke to…
   ⚠️ Never *to who in formal writing — use to whom.
 
-• What as relative (= the thing that):
+• What-clauses (= the thing that):
   What I need is more time. (= The thing that I need…)
   ⚠️ No antecedent noun before what in this structure.
 
-• Whatever, whoever, whichever, whenever, wherever:
+• -ever compounds:
   Whatever you decide is fine. Whoever wins gets the prize.
+  Wherever you go, I'll follow. Whenever possible, call ahead.
 
-• One / ones (formal replacement):
-  The proposal is better than the previous one.
-  Those who agree, raise your hand. (= people who)
-
-• It as preparatory subject/object:
+• Preparatory it (subject/object):
   It is important to arrive on time. I find it difficult to concentrate.
-  ⚠️ It…that/who cleft: It was John who called.`,
-      points:["Preposition + whom/which","What as relative (what I need is…)","-ever compounds (whatever/whoever)","One / ones & those who","Preparatory it (It is…to…)"]
+  It seems that… / It appears that… (formal hedging).
+
+⚠️ Defining/non-defining relatives (who/which/that) → A2|disc.
+⚠️ whose/where/when/whom → B1|pron.`,
+      points:["Preposition + whom/which","What-clauses","-ever compounds","Preparatory it"]
     },
     adv:{
-      title:"Adverbs & negation",
+      title:"Adverbs — inversion & formal negation",
       précis:`• Negative adverbs with inversion (formal):
   Never have I seen such beauty. Rarely do we agree.
   Not only… but also: Not only did he win, but he also broke the record.
   ⚠️ Inversion after negative fronting: Never/Rarely/Hardly + auxiliary + subject.
 
-• Literary/archaic negation (recognition):
-  scarcely…when, no sooner…than: No sooner had I arrived than it started raining.
-  nor (formal): He didn't call, nor did he write.
+• No sooner… than / scarcely… when:
+  No sooner had I arrived than it started raining.
 
-• Epistemic adverbs (intro):
+• Epistemic adverbs (hedging):
   certainly, probably, possibly, apparently, presumably.
   Ex.: He will probably agree. Apparently, the meeting was cancelled.
 
-• Discourse adverbs:
-  indeed (confirmation), in fact (= actually), actually (surprise/correction).
-  ⚠️ indeed ≠ in fact: indeed = truly; in fact = contrary to expectation.
-
-• Anyway, anyhow, at any rate (topic shift or conclusion):
-  Anyway, let's move on to the next point.`,
-      points:["Negative inversion (Never/Rarely/Hardly)","No sooner…than / scarcely…when","Epistemic adverbs (probably/apparently)","Discourse adverbs (indeed/in fact)","Anyway / at any rate"]
+⚠️ Formal connectors (however, moreover…) → B1|adv.
+⚠️ Basic negation & frequency → A1|adv.`,
+      points:["Negative inversion (Never/Rarely/Hardly)","No sooner…than / scarcely…when","Epistemic adverbs (probably/apparently)"]
     },
     disc:{
-      title:"Discourse & syntax",
+      title:"Discourse & advanced syntax",
       précis:`• Cleft sentences (focus):
   It-cleft: It was John who called. It is tomorrow that we leave.
   Wh-cleft: What I need is a holiday. What happened was that he resigned.
@@ -628,25 +602,26 @@ window.GRAMMAR_DATA = {
 • Participle clauses (extended):
   Walking down the street, I met an old friend.
   Given the circumstances, we decided to wait.
+  Having finished the report, she left. (= After she had finished…)
   ⚠️ Dangling participle error if subjects don't match.
 
-• Complete conditional system:
-  Zero: If you heat ice, it melts. (general truth)
-  First: If it rains, we'll cancel. (real future)
-  Second: If I were rich, I'd travel. (unreal present)
-  Third: If I had known, I'd have helped. (unreal past)
+• Third conditional & mixed (discourse integration):
+  If I had known, I'd have helped. (unreal past)
+  If I had taken that job, I would be rich now. (mixed)
 
 • B2 connectors:
-  hence, thus, thereby, accordingly, conversely, notwithstanding.`,
-      points:["Cleft sentences (It-cleft / Wh-cleft)","Inversion for emphasis","Participle clauses (extended)","Conditional system (0–3)","B2 connectors (hence/thus/conversely)"]
+  hence, thus, thereby, accordingly, conversely, notwithstanding.
+
+⚠️ Zero / first / second conditional → B1|disc.`,
+      points:["Cleft sentences (It-cleft / Wh-cleft)","Inversion for emphasis","Participle clauses (extended)","Third & mixed conditionals","B2 connectors (hence/thus/conversely)"]
     },
     num:{
-      title:"Number & quantifiers",
+      title:"Number & quantifiers — extension",
       précis:`• Agreement with fractions and percentages:
   Two thirds of the students are / is (both accepted; plural preferred).
   50% of the budget has been spent.
 
-• Approximation (formal):
+• Formal approximation:
   in the region of, in the vicinity of, to the tune of (informal).
   Ex.: a budget in the region of two million euros.
 
@@ -654,11 +629,12 @@ window.GRAMMAR_DATA = {
   one in ten, two out of three, three times as many.
   Ex.: One in five children lives in poverty.
 
-• Quantifiers in formal writing:
+• Formal writing quantifiers:
   a substantial number of, a significant proportion of, the vast majority of.
-  ⚠️ Majority of + plural noun → plural verb recommended.`,
-      points:["Fractions & percentages (agreement)","Formal approximation","Proportional expressions (one in ten)","Majority / proportion quantifiers","Two thirds of (verb agreement)"]
-    }
+
+⚠️ Most of / majority of / about → B1|num.`,
+      points:["Fractions & percentages (agreement)","Formal approximation","Proportional expressions (one in ten)","Formal quantifiers"]
+    },
   },
   C1:{
     nom:{
@@ -828,132 +804,91 @@ window.GRAMMAR_DATA = {
   C2:{
     nom:{
       title:"Nouns & articles",
-      précis:`• Complete article system — subtle distinctions:
+      précis:`• Article subtleties — generic and institutional (extension B2):
   The with generic reference (formal): The lion is a majestic animal.
-  Zero article for institutions as function: at university, in hospital (BrE).
+  Zero article for function: at university, in hospital (BrE).
   The for specific institution: at the university where I studied.
 
-• Eponyms and articles:
-  Alzheimer's disease, Parkinson's disease (no article with disease names).
-  the Mona Lisa, the Big Bang, the Industrial Revolution.
+• Pluralia tantum and singularia tantum (extension A2):
+  scissors, trousers (always plural) | information, advice (uncountable, no plural).
 
-• Pluralia tantum (plural-only nouns):
-  scissors, trousers, glasses, premises, cattle.
-  A pair of scissors. These trousers are too long.
-  ⚠️ Always plural verb: The scissors are on the table.
-
-• Singularia tantum (singular-only uncountables):
-  information, equipment, advice, progress, furniture.
-  ⚠️ No plural form: *informations, *advices are non-standard.
-
-• Neologism and variation:
-  Email vs. e-mail; internet vs. the Internet.
-  ⚠️ Both forms may be accepted; follow style guide of context.`,
-      points:["Article subtleties (generic the / zero)","Eponyms & proper names","Pluralia tantum (scissors/trousers)","Singularia tantum (information/advice)","Neologism & spelling variation"]
+⚠️ Eponyms, neologism variation → deep-lib. Countable/uncountable → A2|nom.`,
+      points:["Article subtleties (generic the / zero)","Pluralia tantum (scissors/trousers)","Singularia tantum (information/advice)"]
     },
     verb:{
       title:"Verbs & tenses",
-      précis:`• Complete tense-aspect-mood inventory:
+      précis:`• Full tense-aspect-mood mastery (extension C1):
   Simple, continuous, perfect, perfect continuous × present, past, future.
-  Modals × present/past (can/could, will/would, may/might, shall/should).
-  Non-finite: infinitive, gerund, participle (present/past).
-
-• Aspectual nuance in advanced use:
-  I read the book (completed) vs. I was reading the book (in progress at past time).
-  I have read the book (experience/relevance) vs. I had read the book (before another past event).
   I will have been working (duration up to future point).
+  Sequence of tenses: He said he was tired. Exception: still true → He said he is tired.
 
-• Sequence of tenses in complex sentences:
-  He said he was tired. He said he had been tired. He said he would come.
-  Exception: if the situation is still true: He said he is/is still tired.
+• Aspectual nuance — systematic control (extension C1):
+  I read the book (completed) vs. I was reading (in progress at past time).
+  I have read (experience/relevance) vs. I had read (before another past event).
 
-• Archaic/literary forms (recognition):
+• Archaic/literary forms — recognition only:
   thou art, he doth, if he be, were it not for.
   ⚠️ Recognise in literature; do not use in modern standard prose.
 
-• Get-passive vs. be-passive:
-  be-passive (neutral): The window was broken.
-  get-passive (dynamic/adversative): He got fired. They got robbed.`,
-      points:["Complete tense-aspect-mood inventory","Aspectual nuance (simple/continuous/perfect)","Sequence of tenses","Archaic forms (recognition)","Get-passive vs. be-passive"]
+⚠️ Aktionsart, narrative tenses, modals → C1|verb. Past simple/perfect → A2|verb, B1|verb.`,
+      points:["Full tense-aspect-mood mastery","Aspectual nuance (systematic control)","Archaic forms (recognition)"]
     },
     adj:{
       title:"Adjectives & agreement",
-      précis:`• Marginal agreement cases:
-  Compound modifiers before noun: a five-mile walk (invariable mile).
-  After noun: two miles long, three years old (plural after number).
+      précis:`• Marginal agreement — compound modifiers (extension B2):
+  a five-mile walk (invariable) vs. two miles long (plural after number).
 
-• Adjectives in fixed legal/formal phrases:
-  attorney general, court martial, notary public (postpositive in compounds).
-  Poet laureate, heir presumptive.
-
-• Meaning change by position:
+• Position and meaning change (extension):
   the present king (= current) vs. the king present (= who is here).
   a responsible person vs. the person responsible.
 
-• Adjective vs. adverb confusion (C2 precision):
-  good (adj.) / well (adv.): She plays well. The food is good.
-  hard (adv. = with effort) / hardly (adv. = almost not): work hard vs. hardly work.
-  late (adv.) / lately (adv. = recently): arrive late vs. I haven't seen him lately.
-
-• Flat adverbs (no -ly):
+• Flat adverbs — register choice (extension):
   drive slow/slowly, speak loud/loudly, go direct/directly.
-  ⚠️ Both forms often acceptable; slowly/loudly more common in formal writing.`,
-      points:["Compound modifiers (a five-mile walk)","Legal/formal postpositive compounds","Position & meaning change","Good/well & hard/hardly/lately","Flat adverbs (slow/loud/direct)"]
+  slowly/loudly preferred in formal writing.
+
+⚠️ Legal postpositive compounds, good/well → B2|adj, C1|adj.`,
+      points:["Compound modifiers (a five-mile walk)","Position & meaning change","Flat adverbs (slow/loud/direct)"]
     },
     pron:{
       title:"Pronouns",
-      précis:`• Neuter it and anticipatory structures:
-  It is essential that he be present. (formal subjunctive)
-  It appears that they have left. It follows that we must act.
+      précis:`• Anaphora vs. cataphora — metalinguistic (extension C1):
+  Anaphora (backward): John arrived. He was late.
+  Cataphora (forward, literary): He who hesitates is lost.
 
-• Fine distinctions — reflexive, reciprocal, middle:
-  Reflexive: She blamed herself. (subject = object)
-  Reciprocal: They blamed each other. (mutual)
-  Middle: The book reads well. (inherent quality, no agent)
-
-• Literary/archaic pronouns (recognition):
-  thou/thee/thy/thine, ye, oneself in formal rules.
-  ⚠️ Recognition in literature and historical texts only.
-
-• Pronoun reference ambiguity:
+• Reference ambiguity — resolution (extension):
   John told Peter that he had won. (he = John or Peter?)
   Resolve through context or rewrite for clarity.
 
-• Cataphora vs. anaphora:
-  Anaphora (backward): John arrived. He was late.
-  Cataphora (forward, literary): He who hesitates is lost.`,
-      points:["Anticipatory it (It is essential that…)","Reflexive / reciprocal / middle","Archaic pronouns (recognition)","Reference ambiguity & clarity","Anaphora vs. cataphora"]
+• Anticipatory it — formal subjunctive (extension B2):
+  It is essential that he be present. (AmE formal)
+
+⚠️ Coreference chains → C1|pron. Reflexive/reciprocal/middle → B1|pron.`,
+      points:["Anaphora vs. cataphora","Reference ambiguity & clarity","Anticipatory it (formal subjunctive)"]
     },
     adv:{
       title:"Adverbs & negation",
-      précis:`• Syntactic figures involving adverbs:
-  Hyperbaton (displacement): Slowly, he opened the door.
-  Anacoluthon (broken syntax): Me, leave now? Impossible.
-  Zeugma (yoking): He lost his wallet and his temper.
-
-• Pragmatics: presupposition and implicature:
+      précis:`• Pragmatic implicature (extension C1):
   Presupposition: "He stopped smoking." → presupposes he smoked before.
   Implicature (Grice): "Some students passed." → implicates not all passed.
   Maxims: quantity, quality, relation, manner.
 
-• Scope of negation:
+• Scope of negation and double negation (extension):
   I didn't see two people. (one person? or zero?)
-  All that glitters is not gold. (nothing that glitters is gold? or some things?)
-  ⚠️ Ambiguity resolved by context or rephrasing.
+  Formal litotes: not uncommon (= common). vs. non-standard double negative.
 
-• Double negation:
-  Standard English: two negatives = positive (I don't know nothing = non-standard).
-  Formal/logical: not uncommon (= common). Not infrequently (= frequently).
-  ⚠️ Distinguish non-standard dialect from formal litotes.`,
-      points:["Hyperbaton, anacoluthon, zeugme","Presupposition & implicature (Grice)","Scope of negation","Double negation (standard vs. litotes)","Pragmatic maxims"]
+• Syntactic figures (extension):
+  Hyperbaton, anacoluthon, zeugma — recognition in literary/formal texts.
+
+⚠️ Epistemic adverbs, hedges/boosters → C1|adv. Negative inversion → B2|adv.`,
+      points:["Pragmatic implicature (Grice)","Scope of negation & litotes","Syntactic figures (recognition)"]
     },
     disc:{
       title:"Discourse & syntax",
-      précis:`• Complete grammatical metalanguage:
-  noun phrase, verb phrase, clause, morpheme, predicate, complement,
-  anaphora, cataphora, coreference, presupposition, implicature, deixis.
+      précis:`• Metalinguistic awareness — complete metalanguage:
+  noun phrase, verb phrase, morpheme, predicate, anaphora, cataphora,
+  coreference, presupposition, implicature, deixis, given/new information.
 
-• Sociolinguistic variation:
+• Sociolinguistic variation (extension C1 register mapping):
   Diatopic: BrE vs. AmE (lift/elevator, holiday/vacation, have got/have).
   Diastratic: sociolects, education level, profession-specific language.
   Diaphasic: register shift by situation (formal letter vs. text message).
@@ -961,37 +896,25 @@ window.GRAMMAR_DATA = {
 • Syntactic ambiguity and disambiguation:
   Scope of negation: She didn't eat all the cake.
   Attachment of modifiers: The man with the telescope on the hill.
-  Revise and rewrite without altering intended meaning.
 
-• Rhetoric of formal writing:
-  Thesis / antithesis / synthesis structure.
-  Analytical plan: successive aspects of one phenomenon.
-  C2 connectors: it follows that, it stands to reason, suffice it to say, be that as it may.
-
-• Information structure:
-  Given vs. new information. Topic vs. comment. End focus (most important last).`,
-      points:["Grammatical metalanguage (complete)","Sociolinguistic variation (BrE/AmE/registers)","Syntactic ambiguity & disambiguation","Rhetoric of formal writing","Information structure (given/new)"]
+⚠️ Register mapping, cleft systematic → C1|disc. Rhetoric/connectors → B2|disc.`,
+      points:["Metalinguistic awareness (complete metalanguage)","Sociolinguistic variation (BrE/AmE/registers)","Syntactic ambiguity & disambiguation"]
     },
     num:{
       title:"Number & quantifiers",
-      précis:`• Literary/archaic quantifiers (recognition):
+      précis:`• Literary/archaic quantifiers — recognition (extension C1):
   myriad, sundry, divers (archaic: various), nigh (nearly, archaic).
-  a good deal of, a great deal of (uncountable, formal).
 
 • Precision in numerical discourse:
   significant figures, margin of error, statistically significant.
-  approximately 3.14 vs. about 3 (level of precision signals expertise).
+  approximately 3.14 vs. about 3 (precision signals expertise).
 
-• Register of quantification:
-  Formal: a substantial proportion, an infinitesimal amount, in negligible numbers.
-  Neutral: a lot of, quite a few, not many.
-  Informal: loads of, tons of, heaps of (mainly BrE/AusE).
-
-• Number agreement in complex subjects:
-  Either the manager or the employees are responsible.
+• Complex subject-verb agreement (extension B2):
   The number of students has increased. A number of students have complained.
-  ⚠️ The number of → singular; a number of → plural.`,
-      points:["Literary quantifiers (myriad/sundry)","Precision in numerical discourse","Register of quantification","Complex subject-verb agreement","The number of vs. a number of"]
+  ⚠️ The number of → singular; a number of → plural.
+
+⚠️ Formal quantifiers, plethora/paucity → C1|num. Fractions → B2|num.`,
+      points:["Literary quantifiers (myriad/sundry)","Precision in numerical discourse","Complex subject-verb agreement"]
     }
   }
 };

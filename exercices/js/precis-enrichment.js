@@ -8,16 +8,16 @@
       A2: "Niveau survie élargie : passés de base, pronoms compléments, négations composées.",
       B1: "Niveau seuil : subjonctif, futur, doubles pronoms, textes structurés.",
       B2: "Niveau avancé : temps du passé complexes, registre soutenu, argumentation.",
-      C1: "Niveau autonomie : nuances, écrit académique, passé simple (lecture).",
-      C2: "Niveau maîtrise : système complet, variation linguistique, style expert."
+      C1: "Extension autonomie : subj. imparfait réceptif, passé simple, modalité fine, registres, coréférence.",
+      C2: "Extension maîtrise : métalangue, liaisons, variation sociolinguistique, implicature, passé antérieur réceptif."
     },
     en: {
       A1: "Discovery level: simple chunks, speaking first, minimal theory.",
       A2: "Elementary: basic past tenses, object pronouns, extended negation.",
       B1: "Threshold: perfect vs past, conditionals, passive, reported speech.",
       B2: "Advanced: complex conditionals, formal register, cohesion.",
-      C1: "Proficiency: subtle modality, academic writing, mixed conditionals.",
-      C2: "Mastery: full system, sociolinguistic variation, rhetorical control."
+      C1: "Extension proficiency: Aktionsart, narrative tenses, epistemic/journalistic modals, register, coreference.",
+      C2: "Extension mastery: metalanguage, implicature, sociolinguistic variation, archaic recognition."
     }
   };
 
@@ -34,12 +34,25 @@
       "A2|adv": "• ne…plus, ne…jamais, ne…rien, ne…personne.\n• très, assez, trop + adjectif.",
       "A2|disc": "• Séquence : d'abord, ensuite, enfin.\n• Relatives qui/que (essentielles).\n• Parce que / donc / mais.",
       "A2|num": "• Ordinaux : premier, deuxième…\n• Fractions : un tiers, la moitié.",
+      "B1|verb": "• Subjonctif : il faut que tu viennes.\n• Futur simple : je partirai demain.\n• Passif : Le rapport a été signé.",
       "B1|pron": "• Ordre : me/te/se → le/la/les → lui/leur → y → en.\n• dont, où, lequel.",
       "B1|num": "• la plupart de + pluriel.\n• environ, presque + quantité.",
-      "B2|pron": "• auquel, duquel.\n• quiconque, nul (soutenu).",
+      "B2|nom": "• GN complexes, substantivation.\n• liaisons obligatoires/interdites.",
+      "B2|verb": "• conditionnel passé, subjonctif passé.\n• futur antérieur, infinitif passé.",
+      "B2|adj": "• accord en (COD antéposé).\n• collectif/fraction, paires adj./part.",
+      "B2|adv": "• ne…guère, ne…point (littéraire).\n• certes, or (modalité).",
+      "B2|disc": "• clivage, inversion stylistique.\n• hypothèse 3e degré, connecteurs B2.",
+      "B2|pron": "• auquel, duquel (prép. complexes).\n• quiconque, nul (soutenu).",
       "B2|num": "• la moitié, le tiers — accord variable.\n• à hauteur de (formel).",
+      "C1|verb": "• Subjonctif imparfait : qu'il fût, qu'elle eût (réceptif).\n• Conditionnel journalistique : serait impliqué.\n• Modalité : devoir épistémique vs déontique.",
+      "C1|disc": "• Clivées : C'est X qui/que…\n• Détachées : Fatiguée, elle… / Son travail terminé…\n• Registres : soutenu / courant / familier.",
+      "C1|adv": "• Épistémiques : apparemment, vraisemblablement, soi-disant.\n• Litote : Ce n'est pas sans intérêt.\n• Euphémisme : Il nous a quittés.",
       "C1|pron": "• Coréférence textuelle.\n• on : valeurs multiples.",
       "C1|num": "• maints, force + nom (littéraire).",
+      "C2|verb": "• Passé antérieur : Quand il eut fini, il sortit (réceptif).\n• Subj. plus-que-parfait : qu'il eût fini.",
+      "C2|disc": "• Métalangue : anaphore, coréférence, implicature.\n• Variation : diatopique, diastratique, diaphasique.",
+      "C2|adv": "• Figures : hyperbate, anacoluthe, zeugme.\n• Implicature (Grice) et présupposé.",
+      "C2|nom": "• Liaisons facultatives = registre soutenu.\n• Liaisons interdites : après et, h aspiré.",
       "C2|num": "• Numéraux composés avec traits d'union.\n• Registres de quantification."
     },
     en: {
@@ -53,11 +66,24 @@
       "A2|adv": "• never, already, yet, still.\n• very, too, enough.",
       "A2|num": "• first, second, third.\n• a third, half.",
       "A2|disc": "• first, then, finally.\n• because / so / but.\n• defining vs non-defining relatives (who/which/that).",
-      "B1|pron": "• defining / non-defining relatives.\n• who, which, that, whose, where, when, why.\n• reflexives: myself, yourself.",
+      "B1|verb": "• Present perfect vs past simple (finished time).\n• Passive : The letter was sent.\n• Reported speech : She said she was tired.",
+      "B1|pron": "• whose, where, when, whom, why.\n• myself / each other.",
+      "B1|disc": "• If + present, will (1st conditional).\n• If + past, would (2nd conditional intro).\n• Question tags : isn't it?",
       "B1|num": "• the majority of, a number of.",
-      "B2|pron": "• It was John who… (cleft).\n• whoever, whichever.",
+      "B2|nom": "• complex noun phrases.\n• substantivization (the + adj.).",
+      "B2|verb": "• third / mixed conditionals.\n• passive all tenses, modals + have, reporting verbs.",
+      "B2|adj": "• the…the… comparatives.\n• reduced relative clauses.",
+      "B2|adv": "• Never/Rarely inversion.\n• no sooner…than.",
+      "B2|disc": "• cleft, inversion, participle clauses.\n• hence, thus, conversely.",
+      "B2|pron": "• to whom / by which (formal).\n• whatever, whoever; preparatory it.",
       "B2|num": "• half of, a third of.\n• in the region of.",
+      "C1|verb": "• Aktionsart : states vs achievements.\n• Narrative tenses + historical present.\n• Epistemic modals : must be, can't have.\n• Journalistic : may/might/could + unconfirmed.",
+      "C1|disc": "• Cleft systematic : It was X who… / What I need is…\n• Detached : Tired, she… / His work finished…\n• Register mapping : formal → informal.",
+      "C1|adv": "• Epistemic : ostensibly, reportedly.\n• Hedges : somewhat, tend to.\n• Boosters : clearly, undoubtedly.",
       "C1|pron": "• cohesion, ellipsis.\n• generic they.",
+      "C2|verb": "• Full aspect mastery : will have been working.\n• Archaic recognition : thou art, if he be.",
+      "C2|disc": "• Metalanguage : anaphora, coreference, deixis.\n• Sociolinguistic variation : BrE/AmE, registers.",
+      "C2|adv": "• Implicature (Grice) : Some passed → not all.\n• Presupposition : stopped smoking → smoked before.",
       "C2|num": "• literary quantifiers.\n• academic/statistical phrasing."
     }
   };

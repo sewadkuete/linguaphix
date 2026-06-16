@@ -233,14 +233,18 @@
       "PARLER : je parlerai, tu parleras, il parlera, nous parlerons, vous parlerez, ils parleront\n\nFINIR : je finirai, tu finiras...\n\nÊTRE : je serai | AVOIR : j'aurai | ALLER : j'irai | FAIRE : je ferai",
       ["Infinitif entier + terminaisons.", "Verbes irréguliers : radical futur spécial.", "Promesse, prédiction, futur lointain.", "Futur antérieur : aurai + PP."],
       ["Je t'appellerai demain.", "Tu réussiras l'examen.", "Il fera beau ce week-end.", "Nous partirons en juin."],
-      ["Radical futur irrégulier : je verrai, j'aurai, je serai."]
+      ["Radical futur irrégulier : je verrai, j'aurai, je serai."],
+      "Subordonnée temporelle : Quand tu seras prêt… (futur, pas présent).",
+      "Futur proche → A1|verb ; futur antérieur → B2|verb"
     ),
     futur_anterieur: G(
       "Le futur antérieur exprime une action future antérieure à une autre action future.",
       "avoir/être (futur) + participe passé\n\nJ'aurai fini, tu seras parti, nous aurons mangé, ils seront arrivés",
       ["Action terminée avant un futur repère.", "Quand + futur antérieur, futur simple.", "Avec être : accord du PP.", "Hypothèse passée : Il aura oublié."],
       ["Quand tu arriveras, j'aurai déjà mangé.", "D'ici demain, nous serons partis.", "Elle aura terminé avant midi.", "Ils auront oublié notre rendez-vous."],
-      ["Ne pas confondre avec conditionnel passé."]
+      ["Ne pas confondre avec conditionnel passé."],
+      "Écrit soutenu et argumentation ; rare à l'oral courant.",
+      "Futur simple → B1|verb ; conditionnel passé → B2|verb"
     ),
     conditionnel_present: G(
       "Le conditionnel présent exprime hypothèse, politesse ou information non confirmée.",
@@ -254,7 +258,9 @@
       "avoir/être (conditionnel) + participe passé\n\nJ'aurais aimé, tu serais venu(e), nous aurions pu, ils auraient dû",
       ["Regret : J'aurais dû...", "Si + plus-que-parfait → conditionnel passé.", "Information non confirmée au passé.", "Avec être : accord PP."],
       ["J'aurais aimé venir.", "Tu aurais pu me prévenir.", "Si j'avais su, je serais resté.", "Elle aurait eu 30 ans hier."],
-      ["Ne pas confondre avec plus-que-parfait seul."]
+      ["Ne pas confondre avec plus-que-parfait seul."],
+      "Regret, reproche et hypothèse 3e degré ; courant à l'oral et à l'écrit.",
+      "Plus-que-parfait → B1|verb ; hypothèse 3e degré → B2|disc"
     ),
     conditionnel_politesse: G(
       "Le conditionnel adoucit demandes, suggestions et opinions.",
@@ -270,14 +276,18 @@
       "Radical + -e, -es, -e, -ions, -iez, -ent (souvent)\n\nPARLER : que je parle, que tu parles, qu'il parle, que nous parlions, que vous parliez, qu'ils parlent\n\nÊTRE : que je sois | AVOIR : que j'aie | ALLER : que j'aille | FAIRE : que je fasse",
       ["Après il faut que, vouloir que, douter que.", "Expressions : avant que, pour que, sans que.", "Verbes émotion : je suis content que...", "Négation du subjonctif : ne...pas normal."],
       ["Il faut que tu viennes.", "Je veux qu'il réussisse.", "Bien qu'il pleuve, nous sortons.", "Je doute qu'elle ait raison."],
-      ["Que je parle, pas *que je parles (1er grp 1re pers.)."]
+      ["Que je parle, pas *que je parles (1er grp 1re pers.)."],
+      "À l'écrit : subjonctif après émotion/volonté ; à l'oral : indicatif parfois toléré.",
+      "Subjonctif passé → B2|verb ; après que + indicatif (règle B1)"
     ),
     subjonctif_passe: G(
       "Le subjonctif passé exprime une action antérieure dans une proposition subjonctive.",
       "avoir/être (subjonctif) + participe passé\n\nQue j'aie fini, qu'il soit parti, que nous ayons vu, qu'elles soient arrivées",
       ["Antériorité par rapport au verbe principal.", "Je regrette qu'il soit parti.", "Il faut que tu aies terminé avant.", "Avec être : accord.", "Après une fois que (parfois indicatif si fait acquis)."],
       ["Je suis content qu'elle soit venue.", "Il faut que tu aies fini.", "Je doute qu'ils aient compris.", "Bien qu'il ait plu, le match a eu lieu."],
-      ["Subjonctif passé rare à l'oral ; indicatif parfois accepté."]
+      ["Subjonctif passé rare à l'oral ; indicatif parfois accepté."],
+      "Écrit soutenu et subordonnées de sentiment ; plus rare à l'oral.",
+      "Subjonctif présent → B1|verb ; conditionnel passé → B2|verb"
     ),
     subjonctif_triggers: G(
       "Certaines conjonctions et constructions imposent le subjonctif.",
@@ -341,7 +351,9 @@
       "me/te/se/nous/vous → le/la/les → lui/leur → y → en → verbe\n\nJe le lui donne. | Tu m'en parles. | Il y en a.",
       ["Ordre strict devant verbe conjugué.", "Impératif affirmatif : verbe + COD + COI + y + en.", "Ne...pas entoure le bloc pronominal.", "Un pronom par catégorie ; y et en peuvent coexister."],
       ["Je te le donne.", "Il nous en a parlé.", "Donne-le-moi !", "Il y en a beaucoup."],
-      ["Je le lui donne, pas *Je lui le donne."]
+      ["Je le lui donne, pas *Je lui le donne."],
+      "B1 : système complet ; impératif : Donnez-y-en !",
+      "Pronoms COD/COI simples → A2|pron"
     ),
     pron_sujet: G(
       "Les pronoms sujets sont obligatoires en français sauf à l'impératif.",
@@ -549,35 +561,45 @@
       "être (conj.) + participe passé (+ par + agent)\n\nLe livre est lu par les élèves.\nLa maison a été vendue.",
       ["Agent avec par (parfois de).", "Accord PP avec sujet.", "Passive = mettre en avant le patient.", "On + actif ≈ passive impersonnelle."],
       ["La lettre a été envoyée.", "Ce problème sera résolu.", "Le français est parlé au Québec.", "Il a été invité à la fête."],
-      ["Passive pronominale ≠ passive (Il s'est lavé)."]
+      ["Passive pronominale ≠ passive (Il s'est lavé)."],
+      "Écrit formel et journalistique ; oral : on + actif fréquent.",
+      "Passif nuancé (se faire) → B2|verb"
     ),
     gerondif: G(
       "Le gérondif exprime simultanéité ou manière : en + participe présent.",
       "en + participe présent (-ant)\n\nEn parlant, en mangeant, en ayant fini\n\nIl apprend en écoutant.",
       ["En + -ant (radical nous sans -ons + ant).", "Simultanéité avec action principale.", "Manière de faire.", "Ayant/d'étant pour antériorité (rare)."],
       ["Elle étudie en écoutant de la musique.", "En travaillant dur, il a réussi.", "Ne pas confondre avec participe présent seul.", "En arrivant, j'ai vu qu'il pleuvait."],
-      ["Participe présent sans en : adjectif ou nom."]
+      ["Participe présent sans en : adjectif ou nom."],
+      "Même sujet obligatoire dans les deux propositions.",
+      "Participe présent → B2|disc"
     ),
     discours_rapporte: G(
       "Le discours indirect transforme les paroles rapportées avec concordance des temps.",
       "Direct : Il dit : « Je suis malade. »\nIndirect : Il dit qu'il est malade.\n\nPrésent → imparfait | PC → plus-que-parfait | Futur → conditionnel",
       ["Conjonction que + proposition.", "Concordance des temps si verbe introducteur au passé.", "Pronoms et repères temporels changent.", "Questions indirectes : il demande si / ce que."],
       ["Elle a dit qu'elle viendrait.", "Il m'a demandé où j'habitais.", "Ils ont annoncé qu'ils partaient.", "Elle se demande s'il a raison."],
-      ["Concordance si introducteur au présent plus souple."]
+      ["Concordance si introducteur au présent plus souple."],
+      "Introducteur au passé : concordance stricte à l'écrit.",
+      "Plus-que-parfait → B1|verb ; concordance avancée → B2|disc"
     ),
     plus_que_parfait: G(
       "Le plus-que-parfait exprime une action antérieure à une autre action passée.",
       "avoir/être (imparfait) + participe passé\n\nJ'avais mangé, tu étais parti, nous avions vu, ils étaient nés",
       ["Antériorité dans le passé.", "Avec PC ou imparfait dans principale.", "Si + plus-que-parfait → conditionnel passé.", "Avec être : accord."],
       ["Quand il est arrivé, j'avais déjà fini.", "Elle pensait qu'il était parti.", "Si j'avais su, je serais venu.", "Nous avions visité Rome avant."],
-      ["Ne pas confondre avec PC seul."]
+      ["Ne pas confondre avec PC seul."],
+      "Marque l'antériorité dans le récit et le discours indirect.",
+      "Conditionnel passé → B2|verb"
     ),
     passe_simple_etre: G(
       "Le passé simple de être et avoir est fréquent à l'écrit narratif.",
       "ÊTRE : je fus, tu fus, il fut, nous fûmes, vous fûtes, ils furent\n\nAVOIR : j'eus, tu eus, il eut, nous eûmes, vous eûtes, ils eurent",
       ["Registre littéraire/narratif.", "Action brève ponctuelle.", "Alterne avec imparfait (description).", "Rare à l'oral."],
       ["Il fut un temps où...", "Elle eut une idée soudaine.", "Nous fûmes surpris.", "Ils eurent peur."],
-      ["Passé simple ≠ imparfait pour description."]
+      ["Passé simple ≠ imparfait pour description."],
+      "Écrit narratif et littéraire ; jamais à l'oral courant (C1).",
+      "Alternance PS/imparfait → B2|verb ; formes -er → passe_simple_er ; passé antérieur → C2|verb"
     ),
     passe_simple_er: G(
       "Le passé simple des verbes -er ajoute des terminaisons spécifiques au radical.",
@@ -612,28 +634,36 @@
       "Si + présent → futur/présent/imperatif\nSi + imparfait → conditionnel présent\nSi + plus-que-parfait → conditionnel passé",
       ["Pas de conditionnel après si.", "Si j'avais le temps, je lirais.", "Si j'avais su, je serais venu.", "Si tu veux, on part."],
       ["Si tu viens, je serai content.", "Si j'étais riche, je voyagerais.", "Si tu avais étudié, tu aurais réussi.", "Si pleut, reste (familier)."],
-      ["Erreur : *Si j'aurais → Si j'avais."]
+      ["Erreur : *Si j'aurais → Si j'avais."],
+      "3e degré et mixte : registre argumenté et écrit ; 1er/2e degré en B1.",
+      "Hypothèse 1er/2e degré → B1|disc ; conditionnel passé → B2|verb"
     ),
     dislocation: G(
       "La dislocation met un élément en tête pour l'emphase, avec pronom reprenant.",
       "Moi, je pense que... | Les enfants, ils jouent.\n\nCleft : C'est Pierre qui a gagné.",
       ["Thème en tête + reprise pronominale.", "Oral très fréquent.", "C'est... qui/que pour focalisation.", "Mise en relief stylistique."],
       ["Mon frère, il habite à Lyon.", "C'est demain qu'il part.", "Les livres, je les adore.", "C'est moi qui l'ai fait."],
-      ["Registre oral vs formel écrit."]
+      ["Registre oral vs formel écrit."],
+      "Oral courant et écrit expressif ; thème topicalisé (C1).",
+      "Clivées formelles → C1|disc ; redoublement → cod_coi_redouble ; intro → B2|disc"
     ),
     mise_en_relief: G(
       "Structures cleft et ne...que mettent un élément en relief.",
       "C'est + élément + qui/que + phrase\nNe...que pour restriction\n\nCe n'est pas Pierre que je cherche, c'est Paul.",
       ["C'est... qui (sujet) / que (COD).", "Ce sont... pour pluriel.", "Ne...que = seulement.", "Inversion stylistique possible."],
       ["C'est demain qu'il arrive.", "Ce sont mes parents que j'appelle.", "Je n'ai que cinq minutes.", "Rarement ai-je vu cela."],
-      ["Ce que c'est que (registre familier)."]
+      ["Ce que c'est que (registre familier)."],
+      "Clivage courant à l'oral et à l'écrit ; ne…que plus restrictif (C1).",
+      "Intro clivage → B2|disc ; pseudo-clivées → C1|disc ; inversion → inversion_stylistique"
     ),
     inversion_stylistique: G(
       "L'inversion sujet-verbe marque le registre forme ou littéraire.",
       "Rarement ai-je vu... | Ainsi parla-t-il.\n\nInversion après adverbe en tête de phrase",
       ["Sujet-verbe inversé après adverbe.", "-t- euphonique : a-t-il.", "Registre soutenu/littéraire.", "Questions : inversion standard."],
       ["Peut-être viendra-t-il.", "Jamais n'ai-je oublié.", "Ainsi finit l'histoire.", "Comment vas-tu ?"],
-      ["Inversion obligatoire questions formelles."]
+      ["Inversion obligatoire questions formelles."],
+      "Écrit soutenu, presse et littérature ; rare à l'oral courant.",
+      "Mise en relief (clivage) → B2|disc ; négation littéraire → B2|adv"
     ),
     locutions_verbales: G(
       "Les locutions verbales associent un verbe à un nom ou adverbe avec sens idiomatique.",
@@ -696,14 +726,18 @@
       "Craindre que + ne | Avant que + ne | Empêcher que + ne\n\nJe crains qu'il ne vienne.",
       ["Ne sans pas après craindre que.", "Avant que + ne (précaution).", "Registre soutenu.", "Ne explétif ≠ négation."],
       ["Il craint qu'elle ne parte.", "Avant qu'il ne soit trop tard...", "Empêche qu'il ne tombe.", "Sans que personne ne sache."],
-      ["Ne explétif disparaît à l'oral."]
+      ["Ne explétif disparaît à l'oral."],
+      "Écrit soutenu et littéraire uniquement (C2).",
+      "Subjonctif après craindre → B1|verb ; avant que → subordonnee_temps"
     ),
     style_register: G(
       "Registres de langue (soutenu, courant, familier) influencent choix grammaticaux (C2).",
       "Soutenu : nous souhaitons | Courant : on veut | Familier : on veut\n\nPassé simple littéraire vs PC oral",
       ["Soutenu : vous, passé simple, subjonctif fréquent.", "Courant : tu/on, passé composé, indicatif.", "Familier : ellipse, n' omis à l'oral.", "Passé simple = écrit narratif ; subjonctif plus exigé à l'écrit."],
       ["Je vous prie de bien vouloir... (formel).", "Tu peux m'aider ? (courant).", "Il fut accueilli (littéraire).", "C'est pas grave (familier, n' pas ne)."],
-      ["Négation sans ne à l'oral."]
+      ["Négation sans ne à l'oral."],
+      "Cartographie diaphasique : soutenu / courant / familier (C2).",
+      "Modalité fine → C1|verb ; clivées et registres → C1|disc ; variation sociolinguistique → C2|disc"
     ),
     verbe_impersonnel: G(
       "Les verbes impersonnels n'ont pas de sujet réel ; il est impersonal.",
@@ -761,7 +795,9 @@
       "Après avoir/être : avoir mangé, être parti\n\nAprès merci de, après, sans : Après avoir fini, nous sommes sortis.",
       ["Avoir/être + PP à l'infinitif.", "Antériorité par rapport à action principale.", "Après prépositions temporelles.", "Registre écrit surtout."],
       ["Après avoir lu le livre, il l'a commenté.", "Sans avoir réfléchi, il a accepté.", "Merci d'être venu.", "Il prétend avoir terminé."],
-      ["Après finir vs après avoir fini (antériorité)."]
+      ["Après finir vs après avoir fini (antériorité)."],
+      "Écrit argumenté et formules de politesse ; moins fréquent à l'oral.",
+      "Futur antérieur → B2|verb ; gérondif → B1|verb"
     ),
     parole_directe: G(
       "La parole directe reproduit les mots exacts avec guillemets et ponctuation.",
@@ -782,14 +818,18 @@
       "Les‿ enfants | vous‿ avez | un‿ ami\n\nLiaison obligatoire, facultative ou interdite",
       ["Liaison après déterminants, pronoms.", "Interdite après et, singulier invariable.", "Liaison avec on, ils ont.", "Enchaînement sans [z]/[t] obligatoire."],
       ["Les amis arrivent [lezami].", "Vous avez raison [vuzav].", "Un homme est entré.", "Ils ont fini [ilzɔ̃]."],
-      ["Liaison incorrecte change le sens parfois."]
+      ["Liaison incorrecte change le sens parfois."],
+      "Oral soutenu ; liaisons facultatives = marqueurs de registre (C2).",
+      "Intro liaisons → B2|nom ; variation sociolinguistique → C2|disc"
     ),
     cod_coi_redouble: G(
       "Le redoublement pronominal insiste sur le complément (C1).",
       "Je le lui ai dit moi-même.\nPaul, je l'ai vu hier.\n\nDislocation + reprise pronominale",
       ["Thème en tête + pronom.", "Moi-même, lui-même pour insistance.", "Registre oral et écrit expressif.", "Ordre pronominal inchangé."],
       ["Ce livre, je l'ai lu deux fois.", "Marie, je lui ai téléphoné.", "Lui, il ne sait rien.", "Moi, je pense le contraire."],
-      ["Ne pas confondre avec double complément."]
+      ["Ne pas confondre avec double complément."],
+      "Oral expressif et écrit journalistique (C1).",
+      "Dislocation → dislocation ; coréférence → C1|pron ; ordre pronoms → B1|pron"
     ),
     subordonnee_temps: G(
       "Les subordonnées temporelles : quand, lorsque, pendant que, dès que, avant que, après que.",
@@ -810,14 +850,18 @@
       "Il dit qu'il viendrait demain. (= il a dit : je viendrai demain)\n\nFutur direct → conditionnel dans le passé",
       ["Concordance : futur → conditionnel.", "Discours indirect au passé.", "Nuances modale de non-réalisation possible.", "Journalisme : Le ministre démissionnerait."],
       ["Elle pensait qu'il pleuvrait.", "Ils ont annoncé qu'ils partiraient.", "On croyait que ce serait facile.", "Il a promis qu'il reviendrait."],
-      ["Conditionnel ≠ imparfait de politesse seul."]
+      ["Conditionnel ≠ imparfait de politesse seul."],
+      "Journalistique (info non confirmée) et discours indirect (C1).",
+      "Conditionnel journalistique → C1|verb ; concordance → B2|verb ; discours indirect → B1|verb"
     ),
     lexique_terminologie: G(
       "Terminologie grammaticale C1/C2 pour analyser la langue.",
       "Proposition, phrase, groupe nominal, complément circonstanciel\nAntécédent, relatif, coreférence, reprise anaphorique",
       ["Phrase = unité ponctuée ; proposition = unité verbale.", "Antécédent précède le relatif.", "Anaphore : pronom reprenant antécédent.", "Isotopie thématique en cohésion."],
       ["L'antécédent du pronom est flou.", "Deux propositions coordonnées par et.", "La reprise anaphorique par il.", "Champ lexical de la mer."],
-      ["Confondre phrase et proposition."]
+      ["Confondre phrase et proposition."],
+      "Métalangue académique et analytique (C2).",
+      "Coréférence → C1|pron ; cohésion textuelle → cohesion_textuelle ; métalangue → C2|disc"
     ),
     verbe_semiaux: G(
       "Les verbes semi-auxiliaires (devoir, pouvoir, vouloir, savoir, aller, venir de) modulent le sens verbal.",
@@ -831,7 +875,9 @@
       "Connecteurs : d'abord, ensuite, en revanche, en conclusion\nReprises : synonymes, pronoms, déterminants démonstratifs",
       ["Progression thématique du connu au nouveau.", "Connecteurs logiques explicites.", "Reprise lexicale et pronominale.", "Paragraphe = unité thématique."],
       ["Premièrement, examinons le contexte.", "En revanche, les coûts augmentent.", "Ce phénomène s'explique par...", "En conclusion, la réforme est nécessaire."],
-      ["Connecteurs sans logique entre idées."]
+      ["Connecteurs sans logique entre idées."],
+      "Écrit académique, argumentatif et expert (C2).",
+      "Coréférence → C1|pron ; métalangue → lexique_terminologie ; connecteurs B2 → B2|disc"
     )
   };
 
@@ -1032,14 +1078,18 @@
       "am/is/are + PP | was/were + PP | will be + PP\n\nThe letter was written by John.\nEnglish is spoken worldwide.",
       ["Object becomes subject.", "By + agent when important.", "All tenses possible with appropriate be.", "Get-passive informal: He got fired."],
       ["The window was broken.", "The report is being prepared.", "The cake was eaten.", "Spanish is spoken in Mexico."],
-      ["Only transitive verbs form passive."]
+      ["Only transitive verbs form passive."],
+      "Formal writing and reports; spoken English often prefers active.",
+      "Passive all tenses → B2|verb"
     ),
     reported_speech: G(
       "Reported speech shifts tense, pronouns, and time expressions when reporting what someone said.",
       "Direct: He said, \"I am tired.\"\nReported: He said (that) he was tired.\n\nPresent → past | Past → past perfect | will → would",
       ["Say/tell + that clause.", "Tell needs object: tell me that...", "Tense backshift when reporting past.", "Time words change: today → that day, tomorrow → the next day."],
       ["She said she was busy.", "He told me he would come.", "They asked if I was ready.", "She explained that she had left early."],
-      ["No backshift if statement still true (optional)."]
+      ["No backshift if statement still true (optional)."],
+      "Backshift standard when reporting verb is past.",
+      "Present perfect contrast → B1|verb"
     ),
     conditional_zero: G(
       "Zero conditional states general truths: if + present, present.",
@@ -1053,28 +1103,36 @@
       "If + present simple, will + base verb\n\nIf it rains, I will stay home.\nIf you study, you will pass.",
       ["Real future possibility.", "If-clause present, main clause will.", "Unless = if not.", "As soon as/when + present for future."],
       ["If she calls, I will answer.", "We will be late if we don't hurry.", "If you need help, let me know.", "Unless you hurry, you will miss the train."],
-      ["If it will rain is wrong in if-clause; use present."]
+      ["If it will rain is wrong in if-clause; use present."],
+      "Real and likely future outcomes.",
+      "Second conditional → B1|disc ; zero conditional → B2|disc"
     ),
     conditional_second: G(
       "Second conditional expresses unreal present/future: if + past, would.",
       "If + past simple, would + base verb\n\nIf I had money, I would travel.\nIf I were you, I would accept.",
       ["Hypothetical present/future.", "If I were (subjunctive formal).", "Would in main clause only.", "Could/might replace would."],
       ["If I won the lottery, I would quit my job.", "If she were here, she would help.", "I would buy a house if I could.", "What would you do if you lost your phone?"],
-      ["If I was vs if I were: were preferred formal."]
+      ["If I was vs if I were: were preferred formal."],
+      "Intro at B1; third conditional at B2.",
+      "First conditional → B1|disc"
     ),
     conditional_third: G(
       "Third conditional expresses unreal past: if + past perfect, would have + PP.",
       "If + had + PP, would have + PP\n\nIf I had studied, I would have passed.\nIf she had known, she would have come.",
       ["Regret about past.", "Both clauses refer to unreal past.", "Could/might have in result.", "If only / I wish + past perfect similar."],
       ["If they had left earlier, they would have caught the train.", "I would have helped if you had asked.", "If it hadn't rained, we would have gone out.", "She would have succeeded if she had tried."],
-      ["Would have in if-clause is wrong: If I would have..."]
+      ["Would have in if-clause is wrong: If I would have..."],
+      "Regret and counterfactual past ; common in speaking and writing.",
+      "Second conditional → B1|disc ; mixed conditionals → B2|verb ; wish/if only → B2|verb"
     ),
     conditional_mixed: G(
       "Mixed conditionals combine unreal past condition with present result, or vice versa.",
       "If + past perfect, would + base (past → present)\nIf I had studied medicine, I would be a doctor now.\n\nIf + past, would have + PP (present habit → past)",
       ["Past action affects present.", "Present state affects past outcome (less common).", "Flexible time reference.", "Context determines meaning."],
       ["If I had taken that job, I would be rich now.", "If she were smarter, she would have succeeded.", "If you had listened, you would understand now.", "If he didn't smoke, he would have lived longer."],
-      ["Identify which clause refers to which time."]
+      ["Identify which clause refers to which time."],
+      "Argumentation and narrative ; links past decisions to present outcomes.",
+      "Third conditional → B2|verb ; second conditional → B1|disc"
     ),
     comp_er_more: G(
       "Comparatives use -er for short adjectives or more + adjective for longer ones.",
@@ -1286,21 +1344,27 @@
       "It was John who called.\nIt is tomorrow that we leave.\n\nIt-cleft for focus",
       ["It is/was + focus + that/who.", "Who for people; that for things.", "Stress on focused element.", "Cleft for contrast or correction."],
       ["It was Mary who won.", "It is money that causes problems.", "It wasn't me who broke it.", "It is here that we met."],
-      ["It-cleft vs pseudo-cleft (What I need is...)."]
+      ["It-cleft vs pseudo-cleft (What I need is...)."],
+      "Oral and written emphasis ; common for contrast and correction.",
+      "Wh-cleft → B2|disc ; preparatory it → B2|pron"
     ),
     cleft_wh: G(
       "Wh-cleft (pseudo-cleft) uses what-clause for emphasis.",
       "What I need is a vacation.\nWhat she said was surprising.\n\nWhat-clause + be + focus",
       ["What I did was call him.", "All I want is peace.", "What happened was unexpected.", "Reverse wh-cleft: A vacation is what I need."],
       ["What I love is chocolate.", "What we need is time.", "All he said was goodbye.", "What surprised me was her reaction."],
-      ["What-clause as subject singular verb."]
+      ["What-clause as subject singular verb."],
+      "Written and spoken focus ; what-clauses frequent in argumentation.",
+      "It-cleft → B2|disc ; what-clauses → B2|pron"
     ),
     inversion: G(
       "Inversion places auxiliary before subject for emphasis or formal style.",
       "Never have I seen... | Rarely does he... | Not only did she...\n\nOnly after + inversion",
       ["Negative adverb fronting → inversion.", "Never, rarely, seldom, hardly, not only.", "Auxiliary before subject.", "No inversion with subject pronoun only after so/neither."],
       ["Never have I been so surprised.", "Rarely do we see such talent.", "Not only did he win, but he broke the record.", "Only then did I understand."],
-      ["Never I have seen → Never have I seen."]
+      ["Never I have seen → Never have I seen."],
+      "Formal writing, speeches and literary style ; rare in casual speech.",
+      "Negative adverbs → B2|adv ; cleft sentences → B2|disc"
     ),
     inversion_neither: G(
       "So/neither inversion agrees with positive/negative previous statement.",
@@ -1479,7 +1543,9 @@
       "However, Moreover, Nevertheless, Furthermore, In contrast, On the other hand\n\nHowever at sentence start with comma",
       ["However = contrast.", "Moreover/furthermore = addition.", "Nevertheless = despite that.", "Punctuation with conjunctive adverbs."],
       ["The plan is risky; however, it might work.", "Moreover, costs have risen.", "It was difficult. Nevertheless, we succeeded.", "Furthermore, evidence supports this."],
-      ["However comma when joining two independent clauses with semicolon."]
+      ["However comma when joining two independent clauses with semicolon."],
+      "Academic and formal writing ; hence/thus/conversely at B2.",
+      "B2 connectors → B2|disc ; formal connectors → B1|adv"
     ),
     emphasis_do: G(
       "Emphatic do/does/did stresses the verb in affirmative sentences.",
@@ -1507,7 +1573,9 @@
       "The results suggest... | It appears that... | This may indicate...\n\nAvoid absolute claims",
       ["Modal verbs for caution.", "Seem/appear/tend to.", "Somewhat, relatively, generally.", "Academic objectivity."],
       ["This may suggest a correlation.", "The data tend to support the theory.", "It would appear that costs have risen.", "The policy is somewhat effective."],
-      ["Over-hedging weakens argument; balance needed."]
+      ["Over-hedging weakens argument; balance needed."],
+      "Academic and journalistic writing (C1).",
+      "Epistemic adverbs → C1|adv ; boosters vs hedges → C1|adv ; formal register → register_formal"
     ),
     ergative_verbs: G(
       "Ergative verbs allow subject to be doer or undergoer: open, break, increase.",
@@ -1521,14 +1589,18 @@
       "Pros and cons | Safe and sound | By and large | Trial and error\n\nFixed order rarely reversed",
       ["Fixed word order.", "And/or linking.", "Idiomatic pairs.", "Register varies formal/informal."],
       ["We discussed the pros and cons.", "They arrived safe and sound.", "By and large, it worked.", "Learning happens through trial and error."],
-      ["Cons and pros sounds unnatural."]
+      ["Cons and pros sounds unnatural."],
+      "Academic and journalistic fixed phrases (C1).",
+      "Dense noun phrases → C1|nom ; collocations → collocations_verb"
     ),
     modals_deduction: G(
       "Modals for deduction: must (certain), might/could (possible), can't (impossible).",
       "must be | might/could be | can't be\n\nPast: must have + PP | might have + PP | can't have + PP",
       ["Must = logical certainty now.", "Can't = logical impossibility.", "Must have + PP = certain past.", "Might/could have = possible past."],
       ["She must be at home. (I'm sure)", "He can't be serious.", "They must have left already.", "She might have forgotten."],
-      ["Mustn't ≠ must not deduction; mustn't = prohibition."]
+      ["Mustn't ≠ must not deduction; mustn't = prohibition."],
+      "Epistemic modality — deduction and probability (C1).",
+      "Epistemic vs deontic → C1|verb ; journalistic modals → C1|verb ; modals B1 → B1|verb"
     ),
     determiners_each_every: G(
       "Determiners quantify or specify nouns: each, every, all, both, half, either, neither.",
@@ -1577,7 +1649,9 @@
       "Commence vs start | Purchase vs buy | Request vs ask for\nNo contractions; complete sentences",
       ["Avoid contractions in formal writing.", "Latinate verbs more formal.", "Passive for objectivity.", "Complete question forms not ellipsis."],
       ["We request your presence at the meeting.", "The report was submitted on time.", "I would appreciate your response.", "Participants are required to register."],
-      ["Over-formality in casual email sounds odd."]
+      ["Over-formality in casual email sounds odd."],
+      "Formal written register — academic, legal, institutional (C1).",
+      "Register mapping → C1|disc ; academic passive → academic_passive ; hedging → hedging_language"
     ),
     tense_consistency: G(
       "Maintain tense consistency in paragraphs unless time shift is logical.",
@@ -1591,7 +1665,9 @@
       "It + be + adj + that clause\nThere + be + noun + that clause\n\nIt is important that everyone attend.",
       ["It dummy subject + that clause.", "Heavy subject moved to end.", "There is no doubt that...", "Formal and academic."],
       ["It is essential that he be informed.", "There is evidence that supports this.", "It surprised me that she left.", "It is unlikely that they will agree."],
-      ["That-clause as subject without it is heavy."]
+      ["That-clause as subject without it is heavy."],
+      "Formal and academic syntax (C1).",
+      "Cleft sentences → C1|disc ; anticipatory it → C2|pron ; academic passive → academic_passive"
     ),
     fronting_emphasis: G(
       "Fronting places elements at sentence start for emphasis (B2+).",
@@ -1619,7 +1695,9 @@
       "Past simple: main events | Past continuous: background\nPast perfect: earlier event before past simple",
       ["Past simple advances plot.", "Past continuous sets scene.", "Past perfect for flashback.", "Mix for natural narrative."],
       ["The sun was shining when we left.", "I had never seen him before that day.", "She opened the door and screamed.", "They were having dinner when the phone rang."],
-      ["Past perfect overuse when simple past suffices."]
+      ["Past perfect overuse when simple past suffices."],
+      "Narrative and literary writing (C1).",
+      "Historical present → C1|verb ; past simple/continuous → A2|verb, B2|verb ; aspect → C1|verb"
     ),
     subject_verb_agreement: G(
       "Subject-verb agreement requires matching number, especially with collective nouns and intervening phrases.",
@@ -1633,7 +1711,9 @@
       "Reference: it, this, they | Substitution: one, do so | Ellipsis: shared verb omitted\nLexical chain: climate → warming → emissions",
       ["Reference pronouns need clear antecedent.", "One replaces countable noun.", "Ellipsis avoids repetition.", "Lexical chains unify paragraphs."],
       ["Climate change affects ecosystems. It also impacts economies.", "I need a pen. Do you have one?", "She can swim and he can too.", "Pollution, emissions, and carbon all relate."],
-      ["Ambiguous it without clear antecedent."]
+      ["Ambiguous it without clear antecedent."],
+      "Academic writing and extended discourse (C1).",
+      "Coreference → C1|pron ; cleft/extraposition → C1|disc ; B2 cohesion → B2|disc"
     )
   };
 
