@@ -264,6 +264,168 @@
           { instruction: "Cent / cents ?", original: "deux cent", answer: "deux cents", explanation: "Cent → cents quand le nombre se termine (sans nom après)." },
           { instruction: "Quantificateur.", original: "Tous le monde est là.", answer: "Tout le monde est là.", explanation: "Tout le monde (sing.) — locution fixe." }
         ]
+      },
+      _byLevel: {
+        A1: {
+          pron: {
+            gap: [
+              { sentence: "___ parle français.", answer: "Je", hint: "pronom sujet 1re pers.", explanation: "Je = pronom sujet 1re personne singulier." },
+              { sentence: "Marie me voit. ___ voit Marie.", answer: "Elle", hint: "pronom sujet", explanation: "Elle remplace Marie (fém. sing.)." },
+              { sentence: "Viens avec ___ !", answer: "moi", hint: "pronom tonique", explanation: "Après préposition → moi, jamais je." },
+              { sentence: "C'est ___ qui a appelé.", answer: "moi", hint: "tonique après c'est", explanation: "C'est moi (tonique), pas *c'est je." },
+              { sentence: "___ partons à huit heures.", answer: "Nous", hint: "pronom sujet 1re pl.", explanation: "Nous = sujet de partons." },
+              { sentence: "Paul est grand. ___ est aussi sportif.", answer: "Il", hint: "pronom sujet 3e masc.", explanation: "Il remplace Paul (masc.)." },
+              { sentence: "Qui répond ? — ___ !", answer: "Moi", hint: "tonique isolé", explanation: "Réponse isolée → forme tonique." },
+              { sentence: "On ___ (manger) à midi.", answer: "mange", hint: "on + 3e sing.", explanation: "On prend toujours la 3e pers. sing." }
+            ],
+            mcq: [
+              { question: "« ___ mange une pomme. » (il)", options: ["Lui", "Il", "Le", "Eux"], correct: 1, explanation: "Il = sujet." },
+              { question: "« C'est ___ qui a téléphoné. »", options: ["moi", "me", "je", "mon"], correct: 0, explanation: "Moi après c'est … qui." },
+              { question: "« Pour ___, c'est difficile. »", options: ["moi", "je", "me", "mon"], correct: 0, explanation: "Après pour → tonique moi." },
+              { question: "On + verbe : « On ___ fatigué. »", options: ["est", "sont", "êtes", "sommes"], correct: 0, explanation: "On → verbe 3e sing. : on est." },
+              { question: "Groupe mixte : « Marie et Paul ___ arrivés. »", options: ["est", "sont", "es", "sommes"], correct: 1, explanation: "Ils (groupe) → sont arrivés." },
+              { question: "« Elle est professeure. » — Elle = ?", options: ["COD", "sujet", "COI", "tonique"], correct: 1, explanation: "Elle est sujet du verbe est." },
+              { question: "Contraste : après « avec » on dit…", options: ["je", "moi", "me", "il"], correct: 1, explanation: "Avec moi — pronom tonique obligatoire." },
+              { question: "« ___ et Sophie, nous étudions. »", options: ["Moi", "Je", "Me", "Mon"], correct: 0, explanation: "Coordination : Moi et Sophie…" }
+            ],
+            matching: [
+              { left: "je / tu / il", right: "pronom sujet", category: "Sujets" },
+              { left: "moi / toi / lui", right: "pronom tonique", category: "Toniques" },
+              { left: "on", right: "nous (oral) ou indéfini", category: "On" },
+              { left: "elle / elles", right: "sujet fém.", category: "Sujets" },
+              { left: "nous / vous", right: "sujet 1re/2e pl.", category: "Sujets" },
+              { left: "eux / elles", right: "tonique 3e pl.", category: "Toniques" },
+              { left: "C'est moi", right: "tonique après c'est", category: "Toniques" },
+              { left: "ils / elles", right: "sujet 3e pl.", category: "Sujets" }
+            ],
+            flashcard: [
+              { front: "Pronoms sujets ?", back: "je, tu, il/elle/on, nous, vous, ils/elles", category: "Sujets" },
+              { front: "On = ?", back: "Nous (oral) — verbe toujours 3e sing.", category: "On" },
+              { front: "Toniques ?", back: "moi, toi, lui, elle, nous, vous, eux, elles", category: "Toniques" },
+              { front: "Après préposition ?", back: "Tonique : pour moi, avec toi", category: "Toniques" },
+              { front: "C'est + tonique ?", back: "C'est moi. Ce sont eux.", category: "Toniques" },
+              { front: "Sujet obligatoire ?", back: "Oui — pas de pro-drop", category: "Sujets" },
+              { front: "Il/elle pour choses ?", back: "Genre grammatical du nom", category: "Sujets" },
+              { front: "✗ C'est pour je ?", back: "✓ C'est pour moi", category: "Erreur" }
+            ],
+            transform: [
+              { instruction: "Remplacez par un pronom sujet.", original: "Marie travaille.", answer: "Elle travaille.", explanation: "Marie fém. → elle." },
+              { instruction: "Utilisez un tonique après « c'est ».", original: "C'est Jean.", answer: "C'est lui.", explanation: "Lui = tonique 3e masc." },
+              { instruction: "Corrigez le pronom.", original: "C'est pour je.", answer: "C'est pour moi.", explanation: "Jamais je après préposition." },
+              { instruction: "On = nous : reformulez.", original: "Nous partons.", answer: "On part.", explanation: "On + 3e sing." },
+              { instruction: "Tonique pour emphase.", original: "Je refuse.", answer: "Moi, je refuse.", explanation: "Moi en tête = emphase." },
+              { instruction: "Avec préposition.", original: "Je vais chez Paul.", answer: "Je vais chez lui.", explanation: "Paul → lui (tonique)." },
+              { instruction: "Mettez au pluriel sujet.", original: "Il est content.", answer: "Ils sont contents.", explanation: "Pluriel → ils + accord." },
+              { instruction: "Réponse isolée.", original: "Qui veut du café ? — Paul.", answer: "Lui.", explanation: "Tonique seul." }
+            ]
+          },
+          disc: {
+            gap: [
+              { sentence: "___ mange une pomme.", answer: "Il", hint: "SVO", explanation: "Sujet + verbe + complément." },
+              { sentence: "Il ___ pas de viande.", answer: "ne mange", hint: "négation", explanation: "ne + verbe + pas." },
+              { sentence: "___ -ce que tu viens ?", answer: "Est", hint: "est-ce que", explanation: "Est-ce que + phrase." },
+              { sentence: "Il ___ un chat dans le jardin.", answer: "y a", hint: "il y a", explanation: "Il y a + nom." },
+              { sentence: "___ mon frère.", answer: "C'est", hint: "c'est", explanation: "C'est + identification." },
+              { sentence: "Le livre est ___ la table.", answer: "sur", hint: "préposition lieu", explanation: "Sur = position." },
+              { sentence: "Elle est ___ .", answer: "médecin", hint: "attribut sans article", explanation: "Il/elle est + profession sans article." },
+              { sentence: "Tu aimes le thé ? — Oui, ___ aime.", answer: "je", hint: "réponse SVO", explanation: "Sujet explicite dans la réponse." }
+            ],
+            mcq: [
+              { question: "Ordre de base ?", options: ["VSO", "SVO", "SOV", "OVS"], correct: 1, explanation: "Français : Sujet + Verbe + Objet." },
+              { question: "Négation standard ?", options: ["pas ne verbe", "ne verbe pas", "ne pas verbe", "verbe ne pas"], correct: 1, explanation: "ne + verbe + pas." },
+              { question: "Question neutre ?", options: ["Inversion seule", "Est-ce que", "Que seulement", "Pas de marque"], correct: 1, explanation: "Est-ce que + phrase." },
+              { question: "C'est vs Il est + adj. ?", options: ["Identiques", "C'est + nom ; Il est + adj.", "C'est + adj. seul", "Il est + nom"], correct: 1, explanation: "C'est + nom ; Il est + adj." },
+              { question: "Il y a + pluriel ?", options: ["il y a", "il y ont", "ils y ont", "il y a des"], correct: 3, explanation: "Il y a des + pluriel." },
+              { question: "Ne…pas : élision ?", options: ["n' devant voyelle", "pas n'", "ne s'élide jamais", "pas s'élide"], correct: 0, explanation: "ne → n' devant voyelle." },
+              { question: "Préposition ville ?", options: ["en Paris", "à Paris", "au Paris", "dans Paris"], correct: 1, explanation: "À + ville." },
+              { question: "à + le = ?", options: ["à le", "au", "du", "aux"], correct: 1, explanation: "Contraction : au." }
+            ],
+            matching: [
+              { left: "Sujet + Verbe + Objet", right: "ordre de base", category: "Syntaxe" },
+              { left: "ne … pas", right: "négation", category: "Négation" },
+              { left: "Est-ce que", right: "question neutre", category: "Questions" },
+              { left: "Il y a", right: "existence", category: "Présentateurs" },
+              { left: "C'est / Ce sont", right: "identification", category: "Présentateurs" },
+              { left: "dans / sur / sous", right: "lieu", category: "Prépositions" },
+              { left: "au / aux", right: "à + le/les", category: "Contractions" },
+              { left: "intonation ↑", right: "question orale", category: "Questions" }
+            ],
+            flashcard: [
+              { front: "Phrase déclarative ?", back: "Sujet + Verbe + Complément", category: "Syntaxe" },
+              { front: "Négation ?", back: "ne + verbe + pas", category: "Négation" },
+              { front: "Est-ce que ?", back: "Marque interrogative neutre", category: "Questions" },
+              { front: "Il y a ?", back: "Présentateur d'existence", category: "Présentateurs" },
+              { front: "C'est ?", back: "C'est mon frère", category: "Présentateurs" },
+              { front: "Il est + adj. ?", back: "Il est grand", category: "Présentateurs" },
+              { front: "Prépositions lieu ?", back: "dans, sur, sous, devant", category: "Prépositions" },
+              { front: "à + le = ?", back: "au ; à + les = aux", category: "Contractions" }
+            ],
+            transform: [
+              { instruction: "Mettez à la forme négative.", original: "Je mange.", answer: "Je ne mange pas.", explanation: "ne + verbe + pas." },
+              { instruction: "Formez une question avec est-ce que.", original: "Tu viens.", answer: "Est-ce que tu viens ?", explanation: "Est-ce que + phrase." },
+              { instruction: "Utilisez il y a.", original: "Un problème existe.", answer: "Il y a un problème.", explanation: "Il y a + nom." },
+              { instruction: "C'est ou Il est ?", original: "C'est grand.", answer: "Il est grand.", explanation: "Adjectif seul → Il est." },
+              { instruction: "Contractez.", original: "Je vais à le marché.", answer: "Je vais au marché.", explanation: "à + le = au." },
+              { instruction: "Phrase avec préposition.", original: "Le chat / table", answer: "Le chat est sur la table.", explanation: "Sur = position." },
+              { instruction: "Cause avec parce que.", original: "Je reste. Il pleut.", answer: "Je reste parce qu'il pleut.", explanation: "Parce que + cause." },
+              { instruction: "Séquence.", original: "D'abord je mange. Ensuite je pars.", answer: "D'abord je mange, ensuite je pars.", explanation: "Connecteurs de récit." }
+            ]
+          }
+        },
+        C1: {
+          pron: {
+            gap: [
+              { sentence: "Ce ___ m'étonne, c'est son calme.", answer: "qui", hint: "ce qui", explanation: "Ce qui = sujet (antécédent indéfini)." },
+              { sentence: "Ce ___ je veux, c'est partir.", answer: "que", hint: "ce que", explanation: "Ce que = COD." },
+              { sentence: "Ce ___ j'ai besoin, c'est du repos.", answer: "dont", hint: "ce dont", explanation: "Ce dont = de + idée." },
+              { sentence: "Paul a rencontré Marc. ___ lui a dit la nouvelle.", answer: "Ce dernier", hint: "coréférence", explanation: "Ce dernier = Marc." },
+              { sentence: "On ___ partis tôt.", answer: "est", hint: "on + verbe", explanation: "Verbe avec on = 3e sing." },
+              { sentence: "Je le lui ___ . (donner)", answer: "donne", hint: "ordre clitique", explanation: "Je le lui donne." },
+              { sentence: "Il m'___ parlé du projet.", answer: "en a", hint: "m'en", explanation: "Il m'en a parlé." },
+              { sentence: "La personne à ___ je pense est absente.", answer: "qui", hint: "à qui", explanation: "À + personne → à qui." }
+            ],
+            mcq: [
+              { question: "Coréférence ambiguë →", options: ["il…il", "ce dernier", "y…en", "on…on"], correct: 1, explanation: "Ce dernier désambiguïse." },
+              { question: "Ce qui vs Ce que ?", options: ["identiques", "ce qui = sujet ; ce que = COD", "ce que = sujet", "ce qui = COD"], correct: 1, explanation: "Fonctions distinctes." },
+              { question: "Ordre : Je ___ donne.", options: ["lui le", "le lui", "le leur", "les lui"], correct: 1, explanation: "le avant lui." },
+              { question: "Neutre le : « elle ___ est » (directrice)", options: ["la", "le", "l'", "les"], correct: 2, explanation: "Le invariable." },
+              { question: "✗ Ce qui que je veux →", options: ["Ce qui je veux", "Ce que je veux", "Ce dont je veux", "Que je veux"], correct: 1, explanation: "Ce que = COD." },
+              { question: "Distance référentielle longue →", options: ["il seul", "démonstratif", "on", "y"], correct: 1, explanation: "Démonstratif évite l'ambiguïté." },
+              { question: "Cataphore acceptable ?", options: ["Il est venu, ton frère", "Ton frère, il est venu", "Les deux", "Aucun"], correct: 0, explanation: "Il anticipe ton frère (oral/littéraire)." },
+              { question: "On + verbe ?", options: ["On sont", "On est", "On êtes", "On sommes"], correct: 1, explanation: "Toujours 3e sing." }
+            ],
+            matching: [
+              { left: "ce qui", right: "relatif sujet (idée)", category: "Ce…" },
+              { left: "ce que", right: "relatif COD (idée)", category: "Ce…" },
+              { left: "ce dont", right: "relatif de + idée", category: "Ce…" },
+              { left: "ce dernier", right: "coréférence", category: "Cohésion" },
+              { left: "celui-ci / celui-là", right: "désambiguïsation", category: "Cohésion" },
+              { left: "Je le lui donne", right: "ordre clitique", category: "Ordre" },
+              { left: "elle l'est", right: "neutre le", category: "Neutre" },
+              { left: "on narratif", right: "agent vague", category: "On" }
+            ],
+            flashcard: [
+              { front: "Ce qui / ce que ?", back: "Sujet vs COD d'une idée", category: "Ce…" },
+              { front: "Coréférence longue ?", back: "Démonstratif ou ce dernier", category: "Cohésion" },
+              { front: "Deux il ambigus ?", back: "ce dernier / celui-ci", category: "Erreur" },
+              { front: "On narratif ?", back: "On entendait…", category: "On" },
+              { front: "Cataphore ?", back: "Il est venu, ton frère", category: "Cohésion" },
+              { front: "Ce à quoi ?", back: "À + idée", category: "Ce…" },
+              { front: "m'en a parlé ?", back: "Il m'en a parlé", category: "Ordre" },
+              { front: "Neutre le ?", back: "Elle l'est (invariable)", category: "Neutre" }
+            ],
+            transform: [
+              { instruction: "Désambiguïsez.", original: "Paul a vu Marc. Il lui a parlé.", answer: "Paul a vu Marc. Ce dernier lui a parlé.", explanation: "Ce dernier = Marc." },
+              { instruction: "Ce qui ou ce que ?", original: "___ m'intéresse, c'est la musique.", answer: "Ce qui", explanation: "Sujet → ce qui." },
+              { instruction: "Ordre des pronoms.", original: "Je donne le livre à Marie.", answer: "Je le lui donne.", explanation: "le + lui." },
+              { instruction: "m'en.", original: "Il m'a parlé du projet.", answer: "Il m'en a parlé.", explanation: "en = de + projet." },
+              { instruction: "Neutre le.", original: "Elle la est directrice.", answer: "Elle l'est directrice.", explanation: "Le invariable." },
+              { instruction: "Ce dont.", original: "J'ai besoin de repos.", answer: "Ce dont j'ai besoin, c'est du repos.", explanation: "Ce dont = de + idée." },
+              { instruction: "On + verbe.", original: "On sommes partis.", answer: "On est partis.", explanation: "3e sing." },
+              { instruction: "À qui.", original: "La personne. Je pense à elle.", answer: "La personne à qui je pense.", explanation: "À qui pour personne." }
+            ]
+          }
+        }
       }
     },
     en: {
@@ -533,6 +695,168 @@
           { instruction: "Large number.", original: "2,500", answer: "two thousand five hundred / twenty-five hundred", explanation: "Both forms common in English." },
           { instruction: "Correct the quantifier.", original: "Much people were there.", answer: "Many people were there.", explanation: "People countable → many." }
         ]
+      },
+      _byLevel: {
+        A1: {
+          pron: {
+            gap: [
+              { sentence: "___ is my brother.", answer: "He", hint: "subject pronoun", explanation: "He = subject of is." },
+              { sentence: "I saw ___ at the party.", answer: "her", hint: "object pronoun", explanation: "Her = object of saw." },
+              { sentence: "___ is raining outside.", answer: "It", hint: "dummy subject", explanation: "It = weather/dummy subject." },
+              { sentence: "___ are students from Lyon.", answer: "They", hint: "subject plural", explanation: "They = subject plural." },
+              { sentence: "Give ___ the book, please.", answer: "me", hint: "indirect object", explanation: "Me = indirect object." },
+              { sentence: "The keys are on the table. ___ are mine.", answer: "They", hint: "things as they", explanation: "They for plural things." },
+              { sentence: "Is ___ three o'clock?", answer: "it", hint: "time with it", explanation: "It is + time." },
+              { sentence: "___ and Tom went to school.", answer: "I", hint: "coordinated subject", explanation: "I as subject (not me)." }
+            ],
+            mcq: [
+              { question: "« ___ is a doctor. » (she)", options: ["Her", "She", "Hers", "Herself"], correct: 1, explanation: "She = subject." },
+              { question: "« It ___ cold today. »", options: ["are", "is", "am", "be"], correct: 1, explanation: "It is + adjective." },
+              { question: "« ___ are my friends. »", options: ["He", "She", "They", "It"], correct: 2, explanation: "They for plural." },
+              { question: "Dummy subject for weather?", options: ["There", "It", "They", "He"], correct: 1, explanation: "It is raining." },
+              { question: "« Between you and ___ »", options: ["I", "me", "my", "mine"], correct: 1, explanation: "After preposition → me." },
+              { question: "Subject vs object: « ___ called him. »", options: ["He", "Him", "His", "Himself"], correct: 0, explanation: "He = subject." },
+              { question: "« ___ is far from here. » (distance)", options: ["It", "There", "They", "That"], correct: 0, explanation: "It is far." },
+              { question: "Capitalize subject pronoun?", options: ["Always I", "Never i", "Only at start", "Only in titles"], correct: 0, explanation: "I is always capitalized." }
+            ],
+            matching: [
+              { left: "I / you / he / she", right: "subject pronouns", category: "Subjects" },
+              { left: "it", right: "weather / time / distance", category: "Dummy it" },
+              { left: "they", right: "plural subject", category: "Subjects" },
+              { left: "me / him / her", right: "object pronouns", category: "Objects" },
+              { left: "we / you / they", right: "plural subjects", category: "Subjects" },
+              { left: "It is raining", right: "dummy subject", category: "Dummy it" },
+              { left: "She sees him", right: "S + V + O", category: "Syntax" },
+              { left: "I (capitalized)", right: "always uppercase", category: "Subjects" }
+            ],
+            flashcard: [
+              { front: "Subject pronouns?", back: "I, you, he, she, it, we, they", category: "Subjects" },
+              { front: "Dummy it?", back: "It is raining. It is 3 o'clock. It is far.", category: "Dummy it" },
+              { front: "Object pronouns?", back: "me, you, him, her, it, us, them → A2", category: "Objects" },
+              { front: "They for groups?", back: "Mixed-gender groups → they", category: "Subjects" },
+              { front: "✗ Is raining?", back: "✓ It is raining", category: "Error" },
+              { front: "✗ She sees he?", back: "✓ She sees him → A2", category: "Error" },
+              { front: "I capitalization?", back: "Always I, never i", category: "Subjects" },
+              { front: "It for animals?", back: "When sex unknown → it", category: "It" }
+            ],
+            transform: [
+              { instruction: "Use a subject pronoun.", original: "Maria is tall.", answer: "She is tall.", explanation: "Maria → she." },
+              { instruction: "Add dummy it.", original: "Is raining.", answer: "It is raining.", explanation: "English requires it." },
+              { instruction: "Correct the subject.", original: "Him and I went.", answer: "He and I went.", explanation: "He as subject." },
+              { instruction: "Time with it.", original: "Is half past two.", answer: "It is half past two.", explanation: "It is + time." },
+              { instruction: "Plural subject.", original: "The children are here.", answer: "They are here.", explanation: "They replaces the children." },
+              { instruction: "Distance.", original: "Is far to the station.", answer: "It is far to the station.", explanation: "Dummy it for distance." },
+              { instruction: "Coordinated subject.", original: "Tom and Maria study.", answer: "They study.", explanation: "They = Tom and Maria." },
+              { instruction: "Capitalize.", original: "i think so.", answer: "I think so.", explanation: "I always capitalized." }
+            ]
+          },
+          disc: {
+            gap: [
+              { sentence: "___ eat an apple every day.", answer: "I", hint: "SVO", explanation: "Subject + verb + object." },
+              { sentence: "She ___ like coffee.", answer: "doesn't", hint: "negation", explanation: "doesn't + base verb." },
+              { sentence: "___ you like tea?", answer: "Do", hint: "yes/no question", explanation: "Do + subject + base verb." },
+              { sentence: "There ___ a problem.", answer: "is", hint: "there is", explanation: "There is + singular." },
+              { sentence: "There ___ three chairs.", answer: "are", hint: "there are", explanation: "There are + plural." },
+              { sentence: "___ my brother.", answer: "It's", hint: "it's identification", explanation: "It's = It is." },
+              { sentence: "The cat is ___ the table.", answer: "on", hint: "preposition", explanation: "On = position." },
+              { sentence: "___ is she? — In the garden.", answer: "Where", hint: "wh- question", explanation: "Where = place." }
+            ],
+            mcq: [
+              { question: "Basic word order?", options: ["VSO", "SVO", "SOV", "OVS"], correct: 1, explanation: "Subject + Verb + Object." },
+              { question: "Negation with he?", options: ["He not likes", "He doesn't like", "He don't like", "He no like"], correct: 1, explanation: "doesn't + base verb." },
+              { question: "There is vs there are?", options: ["Same for all", "is = sing. ; are = pl.", "are = sing.", "is = pl."], correct: 1, explanation: "Agreement with following noun." },
+              { question: "It's vs Its?", options: ["Same", "It's = it is ; Its = possessive", "Its = it is", "It's = possessive"], correct: 1, explanation: "It's ≠ its." },
+              { question: "Time preposition?", options: ["at Monday", "on Monday", "in Monday", "at the Monday"], correct: 1, explanation: "On + day." },
+              { question: "Wh- question word for place?", options: ["What", "Where", "When", "Why"], correct: 1, explanation: "Where = place." },
+              { question: "Do you…? structure?", options: ["Do + S + V", "Do + V + S", "S + Do + V", "V + Do + S"], correct: 0, explanation: "Do you like…?" },
+              { question: "Preposition: in the bag?", options: ["in", "on", "at", "by"], correct: 0, explanation: "In = enclosed space." }
+            ],
+            matching: [
+              { left: "Subject + Verb + Object", right: "basic order", category: "Syntax" },
+              { left: "don't / doesn't", right: "negation", category: "Negation" },
+              { left: "Do you…?", right: "yes/no question", category: "Questions" },
+              { left: "There is / There are", right: "existence", category: "Presenters" },
+              { left: "It's / They're", right: "identification", category: "Presenters" },
+              { left: "in / on / under", right: "place", category: "Prepositions" },
+              { left: "at / on / in (time)", right: "time prepositions", category: "Prepositions" },
+              { left: "What / Where / When", right: "wh- questions", category: "Questions" }
+            ],
+            flashcard: [
+              { front: "SVO order?", back: "I eat an apple.", category: "Syntax" },
+              { front: "Negation?", back: "don't/doesn't + base verb", category: "Negation" },
+              { front: "There is/are?", back: "Introduce existence", category: "Presenters" },
+              { front: "It's?", back: "It is — identification", category: "Presenters" },
+              { front: "Its?", back: "Possessive — no apostrophe", category: "Presenters" },
+              { front: "Place prepositions?", back: "in, on, under, behind", category: "Prepositions" },
+              { front: "Time: at/on/in?", back: "at 3pm / on Monday / in January", category: "Prepositions" },
+              { front: "Wh- questions?", back: "What, Where, When, How, Why", category: "Questions" }
+            ],
+            transform: [
+              { instruction: "Make negative.", original: "She likes tea.", answer: "She doesn't like tea.", explanation: "doesn't + base." },
+              { instruction: "Make a question.", original: "You live here.", answer: "Do you live here?", explanation: "Do + S + V." },
+              { instruction: "Use there is.", original: "A cat exists in the garden.", answer: "There is a cat in the garden.", explanation: "There is + noun." },
+              { instruction: "Correct It's/Its.", original: "The dog wagged it's tail.", answer: "The dog wagged its tail.", explanation: "Its = possessive." },
+              { instruction: "Add preposition.", original: "The book / table", answer: "The book is on the table.", explanation: "On = surface." },
+              { instruction: "Wh- question.", original: "She is in Paris.", answer: "Where is she?", explanation: "Where for place." },
+              { instruction: "Plural there are.", original: "There is many books.", answer: "There are many books.", explanation: "Books → are." },
+              { instruction: "Sequence connector.", original: "I eat. Then I leave.", answer: "First I eat, then I leave.", explanation: "First…then…" }
+            ]
+          }
+        },
+        C1: {
+          pron: {
+            gap: [
+              { sentence: "What ___ me is more time.", answer: "I need", hint: "wh-cleft", explanation: "What I need is… — pseudo-cleft." },
+              { sentence: "She wanted to leave and she did ___ .", answer: "so", hint: "do so", explanation: "Do so replaces VP." },
+              { sentence: "He runs faster than she ___ .", answer: "does", hint: "comparative ellipsis", explanation: "Than she does — VP ellipsis." },
+              { sentence: "I want the red ___ .", answer: "one", hint: "one substitution", explanation: "One replaces count noun." },
+              { sentence: "Paul met Marc. The ___ told him the news.", answer: "latter", hint: "coreference", explanation: "The latter = Marc." },
+              { sentence: "If anyone calls, tell ___ I'm busy.", answer: "them", hint: "singular they", explanation: "Them with anyone (indefinite)." },
+              { sentence: "These are the ___ I ordered.", answer: "ones", hint: "ones plural", explanation: "Ones replaces plural count noun." },
+              { sentence: "She can swim and I can ___ .", answer: "too", hint: "VP ellipsis", explanation: "I can too = I can swim." }
+            ],
+            mcq: [
+              { question: "Do so replaces…", options: ["noun", "verb phrase", "adjective", "article"], correct: 1, explanation: "Do so = VP substitution." },
+              { question: "One vs ones?", options: ["one = mass", "one = sing. count ; ones = pl. count", "identical", "ones = mass"], correct: 1, explanation: "One/ones for count nouns." },
+              { question: "Than she vs than her?", options: ["her always wrong", "she formal ; her informal", "identical", "she informal"], correct: 1, explanation: "Comparative ellipsis register." },
+              { question: "Coreference: ambiguous he →", options: ["he again", "the latter / the former", "it", "one"], correct: 1, explanation: "Latter/former disambiguate." },
+              { question: "✗ I want one water →", options: ["I want a water", "I want some water", "I want ones water", "I want the water"], correct: 1, explanation: "Mass noun — no one." },
+              { question: "Generic they?", options: ["They is ready", "If anyone calls, tell them", "Tell he", "Anyone call they"], correct: 1, explanation: "Them with anyone." },
+              { question: "VP ellipsis?", options: ["She will go and I will go too", "She will and I will too", "Both acceptable", "Neither"], correct: 2, explanation: "Both VP ellipsis patterns." },
+              { question: "Wh-cleft focus?", options: ["What I need is a break", "I need what is a break", "What is I need", "A break what I need"], correct: 0, explanation: "What + clause + is + X." }
+            ],
+            matching: [
+              { left: "do so", right: "VP substitution", category: "Ellipsis" },
+              { left: "one / ones", right: "noun substitution", category: "Pro-forms" },
+              { left: "the latter", right: "coreference", category: "Cohesion" },
+              { left: "than she [does]", right: "comparative ellipsis", category: "Ellipsis" },
+              { left: "I can too", right: "VP ellipsis", category: "Ellipsis" },
+              { left: "What I need is…", right: "wh-cleft", category: "Cleft" },
+              { left: "tell them", right: "singular they", category: "They" },
+              { left: "some (mass)", right: "not one/ones", category: "Pro-forms" }
+            ],
+            flashcard: [
+              { front: "Do so?", back: "Replaces verb phrase — She left and he did so", category: "Ellipsis" },
+              { front: "One / ones?", back: "Count noun only — the red one / the ones I ordered", category: "Pro-forms" },
+              { front: "Mass noun?", back: "Use some, not one — some water", category: "Pro-forms" },
+              { front: "VP ellipsis?", back: "She can and I can too", category: "Ellipsis" },
+              { front: "Than she / than her?", back: "Formal she ; informal her", category: "Register" },
+              { front: "Latter / former?", back: "Disambiguate two antecedents", category: "Cohesion" },
+              { front: "Wh-cleft?", back: "What I need is a break", category: "Cleft" },
+              { front: "Generic they?", back: "Anyone → tell them", category: "They" }
+            ],
+            transform: [
+              { instruction: "Use do so.", original: "She wanted to leave and she left.", answer: "She wanted to leave and she did so.", explanation: "Do so = VP." },
+              { instruction: "Use one.", original: "I want the red book.", answer: "I want the red one.", explanation: "One replaces book." },
+              { instruction: "Disambiguate with the latter.", original: "Paul met Marc. He told him.", answer: "Paul met Marc. The latter told him.", explanation: "Latter = Marc." },
+              { instruction: "Comparative ellipsis (formal).", original: "He runs faster than her.", answer: "He runs faster than she does.", explanation: "Than she does." },
+              { instruction: "Mass noun fix.", original: "I want one water.", answer: "I want some water.", explanation: "Some for mass." },
+              { instruction: "VP ellipsis.", original: "She can swim and I can swim.", answer: "She can swim and I can too.", explanation: "I can too." },
+              { instruction: "Wh-cleft.", original: "I need a break.", answer: "What I need is a break.", explanation: "Pseudo-cleft." },
+              { instruction: "Singular they.", original: "If anyone calls, tell him.", answer: "If anyone calls, tell them.", explanation: "Them with anyone." }
+            ]
+          }
+        }
       }
     }
   };

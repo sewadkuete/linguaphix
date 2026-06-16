@@ -278,12 +278,11 @@ window.GRAMMAR_DATA = {
   qui, que/quoi, où, quand, comment, pourquoi, combien
   Est-ce que + pronom (neutre) ; inversion (soutenu, B1+).
 
-• Subordonnées relatives qui / que (introduction) :
-  qui = sujet : L'homme qui parle. | que = COD : L'homme que je vois.
-  ⚠️ Accord p.p. : La lettre que j'ai écrite.
+→ Subordonnées relatives qui/que/dont/où : voir B1|pron (entrée complète).
+  À A2 : reconnaître qui (sujet) vs. que (COD) dans des phrases données.
 
 ⚠️ Phrase SVO et ne…pas → A1|disc.`,
-      points:["Connecteurs temporels de récit","Connecteurs logiques (cause/conséquence)","Pronoms interrogatifs","Relatives qui/que et accord p.p."]
+      points:["Connecteurs temporels de récit","Connecteurs logiques (cause/conséquence)","Pronoms interrogatifs","Relatives qui/que — reconnaissance (→ B1|pron)"]
     },
     num:{
       title:"Ordinaux et quantité",
@@ -525,16 +524,17 @@ window.GRAMMAR_DATA = {
     },
     pron:{
       title:"Relatifs composés, indéfinis avancés, pronom neutre le",
-      précis:`• Relatifs composés — paradigme complet :
-  lequel/laquelle/lesquels/lesquelles | auquel/auxquels/duquel/desquels
-  Choses + préposition : La table sur laquelle il écrit.
-  Personnes + préposition : La personne à qui je parle (qui préféré à à laquelle).
-  ✗ Le problème dont je travaille → ✓ sur lequel je travaille.
+      précis:`• Relatifs composés — extension B2 (formation : voir B1|pron|lequel/auquel/duquel) :
+  Contractions obligatoires : à + lequel → auquel ; de + lesquels → desquels.
+  Prépositions complexes : grâce auquel, à côté duquel, en face de laquelle.
+  Personnes + préposition : à qui (naturel) vs. à laquelle (formel écrit).
+  ✗ Le problème dont je travaille → ✓ sur lequel je travaille (travailler sur, pas de).
 
 • Indéfinis avancés (entrée distincte B2) :
   tout/tous/toute/toutes (pronom) : Tout est possible. / Tous sont arrivés [tys].
   chacun/chacune | l'un…l'autre / les uns…les autres
   n'importe qui/quel/lequel | quiconque | autrui
+  ✗ Tous sont arrivé → ✓ Tous sont arrivés (tous pronom → pluriel).
 
 • Pronom neutre le (invariable) :
   Attribut : Elle est directrice ? — Oui, elle l'est.
@@ -542,7 +542,7 @@ window.GRAMMAR_DATA = {
   Contraste COD : Je les ai lus (accord) vs. elle l'est (pas d'accord).
 
 ⚠️ Dont/où/lequel de base → B1|pron.`,
-      points:["Relatifs composés (paradigme)","Indéfinis avancés (tout/quiconque/autrui)","Pronom neutre le (invariable)","Contraste le COD vs le neutre"]
+      points:["Relatifs composés (prépositions complexes)","Indéfinis avancés (tout/quiconque/autrui)","Pronom neutre le (invariable)","Contraste le COD vs le neutre"]
     },
     adv:{
       title:"Négations littéraires et modalité",

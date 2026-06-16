@@ -277,16 +277,13 @@ window.GRAMMAR_DATA = {
 
 • Logical connectors: because/since (cause), so (result), but/however (contrast).
 
-• Relative clauses — primary introduction at A2:
-  Defining (no commas, essential): who (people), which/that (things).
-  Omit object pronoun: The book (that) I bought.
-  Non-defining (commas, extra info): My brother, who lives in Paris, is a lawyer.
-  ⚠️ Never that in non-defining clauses.
+→ Relative clauses (who/which/that, defining vs. non-defining): see B1|pron — full system.
+  At A2: recognise who (subject) vs. which/that (things) in given sentences only.
 
 • Question tags: You're tired, aren't you? Positive → negative tag.
 
-⚠️ SVO & basic questions → A1|disc. whose/where/when → B1|pron.`,
-      points:["Sequencing connectors","Logical connectors (because/so/but)","Defining relative clauses (who/which/that)","Non-defining relatives (intro)","Question tags (basic)"]
+⚠️ SVO & basic questions → A1|disc.`,
+      points:["Sequencing connectors","Logical connectors (because/so/but)","Relative clauses — recognition (→ B1|pron)","Question tags (basic)"]
     },
     num:{
       title:"Number & quantifiers",

@@ -263,9 +263,20 @@
     };
   }
 
-  function getBank(lang, catId, type) {
+  function levelBand(level) {
+    if (level === "A1" || level === "A2") return "A1";
+    if (level === "B1" || level === "B2") return "B1";
+    return "C1";
+  }
+
+  function getBank(lang, level, catId, type) {
     const banks = lang === "fr" ? FLE : ESL;
     const ext = global.ExerciseBanksExtended;
+    const band = levelBand(level);
+    if (ext && ext[lang] && ext[lang]._byLevel && ext[lang]._byLevel[band] &&
+        ext[lang]._byLevel[band][catId] && ext[lang]._byLevel[band][catId][type]) {
+      return ext[lang]._byLevel[band][catId][type];
+    }
     if (ext && ext[lang] && ext[lang][catId] && ext[lang][catId][type]) {
       return ext[lang][catId][type];
     }
@@ -286,7 +297,7 @@
     let id = 1;
 
     TYPES.forEach(function (type) {
-      const bank = getBank(lang, catId, type);
+      const bank = getBank(lang, level, catId, type);
       const typeItems = [];
       for (let i = 0; i < PER_TYPE; i++) {
         let item;
