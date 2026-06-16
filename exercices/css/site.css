@@ -568,4 +568,27 @@ body {
   .hero { padding: 32px 0 24px; }
   .site-back-main a { white-space: normal; }
   .scroll-top-btn { bottom: 16px; width: 40px; height: 40px; font-size: 18px; }
+  .lx-construction-banner { left: 12px; right: 12px; bottom: 64px; max-width: none; font-size: 12px; }
+}
+
+/* Floating “under construction” notice (exercices hub) */
+.lx-construction-banner {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 850;
+  max-width: min(520px, calc(100vw - 32px));
+  margin: 0;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--site-accent-light, #c4b5fd);
+  background: var(--site-surface, #fff);
+  color: var(--site-text, #1a1a2e);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: center;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .14);
+  pointer-events: none;
 }

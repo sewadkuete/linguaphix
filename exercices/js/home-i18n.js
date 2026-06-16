@@ -34,7 +34,8 @@
       feat3Desc: "Vérification question par question ou correction globale avec score.",
       footer: "LINGUAPHIX · Grammaire FLE & ESL · A1–C2",
       backMain: "← Retour au site LINGUAPHIX",
-      scrollTop: "Retour en haut de la page"
+      scrollTop: "Retour en haut de la page",
+      constructionBanner: "En cours de construction — cette bannière disparaîtra une fois le travail terminé."
     },
     en: {
       htmlLang: "en",
@@ -66,7 +67,8 @@
       feat3Desc: "Check each question or submit all answers with a score.",
       footer: "LINGUAPHIX · FLE & ESL Grammar · A1–C2",
       backMain: "← Back to LINGUAPHIX website",
-      scrollTop: "Back to top"
+      scrollTop: "Back to top",
+      constructionBanner: "Still under construction — this banner will disappear when done."
     }
   };
 
