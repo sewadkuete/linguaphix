@@ -40,7 +40,7 @@ window.GRAMMAR_DATA = {
 • Impératif (2 formes utiles) :
   Parle ! (tu) / Parlez ! (vous)
   ⚠️ Verbes en -er : pas de -s à la 2e pers. sing. : « Parle ! » (pas Parles !)`,
-      points:["Être & avoir (présent)","Verbes en -er groupe 1","Aller / venir","Futur proche","Passé composé verbes courants","Impératif tu / vous"]
+      points:["Être & avoir (présent)","Verbes en -er groupe 1","Aller / venir","Futur proche","Impératif tu / vous"]
     },
     adj:{
       title:"Adjectifs qualificatifs",
@@ -135,18 +135,17 @@ window.GRAMMAR_DATA = {
   0-16 : formes uniques (zéro, un, deux… seize).
   17-19 : compositions (dix-sept, dix-huit, dix-neuf).
   20-60 : régulier (vingt, trente…).
-  70 : soixante-dix (en France) / septante (Belgique, Suisse).
+  70 : soixante-dix (France) / septante (Belgique, Suisse).
   80 : quatre-vingts (France) / huitante/octante (Suisse).
   90 : quatre-vingt-dix (France) / nonante (Belgique, Suisse).
   ⚠️ Quatre-vingts prend un -s SAUF suivi d'un chiffre : quatre-vingts / quatre-vingt-deux.
 
-• Article partitif : du, de la, de l'.
-  Ex. : Je bois du lait. Elle mange de la salade. Il boit de l'eau.
-  Après négation → de : Je ne bois pas de lait.
+• Expressions de quantité (avec de, sans article) :
+  beaucoup de, peu de, assez de, trop de + nom.
+  Ex. : Il y a beaucoup de monde. J'ai peu d'argent.
 
-• Expressions de quantité :
-  beaucoup de, peu de, assez de, trop de + nom sans article.
-  Ex. : Il y a beaucoup de monde. J'ai peu d'argent.`,
+⚠️ Article partitif (du, de la) : voir Nom|Article partitif.
+⚠️ Après négation : beaucoup de → beaucoup de (inchangé) ; du/de la → de.`,
       points:["Nombres cardinaux 0-100","Article partitif","Expressions de quantité"]
     }
   },
@@ -726,7 +725,7 @@ window.GRAMMAR_DATA = {
   Doublets : un auteur / une autrice (néologie normée en France depuis 2019).
 
 • Rectifications orthographiques 1990 :
-  Trait d'union dans les numéraux composés : vingt-et-un, cent-deux.
+  Trait d'union si le numéral est seul (vingt-et-un) ; devant un nom : vingt et un hommes, cent deux pages.
   Soudure de certains composés : weekend → week-end → weekend.
   Accent sur certains mots : événement (accepté), règlement, sèchement.
   ⚠️ Les deux graphies sont acceptées ; connaître la norme du contexte professionnel.`,

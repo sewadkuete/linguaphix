@@ -1,37 +1,45 @@
 (function(global) {
   "use strict";
 
-  function G(brief, formation, rules, examples, pitfalls) {
+  function G(brief, formation, rules, examples, pitfalls, register, seeAlso) {
     return {
       brief: brief,
       formation: formation,
       rules: rules,
       examples: examples,
-      pitfalls: pitfalls && pitfalls.length ? pitfalls : [rules[0]]
+      pitfalls: pitfalls && pitfalls.length ? pitfalls : [rules[0]],
+      register: register || "",
+      seeAlso: seeAlso || ""
     };
   }
 
   var fr = {
     nom_definite: G(
-      "Les articles définis (le, la, l', les) désignent une personne ou chose identifiée ou déjà connue.",
-      "Masculin sing. : le\nFéminin sing. : la\nDevant voyelle/h muet : l'\nPluriel (M/F) : les\n\nEx. : le livre, la table, l'ami, les enfants",
-      ["Le/la/les s'accordent en genre et nombre avec le nom.", "L' remplace le/la devant voyelle ou h muet.", "Les désigne l'ensemble ou une catégorie générale.", "Avec complément : le livre de Pierre."],
+      "L'article défini (le, la, l', les) désigne une personne ou une chose identifiée, unique ou déjà mentionnée.",
+      "Masc. sing. : le | Fém. sing. : la | Devant voyelle/h muet : l' | Pluriel (tous genres) : les",
+      ["Le/la/les s'accordent en genre et en nombre avec le nom.", "L' remplace le ou la devant voyelle ou h muet.", "Les peut désigner une catégorie entière : les enfants.", "Avec complément : le livre de Pierre."],
       ["Le chat dort sur le canapé.", "La fille lit un roman.", "L'école commence à huit heures.", "Les étudiants préparent l'examen."],
-      ["Ne pas confondre le (article) et l' (pronom).", "Devant h aspiré : le héros, pas l'héros."]
+      ["*l'héros → le héros (h aspiré).", "*le amie → mon amie / l'amie (élision obligatoire)."],
+      "À l'écrit, le « e » de le/les se prononce ; à l'oral, élision fréquente (l'ami).",
+      "Article indéfini → A1|nom|Article indéfini (un, une, des)"
     ),
     nom_indefinite: G(
-      "Les articles indéfinis (un, une, des) introduisent une entité non précisée ou nouvelle.",
-      "Masculin sing. : un\nFéminin sing. : une\nPluriel : des\n\nEx. : un stylo, une idée, des amis",
-      ["Un/une = une unité parmi d'autres.", "Des = plusieurs instances non spécifiées.", "Devant adj. + nom : un grand arbre.", "Après c'est : C'est un médecin."],
+      "L'article indéfini (un, une, des) introduit une entité non précisée ou mentionnée pour la première fois.",
+      "Masc. sing. : un | Fém. sing. : une | Pluriel : des",
+      ["Un/une = une unité parmi d'autres, non identifiée.", "Des = plusieurs instances non spécifiées.", "Devant adjectif + nom : un grand arbre.", "Après c'est : C'est un médecin."],
       ["J'ai acheté un vélo neuf.", "Elle porte une robe bleue.", "Des oiseaux chantent dans le jardin.", "C'est un excellent professeur."],
-      ["Des devient de après négation : pas d'amis."]
+      ["Après négation : *pas des amis → pas d'amis (de/d')."],
+      "Oral : des souvent réduit [də] ; à l'écrit, des reste obligatoire à l'affirmatif.",
+      "Article défini → A1|nom|Article défini ; négation + de → A1|nom|Article partitif"
     ),
     nom_partitive: G(
-      "Le partitif (du, de la, de l', des) exprime une quantité indéfinie, surtout avec matières.",
-      "Masculin : du (= de + le)\nFéminin : de la\nDevant voyelle : de l'\nPluriel comptable : des\n\nEx. : du pain, de la confiture, de l'eau",
-      ["Avec manger, boire, acheter, vouloir.", "Du/de la/de l' = une partie de.", "Après négation : de (Je n'ai pas de pain).", "Quantité précise : un kilo de pommes (pas du)."],
+      "Le partitif (du, de la, de l', des) exprime une quantité indéfinie, surtout avec des matières ou des dénombrables au pluriel.",
+      "Masc. : du (= de + le) | Fém. : de la | Devant voyelle : de l' | Pluriel comptable : des",
+      ["Avec manger, boire, acheter, vouloir, avoir besoin de.", "Du/de la/de l' = une partie de (substance).", "Après négation : de (Je n'ai pas de pain).", "Quantité précise : un kilo de pommes (pas *du kilo)."],
       ["Je mange du fromage.", "Elle boit de l'eau minérale.", "Nous avons besoin de patience.", "Ils achètent des légumes frais."],
-      ["Négation : pas de du/de la, mais de."]
+      ["Négation : *pas du pain → pas de pain.", "*beaucoup du monde → beaucoup de monde."],
+      "Québec : partitif identique ; oral France : « de » seul après pas très fréquent à l'oral familier.",
+      "Expressions de quantité → A1|num|beaucoup de, peu de"
     ),
     nom_contractes: G(
       "Les contractions fusionnent à et de avec le/les.",
@@ -49,15 +57,17 @@
     ),
     pluriel_regulier: G(
       "Le pluriel régulier des noms s'obtient en ajoutant -s au singulier.",
-      "singulier + s → pluriel\n\nchat → chats | table → tables | idée → idées\n\nSingulier en -s, -x, -z : pas de -s supplémentaire (un prix → des prix)",
-      ["Règle de base : ajouter -s au nom singulier.", "Accord du déterminant : les + nom au pluriel.", "Adjectif épithète : accord en nombre aussi.", "Noms en -s, -x, -z au singulier : pluriel identique (le nez → les nez)."],
+      "singulier + -s → pluriel | chat → chats | table → tables",
+      ["Règle de base : +s au nom singulier.", "Le déterminant s'accorde : les + nom pluriel.", "L'adjectif épithète s'accorde aussi.", "Singulier en -s, -x, -z : pluriel identique (le nez → les nez)."],
       ["Un chat → des chats.", "La fille → les filles.", "Mon livre → mes livres.", "Le nez → les nez."],
-      ["Des chat → des chats (oubli du -s)."]
+      ["*des chat → des chats (oubli du -s).", "*des chevals → des chevaux (irrégulier)."],
+      "",
+      "Pluriel irrégulier et noms composés → A2|nom"
     ),
     nom_composes: G(
       "Les noms composés forment leur pluriel selon la nature de chaque élément.",
       "verbe + nom : les passe-temps, les grands-pères\n\nadverbe + nom : les arrière-grands-parents\n\nnom + nom : les chefs-d'œuvre\n\nadjectif + nom : les bleu marine (invariables)\n\nverbe + adj./nom : les laissez-passer",
-      ["Verbe + nom : pluriel sur le nom (des cache-col).", "Adverbe + nom : pluriel sur le nom (des arrière-boutiques).", "Nom + nom : pluriel sur le 2e nom (des chefs-d'œuvre).", "Adjectif + nom : les deux éléments invariables (des grands-pères, des sourds-muets)."],
+      ["Verbe + nom : pluriel sur le nom (des cache-col).", "Adverbe + nom : pluriel sur le nom (des arrière-boutiques).", "Nom + nom : pluriel sur le 2e nom (des chefs-d'œuvre).", "Adjectif + nom invariable : bleu marine, rose bonbon ; sinon accord (grands-pères, sourds-muets)."],
       ["Les grands-parents sont arrivés.", "Les chefs-d'œuvre du musée.", "Des passeports et des laissez-passer.", "Des arrière-petits-enfants."],
       ["Des chef-d'œuvres → des chefs-d'œuvre (pluriel sur le 2e élément)."]
     ),
@@ -69,18 +79,22 @@
       ["Pas du pain mais de pain."]
     ),
     verb_etre_avoir: G(
-      "Être et avoir sont auxiliaires essentiels ; leurs présents sont irréguliers.",
-      "ÊTRE : je suis, tu es, il/elle/on est, nous sommes, vous êtes, ils/elles sont\n\nAVOIR : j'ai, tu as, il/elle/on a, nous avons, vous avez, ils/elles ont",
-      ["Être pour états, identité, localisation.", "Avoir pour possession, âge (J'ai 20 ans).", "Auxiliaires au passé composé.", "Expressions : avoir faim/soif/peur ; être en retard."],
+      "Être et avoir sont les deux auxiliaires fondamentaux ; leurs formes au présent sont irrégulières et très fréquentes.",
+      "ÊTRE : je suis, tu es, il/elle/on est, nous sommes, vous êtes, ils/elles sont\nAVOIR : j'ai, tu as, il/elle/on a, nous avons, vous avez, ils/elles ont",
+      ["Être : état, identité, localisation, profession (sans article).", "Avoir : possession, âge (J'ai 20 ans), faim/soif/peur.", "Auxiliaires au passé composé.", "On + verbe à la 3e pers. sing. : On est prêts (oral)."],
       ["Je suis étudiant.", "Tu as raison.", "Nous sommes en France.", "Ils ont deux enfants."],
-      ["Avoir ≠ être pour professions passées : Il est mort (état)."]
+      ["*J'ai 20 ans → correct ; *Je suis 20 ans → faux.", "*Il est un médecin → Il est médecin (profession sans article)."],
+      "Oral : « on est » pour « nous sommes » très courant ; à l'écrit scolaire, distinguer on (indéfini) et nous.",
+      "Verbes en -er → A1|verb|Verbes en -er groupe 1"
     ),
     verb_present_er: G(
-      "Les verbes du 1er groupe (-er) forment le présent en -e, -es, -e, -ons, -ez, -ent.",
-      "PARLER : je parle, tu parles, il/elle parle, nous parlons, vous parlez, ils/elles parlent\n\nRadical + terminaisons : -e, -es, -e, -ons, -ez, -ent\n\n4 formes orales identiques : je/tu/il/ils → [parl]",
-      ["Radical stable pour la majorité des -er.", "Verbes en -ger : mangeons (e conservé).", "Verbes en -cer : commençons (ç).", "Verbes en -yer : essuyer → essuie/essuies/essuient."],
-      ["Je travaille chaque jour.", "Tu regardes la télévision.", "Nous habitons à Paris.", "Ils aiment la musique."],
-      ["Imparfait ≠ présent : je parlais vs je parle."]
+      "Les verbes du 1er groupe (-er) forment le présent en ajoutant les terminaisons -e, -es, -e, -ons, -ez, -ent au radical.",
+      "PARLER : je parle, tu parles, il/elle parle, nous parlons, vous parlez, ils/elles parlent\nRadical + -e, -es, -e, -ons, -ez, -ent",
+      ["Groupe le plus productif : chanter, aimer, travailler.", "4 formes orales identiques : je/tu/il/ils → [parl].", "Verbes en -ger : nous mangeons (e conservé).", "Verbes en -cer : nous commençons (ç devant a/o)."],
+      ["Je parle français.", "Tu aimes le café.", "Nous travaillons ensemble.", "Ils chantent bien."],
+      ["*Je parl → je parle (terminaison obligatoire à l'écrit).", "Impératif tu : *Parles ! → Parle ! (pas de -s)."],
+      "Oral : je/tu/il/ils souvent identiques ; nous/vous/ez distincts.",
+      "Être & avoir → A1|verb|Être & avoir (présent) ; impératif → A1|verb|Impératif"
     ),
     verb_present_ir: G(
       "Les verbes du 2e groupe (-ir) ont -iss- au pluriel : -is, -is, -it, -issons, -issez, -issent.",
@@ -148,9 +162,9 @@
     pc_etre: G(
       "Seize verbes de mouvement/changement d'état se conjuguent avec être au PC.",
       "être (présent) + participe passé\n\nVerbes : aller, venir, arriver, partir, entrer, sortir, monter, descendre, retourner, passer, rester, tomber, naître, mourir, devenir, revenir\n\nJe suis allé(e), elle est partie",
-      ["Auxiliaire être obligatoire pour ces verbes.", "Accord du PP avec le sujet.", "Retourner/rester/passer = être si changement de lieu.", "Naître/mourir toujours avec être."],
+      ["Auxiliaire être obligatoire pour ces verbes.", "Accord du PP avec le sujet.", "Retourner/rester/passer + être si changement de lieu.", "Passer un examen / passer du temps → avoir."],
       ["Je suis arrivé(e) à huit heures.", "Elle est sortie du bureau.", "Nous sommes restés une semaine.", "Ils sont nés en Italie."],
-      ["Passer avec avoir = transitif (J'ai passé le examen)."]
+      ["Passer avec avoir = transitif (J'ai passé l'examen)."]
     ),
     pc_accord_pp: G(
       "Avec être, le participe passé s'accorde en genre et nombre avec le sujet.",
@@ -413,7 +427,7 @@
     ),
     adj_irreguliers: G(
       "Certains adjectifs ont des formes irrégulières au comparatif et superlatif.",
-      "bon → meilleur → le meilleur\nmauvais → pire/plus mauvais → le pire\nbien → mieux | mal → pis/plus mal\n\nbeau → plus belle → la plus belle",
+      "bon → meilleur → le meilleur\nmauvais → pire/plus mauvais → le pire\nbien → mieux | mal → pis/plus mal\n\nbeau → plus beau / plus belle → le plus beau / la plus belle",
       ["Meilleur remplace plus bon.", "Pire est plus courant que plus mauvais.", "Mieux est adverbe comparatif.", "Avant le nom : ancien (ex-), petit (jeune) ; après : ancien (vieux), petit (taille)."],
       ["C'est un meilleur choix.", "La situation est pire.", "Il chante mieux que moi.", "C'est la pire erreur."],
       ["Plus bon est rare ; préférer meilleur."]
@@ -540,7 +554,7 @@
     participe_present: G(
       "Le participe présent se forme en -ant et peut être adjectif ou gérondif avec en.",
       "Radical nous + -ant : parlant, finissant, prenant\n\nAdjectif : une fille charmante\nGérondif : en parlant",
-      ["Formation : nous sans -ons + -ant.", "Adjectif invariable sauf cas rares.", "Ne pas confondre avec gérondif (en +).", "Participe passé différent."],
+      ["Formation : nous sans -ons + -ant.", "Adjectif verbal : accord avec le nom (une histoire touchante).", "Gérondif : en + participe présent (en parlant).", "Ne pas confondre avec participe passé."],
       ["Les étudiants travaillant ici sont sérieux.", "Une rivière coulant vers la mer.", "En lisant, il s'est endormi.", "C'est une histoire touchante."],
       ["Intéressant (adj.) vs intéressé (PP)."]
     ),
@@ -605,14 +619,14 @@
       "Cardinaux : vingt et un, cent, mille (invariables sauf un)\nOrdinaux : premier/première, deuxième, troisième\n\nMillion/milliard + de + nom",
       ["Vingt et un, cent un : accord.", "Premier avant nom ; 1er/1re en abrégé.", "Deuxième vs second (deux seulement).", "Cent/vingt/mille + nom : invariable (deux cent euros) ; accord si seul (deux cents)."],
       ["C'est le troisième étage.", "Vingt-deux étudiants.", "Les deux premiers jours.", "Un million d'euros."],
-      ["Deux cents euros, pas *deux cent euros (sans nom après)."]
+      ["Deux cent euros devant nom ; deux cents seuls (sans nom après)."]
     ),
     orthographe_1990: G(
       "Les rectifications orthographiques de 1990 uniformisent certains traits d'union et pluriels.",
-      "Numéraux composés : vingt-et-un, cent-deux, mille-neuf (trait d'union)\n\nMots composés : week-end / weekend (variantes admises)\n\nPluriels recommandés : oignons, jugeaux",
-      ["Trait d'union dans tous les numéraux composés (21–99).", "Virgule remplacée par trait d'union : mille-neuf-cent.", "Week-end/weekend : les deux graphies admises.", "Pluriels simplifiés : oignon → oignons (recommandation)."],
-      ["Vingt-et-un étudiants.", "Cent-vingt-deux pages.", "Le week-end prochain.", "Des oignons frits."],
-      ["Vingt et un sans trait d'union : ancienne norme, encore tolérée."]
+      "Numéraux composés : vingt-et-un (seul), vingt et un + nom, cent-deux\n\nMots composés : week-end / weekend (variantes admises)\n\nPluriels recommandés : oignons, jugeaux",
+      ["Trait d'union si le numéral est seul (vingt-et-un) ; sans trait d'union devant nom (vingt et un hommes).", "Virgule remplacée par trait d'union : mille-neuf-cent.", "Week-end/weekend : les deux graphies admises.", "Pluriels simplifiés : oignon → oignons (recommandation)."],
+      ["Vingt et un hommes.", "Cent-vingt-deux pages.", "Le week-end prochain.", "Des oignons frits."],
+      ["Vingt-et-un seul ; vingt et un + nom."]
     ),
     en_yon_usage: G(
       "En, y et pronoms relatifs composés enrichissent la cohésion textuelle (C1).",
@@ -779,37 +793,45 @@
 
   var en = {
     nom_indefinite_an: G(
-      "Indefinite articles a and an introduce non-specific singular countable nouns.",
-      "a + consonant sound: a book, a university (y sound)\nan + vowel sound: an apple, an hour (silent h)\n\nUse an before vowel sounds, not just vowel letters.",
-      ["A before consonant sounds.", "An before vowel sounds.", "An hour, an MBA (vowel sound).", "A university, a European (y sound)."],
+      "Indefinite articles a and an introduce a non-specific singular countable noun.",
+      "a + consonant sound | an + vowel sound\na book, a university (y sound) | an apple, an hour (silent h)",
+      ["Use a before consonant sounds.", "Use an before vowel sounds (not just vowel letters).", "An hour, an MBA; a university, a European.", "Only with singular countables."],
       ["I need a pen.", "She is an engineer.", "He waited an hour.", "It is a useful tool."],
-      ["An university is wrong; a university is correct."]
+      ["*an university → a university (y sound).", "*a apple → an apple."],
+      "Formal writing: a/an required with singular countables; spoken English often drops them in fixed phrases.",
+      "Definite article the → A1|nom|Definite article (the)"
     ),
     nom_definite_the: G(
       "The definite article the refers to something specific, unique, or already mentioned.",
-      "Singular and plural: the book, the books\n\nPronunciation: /ðə/ before consonant, /ði/ before vowel\n\nthe sun, the United States, the Alps",
-      ["Specific or second mention: I saw a dog. The dog was big.", "Unique things: the sun, the moon.", "Superlative: the best.", "Geographic names have rules (the Netherlands)."],
+      "the + singular or plural noun\nPronunciation: /ðə/ before consonant, /ðiː/ before vowel",
+      ["Specific or second mention: I saw a dog. The dog was big.", "Unique referents: the sun, the moon.", "Superlative: the best.", "Some geographic names take the (the UK, the Alps)."],
       ["The students in my class are friendly.", "Close the door, please.", "She is the best player.", "I read the article you sent."],
-      ["The is not used with most proper names (Paris, not the Paris)."]
+      ["*the Paris → Paris (most cities without the).", "*the nature → nature (zero article for general abstract)."],
+      "Spoken: weak form /ðə/ very common; strong /ðiː/ before vowels and for emphasis.",
+      "Zero article → A1|nom|Zero article (general nouns)"
     ),
     nom_zero: G(
-      "The zero article omits a/an/the with general plurals, uncountables, and fixed expressions.",
-      "General plural: Cats are independent.\nUncountable: I like music.\nMeals/transport: at breakfast, by bus\n\nLanguages: I speak French (no the)",
-      ["General statements: no article.", "Uncountable nouns without article.", "By + transport: by car, by train.", "Abstract nouns often zero article."],
+      "The zero article omits a/an/the with general plurals, uncountables, and many fixed expressions.",
+      "General plural: Cats are independent.\nUncountable: I like music.\nMeals/transport: at breakfast, by bus | Languages: I speak French",
+      ["General statements about categories: no article.", "Uncountable nouns without article in general sense.", "By + transport: by car, by train.", "Most proper names: Paris, Mount Everest."],
       ["Water is essential.", "Children learn quickly.", "She studies biology.", "We met at lunch."],
-      ["The French = the French people; French = the language."]
+      ["*the French (language) → French ; the French = the French people."],
+      "",
+      "Countable vs uncountable → A1|nom|Countable vs uncountable"
     ),
     nom_countable: G(
-      "Countable nouns take a/an in singular; uncountables use some/much without a/an.",
-      "Countable: a chair, two chairs, many chairs\nUncountable: some water, much information\n\nSome + count/uncount plural | Much + uncount | Many + count plural",
-      ["A/an only with singular countables.", "Much for uncountables; many for countables.", "Some in affirmative; any in questions/negatives.", "A piece of + uncountable: a piece of advice."],
+      "Countable nouns take a/an in the singular; uncountable nouns use some/any/much without a/an.",
+      "Countable: a chair, two chairs, many chairs\nUncountable: some water, much information, a piece of advice",
+      ["A/an only with singular countables.", "Many + countables; much + uncountables (questions/negatives).", "Some in affirmative; any in questions/negatives.", "Piece of / bit of + uncountable for a unit."],
       ["I bought a new laptop.", "There is some milk in the fridge.", "How many books do you have?", "She gave me an interesting piece of news."],
-      ["Informations is wrong; information is uncountable."]
+      ["*informations → information (uncountable).", "*a water → some water / a glass of water."],
+      "",
+      "Some / any → A1|num|Some / any"
     ),
     verb_present_simple: G(
       "The present simple expresses habits, facts, routines, and permanent states.",
       "I/You/We/They + base verb\nHe/She/It + base verb + -s/-es\n\nI work. She works. They live. He goes.",
-      ["Habits: I wake up at seven.", "Facts: The Earth revolves around the Sun.", "Stative verbs usually simple, not continuous.", "Adverbs of frequency before main verb: always, often, never."],
+      ["Habits: I wake up at seven.", "Facts: The Earth revolves around the Sun.", "Stative verbs usually simple, not continuous.", "Frequency adverbs before main verb; after be: She is never late."],
       ["I drink coffee every morning.", "She teaches English.", "They live in Tokyo.", "He usually arrives on time."],
       ["Present simple for scheduled future: The train leaves at six."]
     ),
@@ -1080,46 +1102,60 @@
       ["Who vs whom: whom after preposition formal."]
     ),
     pron_relative_who: G(
-      "Relative pronoun who refers to people as subject of the relative clause.",
-      "The woman who lives next door...\nPeople who work hard succeed.",
-      ["Who for people as subject.", "Whom for people as object (formal).", "Defining vs non-defining commas.", "Who can replace that for people."],
+      "Who introduces relative clauses referring to people (and sometimes pet animals).",
+      "Defining: The woman who lives next door...\nNon-defining: My friend, who lives abroad, is visiting.\n\nWho = subject or object (informal object)",
+      ["Who for people as subject.", "Whom for object in formal writing.", "Defining and non-defining.", "Who can replace that for people in defining clauses.", "Never omit who when it is the subject."],
       ["The student who won is smart.", "Anyone who knows the answer...", "My friend, who lives abroad, is visiting.", "The people who called left a message."],
-      ["The man who I met → whom/that in formal English."]
+      ["The man who I met → whom/that in formal English; who common in speech."]
     ),
     pron_relative_which: G(
-      "Which refers to things and animals; non-defining clauses use which with commas.",
-      "The book which I read... | My car, which is old, still runs.\n\nWhich for things; that also possible (defining)",
-      ["Which for things.", "Non-defining: commas + which.", "Which can refer to whole clause.", "That preferred defining for things (restrictive)."],
+      "Which refers to things and animals; also whole clauses in non-defining relatives.",
+      "Defining: The book which I read...\nNon-defining: My car, which is old, still runs.\nWhole clause: He passed, which surprised us.",
+      ["Which for things and animals.", "Defining and non-defining (commas).", "Which can refer to a whole sentence/clause.", "That also possible in defining (informal).", "Never omit which when it is the subject."],
       ["The film which we saw was great.", "This house, which was built in 1900, is listed.", "He passed the exam, which surprised us.", "The topic which interests me is climate."],
-      ["Which vs that in restrictive clauses (American preference for that)."]
+      ["Non-defining: only which (never that)."]
     ),
     pron_relative_that: G(
-      "That introduces defining relative clauses for people and things.",
-      "The book that I bought... | The man that called...\n\nNo comma with defining that",
-      ["Defining/restrictive clauses.", "People and things.", "Can omit when object: The book (that) I read.", "That not used after comma (non-defining)."],
+      "That introduces defining relative clauses for people, animals, and things.",
+      "The book that I bought... | The man that called...\n\nDefining only — no commas",
+      ["Defining/restrictive clauses only.", "People, animals, and things.", "Can omit when object: The book (that) I read.", "Never used in non-defining clauses (between commas).", "More informal than who/which."],
       ["Everything that glitters is not gold.", "The person that I met was kind.", "This is the best movie that I have seen.", "The house that Jack built."],
-      ["That vs which in non-defining: only which."]
+      ["Not: My brother, that lives in Paris… → who/which + commas."]
     ),
     pron_relative_whose: G(
-      "Whose shows possession in relative clauses for people and things.",
+      "Whose shows possession in relative clauses.",
       "The student whose essay won...\nA company whose products are popular...",
-      ["Whose = possessive relative.", "People and things.", "Whose + noun required.", "Of which formal for things."],
+      ["Whose = possessive relative.", "Usually people and animals.", "Formal style: also things (a town whose history…).", "Whose + noun required.", "Of which / the … of which = formal for things."],
       ["The author whose book I read...", "People whose names I forgot.", "A town whose history is fascinating.", "The student whose phone rang apologized."],
-      ["Whose for things acceptable; of which more formal."]
+      ["Whose for things is standard in modern English; of which is more formal."]
+    ),
+    pron_relative_where: G(
+      "Where introduces defining relative clauses referring to a place.",
+      "The town where I grew up. | I know a restaurant where the food is excellent.\n\nWhere = in/at which (place)",
+      ["Places only — not people or things.", "Defining clauses (informal alternative to in/at which).", "The café where we met.", "Not used for named landmarks in non-defining info (use which)."],
+      ["That's the house where I was born.", "The school where she teaches is nearby.", "I visited the village where my grandparents lived.", "The room where we had the meeting was small."],
+      ["Not: people who… (never where for people)."]
+    ),
+    pron_relative_when: G(
+      "When introduces defining relative clauses referring to a time.",
+      "The day when we met. | There isn't a day when I don't feel busy.\n\nWhen = on/in/at which (time)",
+      ["Times, days, moments, periods.", "Defining clauses (informal alternative to on/in which).", "I'll never forget the day when…", "Also why for reasons, where for places."],
+      ["The moment when everything changed.", "1999 was the year when I graduated.", "There was a time when we met every week.", "The day when the shop closed was a Monday."],
+      ["When as subject cannot be omitted: *The day we met* only if when is object complement."]
     ),
     rel_defining: G(
-      "Defining relative clauses identify which person/thing; no commas.",
-      "The man who called is my boss.\nEssential information—no commas",
-      ["Restrictive/essential.", "No commas.", "That or who/which.", "Can omit relative pronoun if object."],
+      "Defining relative clauses give essential information to identify who or what is meant.",
+      "The man who called is my boss.\nEssential information — no commas",
+      ["Restrictive/essential.", "No commas.", "who / which / that (that = defining only).", "Omit pronoun only if object.", "where / when / why in defining clauses."],
       ["Students who study pass.", "The car that I want is sold.", "The food which he cooked was good.", "Something I said upset her."],
-      ["Commas change meaning with which (non-defining)."]
+      ["Commas change meaning: defining vs non-defining."]
     ),
     rel_non_defining: G(
-      "Non-defining relative clauses add extra information; commas required.",
-      "My brother, who lives in Paris, is visiting.\nExtra info—commas essential",
-      ["Non-restrictive.", "Commas both sides.", "Which for things; who for people.", "That not used."],
+      "Non-defining relative clauses add extra, non-essential information; commas required.",
+      "My brother, who lives in Paris, is visiting.\nExtra info — commas essential",
+      ["Non-restrictive / extra information.", "Commas both sides (or one comma before clause at end).", "who for people; which for things.", "That never used.", "Pronoun cannot be omitted."],
       ["London, which is the capital, is busy.", "Sarah, who I know well, called.", "The sun, which is a star, provides light.", "My car, which I bought last year, broke down."],
-      ["Removing clause shouldn't break identification."]
+      ["Not: My car, that I bought… → which + commas."]
     ),
     quant_many_much: G(
       "Many with countables; much with uncountables; a lot of for both in affirmative.",

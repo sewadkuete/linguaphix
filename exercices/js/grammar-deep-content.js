@@ -57,6 +57,10 @@
       rel_whose: "pron_relative_whose",
       rel_whom: "pron_relative_who",
       rel_which: "pron_relative_which",
+      rel_where: "pron_relative_where",
+      rel_when: "pron_relative_when",
+      rel_defining: "rel_defining",
+      rel_non_defining: "rel_non_defining",
       rel_what: "noun_clauses",
       pron_one: "pron_indefinite",
       pron_coreference: "cohesion_devices",
@@ -146,10 +150,22 @@
 
     if (deep.pitfalls && deep.pitfalls.length) {
       parts.push("");
-      parts.push(L("⚠️ ATTENTION", "⚠️ WATCH OUT"));
+      parts.push(L("⚠️ PIÈGE COURANT", "⚠️ COMMON PITFALL"));
       deep.pitfalls.forEach(function (pit) {
-        parts.push(isFr ? "Piège : " + pit : "Trap: " + pit);
+        parts.push("• " + pit);
       });
+    }
+
+    if (deep.register && deep.register.trim()) {
+      parts.push("");
+      parts.push(L("📎 REGISTRE", "📎 REGISTER"));
+      parts.push(deep.register);
+    }
+
+    if (deep.seeAlso && deep.seeAlso.trim()) {
+      parts.push("");
+      parts.push(L("🔗 VOIR AUSSI", "🔗 SEE ALSO"));
+      parts.push(deep.seeAlso);
     }
 
     return parts.join("\n");
@@ -384,8 +400,12 @@
       rule(function (p) { return p.indexOf("one / ones") >= 0 || p.indexOf("one/ones") >= 0; }, "pron_one"),
       rule(function (p) { return p.indexOf("something") >= 0; }, "pron_indefinite"),
       rule(function (p) { return p.indexOf("relative") >= 0 || p.indexOf("who") >= 0; }, "rel_who"),
+      rule(function (p) { return p.indexOf("defining") >= 0 && p.indexOf("non") >= 0; }, "rel_defining"),
+      rule(function (p) { return p.indexOf("non-defining") >= 0 || p.indexOf("non defining") >= 0; }, "rel_non_defining"),
+      rule(function (p) { return p.indexOf("defining") >= 0; }, "rel_defining"),
       rule(function (p) { return p.indexOf("whose") >= 0; }, "rel_whose"),
-      rule(function (p) { return p.indexOf("where") >= 0; }, "rel_which"),
+      rule(function (p) { return p.indexOf("where") >= 0; }, "rel_where"),
+      rule(function (p) { return p.indexOf("when") >= 0 && p.indexOf("whenever") < 0; }, "rel_when"),
       rule(function (p) { return p.indexOf("each") >= 0 || p.indexOf("neither") >= 0; }, "pron_indefinite"),
       rule(function (p) { return p.indexOf("reciprocal") >= 0; }, "pron_reflexive"),
       rule(function (p) { return p.indexOf("emphatic") >= 0; }, "pron_reflexive"),
@@ -430,6 +450,7 @@
       rule(function (p) { return p.indexOf("preposition") >= 0; }, "disc_prepositions"),
       rule(function (p) { return p.indexOf("sequencing") >= 0; }, "disc_connectors"),
       rule(function (p) { return p.indexOf("logical") >= 0 || p.indexOf("because") >= 0; }, "disc_connectors"),
+      rule(function (p) { return p.indexOf("relative") >= 0 && (p.indexOf("defining") >= 0 || p.indexOf("non") >= 0); }, "rel_defining"),
       rule(function (p) { return p.indexOf("relative") >= 0; }, "rel_who"),
       rule(function (p) { return p.indexOf("tag") >= 0; }, "disc_questions"),
       rule(function (p) { return p.indexOf("cause") >= 0; }, "disc_cause"),

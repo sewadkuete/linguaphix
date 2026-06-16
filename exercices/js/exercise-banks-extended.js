@@ -11,7 +11,7 @@
           { sentence: "Ce sont des filles ___ .", answer: "intelligentes", hint: "accord fém. plur.", explanation: "Intelligent → intelligente (fém.) → intelligentes (pl.)." },
           { sentence: "Il est ___ que son frère.", answer: "plus grand", hint: "comparatif de supériorité", explanation: "Plus + adjectif + que : plus grand que." },
           { sentence: "C'est le livre ___ intéressant du monde.", answer: "le plus", hint: "superlatif", explanation: "Le plus + adjectif : le superlatif absolu." },
-          { sentence: "Une ___ histoire m'a ému.", answer: "touchante", hint: "participe présent adjectif", explanation: "Touchant (part. prés.) s'accorde : touchante (fém.)." },
+          { sentence: "Une ___ histoire m'a beaucoup touchée.", answer: "touchante", hint: "participe présent adjectif", explanation: "Touchant (part. prés.) s'accorde : touchante (fém.)." },
           { sentence: "Les portes sont ___ .", answer: "fermées", hint: "participe passé adjectif", explanation: "Fermé comme adjectif → fermées (fém. plur.)." },
           { sentence: "C'est une ___ nouvelle.", answer: "bonne", hint: "adjectif irrégulier", explanation: "Bon → bonne au féminin (pas bonne forme de bon)." },
           { sentence: "Il fait ___ aujourd'hui.", answer: "froid", hint: "adjectif avec il fait", explanation: "Il fait + adjectif invariable (froid, chaud, beau)." }
@@ -126,7 +126,7 @@
           { question: "Négation complète ?", options: ["ne … jamais", "ne … pas", "ne … plus", "Toutes"], correct: 3, explanation: "Pas, plus, jamais, rien, personne… avec ne." },
           { question: "« ___ , il pleut. » (malgré tout)", options: ["Donc", "Pourtant", "Ensuite", "Puis"], correct: 1, explanation: "Pourtant = adversatif." },
           { question: "Adverbe de lieu ?", options: ["demain", "ici", "souvent", "très"], correct: 1, explanation: "Ici = lieu." },
-          { question: "« Il ___ arrive. » (négation passé)", options: ["n'est pas", "ne pas", "n'a pas", "pas ne"], correct: 0, explanation: "Ne … pas avec auxiliaire être." },
+          { question: "« Il n'___ pas encore arrivé. » (passé composé)", options: ["est", "a", "être", "avoir"], correct: 0, explanation: "Arriver → être au PC : n'est pas arrivé." },
           { question: "Intensité : « ___ difficile »", options: ["très", "beaucoup", "souvent", "demain"], correct: 0, explanation: "Très + adjectif ; beaucoup + verbe." },
           { question: "« ___ tard » (à ce moment)", options: ["Désormais", "Alors", "Souvent", "Peu"], correct: 1, explanation: "Alors = à ce moment-là." }
         ],
@@ -151,7 +151,7 @@
           { front: "Connecteurs adversatifs ?", back: "Mais, pourtant, cependant, néanmoins", category: "Connecteurs" }
         ],
         transform: [
-          { instruction: "Mettez à la forme négative.", original: "Il mange toujours des légumes.", answer: "Il ne mange plus de légumes.", explanation: "Toujours → ne … plus (cessation / plus maintenant)." },
+          { instruction: "Mettez à la forme négative.", original: "Il mange des légumes.", answer: "Il ne mange pas de légumes.", explanation: "Ne … pas ; de après négation (pas des)." },
           { instruction: "Formez l'adverbe.", original: "Elle parle (poli).", answer: "Elle parle poliment.", explanation: "Poli → poliment." },
           { instruction: "Ajoutez un adverbe de fréquence.", original: "Je fais du sport le lundi.", answer: "Je fais souvent du sport le lundi.", explanation: "Souvent avant le verbe." },
           { instruction: "Négation avec « plus ».", original: "Il habite ici.", answer: "Il n'habite plus ici.", explanation: "Ne … plus = no longer." },
@@ -225,7 +225,7 @@
           { sentence: "Un ___ de la classe est absent.", answer: "tiers", hint: "fraction", explanation: "Un tiers = 1/3." }
         ],
         mcq: [
-          { question: "« ___ hommes » (21)", options: ["vingt-et-un", "vingt et un", "vingt-un", "vingt et un hommes"], correct: 0, explanation: "21 → vingt-et-un ; mais vingt et un hommes (accord)." },
+          { question: "« ___ hommes » (21)", options: ["vingt-et-un", "vingt et un", "vingt-un", "vingt et un hommes"], correct: 1, explanation: "Devant un nom : vingt et un hommes (sans trait d'union)." },
           { question: "« ___ enfants » (beaucoup)", options: ["beaucoup", "beaucoup de", "des beaucoup", "beaucoup des"], correct: 1, explanation: "Beaucoup de + nom." },
           { question: "70 en français ?", options: ["septante", "soixante-dix", "septante-dix", "soixante et dix"], correct: 1, explanation: "Soixante-dix (France)." },
           { question: "« Il y a ___ lait. »", options: ["peu", "peu de", "un peu de", "peu des"], correct: 2, explanation: "Un peu de + nom." },
@@ -245,7 +245,7 @@
           { left: "vingt et un / vingt-deux", right: "accord 70-99", category: "Accord" }
         ],
         flashcard: [
-          { front: "Cardinaux devant nom ?", back: "Invariables — cinq livres, deux cents euros (sauf vingt et un)", category: "Nombres" },
+          { front: "Cardinaux devant nom ?", back: "Invariables — cinq livres, deux cent euros ; deux cents seuls", category: "Nombres" },
           { front: "Beaucoup / trop / assez ?", back: "Toujours + de — beaucoup de monde", category: "Quantificateurs" },
           { front: "Ordinal formation ?", back: "Premier, deuxième, troisième… ou -ième (4e = quatrième)", category: "Ordinaux" },
           { front: "Avoir + âge ?", back: "J'ai vingt ans (pas je suis vingt ans)", category: "Nombres" },
@@ -261,7 +261,7 @@
           { instruction: "Ordinal.", original: "C'est le numéro 1.", answer: "C'est le premier.", explanation: "Premier = 1er." },
           { instruction: "Fraction.", original: "La moitié du pain", answer: "Un demi-pain / la moitié du pain", explanation: "Moitié = 1/2." },
           { instruction: "Négation quantité.", original: "J'ai des idées.", answer: "Je n'ai aucune idée.", explanation: "Aucune + nom sing." },
-          { instruction: "Cent / cents ?", original: "deux cent euros", answer: "deux cents euros", explanation: "Cent → cents si multiplicateur > 1 sans autre nombre après." },
+          { instruction: "Cent / cents ?", original: "deux cent", answer: "deux cents", explanation: "Cent → cents quand le nombre se termine (sans nom après)." },
           { instruction: "Quantificateur.", original: "Tous le monde est là.", answer: "Tout le monde est là.", explanation: "Tout le monde (sing.) — locution fixe." }
         ]
       }
@@ -326,8 +326,10 @@
           { sentence: "This is ___ book, not mine.", answer: "my", hint: "possessive adjective", explanation: "My + noun." },
           { sentence: "The book is ___.", answer: "mine", hint: "possessive pronoun", explanation: "Mine = possessive pronoun (no noun)." },
           { sentence: "___ did you invite ?", answer: "Whom", hint: "object interrogative", explanation: "Whom = object (formal) ; who is also common." },
-          { sentence: "The woman ___ called is my aunt.", answer: "who", hint: "relative subject", explanation: "Who = subject of called." },
-          { sentence: "That's the house ___ I grew up.", answer: "where", hint: "relative place", explanation: "Where = in which place." },
+          { sentence: "The woman ___ called is my aunt.", answer: "who", hint: "relative subject", explanation: "Who = subject of called (people)." },
+          { sentence: "That's the house ___ I grew up.", answer: "where", hint: "relative place", explanation: "Where = in which place (defining)." },
+          { sentence: "I'll never forget the day ___ we met.", answer: "when", hint: "relative time", explanation: "When = on/in which day (defining)." },
+          { sentence: "The man ___ car was stolen called the police.", answer: "whose", hint: "possession", explanation: "Whose + noun = possession in relative clause." },
           { sentence: "___ of these is yours ?", answer: "Which", hint: "demonstrative/interrogative choice", explanation: "Which = choice among options." }
         ],
         mcq: [
@@ -335,6 +337,8 @@
           { question: "Object: « Give it to ___ . »", options: ["I", "me", "my", "mine"], correct: 1, explanation: "To me = object after preposition." },
           { question: "Possessive: « It's ___ car. »", options: ["her", "hers", "she", "herself"], correct: 0, explanation: "Her + noun." },
           { question: "Relative object: « the man ___ I met »", options: ["who", "whom", "which", "whose"], correct: 1, explanation: "Whom = object (formal) ; who in informal English." },
+          { question: "Non-defining: « My brother, ___ lives in Paris, is visiting. »", options: ["who", "which", "that", "where"], correct: 0, explanation: "Non-defining + people → who (never that)." },
+          { question: "Defining: « The book ___ I read was great. » (omit pronoun OK)", options: ["who", "which", "that", "A or C"], correct: 3, explanation: "Defining + object → which or that, or omit." },
           { question: "« ___ is this ? » (ownership)", options: ["Who", "Whose", "Who's", "Whom"], correct: 1, explanation: "Whose = possession." },
           { question: "Reflexive: « She hurt ___ . »", options: ["her", "hers", "herself", "she"], correct: 2, explanation: "Herself = reflexive." },
           { question: "Demonstrative: « ___ one do you want ? »", options: ["This", "Which", "What", "Who"], correct: 1, explanation: "Which one = choice." },
@@ -345,7 +349,8 @@
           { left: "me / him / her / them", right: "object pronouns", category: "Objects" },
           { left: "my / your / his / her", right: "possessive adjectives", category: "Possessives" },
           { left: "mine / yours / hers", right: "possessive pronouns", category: "Possessives" },
-          { left: "who / which / that", right: "relative pronouns", category: "Relatives" },
+          { left: "who / which / that", right: "relative pronouns (defining)", category: "Relatives" },
+          { left: "whose / where / when / why", right: "relative (possession / place / time / reason)", category: "Relatives" },
           { left: "this / that / these / those", right: "demonstratives", category: "Demonstratives" },
           { left: "myself / yourself", right: "reflexive pronouns", category: "Reflexives" },
           { left: "one / ones", right: "substitute for noun", category: "Indefinite" }
@@ -353,9 +358,11 @@
         flashcard: [
           { front: "Subject vs object pronouns?", back: "I/he/she/they vs me/him/her/them", category: "Pronouns" },
           { front: "Possessive adj. vs pronoun?", back: "My book vs The book is mine", category: "Possessives" },
+          { front: "Defining vs non-defining?", back: "Defining: no commas, that OK. Non-defining: commas, who/which only", category: "Relatives" },
           { front: "Who vs whom?", back: "Who = subject ; whom = object (formal)", category: "Interrogatives" },
           { front: "Relative who?", back: "Subject — The man who called", category: "Relatives" },
-          { front: "Relative which/that?", back: "Things — The book that I read", category: "Relatives" },
+          { front: "Relative which/that?", back: "Things — The book (that/which) I read", category: "Relatives" },
+          { front: "Whose / where / when?", back: "Possession / place / time in defining relatives", category: "Relatives" },
           { front: "Reflexive pronouns?", back: "Myself, yourself, himself, herself, itself, ourselves, themselves", category: "Reflexives" },
           { front: "Demonstratives?", back: "This/that (sing.) ; these/those (pl.)", category: "Demonstratives" },
           { front: "One / ones?", back: "I need a pen — a red one", category: "Substitution" }
@@ -438,7 +445,7 @@
           { question: "Correct question word order ?", options: ["Where you live?", "Where do you live?", "Where live you?", "You live where?"], correct: 1, explanation: "Auxiliary do + subject + base." },
           { question: "Indirect question: « He asked where ___ . »", options: ["is she", "she is", "does she", "she does"], correct: 1, explanation: "Statement order in embedded clause." },
           { question: "Tag question: « You're ready, ___ ? »", options: ["aren't you", "don't you", "isn't it", "won't you"], correct: 0, explanation: "Match auxiliary and subject." },
-          { question: "Conditional: « If it rains, we ___ home. »", options: ["stay", "will stay", "stayed", "staying"], correct: 0, explanation: "First conditional: if + present, present/future." },
+          { question: "Conditional: « If it rains, we ___ home. »", options: ["stay", "will stay", "stayed", "staying"], correct: 1, explanation: "First conditional: if + present, will + base." },
           { question: "Exclamation: « ___ fast he runs ! »", options: ["What", "How", "So", "Such"], correct: 1, explanation: "How + adverb/adjective." },
           { question: "Passive question: « ___ the letter sent ? »", options: ["Was", "Did", "Is", "Has"], correct: 0, explanation: "Was + subject + past participle." },
           { question: "Subordinator of reason", options: ["because", "although", "unless", "until"], correct: 0, explanation: "Because = reason." },

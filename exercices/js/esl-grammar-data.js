@@ -299,13 +299,21 @@ window.GRAMMAR_DATA = {
   why (reason), how (manner), how much/many (quantity).
 
 • Relative clauses (who / which / that):
+  Defining clauses (no commas) — essential to identify who/what:
   who → people: The woman who lives next door is a doctor.
   which / that → things: The book that I bought is great.
-  ⚠️ Omit that/which when it is the object: The book I bought.
+  ⚠️ that only in defining clauses (never between commas).
+  ⚠️ Omit who/which/that when it is the object: The book (that) I bought.
+  ⚠️ Never omit when it is the subject: The man who called (not *The man called).
+
+  Non-defining clauses (commas) — extra, non-essential information:
+  My brother, who lives in Paris, is a lawyer.
+  The Eiffel Tower, which was built in 1889, is famous.
+  ⚠️ Use who/which only — never that in non-defining clauses.
 
 • Question tags (basic): You're tired, aren't you? It's cold, isn't it?
   Positive statement → negative tag; negative → positive tag.`,
-      points:["Sequencing connectors (first/then/finally)","Logical connectors (because/so/but)","Wh- questions (full set)","Relative clauses (who/which/that)","Question tags (basic)"]
+      points:["Sequencing connectors (first/then/finally)","Logical connectors (because/so/but)","Wh- questions (full set)","Relative clauses (defining / non-defining)","Question tags (basic)"]
     },
     num:{
       title:"Number & quantifiers",
@@ -320,7 +328,7 @@ window.GRAMMAR_DATA = {
 
 • Quantifiers with uncountables:
   a little (= some), little (= almost none).
-  much (formal), a bit of, a amount of.
+  much (formal), a bit of, an amount of.
 
 • Both / either / neither:
   both + plural: Both options are good.
@@ -408,10 +416,23 @@ window.GRAMMAR_DATA = {
     },
     pron:{
       title:"Pronouns",
-      précis:`• Relative pronouns (who, which, that, whose, where):
-  whose (possession): The man whose car was stolen called the police.
-  where (place): The town where I grew up is small.
-  ⚠️ Omit the pronoun when it is the object: The book (that) I read.
+      précis:`• Relative clauses — defining vs non-defining (British Council / Cambridge):
+  Defining (essential, no commas): identifies which person/thing we mean.
+  Non-defining (extra, commas both sides): non-essential information.
+  ⚠️ that → defining only. Never *My brother, that lives…*
+  ⚠️ Omit the pronoun only in defining clauses when it is the object.
+
+• Relative pronouns and adverbs:
+  who — people (subject or object): The man who called / The man (who) I met.
+  which — things & animals (defining & non-defining): The book which I read.
+  that — people or things, defining only (informal): The house that Jack built.
+  whom — people as object (formal): The person whom I met / the person to whom I spoke.
+  whose — possession (people & animals; things in formal style): The woman whose car was stolen.
+  where — places (defining): The town where I grew up. (= in/at which)
+  when — times (defining): The day when we met. (= on/in which)
+  why — reasons (defining): The reason why she left. (= for which)
+  ⚠️ who/which/that as subject → never omit.
+  ⚠️ which can refer to a whole clause: He passed, which surprised everyone.
 
 • Indefinite pronouns: each, every, either, neither, none, all, both.
   Each student has a desk. Neither option works. None of them came.
@@ -425,7 +446,7 @@ window.GRAMMAR_DATA = {
 • One as impersonal pronoun (formal):
   One should always tell the truth. One must do one's best.
   ⚠️ More formal/British; in informal speech, use you.`,
-      points:["Relative pronouns (whose / where)","Indefinite pronouns (each / neither / none)","Reciprocal pronouns (each other / one another)","Emphatic pronouns","Impersonal one (formal)"]
+      points:["Relative clauses (defining / non-defining)","Relative pronouns (who/which/that/whose/where/when/why)","Indefinite pronouns (each / neither / none)","Reciprocal pronouns (each other / one another)","Emphatic pronouns","Impersonal one (formal)"]
     },
     adv:{
       title:"Adverbs & negation",
@@ -579,7 +600,12 @@ window.GRAMMAR_DATA = {
     },
     pron:{
       title:"Pronouns",
-      précis:`• Advanced relative clauses:
+      précis:`• Defining vs non-defining relative clauses (revision):
+  Defining: no commas; that possible; object pronoun can be omitted.
+  Non-defining: commas; who/which only (never that); pronoun cannot be omitted.
+  Commas change meaning: My brother who lives in Paris… (I have several) vs. My brother, who lives in Paris,… (I have one).
+
+• Advanced relative clauses:
   Preposition + whom/which (formal): The person to whom I spoke…
   Informal: The person (who/that) I spoke to…
   ⚠️ Never *to who in formal writing — use to whom.
