@@ -249,7 +249,7 @@ window.GRAMMAR_DATA = {
 
 • One / ones (replace a noun):
   I need a pen. Do you have one? (one = a pen)
-  These shoes are nicer than those ones.
+  These shoes are nicer than those.
 
 • Something, anything, nothing, everything:
   Affirmative: something. Question/negative: anything.
@@ -416,7 +416,7 @@ window.GRAMMAR_DATA = {
 • Indefinite pronouns: each, every, either, neither, none, all, both.
   Each student has a desk. Neither option works. None of them came.
 
-• Reciprocal pronouns: each other (two), one another (more than two).
+• Reciprocal pronouns: each other and one another are interchangeable in modern English (register may vary).
   They love each other. The teams respect one another.
 
 • Emphatic pronouns (same form as reflexive):
@@ -425,7 +425,7 @@ window.GRAMMAR_DATA = {
 • One as impersonal pronoun (formal):
   One should always tell the truth. One must do one's best.
   ⚠️ More formal/British; in informal speech, use you.`,
-      points:["Relative pronouns (whose / where)","Indefinite pronouns (each / neither / none)","Reciprocal (each other / one another)","Emphatic pronouns","Impersonal one (formal)"]
+      points:["Relative pronouns (whose / where)","Indefinite pronouns (each / neither / none)","Reciprocal pronouns (each other / one another)","Emphatic pronouns","Impersonal one (formal)"]
     },
     adv:{
       title:"Adverbs & negation",
@@ -748,9 +748,9 @@ window.GRAMMAR_DATA = {
   Chains of reference: he → him → the former → the defendant → the accused.
   Alternate pronouns, repetition, and synonyms for stylistic flow.
 
-• Generic they / one / you:
-  Generic they: One should always tell the truth. / You shouldn't judge.
-  They as singular: Everyone has their opinion.
+• Generic one / you / singular they:
+  One / you (generic): One should always tell the truth. / You shouldn't judge.
+  Singular they: Everyone has their opinion.
   ⚠️ Formal writing may prefer he or she or they.
 
 • Middle voice and reflexive passives:

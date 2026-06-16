@@ -85,7 +85,7 @@ window.GRAMMAR_DATA = {
   moi, toi, lui, elle, nous, vous, eux, elles.
   Ex. : Moi, j'aime le café. C'est pour lui.
 
-⚠️ il / elle : accord avec le genre grammatical du référent, pas le sexe.
+⚠️ il / elle : pour les personnes, selon la personne visée ; pour les choses, selon le genre grammatical du nom.
 ⚠️ ils : pour un groupe mixte, même avec une seule personne masculine.`,
       points:["Pronoms sujets","Pronom on (valeur nous)","Pronoms toniques"]
     },
@@ -99,8 +99,9 @@ window.GRAMMAR_DATA = {
 
 • À l'oral familier, le « ne » tombe souvent : « Je mange pas. » → comprendre, ne pas reproduire à l'écrit.
 
-• Adverbes de fréquence (après le verbe) :
-  toujours, souvent, parfois, rarement, jamais.
+• Adverbes de fréquence :
+  souvent, parfois : souvent avant le verbe (Je fais souvent du sport).
+  toujours, jamais, rarement : souvent après le verbe ou entre ne et verbe.
   Ex. : Il mange toujours à midi. Elle ne mange jamais de viande.
 
 • Adverbes de lieu : ici, là, là-bas.
@@ -233,7 +234,7 @@ window.GRAMMAR_DATA = {
 • Pronom en (de + chose/quantité) :
   Tu veux du café ? → Oui, j'en veux.
   Tu as des enfants ? → Oui, j'en ai deux.
-  ⚠️ Pas d'accord du p.p. avec en : Des films ? J'en ai vu trois.`,
+  ⚠️ Accord du p.p. avec en si en reprend un COD (sans nombre après) : Des roses ? J'en ai cueillies. / Avec quantité après : J'en ai vu trois (invariable).`,
       points:["Pronoms COD (le, la, les)","Pronoms COI (lui, leur)","Pronom y","Pronom en","Place des pronoms"]
     },
     adv:{
@@ -359,8 +360,8 @@ window.GRAMMAR_DATA = {
       précis:`• Ordre des doubles pronoms (avant le verbe conjugué) :
   me/te/se/nous/vous → le/la/les → lui/leur → y → en
   Ex. : Je le lui donne. / Il m'en a parlé.
-  ⚠️ À l'impératif AFFIRMATIF : verbe + COD + COI.
-  Donne-le-lui. / Donne-le-moi. (pas *donne-moi-le).
+  ⚠️ À l'impératif AFFIRMATIF : verbe + COD + COI + y + en (y avant en).
+  Donne-le-lui. / Donnez-y-en ! (pas *donne-moi-le).
 
 • Pronoms relatifs dont et où :
   dont = de + antécédent.
@@ -380,12 +381,11 @@ window.GRAMMAR_DATA = {
       title:"Restriction, formation et connecteurs",
       précis:`• Ne…que (restriction = seulement) :
   Il ne mange que des légumes. (pas une négation : verbe reste positif)
-  ⚠️ Après ne…que, pas de de : Il ne mange que des légumes (pas *de légumes).
+  ⚠️ Après ne…que, garder l'article partiel si besoin : Il ne mange que des légumes (pas *que légumes sans article).
 
 • Formation des adverbes en -ment :
-  Base = adjectif FÉMININ + -ment : lente → lentement / douce → doucement.
+  Règle : fém. sing. + -ment (lent → lentement) ; -ant → -amment, -ent → -emment (récent → récemment, constant → constamment).
   Exceptions : gentiment (gentil), brièvement (bref).
-  Adverbes en -amment/-emment : courant → couramment / évident → évidemment.
 
 • Connecteurs soutenu/écrit :
   cependant, pourtant, néanmoins, en revanche (opposition).
@@ -483,7 +483,7 @@ window.GRAMMAR_DATA = {
       précis:`• Accord avec avoir (COD antéposé) — révision approfondie :
   Pronoms COD (les, la, le, que) déclenchent l'accord.
   Les livres qu'il a lus. / La lettre qu'elle a écrite.
-  Pas d'accord avec y ni en.
+  Pas d'accord avec y ; avec en, accord possible si en reprend un COD antéposé (sans quantité après).
 
 • Accord des pronominaux complexes :
   Vrai réfléchi direct → accord : Elles se sont levées.

@@ -61,12 +61,12 @@
         gap: [
           { sentence: "___ parle français.", answer: "Je", hint: "pronom sujet 1re pers.", explanation: "Je = pronom sujet 1re personne singulier." },
           { sentence: "Marie me voit. ___ voit Marie.", answer: "Elle", hint: "pronom sujet", explanation: "Elle remplace Marie (fém. sing.)." },
-          { sentence: "Je ___ appelle demain.", answer: "t'", hint: "COI devant voyelle", explanation: "Te → t' devant voyelle ; COI de appeler." },
+          { sentence: "Je ___ appelle demain.", answer: "t'", hint: "COD devant voyelle", explanation: "Te → t' devant voyelle ; COD de appeler (j'appelle quelqu'un)." },
           { sentence: "C'est le livre ___ j'ai acheté.", answer: "que", hint: "pronom relatif COD", explanation: "Que = COD du verbe acheter." },
           { sentence: "La femme ___ parle est ma tante.", answer: "qui", hint: "pronom relatif sujet", explanation: "Qui = sujet de parler." },
           { sentence: "___ livre préfères-tu ?", answer: "Quel", hint: "adjectif/pronom interrogatif", explanation: "Quel s'accorde avec livre (masc.)." },
           { sentence: "___ est ma voiture, pas la tienne.", answer: "Celle-ci", hint: "pronom démonstratif", explanation: "Celle-ci = celle qui est ici (fém.)." },
-          { sentence: "Personne ne ___ comprend.", answer: "me", hint: "pronom COI/CD", explanation: "Me = complément de comprendre." }
+          { sentence: "Personne ne ___ comprend.", answer: "me", hint: "pronom COD", explanation: "Me = COD de comprendre." },
         ],
         mcq: [
           { question: "« ___ mange une pomme. » (il)", options: ["Lui", "Il", "Le", "Eux"], correct: 1, explanation: "Il = sujet." },
@@ -74,7 +74,7 @@
           { question: "« C'est ___ qui a téléphoné. »", options: ["moi", "me", "je", "mon"], correct: 0, explanation: "Moi après c'est … qui (insistance)." },
           { question: "Relatif lieu : « la ville ___ j'habite »", options: ["que", "qui", "où", "dont"], correct: 2, explanation: "Où = lieu." },
           { question: "« ___ de ces robes te plaît ? »", options: ["Laquelle", "Lesquels", "Lequel", "Quelle"], correct: 0, explanation: "Laquelle = laquelle des robes (fém.)." },
-          { question: "« Nous ___ sommes. » (enfants)", options: ["les", "eux", "leur", "l'"], correct: 0, explanation: "Les = eux/elles devant être (cas emphatique)." },
+          { question: "« Nous ___ enfants. »", options: ["sommes", "êtes", "est", "sont"], correct: 0, explanation: "Être + attribut : nous sommes (des) enfants." },
           { question: "« Je pense ___ lui. »", options: ["à", "de", "—", "que"], correct: 0, explanation: "Penser à → à + pronom tonique/disjonctif." },
           { question: "Relatif « dont » exprime…", options: ["le lieu", "la possession / complément de", "le sujet", "le COD"], correct: 1, explanation: "Dont = de + relatif — le livre dont je parle." }
         ],
@@ -91,7 +91,7 @@
         flashcard: [
           { front: "Pronoms sujets ?", back: "je, tu, il/elle, nous, vous, ils/elles", category: "Sujets" },
           { front: "COD me/te/se ?", back: "Me, te, se ; le, la, les — devant voyelle : m', t', s'", category: "COD" },
-          { front: "COI ?", back: "Lui, leur — Je lui parle ; Je leur donne", category: "COI" },
+          { front: "COI ?", back: "Me, te, lui, nous, vous, leur — Je lui parle ; Je leur donne ; Tu me parles", category: "COI" },
           { front: "Qui vs que ?", back: "Qui = sujet ; que = COD", category: "Relatifs" },
           { front: "Où et dont ?", back: "Où = lieu ; dont = de qui/duquel", category: "Relatifs" },
           { front: "C'est moi / C'est toi ?", back: "Pronom tonique après c'est", category: "Toniques" },
@@ -151,7 +151,7 @@
           { front: "Connecteurs adversatifs ?", back: "Mais, pourtant, cependant, néanmoins", category: "Connecteurs" }
         ],
         transform: [
-          { instruction: "Mettez à la forme négative.", original: "Il mange toujours des légumes.", answer: "Il ne mange jamais des légumes.", explanation: "Toujours → jamais avec ne." },
+          { instruction: "Mettez à la forme négative.", original: "Il mange toujours des légumes.", answer: "Il ne mange plus de légumes.", explanation: "Toujours → ne … plus (cessation / plus maintenant)." },
           { instruction: "Formez l'adverbe.", original: "Elle parle (poli).", answer: "Elle parle poliment.", explanation: "Poli → poliment." },
           { instruction: "Ajoutez un adverbe de fréquence.", original: "Je fais du sport le lundi.", answer: "Je fais souvent du sport le lundi.", explanation: "Souvent avant le verbe." },
           { instruction: "Négation avec « plus ».", original: "Il habite ici.", answer: "Il n'habite plus ici.", explanation: "Ne … plus = no longer." },
@@ -338,7 +338,7 @@
           { question: "« ___ is this ? » (ownership)", options: ["Who", "Whose", "Who's", "Whom"], correct: 1, explanation: "Whose = possession." },
           { question: "Reflexive: « She hurt ___ . »", options: ["her", "hers", "herself", "she"], correct: 2, explanation: "Herself = reflexive." },
           { question: "Demonstrative: « ___ one do you want ? »", options: ["This", "Which", "What", "Who"], correct: 1, explanation: "Which one = choice." },
-          { question: "« It was ___ who called. »", options: ["he", "him", "his", "himself"], correct: 1, explanation: "It was him (informal) ; he in formal cleft." }
+          { question: "« It was ___ who called. » (formal)", options: ["he", "him", "his", "himself"], correct: 0, explanation: "It was he who called (subject pronoun after be in formal cleft)." }
         ],
         matching: [
           { left: "I / you / he / she", right: "subject pronouns", category: "Subjects" },

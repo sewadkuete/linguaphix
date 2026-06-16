@@ -259,7 +259,7 @@
     ),
     imperatif_pronoms: G(
       "Avec impératif affirmatif, les pronoms se placent après avec trait d'union.",
-      "Affirmatif : Donne-le-moi ! Parle-lui ! Allez-y !\nNégatif : Ne me le donne pas ! Ne lui parle pas !\n\nOrdre : verbe + le/la/les + moi/toi/lui + en + y",
+      "Affirmatif : Donne-le-moi ! Parle-lui ! Allez-y !\nNégatif : Ne me le donne pas ! Ne lui parle pas !\n\nOrdre : verbe + le/la/les + moi/toi/lui/nous/vous/leur + y + en",
       ["Trait d'union obligatoire affirmatif.", "Pronoms après le verbe.", "Moi/toi à l'impératif (pas me/te).", "Négatif : pronoms avant ne."],
       ["Donnez-moi la clé.", "Ne t'inquiète pas.", "Dis-le-lui !", "Allons-nous-en !"],
       ["Donne-moi-le → Donne-le-moi (ordre COD/COI)."]
@@ -272,9 +272,9 @@
       ["Lui est COI, pas COD."]
     ),
     pron_coi: G(
-      "Les pronoms COI (me, te, lui, nous, vous, leur) remplacent un complément avec à/de.",
+      "Les pronoms COI (me, te, lui, nous, vous, leur) remplacent surtout à + personne (lui/leur à la 3e pers.). Me/te/nous/vous peuvent aussi être COD.",
       "me, te, lui, nous, vous, leur\n\nJe parle à Pierre → Je lui parle.\nTu téléphones à tes parents → Tu leur téléphones.",
-      ["Répondent à à qui ? à quoi ?", "Lui/leur uniquement à la 3e personne.", "Pas d'accord PP avec COI.", "Devant verbe : Je leur donne un cadeau."],
+      ["Répondent surtout à à qui ? (personne).", "Lui/leur uniquement à la 3e personne.", "Pas d'accord PP avec COI.", "Devant verbe : Je leur donne un cadeau."],
       ["Je lui écris une lettre.", "Tu me parles ?", "Nous vous remercions.", "Elle leur a offert des fleurs."],
       ["Ne pas confondre lui (COI) et il (sujet)."]
     ),
@@ -295,7 +295,7 @@
     pron_order: G(
       "L'ordre des pronoms devant le verbe est fixe en français.",
       "me/te/se/nous/vous → le/la/les → lui/leur → y → en → verbe\n\nJe le lui donne. | Tu m'en parles. | Il y en a.",
-      ["Ordre strict devant verbe conjugué.", "Impératif affirmatif : verbe + COD + COI + en + y.", "Ne...pas entoure le bloc pronominal.", "Deux pronoms max. devant verbe (sauf y en)."],
+      ["Ordre strict devant verbe conjugué.", "Impératif affirmatif : verbe + COD + COI + y + en.", "Ne...pas entoure le bloc pronominal.", "Un pronom par catégorie ; y et en peuvent coexister."],
       ["Je te le donne.", "Il nous en a parlé.", "Donne-le-moi !", "Il y en a beaucoup."],
       ["Je le lui donne, pas *Je lui le donne."]
     ),
@@ -337,7 +337,7 @@
     pron_relatif_ou: G(
       "Où remplace un complément de lieu ou de temps.",
       "La ville où j'habite. | Le jour où nous sommes partis.\n\nOù = where / when",
-      ["Lieu : où = dans/lequel lequel.", "Temps : le moment où, l'époque où.", "Pas ou (ou = or) : où avec accent.", "La maison où je suis né."],
+      ["Lieu : où = dans lequel / où.", "Temps : le moment où, l'époque où.", "Pas ou (ou = or) : où avec accent.", "La maison où je suis né."],
       ["Paris est la ville où j'ai étudié.", "Je me souviens du jour où nous nous sommes rencontrés.", "La salle où se déroule la conférence.", "L'époque où il faisait froid."],
       ["Confusion ou (choix) / où (lieu)."]
     ),
@@ -658,10 +658,10 @@
     ),
     pron_leur_en: G(
       "Combinaisons pronominales complexes avec leur, en, y dans les registres avancés.",
-      "Il leur en a parlé. | Donnez-leur-en. | Il y en a qui pensent...\n\nOrdre : COI + en + y",
-      ["Leur + en ensemble possible.", "Impératif : Donne-leur-en.", "Y en a (existence).", "Ordre fixe devant verbe."],
+      "Il leur en a parlé. | Donnez-leur-en. | Il y en a qui pensent...\n\nOrdre : … + lui/leur → y → en",
+      ["Leur + en ensemble possible.", "Impératif : Donne-leur-en.", "Y en a (existence).", "Ordre fixe devant verbe : COD → COI → y → en."],
       ["Il leur en a donné trois.", "Je leur en ai parlé.", "Il y en a beaucoup.", "Donnez-y-en !"],
-      ["Maximum deux pronoms sauf y en."]
+      ["Maximum un pronom par catégorie ; y et en peuvent coexister."],
     ),
     adj_num_ord: G(
       "Accord des adjectifs numéraux ordinaux et fractions (C1).",
