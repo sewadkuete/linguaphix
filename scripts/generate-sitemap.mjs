@@ -20,6 +20,9 @@ const entries = [
   { loc: `${site}/catalogue.html`, changefreq: 'monthly', priority: '0.75' },
   { loc: `${site}/portfolio.html`, changefreq: 'monthly', priority: '0.7' },
   { loc: `${site}/policy.html`, changefreq: 'yearly', priority: '0.4' },
+  { loc: `${site}/exercices/`, changefreq: 'monthly', priority: '0.75' },
+  { loc: `${site}/exercices/fle/`, changefreq: 'monthly', priority: '0.7' },
+  { loc: `${site}/exercices/esl/`, changefreq: 'monthly', priority: '0.7' },
   ...[
     'tcf', 'ielts', 'toeic', 'cours', 'interview', 'soutien', 'formation',
     'logo', 'montage', 'graphic', 'livestream', 'materiel',

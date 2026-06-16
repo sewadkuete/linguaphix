@@ -226,14 +226,24 @@ function renderServicePage(lang) {
     { id: 'book-now', label: t('svcpage.nav.book') || 'Book now' },
     { id: 'svc-how', label: t('svcpage.nav.how') || 'How it works' },
     { id: 'svc-payment', label: t('svcpage.nav.payment') || 'Payment' },
-    { id: 'svc-faq', label: t('svcpage.nav.faq') || 'FAQ' },
   ];
+  if (slug === 'cours') {
+    tocItems.push({ id: 'svc-faq', label: t('svcpage.nav.faq') || 'FAQ' });
+    tocItems.push({
+      href: '../exercices/index.html',
+      label: t('svcpage.nav.precis') || 'Précis grammaire',
+    });
+  } else {
+    tocItems.push({ id: 'svc-faq', label: t('svcpage.nav.faq') || 'FAQ' });
+  }
 
   const tocHtml = tocItems
-    .map(
-      (item) =>
-        `<li><a href="#${item.id}" class="service-page-toc__link">${esc(item.label)}</a></li>`
-    )
+    .map((item) => {
+      if (item.href) {
+        return `<li><a href="${esc(item.href)}" class="service-page-toc__link">${esc(item.label)}</a></li>`;
+      }
+      return `<li><a href="#${item.id}" class="service-page-toc__link">${esc(item.label)}</a></li>`;
+    })
     .join('');
 
   const paymentLead = t('svcpage.payment.lead');

@@ -1234,6 +1234,23 @@ a.ticker-badge-link:active {
 .services-table__actions {
   min-width: 0;
 }
+.services-table__actions--cours {
+  position: relative;
+}
+.services-table__actions--cours .services-table__btn-precis {
+  position: absolute;
+  right: 100%;
+  margin-right: 0.35rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5.6rem;
+  height: 2.25rem;
+  padding: 0 0.28rem;
+  font-size: 0.6rem;
+  line-height: 1.1;
+  white-space: normal;
+  z-index: 2;
+}
 .services-table__actions-inner {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -2266,6 +2283,8 @@ select.form-control { appearance: none; cursor: pointer; }
   display: flex;
   gap: 1.5rem;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /* ── POLICY PAGE ── */
@@ -3627,6 +3646,13 @@ body:has(.wa-float) > footer {
   .services-table__actions-inner {
     grid-template-columns: 1fr;
     gap: 0.5rem;
+  }
+  .services-table__actions--cours .services-table__btn-precis {
+    position: static;
+    transform: none;
+    width: 100%;
+    margin: 0 0 0.5rem;
+    font-size: 0.68rem;
   }
   .services-table__actions .btn {
     height: auto;

@@ -223,6 +223,7 @@ const i18n = {
     'services.audience.ind': 'Particuliers',
     'services.audience.biz': 'Entreprises',
     'services.table.details': 'Détail',
+    'services.table.precis': 'Précis grammaire',
     'services.table.book': 'Réserver',
     'services.table.quote': 'Devis',
     'services.subsection.lang': '🌐 Langues',
@@ -398,6 +399,7 @@ const i18n = {
     'svcpage.nav.delivery': 'Délais',
     'svcpage.nav.payment': 'Paiement',
     'svcpage.nav.faq': 'FAQ',
+    'svcpage.nav.precis': 'Précis grammaire',
     'svcpage.nav.book': 'Réserver',
     'svcpage.nav.prev': 'Service précédent',
     'svcpage.nav.next': 'Service suivant',
@@ -599,6 +601,7 @@ const i18n = {
     'footer.live': 'Diffusion en direct',
     'footer.policy': 'Politique de confidentialité',
     'footer.sitemap': 'Plan du site',
+    'footer.precis': 'Précis grammaire',
     'sitemap.page.back': '← Retour au site',
     'sitemap.badge': 'Navigation',
     'sitemap.title': 'Plan du site',
@@ -763,6 +766,7 @@ const i18n = {
     'services.audience.ind': 'Individuals',
     'services.audience.biz': 'Businesses',
     'services.table.details': 'Details',
+    'services.table.precis': 'Grammar notes',
     'services.table.book': 'Book',
     'services.table.quote': 'Quote',
     'services.subsection.lang': '🌐 Languages',
@@ -938,6 +942,7 @@ const i18n = {
     'svcpage.nav.delivery': 'Timelines',
     'svcpage.nav.payment': 'Payment',
     'svcpage.nav.faq': 'FAQ',
+    'svcpage.nav.precis': 'Grammar notes',
     'svcpage.nav.book': 'Book now',
     'svcpage.nav.prev': 'Previous service',
     'svcpage.nav.next': 'Next service',
@@ -1139,6 +1144,7 @@ const i18n = {
     'footer.live': 'Live streaming',
     'footer.policy': 'Privacy policy',
     'footer.sitemap': 'Sitemap',
+    'footer.precis': 'Grammar notes',
     'sitemap.page.back': '← Back to site',
     'sitemap.badge': 'Navigation',
     'sitemap.title': 'Sitemap',
@@ -1308,6 +1314,7 @@ function applyLang(lang) {
   if (typeof enhanceHomeJsonLd === 'function' && document.body.dataset.i18nTitle === 'page.title.home') {
     enhanceHomeJsonLd(lang);
   }
+  injectFooterPrecisLink(lang);
   if (typeof applySelectI18n === 'function') applySelectI18n(lang, i18n);
   if (typeof applyHomeServicePrices === 'function') applyHomeServicePrices(lang);
   if (typeof applyGeoPrices === 'function') applyGeoPrices(lang, i18n);
@@ -1507,6 +1514,58 @@ function resolveHomeTranslationHashTarget(id) {
   if (services?.classList.contains('services-filter-entreprises')) return biz;
   if (ind.hidden && !biz.hidden) return biz;
   return ind;
+}
+
+function precisGrammaireHref() {
+  const p = (location.pathname || '').replace(/\\/g, '/');
+  if (/\/exercices\//.test(p)) return 'index.html';
+  if (/\/services\//.test(p)) return '../exercices/index.html';
+  return 'exercices/index.html';
+}
+
+function injectFooterPrecisLink(lang) {
+  const resolved = lang || (typeof currentLang !== 'undefined' ? currentLang : 'fr');
+  const label =
+    (typeof i18n !== 'undefined' && (i18n[resolved]?.['footer.precis'] || i18n.fr?.['footer.precis'])) ||
+    'Précis grammaire';
+  const href = precisGrammaireHref();
+
+  const coursItem = document.querySelector('footer a[data-i18n="footer.cours"]');
+  if (coursItem) {
+    const ul = coursItem.closest('ul');
+    let link = ul?.querySelector('[data-footer-precis]');
+    if (ul && !link) {
+      const li = document.createElement('li');
+      link = document.createElement('a');
+      link.setAttribute('data-footer-precis', '1');
+      link.setAttribute('data-i18n', 'footer.precis');
+      li.appendChild(link);
+      coursItem.closest('li')?.insertAdjacentElement('afterend', li);
+    }
+    if (link) {
+      link.href = href;
+      link.textContent = label;
+    }
+    document.querySelectorAll('.footer-bottom__links [data-footer-precis]').forEach((node) => node.remove());
+    return;
+  }
+
+  document.querySelectorAll('.footer-bottom__links').forEach((wrap) => {
+    let link = wrap.querySelector('[data-footer-precis]');
+    if (!link) {
+      link = document.createElement('a');
+      link.setAttribute('data-footer-precis', '1');
+      link.setAttribute('data-i18n', 'footer.precis');
+      const anchor =
+        wrap.querySelector('a[data-i18n="nav.contact"]') ||
+        wrap.querySelector('a[href$="site-index.html"]') ||
+        wrap.querySelector('a[href*="mailto:"]');
+      if (anchor) wrap.insertBefore(link, anchor);
+      else wrap.appendChild(link);
+    }
+    link.href = href;
+    link.textContent = label;
+  });
 }
 
 function syncFooterTranslationLink() {

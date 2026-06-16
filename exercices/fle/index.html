@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Grammaire FLE interactive A1–C2 : précis de cours et 40 exercices par niveau et catégorie.">
+  <title>FLE — Grammaire interactive A1–C2 | LINGUAPHIX</title>
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../js/grammar-platform.css">
+</head>
+<body data-lang="fr">
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a class="site-logo" href="../index.html?lang=fr">LINGUAPHIX<span>FLE</span></a>
+      <div class="site-links">
+        <a href="../index.html?lang=fr">Accueil</a>
+        <a href="index.html" class="active">Français (FLE)</a>
+        <a href="../esl/index.html" class="esl">English (ESL)</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="site-main">
+    <div class="site-container">
+      <div id="grammar-app"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>LINGUAPHIX · Grammaire FLE · A1–C2</p>
+  </footer>
+
+  <script src="../js/scroll-top.js"></script>
+  <script src="../js/fle-grammar-data.js"></script>
+  <script src="../js/grammar-deep-lib.js"></script>
+  <script src="../js/grammar-deep-content.js"></script>
+  <script src="../js/precis-enrichment.js"></script>
+  <script src="../js/precis-search.js"></script>
+  <script src="../js/flashcard-options.js"></script>
+  <script src="../js/exercise-banks-extended.js"></script>
+  <script src="../js/exercise-generator.js"></script>
+  <script src="../js/grammar-platform.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.enrichGrammarData) enrichGrammarData("fr");
+      initGrammarPlatform({
+        lang: "fr",
+        mountId: "grammar-app",
+        siteMode: true,
+        title: "Grammaire FLE",
+        subtitle: "Précis détaillés + 40 exercices interactifs · 7 catégories × 6 niveaux CECR"
+      });
+    });
+  </script>
+</body>
+</html>

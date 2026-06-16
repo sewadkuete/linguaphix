@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive ESL grammar A1–C2: detailed course notes and 40 exercises per level and category.">
+  <title>ESL — Interactive Grammar A1–C2 | LINGUAPHIX</title>
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../js/grammar-platform.css">
+</head>
+<body data-lang="en">
+  <nav class="site-nav">
+    <div class="site-nav-inner">
+      <a class="site-logo" href="../index.html?lang=en">LINGUAPHIX<span>ESL</span></a>
+      <div class="site-links">
+        <a href="../index.html?lang=en">Home</a>
+        <a href="../fle/index.html">Français (FLE)</a>
+        <a href="index.html" class="active esl">English (ESL)</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="site-main">
+    <div class="site-container">
+      <div id="grammar-app"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>LINGUAPHIX · ESL Grammar · A1–C2</p>
+  </footer>
+
+  <script src="../js/scroll-top.js"></script>
+  <script src="../js/esl-grammar-data.js"></script>
+  <script src="../js/grammar-deep-lib.js"></script>
+  <script src="../js/grammar-deep-content.js"></script>
+  <script src="../js/precis-enrichment.js"></script>
+  <script src="../js/precis-search.js"></script>
+  <script src="../js/flashcard-options.js"></script>
+  <script src="../js/exercise-banks-extended.js"></script>
+  <script src="../js/exercise-generator.js"></script>
+  <script src="../js/grammar-platform.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (window.enrichGrammarData) enrichGrammarData("en");
+      initGrammarPlatform({
+        lang: "en",
+        mountId: "grammar-app",
+        siteMode: true,
+        title: "ESL Grammar",
+        subtitle: "Detailed course notes + 40 interactive exercises · 7 categories × 6 CEFR levels"
+      });
+    });
+  </script>
+</body>
+</html>
