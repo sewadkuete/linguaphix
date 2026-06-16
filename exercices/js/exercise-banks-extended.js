@@ -61,7 +61,7 @@
         gap: [
           { sentence: "___ parle français.", answer: "Je", hint: "pronom sujet 1re pers.", explanation: "Je = pronom sujet 1re personne singulier." },
           { sentence: "Marie me voit. ___ voit Marie.", answer: "Elle", hint: "pronom sujet", explanation: "Elle remplace Marie (fém. sing.)." },
-          { sentence: "Je ___ appelle demain.", answer: "t'", hint: "COD devant voyelle", explanation: "Te → t' devant voyelle ; COD de appeler (j'appelle quelqu'un)." },
+          { sentence: "Viens avec ___ !", answer: "moi", hint: "pronom tonique après préposition", explanation: "Après avec → moi (tonique), jamais je." },
           { sentence: "C'est le livre ___ j'ai acheté.", answer: "que", hint: "pronom relatif COD", explanation: "Que = COD du verbe acheter." },
           { sentence: "La femme ___ parle est ma tante.", answer: "qui", hint: "pronom relatif sujet", explanation: "Qui = sujet de parler." },
           { sentence: "___ livre préfères-tu ?", answer: "Quel", hint: "adjectif/pronom interrogatif", explanation: "Quel s'accorde avec livre (masc.)." },

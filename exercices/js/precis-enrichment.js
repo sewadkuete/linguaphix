@@ -26,11 +26,12 @@
       "A1|nom": "• Pluriel régulier : ajouter -s au singulier.\n  Ex. : un livre → des livres, la table → les tables.\n• Genre grammatical : chaque nom est masculin ou féminin — apprenez le avec son article (le/la).",
       "A1|adv": "• Fréquence : toujours, souvent, parfois, rarement, jamais — après le verbe simple.\n• Lieu : ici, là, là-bas.\n• Temps : aujourd'hui, demain, hier.",
       "A1|disc": "• Phrase de base : Sujet + Verbe + Complément.\n• Négation : ne + verbe + pas.\n• Question : Est-ce que tu… ? ou intonation montante.",
+      "A1|pron": "• Sujets : je, tu, il/elle/on, nous, vous, ils/elles — obligatoires.\n• On = nous (oral) ; verbe 3e sing. avec on.\n• Toniques : moi, toi, lui, elle, soi… — après préposition, c'est…, emphase.",
       "A1|num": "• Nombres 0–100.\n• Partitif : du, de la, de l'.\n• beaucoup de, un peu de + nom.",
       "A2|nom": "• Contractions : au, aux, du, des.\n• Locutions sans article : en voiture, à pied.\n• Noms composés : chefs-d'œuvre, grands-parents.",
       "A2|verb": "• PC : avoir/être + p.p. (accord avec être).\n• Imparfait : description, habitude.\n• PC vs imparfait : action ponctuelle / toile de fond.",
       "A2|adj": "• Comparatif : plus/moins/aussi…que.\n• Irréguliers : meilleur, mieux, pire.\n• Superlatif : le/la/les plus + adj.",
-      "A2|pron": "• COD : le, la, les — avant le verbe.\n• COI : lui, leur.\n• y (lieu) et en (quantité).",
+      "A2|pron": "• COD : me/te/le/la/les — placement (affirm., nég., impératif).\n• COI : lui, leur — à + personne.\n• y (lieu/chose) ; en (de/quantité). Contraste COD/COI.",
       "A2|adv": "• ne…plus, ne…jamais, ne…rien, ne…personne.\n• très, assez, trop + adjectif.",
       "A2|disc": "• Séquence : d'abord, ensuite, enfin.\n• Relatives qui/que (essentielles).\n• Parce que / donc / mais.",
       "A2|num": "• Ordinaux : premier, deuxième…\n• Fractions : un tiers, la moitié.",
@@ -53,7 +54,8 @@
       "C2|disc": "• Métalangue : anaphore, coréférence, implicature.\n• Variation : diatopique, diastratique, diaphasique.",
       "C2|adv": "• Figures : hyperbate, anacoluthe, zeugme.\n• Implicature (Grice) et présupposé.",
       "C2|nom": "• Liaisons facultatives = registre soutenu.\n• Liaisons interdites : après et, h aspiré.",
-      "C2|num": "• Numéraux composés avec traits d'union.\n• Registres de quantification."
+      "C2|num": "• Numéraux composés avec traits d'union.\n• Registres de quantification.",
+      "C2|pron": "• Soi (emploi littéraire) ; indéfinis archaïques (d'aucuns, nul).\n• Quatre valeurs pronominales : réfléchi, réciproque, passif, essentiel.",
     },
     en: {
       "A1|adv": "• always, often, sometimes, never — mid position.\n• here, there.\n• today, tomorrow, yesterday.",
@@ -62,7 +64,8 @@
       "A2|nom": "• Countable vs uncountable (systematic).\n• some / any / no.\n• Compound nouns : bus stop, swimming pool.",
       "A2|verb": "• Past simple : regular -ed / irregular list.\n• Present perfect intro : have/has + PP.\n• Used to : past habits.",
       "A2|adj": "• Comparative : -er / more…than.\n• Superlative : the -est / the most.\n• as…as / not as…as.",
-      "A2|pron": "• me, you, him, her, us, them.\n• something / anything / nothing.",
+      "A1|pron": "• Subject : I, you, he, she, it, we, they.\n• Dummy it : It is raining. It is 3 o'clock.\n• Object/possessive/reflexive → A2.",
+      "A2|pron": "• Object : me, you, him, her, it, us, them.\n• Possessive : mine, yours, his, hers, ours, theirs.\n• Reflexive/emphatic : myself… themselves.",
       "A2|adv": "• never, already, yet, still.\n• very, too, enough.",
       "A2|num": "• first, second, third.\n• a third, half.",
       "A2|disc": "• first, then, finally.\n• because / so / but.\n• defining vs non-defining relatives (who/which/that).",
@@ -84,7 +87,8 @@
       "C2|verb": "• Full aspect mastery : will have been working.\n• Archaic recognition : thou art, if he be.",
       "C2|disc": "• Metalanguage : anaphora, coreference, deixis.\n• Sociolinguistic variation : BrE/AmE, registers.",
       "C2|adv": "• Implicature (Grice) : Some passed → not all.\n• Presupposition : stopped smoking → smoked before.",
-      "C2|num": "• literary quantifiers.\n• academic/statistical phrasing."
+      "C2|num": "• literary quantifiers.\n• academic/statistical phrasing.",
+      "C2|pron": "• Deixis ; impersonal it (anticipatory, empty, prop, cleft).\n• Discourse reference, presupposition, bridging anaphora."
     }
   };
 

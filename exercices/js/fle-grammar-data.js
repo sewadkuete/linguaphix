@@ -70,24 +70,28 @@ window.GRAMMAR_DATA = {
       points:["Accord genre adjectif qualificatif","Accord nombre (-s)","Place de l'adjectif","Adjectifs possessifs","Adjectifs démonstratifs"]
     },
     pron:{
-      title:"Pronoms sujets",
-      précis:`Les pronoms sujets remplacent un groupe nominal sujet. En français, ils sont OBLIGATOIRES (contrairement à certaines langues).
+      title:"Pronoms sujets et toniques",
+      précis:`• Pronoms sujets — obligatoires en français (pas de pro-drop) :
+  je | tu | il / elle / on | nous | vous | ils / elles
+  Ex. : Elle prépare le dîner. Ils sont arrivés à l'heure.
 
-• Tableau complet :
-  je (1re sing.)   tu (2e sing.)   il / elle / on (3e sing.)
-  nous (1re pl.)   vous (2e pl.)   ils / elles (3e pl.)
+• On — valeur de « nous » dès A1 :
+  On part ? (= Nous partons ?) Verbe toujours 3e pers. sing. : On mange.
+  ⚠️ Genre grammatical : il/elle pour les choses ; ils pour un groupe mixte (norme prescriptive).
 
-• On : pronom très fréquent à l'oral, valeur de « nous ».
-  Ex. : On y va ? (= Nous y allons ?)
-  Verbe toujours à la 3e pers. sing. : On mange.
+• Pronoms toniques / disjoints (paradigme complet) :
+  moi | toi | lui | elle | soi | nous | vous | eux | elles
+  1. Après préposition : pour moi, avec toi, chez lui.
+  2. Emphase : Moi, je préfère le thé. Lui, il refuse.
+  3. Après c'est / ce sont : C'est moi. Ce sont eux.
+  4. Isolation : Qui répond ? — Moi.
+  soi : avec on, chacun, tout le monde — Chacun pour soi.
 
-• Pronoms toniques (après préposition, pour insister) :
-  moi, toi, lui, elle, nous, vous, eux, elles.
-  Ex. : Moi, j'aime le café. C'est pour lui.
+• Contraste sujet vs tonique :
+  ✗ C'est pour je → ✓ C'est pour moi (jamais de pronom sujet après préposition).
 
-⚠️ il / elle : pour les personnes, selon la personne visée ; pour les choses, selon le genre grammatical du nom.
-⚠️ ils : pour un groupe mixte, même avec une seule personne masculine.`,
-      points:["Pronoms sujets","Pronom on (valeur nous)","Pronoms toniques"]
+⚠️ COD/COI/y/en → A2|pron.`,
+      points:["Pronoms sujets (je…ils/elles)","Pronom on (valeur nous)","Pronoms toniques (moi…eux/elles, soi)","Contraste sujet / tonique"]
     },
     adv:{
       title:"Négation et adverbes",
@@ -219,23 +223,31 @@ window.GRAMMAR_DATA = {
     },
     pron:{
       title:"Pronoms COD, COI, y, en",
-      précis:`• Pronoms COD (le, la, l', les) — introduction A2 :
-  Devant le verbe conjugué : Je le vois. Tu l'aimes.
-  Impératif affirmatif : après le verbe — Prends-le !
+      précis:`• COD (me te le la l' les) — remplace l'objet direct :
+  Paradigme : me/m' | te/t' | le/la/l' | nous | vous | les
+  Affirmatif : Je le vois. | Négatif : Je ne le vois pas.
+  Impératif + : Prends-le ! | Impératif − : Ne le prends pas !
+  Infinitif : Je veux le voir. | Temps composé : Je l'ai vu.
+  Accord p.p. (avoir) : Les films que j'ai vus.
 
-• Pronoms COI (lui, leur ; aussi me/te/nous/vous) :
-  Remplacent à + personne : Je téléphone à Marie → Je lui téléphone.
-  ⚠️ Personnes : lui/leur, pas y.
+• COI (me te lui nous vous leur) — remplace à + personne :
+  Je téléphone à Marie → Je lui téléphone.
+  Verbes à + pers. : parler à, écrire à, donner à, téléphoner à, plaire à.
+  Contraste COD/COI :
+  ✗ Je lui appelle → ✓ Je l'appelle (appeler = COD).
+  ✗ Je le téléphone → ✓ Je lui téléphone (téléphoner à).
 
-• Pronom y (à + lieu ou à + chose) :
-  Tu vas à Paris ? → Oui, j'y vais. | Tu penses à ton examen ? → J'y pense.
+• Y — à + lieu/chose (pas de personne) :
+  J'y vais. (= à Paris) | J'y pense. (= à ce projet)
+  ✗ Je pense à Marie → J'y pense → ✓ Je pense à elle.
 
-• Pronom en (de + chose / quantité) :
-  Tu veux du café ? → J'en veux. | Tu as des enfants ? → J'en ai deux.
-  ⚠️ Accord du p.p. : Des roses ? J'en ai cueillies. / J'en ai cueilli trois (quantité après).
+• En — de + chose, partitif, quantité :
+  J'en veux. (= du café) | J'en ai trois. | Je n'en ai pas.
+  Pas d'accord du p.p. avec en : J'en ai écrit trois.
+  ✗ Je ne veux pas en du pain → ✓ Je n'en veux pas.
 
-⚠️ Pronoms sujets → A1|pron. Ordre des doubles pronoms → B1|pron.`,
-      points:["Pronoms COD (le, la, les)","Pronoms COI (lui, leur)","Pronom y (lieu/chose)","Pronom en (partitif/quantité)","Place devant le verbe"]
+⚠️ Sujets/toniques → A1|pron. Ordre doubles pronoms → B1|pron.`,
+      points:["Pronoms COD (placement complet)","Pronoms COI (à + personne)","Pronom y (lieu/chose)","Pronom en (de/quantité)","Contrastes COD/COI/y/en"]
     },
     adv:{
       title:"Négations composées et adverbes",
@@ -357,26 +369,32 @@ window.GRAMMAR_DATA = {
       points:["Accord p.p. avec avoir (COD antéposé)","Accord p.p. des pronominaux","Adjectifs verbaux vs. participes présents"]
     },
     pron:{
-      title:"Ordre des pronoms et relatives",
-      précis:`• Ordre des doubles pronoms (système complet) :
-  me/te/se/nous/vous → le/la/les → lui/leur → y → en
-  Ex. : Je te le donne. / Il nous en a parlé.
+      title:"Ordre des pronoms, relatifs, démonstratifs, indéfinis",
+      précis:`• Ordre des clitiques — tableau décisionnel :
+  Avant verbe conjugué : me/te/se/nous/vous → le/la/les → lui/leur → y → en
+  Ex. : Je te le donne. / Il m'en a parlé. / Elle les y a trouvés.
   Impératif affirmatif : verbe + le/la/les + moi/toi/lui/nous/vous/leur + y + en
-  Donne-le-lui ! / Donnez-y-en !
+  Donne-le-lui ! / Donne-m'en. / Vas-y.
+  ✗ Je lui le donne → ✓ Je le lui donne.
 
-• Pronoms relatifs dont et où (extension A2 qui/que) :
-  dont = de + antécédent : Le livre dont je parle. / Voici le sujet dont il s'agit.
-  où = lieu ou temps : La ville où je travaille. / L'année où nous nous sommes rencontrés.
+• Relatifs qui / que / dont / où :
+  qui = sujet : L'homme qui parle. ✗ La femme que est arrivée → ✓ qui est arrivée.
+  que/qu' = COD : Le livre que j'ai lu. (accord p.p. si antéposé)
+  dont = de + antécédent : Le sujet dont je parle. (pas de *dont de)
+  où = lieu/temps : La ville où je vis. / Le jour où il est parti.
 
-• Lequel / laquelle / lesquels / lesquelles (+ prépositions) :
+• Lequel / laquelle / lesquels / lesquelles (+ auquel, duquel…) :
   La chaise sur laquelle il est assis. / Les projets auxquels je participe.
-  Contractions : auquel, duquel, desquels.
 
-• Pronoms démonstratifs (celui, celle, ceux, celles + -ci/-là) :
-  Celui que je préfère. / Celle-ci est plus récente.
+• Démonstratifs celui/celle/ceux/celles + -ci/-là ; ce/ça/cela :
+  Celui que je préfère. / Celle-ci est récente. / C'est moi. / Ça m'étonne.
 
-⚠️ COD/COI/y/en → A2|pron.`,
-      points:["Ordre des doubles pronoms","Dont et où","Lequel / laquelle / lesquels","Pronoms démonstratifs (celui/celle)"]
+• Indéfinis (introduction) :
+  on (générique) : On ne sait jamais. | quelqu'un/quelque chose | personne/rien (sujet ou COD)
+  ✗ Je ne vois pas personne → ✓ Je ne vois personne.
+
+⚠️ COD/COI/y/en → A2|pron. Relatifs composés → B2|pron.`,
+      points:["Ordre des doubles pronoms (tableau)","Relatifs qui/que/dont/où","Lequel / auquel / duquel","Démonstratifs (celui/ce/ça)","Indéfinis (on/quelqu'un/personne/rien)"]
     },
     adv:{
       title:"Restriction, formation et connecteurs",
@@ -506,23 +524,25 @@ window.GRAMMAR_DATA = {
       points:["Accord avec en (COD antéposé)","Accord collectif / fraction","Adjectifs verbaux / participes avancés"]
     },
     pron:{
-      title:"Relatifs composés et indéfinis soutenus",
-      précis:`• Relatifs composés — prépositions complexes :
-  auquel, duquel, desquels / à laquelle, de laquelle…
-  Après préposition + nom : à côté duquel, grâce auxquels, en dépit desquels.
-  Animé après préposition → qui (préféré) : la personne à qui je pense (≠ à laquelle).
+      title:"Relatifs composés, indéfinis avancés, pronom neutre le",
+      précis:`• Relatifs composés — paradigme complet :
+  lequel/laquelle/lesquels/lesquelles | auquel/auxquels/duquel/desquels
+  Choses + préposition : La table sur laquelle il écrit.
+  Personnes + préposition : La personne à qui je parle (qui préféré à à laquelle).
+  ✗ Le problème dont je travaille → ✓ sur lequel je travaille.
 
-• Pronoms indéfinis soutenus :
-  quiconque (= toute personne qui) : Quiconque viole la loi sera puni.
-  nul (= personne, soutenu) : Nul n'est censé ignorer la loi.
-  d'aucuns (très soutenu) : D'aucuns prétendent que…
+• Indéfinis avancés (entrée distincte B2) :
+  tout/tous/toute/toutes (pronom) : Tout est possible. / Tous sont arrivés [tys].
+  chacun/chacune | l'un…l'autre / les uns…les autres
+  n'importe qui/quel/lequel | quiconque | autrui
 
-• Pronom neutre le (attribut) :
-  Elle est présidente et je le suis aussi.
-  Le reprend un attribut → INVARIABLE.
+• Pronom neutre le (invariable) :
+  Attribut : Elle est directrice ? — Oui, elle l'est.
+  Proposition : Tu savais qu'il partait ? — Oui, je le savais.
+  Contraste COD : Je les ai lus (accord) vs. elle l'est (pas d'accord).
 
-⚠️ Dont, où, lequel / auquel de base → B1|pron.`,
-      points:["Relatifs composés (prépositions complexes)","Pronoms indéfinis soutenu (quiconque/nul)","Pronom neutre le (attribut)"]
+⚠️ Dont/où/lequel de base → B1|pron.`,
+      points:["Relatifs composés (paradigme)","Indéfinis avancés (tout/quiconque/autrui)","Pronom neutre le (invariable)","Contraste le COD vs le neutre"]
     },
     adv:{
       title:"Négations littéraires et modalité",
@@ -638,19 +658,23 @@ window.GRAMMAR_DATA = {
       points:["Couleurs invariables (extension)","Expressions figées demi/mi/nu","Registre écrit vs oral"]
     },
     pron:{
-      title:"Coréférence et cohésion textuelle",
-      précis:`• Coréférence — chaînes de référence (extension B2) :
+      title:"Coréférence, on stylistique, relatifs ce qui/que/dont",
+      précis:`• Coréférence textuelle — chaînes de reprise :
   il → lui → ce dernier → l'intéressé → le dit auteur.
-  Alterner pronominalisation, répétition nominale et synonymes pour la cohésion stylistique.
+  Distance courte : pronom personnel. Distance longue / ambiguïté : démonstratif ou nominal.
+  ✗ Paul a vu Marc. Il lui a dit qu'il partait. → ✓ Ce dernier lui a dit qu'il partait.
 
-• Reprise anaphorique et isotopie :
-  Champ lexical unifié ; déterminants démonstratifs (ce/cette/cet) pour reprendre un thème.
+• On — emplois stylistiques (extension A1/B1) :
+  Générique : On ne prête qu'aux riches. | Passif-like : On a arrêté trois suspects.
+  Verbe 3e sing. ; adj./p.p. peuvent s'accorder avec le référent réel : On est partis.
 
-• On — valeurs stylistiques avancées (extension B1) :
-  On générique, impersonnel littéraire, indéfini ; ambiguïté référentielle en fiction.
+• Antécédent indéfini — ce qui / ce que / ce dont / ce à quoi :
+  Ce qui m'étonne, c'est son calme. (sujet)
+  Ce que je veux, c'est partir. (COD) | Ce dont j'ai besoin, c'est du repos.
+  ✗ Ce qui que je veux → ✓ Ce que je veux.
 
-⚠️ Pronoms relatifs composés, en/y → B2|pron. Ordre des doubles pronoms → B1|pron.`,
-      points:["Coréférence (chaînes de référence)","Reprise anaphorique et isotopie","On — valeurs stylistiques avancées"]
+⚠️ Relatifs composés → B2|pron. Ordre clitiques → B1|pron.`,
+      points:["Coréférence (chaînes, cataphore)","On stylistique (générique/passif-like)","Ce qui/ce que/ce dont/ce à quoi","Désambiguïsation référentielle"]
     },
     adv:{
       title:"Modalité épistémique, litote et euphémisme",
@@ -747,19 +771,28 @@ window.GRAMMAR_DATA = {
       points:["Couleurs (accord/invariables — nuance)","Demi/mi/semi/non/quasi (position)"]
     },
     pron:{
-      title:"Pronoms — distinctions fines C2",
-      précis:`• Pronom neutre le — attribut et proposition (extension B2) :
-  Elle est directrice et je le suis aussi. (le = attribut)
-  Je le savais. (le = proposition entière)
+      title:"Soi, indéfinis littéraires, pronominaux — distinctions fines",
+      précis:`• Soi — emphatique/disjoint, référence indéfini/générique uniquement :
+  Avec on, chacun, tout le monde, personne, quiconque, nul : On pense à soi.
+  Locutions : être soi-même, l'amour de soi, aller de soi.
+  Contraste : Paul pense à lui (Paul nommé) vs. On pense à soi (indéfini).
+  ✗ Marie est fière de soi → ✓ Marie est fière d'elle.
 
-• Pronominaux — quatre valeurs (extension B1) :
-  Réfléchi / réciproque / passif pronominal / essentiellement pronominal (s'est souvenue).
+• Indéfinis littéraires/archaïques (réceptif + écrit formel) :
+  d'aucuns (pluriel) : D'aucuns prétendent que…
+  nul/nulle : Nul n'est censé ignorer la loi.
+  aucun/aucune (pronom) : Aucun de ses amis n'est venu.
+  maints/maintes, autrui (invariable).
 
-• Soi — sujet indéfini/impersonnel (littéraire) :
-  Chacun pour soi. / On pense d'abord à soi.
+• Construction pronominale — quatre valeurs :
+  1. Réfléchi : Il se lave. → accord p.p. avec sujet (être).
+  2. Réciproque (pluriel) : Ils se regardent.
+  3. Passif pronominal : Ce livre se vend bien.
+  4. Essentiellement pronominal : Elle s'est souvenue.
+  Accord réciproque COI : ✗ Elles se sont écrites → ✓ Elles se sont écrit des lettres.
 
-⚠️ Coréférence textuelle → C1|pron. Pronom le (attribut) → B2|pron.`,
-      points:["Pronom neutre le (attribut/proposition)","Distinctions pronominaux (4 valeurs)","Emploi littéraire de soi"]
+⚠️ Coréférence → C1|pron. Neutre le → B2|pron.`,
+      points:["Soi (indéfini/générique)","Indéfinis littéraires (d'aucuns/nul/maints/autrui)","Pronominaux 4 valeurs","Accord réciproque COI vs COD"]
     },
     adv:{
       title:"Figures syntaxiques et implicature",

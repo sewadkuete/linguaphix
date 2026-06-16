@@ -311,56 +311,58 @@
       ["Donne-moi-le → Donne-le-moi (ordre COD/COI)."]
     ),
     pron_cod: G(
-      "Les pronoms COD (le, la, l', les) remplacent un complément d'objet direct.",
-      "le (M sing.) | la (F sing.) | l' (devant voyelle) | les (pl.)\n\nJe vois le chat → Je le vois.\nTu aimes Marie → Tu l'aimes.",
-      ["Placés avant le verbe conjugué.", "Accord PP avec COD précédent (avoir).", "Elle les a vus (COD les avant).", "Impératif affirmatif : après le verbe."],
-      ["Je le connais.", "Tu la regardes.", "Nous les invitons.", "Il m'a vue hier."],
-      ["Lui est COI, pas COD."],
-      "Place devant le verbe ; impératif affirmatif : après (Prends-le !).",
-      "Pronoms COI → A2|pron ; doubles pronoms → B1|pron"
+      "Les pronoms COD (me, te, le, la, l', nous, vous, les) remplacent le complément d'objet direct.",
+      "me/m' | te/t' | le/la/l' | nous | vous | les\n\nJe vois Marie → Je la vois. | Tu m'aimes → Tu m'aimes.",
+      ["Affirmatif : pronom + verbe (Je le vois).", "Négatif : ne + pronom + verbe + pas.", "Impératif + : verbe-pronom (Prends-le !).", "Impératif − : ne + pronom + verbe + pas.", "Infinitif : verbe + pronom (voir le) ou pronom + inf. (le voir).", "Temps composé : pronom entre auxiliaire et p.p.", "Accord p.p. avec avoir si COD antéposé : Je les ai vus."],
+      ["Je le connais bien.", "Ne la regarde pas !", "Donne-le-moi !", "Nous l'avons déjà lu."],
+      ["✗ Je mange le → ✓ Je le mange (COD avant le verbe conjugué)."],
+      "Écrit : élision m'/t'/l' devant voyelle.",
+      "COI (lui/leur) → A2|pron|COI ; ordre → B1|pron"
     ),
     pron_coi: G(
-      "Les pronoms COI (me, te, lui, nous, vous, leur) remplacent surtout à + personne (lui/leur à la 3e pers.). Me/te/nous/vous peuvent aussi être COD.",
-      "me, te, lui, nous, vous, leur\n\nJe parle à Pierre → Je lui parle.\nTu téléphones à tes parents → Tu leur téléphones.",
-      ["Répondent surtout à à qui ? (personne).", "Lui/leur uniquement à la 3e personne.", "Pas d'accord PP avec COI.", "Devant verbe : Je leur donne un cadeau."],
-      ["Je lui écris une lettre.", "Tu me parles ?", "Nous vous remercions.", "Elle leur a offert des fleurs."],
-      ["Ne pas confondre lui (COI) et il (sujet)."],
-      "Personnes : lui/leur ; jamais y pour une personne.",
-      "Pronom y → A2|pron"
+      "Les pronoms COI (me, te, lui, nous, vous, leur) remplacent surtout à + personne.",
+      "me/m' | te/t' | lui | nous | vous | leur\n\nJe parle à Pierre → Je lui parle.",
+      ["Remplacent à + personne (3e pers. : lui/leur).", "Verbes à + pers. : téléphoner à, parler à, écrire à, plaire à, obéir à.", "Placement identique au COD.", "Pas d'accord du p.p. avec COI.", "Contraste : appeler = COD (Je l'appelle) ; téléphoner à = COI (Je lui téléphone)."],
+      ["Je lui écris souvent.", "Tu me parles ?", "Elle leur a offert des fleurs.", "Ne nous ennuie pas !"],
+      ["✗ Je lui appelle → ✓ Je l'appelle.", "✗ Je le téléphone → ✓ Je lui téléphone."],
+      "Lui/leur uniquement pour personnes ; jamais y.",
+      "COD → A2|pron ; y (chose/lieu) → A2|pron"
     ),
     pron_y: G(
-      "Y remplace un complément de lieu (à + lieu) ou à + chose (y compris à + infinitif).",
-      "J'y vais. (= je vais au cinéma)\nTu y penses. (= tu penses à cela)\n\nY = there / to it",
-      ["Lieu : aller, rester, être → y.", "À + chose : penser, réussir, tenir → y.", "Un seul y par phrase.", "Impératif : Vas-y !"],
-      ["Tu vas au marché ? Oui, j'y vais.", "Penses-tu à ton examen ? J'y pense.", "Restez-y !", "Nous y sommes allés."],
-      ["Y ne remplace pas une personne (lui/leur)."],
-      "Lieu et à + chose abstrait ; pas de personne.",
-      "Pronom en → A2|pron"
+      "Y remplace à + lieu ou à + chose (jamais à + personne).",
+      "J'y vais. | J'y pense. | Il y est.\n\ny = there / to it",
+      ["Lieu : aller, venir, rester, être → y.", "À + chose : penser à, réussir à, tenir à → y.", "Dans/sur/en + lieu possible à l'oral : Il y est.", "Un seul y par phrase.", "Placement = COD/COI."],
+      ["Tu vas au marché ? — Oui, j'y vais.", "Penses-tu à l'examen ? — J'y pense.", "Restez-y !", "Nous y sommes allés hier."],
+      ["✗ Je pense à Marie → J'y pense → ✓ Je pense à elle."],
+      "Personne → lui/leur, jamais y.",
+      "en (de/quantité) → A2|pron"
     ),
     pron_en: G(
-      "En remplace de + nom ou quantité, ou complément introduit par de.",
-      "Tu as des pommes ? J'en ai. (= j'ai des pommes)\nCombien de livres ? J'en ai trois.\n\nParler de → J'en parle.",
-      ["Quantité partitive : en.", "De + nom : en (sauf personne → dont).", "En + verbe pronominal : s'en aller.", "Un seul en par phrase."],
-      ["Tu veux du café ? J'en veux.", "Combien en voulez-vous ?", "Il en a parlé hier.", "Nous nous en sommes allés."],
-      ["En ne remplace pas une personne."],
-      "Accord du p.p. si COD en précède le verbe (J'en ai cueillies).",
-      "Dont (relatif) → B1|pron"
+      "En remplace de + nom, partitif, ou exprime une quantité.",
+      "Tu veux du café ? → J'en veux. | Combien de livres ? → J'en ai trois.",
+      ["De + chose : parler de, avoir besoin de → en.", "Partitif/indéfini : du, de la, des → en.", "Quantité : J'en ai deux.", "Négation : Je n'en ai pas (en remplace tout le groupe).", "Pas d'accord du p.p. avec en.", "Un seul en par phrase."],
+      ["Tu as des pommes ? — J'en ai.", "Il en a parlé longuement.", "Combien en voulez-vous ?", "Je n'en veux pas."],
+      ["✗ Je ne veux pas en du pain → ✓ Je n'en veux pas.", "✗ J'en ai écrites trois → ✓ J'en ai écrit trois."],
+      "Personne : dont ou pronom tonique, pas en.",
+      "dont (relatif) → B1|pron"
     ),
     pron_order: G(
-      "L'ordre des pronoms devant le verbe est fixe en français.",
-      "me/te/se/nous/vous → le/la/les → lui/leur → y → en → verbe\n\nJe le lui donne. | Tu m'en parles. | Il y en a.",
-      ["Ordre strict devant verbe conjugué.", "Impératif affirmatif : verbe + COD + COI + y + en.", "Ne...pas entoure le bloc pronominal.", "Un pronom par catégorie ; y et en peuvent coexister."],
-      ["Je te le donne.", "Il nous en a parlé.", "Donne-le-moi !", "Il y en a beaucoup."],
-      ["Je le lui donne, pas *Je lui le donne."],
-      "B1 : système complet ; impératif : Donnez-y-en !",
-      "Pronoms COD/COI simples → A2|pron"
+      "L'ordre des pronoms clitiques est fixe ; maximum trois pronoms en séquence standard.",
+      "Avant verbe : me/te/se/nous/vous → le/la/les → lui/leur → y → en\nImpératif + : verbe-hyphen-le/la/les-moi/toi/lui…-y-en",
+      ["Déclaratif/interrogatif/nég. impératif : bloc avant verbe conjugué.", "Impératif affirm. : moi/toi (pas me/te) après verbe.", "Nég. : ne + bloc + verbe + pas.", "Infinitif : pronoms avant infinitif.", "PC : pronoms avant auxiliaire avoir/être."],
+      ["Je le lui donne.", "Il m'en a parlé.", "Ne le lui donne pas !", "Donne-le-lui !", "Elle les y a trouvés."],
+      ["✗ Je lui le donne → ✓ Je le lui donne."],
+      "Impératif : Donne-m'en deux ; Vas-y.",
+      "COD/COI/y/en → A2|pron ; relatifs → B1|pron"
     ),
     pron_sujet: G(
-      "Les pronoms sujets sont obligatoires en français sauf à l'impératif.",
-      "je, tu, il/elle/on, nous, vous, ils/elles\n\nOn = nous (oral) ou indéfini (On dit que...)",
-      ["Toujours exprimés sauf impératif.", "On remplace souvent nous à l'oral.", "Il/elle pour choses (genre grammatical).", "Elision : je → j' devant voyelle."],
-      ["Je travaille.", "On va au cinéma.", "Elle est professeure.", "Ils arrivent demain."],
-      ["Ne pas omettre le sujet comme en espagnol/italien."]
+      "Les pronoms sujets sont obligatoires en français (sauf à l'impératif).",
+      "je/j' | tu | il/elle/on | nous | vous | ils/elles",
+      ["Toujours exprimés (pas de pro-drop).", "On = nous (oral) ou indéfini.", "Il/elle : genre grammatical.", "Ils : groupe mixte.", "Verbe avec on : 3e sing."],
+      ["Je travaille.", "On part ?", "Elle est professeure.", "Ils sont arrivés."],
+      ["✗ ils sont arrivé → ✓ ils sont arrivés."],
+      "Oral : on = nous ; écrit : distinguer on indéfini.",
+      "Pronoms toniques → A1|pron"
     ),
     pron_reflechis: G(
       "Les pronoms réfléchis indiquent que le sujet et l'objet sont identiques.",
@@ -406,17 +408,21 @@
     ),
     pron_indefini: G(
       "Les pronoms indéfinis expriment quantité ou identité imprécise.",
-      "chacun, quelqu'un, personne, rien, tout, quelque chose, chaque, plusieurs, certains",
-      ["Personne/rien + ne (double négation).", "Quelqu'un, quelque chose (affirmatif).", "Chacun/chaque + sing.", "Tout le monde/tout + sing. ; tous + plur. ; toute/toutes + fém."],
-      ["Quelqu'un a frappé.", "Je ne vois personne.", "Chacun a son opinion.", "Tout le monde est content."],
-      ["Personne ne vs Pas personne (registre)."]
+      "on | quelqu'un | quelque chose | personne | rien | tout/tous/toute/toutes | chacun | l'un…l'autre",
+      ["On : nous oral, vérité générale, agent vague.", "Personne/rien : sujet ou objet ; ne…pas inutile.", "Quelqu'un/quelque chose : affirmatif.", "Tout/tous : tout = tout ; tous prononcé [tys] = tous.", "B2+ : quiconque, autrui, n'importe qui."],
+      ["On ne sait jamais.", "Personne n'est venu.", "Tu veux quelque chose ?", "Tous sont arrivés."],
+      ["✗ Je ne vois pas personne → ✓ Je ne vois personne."],
+      "Personne/rien remplacent pas en négation.",
+      "On stylistique → C1|pron ; littéraires → C2|pron"
     ),
     pron_tonique: G(
-      "Les pronoms toniques (moi, toi, lui, elle, nous, vous, eux, elles) insistent ou complètent.",
-      "Moi, je pense que... | C'est pour toi. | Lui, il sait.\n\nAprès préposition : avec moi, chez eux",
-      ["Après préposition obligatoire.", "Moi aussi, moi non plus.", "C'est moi qui... (mise en relief).", "Lui/elle/eux/elles à la 3e pers."],
-      ["C'est moi.", "Viens avec nous.", "Elle est plus grande que lui.", "Eux, ils ne savent pas."],
-      ["Lui (M) vs elle (F) toniques distincts."]
+      "Les pronoms toniques (disjoints) complètent ou mettent en relief.",
+      "moi | toi | lui | elle | soi | nous | vous | eux | elles",
+      ["Après préposition : pour moi, avec toi.", "Emphase : Moi, je refuse.", "C'est moi / Ce sont eux.", "Isolation : Qui ? — Moi.", "Soi : on, chacun, tout le monde."],
+      ["C'est pour elle.", "Lui, il ne sait rien.", "Viens avec nous !", "Chacun pour soi."],
+      ["✗ C'est pour je → ✓ C'est pour moi."],
+      "Soi = indéfini seulement ; personne nommée → lui/elle.",
+      "Pronoms sujets → A1|pron ; soi C2 → C2|pron"
     ),
     adj_feminine: G(
       "La plupart des adjectifs féminins ajoutent -e au masculin.",
@@ -1162,20 +1168,22 @@
       "Comparative → A2|adj"
     ),
     pron_subject: G(
-      "Subject pronouns (I, you, he, she, it, we, they) perform the action of the verb.",
-      "I, you, he, she, it, we, they\n\nShe works hard. They are students.\n\nIt for things and animals.",
-      ["Required in English (unlike Spanish).", "I always capitalized.", "They singular gender-neutral.", "It for weather/time/distance."],
-      ["I live in London.", "He is my colleague.", "They arrived early.", "It is raining."],
-      ["Me and John → John and I as subject."]
+      "Subject pronouns perform the action; English requires a subject in nearly every clause.",
+      "I | you | he | she | it | we | you | they",
+      ["I always capitalized.", "It : weather, time, distance, things.", "They : mixed groups ; singular they (receptive A1).", "Dummy it : It is raining."],
+      ["I live in Lyon.", "She manages the team.", "It is half past two.", "Someone left their bag."],
+      ["✗ Is raining → ✓ It is raining.", "✗ Me and John went → ✓ John and I went."],
+      "Singular they productive B2.",
+      "Object pronouns → A2|pron"
     ),
     pron_object: G(
-      "Object pronouns (me, you, him, her, it, us, them) receive the action.",
-      "me, you, him, her, it, us, them\n\nShe called me. I saw them. Give it to him.",
-      ["After verb: tell me.", "After preposition: with her.", "Him/her/it for third person.", "Between phrasal verbs: pick it up."],
-      ["Can you help me?", "I know him well.", "She gave us a gift.", "They invited her."],
-      ["Between you and I → between you and me."],
-      "Indirect objects: Give me the book / Give the book to me.",
-      "Indefinite compounds → A2|pron ; subject pronouns → A1|pron"
+      "Object pronouns receive the action or follow prepositions.",
+      "me | you | him | her | it | us | them",
+      ["Direct : She called him.", "Indirect : Give me the file.", "After prep. : for her.", "Phrasal : pick it up."],
+      ["Can you help me?", "I know him well.", "This is for them.", "She gave us a chance."],
+      ["✗ He cut him → ✓ He cut himself.", "✗ Between you and I → ✓ me."],
+      "Whom in formal relatives → B1|pron.",
+      "Subject → A1|pron ; possessive → A2|pron"
     ),
     pron_possessive: G(
       "Possessive adjectives and pronouns show ownership.",
@@ -1208,11 +1216,13 @@
       "Some / any → A1|num"
     ),
     pron_singular_they: G(
-      "Singular they uses they/them/their to refer to one person of unspecified or non-binary gender.",
-      "Someone left their bag.\nEach student should bring their textbook.\nAlex said they would arrive late.\n\nThem/their/theirs with singular antecedent",
-      ["They for unknown gender (someone, anyone, each person).", "Their/them/theirs agree with singular they.", "Verb often plural: They are here (singular sense).", "Accepted in APA, Chicago 17, and informal registers."],
-      ["If someone calls, tell them I'll call back.", "Each employee must sign their name.", "Jamie forgot their keys.", "Nobody said they were leaving."],
-      ["Formal style guides may still prefer he or she in some contexts."]
+      "Singular they refers to one person of unspecified or non-binary gender; verb stays plural.",
+      "they | them | their | themselves\n\nAlex is a doctor. They work at the hospital.",
+      ["Indefinite : If anyone calls, tell them.", "Specific non-binary : They prefer tea.", "Verb plural : They are a doctor.", "Reflexive : themselves (themself emerging).", "Formal writing : AP/Chicago accept singular they."],
+      ["If someone knocks, ask them to wait.", "Each student must bring their ID.", "Riley said they would be late.", "Nobody claimed their seat."],
+      ["✗ They is ready → ✓ They are ready."],
+      "Whom/who cleft register → B2|pron.",
+      "Indefinite some-/any- → B1|pron"
     ),
     pron_interrogative: G(
       "Interrogative pronouns introduce questions: who, what, which, whom.",

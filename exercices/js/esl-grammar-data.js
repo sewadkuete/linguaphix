@@ -74,26 +74,22 @@ window.GRAMMAR_DATA = {
     },
     pron:{
       title:"Pronouns",
-      précis:`Subject pronouns replace the subject of a sentence. English requires a subject in almost every clause.
+      précis:`• Subject pronouns — required in almost every English clause:
+  I | you | he / she / it | we | you | they
+  Ex. : She manages the team. It is raining. (dummy it for weather)
 
-• Subject pronouns:
-  I (1st sing.)   you (2nd sing./pl.)   he / she / it (3rd sing.)
-  we (1st pl.)    you (2nd pl.)         they (3rd pl.)
+• Critical uses of it:
+  Weather/time/distance : It is cold. It is half past three. It is far.
 
-• Object pronouns (after verbs and prepositions):
-  me, you, him, her, it, us, them.
-  Ex.: She sees me. I talk to him. Give it to them.
+• they — mixed groups; singular they (receptive at A1):
+  Someone left their bag. (informal singular they)
 
-• Possessive pronouns (replace noun + possessive adjective):
-  mine, yours, his, hers, ours, theirs.
-  Ex.: This book is mine. Is that yours?
+• Contrasts:
+  ✗ Is raining → ✓ It is raining (English requires a subject).
+  ✗ She sees he → ✓ She sees him (object form → A2).
 
-• Reflexive pronouns (basic): myself, yourself, himself, herself, itself, ourselves, yourselves, themselves.
-  Ex.: I hurt myself. She taught herself English.
-
-⚠️ he/she/it: choose based on the referent's gender or thing (it for objects/animals).
-⚠️ they: can be singular for unknown gender: Someone left their bag.`,
-      points:["Subject pronouns (I/you/he/she/it/we/they)","Object pronouns (me/him/her/them)","Possessive pronouns (mine/yours/hers)","Reflexive pronouns (basic)","Singular they (informal)"]
+⚠️ Object/possessive/reflexive pronouns → A2|pron.`,
+      points:["Subject pronouns (I/you/he/she/it/we/they)","Dummy it (weather/time)","Singular they (receptive)","Subject required in English"]
     },
     adv:{
       title:"Adverbs & negation",
@@ -232,21 +228,28 @@ window.GRAMMAR_DATA = {
     },
     pron:{
       title:"Pronouns",
-      précis:`• Object pronouns & word order (extension A1):
-  I know her. Give it to me. Tell him the truth. / Tell the truth to him.
+      précis:`• Object pronouns — me you him her it us them :
+  Direct : She called him. | Indirect : Give me the file.
+  After preposition : This is for her. | Phrasal verb : Pick it up.
 
-• One / ones — noun substitution:
-  I need a pen. Do you have one? These shoes are nicer than those.
+• Possessive pronouns (stand alone, no following noun):
+  mine | yours | his | hers | ours | theirs
+  Ex. : That seat is mine. Is this yours?
 
-• Indefinite compounds (some-/any-/no- + body/thing):
-  something (affirmative) | anything (questions/negatives) | nothing, everything
-  someone, anyone, no one, everyone — same pattern.
+• Reflexive & emphatic — myself…themselves :
+  Reflexive (subject = object) : She hurt herself.
+  Emphatic : I did it myself. | By myself = alone.
 
-• Reflexive emphasis & by + reflexive:
-  I myself don't believe it. She did it herself. I live by myself (= alone).
+• Demonstrative pronouns (not adjectives):
+  this/that (sing.) | these/those (pl.)
+  Ex. : These are cheaper than those.
 
-⚠️ Subject/object/possessive basics → A1|pron.`,
-      points:["Object pronouns & indirect objects","One / ones","Something / anything / nothing","Someone / anyone / no one","Reflexive emphasis & by myself"]
+• Contrasts:
+  my book (adj.) vs. The book is mine (pronoun).
+  ✗ She hurt her → ✓ She hurt herself (reflexive when subject = object).
+
+⚠️ Subject pronouns → A1|pron. Relatives → B1|pron.`,
+      points:["Object pronouns (me/him/her/them)","Possessive pronouns (mine/yours/hers)","Reflexive & emphatic (myself)","Demonstrative pronouns (this/those)","Contrasts adj. vs pronoun"]
     },
     adv:{
       title:"Adverbs & negation",
@@ -384,27 +387,27 @@ window.GRAMMAR_DATA = {
       points:["-ed / -ing participial adjectives","Adjective + preposition (good at / afraid of)","Gradable vs. non-gradable","Compound adjectives (hyphenated)","Adjectives after linking verbs"]
     },
     pron:{
-      title:"Pronouns",
-      précis:`• Relative clauses — extension (whose/where/when/whom/why):
-  whose — possession: The student whose laptop was stolen reported it.
-  where — places: The café where we met has closed.
-  when — times: I'll never forget the day when we graduated.
-  whom — object, formal: The consultant whom I contacted agreed.
-  why — reasons: That's the reason why she resigned.
-  ⚠️ Omit only in defining clauses when pronoun is object: The book (that) I read.
+      title:"Relative & indefinite pronouns — full system",
+      précis:`• Relatives — who whom whose which that what :
+  who (subject, persons) : The analyst who called.
+  whom (object, formal) : The consultant whom I contacted. Test : he→who / him→whom.
+  whose (possession) : The student whose laptop was stolen.
+  which (things; defining & non-defining) : The report which I read.
+  that (restrictive only) : The team that won. Never : My car, that is red.
+  Zero relative (object) : The book (that) I read.
+  where/when/why : The café where we met. / The day when we graduated.
+  ✗ The woman which won → ✓ who won.
 
-• Reflexive & reciprocal pronouns:
-  myself, yourself… for emphasis or true reflexive: She taught herself Spanish.
-  each other / one another: They supported each other.
+• Indefinites — some-/any-/no-/every- + body/one/thing/where :
+  Nobody knows. (positive verb after no-/nobody)
+  Each/every + sing. | All/both + plural. | None of + plural (BrE).
 
-• Indefinite pronouns (systematic):
-  each/every + singular verb | either/neither + singular | none of + plural (BrE) or singular (AmE).
+• Reflexive, reciprocal, impersonal one :
+  She taught herself. | They supported each other.
+  One should respect the rules. (formal)
 
-• Impersonal one (formal register):
-  One should respect the rules. — informal alternative: You should…
-
-⚠️ Defining/non-defining intro (who/which/that) → A2|disc.`,
-      points:["Relatives (whose/where/when/whom/why)","Reflexive & reciprocal pronouns","Indefinite (each/neither/none)","Impersonal one (formal)"]
+⚠️ Defining/non-defining intro → A2|disc. Object/possessive → A2|pron.`,
+      points:["Relatives (who/whom/whose/which/that)","where/when/why & zero relative","Indefinite compounds","each/every/none/either","Reflexive, reciprocal, one"]
     },
     adv:{
       title:"Adverbs & negation",
@@ -549,27 +552,26 @@ window.GRAMMAR_DATA = {
       points:["The…the… comparatives","Absolute superlatives","Reduced relative clauses","Adjective-noun collocations"]
     },
     pron:{
-      title:"Advanced relatives & preparatory it",
-      précis:`• Preposition + whom/which (formal):
-  The person to whom I spoke… / The method by which we measure…
-  Informal: The person (who/that) I spoke to…
-  ⚠️ Never *to who in formal writing — use to whom.
+      title:"Cleft pronouns, whom, singular they, -ever compounds",
+      précis:`• It-cleft : It was John who called. / It is this report that I need.
+  Verb agrees with focused X : ✗ the students who was → ✓ who were.
 
-• What-clauses (= the thing that):
-  What I need is more time. (= The thing that I need…)
-  ⚠️ No antecedent noun before what in this structure.
+• Wh-cleft : What I need is a break. What surprised me was his reaction.
 
-• -ever compounds:
-  Whatever you decide is fine. Whoever wins gets the prize.
-  Wherever you go, I'll follow. Whenever possible, call ahead.
+• Whom — full treatment :
+  Formal object : Whom did you see? | After prep. : to whom, for whom.
+  Informal : who…to / who you saw. Register : whom rare in speech.
 
-• Preparatory it (subject/object):
-  It is important to arrive on time. I find it difficult to concentrate.
-  It seems that… / It appears that… (formal hedging).
+• Singular they (productive B2) :
+  Alex is a doctor. They work here. | Everyone has their opinion.
+  ✗ They is a doctor → ✓ They are a doctor. Reflexive : themselves.
 
-⚠️ Defining/non-defining relatives (who/which/that) → A2|disc.
-⚠️ whose/where/when/whom → B1|pron.`,
-      points:["Preposition + whom/which","What-clauses","-ever compounds","Preparatory it"]
+• -ever compounds : Whatever/whoever/whichever/whenever/wherever.
+
+• Preposition + whom/which (formal) vs. stranding (informal).
+
+⚠️ Relatives B1 → B1|pron. Preparatory it → same level.`,
+      points:["It-cleft & wh-cleft","Whom (formal) vs who (informal)","Singular they (productive)","-ever compounds","Prep + whom/which"]
     },
     adv:{
       title:"Adverbs — inversion & formal negation",
@@ -711,27 +713,25 @@ window.GRAMMAR_DATA = {
       points:["Colour compounds (variable/invariable)","Fixed expressions (good/well)","All / whole / entire","Postpositive adjectives","Submodifier collocations"]
     },
     pron:{
-      title:"Pronouns",
-      précis:`• Coreference and textual cohesion:
-  Chains of reference: he → him → the former → the defendant → the accused.
-  Alternate pronouns, repetition, and synonyms for stylistic flow.
+      title:"Coreference, generic pronouns, middle voice",
+      précis:`• Coreference chains :
+  he → him → the former → the defendant → the accused.
+  Short distance : personal pronoun. Long/ambiguous : demonstrative or nominal.
 
-• Generic one / you / singular they:
-  One / you (generic): One should always tell the truth. / You shouldn't judge.
-  Singular they: Everyone has their opinion.
-  ⚠️ Formal writing may prefer he or she or they.
+• Generic one / you / singular they :
+  One should tell the truth. / You shouldn't judge. / Everyone has their opinion.
 
-• Middle voice and reflexive passives:
-  This book sells well. (= is sold well)
-  The situation explains itself. (= is self-explanatory)
+• Middle voice / reflexive passive :
+  This book sells well. (= is sold) | The situation explains itself.
 
-• Cleft pronouns and extraposition:
-  It is she who decided. (formal subject pronoun after be)
-  What surprises me is his calmness.
+• Cleft & wh-cleft (systematic) :
+  It was the manager who approved it. | What we need is more funding.
 
-• Same vs. the same vs. such:
-  the same person, the same as before, such a person (= a person of that kind).`,
-      points:["Coreference & cohesion chains","Generic they / one / you","Middle voice (This book sells well)","Cleft pronouns (It is she who…)","Same / such (reference)"]
+• Ellipsis & substitution (intro) :
+  I will go and she will too. | the red one / these ones (countable only).
+
+⚠️ Clefts & singular they productive → B2|pron.`,
+      points:["Coreference chains","Generic one/you/they","Middle voice","Cleft & wh-cleft","Ellipsis & one/ones"]
     },
     adv:{
       title:"Adverbs & negation",
@@ -850,20 +850,22 @@ window.GRAMMAR_DATA = {
       points:["Compound modifiers (a five-mile walk)","Position & meaning change","Flat adverbs (slow/loud/direct)"]
     },
     pron:{
-      title:"Pronouns",
-      précis:`• Anaphora vs. cataphora — metalinguistic (extension C1):
-  Anaphora (backward): John arrived. He was late.
-  Cataphora (forward, literary): He who hesitates is lost.
+      title:"Deixis, implicature, impersonal it — full range",
+      précis:`• Deixis : I/you shift with speaker/addressee ; this/that encode proximity.
+• Presupposition : "She has stopped working" → she was working before.
+• Impersonal it — four values :
+  Empty (weather/time) : It is midnight.
+  Anticipatory (extraposition) : It is clear that he lied.
+  Prop/stance : It seems that…
+  Cleft : It was John who called.
+  ✗ It is likely the answer → ✓ It is likely that the answer is correct.
 
-• Reference ambiguity — resolution (extension):
-  John told Peter that he had won. (he = John or Peter?)
-  Resolve through context or rewrite for clarity.
+• Discourse reference :
+  Bridging : I went to a party. The host was kind. (inferable)
+  Split antecedent : John and Mary said they would come.
 
-• Anticipatory it — formal subjunctive (extension B2):
-  It is essential that he be present. (AmE formal)
-
-⚠️ Coreference chains → C1|pron. Reflexive/reciprocal/middle → B1|pron.`,
-      points:["Anaphora vs. cataphora","Reference ambiguity & clarity","Anticipatory it (formal subjunctive)"]
+⚠️ Coreference → C1|pron. Pragmatic implicature → C2|adv (extension).`,
+      points:["Deixis (personal/spatial/temporal)","Presupposition & implicature","Impersonal it (4 values)","Bridging & split antecedent"]
     },
     adv:{
       title:"Adverbs & negation",
