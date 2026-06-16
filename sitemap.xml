@@ -43,19 +43,19 @@
     <priority>0.4</priority>
   </url>
   <url>
-    <loc>https://www.linguaphix.com/exercices/</loc>
+    <loc>https://www.linguaphix.com/exercices/index.html</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
   <url>
-    <loc>https://www.linguaphix.com/exercices/fle/</loc>
+    <loc>https://www.linguaphix.com/exercices/fle/index.html</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.linguaphix.com/exercices/esl/</loc>
+    <loc>https://www.linguaphix.com/exercices/esl/index.html</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
