@@ -351,7 +351,9 @@ window.GRAMMAR_DATA = {
   of : things, abstractions — the end of the contract.
   Double genitive: a friend of mine, an idea of hers.
 
-⚠️ Countable/uncountable basics → A2|nom.`,
+⚠️ Countable/uncountable basics → A2|nom.
+
+📚 Sources : Test-English B1 (https://test-english.com/grammar-points/b1/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["Nominalization (suffixes)","Articles with abstract nouns","The + adjective (the elderly)","Genitive ('s vs. of)","Double genitive (a friend of mine)"]
     },
     verb:{
@@ -384,7 +386,9 @@ window.GRAMMAR_DATA = {
   want/hope/decide + to-inf. : She decided to leave.
   stop + -ing (cease) vs. stop + to-inf. (purpose): He stopped smoking. / He stopped to smoke. (= in order to)
 
-⚠️ Past simple / present perfect intro → A2|verb.`,
+⚠️ Past simple / present perfect intro → A2|verb.
+
+📚 Sources : Test-English B1 (https://test-english.com/grammar-points/b1/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["Present perfect (extended uses)","Past continuous & past perfect","Passive voice","Reported speech (backshift)","Will / would","Gerund vs. infinitive (core)"]
     },
     adj:{
@@ -408,7 +412,9 @@ window.GRAMMAR_DATA = {
   ⚠️ Hyphen when before noun: a five-year-old child.
 
 • Position: adjectives after some verbs (seem, appear, become, keep):
-  She seems happy. He became famous. Keep quiet.`,
+  She seems happy. He became famous. Keep quiet.
+
+📚 Sources : Test-English B1 (https://test-english.com/grammar-points/b1/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["-ed / -ing participial adjectives","Adjective + preposition (good at / afraid of)","Gradable vs. non-gradable","Compound adjectives (hyphenated)","Adjectives after linking verbs"]
     },
     pron:{
@@ -431,7 +437,9 @@ window.GRAMMAR_DATA = {
   She taught herself. | They supported each other.
   One should respect the rules. (formal)
 
-⚠️ Defining/non-defining intro → A2|disc. Object/possessive → A2|pron.`,
+⚠️ Defining/non-defining intro → A2|disc. Object/possessive → A2|pron.
+
+📚 Sources : Test-English B1 (https://test-english.com/grammar-points/b1/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["Relatives (who/whom/whose/which/that)","where/when/why & zero relative","Indefinite compounds","each/every/none/either","Reflexive, reciprocal, one"]
     },
     adv:{
@@ -456,7 +464,9 @@ window.GRAMMAR_DATA = {
 
 • Hardly, scarcely, barely (negative meaning):
   I hardly know him. (= almost don't know)
-  ⚠️ Hardly = almost not. Not the same as hard (= with effort).`,
+  ⚠️ Hardly = almost not. Not the same as hard (= with effort).
+
+📚 Sources : Test-English B1 (https://test-english.com/grammar-points/b1/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["Only (restriction & position)","Adverb formation (-ly rules)","Formal connectors (however/moreover)","So / such (emphasis)","Hardly / scarcely / barely"]
     },
     disc:{
@@ -480,7 +490,9 @@ window.GRAMMAR_DATA = {
   You're ready, aren't you? | She can't swim, can she?
   Match auxiliary; positive statement → negative tag.
 
-⚠️ Sequencing connectors → A2|disc.`,
+⚠️ Sequencing connectors → A2|disc.
+
+📚 Sources : Test-English B1 (https://test-english.com/grammar-points/b1/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["Cause / purpose / time clauses","First conditional","Second conditional (intro)","Concession (although / despite)","Question tags"]
     },
     num:{
@@ -502,7 +514,9 @@ window.GRAMMAR_DATA = {
 • Every / each / all:
   every + singular: Every student has a book.
   all + plural: All students have books.
-  each of / all of + plural pronoun: Each of them is responsible.`,
+  each of / all of + plural pronoun: Each of them is responsible.
+
+📚 Sources : Test-English B1 (https://test-english.com/grammar-points/b1/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["Most of / a majority of","Collective nouns (singular vs. plural verb)","Approximation (about / roughly)","Every / each / all","Each of / all of + pronoun"]
     }
   },
