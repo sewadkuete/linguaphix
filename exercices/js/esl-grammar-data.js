@@ -20,7 +20,9 @@ window.GRAMMAR_DATA = {
   ⚠️ Irregular plurals: child → children, person → people, man → men, woman → women.
 
 • Countable vs. uncountable (basic):
-  Countable: a chair, two chairs. Uncountable: some water, some rice (no a/an with uncountables).`,
+  Countable: a chair, two chairs. Uncountable: some water, some rice (no a/an with uncountables).
+
+📚 Sources : Test-English A1 (https://test-english.com/grammar-points/a1/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Indefinite articles (a / an)","Definite article (the)","Zero article (general nouns)","Singular & plural (-s / irregular)","Countable vs. uncountable (basic)"]
     },
     verb:{
@@ -44,7 +46,9 @@ window.GRAMMAR_DATA = {
   Negative: Don't open the window!
 
 • Going to (near future): am/is/are + going to + base verb.
-  I'm going to study. She's going to travel.`,
+  I'm going to study. She's going to travel.
+
+📚 Sources : Test-English A1 (https://test-english.com/grammar-points/a1/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Present simple (habits & facts)","To be (present)","Present continuous","Imperative (Do / Don't)","Going to (near future)"]
     },
     adj:{
@@ -69,7 +73,9 @@ window.GRAMMAR_DATA = {
   ⚠️ Do not add -s to adjectives: *bigs houses is wrong.
 
 • Common adjective order (basic): opinion before fact.
-  a nice big room (not *a big nice room).`,
+  a nice big room (not *a big nice room).
+
+📚 Sources : Test-English A1 (https://test-english.com/grammar-points/a1/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Position before the noun","Predicative adjectives (after to be)","Possessive adjectives","Demonstrative adjectives (this/that/these/those)","No gender/number agreement"]
     },
     pron:{
@@ -88,7 +94,9 @@ window.GRAMMAR_DATA = {
   ✗ Is raining → ✓ It is raining (English requires a subject).
   ✗ She sees he → ✓ She sees him (object form → A2).
 
-⚠️ Object/possessive/reflexive pronouns → A2|pron.`,
+⚠️ Object/possessive/reflexive pronouns → A2|pron.
+
+📚 Sources : Test-English A1 (https://test-english.com/grammar-points/a1/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Subject pronouns (I/you/he/she/it/we/they)","Dummy it (weather/time)","Singular they (receptive)","Subject required in English"]
     },
     adv:{
@@ -109,7 +117,9 @@ window.GRAMMAR_DATA = {
   ⚠️ never already means negative — don't use don't with never.
 
 • Adverbs of place: here, there, everywhere, inside, outside.
-• Adverbs of time: now, today, tomorrow, yesterday, soon.`,
+• Adverbs of time: now, today, tomorrow, yesterday, soon.
+
+📚 Sources : Test-English A1 (https://test-english.com/grammar-points/a1/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Negation with be + not","Negation with do/does/did + not","Short answers (Yes, I do)","Frequency adverbs","Adverbs of place & time"]
     },
     disc:{
@@ -132,7 +142,9 @@ window.GRAMMAR_DATA = {
   in, on, under, behind, in front of, next to, between, above, below.
   Ex.: The cat is on the table. The keys are in the bag.
 
-• Prepositions of time: at (3 o'clock), on (Monday), in (January / 2024).`,
+• Prepositions of time: at (3 o'clock), on (Monday), in (January / 2024).
+
+📚 Sources : Test-English A1 (https://test-english.com/grammar-points/a1/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Declarative SVO order","Yes/No & Wh- questions","There is / There are","It is / They are","Prepositions of place & time"]
     },
     num:{
@@ -154,7 +166,9 @@ window.GRAMMAR_DATA = {
   a lot of + both: a lot of people, a lot of rice.
 
 • Basic quantifiers: a few (+ countable), a little (+ uncountable).
-  Ex.: a few apples, a little sugar.`,
+  Ex.: a few apples, a little sugar.
+
+📚 Sources : Test-English A1 (https://test-english.com/grammar-points/a1/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Cardinal numbers 0–100","Some / any","Much / many / a lot of","A few / a little","Teen & tens formation"]
     }
   },
