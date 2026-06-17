@@ -531,7 +531,9 @@ window.GRAMMAR_DATA = {
   the rich, the unknown, the impossible / the doing, the saying.
   Common in philosophy, journalism, and formal discourse.
 
-⚠️ Articles in fixed expressions (in prison / at school) → A2|nom.`,
+⚠️ Articles in fixed expressions (in prison / at school) → A2|nom.
+
+📚 Sources : Test-English B2 (https://test-english.com/grammar-points/b2/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["Complex noun phrases","Substantivization (the + adjective)","Written/academic register"]
     },
     verb:{
@@ -566,7 +568,9 @@ window.GRAMMAR_DATA = {
   ⚠️ Verb pattern varies: suggest + -ing ; insist + (that) + base (AmE subjunctive).
 
 ⚠️ Second conditional → B1|disc.
-⚠️ Passive intro & reported speech backshift → B1|verb.`,
+⚠️ Passive intro & reported speech backshift → B1|verb.
+
+📚 Sources : Test-English B2 (https://test-english.com/grammar-points/b2/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["Third conditional (unreal past)","Mixed conditionals","Wish / if only","Passive (all tenses)","Modals + have + PP","Reporting verbs (patterns)"]
     },
     adj:{
@@ -587,7 +591,9 @@ window.GRAMMAR_DATA = {
   heavy rain (not *strong rain), strong coffee, high temperature, deep sleep.
 
 ⚠️ -ed/-ing participial adjectives → B1|adj.
-⚠️ Comparatives / superlatives → A2|adj.`,
+⚠️ Comparatives / superlatives → A2|adj.
+
+📚 Sources : Test-English B2 (https://test-english.com/grammar-points/b2/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["The…the… comparatives","Absolute superlatives","Reduced relative clauses","Adjective-noun collocations"]
     },
     pron:{
@@ -609,7 +615,9 @@ window.GRAMMAR_DATA = {
 
 • Preposition + whom/which (formal) vs. stranding (informal).
 
-⚠️ Relatives B1 → B1|pron. Preparatory it → same level.`,
+⚠️ Relatives B1 → B1|pron. Preparatory it → same level.
+
+📚 Sources : Test-English B2 (https://test-english.com/grammar-points/b2/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["It-cleft & wh-cleft","Whom (formal) vs who (informal)","Singular they (productive)","-ever compounds","Prep + whom/which"]
     },
     adv:{
@@ -627,7 +635,9 @@ window.GRAMMAR_DATA = {
   Ex.: He will probably agree. Apparently, the meeting was cancelled.
 
 ⚠️ Formal connectors (however, moreover…) → B1|adv.
-⚠️ Basic negation & frequency → A1|adv.`,
+⚠️ Basic negation & frequency → A1|adv.
+
+📚 Sources : Test-English B2 (https://test-english.com/grammar-points/b2/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["Negative inversion (Never/Rarely/Hardly)","No sooner…than / scarcely…when","Epistemic adverbs (probably/apparently)"]
     },
     disc:{
@@ -653,7 +663,9 @@ window.GRAMMAR_DATA = {
 • B2 connectors:
   hence, thus, thereby, accordingly, conversely, notwithstanding.
 
-⚠️ Zero / first / second conditional → B1|disc.`,
+⚠️ Zero / first / second conditional → B1|disc.
+
+📚 Sources : Test-English B2 (https://test-english.com/grammar-points/b2/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["Cleft sentences (It-cleft / Wh-cleft)","Inversion for emphasis","Participle clauses (extended)","Third & mixed conditionals","B2 connectors (hence/thus/conversely)"]
     },
     num:{
@@ -673,7 +685,9 @@ window.GRAMMAR_DATA = {
 • Formal writing quantifiers:
   a substantial number of, a significant proportion of, the vast majority of.
 
-⚠️ Most of / majority of / about → B1|num.`,
+⚠️ Most of / majority of / about → B1|num.
+
+📚 Sources : Test-English B2 (https://test-english.com/grammar-points/b2/) · British Council B1–B2 (https://learnenglish.britishcouncil.org/grammar/b1-b2-grammar).`,
       points:["Fractions & percentages (agreement)","Formal approximation","Proportional expressions (one in ten)","Formal quantifiers"]
     },
   },
