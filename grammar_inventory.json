@@ -1,0 +1,874 @@
+{
+  "generated": "2026-06-17T07:52:13.060Z",
+  "language": "ESL",
+  "data_structure": {
+    "file": "exercices/js/esl-grammar-data.js",
+    "shape": "window.GRAMMAR_DATA[LEVEL][categoryKey] = { title, précis, points[] }",
+    "category_keys": {
+      "nom": "nominal",
+      "verb": "verbal",
+      "adj": "adjectival",
+      "pron": "pronominal",
+      "adv": "adverbial",
+      "disc": "discourse",
+      "num": "quantification"
+    },
+    "related_files": [
+      "exercices/js/grammar-deep-lib.js (en deep micro-lessons)",
+      "exercices/js/grammar-deep-content.js (point→deep mapping)",
+      "exercices/js/precis-enrichment.js (en supplements, parses précis → pointsDetail)",
+      "exercices/js/exercise-banks-extended.js (en exercise banks, _byLevel tiers)",
+      "exercices/js/exercise-generator.js (assembles 40 exercises/level×category)"
+    ]
+  },
+  "entries": [
+    {
+      "entry_id": "ESL|A1|nom",
+      "level": "A1",
+      "category": "nominal",
+      "category_key": "nom",
+      "notion_label": "Nouns & articles",
+      "present": true,
+      "points": [
+        "Indefinite articles (a / an)",
+        "Definite article (the)",
+        "Zero article (general nouns)",
+        "Singular & plural (-s / irregular)",
+        "Countable vs. uncountable (basic)"
+      ],
+      "precis_length": 1124,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|A1|verb",
+      "level": "A1",
+      "category": "verbal",
+      "category_key": "verb",
+      "notion_label": "Verbs & tenses",
+      "present": true,
+      "points": [
+        "Present simple (habits & facts)",
+        "To be (present)",
+        "Present continuous",
+        "Imperative (Do / Don't)",
+        "Going to (near future)"
+      ],
+      "precis_length": 1078,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|A1|adj",
+      "level": "A1",
+      "category": "adjectival",
+      "category_key": "adj",
+      "notion_label": "Adjectives & agreement",
+      "present": true,
+      "points": [
+        "Position before the noun",
+        "Predicative adjectives (after to be)",
+        "Possessive adjectives",
+        "Demonstrative adjectives (this/that/these/those)",
+        "No gender/number agreement"
+      ],
+      "precis_length": 989,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|A1|pron",
+      "level": "A1",
+      "category": "pronominal",
+      "category_key": "pron",
+      "notion_label": "Pronouns",
+      "present": true,
+      "points": [
+        "Subject pronouns (I/you/he/she/it/we/they)",
+        "Dummy it (weather/time)",
+        "Singular they (receptive)",
+        "Subject required in English"
+      ],
+      "precis_length": 724,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A2|pron"
+      ]
+    },
+    {
+      "entry_id": "ESL|A1|adv",
+      "level": "A1",
+      "category": "adverbial",
+      "category_key": "adv",
+      "notion_label": "Adverbs & negation",
+      "present": true,
+      "points": [
+        "Negation with be + not",
+        "Negation with do/does/did + not",
+        "Short answers (Yes, I do)",
+        "Frequency adverbs",
+        "Adverbs of place & time"
+      ],
+      "precis_length": 916,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|A1|disc",
+      "level": "A1",
+      "category": "discourse",
+      "category_key": "disc",
+      "notion_label": "Discourse & syntax",
+      "present": true,
+      "points": [
+        "Declarative SVO order",
+        "Yes/No & Wh- questions",
+        "There is / There are",
+        "It is / They are",
+        "Prepositions of place & time"
+      ],
+      "precis_length": 916,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|A1|num",
+      "level": "A1",
+      "category": "quantification",
+      "category_key": "num",
+      "notion_label": "Number & quantifiers",
+      "present": true,
+      "points": [
+        "Cardinal numbers 0–100",
+        "Some / any",
+        "Much / many / a lot of",
+        "A few / a little",
+        "Teen & tens formation"
+      ],
+      "precis_length": 892,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|A2|nom",
+      "level": "A2",
+      "category": "nominal",
+      "category_key": "nom",
+      "notion_label": "Nouns & articles",
+      "present": true,
+      "points": [
+        "Countable vs. uncountable (systematic)",
+        "Some / any / no",
+        "The (unique & shared)",
+        "Zero article (meals/languages/sports)",
+        "Compound nouns & of-phrases"
+      ],
+      "precis_length": 913,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A1|nom"
+      ]
+    },
+    {
+      "entry_id": "ESL|A2|verb",
+      "level": "A2",
+      "category": "verbal",
+      "category_key": "verb",
+      "notion_label": "Verbs & tenses",
+      "present": true,
+      "points": [
+        "Past simple (regular & irregular)",
+        "Present perfect (intro & for/since)",
+        "Used to (past habits)",
+        "Modals (can/must/should/have to)",
+        "Polite requests (could/would)"
+      ],
+      "precis_length": 888,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A1|verb"
+      ]
+    },
+    {
+      "entry_id": "ESL|A2|adj",
+      "level": "A2",
+      "category": "adjectival",
+      "category_key": "adj",
+      "notion_label": "Adjectives & agreement",
+      "present": true,
+      "points": [
+        "Comparative (-er / more…than)",
+        "Superlative (the -est / the most)",
+        "As…as / not as…as",
+        "Enough / too + adjective",
+        "Adjective order (extended)"
+      ],
+      "precis_length": 758,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A1|adj"
+      ]
+    },
+    {
+      "entry_id": "ESL|A2|pron",
+      "level": "A2",
+      "category": "pronominal",
+      "category_key": "pron",
+      "notion_label": "Pronouns",
+      "present": true,
+      "points": [
+        "Object pronouns (me/him/her/them)",
+        "Possessive pronouns (mine/yours/hers)",
+        "Reflexive & emphatic (myself)",
+        "Demonstrative pronouns (this/those)",
+        "Contrasts adj. vs pronoun"
+      ],
+      "precis_length": 940,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A1|pron",
+        "→ B1|pron"
+      ]
+    },
+    {
+      "entry_id": "ESL|A2|adv",
+      "level": "A2",
+      "category": "adverbial",
+      "category_key": "adv",
+      "notion_label": "Adverbs & negation",
+      "present": true,
+      "points": [
+        "Extended negation (no longer / neither…nor)",
+        "Already / yet / still",
+        "Adverbs of manner (-ly)",
+        "Degree adverbs",
+        "Time adverbs (ago / recently)"
+      ],
+      "precis_length": 668,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A1|adv"
+      ]
+    },
+    {
+      "entry_id": "ESL|A2|disc",
+      "level": "A2",
+      "category": "discourse",
+      "category_key": "disc",
+      "notion_label": "Discourse & syntax",
+      "present": true,
+      "points": [
+        "Sequencing connectors",
+        "Logical connectors (because/so/but)",
+        "Relative clauses — recognition (→ B1|pron)",
+        "Question tags (basic)"
+      ],
+      "precis_length": 670,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A1|disc"
+      ]
+    },
+    {
+      "entry_id": "ESL|A2|num",
+      "level": "A2",
+      "category": "quantification",
+      "category_key": "num",
+      "notion_label": "Number & quantifiers",
+      "present": true,
+      "points": [
+        "Ordinal numbers (1st–31st)",
+        "Few / a few & little / a little",
+        "Many / much / several",
+        "Both / either / neither",
+        "Common fractions"
+      ],
+      "precis_length": 617,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A1|num"
+      ]
+    },
+    {
+      "entry_id": "ESL|B1|nom",
+      "level": "B1",
+      "category": "nominal",
+      "category_key": "nom",
+      "notion_label": "Nouns & articles",
+      "present": true,
+      "points": [
+        "Nominalization (suffixes)",
+        "Articles with abstract nouns",
+        "The + adjective (the elderly)",
+        "Genitive ('s vs. of)",
+        "Double genitive (a friend of mine)"
+      ],
+      "precis_length": 912,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A2|nom"
+      ]
+    },
+    {
+      "entry_id": "ESL|B1|verb",
+      "level": "B1",
+      "category": "verbal",
+      "category_key": "verb",
+      "notion_label": "Verbs & tenses",
+      "present": true,
+      "points": [
+        "Present perfect (extended uses)",
+        "Past continuous & past perfect",
+        "Passive voice",
+        "Reported speech (backshift)",
+        "Will / would",
+        "Gerund vs. infinitive (core)"
+      ],
+      "precis_length": 1467,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A2|verb"
+      ]
+    },
+    {
+      "entry_id": "ESL|B1|adj",
+      "level": "B1",
+      "category": "adjectival",
+      "category_key": "adj",
+      "notion_label": "Adjectives & agreement",
+      "present": true,
+      "points": [
+        "-ed / -ing participial adjectives",
+        "Adjective + preposition (good at / afraid of)",
+        "Gradable vs. non-gradable",
+        "Compound adjectives (hyphenated)",
+        "Adjectives after linking verbs"
+      ],
+      "precis_length": 1040,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|B1|pron",
+      "level": "B1",
+      "category": "pronominal",
+      "category_key": "pron",
+      "notion_label": "Relative & indefinite pronouns — full system",
+      "present": true,
+      "points": [
+        "Relatives (who/whom/whose/which/that)",
+        "where/when/why & zero relative",
+        "Indefinite compounds",
+        "each/every/none/either",
+        "Reflexive, reciprocal, one"
+      ],
+      "precis_length": 1099,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A2|disc",
+        "→ A2|pron"
+      ]
+    },
+    {
+      "entry_id": "ESL|B1|adv",
+      "level": "B1",
+      "category": "adverbial",
+      "category_key": "adv",
+      "notion_label": "Adverbs & negation",
+      "present": true,
+      "points": [
+        "Only (restriction & position)",
+        "Adverb formation (-ly rules)",
+        "Formal connectors (however/moreover)",
+        "So / such (emphasis)",
+        "Hardly / scarcely / barely"
+      ],
+      "precis_length": 1069,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|B1|disc",
+      "level": "B1",
+      "category": "discourse",
+      "category_key": "disc",
+      "notion_label": "Discourse & syntax",
+      "present": true,
+      "points": [
+        "Cause / purpose / time clauses",
+        "First conditional",
+        "Second conditional (intro)",
+        "Concession (although / despite)",
+        "Question tags"
+      ],
+      "precis_length": 954,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A2|disc"
+      ]
+    },
+    {
+      "entry_id": "ESL|B1|num",
+      "level": "B1",
+      "category": "quantification",
+      "category_key": "num",
+      "notion_label": "Number & quantifiers",
+      "present": true,
+      "points": [
+        "Most of / a majority of",
+        "Collective nouns (singular vs. plural verb)",
+        "Approximation (about / roughly)",
+        "Every / each / all",
+        "Each of / all of + pronoun"
+      ],
+      "precis_length": 848,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|B2|nom",
+      "level": "B2",
+      "category": "nominal",
+      "category_key": "nom",
+      "notion_label": "Nouns — advanced syntax",
+      "present": true,
+      "points": [
+        "Complex noun phrases",
+        "Substantivization (the + adjective)",
+        "Written/academic register"
+      ],
+      "precis_length": 629,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A2|nom"
+      ]
+    },
+    {
+      "entry_id": "ESL|B2|verb",
+      "level": "B2",
+      "category": "verbal",
+      "category_key": "verb",
+      "notion_label": "Third & mixed conditionals, passive, modals",
+      "present": true,
+      "points": [
+        "Third conditional (unreal past)",
+        "Mixed conditionals",
+        "Wish / if only",
+        "Passive (all tenses)",
+        "Modals + have + PP",
+        "Reporting verbs (patterns)"
+      ],
+      "precis_length": 1494,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ B1|disc",
+        "→ B1|verb"
+      ]
+    },
+    {
+      "entry_id": "ESL|B2|adj",
+      "level": "B2",
+      "category": "adjectival",
+      "category_key": "adj",
+      "notion_label": "Adjectives — advanced patterns",
+      "present": true,
+      "points": [
+        "The…the… comparatives",
+        "Absolute superlatives",
+        "Reduced relative clauses",
+        "Adjective-noun collocations"
+      ],
+      "precis_length": 844,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ B1|adj",
+        "→ A2|adj"
+      ]
+    },
+    {
+      "entry_id": "ESL|B2|pron",
+      "level": "B2",
+      "category": "pronominal",
+      "category_key": "pron",
+      "notion_label": "Cleft pronouns, whom, singular they, -ever compounds",
+      "present": true,
+      "points": [
+        "It-cleft & wh-cleft",
+        "Whom (formal) vs who (informal)",
+        "Singular they (productive)",
+        "-ever compounds",
+        "Prep + whom/which"
+      ],
+      "precis_length": 897,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ B1|pron"
+      ]
+    },
+    {
+      "entry_id": "ESL|B2|adv",
+      "level": "B2",
+      "category": "adverbial",
+      "category_key": "adv",
+      "notion_label": "Adverbs — inversion & formal negation",
+      "present": true,
+      "points": [
+        "Negative inversion (Never/Rarely/Hardly)",
+        "No sooner…than / scarcely…when",
+        "Epistemic adverbs (probably/apparently)"
+      ],
+      "precis_length": 757,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ B1|adv",
+        "→ A1|adv"
+      ]
+    },
+    {
+      "entry_id": "ESL|B2|disc",
+      "level": "B2",
+      "category": "discourse",
+      "category_key": "disc",
+      "notion_label": "Discourse & advanced syntax",
+      "present": true,
+      "points": [
+        "Cleft sentences (It-cleft / Wh-cleft)",
+        "Inversion for emphasis",
+        "Participle clauses (extended)",
+        "Third & mixed conditionals",
+        "B2 connectors (hence/thus/conversely)"
+      ],
+      "precis_length": 1023,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ B1|disc"
+      ]
+    },
+    {
+      "entry_id": "ESL|B2|num",
+      "level": "B2",
+      "category": "quantification",
+      "category_key": "num",
+      "notion_label": "Number & quantifiers — extension",
+      "present": true,
+      "points": [
+        "Fractions & percentages (agreement)",
+        "Formal approximation",
+        "Proportional expressions (one in ten)",
+        "Formal quantifiers"
+      ],
+      "precis_length": 742,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ B1|num"
+      ]
+    },
+    {
+      "entry_id": "ESL|C1|nom",
+      "level": "C1",
+      "category": "nominal",
+      "category_key": "nom",
+      "notion_label": "Nouns & articles",
+      "present": true,
+      "points": [
+        "Dense noun phrases (academic style)",
+        "Countable/uncountable shifts",
+        "Articles with institutions & countries",
+        "Gender-neutral titles",
+        "Fixed binomials (pros and cons)"
+      ],
+      "precis_length": 1144,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|C1|verb",
+      "level": "C1",
+      "category": "verbal",
+      "category_key": "verb",
+      "notion_label": "Verbs & tenses",
+      "present": true,
+      "points": [
+        "Aspect & Aktionsart (states vs. achievements)",
+        "Narrative tenses & historical present",
+        "Epistemic vs. deontic modals",
+        "Journalistic modals (may/might/could)",
+        "Perfect infinitive & gerund"
+      ],
+      "precis_length": 1195,
+      "has_pitfall": false,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|C1|adj",
+      "level": "C1",
+      "category": "adjectival",
+      "category_key": "adj",
+      "notion_label": "Adjectives & agreement",
+      "present": true,
+      "points": [
+        "Colour compounds (variable/invariable)",
+        "Fixed expressions (good/well)",
+        "All / whole / entire",
+        "Postpositive adjectives",
+        "Submodifier collocations"
+      ],
+      "precis_length": 1051,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|C1|pron",
+      "level": "C1",
+      "category": "pronominal",
+      "category_key": "pron",
+      "notion_label": "Coreference, generic pronouns, middle voice",
+      "present": true,
+      "points": [
+        "Coreference chains",
+        "Generic one/you/they",
+        "Middle voice",
+        "Cleft & wh-cleft",
+        "Ellipsis & one/ones"
+      ],
+      "precis_length": 817,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ B2|pron"
+      ]
+    },
+    {
+      "entry_id": "ESL|C1|adv",
+      "level": "C1",
+      "category": "adverbial",
+      "category_key": "adv",
+      "notion_label": "Adverbs & negation",
+      "present": true,
+      "points": [
+        "Epistemic adverbs (ostensibly/reportedly)",
+        "Litotes (not bad / not uncommon)",
+        "Euphemism",
+        "Irony & implicature",
+        "Hedges vs. boosters"
+      ],
+      "precis_length": 1000,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|C1|disc",
+      "level": "C1",
+      "category": "discourse",
+      "category_key": "disc",
+      "notion_label": "Discourse & syntax",
+      "present": true,
+      "points": [
+        "Cleft & pseudo-cleft (systematic)",
+        "Detached constructions",
+        "Ellipsis & pro-forms",
+        "Register mapping (formal–informal)",
+        "Academic writing syntax"
+      ],
+      "precis_length": 996,
+      "has_pitfall": false,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|C1|num",
+      "level": "C1",
+      "category": "quantification",
+      "category_key": "num",
+      "notion_label": "Number & quantifiers",
+      "present": true,
+      "points": [
+        "Formal quantifiers (in the order of / upwards of)",
+        "Complex indefinites (plethora / paucity)",
+        "Technical approximation",
+        "Statistical expressions (ratio / per capita)",
+        "Percent vs. percentage point"
+      ],
+      "precis_length": 801,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": []
+    },
+    {
+      "entry_id": "ESL|C2|nom",
+      "level": "C2",
+      "category": "nominal",
+      "category_key": "nom",
+      "notion_label": "Nouns & articles",
+      "present": true,
+      "points": [
+        "Article subtleties (generic the / zero)",
+        "Pluralia tantum (scissors/trousers)",
+        "Singularia tantum (information/advice)"
+      ],
+      "precis_length": 688,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ A2|nom"
+      ]
+    },
+    {
+      "entry_id": "ESL|C2|verb",
+      "level": "C2",
+      "category": "verbal",
+      "category_key": "verb",
+      "notion_label": "Verbs & tenses",
+      "present": true,
+      "points": [
+        "Full tense-aspect-mood mastery",
+        "Aspectual nuance (systematic control)",
+        "Archaic forms (recognition)"
+      ],
+      "precis_length": 942,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ C1|verb",
+        "→ A2|verb"
+      ]
+    },
+    {
+      "entry_id": "ESL|C2|adj",
+      "level": "C2",
+      "category": "adjectival",
+      "category_key": "adj",
+      "notion_label": "Adjectives & agreement",
+      "present": true,
+      "points": [
+        "Compound modifiers (a five-mile walk)",
+        "Position & meaning change",
+        "Flat adverbs (slow/loud/direct)"
+      ],
+      "precis_length": 714,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ B2|adj"
+      ]
+    },
+    {
+      "entry_id": "ESL|C2|pron",
+      "level": "C2",
+      "category": "pronominal",
+      "category_key": "pron",
+      "notion_label": "Deixis, implicature, impersonal it — full range",
+      "present": true,
+      "points": [
+        "Deixis (personal/spatial/temporal)",
+        "Presupposition & implicature",
+        "Impersonal it (4 values)",
+        "Bridging & split antecedent"
+      ],
+      "precis_length": 837,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ C1|pron",
+        "→ C2|adv"
+      ]
+    },
+    {
+      "entry_id": "ESL|C2|adv",
+      "level": "C2",
+      "category": "adverbial",
+      "category_key": "adv",
+      "notion_label": "Adverbs & negation",
+      "present": true,
+      "points": [
+        "Pragmatic implicature (Grice)",
+        "Scope of negation & litotes",
+        "Syntactic figures (recognition)"
+      ],
+      "precis_length": 806,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ C1|adv",
+        "→ B2|adv"
+      ]
+    },
+    {
+      "entry_id": "ESL|C2|disc",
+      "level": "C2",
+      "category": "discourse",
+      "category_key": "disc",
+      "notion_label": "Discourse & syntax",
+      "present": true,
+      "points": [
+        "Metalinguistic awareness (complete metalanguage)",
+        "Sociolinguistic variation (BrE/AmE/registers)",
+        "Syntactic ambiguity & disambiguation"
+      ],
+      "precis_length": 926,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ C1|disc",
+        "→ B2|disc"
+      ]
+    },
+    {
+      "entry_id": "ESL|C2|num",
+      "level": "C2",
+      "category": "quantification",
+      "category_key": "num",
+      "notion_label": "Number & quantifiers",
+      "present": true,
+      "points": [
+        "Literary quantifiers (myriad/sundry)",
+        "Precision in numerical discourse",
+        "Complex subject-verb agreement"
+      ],
+      "precis_length": 754,
+      "has_pitfall": true,
+      "has_source": true,
+      "cross_refs": [
+        "→ C1|num",
+        "→ B2|num"
+      ]
+    }
+  ],
+  "summary": {
+    "total_slots": 42,
+    "present": 42,
+    "with_source": 42
+  }
+}

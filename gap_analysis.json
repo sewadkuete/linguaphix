@@ -1,0 +1,426 @@
+{
+  "generated": "2026-06-17T07:53:48.491Z",
+  "language": "ESL",
+  "entries": [
+    {
+      "entry_id": "ESL|A1|nom",
+      "level": "A1",
+      "category": "nominal",
+      "notion_label": "Nouns & articles",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|A1|verb",
+      "level": "A1",
+      "category": "verbal",
+      "notion_label": "Verbs & tenses",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|A1|adj",
+      "level": "A1",
+      "category": "adjectival",
+      "notion_label": "Adjectives & agreement",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|A1|pron",
+      "level": "A1",
+      "category": "pronominal",
+      "notion_label": "Pronouns",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 4
+    },
+    {
+      "entry_id": "ESL|A1|adv",
+      "level": "A1",
+      "category": "adverbial",
+      "notion_label": "Adverbs & negation",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|A1|disc",
+      "level": "A1",
+      "category": "discourse",
+      "notion_label": "Discourse & syntax",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|A1|num",
+      "level": "A1",
+      "category": "quantification",
+      "notion_label": "Number & quantifiers",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|A2|nom",
+      "level": "A2",
+      "category": "nominal",
+      "notion_label": "Nouns & articles",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|A2|verb",
+      "level": "A2",
+      "category": "verbal",
+      "notion_label": "Verbs & tenses",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|A2|adj",
+      "level": "A2",
+      "category": "adjectival",
+      "notion_label": "Adjectives & agreement",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|A2|pron",
+      "level": "A2",
+      "category": "pronominal",
+      "notion_label": "Pronouns",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|A2|adv",
+      "level": "A2",
+      "category": "adverbial",
+      "notion_label": "Adverbs & negation",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|A2|disc",
+      "level": "A2",
+      "category": "discourse",
+      "notion_label": "Discourse & syntax",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 4
+    },
+    {
+      "entry_id": "ESL|A2|num",
+      "level": "A2",
+      "category": "quantification",
+      "notion_label": "Number & quantifiers",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|B1|nom",
+      "level": "B1",
+      "category": "nominal",
+      "notion_label": "Nouns & articles",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|B1|verb",
+      "level": "B1",
+      "category": "verbal",
+      "notion_label": "Verbs & tenses",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 6
+    },
+    {
+      "entry_id": "ESL|B1|adj",
+      "level": "B1",
+      "category": "adjectival",
+      "notion_label": "Adjectives & agreement",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|B1|pron",
+      "level": "B1",
+      "category": "pronominal",
+      "notion_label": "Relative & indefinite pronouns — full system",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|B1|adv",
+      "level": "B1",
+      "category": "adverbial",
+      "notion_label": "Adverbs & negation",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|B1|disc",
+      "level": "B1",
+      "category": "discourse",
+      "notion_label": "Discourse & syntax",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|B1|num",
+      "level": "B1",
+      "category": "quantification",
+      "notion_label": "Number & quantifiers",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|B2|nom",
+      "level": "B2",
+      "category": "nominal",
+      "notion_label": "Nouns — advanced syntax",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 3
+    },
+    {
+      "entry_id": "ESL|B2|verb",
+      "level": "B2",
+      "category": "verbal",
+      "notion_label": "Third & mixed conditionals, passive, modals",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 6
+    },
+    {
+      "entry_id": "ESL|B2|adj",
+      "level": "B2",
+      "category": "adjectival",
+      "notion_label": "Adjectives — advanced patterns",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 4
+    },
+    {
+      "entry_id": "ESL|B2|pron",
+      "level": "B2",
+      "category": "pronominal",
+      "notion_label": "Cleft pronouns, whom, singular they, -ever compounds",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|B2|adv",
+      "level": "B2",
+      "category": "adverbial",
+      "notion_label": "Adverbs — inversion & formal negation",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 3
+    },
+    {
+      "entry_id": "ESL|B2|disc",
+      "level": "B2",
+      "category": "discourse",
+      "notion_label": "Discourse & advanced syntax",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|B2|num",
+      "level": "B2",
+      "category": "quantification",
+      "notion_label": "Number & quantifiers — extension",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 4
+    },
+    {
+      "entry_id": "ESL|C1|nom",
+      "level": "C1",
+      "category": "nominal",
+      "notion_label": "Nouns & articles",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|C1|verb",
+      "level": "C1",
+      "category": "verbal",
+      "notion_label": "Verbs & tenses",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|C1|adj",
+      "level": "C1",
+      "category": "adjectival",
+      "notion_label": "Adjectives & agreement",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|C1|pron",
+      "level": "C1",
+      "category": "pronominal",
+      "notion_label": "Coreference, generic pronouns, middle voice",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|C1|adv",
+      "level": "C1",
+      "category": "adverbial",
+      "notion_label": "Adverbs & negation",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|C1|disc",
+      "level": "C1",
+      "category": "discourse",
+      "notion_label": "Discourse & syntax",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|C1|num",
+      "level": "C1",
+      "category": "quantification",
+      "notion_label": "Number & quantifiers",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 5
+    },
+    {
+      "entry_id": "ESL|C2|nom",
+      "level": "C2",
+      "category": "nominal",
+      "notion_label": "Nouns & articles",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 3
+    },
+    {
+      "entry_id": "ESL|C2|verb",
+      "level": "C2",
+      "category": "verbal",
+      "notion_label": "Verbs & tenses",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 3
+    },
+    {
+      "entry_id": "ESL|C2|adj",
+      "level": "C2",
+      "category": "adjectival",
+      "notion_label": "Adjectives & agreement",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 3
+    },
+    {
+      "entry_id": "ESL|C2|pron",
+      "level": "C2",
+      "category": "pronominal",
+      "notion_label": "Deixis, implicature, impersonal it — full range",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 4
+    },
+    {
+      "entry_id": "ESL|C2|adv",
+      "level": "C2",
+      "category": "adverbial",
+      "notion_label": "Adverbs & negation",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 3
+    },
+    {
+      "entry_id": "ESL|C2|disc",
+      "level": "C2",
+      "category": "discourse",
+      "notion_label": "Discourse & syntax",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 3
+    },
+    {
+      "entry_id": "ESL|C2|num",
+      "level": "C2",
+      "category": "quantification",
+      "notion_label": "Number & quantifiers",
+      "tag": "CORRECT",
+      "reason": "complete + sourced",
+      "action": "none",
+      "points_count": 3
+    }
+  ]
+}

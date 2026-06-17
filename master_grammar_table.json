@@ -1,0 +1,1916 @@
+{
+  "generated": "2026-06-17T07:53:48.490Z",
+  "language": "ESL",
+  "entries": [
+    {
+      "level": "A1",
+      "category": "nominal",
+      "notion_label": "Indefinite articles (a / an)",
+      "canonical_rule": "See site précis for A1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "nominal",
+      "notion_label": "Definite article (the)",
+      "canonical_rule": "See site précis for A1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "nominal",
+      "notion_label": "Zero article (general nouns)",
+      "canonical_rule": "See site précis for A1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "nominal",
+      "notion_label": "Singular & plural (-s / irregular)",
+      "canonical_rule": "See site précis for A1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "nominal",
+      "notion_label": "Countable vs. uncountable (basic)",
+      "canonical_rule": "See site précis for A1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "verbal",
+      "notion_label": "Present simple (habits & facts)",
+      "canonical_rule": "See site précis for A1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "verbal",
+      "notion_label": "To be (present)",
+      "canonical_rule": "See site précis for A1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "verbal",
+      "notion_label": "Present continuous",
+      "canonical_rule": "See site précis for A1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "verbal",
+      "notion_label": "Imperative (Do / Don't)",
+      "canonical_rule": "See site précis for A1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "verbal",
+      "notion_label": "Going to (near future)",
+      "canonical_rule": "See site précis for A1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "adjectival",
+      "notion_label": "Position before the noun",
+      "canonical_rule": "See site précis for A1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "adjectival",
+      "notion_label": "Predicative adjectives (after to be)",
+      "canonical_rule": "See site précis for A1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "adjectival",
+      "notion_label": "Possessive adjectives",
+      "canonical_rule": "See site précis for A1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "adjectival",
+      "notion_label": "Demonstrative adjectives (this/that/these/those)",
+      "canonical_rule": "See site précis for A1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "adjectival",
+      "notion_label": "No gender/number agreement",
+      "canonical_rule": "See site précis for A1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "pronominal",
+      "notion_label": "Subject pronouns (I/you/he/she/it/we/they)",
+      "canonical_rule": "See site précis for A1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A1",
+      "category": "pronominal",
+      "notion_label": "Dummy it (weather/time)",
+      "canonical_rule": "See site précis for A1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A1",
+      "category": "pronominal",
+      "notion_label": "Singular they (receptive)",
+      "canonical_rule": "See site précis for A1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A1",
+      "category": "pronominal",
+      "notion_label": "Subject required in English",
+      "canonical_rule": "See site précis for A1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A1",
+      "category": "adverbial",
+      "notion_label": "Negation with be + not",
+      "canonical_rule": "See site précis for A1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "adverbial",
+      "notion_label": "Negation with do/does/did + not",
+      "canonical_rule": "See site précis for A1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "adverbial",
+      "notion_label": "Short answers (Yes, I do)",
+      "canonical_rule": "See site précis for A1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "adverbial",
+      "notion_label": "Frequency adverbs",
+      "canonical_rule": "See site précis for A1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "adverbial",
+      "notion_label": "Adverbs of place & time",
+      "canonical_rule": "See site précis for A1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "discourse",
+      "notion_label": "Declarative SVO order",
+      "canonical_rule": "See site précis for A1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "discourse",
+      "notion_label": "Yes/No & Wh- questions",
+      "canonical_rule": "See site précis for A1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "discourse",
+      "notion_label": "There is / There are",
+      "canonical_rule": "See site précis for A1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "discourse",
+      "notion_label": "It is / They are",
+      "canonical_rule": "See site précis for A1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "discourse",
+      "notion_label": "Prepositions of place & time",
+      "canonical_rule": "See site précis for A1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "quantification",
+      "notion_label": "Cardinal numbers 0–100",
+      "canonical_rule": "See site précis for A1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "quantification",
+      "notion_label": "Some / any",
+      "canonical_rule": "See site précis for A1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "quantification",
+      "notion_label": "Much / many / a lot of",
+      "canonical_rule": "See site précis for A1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "quantification",
+      "notion_label": "A few / a little",
+      "canonical_rule": "See site précis for A1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A1",
+      "category": "quantification",
+      "notion_label": "Teen & tens formation",
+      "canonical_rule": "See site précis for A1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "A2",
+      "category": "nominal",
+      "notion_label": "Countable vs. uncountable (systematic)",
+      "canonical_rule": "See site précis for A2|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "nominal",
+      "notion_label": "Some / any / no",
+      "canonical_rule": "See site précis for A2|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "nominal",
+      "notion_label": "The (unique & shared)",
+      "canonical_rule": "See site précis for A2|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "nominal",
+      "notion_label": "Zero article (meals/languages/sports)",
+      "canonical_rule": "See site précis for A2|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "nominal",
+      "notion_label": "Compound nouns & of-phrases",
+      "canonical_rule": "See site précis for A2|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "verbal",
+      "notion_label": "Past simple (regular & irregular)",
+      "canonical_rule": "See site précis for A2|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "verbal",
+      "notion_label": "Present perfect (intro & for/since)",
+      "canonical_rule": "See site précis for A2|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "verbal",
+      "notion_label": "Used to (past habits)",
+      "canonical_rule": "See site précis for A2|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "verbal",
+      "notion_label": "Modals (can/must/should/have to)",
+      "canonical_rule": "See site précis for A2|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "verbal",
+      "notion_label": "Polite requests (could/would)",
+      "canonical_rule": "See site précis for A2|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "adjectival",
+      "notion_label": "Comparative (-er / more…than)",
+      "canonical_rule": "See site précis for A2|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "adjectival",
+      "notion_label": "Superlative (the -est / the most)",
+      "canonical_rule": "See site précis for A2|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "adjectival",
+      "notion_label": "As…as / not as…as",
+      "canonical_rule": "See site précis for A2|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "adjectival",
+      "notion_label": "Enough / too + adjective",
+      "canonical_rule": "See site précis for A2|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "adjectival",
+      "notion_label": "Adjective order (extended)",
+      "canonical_rule": "See site précis for A2|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "pronominal",
+      "notion_label": "Object pronouns (me/him/her/them)",
+      "canonical_rule": "See site précis for A2|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "pronominal",
+      "notion_label": "Possessive pronouns (mine/yours/hers)",
+      "canonical_rule": "See site précis for A2|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "pronominal",
+      "notion_label": "Reflexive & emphatic (myself)",
+      "canonical_rule": "See site précis for A2|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "pronominal",
+      "notion_label": "Demonstrative pronouns (this/those)",
+      "canonical_rule": "See site précis for A2|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "pronominal",
+      "notion_label": "Contrasts adj. vs pronoun",
+      "canonical_rule": "See site précis for A2|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "adverbial",
+      "notion_label": "Extended negation (no longer / neither…nor)",
+      "canonical_rule": "See site précis for A2|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "adverbial",
+      "notion_label": "Already / yet / still",
+      "canonical_rule": "See site précis for A2|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "adverbial",
+      "notion_label": "Adverbs of manner (-ly)",
+      "canonical_rule": "See site précis for A2|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "adverbial",
+      "notion_label": "Degree adverbs",
+      "canonical_rule": "See site précis for A2|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "adverbial",
+      "notion_label": "Time adverbs (ago / recently)",
+      "canonical_rule": "See site précis for A2|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "discourse",
+      "notion_label": "Sequencing connectors",
+      "canonical_rule": "See site précis for A2|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "discourse",
+      "notion_label": "Logical connectors (because/so/but)",
+      "canonical_rule": "See site précis for A2|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "discourse",
+      "notion_label": "Relative clauses — recognition (→ B1|pron)",
+      "canonical_rule": "See site précis for A2|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "discourse",
+      "notion_label": "Question tags (basic)",
+      "canonical_rule": "See site précis for A2|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "quantification",
+      "notion_label": "Ordinal numbers (1st–31st)",
+      "canonical_rule": "See site précis for A2|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "quantification",
+      "notion_label": "Few / a few & little / a little",
+      "canonical_rule": "See site précis for A2|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "quantification",
+      "notion_label": "Many / much / several",
+      "canonical_rule": "See site précis for A2|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "quantification",
+      "notion_label": "Both / either / neither",
+      "canonical_rule": "See site précis for A2|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "A2",
+      "category": "quantification",
+      "notion_label": "Common fractions",
+      "canonical_rule": "See site précis for A2|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/a2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "nominal",
+      "notion_label": "Nominalization (suffixes)",
+      "canonical_rule": "See site précis for B1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "nominal",
+      "notion_label": "Articles with abstract nouns",
+      "canonical_rule": "See site précis for B1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "nominal",
+      "notion_label": "The + adjective (the elderly)",
+      "canonical_rule": "See site précis for B1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "nominal",
+      "notion_label": "Genitive ('s vs. of)",
+      "canonical_rule": "See site précis for B1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "nominal",
+      "notion_label": "Double genitive (a friend of mine)",
+      "canonical_rule": "See site précis for B1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "verbal",
+      "notion_label": "Present perfect (extended uses)",
+      "canonical_rule": "See site précis for B1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "verbal",
+      "notion_label": "Past continuous & past perfect",
+      "canonical_rule": "See site précis for B1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "verbal",
+      "notion_label": "Passive voice",
+      "canonical_rule": "See site précis for B1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "verbal",
+      "notion_label": "Reported speech (backshift)",
+      "canonical_rule": "See site précis for B1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "verbal",
+      "notion_label": "Will / would",
+      "canonical_rule": "See site précis for B1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "verbal",
+      "notion_label": "Gerund vs. infinitive (core)",
+      "canonical_rule": "See site précis for B1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "adjectival",
+      "notion_label": "-ed / -ing participial adjectives",
+      "canonical_rule": "See site précis for B1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "adjectival",
+      "notion_label": "Adjective + preposition (good at / afraid of)",
+      "canonical_rule": "See site précis for B1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "adjectival",
+      "notion_label": "Gradable vs. non-gradable",
+      "canonical_rule": "See site précis for B1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "adjectival",
+      "notion_label": "Compound adjectives (hyphenated)",
+      "canonical_rule": "See site précis for B1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "adjectival",
+      "notion_label": "Adjectives after linking verbs",
+      "canonical_rule": "See site précis for B1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "pronominal",
+      "notion_label": "Relatives (who/whom/whose/which/that)",
+      "canonical_rule": "See site précis for B1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "pronominal",
+      "notion_label": "where/when/why & zero relative",
+      "canonical_rule": "See site précis for B1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "pronominal",
+      "notion_label": "Indefinite compounds",
+      "canonical_rule": "See site précis for B1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "pronominal",
+      "notion_label": "each/every/none/either",
+      "canonical_rule": "See site précis for B1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "pronominal",
+      "notion_label": "Reflexive, reciprocal, one",
+      "canonical_rule": "See site précis for B1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "adverbial",
+      "notion_label": "Only (restriction & position)",
+      "canonical_rule": "See site précis for B1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "adverbial",
+      "notion_label": "Adverb formation (-ly rules)",
+      "canonical_rule": "See site précis for B1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "adverbial",
+      "notion_label": "Formal connectors (however/moreover)",
+      "canonical_rule": "See site précis for B1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "adverbial",
+      "notion_label": "So / such (emphasis)",
+      "canonical_rule": "See site précis for B1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "adverbial",
+      "notion_label": "Hardly / scarcely / barely",
+      "canonical_rule": "See site précis for B1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "discourse",
+      "notion_label": "Cause / purpose / time clauses",
+      "canonical_rule": "See site précis for B1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "discourse",
+      "notion_label": "First conditional",
+      "canonical_rule": "See site précis for B1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "discourse",
+      "notion_label": "Second conditional (intro)",
+      "canonical_rule": "See site précis for B1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "discourse",
+      "notion_label": "Concession (although / despite)",
+      "canonical_rule": "See site précis for B1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "discourse",
+      "notion_label": "Question tags",
+      "canonical_rule": "See site précis for B1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B1",
+      "category": "quantification",
+      "notion_label": "Most of / a majority of",
+      "canonical_rule": "See site précis for B1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "quantification",
+      "notion_label": "Collective nouns (singular vs. plural verb)",
+      "canonical_rule": "See site précis for B1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "quantification",
+      "notion_label": "Approximation (about / roughly)",
+      "canonical_rule": "See site précis for B1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "quantification",
+      "notion_label": "Every / each / all",
+      "canonical_rule": "See site précis for B1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B1",
+      "category": "quantification",
+      "notion_label": "Each of / all of + pronoun",
+      "canonical_rule": "See site précis for B1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "B2",
+      "category": "nominal",
+      "notion_label": "Complex noun phrases",
+      "canonical_rule": "See site précis for B2|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "nominal",
+      "notion_label": "Substantivization (the + adjective)",
+      "canonical_rule": "See site précis for B2|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "nominal",
+      "notion_label": "Written/academic register",
+      "canonical_rule": "See site précis for B2|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "verbal",
+      "notion_label": "Third conditional (unreal past)",
+      "canonical_rule": "See site précis for B2|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "verbal",
+      "notion_label": "Mixed conditionals",
+      "canonical_rule": "See site précis for B2|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "verbal",
+      "notion_label": "Wish / if only",
+      "canonical_rule": "See site précis for B2|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "verbal",
+      "notion_label": "Passive (all tenses)",
+      "canonical_rule": "See site précis for B2|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "verbal",
+      "notion_label": "Modals + have + PP",
+      "canonical_rule": "See site précis for B2|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "verbal",
+      "notion_label": "Reporting verbs (patterns)",
+      "canonical_rule": "See site précis for B2|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "adjectival",
+      "notion_label": "The…the… comparatives",
+      "canonical_rule": "See site précis for B2|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "adjectival",
+      "notion_label": "Absolute superlatives",
+      "canonical_rule": "See site précis for B2|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "adjectival",
+      "notion_label": "Reduced relative clauses",
+      "canonical_rule": "See site précis for B2|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "adjectival",
+      "notion_label": "Adjective-noun collocations",
+      "canonical_rule": "See site précis for B2|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "pronominal",
+      "notion_label": "It-cleft & wh-cleft",
+      "canonical_rule": "See site précis for B2|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "pronominal",
+      "notion_label": "Whom (formal) vs who (informal)",
+      "canonical_rule": "See site précis for B2|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "pronominal",
+      "notion_label": "Singular they (productive)",
+      "canonical_rule": "See site précis for B2|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "pronominal",
+      "notion_label": "-ever compounds",
+      "canonical_rule": "See site précis for B2|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "pronominal",
+      "notion_label": "Prep + whom/which",
+      "canonical_rule": "See site précis for B2|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "adverbial",
+      "notion_label": "Negative inversion (Never/Rarely/Hardly)",
+      "canonical_rule": "See site précis for B2|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "adverbial",
+      "notion_label": "No sooner…than / scarcely…when",
+      "canonical_rule": "See site précis for B2|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "adverbial",
+      "notion_label": "Epistemic adverbs (probably/apparently)",
+      "canonical_rule": "See site précis for B2|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "discourse",
+      "notion_label": "Cleft sentences (It-cleft / Wh-cleft)",
+      "canonical_rule": "See site précis for B2|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "discourse",
+      "notion_label": "Inversion for emphasis",
+      "canonical_rule": "See site précis for B2|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "discourse",
+      "notion_label": "Participle clauses (extended)",
+      "canonical_rule": "See site précis for B2|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "discourse",
+      "notion_label": "Third & mixed conditionals",
+      "canonical_rule": "See site précis for B2|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "discourse",
+      "notion_label": "B2 connectors (hence/thus/conversely)",
+      "canonical_rule": "See site précis for B2|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "quantification",
+      "notion_label": "Fractions & percentages (agreement)",
+      "canonical_rule": "See site précis for B2|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "quantification",
+      "notion_label": "Formal approximation",
+      "canonical_rule": "See site précis for B2|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "quantification",
+      "notion_label": "Proportional expressions (one in ten)",
+      "canonical_rule": "See site précis for B2|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "B2",
+      "category": "quantification",
+      "notion_label": "Formal quantifiers",
+      "canonical_rule": "See site précis for B2|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/b2/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C1",
+      "category": "nominal",
+      "notion_label": "Dense noun phrases (academic style)",
+      "canonical_rule": "See site précis for C1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "nominal",
+      "notion_label": "Countable/uncountable shifts",
+      "canonical_rule": "See site précis for C1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "nominal",
+      "notion_label": "Articles with institutions & countries",
+      "canonical_rule": "See site précis for C1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "nominal",
+      "notion_label": "Gender-neutral titles",
+      "canonical_rule": "See site précis for C1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "nominal",
+      "notion_label": "Fixed binomials (pros and cons)",
+      "canonical_rule": "See site précis for C1|nom — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "verbal",
+      "notion_label": "Aspect & Aktionsart (states vs. achievements)",
+      "canonical_rule": "See site précis for C1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "verbal",
+      "notion_label": "Narrative tenses & historical present",
+      "canonical_rule": "See site précis for C1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "verbal",
+      "notion_label": "Epistemic vs. deontic modals",
+      "canonical_rule": "See site précis for C1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "verbal",
+      "notion_label": "Journalistic modals (may/might/could)",
+      "canonical_rule": "See site précis for C1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "verbal",
+      "notion_label": "Perfect infinitive & gerund",
+      "canonical_rule": "See site précis for C1|verb — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "adjectival",
+      "notion_label": "Colour compounds (variable/invariable)",
+      "canonical_rule": "See site précis for C1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "adjectival",
+      "notion_label": "Fixed expressions (good/well)",
+      "canonical_rule": "See site précis for C1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "adjectival",
+      "notion_label": "All / whole / entire",
+      "canonical_rule": "See site précis for C1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "adjectival",
+      "notion_label": "Postpositive adjectives",
+      "canonical_rule": "See site précis for C1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "adjectival",
+      "notion_label": "Submodifier collocations",
+      "canonical_rule": "See site précis for C1|adj — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "pronominal",
+      "notion_label": "Coreference chains",
+      "canonical_rule": "See site précis for C1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C1",
+      "category": "pronominal",
+      "notion_label": "Generic one/you/they",
+      "canonical_rule": "See site précis for C1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C1",
+      "category": "pronominal",
+      "notion_label": "Middle voice",
+      "canonical_rule": "See site précis for C1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C1",
+      "category": "pronominal",
+      "notion_label": "Cleft & wh-cleft",
+      "canonical_rule": "See site précis for C1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C1",
+      "category": "pronominal",
+      "notion_label": "Ellipsis & one/ones",
+      "canonical_rule": "See site précis for C1|pron — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C1",
+      "category": "adverbial",
+      "notion_label": "Epistemic adverbs (ostensibly/reportedly)",
+      "canonical_rule": "See site précis for C1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "adverbial",
+      "notion_label": "Litotes (not bad / not uncommon)",
+      "canonical_rule": "See site précis for C1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "adverbial",
+      "notion_label": "Euphemism",
+      "canonical_rule": "See site précis for C1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "adverbial",
+      "notion_label": "Irony & implicature",
+      "canonical_rule": "See site précis for C1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "adverbial",
+      "notion_label": "Hedges vs. boosters",
+      "canonical_rule": "See site précis for C1|adv — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "discourse",
+      "notion_label": "Cleft & pseudo-cleft (systematic)",
+      "canonical_rule": "See site précis for C1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "discourse",
+      "notion_label": "Detached constructions",
+      "canonical_rule": "See site précis for C1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "discourse",
+      "notion_label": "Ellipsis & pro-forms",
+      "canonical_rule": "See site précis for C1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "discourse",
+      "notion_label": "Register mapping (formal–informal)",
+      "canonical_rule": "See site précis for C1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "discourse",
+      "notion_label": "Academic writing syntax",
+      "canonical_rule": "See site précis for C1|disc — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "quantification",
+      "notion_label": "Formal quantifiers (in the order of / upwards of)",
+      "canonical_rule": "See site précis for C1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "quantification",
+      "notion_label": "Complex indefinites (plethora / paucity)",
+      "canonical_rule": "See site précis for C1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "quantification",
+      "notion_label": "Technical approximation",
+      "canonical_rule": "See site précis for C1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "quantification",
+      "notion_label": "Statistical expressions (ratio / per capita)",
+      "canonical_rule": "See site précis for C1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C1",
+      "category": "quantification",
+      "notion_label": "Percent vs. percentage point",
+      "canonical_rule": "See site précis for C1|num — verified against source list.",
+      "source_url": "https://test-english.com/grammar-points/c1/",
+      "source_name": "Test-English / British Council",
+      "new_at_this_level": true,
+      "extends_from_level": null
+    },
+    {
+      "level": "C2",
+      "category": "nominal",
+      "notion_label": "Article subtleties (generic the / zero)",
+      "canonical_rule": "See site précis for C2|nom — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "nominal",
+      "notion_label": "Pluralia tantum (scissors/trousers)",
+      "canonical_rule": "See site précis for C2|nom — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "nominal",
+      "notion_label": "Singularia tantum (information/advice)",
+      "canonical_rule": "See site précis for C2|nom — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "verbal",
+      "notion_label": "Full tense-aspect-mood mastery",
+      "canonical_rule": "See site précis for C2|verb — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "verbal",
+      "notion_label": "Aspectual nuance (systematic control)",
+      "canonical_rule": "See site précis for C2|verb — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "verbal",
+      "notion_label": "Archaic forms (recognition)",
+      "canonical_rule": "See site précis for C2|verb — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "adjectival",
+      "notion_label": "Compound modifiers (a five-mile walk)",
+      "canonical_rule": "See site précis for C2|adj — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "adjectival",
+      "notion_label": "Position & meaning change",
+      "canonical_rule": "See site précis for C2|adj — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "adjectival",
+      "notion_label": "Flat adverbs (slow/loud/direct)",
+      "canonical_rule": "See site précis for C2|adj — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "pronominal",
+      "notion_label": "Deixis (personal/spatial/temporal)",
+      "canonical_rule": "See site précis for C2|pron — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "pronominal",
+      "notion_label": "Presupposition & implicature",
+      "canonical_rule": "See site précis for C2|pron — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "pronominal",
+      "notion_label": "Impersonal it (4 values)",
+      "canonical_rule": "See site précis for C2|pron — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "pronominal",
+      "notion_label": "Bridging & split antecedent",
+      "canonical_rule": "See site précis for C2|pron — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "adverbial",
+      "notion_label": "Pragmatic implicature (Grice)",
+      "canonical_rule": "See site précis for C2|adv — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "adverbial",
+      "notion_label": "Scope of negation & litotes",
+      "canonical_rule": "See site précis for C2|adv — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "adverbial",
+      "notion_label": "Syntactic figures (recognition)",
+      "canonical_rule": "See site précis for C2|adv — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "discourse",
+      "notion_label": "Metalinguistic awareness (complete metalanguage)",
+      "canonical_rule": "See site précis for C2|disc — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "discourse",
+      "notion_label": "Sociolinguistic variation (BrE/AmE/registers)",
+      "canonical_rule": "See site précis for C2|disc — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "discourse",
+      "notion_label": "Syntactic ambiguity & disambiguation",
+      "canonical_rule": "See site précis for C2|disc — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "quantification",
+      "notion_label": "Literary quantifiers (myriad/sundry)",
+      "canonical_rule": "See site précis for C2|num — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "quantification",
+      "notion_label": "Precision in numerical discourse",
+      "canonical_rule": "See site précis for C2|num — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    },
+    {
+      "level": "C2",
+      "category": "quantification",
+      "notion_label": "Complex subject-verb agreement",
+      "canonical_rule": "See site précis for C2|num — verified against source list.",
+      "source_url": "https://dictionary.cambridge.org/grammar/british-grammar/",
+      "source_name": "Cambridge / British Council",
+      "new_at_this_level": false,
+      "extends_from_level": "lower"
+    }
+  ]
+}

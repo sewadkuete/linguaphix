@@ -49,7 +49,7 @@ const esl = loadData("esl-grammar-data.js");
     cats.forEach(function (cat) {
       const d = data[lv] && data[lv][cat];
       if (!d) return;
-      const precis = d.précis || d.precis || "";
+      const precis = (d.précis || d.precis || "").replace(/📚 Sources[^\n]*\n?/g, "");
       add({
         entry_id: lang + "|" + lv + "|" + cat + "|precis|" + (d.title || cat),
         level: lv, language: lang, category: cat, rule_name: d.title || cat,
