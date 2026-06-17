@@ -229,6 +229,16 @@
       markForwardNavigation: function () {
         allowRestore = false;
         trySet(sessionStorage, pageScrollKey(location.pathname, location.search), "0");
+      },
+      // Disable scroll restoration for the current in-page action without
+      // forcing the scroll position (used when changing level/category/view).
+      suspendRestore: function () {
+        allowRestore = false;
+      },
+      // Persist the current scroll position for the active URL so a later
+      // refresh can restore it.
+      saveCurrentScroll: function () {
+        saveScrollPosition();
       }
     };
   }

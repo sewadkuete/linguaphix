@@ -509,15 +509,18 @@
     }
 
     function navigateForward(updates) {
-      if (persistence) persistence.markForwardNavigation();
       if (updates.level) level = updates.level;
       if (updates.category) catId = updates.category;
       if (updates.view) view = updates.view;
       if (updates.exerciseType) exFilter = updates.exerciseType;
       exercises = null;
+      // Switching level/category/view keeps the reader where they are:
+      // clear any pending topic jump and do not scroll the page.
+      pendingPointScroll = null;
+      if (persistence) persistence.suspendRestore();
       persistUI(updates);
       render();
-      window.scrollTo({ top: 0, behavior: "auto" });
+      if (persistence) persistence.saveCurrentScroll();
     }
 
     function catLabel(c) { return lang === "fr" ? c.labelFr : c.labelEn; }
@@ -731,13 +734,13 @@
       root.querySelectorAll(".lp-precis-search-hit").forEach(function (btn) {
         btn.addEventListener("click", function () {
           pendingPointScroll = parseInt(btn.dataset.point, 10);
-          if (persistence) persistence.markForwardNavigation();
+          if (persistence) persistence.suspendRestore();
           level = btn.dataset.level;
           catId = btn.dataset.cat;
+          view = "precis";
           exercises = null;
-          persistUI({ level: level, category: catId, openPanel: String(pendingPointScroll) });
+          persistUI({ level: level, category: catId, view: view, openPanel: String(pendingPointScroll) });
           render();
-          window.scrollTo({ top: 0, behavior: "auto" });
         });
       });
 
