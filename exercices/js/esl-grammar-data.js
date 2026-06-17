@@ -713,7 +713,9 @@ window.GRAMMAR_DATA = {
 
 • Binomials and trinomials (fixed order):
   bread and butter, pros and cons, hook, line and sinker.
-  ⚠️ Order is fixed; don't reverse.`,
+  ⚠️ Order is fixed; don't reverse.
+
+📚 Sources : Test-English C1 (https://test-english.com/grammar-points/c1/) · British Council C1 (https://learnenglish.britishcouncil.org/free-resources/grammar/c1).`,
       points:["Dense noun phrases (academic style)","Countable/uncountable shifts","Articles with institutions & countries","Gender-neutral titles","Fixed binomials (pros and cons)"]
     },
     verb:{
@@ -738,7 +740,9 @@ window.GRAMMAR_DATA = {
 
 • Perfect infinitive & perfect gerund:
   He seems to have left. I regret having said that.
-  Having been warned, they proceeded carefully.`,
+  Having been warned, they proceeded carefully.
+
+📚 Sources : Test-English C1 (https://test-english.com/grammar-points/c1/) · British Council C1 (https://learnenglish.britishcouncil.org/free-resources/grammar/c1).`,
       points:["Aspect & Aktionsart (states vs. achievements)","Narrative tenses & historical present","Epistemic vs. deontic modals","Journalistic modals (may/might/could)","Perfect infinitive & gerund"]
     },
     adj:{
@@ -762,7 +766,9 @@ window.GRAMMAR_DATA = {
 
 • Submodifier patterns:
   utterly ridiculous, deeply concerned, highly unlikely, widely regarded.
-  ⚠️ Collocations are not freely interchangeable.`,
+  ⚠️ Collocations are not freely interchangeable.
+
+📚 Sources : Test-English C1 (https://test-english.com/grammar-points/c1/) · British Council C1 (https://learnenglish.britishcouncil.org/free-resources/grammar/c1).`,
       points:["Colour compounds (variable/invariable)","Fixed expressions (good/well)","All / whole / entire","Postpositive adjectives","Submodifier collocations"]
     },
     pron:{
@@ -783,7 +789,9 @@ window.GRAMMAR_DATA = {
 • Ellipsis & substitution (intro) :
   I will go and she will too. | the red one / these ones (countable only).
 
-⚠️ Clefts & singular they productive → B2|pron.`,
+⚠️ Clefts & singular they productive → B2|pron.
+
+📚 Sources : Test-English C1 (https://test-english.com/grammar-points/c1/) · British Council C1 (https://learnenglish.britishcouncil.org/free-resources/grammar/c1).`,
       points:["Coreference chains","Generic one/you/they","Middle voice","Cleft & wh-cleft","Ellipsis & one/ones"]
     },
     adv:{
@@ -806,7 +814,9 @@ window.GRAMMAR_DATA = {
 
 • Hedge vs. booster:
   Hedges (soften): perhaps, somewhat, to some extent, I think.
-  Boosters (strengthen): clearly, undoubtedly, without doubt, obviously.`,
+  Boosters (strengthen): clearly, undoubtedly, without doubt, obviously.
+
+📚 Sources : Test-English C1 (https://test-english.com/grammar-points/c1/) · British Council C1 (https://learnenglish.britishcouncil.org/free-resources/grammar/c1).`,
       points:["Epistemic adverbs (ostensibly/reportedly)","Litotes (not bad / not uncommon)","Euphemism","Irony & implicature","Hedges vs. boosters"]
     },
     disc:{
@@ -831,7 +841,9 @@ window.GRAMMAR_DATA = {
 
 • Academic writing syntax:
   It is important to note that… / There is evidence to suggest that…
-  Nominalization, passivization, impersonal structures.`,
+  Nominalization, passivization, impersonal structures.
+
+📚 Sources : Test-English C1 (https://test-english.com/grammar-points/c1/) · British Council C1 (https://learnenglish.britishcouncil.org/free-resources/grammar/c1).`,
       points:["Cleft & pseudo-cleft (systematic)","Detached constructions","Ellipsis & pro-forms","Register mapping (formal–informal)","Academic writing syntax"]
     },
     num:{
@@ -850,7 +862,9 @@ window.GRAMMAR_DATA = {
 
 • Number in academic/statistical discourse:
   a ratio of 3:1, a threefold increase, per capita, on average.
-  ⚠️ Distinguish percent vs. percentage point in data reporting.`,
+  ⚠️ Distinguish percent vs. percentage point in data reporting.
+
+📚 Sources : Test-English C1 (https://test-english.com/grammar-points/c1/) · British Council C1 (https://learnenglish.britishcouncil.org/free-resources/grammar/c1).`,
       points:["Formal quantifiers (in the order of / upwards of)","Complex indefinites (plethora / paucity)","Technical approximation","Statistical expressions (ratio / per capita)","Percent vs. percentage point"]
     }
   },
