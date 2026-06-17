@@ -592,3 +592,45 @@ body {
   box-shadow: 0 6px 24px rgba(0, 0, 0, .14);
   pointer-events: none;
 }
+
+/* Production access barrier for the interactive grammar section
+   (bypassed automatically on localhost so it can be worked on locally). */
+html.lx-gated, html.lx-gated body { overflow: hidden; height: 100%; }
+.lx-construction-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(160deg, #1e1b4b 0%, #312e81 60%, #4c1d95 100%);
+}
+.lx-construction-gate-card {
+  width: min(560px, 100%);
+  background: rgba(255, 255, 255, .97);
+  color: #1a1a2e;
+  border-radius: 18px;
+  padding: 40px 32px 34px;
+  text-align: center;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, .4);
+}
+.lx-construction-gate-icon { font-size: 54px; line-height: 1; margin-bottom: 14px; }
+.lx-construction-gate-card h1 { margin: 0 0 12px; font-size: 24px; font-weight: 800; }
+.lx-construction-gate-card p { margin: 0 0 26px; font-size: 15.5px; line-height: 1.55; opacity: .88; }
+.lx-construction-gate-back {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background: var(--site-accent, #7c3aed);
+  transition: filter .15s ease;
+}
+.lx-construction-gate-back:hover { filter: brightness(1.1); }
+@media (max-width: 520px) {
+  .lx-construction-gate-card { padding: 32px 22px 28px; }
+  .lx-construction-gate-card h1 { font-size: 20px; }
+}
