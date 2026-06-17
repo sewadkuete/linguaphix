@@ -195,7 +195,9 @@ window.GRAMMAR_DATA = {
 
 • Quantity with of: a cup of tea, a piece of advice, a bottle of water.
 
-⚠️ a/an/the basics → A1|nom.`,
+⚠️ a/an/the basics → A1|nom.
+
+📚 Sources : Test-English A2 (https://test-english.com/grammar-points/a2/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Countable vs. uncountable (systematic)","Some / any / no","The (unique & shared)","Zero article (meals/languages/sports)","Compound nouns & of-phrases"]
     },
     verb:{
@@ -216,7 +218,9 @@ window.GRAMMAR_DATA = {
   can/could (ability) | must/have to (obligation) | should (advice)
   Could you help me? Would you like some tea?
 
-⚠️ Present simple / continuous / going to → A1|verb.`,
+⚠️ Present simple / continuous / going to → A1|verb.
+
+📚 Sources : Test-English A2 (https://test-english.com/grammar-points/a2/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Past simple (regular & irregular)","Present perfect (intro & for/since)","Used to (past habits)","Modals (can/must/should/have to)","Polite requests (could/would)"]
     },
     adj:{
@@ -237,7 +241,9 @@ window.GRAMMAR_DATA = {
   opinion → size → age → colour → origin → material
   Ex.: a lovely old Italian table — one or two adjectives in speech.
 
-⚠️ Basic position & possessives → A1|adj.`,
+⚠️ Basic position & possessives → A1|adj.
+
+📚 Sources : Test-English A2 (https://test-english.com/grammar-points/a2/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Comparative (-er / more…than)","Superlative (the -est / the most)","As…as / not as…as","Enough / too + adjective","Adjective order (extended)"]
     },
     pron:{
@@ -262,7 +268,9 @@ window.GRAMMAR_DATA = {
   my book (adj.) vs. The book is mine (pronoun).
   ✗ She hurt her → ✓ She hurt herself (reflexive when subject = object).
 
-⚠️ Subject pronouns → A1|pron. Relatives → B1|pron.`,
+⚠️ Subject pronouns → A1|pron. Relatives → B1|pron.
+
+📚 Sources : Test-English A2 (https://test-english.com/grammar-points/a2/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Object pronouns (me/him/her/them)","Possessive pronouns (mine/yours/hers)","Reflexive & emphatic (myself)","Demonstrative pronouns (this/those)","Contrasts adj. vs pronoun"]
     },
     adv:{
@@ -281,7 +289,9 @@ window.GRAMMAR_DATA = {
 • Time adverbs for past narrative:
   last week, two days ago, recently, lately
 
-⚠️ Basic not/don't and frequency adverbs → A1|adv.`,
+⚠️ Basic not/don't and frequency adverbs → A1|adv.
+
+📚 Sources : Test-English A2 (https://test-english.com/grammar-points/a2/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Extended negation (no longer / neither…nor)","Already / yet / still","Adverbs of manner (-ly)","Degree adverbs","Time adverbs (ago / recently)"]
     },
     disc:{
@@ -296,7 +306,9 @@ window.GRAMMAR_DATA = {
 
 • Question tags: You're tired, aren't you? Positive → negative tag.
 
-⚠️ SVO & basic questions → A1|disc.`,
+⚠️ SVO & basic questions → A1|disc.
+
+📚 Sources : Test-English A2 (https://test-english.com/grammar-points/a2/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Sequencing connectors","Logical connectors (because/so/but)","Relative clauses — recognition (→ B1|pron)","Question tags (basic)"]
     },
     num:{
@@ -314,7 +326,9 @@ window.GRAMMAR_DATA = {
 
 • Fractions: one third, a quarter, half, three quarters.
 
-⚠️ Cardinals & some/any → A1|num.`,
+⚠️ Cardinals & some/any → A1|num.
+
+📚 Sources : Test-English A2 (https://test-english.com/grammar-points/a2/) · British Council A1–A2 (https://learnenglish.britishcouncil.org/grammar/a1-a2-grammar).`,
       points:["Ordinal numbers (1st–31st)","Few / a few & little / a little","Many / much / several","Both / either / neither","Common fractions"]
     }
   },
