@@ -879,7 +879,9 @@ window.GRAMMAR_DATA = {
 • Pluralia tantum and singularia tantum (extension A2):
   scissors, trousers (always plural) | information, advice (uncountable, no plural).
 
-⚠️ Eponyms, neologism variation → deep-lib. Countable/uncountable → A2|nom.`,
+⚠️ Eponyms, neologism variation → deep-lib. Countable/uncountable → A2|nom.
+
+📚 Sources : Cambridge British Grammar (https://dictionary.cambridge.org/grammar/british-grammar/) · British Council reference (https://learnenglish.britishcouncil.org/grammar/english-grammar-reference).`,
       points:["Article subtleties (generic the / zero)","Pluralia tantum (scissors/trousers)","Singularia tantum (information/advice)"]
     },
     verb:{
@@ -897,7 +899,9 @@ window.GRAMMAR_DATA = {
   thou art, he doth, if he be, were it not for.
   ⚠️ Recognise in literature; do not use in modern standard prose.
 
-⚠️ Aktionsart, narrative tenses, modals → C1|verb. Past simple/perfect → A2|verb, B1|verb.`,
+⚠️ Aktionsart, narrative tenses, modals → C1|verb. Past simple/perfect → A2|verb, B1|verb.
+
+📚 Sources : Cambridge British Grammar (https://dictionary.cambridge.org/grammar/british-grammar/) · British Council reference (https://learnenglish.britishcouncil.org/grammar/english-grammar-reference).`,
       points:["Full tense-aspect-mood mastery","Aspectual nuance (systematic control)","Archaic forms (recognition)"]
     },
     adj:{
@@ -913,7 +917,9 @@ window.GRAMMAR_DATA = {
   drive slow/slowly, speak loud/loudly, go direct/directly.
   slowly/loudly preferred in formal writing.
 
-⚠️ Legal postpositive compounds, good/well → B2|adj, C1|adj.`,
+⚠️ Legal postpositive compounds, good/well → B2|adj, C1|adj.
+
+📚 Sources : Cambridge British Grammar (https://dictionary.cambridge.org/grammar/british-grammar/) · British Council reference (https://learnenglish.britishcouncil.org/grammar/english-grammar-reference).`,
       points:["Compound modifiers (a five-mile walk)","Position & meaning change","Flat adverbs (slow/loud/direct)"]
     },
     pron:{
@@ -931,7 +937,9 @@ window.GRAMMAR_DATA = {
   Bridging : I went to a party. The host was kind. (inferable)
   Split antecedent : John and Mary said they would come.
 
-⚠️ Coreference → C1|pron. Pragmatic implicature → C2|adv (extension).`,
+⚠️ Coreference → C1|pron. Pragmatic implicature → C2|adv (extension).
+
+📚 Sources : Cambridge British Grammar (https://dictionary.cambridge.org/grammar/british-grammar/) · British Council reference (https://learnenglish.britishcouncil.org/grammar/english-grammar-reference).`,
       points:["Deixis (personal/spatial/temporal)","Presupposition & implicature","Impersonal it (4 values)","Bridging & split antecedent"]
     },
     adv:{
@@ -948,7 +956,9 @@ window.GRAMMAR_DATA = {
 • Syntactic figures (extension):
   Hyperbaton, anacoluthon, zeugma — recognition in literary/formal texts.
 
-⚠️ Epistemic adverbs, hedges/boosters → C1|adv. Negative inversion → B2|adv.`,
+⚠️ Epistemic adverbs, hedges/boosters → C1|adv. Negative inversion → B2|adv.
+
+📚 Sources : Cambridge British Grammar (https://dictionary.cambridge.org/grammar/british-grammar/) · British Council reference (https://learnenglish.britishcouncil.org/grammar/english-grammar-reference).`,
       points:["Pragmatic implicature (Grice)","Scope of negation & litotes","Syntactic figures (recognition)"]
     },
     disc:{
@@ -966,7 +976,9 @@ window.GRAMMAR_DATA = {
   Scope of negation: She didn't eat all the cake.
   Attachment of modifiers: The man with the telescope on the hill.
 
-⚠️ Register mapping, cleft systematic → C1|disc. Rhetoric/connectors → B2|disc.`,
+⚠️ Register mapping, cleft systematic → C1|disc. Rhetoric/connectors → B2|disc.
+
+📚 Sources : Cambridge British Grammar (https://dictionary.cambridge.org/grammar/british-grammar/) · British Council reference (https://learnenglish.britishcouncil.org/grammar/english-grammar-reference).`,
       points:["Metalinguistic awareness (complete metalanguage)","Sociolinguistic variation (BrE/AmE/registers)","Syntactic ambiguity & disambiguation"]
     },
     num:{
@@ -982,7 +994,9 @@ window.GRAMMAR_DATA = {
   The number of students has increased. A number of students have complained.
   ⚠️ The number of → singular; a number of → plural.
 
-⚠️ Formal quantifiers, plethora/paucity → C1|num. Fractions → B2|num.`,
+⚠️ Formal quantifiers, plethora/paucity → C1|num. Fractions → B2|num.
+
+📚 Sources : Cambridge British Grammar (https://dictionary.cambridge.org/grammar/british-grammar/) · British Council reference (https://learnenglish.britishcouncil.org/grammar/english-grammar-reference).`,
       points:["Literary quantifiers (myriad/sundry)","Precision in numerical discourse","Complex subject-verb agreement"]
     }
   }
