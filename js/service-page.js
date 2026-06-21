@@ -231,7 +231,7 @@ function renderServicePage(lang) {
     tocItems.push({ id: 'svc-faq', label: t('svcpage.nav.faq') || 'FAQ' });
     tocItems.push({
       href: '../exercices/index.html',
-      label: t('svcpage.nav.precis') || 'Précis grammaire',
+      label: t('svcpage.nav.precis') || 'Précis de grammaire gratuits',
     });
   } else {
     tocItems.push({ id: 'svc-faq', label: t('svcpage.nav.faq') || 'FAQ' });

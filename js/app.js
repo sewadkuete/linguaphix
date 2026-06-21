@@ -223,7 +223,7 @@ const i18n = {
     'services.audience.ind': 'Particuliers',
     'services.audience.biz': 'Entreprises',
     'services.table.details': 'Détail',
-    'services.table.precis': 'Précis grammaire',
+    'services.table.precis': 'Précis de grammaire gratuits',
     'services.table.book': 'Réserver',
     'services.table.quote': 'Devis',
     'services.subsection.lang': '🌐 Langues',
@@ -399,7 +399,7 @@ const i18n = {
     'svcpage.nav.delivery': 'Délais',
     'svcpage.nav.payment': 'Paiement',
     'svcpage.nav.faq': 'FAQ',
-    'svcpage.nav.precis': 'Précis grammaire',
+    'svcpage.nav.precis': 'Précis de grammaire gratuits',
     'svcpage.nav.book': 'Réserver',
     'svcpage.nav.prev': 'Service précédent',
     'svcpage.nav.next': 'Service suivant',
@@ -601,7 +601,7 @@ const i18n = {
     'footer.live': 'Diffusion en direct',
     'footer.policy': 'Politique de confidentialité',
     'footer.sitemap': 'Plan du site',
-    'footer.precis': 'Précis grammaire',
+    'footer.precis': 'Précis de grammaire gratuits',
     'sitemap.page.back': '← Retour au site',
     'sitemap.badge': 'Navigation',
     'sitemap.title': 'Plan du site',
@@ -766,7 +766,7 @@ const i18n = {
     'services.audience.ind': 'Individuals',
     'services.audience.biz': 'Businesses',
     'services.table.details': 'Details',
-    'services.table.precis': 'Grammar notes',
+    'services.table.precis': 'Free grammar notes',
     'services.table.book': 'Book',
     'services.table.quote': 'Quote',
     'services.subsection.lang': '🌐 Languages',
@@ -942,7 +942,7 @@ const i18n = {
     'svcpage.nav.delivery': 'Timelines',
     'svcpage.nav.payment': 'Payment',
     'svcpage.nav.faq': 'FAQ',
-    'svcpage.nav.precis': 'Grammar notes',
+    'svcpage.nav.precis': 'Free grammar notes',
     'svcpage.nav.book': 'Book now',
     'svcpage.nav.prev': 'Previous service',
     'svcpage.nav.next': 'Next service',
@@ -1144,7 +1144,7 @@ const i18n = {
     'footer.live': 'Live streaming',
     'footer.policy': 'Privacy policy',
     'footer.sitemap': 'Sitemap',
-    'footer.precis': 'Grammar notes',
+    'footer.precis': 'Free grammar notes',
     'sitemap.page.back': '← Back to site',
     'sitemap.badge': 'Navigation',
     'sitemap.title': 'Sitemap',
@@ -1527,7 +1527,7 @@ function injectFooterPrecisLink(lang) {
   const resolved = lang || (typeof currentLang !== 'undefined' ? currentLang : 'fr');
   const label =
     (typeof i18n !== 'undefined' && (i18n[resolved]?.['footer.precis'] || i18n.fr?.['footer.precis'])) ||
-    'Précis grammaire';
+    'Précis de grammaire gratuits';
   const href = precisGrammaireHref();
 
   const coursItem = document.querySelector('footer a[data-i18n="footer.cours"]');
