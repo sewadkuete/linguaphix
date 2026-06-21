@@ -491,7 +491,7 @@ const EXEN={
 {t:"x",l:["opinion","size","age","colour"],r:["beautiful","big","old","red"]},
 {t:"x",l:["a red car","some big dogs","an house old","the young students"],r:["adj before noun ✓","adj before noun ✓","wrong","adj before noun ✓"]},
 {t:"x",l:["English adjective","French adjective (most)","Spanish adjective (most)","Italian adjective (most)"],r:["before noun","after noun","after noun","after noun"]},
-{t:"x",l:["correct","correct","correct","WRONG"],r:["a big black dog","some cold water","an old red car","a car red big"]},
+{t:"x",l:["correct","correct","correct","wrong"],r:["a big black dog","some cold water","an old red car","a car red big"]},
 {t:"c",q:"Where do adjectives go in English?",a:"Before the noun — always, 'the tall woman', 'some interesting books'."},
 {t:"c",q:"Do English adjectives change for plural?",a:"No — 'a big dog' / 'two big dogs'. Adjective stays the same."},
 {t:"c",q:"Do English adjectives change for gender?",a:"No — 'a tall man' / 'a tall woman'. Same form for all genders."},
