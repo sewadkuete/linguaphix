@@ -575,7 +575,7 @@ const EXEN={
 {t:"x",l:["I","you","he","she"],r:["my","your","his","her"]},
 {t:"x",l:["it","we","they","one (formal)"],r:["its","our","their","one's"]},
 {t:"x",l:["my car","her house","his phone","their dog"],r:["I own it","she owns it","he owns it","they own it"]},
-{t:"x",l:["its (possessive adj)","it is","their (possessive adj)","they are"],r:["The dog hurt its paw.","It's raining.","Their car is red.","They're tired."]},
+{t:"x",l:["its(possessive adj)","it is","their(possessive adj)","they are"],r:["The dog hurt its paw.","It's raining.","Their car is red.","They're tired."]},
 {t:"c",q:"Possessive adjectives: give all six forms.",a:"my · your · his · her · its · our · their"},
 {t:"c",q:"'His' refers to the owner's gender, not the noun's — true or false?",a:"True: 'He loves his mother.' 'his' = the man's mother. (In French: 'sa mère' would change with the word 'mère'.)"},
 {t:"c",q:"'Marie and his friend' — error?",a:"If Marie is female: 'Marie and her friend.' Possessive agrees with the owner (Marie = she)."},
