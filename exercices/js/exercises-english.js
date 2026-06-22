@@ -505,7 +505,7 @@ const EXEN={
 {t:"c",q:"Adjective AFTER 'be'?",a:"Yes — predicative position: 'The car is red.' This is also correct."}
 ]},
 "Adjectives are invariable (no plural -s)":{ex:[
-{t:"f",q:"a / two ___ man/men",a:"tall"},
+{t:"f",q:"a / two ___ man/men -'height'-",a:"tall"},
 {t:"f",q:"a / three ___ child/ren -mood-",a:"happy"},
 {t:"f",q:"a / four brand new ___ car/s -appearance-",a:"red"},
 {t:"f",q:"an / two ___ shoe/s -cost-",a:"expensive"},
@@ -518,7 +518,7 @@ const EXEN={
 {t:"f",q:"We saw ___ elephants. -size- (big)",a:"big"},
 {t:"f",q:"She wears too much ___ clothes. -cost-(expensive)",a:"expensive"},
 {t:"f",q:"The ___ students passed. -intelligent- (clever)",a:"clever"},
-{t:"f",q:"Two ___ dogs ran past. (large)",a:"large"},
+{t:"f",q:"Two ___ dogs ran past. -size- (large)",a:"large"},
 {t:"f",q:"Many old___ attended. (old)",a:"people"},
 {t:"m",q:"'Two ___ cars.'",o:["red","reds","reded","reding"],a:0},
 {t:"m",q:"'The ___ students.' (plural)",o:["happy","happies","happys","happied"],a:0},
