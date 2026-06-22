@@ -507,7 +507,7 @@ const EXEN={
 "Adjectives are invariable (no plural -s)":{ex:[
 {t:"f",q:"a / two ___ man/men -'height'-",a:"tall"},
 {t:"f",q:"a / three ___ child/ren -mood-",a:"happy"},
-{t:"f",q:"a / four brand new ___ car/s -appearance-",a:"red"},
+{t:"f",q:"a / four brand ___ car/s",a:"new"},
 {t:"f",q:"an / two ___ shoe/s -cost-",a:"expensive"},
 {t:"f",q:"a / many ___ woman/women -attractive-",a:"beautiful"},
 {t:"f",q:"a / ten ___ question/s",a:"difficult"},
