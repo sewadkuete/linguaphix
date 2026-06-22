@@ -583,7 +583,7 @@ const EXEN={
 {t:"c",q:"What's the difference between 'its' and 'their'?",a:"'its' = one thing (singular: the company, the dog). 'their' = multiple owners (they)."},
 {t:"c",q:"'The company changed ___ policy.' — which possessive?",a:"its — 'The company' is a single entity (it)."},
 {t:"c",q:"'Votre / ton' in French = what in English?",a:"Both = 'your'. English has only one form for singular and plural 'you'."},
-{t:"c",q:"'Her brother' — does 'her' change if 'brother' is masculine?",a:"No — 'her' is determined by the owner (she), not the noun."},
+{t:"c",q:"'Her brother' — does 'her' change because 'brother' is masculine?",a:"No — 'her' is determined by the owner (she), not the noun."},
 {t:"c",q:"Possessive adjective before a vowel sound — any change?",a:"No change: 'my apple', 'our uncle', 'her eyes'. Unlike French (mon/ton/son before feminine vowel noun)."},
 {t:"c",q:"'Their' vs 'there' vs 'they're'?",a:"their = possessive adj (their car) · there = place (over there) · they're = they are (they're tired)."},
 {t:"c",q:"'One's' — when do you use it?",a:"Formal English with generic 'one': 'One should always do one's best.'"}
