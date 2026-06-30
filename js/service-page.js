@@ -120,6 +120,62 @@ function renderServicePageNav(lang) {
   if (nav.children.length) document.body.appendChild(nav);
 }
 
+// Tailored WhatsApp invite per service (link is appended automatically by the share modal).
+const SERVICE_SHARE_WA = {
+  tcf: {
+    fr: 'Tu prépares le TCF ? LINGUAPHIX propose une préparation avec examinateur certifié (CO, CE, EE, EO). Découvre :',
+    en: 'Preparing for the TCF? LINGUAPHIX offers prep with a certified examiner (listening, reading, writing, speaking). Take a look:',
+  },
+  ielts: {
+    fr: 'Objectif IELTS, TOEFL ou Cambridge ? Coaching score cible et simulations chez LINGUAPHIX. Découvre :',
+    en: 'Aiming for IELTS, TOEFL or Cambridge? Target-score coaching and mock tests at LINGUAPHIX. Take a look:',
+  },
+  toeic: {
+    fr: 'Besoin d\'un bon score au TOEIC ? Préparation L&R et S&W avec stratégies ciblées chez LINGUAPHIX. Découvre :',
+    en: 'Need a strong TOEIC score? L&R and S&W prep with targeted strategies at LINGUAPHIX. Take a look:',
+  },
+  cours: {
+    fr: 'Envie d\'apprendre le français ou l\'anglais ? Cours en ligne ou à Lomé avec LINGUAPHIX. Découvre :',
+    en: 'Want to learn French or English? Online or in-person courses in Lomé with LINGUAPHIX. Take a look:',
+  },
+  interview: {
+    fr: 'Un entretien d\'embauche en anglais à préparer ? Coaching d\'interview sur mesure chez LINGUAPHIX. Découvre :',
+    en: 'Got an English job interview coming up? Tailored interview coaching at LINGUAPHIX. Take a look:',
+  },
+  soutien: {
+    fr: 'Du soutien scolaire en français ou en anglais ? LINGUAPHIX accompagne les élèves. Découvre :',
+    en: 'Looking for French or English school tutoring? LINGUAPHIX supports learners. Take a look:',
+  },
+  traduction: {
+    fr: 'Besoin d\'une traduction professionnelle FR-EN, fiable et certifiée ? LINGUAPHIX s\'en charge. Découvre :',
+    en: 'Need reliable, certified FR-EN professional translation? LINGUAPHIX has you covered. Take a look:',
+  },
+  formation: {
+    fr: 'Former vos équipes en langues ? LINGUAPHIX propose des formations linguistiques en entreprise. Découvre :',
+    en: 'Training your team in languages? LINGUAPHIX offers corporate language training. Take a look:',
+  },
+  logo: {
+    fr: 'Un logo qui marque les esprits ? Création et animation de logo chez LINGUAPHIX. Découvre :',
+    en: 'Want a logo that stands out? Logo design and animation at LINGUAPHIX. Take a look:',
+  },
+  montage: {
+    fr: 'Des vidéos au rendu pro ? Montage vidéo professionnel chez LINGUAPHIX. Découvre :',
+    en: 'Want pro-quality videos? Professional video editing at LINGUAPHIX. Take a look:',
+  },
+  graphic: {
+    fr: 'Un visuel qui sort du lot ? Design graphique sur mesure chez LINGUAPHIX. Découvre :',
+    en: 'Need standout visuals? Custom graphic design at LINGUAPHIX. Take a look:',
+  },
+  livestream: {
+    fr: 'Un live fluide et professionnel ? Production de diffusion en direct chez LINGUAPHIX. Découvre :',
+    en: 'Want a smooth, professional livestream? Live streaming production at LINGUAPHIX. Take a look:',
+  },
+  materiel: {
+    fr: 'Quel matériel choisir ? Conseil et achat d\'équipement avec LINGUAPHIX. Découvre :',
+    en: 'Not sure which gear to buy? Equipment consulting and purchase with LINGUAPHIX. Take a look:',
+  },
+};
+
 function renderServicePage(lang) {
   const slug = document.body.dataset.serviceSlug;
   const meta = window.SERVICE_PAGES?.[slug];
@@ -177,6 +233,12 @@ function renderServicePage(lang) {
       meta.audienceOverrides?.[traductionAudience]?.fr);
   const pageTitle = audienceOverride?.title || data.title;
   const pageIntro = audienceOverride?.intro || data.intro;
+
+  const shareUrl = 'https://www.linguaphix.com/services/' + slug + '.html'
+    + (slug === 'traduction' && traductionAudience ? '?audience=' + encodeURIComponent(traductionAudience) : '');
+  const shareWaMap = SERVICE_SHARE_WA[slug] || {};
+  const shareWa = shareWaMap[lang] || shareWaMap.fr || '';
+  window.__svcShare = { url: shareUrl, waText: shareWa };
 
   const modalitiesHtml = data.modalities.map((m) => `<li>${esc(m)}</li>`).join('');
   const processHtml = data.process
@@ -290,6 +352,12 @@ function renderServicePage(lang) {
           <span class="service-page-icon" aria-hidden="true">${meta.icon || '✦'}</span>
           <span class="badge">${esc(data.badge || '')}</span>
           <h1>${esc(pageTitle)}</h1>
+          <div class="service-page-share">
+            <button type="button" class="btn btn-outline btn-sm service-share-btn" onclick="openShareServiceModal(event)">
+              <span class="service-share-btn__icon" aria-hidden="true">↗</span>
+              <span>${esc(t('share.service.cta') || (lang === 'en' ? 'Share this service' : 'Partager ce service'))}</span>
+            </button>
+          </div>
           <p class="service-page-intro">${esc(pageIntro)}</p>
         </header>
         <nav class="service-page-toc fade-up" aria-label="${esc(t('svcpage.nav.label') || 'On this page')}">

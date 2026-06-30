@@ -3308,6 +3308,40 @@ body > footer {
 .modal-box--service-pick {
   max-width: 640px;
 }
+.modal-box--share {
+  max-width: 480px;
+}
+.share-modal__lead {
+  margin: 0 0 1.25rem;
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  line-height: var(--leading-relaxed);
+}
+.share-link-row {
+  display: flex;
+  gap: 0.5rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.share-link-input {
+  flex: 1 1 220px;
+  min-width: 0;
+  padding: 0.55rem 0.75rem;
+  font-size: var(--text-sm);
+  color: var(--gray-600);
+  background: var(--off-white);
+  border: 1.5px solid var(--gray-200);
+  border-radius: var(--radius-md);
+}
+.share-link-row .share-copy-btn {
+  flex: 0 0 auto;
+}
+.share-copy-btn.is-copied {
+  color: var(--white);
+  background: var(--green);
+  border-color: var(--green);
+}
 .service-book-modal__lead {
   margin: 0 0 1.25rem;
   font-size: var(--text-sm);
@@ -3750,6 +3784,18 @@ body:has(.wa-float) > footer {
   font-size: var(--text-4xl);
   margin: 0.5rem 0 1rem;
   line-height: 1.15;
+}
+.service-page-share {
+  margin: 0 0 1.25rem;
+}
+.service-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.service-share-btn__icon {
+  font-size: 1.05em;
+  line-height: 1;
 }
 .service-page-intro {
   font-size: var(--text-lg);

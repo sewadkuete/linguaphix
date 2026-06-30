@@ -304,6 +304,14 @@ const i18n = {
     'testi.empty': 'Aucun témoignage publié pour le moment. Soyez le premier à partager votre expérience.',
     'testi.cta.share': 'Partagez votre expérience',
     'testi.cta.google': 'Laisser un avis Google',
+    'testi.cta.sharepage': 'Partager cette page',
+    'share.title': 'Partager cette page',
+    'share.lead': 'Copiez le lien ci-dessous ou partagez-le directement.',
+    'share.copy': 'Copier le lien',
+    'share.copied': 'Lien copié !',
+    'share.service.title': 'Partager ce service',
+    'share.service.cta': 'Partager ce service',
+    'share.page.wa': "Découvrez LINGUAPHIX — cours d'anglais et de français, préparation TCF / IELTS / TOEFL et traduction certifiée à Lomé :",
     'addtesti.badge': 'Votre avis compte',
     'addtesti.title': 'Partagez votre expérience',
     'addtesti.actions.lead': 'Un avis éclairé relie des besoins concrets à une expertise linguistique et en design de confiance. Quelques instants de votre part font la différence — merci.',
@@ -847,6 +855,14 @@ const i18n = {
     'testi.empty': 'No published reviews yet. Be the first to share your experience.',
     'testi.cta.share': 'Share your experience',
     'testi.cta.google': 'Leave a Google review',
+    'testi.cta.sharepage': 'Share this page',
+    'share.title': 'Share this page',
+    'share.lead': 'Copy the link below or share it directly.',
+    'share.copy': 'Copy link',
+    'share.copied': 'Link copied!',
+    'share.service.title': 'Share this service',
+    'share.service.cta': 'Share this service',
+    'share.page.wa': 'Discover LINGUAPHIX — English & French courses, TCF / IELTS / TOEFL prep and certified translation in Lomé:',
     'addtesti.badge': 'Your voice matters',
     'addtesti.title': 'Share your experience',
     'addtesti.actions.lead': 'An informed review connects real needs with trusted linguistic/design expertise. A moment of your time makes a difference — thank you.',
@@ -2263,6 +2279,110 @@ function closeQuoteModal() {
   if (!isAnyModalOpen()) unlockBodyScroll();
 }
 
+// ── SHARE MODAL (generic — used by "share this page" and "share this service") ──
+function ensureShareModal() {
+  if (document.getElementById('shareModal')) return;
+  const wrap = document.createElement('div');
+  wrap.innerHTML = `
+<div class="modal-overlay" id="shareModal" role="dialog" aria-modal="true" aria-labelledby="shareModalTitle" onclick="if(event.target===this)closeShareModal()">
+  <div class="modal-box modal-box--share" style="position:relative;">
+    <button type="button" class="modal-close-btn" onclick="closeShareModal()" data-i18n-aria="aria.close" aria-label="Fermer">✕</button>
+    <h3 id="shareModalTitle" data-i18n="share.title">Partager cette page</h3>
+    <p class="share-modal__lead" data-i18n="share.lead">Copiez le lien ci-dessous ou partagez-le directement.</p>
+    <div class="share-link-row">
+      <input type="text" id="shareLinkInput" class="share-link-input" readonly aria-label="Lien" onfocus="this.select()">
+      <button type="button" class="btn btn-outline btn-sm share-copy-btn" id="shareCopyBtn" onclick="copyShareLink()" data-i18n="share.copy">Copier le lien</button>
+    </div>
+    <div class="modal-actions">
+      <a id="shareWhatsApp" class="btn btn-primary" href="#" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a id="shareLinkedIn" class="btn btn-outline" href="#" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+  </div>
+</div>`;
+  const modal = wrap.firstElementChild;
+  if (modal) document.body.appendChild(modal);
+}
+
+function resetShareCopyBtn() {
+  const btn = document.getElementById('shareCopyBtn');
+  if (!btn) return;
+  btn.classList.remove('is-copied');
+  const txt = i18n[currentLang] && i18n[currentLang]['share.copy'];
+  if (txt) btn.textContent = txt;
+}
+
+function copyShareLink() {
+  const input = document.getElementById('shareLinkInput');
+  const btn = document.getElementById('shareCopyBtn');
+  if (!input) return;
+  const url = input.value;
+  const feedback = () => {
+    if (!btn) return;
+    btn.classList.add('is-copied');
+    const txt = (i18n[currentLang] && i18n[currentLang]['share.copied']) || 'Link copied!';
+    btn.textContent = txt;
+    setTimeout(resetShareCopyBtn, 2000);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(feedback).catch(() => {
+      try { input.select(); document.execCommand('copy'); feedback(); } catch (e) {}
+    });
+  } else {
+    try { input.select(); document.execCommand('copy'); feedback(); } catch (e) {}
+  }
+}
+
+function openShareModal(opts) {
+  opts = opts || {};
+  const url = opts.url || 'https://www.linguaphix.com/';
+  const waText = opts.waText || '';
+  ensureShareModal();
+  const h3 = document.getElementById('shareModalTitle');
+  if (h3) h3.setAttribute('data-i18n', opts.titleKey || 'share.title');
+  const lead = document.querySelector('#shareModal .share-modal__lead');
+  if (lead) lead.setAttribute('data-i18n', opts.leadKey || 'share.lead');
+  const input = document.getElementById('shareLinkInput');
+  if (input) input.value = url;
+  const wa = document.getElementById('shareWhatsApp');
+  if (wa) wa.href = 'https://wa.me/?text=' + encodeURIComponent((waText ? waText + '\n' : '') + url);
+  const li = document.getElementById('shareLinkedIn');
+  if (li) {
+    if (opts.showLinkedIn === false) {
+      li.style.display = 'none';
+    } else {
+      li.style.display = '';
+      li.href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+    }
+  }
+  if (typeof applyLang === 'function') applyLang(currentLang);
+  resetShareCopyBtn();
+  lockBodyScroll();
+  document.getElementById('shareModal')?.classList.add('open');
+}
+
+function closeShareModal() {
+  document.getElementById('shareModal')?.classList.remove('open');
+  if (!isAnyModalOpen()) unlockBodyScroll();
+}
+
+function openSharePageModal(e) {
+  if (e) e.preventDefault();
+  const waText = (i18n[currentLang] && i18n[currentLang]['share.page.wa']) || '';
+  openShareModal({ url: 'https://www.linguaphix.com/', waText, titleKey: 'share.title' });
+}
+
+// Service share — Copy + WhatsApp only (no LinkedIn). Details set by service-page.js.
+function openShareServiceModal(e) {
+  if (e) e.preventDefault();
+  const s = window.__svcShare || {};
+  openShareModal({
+    url: s.url || window.location.href,
+    waText: s.waText || '',
+    titleKey: 'share.service.title',
+    showLinkedIn: false,
+  });
+}
+
 function getContactPageUrl(lang) {
   const path = (window.location.pathname || '').replace(/\\/g, '/');
   const base = /\/services\//.test(path) ? '../index.html#contact' : 'index.html#contact';
@@ -2336,7 +2456,8 @@ function initModals() {
   });
   document.addEventListener('keydown', (e) => {
     if (e.key !== 'Escape') return;
-    if (document.getElementById('serviceBookModal')?.classList.contains('open')) closeServiceBookModal();
+    if (document.getElementById('shareModal')?.classList.contains('open')) closeShareModal();
+    else if (document.getElementById('serviceBookModal')?.classList.contains('open')) closeServiceBookModal();
     else if (document.getElementById('quoteModal')?.classList.contains('open')) closeQuoteModal();
     else if (document.getElementById('policyModal')?.classList.contains('open')) closePolicy();
   });
