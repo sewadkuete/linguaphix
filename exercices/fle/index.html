@@ -3640,8 +3640,7 @@ function launchEx(encoded){
   const questions=[...fills,...mcqs,...mats,...flas];
   const play=questions.map(q=>{
     if(q.t==="f"){
-      const {opts,correctIdx}=buildOptions(q.a,[fillAns,mcqPool,GLOBAL_FILL||[]]);
-      return {t:"f",text:stripHints(q.q),opts,correctIdx};
+      return {t:"f",text:stripHints(q.q),answer:q.a};
     }else if(q.t==="m"){
       const pairs=shuffle(q.o.map((o,i)=>({o,i})));
       return {t:"m",text:q.q,opts:pairs.map(p=>p.o),correctIdx:pairs.findIndex(p=>p.i===q.a)};
@@ -3676,7 +3675,8 @@ function renderQ(){
   const pct=Math.round((answeredCount/total)*100);
 
   let qHtml="";
-  if(p.t==="f"||p.t==="m") qHtml=renderChoice(p,ans);
+  if(p.t==="f") qHtml=renderFill(p,ans);
+  else if(p.t==="m") qHtml=renderChoice(p,ans);
   else if(p.t==="x") qHtml=renderMatch(p.q,ans);
   else if(p.t==="c") qHtml=renderFlash(p,ans);
 
@@ -3725,6 +3725,35 @@ function answerChoice(i){
   if(exState.answers[exState.current]!==null) return;
   const p=exState.play[exState.current];
   exState.answers[exState.current]={choice:i,correct:i===p.correctIdx};
+  renderQ();
+}
+
+function renderFill(p,ans){
+  const answered=ans!==null;
+  const text=p.text.replace(/___/,`<span class="blank">___</span>`);
+  const lead=`<div class="q-lead">Tapez le mot ou groupe de mots qui complète, puis vérifiez · Type the answer that fits, then check :</div>`;
+  if(!answered){
+    return `<div class="q-mcq"><p class="q-text">${text}</p>${lead}`
+      +`<input type="text" id="fill-in" class="fill-input" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter'){event.preventDefault();answerFill();}">`
+      +`<button class="mcq-opt block" onclick="answerFill()">Vérifier · Check answer</button><div id="q-fb"></div></div>`;
+  }
+  const safe=String(ans.typed||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/"/g,"&quot;");
+  const fb=ans.correct
+    ?`<div class="fb-correct">✓ Correct !</div>`
+    :`<div class="fb-wrong">✗ Incorrect — bonne réponse · correct answer : <strong>${p.answer}</strong></div>`;
+  return `<div class="q-mcq"><p class="q-text">${text}</p>${lead}<input type="text" class="fill-input" value="${safe}" disabled><div id="q-fb">${fb}</div></div>`;
+}
+
+function normFill(s){return String(s).toLowerCase().trim().replace(/\s+/g," ").replace(/[’‘`]/g,"'").replace(/[.!?]+$/,"");}
+function answerFill(){
+  if(exState.answers[exState.current]!==null) return;
+  const p=exState.play[exState.current];
+  const el=document.getElementById("fill-in");
+  const raw=el?el.value:"";
+  if(raw.trim()==="") return;
+  const typed=normFill(raw);
+  const variants=String(p.answer).split("/").map(normFill).filter(Boolean);
+  exState.answers[exState.current]={typed:raw.trim(),correct:variants.includes(typed)};
   renderQ();
 }
 
@@ -3843,10 +3872,13 @@ function showReview(){
     const ok=!!(a&&a.correct);
     const p=play[i];
     let txt="";
-    if(p.t==="f"||p.t==="m"){
+    if(p.t==="f"){
+      const yours=a&&a.typed!=null?a.typed:"(non répondu · not answered)";
+      const qt=p.text.replace(/___/,"____");
+      txt=`${qt} — vous · you : <strong>${yours}</strong>${ok?"":` · correct : <strong>${p.answer}</strong>`}`;
+    }else if(p.t==="m"){
       const yours=a&&a.choice!=null?p.opts[a.choice]:"(non répondu · not answered)";
-      const qt=p.t==="f"?p.text.replace(/___/,"____"):p.text;
-      txt=`${qt} — vous · you : <strong>${yours}</strong>${ok?"":` · correct : <strong>${p.opts[p.correctIdx]}</strong>`}`;
+      txt=`${p.text} — vous · you : <strong>${yours}</strong>${ok?"":` · correct : <strong>${p.opts[p.correctIdx]}</strong>`}`;
     }else if(p.t==="x"){
       txt=`Association · Matching : ${q.l.map((l,j)=>l+" → "+q.r[j]).join(" | ")}`;
     }else if(p.t==="c"){
@@ -3877,12 +3909,9 @@ function closeExDone(){
 
 renderTabs();
 renderLevel();
-</script>
-
-<script src="../js/grammar-scroll.js"></script>
-<script>
-selectLevel = GrammarScroll.wrapSelectLevel(selectLevel);
-GrammarScroll.finishInit();
+/* Au rafraîchissement : garder le niveau mais revenir en haut de page. */
+if ('scrollRestoration' in history) { try { history.scrollRestoration = 'manual'; } catch(e){} }
+window.addEventListener('load', function(){ window.scrollTo(0, 0); });
 </script>
 
 <!-- ===== end widget ===== -->
