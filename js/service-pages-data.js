@@ -347,7 +347,7 @@ window.SERVICE_PAGES = {
       badge: 'Cours sur mesure',
       title: 'Cours de Français / Anglais',
       seoTitle: 'Cours de français et d\'anglais en ligne | Lomé — LINGUAPHIX',
-      intro: 'Cours personnalisés du niveau A1 au C2, en ligne ou en présentiel. Objectifs professionnels, académiques ou quotidiens avec progression suivie.',
+      intro: 'Cours de français et d\'anglais personnalisés du niveau A1 au C2, en ligne ou en présentiel à Lomé. Objectifs professionnels, académiques ou quotidiens avec progression suivie.',
       metaDescription: 'Cours de français et cours d\'anglais en ligne et à Lomé : A1–C2, horaires flexibles, en ligne ou présentiel. LINGUAPHIX.',
       packages: [
         {
@@ -403,9 +403,9 @@ window.SERVICE_PAGES = {
     en: {
       badge: 'Tailored lessons',
       title: 'French / English Courses',
-      seoTitle: 'French & English courses online | Lomé — LINGUAPHIX',
-      intro: 'Personalized lessons from A1 to C2, online or in person. Professional, academic, or everyday goals with tracked progress.',
-      metaDescription: 'French and English courses online and in Lomé: A1–C2, flexible hours, online or in person. LINGUAPHIX.',
+      seoTitle: 'English & French classes online | Lomé — LINGUAPHIX',
+      intro: 'Personalized English and French classes from A1 to C2, online or in person in Lomé. Professional, academic, or everyday goals with tracked progress.',
+      metaDescription: 'English and French classes & courses online and in Lomé: A1–C2, flexible hours, online or in person. LINGUAPHIX.',
       packages: [
         {
           name: 'Starter',

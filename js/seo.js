@@ -112,7 +112,7 @@
       description,
       url: localizedPageUrl(lang),
       provider,
-      areaServed: { '@type': 'Country', name: 'Togo' },
+      areaServed: [{ '@type': 'City', name: 'Lomé' }, { '@type': 'Country', name: 'Togo' }],
     };
     if (schemaType === 'Course') {
       pageSchema.inLanguage = lang === 'en' ? 'en' : 'fr';
@@ -159,12 +159,13 @@
             ? 'Online French and English courses, TCF, IELTS, TOEFL preparation, and FR-EN translation in Lomé, Togo.'
             : 'Cours de français et d\'anglais en ligne, préparation TCF, IELTS, TOEFL et traduction FR-EN à Lomé, Togo.',
           email: 'contact@linguaphix.com',
-          areaServed: { '@type': 'Country', name: 'Togo' },
+          areaServed: [{ '@type': 'City', name: 'Lomé' }, { '@type': 'Country', name: 'Togo' }],
+          address: { '@type': 'PostalAddress', addressLocality: 'Lomé', addressCountry: 'TG' },
           founder: { '@type': 'Person', name: 'Akuété SEWA-DOVI' },
           sameAs: ['https://www.linkedin.com/in/akuetesd'],
           knowsAbout: isEn
-            ? ['TCF preparation', 'IELTS preparation', 'TOEFL preparation', 'French courses', 'English courses', 'online language courses', 'translation']
-            : ['préparation TCF', 'préparation IELTS', 'préparation TOEFL', 'cours de français', 'cours d\'anglais', 'cours en ligne', 'traduction'],
+            ? ['TCF preparation', 'IELTS preparation', 'TOEFL preparation', 'TOEIC preparation', 'English classes', 'French classes', 'English classes in Lomé', 'French classes in Lomé', 'online language courses', 'translation']
+            : ['préparation TCF', 'préparation IELTS', 'préparation TOEFL', 'préparation TOEIC', 'cours d\'anglais', 'cours de français', 'cours d\'anglais à Lomé', 'cours de français à Lomé', 'cours en ligne', 'traduction'],
         },
         {
           '@type': 'WebSite',
