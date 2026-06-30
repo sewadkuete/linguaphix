@@ -3598,6 +3598,17 @@ body:has(.wa-float) > footer {
     grid-template-columns: 1fr 1fr;
     max-width: 100%;
   }
+  /* Row is now stacked full-width: float the precis button into the flow
+     instead of leaving it absolutely positioned off-screen to the left. */
+  .services-table__actions--cours .services-table__btn-precis {
+    position: static;
+    transform: none;
+    width: 100%;
+    height: auto;
+    min-height: 2.25rem;
+    margin: 0 0 0.5rem;
+    font-size: 0.68rem;
+  }
   .services-table__price {
     justify-content: flex-start;
   }
@@ -3680,13 +3691,6 @@ body:has(.wa-float) > footer {
   .services-table__actions-inner {
     grid-template-columns: 1fr;
     gap: 0.5rem;
-  }
-  .services-table__actions--cours .services-table__btn-precis {
-    position: static;
-    transform: none;
-    width: 100%;
-    margin: 0 0 0.5rem;
-    font-size: 0.68rem;
   }
   .services-table__actions .btn {
     height: auto;
