@@ -63,6 +63,14 @@
     .card h2 { margin: 0 0 8px; font-size: 20px; }
     .card p { margin: 0; color: var(--muted); font-size: 14.5px; }
     .footer { margin-top: 36px; text-align: center; color: var(--muted); font-size: 13px; }
+    .lpf { margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(124, 58, 237, .12); }
+    .lpf__inner { text-align: center; font-size: 13px; line-height: 1.7; }
+    .lpf__tagline { margin: 0 0 10px; color: var(--muted); font-weight: 600; letter-spacing: .01em; }
+    .lpf__copy { margin: 0 0 8px; color: var(--muted); }
+    .lpf__copy a { color: inherit; text-decoration: underline; }
+    .lpf__links { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: center; }
+    .lpf__links a { color: var(--accent); text-decoration: none; }
+    .lpf__links a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
@@ -84,7 +92,18 @@
         <p data-i18n="eslDesc">English grammar map: teaching sequences, examples and common pitfalls from A1 to C2.</p>
       </a>
     </div>
-    <footer class="footer"><p data-i18n="footer">LINGUAPHIX · Grammaire FLE &amp; ESL · A1–C2</p></footer>
+    <footer class="lpf">
+      <div class="lpf__inner">
+        <p class="lpf__tagline" data-i18n="footer">LINGUAPHIX · Grammaire FLE &amp; ESL · A1–C2</p>
+        <p class="lpf__copy" data-i18n="footerCopy">© 2026 LINGUAPHIX · Développé par <a href="../about.html">Akuété SEWA-DOVI</a> · Tous droits réservés</p>
+        <nav class="lpf__links" aria-label="Footer">
+          <a href="../index.html" data-i18n="footerHome">Accueil</a>
+          <a href="../policy.html" data-i18n="footerPolicy">Politique de confidentialité</a>
+          <a href="mailto:contact@linguaphix.com">contact@linguaphix.com</a>
+          <a href="../site-index.html" data-i18n="footerSitemap">Plan du site</a>
+        </nav>
+      </div>
+    </footer>
   </div>
   <script>
   (function () {
@@ -100,7 +119,11 @@
         fleDesc: "Carte grammaticale complète : séquences pédagogiques, exemples et pièges par niveau CECR.",
         eslTitle: "Anglais langue seconde",
         eslDesc: "Carte grammaticale de l'anglais : séquences pédagogiques, exemples et pièges du A1 au C2.",
-        footer: "LINGUAPHIX · Grammaire FLE & ESL · A1–C2"
+        footer: "LINGUAPHIX · Grammaire FLE & ESL · A1–C2",
+        footerCopy: '© 2026 LINGUAPHIX · Développé par <a href="../about.html">Akuété SEWA-DOVI</a> · Tous droits réservés',
+        footerHome: "Accueil",
+        footerPolicy: "Politique de confidentialité",
+        footerSitemap: "Plan du site"
       },
       en: {
         htmlLang: "en",
@@ -113,7 +136,11 @@
         fleDesc: "Full French grammar map: teaching sequences, examples and pitfalls by CEFR level.",
         eslTitle: "English as a Second Language",
         eslDesc: "English grammar map: teaching sequences, examples and common pitfalls from A1 to C2.",
-        footer: "LINGUAPHIX · FLE & ESL Grammar · A1–C2"
+        footer: "LINGUAPHIX · FLE & ESL Grammar · A1–C2",
+        footerCopy: '© 2026 LINGUAPHIX · Developed by <a href="../about.html">Akuété SEWA-DOVI</a> · All rights reserved',
+        footerHome: "Home",
+        footerPolicy: "Privacy policy",
+        footerSitemap: "Sitemap"
       }
     };
     function resolveLang() {
