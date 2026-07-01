@@ -25,7 +25,7 @@ const CACHE_META = [
 const BUILD_META_TAG = `<meta name="lx-build" content="${version}">`;
 
 const BUILD_CHECK_SCRIPT = `<script data-lx-build-check="1">
-(function(){var M="lx-build",R="lx-build-reload",m=document.querySelector('meta[name="'+M+'"]'),pageBuild=m&&m.getAttribute("content");if(!pageBuild)return;var p=(location.pathname||"").replace(/\\\\/g,"/"),jsBase=/\\/services\\//.test(p)?"../js/":"js/";function go(b){var now=Date.now();try{var last=parseInt(sessionStorage.getItem(R)||"0",10);if(last&&now-last<8000)return;sessionStorage.setItem(R,String(now))}catch(e){}var u=new URL(location.href);u.searchParams.set("build",b);u.searchParams.delete("_");location.replace(u.pathname+u.search+u.hash)}fetch(jsBase+"build-version.json?_="+Date.now(),{cache:"no-store",credentials:"same-origin"}).then(function(r){return r.ok?r.json():null}).then(function(d){if(!d||!d.build||d.build===pageBuild)return;var done=function(){go(d.build)};if("caches"in window){caches.keys().then(function(k){return Promise.all(k.map(function(x){return caches.delete(x)}))}).finally(done)}else{done()}}).catch(function(){})})();
+(function(){var M="lx-build",R="lx-build-reload",m=document.querySelector('meta[name="'+M+'"]'),pageBuild=m&&m.getAttribute("content");if(!pageBuild)return;var p=(location.pathname||"").replace(/\\\\/g,"/"),segs=p.replace(/^\\/+/,"").split("/"),depth=segs.length-1,jsBase=depth>0?new Array(depth+1).join("../")+"js/":"js/";function go(b){var now=Date.now();try{var last=parseInt(sessionStorage.getItem(R)||"0",10);if(last&&now-last<8000)return;sessionStorage.setItem(R,String(now))}catch(e){}var u=new URL(location.href);u.searchParams.set("build",b);u.searchParams.delete("_");location.replace(u.pathname+u.search+u.hash)}fetch(jsBase+"build-version.json?_="+Date.now(),{cache:"no-store",credentials:"same-origin"}).then(function(r){return r.ok?r.json():null}).then(function(d){if(!d||!d.build||d.build===pageBuild)return;var done=function(){go(d.build)};if("caches"in window){caches.keys().then(function(k){return Promise.all(k.map(function(x){return caches.delete(x)}))}).finally(done)}else{done()}}).catch(function(){})})();
 </script>`;
 
 const ASSET_REF =
@@ -62,13 +62,19 @@ function injectBuildBootstrap(html) {
       next = updated;
       changed = true;
     }
-  } else if (next.includes('<meta charset="UTF-8">')) {
-    const cacheBlock = hasCacheMeta(next) ? '' : `${CACHE_META}\n`;
-    const block = `<meta charset="UTF-8">\n${cacheBlock}${BUILD_META_TAG}`;
-    const updated = next.replace(/<meta charset="UTF-8">/i, block);
-    if (updated !== next) {
-      next = updated;
-      changed = true;
+  } else {
+    // Match the existing charset meta regardless of case (e.g. UTF-8 vs utf-8)
+    // and re-insert it verbatim so pages keep their original casing.
+    const charsetRe = /<meta charset="[^"]*">/i;
+    const m = next.match(charsetRe);
+    if (m) {
+      const cacheBlock = hasCacheMeta(next) ? '' : `${CACHE_META}\n`;
+      const block = `${m[0]}\n${cacheBlock}${BUILD_META_TAG}`;
+      const updated = next.replace(charsetRe, () => block);
+      if (updated !== next) {
+        next = updated;
+        changed = true;
+      }
     }
   }
 
