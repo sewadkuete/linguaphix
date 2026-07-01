@@ -312,6 +312,41 @@ body{
   .match-grid{gap:8px}
   .flash-card{padding:18px 14px}
 }
+/* ── Topic search & multi-level filter ── */
+.gsearch{max-width:640px;margin:0 auto 1rem}
+.gsearch-bar{display:flex;align-items:stretch;gap:8px}
+.gsearch-inputwrap{position:relative;flex:1;min-width:0}
+.gsearch-dd{position:relative;flex-shrink:0}
+.gsearch-dd-btn{display:flex;align-items:center;gap:8px;height:100%;white-space:nowrap;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-primary);color:var(--color-text-primary);font-size:13px;font-family:inherit;padding:0 12px;cursor:pointer;transition:background .15s,border-color .15s}
+.gsearch-dd-btn:hover{background:var(--color-background-secondary)}
+.gsearch-dd-btn[aria-expanded="true"]{border-color:#0f6e56}
+.gsearch-dd-btn.has-sel{border-color:#0f6e56;color:#0f6e56;font-weight:500}
+.gsearch-dd-caret{font-size:10px;color:var(--color-text-secondary);transition:transform .15s}
+.gsearch-dd-btn[aria-expanded="true"] .gsearch-dd-caret{transform:rotate(180deg)}
+.gsearch-input{width:100%;padding:10px 36px 10px 14px;font-size:14px;font-family:inherit;border:0.5px solid var(--color-border-secondary);border-radius:var(--border-radius-lg);background:var(--color-background-primary);color:var(--color-text-primary);outline:none}
+.gsearch-input::placeholder{color:var(--color-text-secondary)}
+.gsearch-input:focus{border-color:#0f6e56;box-shadow:0 0 0 2px rgba(15,110,86,.15)}
+.gsearch-clear{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:none;background:transparent;color:var(--color-text-secondary);font-size:14px;line-height:1;cursor:pointer;padding:6px}
+.gsearch-clear:hover{color:var(--color-text-primary)}
+.gsearch-levels{position:absolute;right:0;top:calc(100% + 6px);z-index:20;display:flex;flex-wrap:wrap;gap:6px;width:206px;padding:12px;background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);box-shadow:0 10px 30px rgba(20,20,40,.22)}
+.gsearch-levels[hidden]{display:none}
+.gsearch-cap{width:100%;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--color-text-secondary);margin-bottom:4px}
+.lvl-chip{border:0.5px solid var(--color-border-secondary);background:var(--color-background-primary);color:var(--color-text-secondary);border-radius:var(--border-radius-md);padding:4px 12px;font-size:12px;cursor:pointer;font-family:inherit;transition:background .15s,color .15s}
+.lvl-chip:hover{background:var(--color-background-secondary)}
+.lvl-chip.on{background:#1a3c2e;color:#fff;border-color:#1a3c2e;font-weight:500}
+.gsearch-count{text-align:center;font-size:12px;color:var(--color-text-secondary);margin:10px 0 4px;min-height:1em}
+#search-results{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+.result{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;width:100%;text-align:left;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);background:var(--color-background-primary);padding:11px 14px;cursor:pointer;font-family:inherit;transition:background .12s,border-color .12s}
+.result:hover{background:var(--color-background-secondary);border-color:#0f6e56}
+.result-lvl{grid-row:1/3;align-self:center;font-size:12px;font-weight:600;color:#fff;background:#1a3c2e;border-radius:var(--border-radius-md);min-width:34px;height:34px;display:flex;align-items:center;justify-content:center}
+.result-main{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px}
+.result-name{font-size:14px;font-weight:500;color:var(--color-text-primary)}
+.result-sec{font-size:10px;text-transform:uppercase;letter-spacing:.04em;color:var(--color-text-secondary)}
+.result-sec::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;vertical-align:middle;background:var(--dot,#888780)}
+.dot-nom{--dot:#1d9e75}.dot-verb{--dot:#378add}.dot-adj{--dot:#ba7517}.dot-pron{--dot:#7f77dd}.dot-adv{--dot:#d4537e}.dot-disc{--dot:#e24b4a}.dot-num{--dot:#888780}
+.result-snip{grid-column:2;font-size:12px;color:var(--color-text-secondary);line-height:1.5}
+.gsearch-none{text-align:center;color:var(--color-text-secondary);font-size:13px;padding:18px}
+@media(prefers-color-scheme:dark){.lvl-chip.on{background:#0f6e56;border-color:#0f6e56}.result-lvl{background:#0f6e56}}
 </style>
 
 <div class="wrap">
@@ -325,7 +360,21 @@ body{
 <span class="legend-item"><span class="legend-dot" style="background:#e24b4a"></span>Syntax</span>
 <span class="legend-item"><span class="legend-dot" style="background:#888780"></span>Number</span>
 </div>
+<div class="gsearch">
+  <div class="gsearch-bar">
+    <div class="gsearch-inputwrap">
+      <input id="gsearch-input" class="gsearch-input" type="search" autocomplete="off" spellcheck="false" aria-label="Search a grammar topic">
+      <button id="gsearch-clear" class="gsearch-clear" type="button" hidden aria-label="Clear search">✕</button>
+    </div>
+    <div class="gsearch-dd" id="gsearch-dd">
+      <button id="gsearch-dd-btn" class="gsearch-dd-btn" type="button" aria-haspopup="true" aria-expanded="false"><span id="gsearch-dd-label"></span><span class="gsearch-dd-caret" aria-hidden="true">▾</span></button>
+      <div class="gsearch-levels" id="gsearch-levels" role="group" aria-label="Filter by level" hidden></div>
+    </div>
+  </div>
+</div>
+<p class="gsearch-count" id="gsearch-count" role="status" aria-live="polite"></p>
 <div class="level-tabs" id="tabs"></div>
+<div id="search-results" hidden></div>
 <div id="level-display"></div>
 <div id="seq-display"></div>
 </div>
@@ -3858,6 +3907,134 @@ function closeExDone(){
   stopTimer();
   renderLevel();
 }
+
+/* ══════════════════════════════════════════════════════
+   TOPIC SEARCH & MULTI-LEVEL FILTER
+   Finds grammar topics by name OR content and filters by
+   one or more CEFR levels. Read-only over D — it never
+   modifies the grammar map or the exercise data.
+   ══════════════════════════════════════════════════════ */
+(function(){
+  const T={
+    placeholder:"Search a topic — e.g. articles, present perfect, passive…",
+    levels:"Levels",
+    filter:"Filter by level",
+    none:"No topic matches your search.",
+    count:function(n){return n===1?"1 topic found":n+" topics found";}
+  };
+  const LS_LVL='gramlvl_en';
+  const input=document.getElementById('gsearch-input'),
+        clearBtn=document.getElementById('gsearch-clear'),
+        ddWrap=document.getElementById('gsearch-dd'),
+        ddBtn=document.getElementById('gsearch-dd-btn'),
+        ddLabel=document.getElementById('gsearch-dd-label'),
+        levelsWrap=document.getElementById('gsearch-levels'),
+        countEl=document.getElementById('gsearch-count'),
+        resultsEl=document.getElementById('search-results'),
+        tabsEl=document.getElementById('tabs'),
+        levelEl=document.getElementById('level-display');
+  if(!input||!resultsEl) return;
+  input.placeholder=T.placeholder;
+
+  const activeLevels=new Set();
+  let INDEX=null, searchMode=false;
+
+  const norm=s=>String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+  const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+  const stripTags=s=>String(s).replace(/<[^>]+>/g,'').replace(/&nbsp;/g,' ').replace(/&middot;/g,'·').replace(/&amp;/g,'&').replace(/\s+/g,' ').trim();
+
+  function buildIndex(){
+    if(INDEX) return INDEX;
+    INDEX=[];
+    D.forEach(lv=>lv.sections.forEach(sec=>sec.items.forEach(it=>{
+      const raw=[it.name];
+      (it.steps||[]).forEach(s=>{raw.push(s.label,s.text); if(s.ex)raw.push(s.ex);});
+      if(it.pitfall)raw.push(it.pitfall);
+      if(it.gn)raw.push(it.gn);
+      (it.ge||[]).forEach(g=>raw.push(g));
+      const segs=raw.filter(Boolean).map(x=>{const disp=stripTags(x);return{disp:disp,n:norm(disp)};});
+      INDEX.push({lvl:lv.id,type:sec.type,section:sec.label,name:it.name,enc:encodeItem(it.name),nameN:norm(it.name),hay:segs.map(s=>s.n).join(' • '),segs:segs});
+    })));
+    return INDEX;
+  }
+
+  function buildLevels(){
+    let html='<span class="gsearch-cap">'+T.filter+'</span>';
+    html+=D.map(lv=>'<button type="button" class="lvl-chip" data-lvl="'+lv.id+'" aria-pressed="false">'+lv.id+'</button>').join('');
+    levelsWrap.innerHTML=html;
+    levelsWrap.querySelectorAll('.lvl-chip').forEach(b=>b.addEventListener('click',function(){
+      const id=b.dataset.lvl, on=activeLevels.has(id);
+      if(on){activeLevels.delete(id);}else{activeLevels.add(id);}
+      b.classList.toggle('on',!on); b.setAttribute('aria-pressed',String(!on));
+      updateDdLabel();
+      run();
+    }));
+  }
+
+  function snippet(item,terms){
+    for(let i=1;i<item.segs.length;i++){
+      const seg=item.segs[i];
+      if(terms.some(function(tm){return seg.n.indexOf(tm.t)>=0||seg.n.indexOf(tm.s)>=0;})){
+        let s=seg.disp; if(s.length>150) s=s.slice(0,150).trim()+'…'; return s;
+      }
+    }
+    return '';
+  }
+
+  function render(list,terms){
+    if(!list.length){ countEl.textContent=''; resultsEl.innerHTML='<p class="gsearch-none">'+T.none+'</p>'; return; }
+    countEl.textContent=T.count(list.length);
+    resultsEl.innerHTML=list.map(function(r){
+      const snip=terms.length?snippet(r,terms):'';
+      return '<button class="result" type="button" data-enc="'+esc(r.enc)+'" data-lvl="'+r.lvl+'">'
+        +'<span class="result-lvl">'+r.lvl+'</span>'
+        +'<span class="result-main"><span class="result-name">'+esc(stripTags(r.name))+'</span>'
+        +'<span class="result-sec dot-'+r.type+'">'+esc(r.section)+'</span></span>'
+        +(snip?'<span class="result-snip">'+esc(snip)+'</span>':'')
+        +'</button>';
+    }).join('');
+  }
+
+  function run(){
+    const rawv=input.value.trim();
+    clearBtn.hidden=rawv.length===0;
+    const terms=norm(rawv).split(/\s+/).filter(Boolean).map(function(t){return{t:t,s:(t.length>3&&t.charAt(t.length-1)==='s')?t.slice(0,-1):t};});
+    const hasQuery=terms.length>0, hasFilter=activeLevels.size>0;
+    if(!hasQuery && !hasFilter){ exitSearch(); return; }
+    enterSearch();
+    const list=buildIndex().filter(function(r){
+      if(hasFilter && !activeLevels.has(r.lvl)) return false;
+      if(hasQuery){ for(const tm of terms){ if(r.hay.indexOf(tm.t)<0 && r.hay.indexOf(tm.s)<0 && r.nameN.indexOf(tm.t)<0) return false; } }
+      return true;
+    });
+    render(list,terms);
+  }
+
+  function enterSearch(){ if(searchMode) return; searchMode=true; closeSeq(); tabsEl.style.display='none'; levelEl.style.display='none'; resultsEl.hidden=false; }
+  function exitSearch(){ countEl.textContent=''; if(!searchMode) return; searchMode=false; resultsEl.hidden=true; resultsEl.innerHTML=''; tabsEl.style.display=''; levelEl.style.display=''; closeSeq(); }
+
+  function openResult(enc,lvl){
+    currentLevel=lvl;
+    try{localStorage.setItem(LS_LVL,lvl);}catch(e){}
+    renderTabs();
+    openItem=null;
+    toggleSeq(enc);
+  }
+
+  function updateDdLabel(){ ddLabel.textContent=activeLevels.size?[...activeLevels].sort().join(', '):T.levels; ddBtn.classList.toggle('has-sel',activeLevels.size>0); }
+  function openDd(){ levelsWrap.hidden=false; ddBtn.setAttribute('aria-expanded','true'); }
+  function closeDd(){ levelsWrap.hidden=true; ddBtn.setAttribute('aria-expanded','false'); }
+
+  buildLevels();
+  updateDdLabel();
+  ddBtn.addEventListener('click',function(e){ e.stopPropagation(); if(levelsWrap.hidden) openDd(); else closeDd(); });
+  document.addEventListener('click',function(e){ if(!ddWrap.contains(e.target)) closeDd(); });
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeDd(); });
+  input.addEventListener('input',run);
+  clearBtn.addEventListener('click',function(){input.value='';input.focus();run();});
+  input.addEventListener('keydown',function(e){ if(e.key==='Escape'){ input.value=''; activeLevels.clear(); levelsWrap.querySelectorAll('.lvl-chip').forEach(function(c){c.classList.remove('on');c.setAttribute('aria-pressed','false');}); updateDdLabel(); closeDd(); run(); } });
+  resultsEl.addEventListener('click',function(e){ const b=e.target.closest('.result'); if(b) openResult(b.dataset.enc,b.dataset.lvl); });
+})();
 
 renderTabs();
 renderLevel();
