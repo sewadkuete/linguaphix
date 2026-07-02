@@ -12,8 +12,9 @@
 (function(){var M="lx-build",R="lx-build-reload",m=document.querySelector('meta[name="'+M+'"]'),pageBuild=m&&m.getAttribute("content");if(!pageBuild)return;var p=(location.pathname||"").replace(/\\/g,"/"),segs=p.replace(/^\/+/,"").split("/"),depth=segs.length-1,jsBase=depth>0?new Array(depth+1).join("../")+"js/":"js/";function go(b){var now=Date.now();try{var last=parseInt(sessionStorage.getItem(R)||"0",10);if(last&&now-last<8000)return;sessionStorage.setItem(R,String(now))}catch(e){}var u=new URL(location.href);u.searchParams.set("build",b);u.searchParams.delete("_");location.replace(u.pathname+u.search+u.hash)}fetch(jsBase+"build-version.json?_="+Date.now(),{cache:"no-store",credentials:"same-origin"}).then(function(r){return r.ok?r.json():null}).then(function(d){if(!d||!d.build||d.build===pageBuild)return;var done=function(){go(d.build)};if("caches"in window){caches.keys().then(function(k){return Promise.all(k.map(function(x){return caches.delete(x)}))}).finally(done)}else{done()}}).catch(function(){})})();
 </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="LINGUAPHIX — Précis de grammaire FLE et ESL gratuits, niveaux CECR A1–C2.">
-  <title>LINGUAPHIX — Grammaire FLE &amp; ESL</title>
+  <meta name="description" content="Exercices et précis de grammaire FLE et ESL gratuits, du A1 au C2 — exercices de grammaire française et anglaise en ligne, interactifs. LINGUAPHIX.">
+  <meta name="keywords" content="exercices de grammaire, exercice de grammaire, exercices de grammaire en ligne, exercices de grammaire gratuits, exercices de grammaire française, exercices de grammaire anglaise, grammar exercises, ESL grammar exercises, grammaire FLE, grammaire ESL, exercices FLE, quiz de grammaire, CECR, A1 A2 B1 B2 C1 C2, LINGUAPHIX">
+  <title>Exercices de grammaire FLE &amp; ESL gratuits (A1–C2) — LINGUAPHIX</title>
   <link rel="icon" href="assets/favicon-hub.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/favicon-hub.svg">
   <style>
@@ -118,11 +119,11 @@
     var I18N = {
       fr: {
         htmlLang: "fr",
-        title: "LINGUAPHIX — Grammaire FLE & ESL",
-        metaDescription: "LINGUAPHIX — Précis de grammaire FLE et ESL gratuits, niveaux CECR A1–C2.",
+        title: "Exercices de grammaire FLE & ESL gratuits (A1–C2) — LINGUAPHIX",
+        metaDescription: "Exercices et précis de grammaire FLE et ESL gratuits, du A1 au C2 — exercices de grammaire française et anglaise en ligne, interactifs. LINGUAPHIX.",
         backMain: "← Retour au site LINGUAPHIX",
         heroTitle: "Grammaire interactive<br>A1 → C2",
-        heroLead: "Précis de grammaire gratuits en français langue étrangère et en anglais — du A1 au C2.",
+        heroLead: "Précis et exercices de grammaire gratuits en français langue étrangère et en anglais — du A1 au C2.",
         fleTitle: "Français langue étrangère",
         fleDesc: "Carte grammaticale complète : séquences pédagogiques, exemples et pièges par niveau CECR.",
         eslTitle: "Anglais langue seconde",
@@ -135,11 +136,11 @@
       },
       en: {
         htmlLang: "en",
-        title: "LINGUAPHIX — FLE & ESL Grammar",
-        metaDescription: "LINGUAPHIX — Free FLE and ESL grammar notes, CEFR levels A1–C2.",
+        title: "Free FLE & ESL Grammar Exercises (A1–C2) — LINGUAPHIX",
+        metaDescription: "Free FLE and ESL grammar exercises and notes, CEFR levels A1–C2 — interactive online French and English grammar practice. LINGUAPHIX.",
         backMain: "← Back to LINGUAPHIX website",
         heroTitle: "Interactive Grammar<br>A1 → C2",
-        heroLead: "Free grammar notes for French as a foreign language and English — A1 to C2.",
+        heroLead: "Free grammar notes and exercises for French as a foreign language and English — A1 to C2.",
         fleTitle: "French as a Foreign Language",
         fleDesc: "Full French grammar map: teaching sequences, examples and pitfalls by CEFR level.",
         eslTitle: "English as a Second Language",
