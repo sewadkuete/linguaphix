@@ -312,6 +312,8 @@ const i18n = {
     'share.service.title': 'Partager ce service',
     'share.service.cta': 'Partager ce service',
     'share.page.wa': "Découvrez LINGUAPHIX — cours d'anglais et de français, préparation TCF / IELTS / TOEFL et traduction certifiée à Lomé :",
+    'share.inline.page': 'Partager cette page :',
+    'share.inline.service': 'Partager ce service :',
     'addtesti.badge': 'Votre avis compte',
     'addtesti.title': 'Partagez votre expérience',
     'addtesti.actions.lead': 'Un avis éclairé relie des besoins concrets à une expertise linguistique et en design de confiance. Quelques instants de votre part font la différence — merci.',
@@ -596,6 +598,8 @@ const i18n = {
     'policy.design.l10': 'Urgence : délai express peut entraîner un supplément de 25 à 50 % sur devis.',
     'policy.design.l11': 'Contenu interdit : refus possible pour tout projet illégal, diffamatoire ou contraire à l\'éthique.',
     'footer.tagline': 'Langues · Design · Excellence.',
+    'footer.hours.label': 'Horaires',
+    'footer.hours.value': 'Lun–Ven 8h–20h · Sam 8h–18h (GMT+0)',
     'footer.col1': 'Langues',
     'footer.col2': 'Design',
     'footer.col3': 'Liens rapides',
@@ -863,6 +867,8 @@ const i18n = {
     'share.service.title': 'Share this service',
     'share.service.cta': 'Share this service',
     'share.page.wa': 'Discover LINGUAPHIX — English & French courses, TCF / IELTS / TOEFL prep and certified translation in Lomé:',
+    'share.inline.page': 'Share this page:',
+    'share.inline.service': 'Share this service:',
     'addtesti.badge': 'Your voice matters',
     'addtesti.title': 'Share your experience',
     'addtesti.actions.lead': 'An informed review connects real needs with trusted linguistic/design expertise. A moment of your time makes a difference — thank you.',
@@ -1147,6 +1153,8 @@ const i18n = {
     'policy.design.l10': 'Rush work: express deadlines may incur a 25–50% surcharge on the quote.',
     'policy.design.l11': 'Prohibited content: projects that are illegal, defamatory, or unethical may be refused.',
     'footer.tagline': 'Languages · Design · Excellence.',
+    'footer.hours.label': 'Opening hours',
+    'footer.hours.value': 'Mon–Fri 8am–8pm · Sat 8am–6pm (GMT+0)',
     'footer.col1': 'Languages',
     'footer.col2': 'Design',
     'footer.col3': 'Quick links',
@@ -2381,6 +2389,52 @@ function openShareServiceModal(e) {
     titleKey: 'share.service.title',
     showLinkedIn: false,
   });
+}
+
+// ── INLINE SHARE (one-click icon buttons — no modal) ──
+const SHARE_CHECK_SVG = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>';
+
+function sharePageWhatsApp(e) {
+  if (e) e.preventDefault();
+  const waText = (i18n[currentLang] && i18n[currentLang]['share.page.wa']) || '';
+  const url = 'https://www.linguaphix.com/';
+  window.open('https://wa.me/?text=' + encodeURIComponent((waText ? waText + '\n' : '') + url), '_blank', 'noopener');
+}
+
+function shareServiceWhatsApp(e) {
+  if (e) e.preventDefault();
+  const s = window.__svcShare || {};
+  const url = s.url || window.location.href;
+  window.open('https://wa.me/?text=' + encodeURIComponent((s.waText ? s.waText + '\n' : '') + url), '_blank', 'noopener');
+}
+
+function shareInlineCopy(btn, url) {
+  const done = () => {
+    if (!btn || btn.classList.contains('is-copied')) return;
+    if (!btn.getAttribute('data-icon')) btn.setAttribute('data-icon', btn.innerHTML);
+    btn.classList.add('is-copied');
+    btn.innerHTML = SHARE_CHECK_SVG;
+    setTimeout(() => {
+      btn.classList.remove('is-copied');
+      btn.innerHTML = btn.getAttribute('data-icon');
+    }, 2000);
+  };
+  const legacy = () => {
+    const tmp = document.createElement('textarea');
+    tmp.value = url;
+    tmp.setAttribute('readonly', '');
+    tmp.style.position = 'fixed';
+    tmp.style.opacity = '0';
+    document.body.appendChild(tmp);
+    tmp.select();
+    try { document.execCommand('copy'); done(); } catch (err) {}
+    document.body.removeChild(tmp);
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(url).then(done).catch(legacy);
+  } else {
+    legacy();
+  }
 }
 
 function getContactPageUrl(lang) {

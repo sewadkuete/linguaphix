@@ -3250,6 +3250,13 @@ body > footer {
   font-size: 0.9rem; text-decoration: none; transition: var(--transition);
 }
 .footer-social a:hover { background: var(--green); color: var(--white); }
+.footer-hours { margin-top: 1.5rem; }
+.footer-hours h5 {
+  font-family: var(--font-body); font-weight: 700; font-size: var(--text-sm);
+  text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--white); margin: 0 0 0.4rem;
+}
+.footer-hours p { font-size: var(--text-sm); line-height: var(--leading-relaxed); color: rgba(255,255,255,0.6); margin: 0; }
 
 /* ── FLOATING ACTIONS (compact, bottom-right — avoids covering body text) ── */
 :root {
@@ -3341,6 +3348,80 @@ body > footer {
   color: var(--white);
   background: var(--green);
   border-color: var(--green);
+}
+/* ── Inline share row (one-click icon buttons) ── */
+.share-inline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.share-inline__label {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-muted);
+}
+.share-inline__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--gray-200);
+  background: var(--white);
+  color: var(--gray-600);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: background 0.18s, color 0.18s, border-color 0.18s, transform 0.18s, box-shadow 0.18s;
+}
+.share-inline__btn:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+.share-inline__btn svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  display: block;
+}
+.share-inline__btn--wa {
+  color: #1faa55;
+  border-color: rgba(37, 211, 102, 0.45);
+}
+.share-inline__btn--wa:hover {
+  background: #25d366;
+  border-color: #25d366;
+  color: var(--white);
+}
+.share-inline__btn--li {
+  color: #0a66c2;
+  border-color: rgba(10, 102, 194, 0.35);
+}
+.share-inline__btn--li:hover {
+  background: #0a66c2;
+  border-color: #0a66c2;
+  color: var(--white);
+}
+.share-inline__btn--copy:hover {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+.share-inline__btn.is-copied {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--white);
+}
+/* Between the Google-review and clients-say rows on share-experience.html */
+.page-share-experience .share-experience-footer .share-inline {
+  margin: clamp(0.9rem, 2.5vw, 1.3rem) 0;
+}
+/* Service hero variant (left-aligned with the header content) */
+.service-page-share.share-inline {
+  justify-content: flex-start;
 }
 .service-book-modal__lead {
   margin: 0 0 1.25rem;
@@ -4139,7 +4220,11 @@ body:has(.wa-float) > footer {
 }
 .mode-price-panel__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* Container-driven: the tiles sit inside package cards that can themselves
+     be in a multi-column grid, so a viewport media query is not enough. auto-fit
+     wraps the two tiles to one column whenever the card is too narrow for two,
+     preventing them from overflowing the card at intermediate widths. */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 0.75rem;
 }
 .mode-price-tile {
@@ -4251,11 +4336,6 @@ body:has(.wa-float) > footer {
 }
 .booking-package-card--modes .mode-price-panel {
   margin-top: 0.35rem;
-}
-@media (max-width: 520px) {
-  .mode-price-panel__grid {
-    grid-template-columns: 1fr;
-  }
 }
 .service-package-card h3 {
   font-family: var(--font-display);
