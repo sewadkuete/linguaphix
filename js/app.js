@@ -1309,6 +1309,11 @@ function applyLang(lang) {
   document.documentElement.lang = resolved;
   lang = resolved;
   updateLangToggleUI(lang);
+  // Swap Open Graph / Twitter images to the language-matched version.
+  document.querySelectorAll('[data-og-fr]').forEach(el => {
+    const url = lang === 'en' ? el.getAttribute('data-og-en') : el.getAttribute('data-og-fr');
+    if (url) el.setAttribute('content', url);
+  });
   document.querySelectorAll('[data-i18n]').forEach(el => {
     if (el.closest('.i18n-bilingual')) return;
     const key = el.getAttribute('data-i18n');

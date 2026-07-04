@@ -15,6 +15,18 @@
   <meta name="description" content="Exercices et précis de grammaire FLE et ESL gratuits, du A1 au C2 — exercices de grammaire française et anglaise en ligne, interactifs. LINGUAPHIX.">
   <meta name="keywords" content="exercices de grammaire, exercice de grammaire, exercices de grammaire en ligne, exercices de grammaire gratuits, exercices de grammaire française, exercices de grammaire anglaise, grammar exercises, ESL grammar exercises, grammaire FLE, grammaire ESL, exercices FLE, quiz de grammaire, CECR, A1 A2 B1 B2 C1 C2, LINGUAPHIX">
   <title>Exercices de grammaire FLE &amp; ESL gratuits (A1–C2) — LINGUAPHIX</title>
+  <link rel="canonical" href="https://www.linguaphix.com/exercices/index.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.linguaphix.com/exercices/index.html">
+  <meta property="og:title" content="Exercices de grammaire FLE &amp; ESL gratuits (A1–C2) — LINGUAPHIX">
+  <meta property="og:description" content="Exercices et précis de grammaire FLE et ESL gratuits, du A1 au C2 — exercices de grammaire française et anglaise en ligne, interactifs.">
+  <meta property="og:image" content="https://www.linguaphix.com/assets/og/og-exercices.png" data-og-fr="https://www.linguaphix.com/assets/og/og-exercices.png" data-og-en="https://www.linguaphix.com/assets/og/og-exercices-en.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Exercices de grammaire FLE &amp; ESL — A1 à C2, LINGUAPHIX">
+  <meta property="og:image:type" content="image/png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.linguaphix.com/assets/og/og-exercices.png" data-og-fr="https://www.linguaphix.com/assets/og/og-exercices.png" data-og-en="https://www.linguaphix.com/assets/og/og-exercices-en.png">
   <link rel="icon" href="assets/favicon-hub.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="assets/favicon-hub.svg">
   <style>
@@ -170,6 +182,10 @@
     document.title = t.title;
     var meta = document.querySelector('meta[name="description"]');
     if (meta) meta.setAttribute("content", t.metaDescription);
+    document.querySelectorAll("[data-og-fr]").forEach(function (m) {
+      var u = lang === "en" ? m.getAttribute("data-og-en") : m.getAttribute("data-og-fr");
+      if (u) m.setAttribute("content", u);
+    });
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var key = el.getAttribute("data-i18n");
       if (t[key] != null) el.innerHTML = t[key];
