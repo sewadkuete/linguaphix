@@ -29,12 +29,15 @@
     'background:radial-gradient(120% 120% at 50% 35%,#1a7a3c 0%,#0f4a24 55%,#082b15 100%);',
     "font-family:'Plus Jakarta Sans','Segoe UI',system-ui,sans-serif;text-align:center;padding:24px}",
     '#lx-entry-btn{display:flex;align-items:center;justify-content:center;width:clamp(150px,32vw,220px);height:clamp(150px,32vw,220px);',
-    'background:#fff;border:none;border-radius:28%;cursor:pointer;padding:0;',
+    'background:rgba(255,255,255,.06);border:3px solid rgba(255,255,255,.92);border-radius:28%;cursor:pointer;padding:0;',
     'box-shadow:0 10px 0 rgba(0,0,0,.28),0 24px 60px rgba(0,0,0,.35);',
-    'transition:transform .12s ease,box-shadow .12s ease}',
+    'transition:transform .12s ease,box-shadow .12s ease;animation:lxPress 2.8s ease-in-out infinite}',
+    '@keyframes lxPress{0%,14%,100%{transform:translateY(0);box-shadow:0 10px 0 rgba(0,0,0,.28),0 24px 60px rgba(0,0,0,.35)}7%{transform:translateY(9px);box-shadow:0 1px 0 rgba(0,0,0,.3),0 6px 16px rgba(0,0,0,.3)}}',
+    '@media (prefers-reduced-motion: reduce){#lx-entry-btn{animation:none}}',
+    '#lx-entry-btn:hover,#lx-entry-btn:active{animation:none}',
     '#lx-entry-btn:hover{transform:translateY(2px);box-shadow:0 8px 0 rgba(0,0,0,.28),0 18px 44px rgba(0,0,0,.32)}',
     '#lx-entry-btn:active{transform:translateY(9px);box-shadow:0 1px 0 rgba(0,0,0,.3),0 6px 16px rgba(0,0,0,.3)}',
-    '#lx-entry-btn img{width:72%;height:72%;object-fit:contain;pointer-events:none}',
+    '#lx-entry-btn img{width:86%;height:86%;object-fit:contain;pointer-events:none}',
     '#lx-entry-text{color:#fff;font-weight:800;font-size:clamp(1.15rem,3.4vw,1.7rem);letter-spacing:.04em;margin:0}',
     '#lx-entry-sub{color:rgba(255,255,255,.75);font-weight:600;font-size:clamp(.85rem,2.2vw,1rem);margin:0}'
   ].join('');
