@@ -15,7 +15,7 @@
       waMe: '22892539953',
     },
     contactEmail: 'contact@linguaphix.com',
-    calendlyUrl: 'https://calendly.com/linguaphix/call',
+    calendlyUrl: 'https://calendly.com/akuetesd/call',
     onlinePlatformFr: 'Zoom / Google Meet (à confirmer)',
     onlinePlatformEn: 'Zoom / Google Meet (TBD)',
     inPersonAddressFr: 'Lomé, Togo (adresse à confirmer)',

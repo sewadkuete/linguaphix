@@ -1010,7 +1010,7 @@
   }
 
   function buildCalendlyBookingUrl(v, serviceTitle, slug, lang) {
-    const calBase = (cfg().calendlyUrl || 'https://calendly.com/linguaphix/call').split('?')[0];
+    const calBase = (cfg().calendlyUrl || 'https://calendly.com/akuetesd/call').split('?')[0];
     const modeLabel = labelForMode(lang, v.mode);
     const trackLabel = v.track ? labelForTrack(lang, v.track) : '';
     const langLabel = v.language ? labelForLanguage(lang, v.language) : '';
