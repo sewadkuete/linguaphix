@@ -30,21 +30,22 @@
     '#lx-entry-barrier{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;',
     'background:radial-gradient(120% 120% at 50% 35%,#1a7a3c 0%,#0f4a24 55%,#082b15 100%);',
     "font-family:'Plus Jakarta Sans','Segoe UI',system-ui,sans-serif;text-align:center;padding:24px}",
-    '#lx-entry-btn{position:relative;display:flex;align-items:center;justify-content:center;width:clamp(160px,34vw,240px);height:clamp(160px,34vw,240px);',
-    'background:#fff;border:none;border-radius:50%;cursor:pointer;padding:0;overflow:hidden;',
-    /* biseau façon rondelle : anneau clair + creux interne + ombre portée */
-    'box-shadow:inset 0 0 0 6px #ffffff,inset 0 0 0 10px rgba(0,0,0,.10),inset 0 8px 18px rgba(255,255,255,.9),inset 0 -10px 22px rgba(0,0,0,.18),0 12px 0 rgba(0,0,0,.26),0 26px 60px rgba(0,0,0,.38);',
-    'transition:transform .12s ease,box-shadow .12s ease;animation:lxPress 2.8s ease-in-out infinite}',
-    '@keyframes lxPress{0%,14%,100%{transform:translateY(0)}7%{transform:translateY(10px)}}',
+    '#lx-entry-btn{position:relative;display:block;width:clamp(200px,46vw,320px);height:clamp(140px,32vw,220px);',
+    'background:transparent;border:none;cursor:pointer;padding:0;perspective:900px;',
+    'transition:transform .12s ease;animation:lxPress 2.8s ease-in-out infinite}',
+    '@keyframes lxPress{0%,14%,100%{transform:translateY(0)}7%{transform:translateY(12px)}}',
     '@media (prefers-reduced-motion: reduce){#lx-entry-btn{animation:none}#lx-entry-btn img{animation:none}}',
     '#lx-entry-btn:hover,#lx-entry-btn:active{animation:none}',
-    '#lx-entry-btn:hover{transform:translateY(3px)}',
-    '#lx-entry-btn:active{transform:translateY(10px)}',
-    /* le logo tourne lentement à l'intérieur de la rondelle */
-    '#lx-entry-btn img{width:88%;height:88%;object-fit:contain;pointer-events:none;animation:lxSpin 18s linear infinite}',
-    '@keyframes lxSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}',
-    '#lx-entry-text{color:#fff;font-weight:800;font-size:clamp(1.15rem,3.4vw,1.7rem);letter-spacing:.04em;margin:0}',
-    '#lx-entry-sub{color:rgba(255,255,255,.75);font-weight:600;font-size:clamp(.85rem,2.2vw,1rem);margin:0}'
+    '#lx-entry-btn:hover{transform:translateY(4px)}',
+    '#lx-entry-btn:active{transform:translateY(12px)}',
+    /* le logo lui-meme, pose en perspective comme la rondelle, tourne sur lui-meme */
+    '#lx-entry-btn img{width:100%;height:100%;object-fit:contain;pointer-events:none;',
+    'transform:rotateX(55deg);animation:lxSpin 14s linear infinite;',
+    'filter:drop-shadow(0 34px 26px rgba(0,0,0,.45))}',
+    '@keyframes lxSpin{from{transform:rotateX(55deg) rotateZ(0)}to{transform:rotateX(55deg) rotateZ(360deg)}}',
+    '#lx-entry-text{color:#fff;font-weight:800;font-size:clamp(1.3rem,4vw,2rem);letter-spacing:.03em;margin:0}',
+    '#lx-entry-sub{color:rgba(255,255,255,.85);font-weight:600;font-size:clamp(.95rem,2.6vw,1.15rem);margin:0;max-width:34em}',
+    '#lx-entry-sub-en{color:rgba(255,255,255,.55);font-weight:600;font-size:clamp(.8rem,2vw,.95rem);margin:0;max-width:40em}'
   ].join('');
   var style = document.createElement('style');
   style.id = 'lx-entry-style';
@@ -58,10 +59,11 @@
     var wrap = document.createElement('div');
     wrap.id = 'lx-entry-barrier';
     wrap.innerHTML =
-      '<button type="button" id="lx-entry-btn" aria-label="Press here to enter">' +
+      '<button type="button" id="lx-entry-btn" aria-label="LINGUAPHIX est devenu ASD — continuer vers akuetesd.com">' +
       '<img src="' + root + 'assets/branding/logo-mark-original.png" alt="LINGUAPHIX"></button>' +
-      '<p id="lx-entry-text">Press here to enter</p>' +
-      '<p id="lx-entry-sub">Appuyez ici pour entrer</p>';
+      '<p id="lx-entry-text">LINGUAPHIX est devenu ASD</p>' +
+      '<p id="lx-entry-sub">Mêmes services, nouvelle adresse — appuyez sur le logo pour continuer</p>' +
+      '<p id="lx-entry-sub-en">LINGUAPHIX is now ASD · Same services, new home — press the logo to continue</p>';
     document.body.appendChild(wrap);
     var btn = document.getElementById('lx-entry-btn');
     btn.addEventListener('click', go);
