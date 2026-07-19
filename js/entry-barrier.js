@@ -11,7 +11,9 @@
  */
 (function () {
   var ENABLED = true; // ← false pour lever la barrière et rouvrir linguaphix
-  var TARGET = 'https://www.akuetesd.com/';
+  // Redirection profonde : asd est un clone de linguaphix, la même page existe
+  // là-bas — on conserve le chemin, les paramètres et l'ancre.
+  var TARGET = 'https://www.akuetesd.com' + location.pathname + location.search + location.hash;
   if (!ENABLED) return;
 
   // Racine du site déduite de l'URL de ce script (fonctionne à toute profondeur).
@@ -28,16 +30,19 @@
     '#lx-entry-barrier{position:fixed;inset:0;z-index:2147483647;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;',
     'background:radial-gradient(120% 120% at 50% 35%,#1a7a3c 0%,#0f4a24 55%,#082b15 100%);',
     "font-family:'Plus Jakarta Sans','Segoe UI',system-ui,sans-serif;text-align:center;padding:24px}",
-    '#lx-entry-btn{display:flex;align-items:center;justify-content:center;width:clamp(150px,32vw,220px);height:clamp(150px,32vw,220px);',
-    'background:rgba(255,255,255,.06);border:3px solid rgba(255,255,255,.92);border-radius:28%;cursor:pointer;padding:0;',
-    'box-shadow:0 10px 0 rgba(0,0,0,.28),0 24px 60px rgba(0,0,0,.35);',
+    '#lx-entry-btn{position:relative;display:flex;align-items:center;justify-content:center;width:clamp(160px,34vw,240px);height:clamp(160px,34vw,240px);',
+    'background:#fff;border:none;border-radius:50%;cursor:pointer;padding:0;overflow:hidden;',
+    /* biseau façon rondelle : anneau clair + creux interne + ombre portée */
+    'box-shadow:inset 0 0 0 6px #ffffff,inset 0 0 0 10px rgba(0,0,0,.10),inset 0 8px 18px rgba(255,255,255,.9),inset 0 -10px 22px rgba(0,0,0,.18),0 12px 0 rgba(0,0,0,.26),0 26px 60px rgba(0,0,0,.38);',
     'transition:transform .12s ease,box-shadow .12s ease;animation:lxPress 2.8s ease-in-out infinite}',
-    '@keyframes lxPress{0%,14%,100%{transform:translateY(0);box-shadow:0 10px 0 rgba(0,0,0,.28),0 24px 60px rgba(0,0,0,.35)}7%{transform:translateY(9px);box-shadow:0 1px 0 rgba(0,0,0,.3),0 6px 16px rgba(0,0,0,.3)}}',
-    '@media (prefers-reduced-motion: reduce){#lx-entry-btn{animation:none}}',
+    '@keyframes lxPress{0%,14%,100%{transform:translateY(0)}7%{transform:translateY(10px)}}',
+    '@media (prefers-reduced-motion: reduce){#lx-entry-btn{animation:none}#lx-entry-btn img{animation:none}}',
     '#lx-entry-btn:hover,#lx-entry-btn:active{animation:none}',
-    '#lx-entry-btn:hover{transform:translateY(2px);box-shadow:0 8px 0 rgba(0,0,0,.28),0 18px 44px rgba(0,0,0,.32)}',
-    '#lx-entry-btn:active{transform:translateY(9px);box-shadow:0 1px 0 rgba(0,0,0,.3),0 6px 16px rgba(0,0,0,.3)}',
-    '#lx-entry-btn img{width:86%;height:86%;object-fit:contain;pointer-events:none}',
+    '#lx-entry-btn:hover{transform:translateY(3px)}',
+    '#lx-entry-btn:active{transform:translateY(10px)}',
+    /* le logo tourne lentement à l'intérieur de la rondelle */
+    '#lx-entry-btn img{width:88%;height:88%;object-fit:contain;pointer-events:none;animation:lxSpin 18s linear infinite}',
+    '@keyframes lxSpin{from{transform:rotate(0)}to{transform:rotate(360deg)}}',
     '#lx-entry-text{color:#fff;font-weight:800;font-size:clamp(1.15rem,3.4vw,1.7rem);letter-spacing:.04em;margin:0}',
     '#lx-entry-sub{color:rgba(255,255,255,.75);font-weight:600;font-size:clamp(.85rem,2.2vw,1rem);margin:0}'
   ].join('');
